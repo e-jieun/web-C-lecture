@@ -11,14 +11,14 @@ console.log(__dirname);
 
 
 
-// for(let i = 0; i < studentList.length; i++) {
-//   if(i < 10) {
-//     fs.mkdir(path.join(__dirname+`/[01]student-directory/[0${i}]${studentList[i]}/`), (err) => {
-//       if (err) throw err;
-//     });
-//   } else {
-//     fs.mkdir(path.join(__dirname+`/[01]student-directory/[${i}]${studentList[i]}/`), (err) => {
-//       if (err) throw err;
-//     });
-//   }
-// }
+for(let i = 0; i < studentList.length; i++) {
+  if(i < 10) {
+    fs.mkdir(path.join(__dirname+`/[01]student-directory/[0${i}]${studentList[i]}/`), (err) => {
+      if (err) throw err;
+    });
+  } else {
+    fs.mkdir(path.join(__dirname+`/[01]student-directory/[${i}]${studentList[i]}/`), (err) => {
+      if (err) throw err;
+    });
+  }
+}

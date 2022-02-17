@@ -31,5 +31,18 @@ studentList.push("임소희");
 
 // console.log(__dirname);
 
-module.exports = studentList
+// module.exports = studentList
 // export default studentList
+
+
+for(let i = 0; i < studentList.length; i++) {
+  if(i < 10) {
+    fs.mkdir(path.join(__dirname+`/[01]student-directory/[0${i}]${studentList[i]}/`), (err) => {
+      if (err) throw err;
+    });
+  } else {
+    fs.mkdir(path.join(__dirname+`/[01]student-directory/[${i}]${studentList[i]}/`), (err) => {
+      if (err) throw err;
+    });
+  }
+}
