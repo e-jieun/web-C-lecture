@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web-c-student-email-list</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #container {
+      width: 100vw;
+      min-height: 100vh;
+      background-color: #ccc;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="container">
+
+
+
+  </div>
+  <script>
+    const studentList = [];
+
+    studentList.push("강사 공욱재");
+    studentList.push("권수연 balenti808@gmail.com");
+    studentList.push("김주은(11월) jrangkim11@gmail.com");
+    studentList.push("김주은(12월) jjj4779@naver.com");
+    studentList.push("김준식 wkxndlsvk@naver.com");
+    studentList.push("김지현 kwlgus0396@gmail.com");
+    studentList.push("손만충 asd552288@naver.com");
+    studentList.push("송주현 joohyun0403@gmail.com")
+    studentList.push("오요섭 dhdytjq2@naver.com");
+    studentList.push("이누리 depp1031@naver.com");
+    studentList.push("이성윤 queen1448@nate.com");
+    studentList.push("이아진 a.jinlee92@gmail.com");
+    studentList.push("이지은 liz950827@gmail.com");
+    studentList.push("이채연 dlcodus124@naver.com");
+    studentList.push("임성민 interkq@naver.com");
+    studentList.push("장우진 woojin961215@gmail.com");
+    studentList.push("장준형 wkdwnsgud1@gmail.com");
+    studentList.push("정수임 spdlqjtn159@gmail.com");
+    studentList.push("정유미 iyoumeyum@gmail.com");
+    studentList.push("채지훈 cococjc98@gmail.com");
+    studentList.push("임소희 limsohee0521@gmail.com");
+
+
+    console.log(studentList[0]);
+
+    const container = document.querySelector('#container');
+    const setUl = document.createElement('ul');
+    const setLi = document.createElement('li');
+
+    window.addEventListener('load', function() {
+
+      container.appendChild(setUl);
+
+      for(let i = 0; i < studentList.length; i++) {
+        setLi.textContent = studentList[i];
+        setUl.appendChild('setLi');
+      }
+
+
+    });
+    
+
+
+  </script>
+</body>
+
+</html>
