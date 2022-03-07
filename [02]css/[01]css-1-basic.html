@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css basic</title>
+  <style>
+    /* 
+    * <style>태그는 css 전용 태그이다.
+    * 꺽쇠를 사용하는 html과 다른 문법을 사용하며 작성법은 아래와 같다.
+    
+      선택자 {스타일속성:값;}
+      선택자는 여러 유형이 있으며, 적절하게 효율적으로 사용하는 것이 마크업의 성능과 유지보수에 영향을 끼친다.
+
+      h1 {
+        스타일 속성 : 값;
+      }
+      <h1> 과 같은 태그를 선택하고자 할때 css 에서는 이것을 "태그 선택자" 라고 부른다.
+      태그선택자를 사용하면 해당 태그에 모두 '일괄적용'되는 장점이 있다.
+        ※ <h1> ~ <h6> 까지 있다.
+        ※ <p> 태그는 종류가 한개 이다.
+
+      ※ 작업에 주의할 사항
+          값을 매기는 자리에 '종료'를 이야기하는 세미콜론(;)을 작성하여야 정상작동된다.
+          이유없이 적용이 되지 않을때 세미콜론이 빠져있는지 확인해볼 것
+    */
+    p {
+      color:gray;
+    }
+    /* 
+      위의 <p> 태그 선택자를 활용하여 아래에 여러개로 구성된 <p>태그를 모두 일괄 스타일링 했다.    
+    */
+    .another-color {
+      color: blue;
+    }
+    /* 
+    css에서 '사용자 지정 스타일링을 위해 마련된' 클래스(class) 선택자는 문법으로 .(온점)을 사용한다.
+    클래스 이름은 제작자의 자유이나, 일반적으로 직관적으로 알아볼수 있는 내용으로 작성하는 것이 제작자들간의 합의점이다.
+    */
+  </style>
+</head>
+<body>
+  <!-- class는 태그의 종류에 상관없이 적용할 수 있다. -->
+  <h1 class="another-color">hello</h1>
+  <!-- <p> 태그는 원래 태그 선택자로 회색이 되게끔 일괄 스타일링 했으나, 별도로 class를 할당(assign)하여 특별한 스타일로 내용물을 바꾸었다. -->
+  <p class="another-color">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi voluptatem dolores distinctio amet et nulla iste!
+    Animi, voluptatibus nesciunt? Sequi corporis dolore necessitatibus placeat corrupti ea, ipsa vel sint at.</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi voluptatem dolores distinctio amet et nulla iste!
+    Animi, voluptatibus nesciunt? Sequi corporis dolore necessitatibus placeat corrupti ea, ipsa vel sint at.</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi voluptatem dolores distinctio amet et nulla iste!
+    Animi, voluptatibus nesciunt? Sequi corporis dolore necessitatibus placeat corrupti ea, ipsa vel sint at.</p>
+  <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi voluptatem dolores distinctio amet et nulla iste!
+    Animi, voluptatibus nesciunt? Sequi corporis dolore necessitatibus placeat corrupti ea, ipsa vel sint at.</p>
+
+</body>
+
+</html>
