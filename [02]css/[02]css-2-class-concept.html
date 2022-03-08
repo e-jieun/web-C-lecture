@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css 활용</title>
+  <style>
+    *{margin:0; padding:0}
+    /* 
+    *(별표, 에스터리스크) 선택자 : 전체선택자라는 뜻으로
+    선택자로 사용할 수 있는 모든 태그를 선택하고 싶을 때 사용하는 특수한 선택자 이다.
+    "모든 태그의 바깥여백과 안쪽여백을 0으로 할당(assign)하겠다." 라는 뜻으로
+    브라우저가 기본으로 스타일링 하는 일련의 여백 설정들을 제작자 마음대로 조절하기 위해 초기설정(initialize)하는 방식이다.
+    */
+    .container {
+      /* 
+      아래의 html markup을 확인하면 <div> 태그 자식으로 <div>태그가 존재한다.
+      부모 태그 <div>만 스타일링 하고 싶기 때문에
+      class 작성법을 활용해서 원하는 태그부분 '만' 스타일링 한 예시이다.
+      */
+      width:100vw;
+      height:100vh;
+      /* 
+      너비와 높이 단위가 vw, vh 로 특이한데 이것을 직역하면 view width, view height 라는 뜻으로
+      "보이는 창의 너비", "보이는 창의 높이"를 뜻한다.
+      100vw라고 작성한다면 : "보이는 창의 너비값이 얼마인진 모르지만 그 100%를 사용하겠다." 라는 뜻이다.
+      50vw라고 작성한다면 : "보이는 창의 너비값에서 50%만을 사용하겠다." 라는 뜻이다.
+      이러한 단위를 '상대값' 단위라고 일컫는다.
+
+      여러가지 가로폭이 존재하는 스마트폰, PC, 태블릿등 멀티디바이스에 '동일한 비율'을 디자인하기 위해
+      웹에서 사용되는 특수한 단위이며, 매우 편리하고 매우 자주 사용하는 단위이다.
+      */
+      background-color: #333;
+    }
+
+    .container div {
+      /* 
+      .container(클래스) 띄어쓰기 div 라는 선택자는
+      "관계선택자"라는 개념으로 사람말로 직역하면
+      "클래스값이 container인 태그의 자식 중 <div> 태그 모두를 선택한다" 라는 뜻이다.
+      
+        정확한 명칭은 '자식선택자' 이다.
+        작성법은 띄어쓰기로 구분한다.
+      
+      */
+      width: 10vw;
+      height: 100vh;
+      /* 
+        현재 보이는 창의 너비에서 10%를 가로폭으로 지정
+        현재보이는 창의 높이에서 100%를 세로폭으로 지정
+      */
+      background-color:gray;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <ul>
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+        <li>item-5</li>
+      </ul>
+    </div>
+  </div>
+  
+
+
+</body>
+</html>
