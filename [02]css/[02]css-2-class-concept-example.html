@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css 활용</title>
+  <style>
+
+
+    /* 
+  
+    차후 자바스크립트를 훈련한뒤 만들 수 있는 인터렉션(상호작용)의 예시입니다.
+
+    1. 의도한 '강조점'이 있는가를 점검하고 
+    2. 그에 따른 인터렉션을 선별
+    3. 프로그래밍을 통해 작업진행
+
+    ※ 해당 페이지는 간단하게 '메뉴를 클릭하면 계속 늘어나는 알고리즘이 담겨 있습니다'
+
+
+    */
+
+    *{margin:0; padding:0}
+
+    .container {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+    }
+
+    .container div {
+      width: 100vw;
+      height: 5vh;
+      background-color:#f1f3f4;
+    }
+    .container div ul {
+      list-style-type: none;
+      width:inherit;
+      height:inherit;
+      display:flex;
+      justify-content:space-around;
+      align-items:center;
+      background-color:#f1f3f4;
+      transition:1s;
+    }
+    .container div ul li {
+      width:5vw;
+      color:salmon;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <ul>
+        <li>item-1</li>
+        <li>item-2</li>
+        <li>item-3</li>
+        <li>item-4</li>
+        <li>item-5</li>
+      </ul>
+    </div>
+  </div>
+  
+  <script>
+    let currentHeightValue = 0;
+    const targetElement = document.querySelector('.container div ul');
+
+    targetElement.addEventListener('click', function() {
+      let getStyle = window.getComputedStyle(targetElement).getPropertyValue('height');
+      // console.log(getStyle.getPropertyValue('height'));
+      let getHeightValue = getStyle.split('px');
+      let getData = Math.round((getHeightValue[0]));
+      console.log(getData);
+      currentHeightValue = currentHeightValue + getData;
+      targetElement.style.height = currentHeightValue + "px";
+
+      
+    });
+
+
+
+
+  </script>
+</body>
+</html>
