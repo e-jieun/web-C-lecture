@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+* {margin: 0; padding: 0;}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ccc;
+}
+
+.container main {
+  width: 100vw;
+  border: 2px solid black;
+}
+/* 첫번째 <main> 태그 */
+.container main:nth-child(1) {
+  height: 50vh;
+  /* margin-bottom: 5px; */
+
+  display: flex;
+  justify-content: center;
+}
+/* 첫번째 <main>태그의 바로 아래 '만' 직계 자식 > 꺽쇠를 통해 선택  */
+.container main:nth-child(1) > div {
+  width:50vw;
+  height:25vh;
+  background-color: #ff6666;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+} 
+.container main:nth-child(1) > div div:nth-child(1) {
+  width:50vw;
+  height:25vh;
+  background-color: blue;
+}
+
+.container main:nth-child(1) > div div:nth-child(2) {
+  width:50vw;
+  height:25vh;
+  background-color: green;
+}
+
+
+
+.container main:nth-child(2) {
+  height: 600px;
+  display: flex;
+  justify-content: center;
+}
+  </style>
+
+</head>
+<body>
+  
+  <div class="container">
+
+    <!-- <main>태그 두개는 검은색라인 -->
+    <main>
+      <div>
+        <div class="test"></div>
+        <div class="test2"></div>
+      </div>
+    </main>
+    <main>
+      <div></div>
+    </main>
+  </div>
+  
+</body>
+</html>
