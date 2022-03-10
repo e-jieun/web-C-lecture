@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>image이동</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ddd;
+    }
+
+    .container div {
+      width: 300px;
+      height: 300px;
+      background-color: salmon;
+      /* transition:1s; */
+
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div></div>
+  </div>
+  <script>
+    const moveTarget = document.querySelector('.container > div');
+
+    let leftValue = 30;
+    moveTarget.style.left = leftValue + "px";
+
+    moveTarget.addEventListener('click', function () {
+
+      let timer = setInterval(function () {
+        if (leftValue < 300) {
+          leftValue = leftValue + 1;
+          moveTarget.style.left = leftValue + "px";
+        } else {
+          moveTarget.style.width = leftValue * 2 + "px";
+          moveTarget.style.height = leftValue * 2 + "px";
+          moveTarget.style.backgroundColor = "skyblue";
+          clearInterval(timer);
+        }
+      }, 16);
+
+    });
+  </script>
+</body>
+
+</html>

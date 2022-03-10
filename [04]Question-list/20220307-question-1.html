@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    h2 {
+      margin: 0px;
+      line-height: 30px;
+      color: rgb(132, 142, 255);
+    }
+
+    p {
+      margin-top: 0px;
+      line-height: 30px;
+    }
+
+    .red {
+      color: red;
+      font-size: 20px;
+    }
+
+    .blue {
+      font-size: 20px;
+      color: blue;
+    }
+
+    .bar {
+      color: rgb(98, 16, 82);
+      font-size: 45px;
+    }
+
+    .soju {
+      color: green;
+    }
+
+    .macju {
+      color: rgb(223, 223, 7);
+    }
+
+    .쓴거 {
+      font-style: italic;
+    }
+
+    .tjfaud {
+      background-color: blanchedalmond;
+    }
+
+    .man {
+      font-style: italic;
+    }
+
+    .tlfgek {
+      border: 10px solid red;
+    }
+
+    .head {
+      text-decoration-line: underline;
+    }
+
+    .rec {
+      position: absolute;
+      width: 267px;
+      height: 408px;
+      left: 76px;
+      top: 169px;
+
+      background: #C4C4C4;
+    }
+
+    .go {
+      transform: translate(300px, 300px);
+    }
+  </style>
+</head>
+<!-- 이미지 이동하는 코드를 보고 복붙해서 이해도 하나도 못하고 작동도 안돼요 저 translate의 값들은 처음 지정한 곳에서 시작해서 300px씩움직이는 건가요? 으아아아악 모르겠어요 제 수준보다 너무 빨리 나가는 걸까요-->
+<!-- 다른페이지의 특정 부분으로 이동할때 그부분으로가라고 표시를 해줘야 하잖아요? 
+    찾아보니까 그 페이지의 원하는 부분에 만약 h1이면 <h1 id="here"> 이라고 표시하면 된다는데 
+    그게 다른 사람이 만든 사이트일때도 제가 가서 지정할 수 있는건가요? 다른 페이지의 특정 부분으로 가는 링크 걸기가 안됩니다!-->
+
+<body>
+  <div class="rec" onclink="move()"></div>
+  <script>
+    function move() {
+      document.querySelector(".rec").classList.add("go");
+    }
+  </script>
+  <h1 class="head">
+    다모여 <span class="bar">바</span>
+  </h1>
+  <p class="man">
+    수만가지의 <a href="https://www.thespruceeats.com/a-to-z-cocktail-recipes-3962886" target="black">칵테일</a>을 여기저기 찾다 지친
+    당신에게!
+  </p>
+  <div class="tlfgek">
+    <h2 class="sohui">
+      손님기능
+    </h2>
+    <p>
+      1.원하는 칵테일의 레시피를 손쉽고 빠르게 찾을 수 있다. <br> 2.그렇게 해서 시도해본 칵테일을 정리, 감상을 메모할 수 있다.<br> 3.각 가게별 시그니처 칵테일을 찾아볼수있다.<br>
+      4.칵테일에 대한 다양한 지식을 알 수 있다.<br> 5.칵테일 초보자에게 맞춤 칵테일을 추천한다.
+    </p>
+  </div>
+  <h2 cals="sohui">
+    사장님기능
+  </h2>
+  <p>
+    1.자신의 <a
+      href="https://www.google.com/search?tbs=lf:1,lf_ui:9&tbm=lcl&sxsrf=APq-WBtr-sO2BVVNxn5vyGBXzV_g1q37UA:1646638717188&q=%EC%B9%B5%ED%85%8C%EC%9D%BC%EB%B0%94&rflfq=1&num=10&sa=X&ved=2ahUKEwifi76ev7P2AhXhr1YBHWLDBeQQjGp6BAgEEAE&biw=1731&bih=867&dpr=1.11#rlfi=hd:;si:;mv:[[36.3639252,127.37902989999999],[36.343806799999996,127.34845609999999]];tbs:lrf:!1m4!1u3!2m2!3m1!1e1!1m4!1u2!2m2!2m1!1e1!2m1!1e2!2m1!1e3!3sIAE,lf:1,lf_ui:9"
+      target="blank">가게</a>를 등록해서 홍보할 수 있다.<br> 2.시그니처 칵테일을 공유할 수 있다.<br> 3.바텐더간의 소통의 장! <br> 4.칵테일을 새로 만들때 기록을 남길 수 있다
+  </p>
+  <h2 class="sohui">
+    여태껏의 칵테일 관련 앱과의 차별점
+  </h2>
+  <p class="tjfaud">
+    1.일단 설명이 <span class="red">한</span><span class="blue">글</span>입니다 그동안 외국앱의 영어때문에 원하는 정보를 얻지 못한 경우가 많으실텐데요 한글이 좋아
+    세종대왕님 만만세<br>2.칵테일의 칵자도 모르는 칵테일 초보자를 위한 맞춤추천을 해드립니다. 진이고 보드카고 술이라고는 <span class="soju">소주</span>와 <span
+      class="macju">맥주</span>밖에 모르는 분들을 위해 어떤술을 베이스로, 어떤재료를 넣어서 무슨맛이 나는 술인지 세세히 알려드리고 취향에 맞는 칵테일을 추천드립니다. 나도 <span
+      class="쓴거">쓴건</span> 싫어<br>3.집에서 시중의 재료만으로도 즐길 수있는 바텐더의 팁을 제공해드립니다. 라임한개를 쓰라는데 라임은 한묶음에 15개씩 들어가 있고, 애플민트잎은 또 어디서
+    구해ㅠ 싶은 사람들! 주변에서 구하기 어려운 술, 재료들을 대체할 수 있는 꿀팁을 제공해 드립니다. 웬만한건 할 수있게 해드립니다. 단, 돈이 없는 건 해결 못해드려요 $~$ <br>4. 재료를 구할 수 있는
+    <a href="https://www.google.com/search?q=%EC%B9%B5%ED%85%8C%EC%9D%BC&sxsrf=APq-WBuW7q62d_sGZvN_SCxqS1R4nqSAnA:1646639360655&source=lnms&tbm=shop&sa=X&ved=2ahUKEwj7oqjRwbP2AhWCr1YBHSejBOMQ_AUoAHoECAMQCg&biw=1731&bih=867&dpr=1.11"
+      target="blank">판매처</a>를 알려드립니다. 큰맘먹고 구하기 어려운 재료들을 사기로 마음 먹었는데, 그런 재료들이 일반인들은 구하기 어렵고, 또 몇몇 것들은 해외배송에, 애초에 주류는 전통주를
+    제외하고는 인터넷 판매가 안되잖아요ㅠㅠ 그런 분들을 위해서 재료를 구할 수 있는 판매처를 온오프라인 가리지않고 알려 드립니다. 발품파는 시간에 한 잔 더 걸쳐야지
+  </p>
+</body>
+
+</html>
