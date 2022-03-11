@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>google</title>
+  <style>
+
+    /* 귀찮은 브라우저 값들 초기설정 바꾸기 */
+    *{margin:0; padding:0;}
+    ul {list-style-type: none;}
+
+    /* container ★★★★★★★★★   문서크기 정의     ★★★★★★★★★★★★★★★★★★★★★★★*/
+    .root {
+      width: 100vw;
+      height: 100vh;
+      background-color: salmon;
+    }    
+
+    /* header ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/
+    .root > div:nth-child(1) {
+      height:10vh;
+      background-color:cadetblue;
+
+      display:flex; /* 가변하는 배치방식 */
+      justify-content: center; /* 가로로 가운데 배치 */
+      align-items: center; /* 세로로 가운데 배치 */
+    }
+    
+    .root > div:nth-child(1) ul {
+      width:90vw;
+      height: 5vh;
+      display:flex; /* 가변하는 배치방식 */
+      justify-content: flex-end; /* 왼쪽으로 끝 배치 */
+      align-items: center; /* 세로로 가운데 배치 */
+    }
+    .root > div:nth-child(1) ul li {
+      margin-right:1vw; /* 메뉴간 간격 넓히기 위한 여백 */
+    }
+
+
+
+    /* main ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/
+    .root > div:nth-child(2) {
+      height:70vh;
+      background-color:darksalmon;
+      /* main 구글 로고부분을 가운데 정렬하기 위해 display 속성부여 */
+
+      /* 부모태그에서 자식태그들의 배치 방식을 지정(할당) 해주었다는 것이 포인트 */
+      /* container 태그와 item 태그의 상관관계를 떠올려 볼 것 */
+
+      display:flex; /* 가변하는 배치방식 */
+      justify-content: center; /* 가로로 가운데 배치 */
+      align-items: center; /* 세로로 가운데 배치 */
+      flex-direction: column; /* dlsplay:flex의 기본 배치방식은 행정렬(row)방식 이기때문에 열(column)방식으로 변경 */
+    }
+    /* h1 태그 스타일링 */
+    .root > div:nth-child(2) h1:nth-child(1) {
+      border: 1px solid red;
+    }
+     /* 검색창 태그 스타일링 */
+     .root > div:nth-child(2) div:nth-child(2) {
+      border: 1px solid blue;
+      width:50vw;
+      height:5vh;
+    }
+
+    .root > div:nth-child(2) div:nth-child(3) {
+      border: 1px solid green;
+      width:20vw;
+      height:5vh;
+    }
+
+    /* footer ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/
+    .root > div:nth-child(3) {
+      height:20vh;
+      background-color:cadetblue;
+      display:flex; /* 가변하는 배치방식 */
+      justify-content: center; /* 가로로 가운데 배치 */
+      align-items: center; /* 세로로 가운데 배치 */
+    }
+    .root > div:nth-child(3) p {
+      width:80vw;
+      text-align:right
+    }
+
+    .root > div:nth-child(3) p span {
+      color:salmon;
+    }
+  </style>
+</head>
+<body>
+  <div class="root">
+    <!-- header★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
+    <div>
+      <ul>
+        <li>menu-1</li>
+        <li>menu-2</li>
+        <li>menu-3</li>
+        <li>menu-4</li>
+      </ul>
+    </div>
+    <!-- main ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ -->
+    <div>
+      <h1>logo</h1>
+      <div>search-field</div>
+      <div>button</div>
+    </div>
+    <!-- footer  ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★-->
+    <div>
+      <p>Lorem, ipsum dolor sit amet consectetur <span>adipisicing elit</span>. Nostrum tempora quaerat ad ratione cum saepe iure voluptas a tempore, eveniet, natus placeat, corrupti sed suscipit commodi velit. Laudantium porro maiores, officiis corrupti sit culpa recusandae ratione rem sunt. Dolor nisi quae nam maiores doloremque voluptatibus enim perspiciatis culpa provident autem.</p>
+    </div>
+  </div>
+</body>
+</html>
