@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    div { /* <div> 태그 모두 선택한 후 스타일링 */
+      width: 200px;
+      height: 50px;
+      background-color: #ccc;
+      margin : 20px;
+    }
+
+    .root {
+      width:max-content;
+      height:max-content;
+      /* 
+      
+      max-content 값 설명
+      
+      .root 입장에서는 <div> 태그가 자식으로 무수히 많다.
+      모두 감싸는 크기로 부모태그(컨테이너)를 지정해주고 싶은데 계산하기 복잡할때
+      최대 아이템의 모든 값(마진값까지)을 선택해주는 편리한 계산값이 존재한다.
+
+      '자식이 몇개인지, 높이가 얼마인진 모르지만, 자식태그의 높이 너비값 전부를 나의 너비와 높이로 하겠다'
+      라는 뜻으로 해석할 수 있다.
+      
+      
+      */
+      border: 1px solid red;
+      background-color: #fff;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div class="root">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>
