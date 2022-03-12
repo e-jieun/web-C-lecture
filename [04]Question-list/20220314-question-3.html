@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+    }
+
+    .container {
+      /* checkpoint : 1 */
+      
+      /* 
+      align-items:center가 세로의 가운데 정렬아닌가요? 왜 justify-content는 작동하는데 align는 안될까요?
+
+      css의 작동 원리를 파악하는 것이 좋습니다. '정상작동'하는 경우인 
+      justify-content는 왜 정상작동하는가를 찾는것이 좋은 훈련방식입니다.
+
+      개발자도구를 통해 .container의 가로값을 확인해보는 것이 좋은 접근입니다.
+      확인한다면 "가로폭은 브라우저에 의해 정해졌지만" 세로폭은 정해지지 않았다는 것을 알 수 있습니다.
+
+      값이 정해지지 않아서 어디에 가운데를 놓아야 할지 기준이 잡히지 않아 작동되지 않는다는 흐름을 확인할 수 있다면 정확히 이해한 다고 할 수 있습니다.
+
+      height: 100vh; 와 같은 세로값을 지정해준다면 정상작동합니다.
+      여기서 작동을 안했을때 개발자도구를 훑는 연습이 매우중요합니다.
+      수많은 의도치 않는 에러들을 발견하고 이때 당황하지 않는 접근방식이 중요합니다.
+
+      1. 개발자도구를 찾아 원인을 파악해본다.
+      2. 해당키워드의 표준문서를 확인해 '제대로된 동작원리'를 숙지한다.
+      3. 문제를 조정한다.
+
+      1,2,3번 조치방식을 몸에 체득하시는 것을 권합니다.
+
+      */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* align-items:center가 세로의 가운데 정렬아닌가요? 왜 justify-content는 작동하는데 align는 안될까요? */
+    }
+
+    .container div {
+      /* margin-top: 300px; */
+      width: 600px;
+      height: 200px;
+      text-align: center;
+      border: 1px solid #ff0000;
+      
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat ad asperiores nisi nulla reprehenderit hic nam,
+      sapiente culpa labore ipsum error soluta iste maiores dignissimos aperiam voluptas aut perspiciatis at.<br> Nemo
+      velit voluptates sapiente aspernatur tempore numquam est voluptatibus, doloremque id eum tenetur sint
+      exercitationem quibusdam quos, illo, porro amet labore quas tempora. Maxime quibusdam alias voluptatibus
+      perspiciatis, mollitia nostrum?
+    </div>
+
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      }
+      ul{
+        list-style-type: none;
+      }
+      .root {
+        width: 100vw;
+        height: 100vh;
+        background-color: aqua;
+      }
+      /* -----------------------------header---------------------------------------------- */
+      /* align이 가로인지 justify가 가로인지... */
+
+      /* checkpoint : 1
+
+      display:flex; 속성의 하위속성인
+      justify-content
+      align-items
+      속성은 display:flex의 축(axis) 속성에 따라 가로,세로가 결정됩니다.
+      flex-direction <-- 이라는 속성에 기인하는데
+      기본값은 작성하지 않아도 주축(main axis) 방식이 적용되기 때문에 결과적으로
+      flex-direction:row; 값이 자동적용 됩니다.
+      row값 일때는 justify-content가 가로, align-items가 세로를 담당합니다.
+      반대의축인 교차축(cross axis)을 주축으로 바꾸고 싶을때는
+      flex-direction:column(열);로 기본값을 바꾸어 주면됩니다.
+      주축이 바뀌기 때문에 justify-content는 세로, align-items는 가로가 됩니다.
+
+      
+      
+      */
+
+      .root>div:nth-child(1) ul {
+        height:10vh;
+        background-color: antiquewhite;
+        display: flex;
+        justify-content:flex-end;
+        align-items:center;
+      }
+      .root>div:nth-child(1) li{
+        margin-right:1vw;
+      }
+      /* ---------------------------------main----------------------------------------------- */
+
+      .root>div:nth-child(2){        
+        background-color: blue;
+        height:40vh;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      .root> div:nth-child(2) h3:nth-child(1){
+        border: 1px solid red;
+      }
+      .root> div:nth-child(2) p:nth-child(2){
+        border: 1px solid black;
+        width:80vw;
+        height: 5vh;
+      }
+      .root> div:nth-child(2) p:nth-child(3){
+        border:1px solid green;
+        width:70vw;
+        height:5vh;
+      }
+          /* footer ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★*/
+    .root > div:nth-child(3) {
+      height:20vh;
+      background-color:cadetblue;
+      display:flex; 
+      justify-content: center; 
+      align-items: center; 
+    }
+    .root > div:nth-child(3) p {
+      font-size: 3px;
+      width:80vw;
+      text-align:right
+    }
+
+    .root > div:nth-child(3) p span {
+      color:salmon;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="root">
+    <!-- header -->
+    <div>
+    <ul>
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+      <li>menu4</li>
+    </ul>
+  </div>
+  <!-- main -->
+
+    <div>
+      <h3>logo</h3>
+      <p>search field</p>
+      <p>base</p>
+    </div>
+    <div>
+      <p>Lorem, ipsum dolor sit amet consectetur <span>adipisicing elit</span>. Nostrum tempora quaerat ad ratione cum saepe iure voluptas a tempore, eveniet, natus placeat, corrupti sed suscipit commodi velit. Laudantium porro maiores, officiis corrupti sit culpa recusandae ratione rem sunt. Dolor nisi quae nam maiores doloremque voluptatibus enim perspiciatis culpa provident autem.</p>
+    </div>
+<!-- main은 모양이 안나오는 글자전용태그인가요? -->
+
+<!-- 
+  checkpoint : 2 
+  <main> 태그는 결과적으로 <div> 태그와 완전히 동일한 태그입니다.
+  <main> 과 같은 태그가 여러가지 있으며 강의 예정입니다.
+
+
+ -->
+
+<!-- nth-child()는 앞에 띄어쓰기 꼭지우기 인식됨 -->
+
+<!-- 
+
+  checkpoint : 3
+
+  주어 목적어가 분명치 않아 어떤 부분이 안되는 것인지 헷갈리는데
+  selector:nth-child() <--와 같이 콜론을 사용하는 선택자인경우 띄어쓰기를 하지 않는 것이 작성법 입니다.
+
+
+
+ -->
+
+
+
+  </div>
+</body>
+</html>

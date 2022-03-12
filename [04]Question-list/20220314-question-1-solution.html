@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Google</title>
+</head>
+<style>
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	ul {
+		list-style-type: none;
+	}
+
+	.container {
+		background-color: salmon;
+		width: 100vw;
+		height: 100vh;
+	}
+
+	.container div:nth-child(1) {
+		width: 100vw;
+		height: 10vh;
+		background-color: darkcyan;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border: 1px solid green;
+
+
+	}
+
+	/* justify-content를 center로 주고 ul justify-content를 flex-end를 해야하는지 / div:nth-child(1)의 justify-cotent를 flex-end로 주면 되지 않나
+		> ※일단 작동이 안되고 있음.
+		→width=100vw를 할당시켜, 기준점을 잡아 해결하였음. */
+	.container div:nth-child(1) ul {
+		width: 100vw;
+		height: 5vh;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		border: 1px solid red;
+	}
+
+	/* container 의 첫 번째 division의 ul */
+	.container ul li {
+		margin-right: 2vw;
+	}
+
+	.container > div:nth-child(2) {
+		/* check point : 1  */
+		/* >(꺽쇠) 로 직계자손 만 선택하게끔 변경 */
+		height: 60vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+
+
+
+	}
+/* check point : 2 */
+/* <div> 태그의 모든 글씨는 글자 정렬을 가운데로 놓기로 명령 */
+	.container>div:nth-child(2) div {
+		text-align: center;
+	}
+
+	.container>div:nth-child(2) h1:nth-child(1) {
+		font-weight: bolder;
+		font-size: 2rem;
+		border: 1px solid red;
+	}
+
+	.container>div:nth-child(2) div:nth-child(2) {
+		border: 1px solid blue;
+		width: 70vw;
+		height: 7vh;
+	}
+
+	/* 가운데 정렬이 되어있는데, "얘만" */
+	.container div:nth-child(2) div:nth-child(3) {
+		border: 1px solid green;
+		width: 50vw;
+		height: 5vh;
+	}
+
+	/* (3) 얘만 어떤 속성을 먹지 않은건지 child(2)만 속성을 먹은건지 분간이 안되는 상황임.
+		→ 개발자 도구를 확인해 본 결과 container 2번째 division의(2)만 속성이 한번 더 먹어들어간 듯 하다. */
+	.container>div:nth-child(3) {
+		justify-content: center;
+		align-items: center;
+		display: flex;
+		background-color: darkcyan;
+		height: 30vh;
+	}
+
+	.container>div:nth-child(3) p {
+		width: 80vw;
+		align-items: center;
+		justify-content: center;
+		text-align: right;
+	}
+
+	.container div:nth-child(3) p span {
+		color: salmon
+	}
+</style>
+
+<body>
+	<div class="container">
+		<div>
+			<ul>
+				<li>menu-1</li>
+				<li>menu-2</li>
+				<li>menu-3</li>
+				<li>menu-4</li>
+			</ul>
+		</div>
+		<div>
+			<h1>logo</h1>
+			<div>search-field</div>
+			<div>button</div>
+		</div>
+		<div>
+			<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quae <span>quidem dolore obcaecati</span> omnis
+				totam, odit adipisci ab? Fuga quidem voluptatum ut nihil optio similique, ipsam impedit, reiciendis esse beatae
+				dicta eveniet vel possimus repellat, vero alias labore? Rem, voluptatum molestias eveniet repudiandae cumque
+				accusamus veniam. Sapiente eaque est vero assumenda.</p>
+		</div>
+	</div>
+</body>
+
+</html>

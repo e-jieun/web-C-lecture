@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    ul {list-style-type: none;}
+
+    .root{
+      width: 100vw;
+      height: 100vw;
+      background-color: aliceblue;
+    }
+
+    .root div:nth-child(1) {
+      height: 30vh;
+      background-color: antiquewhite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .root div:nth-child(1) ul{
+      width:90vw;
+      height: 5vh;
+      display:flex;
+      justify-content: center; 
+      align-items: center;
+    }
+    
+
+
+    .root div:nth-child(1) ul li{
+      margin-top: 15vh;
+      margin-left: 10vw;
+      text-align: center;
+      /* cursor: pointer; */
+    }
+    /* list각각에 외곽선이 아닌 전체 외곽선 넣고 싶은데 ul밑에 자식을 만들어야 하는건지? */
+
+    ul li{
+      cursor: pointer;
+      transition: 1s ;
+    }
+
+    ul li :hover{
+      margin: 5vw;
+      color: blue;
+    }
+    /* li에 커서 포인트와 함께  hover를 주고싶은데 각각 집어 넣어도 안되고 전체 li에 속성을 부여해도 안됨 */
+
+
+    .root div:nth-child(2){
+      height: 50vh;
+      background-color: azure;
+      display:flex; 
+      justify-content: center; 
+      align-items: left; 
+      flex-direction: column;
+    }
+
+
+
+    .root div:nth-child(2) p{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 20vh;
+      height: 20vh;
+      border: 1px solid black;
+      border-radius: 50%;
+      line-height: 20vh;
+      margin-left: 20vh;
+      margin-top: 20vh;
+      margin-bottom: 10vh;
+      cursor: pointer;
+    }
+
+    /* 다른 내용들은 창 변화에 따라 변하는데 가로 세로 다 vh로 통일 했는데 원은 변화가 없음  */
+
+    .root div:nth-child(2) ul{
+      height: 5vh;
+      width: 100vw;
+      background-color: beige;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .root div:nth-child(2) ul li{
+      margin-left: 10vw;
+      /* cursor: pointer; */
+    }
+
+    .root div:nth-child(3) p{
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  
+  <div class="root">
+    <div>
+        <h1>Let's trip</h1>
+        <ul>
+            <li>home</li>
+            <li>my trip style</li>
+            <li>travel route</li>
+            <li>trip information</li>
+        </ul>
+    </div>
+    <div>
+        <p>my trip style  -> </p>
+      <div>
+        <ul>
+          <li>country</li>
+          <li>city</li>
+          <li>date</li>
+          <li>trip style</li>
+        </ul>
+      </div>
+    </div>
+    <div>
+      <p> trip information + image </p>
+    </div>
+  </div>
+
+</body>
+</html>
