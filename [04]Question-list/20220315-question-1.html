@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin:0;
+      padding:0;
+    }
+    .re{
+      width: 100vw;
+      height: 100vh;
+      border: 4px solid red;
+      /* 왜 여기에 width와 height를 100v로 주면 선이 안보일까요? 선이 나오기는 하는데 전체로 보이지 않아요 margin을 안줘서 그런가요? */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .re>div{
+      width: 90vw;
+      height: 90vh;
+      background-color: aquamarine;
+      display: flex;
+      justify-items: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .re>div>div{
+      width:70vw;
+      height:5vh;
+      background-color: white;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+    }
+    /* .re>div>div:nth-child(4) {
+      list-style: none;
+    }
+     */
+
+    .re>div>div:nth-child(4) ul {
+      list-style-type: none;
+    }
+    /* list의 형식을 유지하면서 점만 없애고 싶은데 어떻게 해야하나요? div:nth-child(4)>ul하면 점이 살아나고 ul를 때면 li의 형식이 없어집니다. */
+    /* 
+    check point : 1
+    <li> 태그 본연의 특성이 존재합니다. <ul>순서가 없는 <ol> 순서가 있는 "목록의 형식을 지정해주는" 컨테이너 태그가 존재합니다. 모양으로 따로 존재하지 않아도 사용하는 대표적인 경우입니다.
+    
+    
+    
+    */
+    
+    
+    
+    
+  </style>
+</head>
+<body>
+  <div class="re">
+    <div>
+      <div>logo</div>
+      <div>id-field</div>
+      <div>pass-field</div>
+      <div>
+        <ul>forgot password?
+          <li>yes</li> 
+          <li>no</li>
+        </ul>
+      </div>
+      <div>login button</div>
+      <div>sign up button</div>
+      <div>QR rect</div>
+      <div>copyright text</div>
+    </div>
+  </div>
+</body>
+</html>
