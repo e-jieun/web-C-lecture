@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 브라우저 기본값 제거 */
+    *{margin:0; padding:0; box-sizing: border-box;}
+
+    .root {
+      /* .root은 모든 태그를 감싸는 부모태그 */
+      width: 100vw;
+      height: 100vh;
+      /* 브라우저의 가로값, 세로값을 100% 모두사용하겠다. */
+
+      border: 5px solid red;
+      /* 테스트용 외곽선 */
+
+      
+      display:flex;
+      justify-content:center;
+      align-items: center;
+      /* 배경색(초록)을 가운데 놓기 위해 display값 변경 */
+      
+    }
+
+    .root .container {
+      /* 배경색(초록) 사이즈와 배경색 설정 */
+      width:95vw;
+      height: 90vh;
+      background-color: #888;
+
+      display:flex;
+      /* flex-direction의 기본값은 행(가로) row 방향이나, 반대 방향으로 바꾸었기 때문에 */
+      /* 
+        justify-content와 align-items 값의 성격이 반대가 되었다.      
+      */
+      justify-content:space-around;
+      /* 적절히 배분하여 놓기 위한 값 space-around */
+      align-items: center;
+      flex-direction:column;
+      /* 자식들(item)의 배치 방향을 '열(세로)'로 놓겠다는 하위 속성 */
+    }
+
+    .root .container div {
+      /* .root, .container 자식들중 <div> 태그 모두 한번에 스타일링 진행 */
+      width: 70vw;
+      height: 5vh;
+      background-color: #fff;
+      text-align: center;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="root">
+    <div class="container">
+      <div>logo</div>
+      <div>id-field</div>
+      <div>pass-field</div>
+      <div>forgot password?</div>
+      <div>login button</div>
+      <div>sign up button</div>
+      <div>QR rect</div>
+      <div>copyright text</div>
+    </div>
+  </div>
+</body>
+</html>
