@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>drawer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+
+    .root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+
+      /* flex */
+      display: flex;
+      justify-content: flex-start;
+      /* justify-content : .nav 부분을 왼쪽으로 정렬
+      
+      */
+      /* justify-content:center; */
+      align-items: center;
+    }
+
+    .root>div {
+      width: 20vw;
+      height: 100vh;
+      background-color: #fff;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .root>div>ul {
+      /* root 클래스의 '바로아래자식',<div>태그, 그'바로아래자식' <ul> 태그 라고 일부러'명시하듯이' 선택자를 작성하였다. */
+      /* 
+        마크업상으로는 직계자식 선택자를 사용하지 않더라도 정상작동 되는 구조이지만, 유지보수 관점에서 습관이 붙으면 매우 큰 편의를 볼 수 있고, 
+        선택자'만' 보더라도 이것이 의미하는 바를 직관적으로 볼 수 있기 때문에 자주 사용하는 편이다.
+
+      */
+      width: inherit;
+      height: inherit;
+      /* 
+      inherit값 : inheritance(상속) 받겠다는 뜻으로
+      해당 선택자의 부모태그의 값을 그대로 가져온다는 의미
+      
+      레이아웃 구성할 때 , 특히 flex 와 같은 속성들은 "가로 및 세로"의 기준값이 주어져야 반영이 되는 특징이 있기 때문에
+      위와 같이 상속을 그대로 받고자 하는 경우가 잦다.
+      width:inherit;
+      height:inherit;
+      위 두개의 값을 잠시 주석처리 하는등 임시로 삭제해보면 아래의 display:flex; 속성이 제대로 작동하지 않는 것을 확인할 수 있다.
+      */
+      
+      /* flex */
+      display: flex;
+      
+      justify-content:center;
+      align-items: flex-end;
+      /* 정렬 방식을 아래의 flex-direction으로 바꾸었기 때문에 정렬속성인 align-items(교차축정렬)로 오른쪽 정렬하는 방식을 적용했다.  */
+      flex-direction: column;
+      /* 정렬 방식을 세로(열) 방식으로 바꾸었다. */
+    }
+
+    .root>div>ul li {
+      /* <ul> 컨태이너 태그의 자식인 li 는 직계자식 선택자를 사용하지 않고, '자손' 선택자를 사용했다.  */
+      /* 
+        이러한 방식으로 작성했을때 '모두 일괄'적용할 것들을 이곳에 작성했다는 것을 간접적으로 말해주는 것과 같다.
+        세부 디자인 변경점은 아래에 재할당 해주겠다. 라는 암시적인 표현이기도 하다.      
+      */
+      margin: 1vw;
+    }
+
+
+    .root>div>ul li:nth-child(4) {
+      color:blue;
+    }
+    /* 
+
+      .root>div>ul li{} 선택자는 <li> 태그라면 모두 일괄 적용
+      .root>div>ul li:nth-child(4) {} <-- 과 같은 순서 선택자는 개별 적용 하겠다는 제작자의 의도를 한 눈에 알수 있다.
+
+      따라서 일괄적용한다음 개별적용으로 두번 값을 부여해도 관습적으로 '일괄적용' 한 선택자의 스타일링은 언제든지 바뀔 수 있다는 전제가 깔려 있다.
+    
+    */
+    .root>div>ul li:hover {
+      /* 
+      마우스오버 했을때 : 해당 요소의 '좌표'로 마우스 포인터 좌표가 '맞아떨어졌을때'로 바꾸어 생각할 수 있다. 
+      */
+      
+      transition:0.5s;
+      /* 
+      비교적 최근에 추가된 transition 속성(attribute)은 직역하면 '화면전환' 이라는 의미를 가지고 있다.
+      브라우저 로직상으로는 'transition 값이 적용된 태그 요소는 지정된 값을 일단 저장한다' -> '그다음 변화된 값만큼 무언가 동작시키겠다' 라는 의미이다.
+      움직이는 것 뿐만 아니라 변화되는 값이면 거의 대부분 '서서히 사라지는' 등의 -> 애니메이션 동작처럼 '연출' 할 수 있다. 
+      
+      과도한 남용은 사용자에게 어지러움을 줄 수 있으며, 더 나아가서 자바스크립트 제어를 하는 레벨에서는 자연스럽게 사용하지 않게 되는 변화를 맞는다.
+      */
+      margin:1.2vw;
+      /* 
+      매우 약간의 동작만 부여하였다. 
+      ※ 애니메이션(동작연출)이 과할수록 시선을 컨텐츠에 집중시킬 수 없게 하는 특징이 있기 때문에 사용할때는 선택적으로, 의도에 근거하여 '연출'하는 것이 중요하다.
+      */
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="root">
+    <div class="nav">
+      <ul>
+        <li>items-1</li>
+        <li>items-2</li>
+        <li>items-3</li>
+        <li>items-4</li>
+        <li>items-5</li>
+        <li>items-6</li>
+        <li>items-7</li>
+        <li>items-8</li>
+        <li>items-9</li>
+        <li>items-10</li>
+      </ul>
+
+    </div>
+
+  </div>
+</body>
+
+</html>
