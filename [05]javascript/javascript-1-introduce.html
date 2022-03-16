@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- 작성을 뜻하는 <script>태그를 사용한다. -->
+<!-- 
+
+  일련의 프로그래밍 문법들이 작성되어있지만, 마크업이라고 생각하고 확인해보면,
+  
+  아무런 사용방법이나 문법을 모르지만 직관적으로 "읽을 수 있는지" 확인해본다.
+  "무언가 추측할 수 있다면" -> 작성법에 대해 접근하는 것도 어려운 일이 아니다.
+
+  -->
+
+  <script>
+    const menuNameArray = ["피카츄", "라이츄", "파이리", "꼬부기", "버터풀", "야도란", "피존투", "또가스"];
+    const root = document.getElementById("root");
+    const makeUl = document.createElement("ul");
+    
+    for (let i = 0; i < menuNameArray.length; i++) {
+      let childLi = document.createElement("li");
+      childLi.style.margin = "1vw";
+      childLi.textContent = menuNameArray[i];
+      makeUl.appendChild(childLi);
+    };
+    root.appendChild(makeUl);
+    // javascript styling
+    makeUl.style.listStyleType = "none";
+    makeUl.style.margin = "0";
+    makeUl.style.padding = "0";
+
+  </script>
+</body>
+
+</html>
