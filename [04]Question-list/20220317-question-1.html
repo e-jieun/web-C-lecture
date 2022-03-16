@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .root {
+      width: 100vw;
+      height: 100vh;
+      background-color: antiquewhite;
+      /* ----------header----------- */
+    }
+
+    .root>div:nth-child(1) {
+      width: 100vw;
+      height: 10vh;
+      border: 1px solid red;
+    }
+
+    .root>div:nth-child(1)>div {
+      width: 3vw;
+      height: 1vh;
+      background-color: tomato;
+      margin: 10px;
+    }
+
+    /* ----------main-------------- */
+    .root>div:nth-child(2) {
+      width: 100vw;
+      height: 70vh;
+      border: 1px solid black;
+    }
+
+    .root>div:nth-child(2)>div:nth-child(1) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /*왜 div:nth-child(2)>div:nth-child(1)에만 display:flex;를 넣었는데 div:nth-child(2)의 자식에 다 적용되는 건가요?*/
+
+    /* 위의 작성은 정상 반영되는 속성부여인데 '다 적용되는 것'에서  의도치 않게 적용된 부분이 어딘지 확인 부탁드립니다.  */
+
+
+    .root>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)
+
+    /*div:nth-child(3) 여기에 한꺼번에 달순 없나요?*/
+    /* 
+    의도하시는 작성을 전체를 보여주시면 질문에 답해드리는데 큰 도움이 되겠습니다. 
+    div:nth-child(3)에 해당되는 선택자가 많습니다 ㅠㅠ
+
+    예시 : "366번 행에 있는 태그에 가운데 정렬을 하려고 이러한 시도를 해봤습니다. 하지만 왼쪽으로 치우치는 현상이 발생하는데 그 코드는 이것입니다." 라고 설명을 붙여주신다면 더욱 원활한 해답을 해드릴 수 있을 것 같습니다. 코드의 특성상 '이것'을 찾아내기가 보통 어려운것이 아니랍니다 ㅠㅠ
+
+    */
+
+      {
+      width: 10vw;
+      height: 20vh;
+      background-color: #c8c8c8;
+    }
+
+    .root>div:nth-child(2)>div:nth-child(1)>div:nth-child(2) {
+      width: 15vw;
+      height: 30vh;
+      background-color: #c8c8c8;
+      margin: 10px;
+    }
+
+    .root>div:nth-child(2)>div:nth-child(1)>div:nth-child(3) {
+      width: 10vw;
+      height: 20vh;
+      background-color: #c8c8c8;
+    }
+
+    .root>div:nth-child(2)>div:nth-child(2) {
+      width: 100vw;
+      height: 10vh;
+      border: 2px solid black;
+    }
+
+    /* ---------bottom------------- */
+    .root>div:nth-child(3) {
+      width: 100vw;
+      height: 20vh;
+      border: 1px solid saddlebrown;
+    }
+
+    /* root로 화면 크기를 정했는데 밑에 흰 공간이 남아요. 왤까요? vw와 vh로 설정하면 화면이 어떻게 변하든 반응하는거 아닌가요?*/
+  </style>
+</head>
+
+<body>
+  <div class="root">
+    <!------------ header ------------>
+    <div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <!------------- main ------------>
+    <div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <!------------ bottom ------------>
+    <div></div>
+
+  </div>
+</body>
+
+</html>
