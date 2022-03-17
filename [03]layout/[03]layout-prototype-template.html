@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #c4c4c4;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mobile {
+      width: 428px;
+      height: 926px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="root">
+    <div class="mobile">
+
+
+
+    </div>
+  </div>
+      <script>
+        const studentList = [];
+
+        studentList.push("강사 공욱재");
+        studentList.push("권수연");
+        studentList.push("김주은(11월)");
+        studentList.push("김주은(12월)");
+        studentList.push("김준식");
+        studentList.push("김지현");
+        studentList.push("손만충");
+        studentList.push("송주현")
+        studentList.push("오요섭");
+        studentList.push("이누리");
+        studentList.push("이성윤");
+        studentList.push("이아진");
+        studentList.push("이지은");
+        studentList.push("이채연");
+        studentList.push("임성민");
+        studentList.push("장우진");
+        studentList.push("장준형");
+        studentList.push("정수임");
+        studentList.push("정유미");
+        studentList.push("채지훈");
+        studentList.push("임소희");
+  
+        const mobile = document.querySelector('.mobile');
+        console.log('mobile');
+        console.log(studentList); 
+        const ul = document.createElement('ul');
+        ul.style.listStyleType = 'none';
+
+        for(let i =0; i < studentList.length; i++) {
+          let li = document.createElement('li');
+          li.textContent = studentList[i];
+          li.style.margin = "1vw";
+          ul.appendChild(li);
+        }
+        
+        mobile.appendChild(ul);
+        mobile.style.padding = "2vw";
+        
+
+        ul.addEventListener('click', (e) => {
+          e.target.style.color = "blue";
+          e.target.style.border = "1px solid blue";
+        })
+
+
+
+      </script>
+</body>
+
+</html>
