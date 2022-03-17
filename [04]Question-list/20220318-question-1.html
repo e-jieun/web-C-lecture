@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #c4c4c4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mobile {
+      width: 428px;
+      height: 926px;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /*--------------------- header -------------------------*/
+    .re {
+      width: 413px;
+      height: 100px;
+      border: 2px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .re>div {
+      width: 386px;
+      height: 95px;
+      background-color: #c4c4c4;
+    }
+
+    /*---------------------- main --------------------------*/
+    .mobile>div:nth-child(2) {
+      width: 413px;
+      height: 210px;
+      border: 2px solid blue;
+    }
+
+    .mobile>div:nth-child(2)>div:nth-child(1) {
+      display: flex;
+      align-items: center;
+    }
+
+    .mobile>div:nth-child(2)>div:nth-child(1) div {
+      background-color: #c4c4c4;
+      width: 400px;
+      height: 40px;
+      margin: 10px;
+    }
+
+    .mobile>div:nth-child(2)>div:nth-child(2) div {
+      width: 80px;
+      height: 100px;
+      background-color: #c4c4c4;
+      margin: 30px;
+      margin-left: 10px;
+    }
+
+    .mobile>div:nth-child(2)>div:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    /*----------------------- bottom ----------------------*/
+    .mobile>div:nth-child(3) {
+      width: 413px;
+      height: 600px;
+      border: 2px solid black;
+    }
+
+    .mobile>div:nth-child(3)>div {
+      width: 413px;
+      height: 300px;
+      border: 2px red solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mobile>div:nth-child(3)>div:nth-child(1)>div {
+      width: 170px;
+      height: 140px;
+      background-color: #c4c4c4;
+      margin: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mobile>div:nth-child(3)>div:nth-child(2) div {
+      width: 170px;
+      height: 140px;
+      background-color: #c4c4c4;
+      margin: 20px;
+    }
+
+    p {
+      margin-bottom: 250px;
+      margin-right: 100px;
+    }
+
+    /* 여기 스타일의 p에  margin을 넣으면 <p>주변 칵테일 바</p> 에도 영향을 미쳐야하지 않나요? */
+    /* 
+    
+    <p>주변 칵테일 바</p>에 margin-bottom, margin-right 가 적용되었으면 좋겠다는 물음이시죠?
+    적용이 되는지 안되는지가 궁금하다는 물음이시라면 -> 개발자 도구를 확인했을때 잘 작동하는 것을 확인 할 수 있습니다.
+
+    주어 목적어가 필요합니다. 예를들어
+    "p태그에 마진값을 넣어서 회색박스 밖으로 이동을 시키고 싶은데 원하는 데로 이동을 안되고 있습니다. 이동시켜서 어디위에 위치했으면 좋겠습니다". 로 여쭤주시면 답을 드리기가 참 좋습니다!
+    "원래 이거 이런거 아닌건가요 왜안돼죠?" 방식의 질문은 '되는데?' 부터 시작하기때문에 명확한 답을 드리기가 어려워요 ㅠㅠ 
+    짐작으로는 '이동' 과 '레이아웃 배치방식인 마진'은 다른개념이고, 여태까지는 배치방식만을 교육을해서 이동이 원활히 안되는 것이 정상입니다.  
+    
+    
+    */
+
+
+    .test {
+      /* width:100px; */
+      /* height:100px; */
+      border: 2px solid black;
+    }
+    
+    
+  </style>
+</head>
+
+<body>
+  <div class="root">
+    <div class="mobile">
+
+      <div class="re">
+        <div></div>
+      </div>
+
+      <div>
+        <div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+
+      <div>
+
+        <div>
+
+          <div>
+            <p class="test">맞춤추천</p>
+          </div>
+          <div></div>
+        </div>
+        <div>
+          <div>
+            <p class="test">주변 칵테일바</p>
+          </div>
+          <div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+
+</html>
