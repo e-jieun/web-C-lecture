@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    .root {
+      width:100vw;
+      height:300vh;
+      border: 1px solid blue;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .root div {
+      width: 100px;
+      height: 100px;
+      background-color: #c4c4c4;
+      border: 1px solid red;
+    }
+
+    .root div:nth-child(3) {
+      /* margin-top: 10vh; */
+      /* position:relative;
+      top:10px;
+      left:10px; */
+      margin-left:10px;
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+  <div class="root">
+    <div>items-1</div>
+    <div>items-2</div>
+    <div>items-3</div>
+    <div>items-4</div>
+    <div>items-5</div>
+  </div>
+</body>
+
+</html>
