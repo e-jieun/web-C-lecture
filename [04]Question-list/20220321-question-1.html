@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      background-color: #c4c4c4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .root {
+      width: 428px;
+      height: 926px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    /* ------------header----------------------------------------------------------------------------------- */
+    .root>div {
+      border: 2px solid lawngreen;
+    }
+
+    .root>div:nth-child(1) {
+      width: 424px;
+      height: 300px;
+    }
+
+    .root>div:nth-child(1)>div:nth-child(-n+3) {
+      width: 38px;
+      height: 5px;
+      background-color: #c4c4c4;
+      margin-top: 9px;
+      margin-left: 5px;
+    }
+
+    .root>div:nth-child(1)>div:nth-child(4) {
+      width: 424px;
+      height: 226px;
+      background-color: #c4c4c4;
+      margin-top: 30px;
+    }
+
+    /* ------------main-------------------------------------------------------------------------------------- */
+    /* .root>div:nth-child(2){
+      width: 424px;
+      height:212px;
+      display: flex;
+      flex-direction: row;
+    }
+    .root>div:nth-child(2)>div:nth-child(1){
+      width:386px;
+      height:51px;
+      background-color: #c4c4c4;
+      position:relative;
+      z-index: 1;
+      left: 100px;
+    }
+    .root>div:nth-child(2)>div:nth-child(n+2){
+      width: 88px;
+      height: 90px;
+      background-color: #c4c4c4;
+      position: relative;
+      top:100px;
+      right:100px;
+      margin:10px;
+      z-index: 2;
+    } */
+
+
+
+
+    /* 왜 .root>div:nth-child(2)>div:nth-child(n+2)릐 크기를 변경하면 .root>div:nth-child(2)>div:nth-child(1)의 크기도 변하나요? */
+    /* 여기서 .root>div:nth-child(2)>div:nth-child(1)과 .root>div:nth-child(n+2)를 지금처럼 div를 새로 나누지 않고 병렬방식을 다르게 할 수 있을까요? */
+    /* 
+    
+    /* check point : 1 */
+
+    .root>div:nth-child(2) {
+      /* 컨테이너 사이즈 지정 */
+      width: 424px;
+      height: 300px;
+      /* height 값을 다 계산하지 않고 넉넉히 변경하였습니다. */
+      /* 이유는 flex 값은 언제든지 가변하는 상태에서도 작동해야되기때문에 절대적인 값인 pixel 보다는 비율이 더욱 중요하기 때문입니다.  */
+
+
+      display: flex;
+      flex-direction: column;
+      /* 정렬방향을 바꾸어주었습니다. row -> column */
+      justify-content: space-around;
+      /* 정렬방향에 맞추어 '적절히' 나누어 배치하는 일련의 값 space-around 부여 */
+      align-items: center;
+
+      border: 1px dashed salmon;
+      /* 영역확인용 외곽선 */
+    }
+
+    .root>div:nth-child(2)>div:nth-child(1) h1 {
+      border: 1px dashed salmon;
+      /* 영역확인용 외곽선 */
+
+    }
+
+
+    .root>div:nth-child(2)>div:nth-child(2) {
+      width: inherit;
+      /* display:flex 와같은 유연한 배치방식은 '기준 사이즈가 필요합니다.' */
+      /* 따라서 썸네일 요소를 가로 정렬하기 위해 가로폭 사이즈를 정해주었습니다. */
+      /* inherit은 부모의 크기를 그대로 '상송'받겠다는 뜻으로 width:424px 과 같습니다. */
+
+
+
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      border: 1px dashed salmon;
+      /* 영역확인용 외곽선 */
+
+    }
+
+
+    .root>div:nth-child(2)>div:nth-child(2)>div {
+      width: 100px;
+      height: 100px;
+      background-color: #c4c4c4;
+
+      border: 1px dashed salmon;
+      /* 영역확인용 외곽선 */
+    }
+
+
+
+
+
+
+    ----------bottom--------------------------------------------------------------------------------------- */ .root>div:nth-child(3) {
+      width: 424px;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .root>div:nth-child(3)>div {
+      width: 410px;
+      height: 188px;
+      border: 1px solid blue;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .root>div:nth-child(3)>div:nth-child(1)>div {
+      width: 150px;
+      height: 120px;
+      background-color: #c4c4c4;
+      margin: 10px;
+      margin-left: 20px;
+    }
+
+    .root>div:nth-child(3)>div:nth-child(2)>div {
+      width: 400px;
+      height: 140px;
+      background-color: #c4c4c4;
+      margin: 10px;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="root">
+
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div>추천 칵테일</div>
+      </div>
+      <!--       
+      <div>
+        <div>search</div>
+        <p></p>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div> -->
+
+      <!-- root> div:nth-child(2)  -->
+      <!-- check point : 2 -->
+
+      <!-- 
+        위에 작성하신 컨테이너 div 요소는 4개의 직계자식을 가지고 있는 구조입니다.
+        <div>,<p>, <div>, <div> 
+        display:flex; 특성상 행과 열 둘중 하나를 선택해야하는 부분에서 '한번의 작성으로' 한개는 열방향, 한개는 행방향으로 정렬하기는 어렵습니다.
+
+        아래의 구조를 확인해보면
+        컨테이너 <div>는 단 2개의 자식 <div> 만 가지게끔 구조를 바꾸었습니다.
+        두개의 자식을 위아래로 배치하면 첫번째 단계는 끝난 상태이고,
+        그 아래의 자식은 '따로' 다시 지정해주는 것이 요점이라 할 수 있겠습니다.
+
+
+
+    .container{
+      width:100vw;
+      height:100vh;
+      background-color: #c4c4c4;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    작성하신 해당 .container 선택자도 본인의 직계자식(바로 아래요소)에 대한 '정렬'방식일 뿐, 그 아래의 자손들은 제어하기 어렵습니다.
+
+    한번에 자동으로 하는 방법은 마크업 단계에서는 한계점이 있고, 아래와 같이 '임의로' 부모를 만들어 정렬 방식을 바꿀 수 있다면 훌륭히 마크업 작성을 잘 하고 있다고 할 수 있겠습니다.
+       -->
+      <div>
+        <div>
+          <h1>search box</h1>
+        </div>
+        <div> <!-- 정렬을 편하게 하려고 부모를 하나 더 만들어주었습니다. -->
+          <div>thumnail-1</div>
+          <div>thumnail-2</div>
+          <div>thumnail-3</div>
+        </div>
+      </div>
+
+
+
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
