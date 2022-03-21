@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+
+
+
+
+    .width-vw-1 {width:1vw;}
+    .width-vw-2 {width:2vw;}
+    .width-vw-3 {width:3vw;}
+    .width-vw-4 {width:4vw;}
+    .width-vw-5 {width:5vw;}
+    .width-vw-6 {width:6vw;}
+    .width-vw-7 {width:7vw;}
+    .width-vw-8 {width:8vw;}
+    .width-vw-9 {width:9vw;}
+    .width-vw-10 {width:10vw;}
+
+
+
+
+
+
+
+
+    /* class setting */
+    .flex-center-center {
+      display:flex;
+      justify-content: center;
+      align-items:center;
+    }
+    .border-test-1 {
+      border:1px solid red;
+    }
+
+    .width-inherit {
+      width:inherit;
+    }
+
+
+    .root {
+      width:100vw;
+      height:100vh;
+    }
+    /* 직계자식 한테 모두 일괄 적용시킨것 */
+    .root>div {
+      width:100vw;
+      height:33vh;
+    }
+
+    /* 끝  */
+
+    /* 중간부분 */
+    .root>div:nth-child(2) {
+      /* 끝 */
+      background-color:#ccc;
+    }
+    /* 중간부분에 두개의 자식 */
+    .root>div:nth-child(2)>div {
+      width:50vw;
+      height:inherit;
+      background-color:sandybrown;
+
+    }
+    /* 중간부분에 두개자식에 첫번째놈 */
+    .root>div:nth-child(2)>div:nth-child(2)>div:nth-child(1) {
+      width:inherit;
+      height:50%;
+      background-color:rgb(96, 244, 182);
+
+    }
+    /* 알맹이들 둘다 전체 */
+    .root>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div {
+      width:50%;
+      height:inherit;
+      background-color:rgb(172, 96, 244);
+
+    }
+
+
+    /* 글씨부분 */
+    .root>div:nth-child(2)>div:nth-child(2)>div:nth-child(2) {
+      width:inherit;
+      height:50%;
+      background-color:rgb(96, 244, 96);
+
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="root border-test-1">
+    <div id="header"></div>
+    <!-- 끝 -->
+    <div id="main" class="flex-center-center"> <!-- 중간부분 부모 태그-->
+      <div> <!-- 왼쪽-->
+        <!-- 원래 여기있었던것 -->
+      </div>
+      <div> <!-- 오른쪽 -->
+        <!-- 옮김 -->
+        <div class="flex-center-center">
+          <div class="border-test-1">알맹이1</div>
+          <div>알맹이2</div>
+        </div>
+        <div>분홍색</div>
+      </div>
+    </div>
+    <!-- 끝 -->
+    <div id="footer"></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .root {
+      width:100vw;
+      height:100vh;
+      border:1px solid red;
+    }
+    /* 직계자식 한테 모두 일괄 적용시킨것 */
+    .root>div {
+      width:100vw;
+      height:33vh;
+      border: 1px solid blue;
+    }
+
+    /* 끝  */
+
+    /* 중간부분 */
+    .root>div:nth-child(2) {
+      /* 끝 */
+      background-color:#ccc;
+
+      /* 자식들 배치시키자 */
+      display:flex;
+      justify-content: center;
+      align-items:center;
+    }
+    /* 중간부분에 두개의 자식 */
+    .root>div:nth-child(2)>div {
+      width:50vw;
+      height:inherit;
+      border:1px solid green;
+    }
+    /* 중간부분에 두개자식에 첫번째놈 */
+    .root>div:nth-child(2)>div:nth-child(2)>div:nth-child(1) {
+      width:inherit;
+      height:50%;
+      background-color: red;
+
+      display:flex;
+      justify-content: center;
+      align-items:center;
+
+    }
+    /* 알맹이들 둘다 전체 */
+    .root>div:nth-child(2)>div:nth-child(2)>div:nth-child(1)>div {
+      width:50%;
+      height:inherit;
+      border:1px solid black;
+    }
+
+
+    /* 글씨부분 */
+    .root>div:nth-child(2)>div:nth-child(2)>div:nth-child(2) {
+      width:inherit;
+      height:50%;
+      background-color: salmon;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="root">
+    <div></div>
+    <!-- 끝 -->
+    <div> <!-- 중간부분 부모 태그-->
+      <div> <!-- 왼쪽-->
+        <!-- 원래 여기있었던것 -->
+      </div>
+      <div> <!-- 오른쪽 -->
+        <!-- 옮김 -->
+        <div>
+          <div>알맹이1</div>
+          <div>알맹이2</div>
+        </div>
+        <div>분홍색</div>
+      </div>
+    </div>
+    <!-- 끝 -->
+    <div></div>
+  </div>
+</body>
+</html>
