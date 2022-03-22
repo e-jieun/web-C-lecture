@@ -1,12 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    :root {
+      --height-800-px: 800px;
+    }
+
+
+    .position-absolute {
+      position: absolute;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #wrapper {
+      width: 400px;
+      height: var(--height-800-px);
+    }
+
+    nav {
+      width: 200px;
+      height: var(--height-800-px);
+      background-color: skyblue;
+      z-index: 1;
+    }
+
+    main {
+      width: 400px;
+      height: var(--height-800-px);
+      background-color: #c4c4c4;
+      z-index: 0;
+      /* z-index의 기본값은 0이다. 값이 올라갈수록 상위(앞)에 배치된다. */
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    main>section {
+      width: inherit;
+    }
+
+    /* 
+    
+    ★★★★★★dlsplay:flex;의 새로운 하위속성★★★★★★★★
+    flex-grow는 item 태그에 붙여주는 값이다.
+
+    <section>태그를 세로형(열, column)으로 배치하고자 flex-direction 방향을 column으로 설정하였다.
+    그리고
+    <section> 태그들 '모두' 가로값은 부모 태그의 크기를 그대로 상속받겠다는 뜻의 inherit을 사용하였다
+    width값 = 부모의 가로폭 = <section> 태그로 상속 = 결과적으로 400px이 된다.
+    작업간에는 '굳이 절대값'을 알필요는 없다.
+
+    ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★
+
+    세로값인 height 속성을 사용하지 않고, flex 속성의 '아이템' 태그에 적용하는 속성
+    flex-grow 값을 배정했다. 
+
+    inherit은 부모의 값을 구분치 않고 모두 가져오는 일차적인 방식이라면,
+    flex-grow는 비율로 아이템 형제간 크기를 정하는 방식이다.
+    1 : 2 : 1 비율로 세로 배치를 flex-grow로 지정했음을 확인 할 것
+
+    구조상으로는 지정한 모든값 4를 컨테이너의 높이값과 나누어 생긴 값으로 자동 할당 되는 방식이다.
+
+    800 / 4 = 200
+    1값인 경우 : 200
+    2값인 경우 : 400
+
+    약간의 연산은 원리를 이해하기 위한 설명이므로
+    item 태그의 '세로값'이나 가로값을 무언가의 비율로 정한다는 것을 확인하는 것이 중요하다.
+    */
+
+
+    main>section:nth-child(1) {
+      background-color: #aaa;
+      flex-grow: 1;
+    }
+
+    main>section:nth-child(2) {
+      background-color: #bbb;
+      flex-grow: 2;
+    }
+
+    main>section:nth-child(3) {
+      background-color: #ccc;
+      flex-grow: 1;
+    }
+  </style>
 </head>
+
 <body>
-  <!-- <nav>, ul li 작업 display 확인  -->
+  <div id="root">
+    <div id="wrapper">
+      <nav class="position-absolute"></nav>
+      <main class="position-absolute">
+        <section></section>
+        <section></section>
+        <section></section>
+      </main>
+    </div>
+  </div>
 </body>
+
 </html>
