@@ -64,7 +64,8 @@
 	}
 	.con>div:nth-child(4) {
 		background-color: red;
-		width:214px;
+		/* width:214px; */
+		/* width:50vw; */
 		height: inherit;
 		opacity: 0.5;
 		position: fixed;
@@ -74,16 +75,50 @@
 		width, height를 viewport 50vw, 100vh로 설정했더니 class="con" 내에서 작동하지않아
 		일단 px값을 고정값으로 해결하였습니다. */
 
+	/* 
+		A. position:fixed 속성의 특징 때문에 발생하는 역전현상, 
+		fixed의 포지셔닝 기준은 부모가 아닌 '브라우저'이기 때문에 50%로 하여도 '브라우저의 50%'가 되기 때문에
+		해결이 안되는 것이며 -> fixed를 absolute로 변경 한 후, absolute의 특징인 '부모의 position 값이 없거나 기본값이면 무시하는 현상을 해결하기 위해' 해당 코드에서는 클래스 .con에 해당하는 선택자에 position:relative;
+		를 부여하는 등의 조치를 취하면 반응하게 될것
+	
+	
+	*/
+
+
+
 	/* Q2 각 division 의 값을 일일이 px로 계산해서 작성했는데, inherit * 50% 로 계산하는 방법을
 		검색을 통해 찾아보겠습니다. > 시간내에 검색으로 찾지 못했습니다. */
 
+	/* 
+	 A. calc() <--라는 최신 문법이 존재하며, 추후 자바스크립트로 수월하게 제어가능(연산기능 활용)
+	 calc는 calculrator(계산기)의 축약단어
+	*/
+
+
+
 	/* Q3 width 값을 50% 주는 것과, 50vw를 주는 것은 같은 것인지 궁금합니다. */
+
+	/* 
+	
+		% 퍼센트는 : 부모태그의 width값의 50%를 이야기 하는 것
+		vw 는 : 브라우저 창 가로폭(width) 값의 50%를 이야기하는것 (부모태그 무시)
+
+	*/
+
+
 
 	/* Q3-검색결과 width:50%로 지정했을 때 '부모의 절반 값'을 가진다고 되어있는데, browser의 절반값으로 나옵니다. */
 
 		/* Self Review : display,justify-content,align-itmes 3가지 요소가 모두center라면 class 지정하여 div마다 넣어주면 편할듯하다. */
 
+		/* A. 훌륭한 해결 */
+
+
+
 		/* Self Review : vw와 %는 기준이 누구인지에 따라 달라진다는 점을 알았다. */
+
+		/* A. 훌륭한 해결 */
+
 </style>
 <body>
 	<div class="con">
