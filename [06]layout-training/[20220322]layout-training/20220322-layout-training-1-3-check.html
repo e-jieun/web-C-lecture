@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #root {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      background-color: antiquewhite;
+    }
+
+    #root>div {
+      background-color: #c4c4c4;
+      width: 428px;
+      height: 926px;
+    }
+
+    /* ----------------------------------------------------------------------------- */
+    .size {
+      width: 95%;
+      height: 10%;
+      background-color: aqua;
+    }
+
+    /* -----------header-------------------------------------------------------- */
+
+    #root>div>div:nth-child(1) {
+      background-color: palevioletred;
+      width: 50%;
+      height: 100%;
+      opacity: 0.5;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* ------여기 root>div>div:nth-child(1)이 왜 margin이 있을까요?------- */
+
+    /* 
+    
+    margin 값 확인 안됨 -> 점검 필요
+    
+    
+    
+    */
+
+
+    /* -----------------------main-------------------------------------------------- */
+
+    #root>div>div:nth-child(2) {
+      position: relative;
+      top: -85%;
+      z-index: 1;
+      border: black 1px solid;
+      width: 100%;
+      height: 70%;
+    }
+
+    #root>div>div:nth-child(2)>div {}
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div>
+      <div>
+        <!-- pink -->
+      </div>
+      <div>
+        <div> point
+          <div class="size"></div>
+        </div>
+        <div>
+          <div class="size"></div>
+          <div class="size"></div>
+          <div class="size"></div>
+          <div class="size"></div>
+          <div class="size"></div>
+          <div class="size"></div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

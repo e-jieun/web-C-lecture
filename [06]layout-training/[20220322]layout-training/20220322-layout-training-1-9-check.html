@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .root {
+      width: 428px;
+      height: 926px;
+      background-color: #ccc;
+    }
+
+    .box-1 {
+      width: 428px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box-1>div {
+      width: 364px;
+      height: 65px;
+      background-color: rgb(255, 255, 255);
+    }
+
+    .box-2 {
+      width: 428px;
+      height: 650px;
+      background-color: rgb(92, 92, 92);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* 
+    .box-2>div{ width:364px; height:100px; background-color:rgb(235, 235, 235); 마진 값을 넣으면 세로로 정렬이 됨 } */
+    /* 
+    .box-2 div:nth-child(1){width:364px; height:65px; background-color:rgb(235, 235, 235)} */
+
+    /* box-2-1{
+      width:364px; height:550px; 
+    }
+
+    box-2-1 div{width:364px; height:65px; background-color:rgb(235, 235, 235); 
+    }
+  */
+
+    .box-3 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+      width: 364px;
+      height: 85px;
+      color: rgb(172, 172, 172);
+
+
+      /* check point */
+      
+      text-align:justify;
+      
+    }
+
+    /* ??? lorem 텍스트 정렬 하는 법 양쪽 끝 ??? */
+
+    /* 
+    check point 
+    text-align이라는 속성이 있으며 문서 프로그램처럼 왼쪽, 가운데 오른쪽 정렬이 있다.
+    양쪽끝에 꽉차게 텍스트의 모양새를 구성하는 것을 폭맞춤이라고 부르며 "justify" 라 한다.
+    전제 조건은 '사이즈'가 필요하다. 
+    
+    
+    
+    
+    */
+
+
+  </style>
+</head>
+
+<body>
+  <div class="root">
+
+    <div class="box-1">
+      <div></div>
+    </div>
+
+    <div class="box-2">
+      <!-- <div class="box-2-1">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div> -->
+    </div>
+
+    <div class="box-3">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti atque rem iusto minus veritatis minima
+        commodi suscipit praesentium sint impedit, nam totam ratione ipsam esse assumenda error in laboriosam fugit.</p>
+    </div>
+
+
+
+  </div>
+
+</body>
+
+</html>

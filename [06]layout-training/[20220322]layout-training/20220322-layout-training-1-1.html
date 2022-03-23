@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+<style>
+  * {margin: 0; padding: 0;}
+  
+  #root {
+    width: 428px;
+    height: 920px;
+
+    position: relative;
+    overflow: hidden; 
+    /* 이 영역(부모) 밖으로 나가지 않게 해줌 */
+    z-index: 1;
+  }
+  
+  #opacity {
+    width: 50vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+    
+    position: absolute;
+    right: 90%;
+    z-index: 2;
+  }
+
+  #opacity:hover {
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+    right: 50%;
+  }
+  
+  .align-center-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .bgc-test {
+    background-color: rgb(221, 221, 221);
+  }
+
+  .bgc-gray {
+    background-color: rgb(236, 236, 236);
+  }
+
+  .bgc-white {
+    background-color: white;
+  }
+
+  .bgc-lightgray {
+    background-color: #f3f3f3;
+  }
+
+  .small-box {
+    width: 400px;
+    height: 80px;
+    margin: 10px;
+  }
+
+  .big-box {
+    width: 100%;
+    height: 120px;
+  }
+
+  .text-gray {
+    color: #c4c4c4;
+  }
+
+
+</style>
+
+</head>
+
+<body class="align-center">
+<!-- 가운데 정렬이 안됨 ====> 해결 : 정렬용 박스를 하나 더 만들면 됨 -->
+
+  <div id="root" class="align-center-between bgc-lightgray">
+  <!-- 컨테이너 428 * 926-->
+    <div id="opacity">
+    <!-- 반투명 네모 50 * 100 vh -->
+    </div>
+    <div class="align-center big-box bgc-gray">
+    <!-- 상단 -->
+      <div class="small-box bgc-white"></div>
+      <!-- 상단 네모 (마진) -->
+    </div>
+    <div class="align-center">
+    <!-- 중간 -->
+      <div class="small-box bgc-white"></div>
+      <div class="small-box bgc-white"></div>
+      <div class="small-box bgc-white"></div>
+      <div class="small-box bgc-white"></div>
+      <div class="small-box bgc-white"></div>
+      <div class="small-box bgc-white"></div>
+    </div>
+    <div class="big-box align-center bgc-gray">
+    <!-- 하단 -->
+      <span class="small-box text-gray">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore mollitia ipsa incidunt iure! Aliquam, blanditiis ex illo molestiae laboriosam natus, deserunt earum sequi expedita eaque similique, amet odio! </span>
+    </div>
+
+  </div>
+
+</body>
+</html>

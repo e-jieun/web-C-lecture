@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    
+    
+    body {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* flex-direction: column; */
+    }
+    
+    .root {
+      /* 큰 박스 */
+      width: 428px;
+      height: 926px;
+      background-color: #c4c4c4;
+      
+      display: flex;
+      /* align-items: center; */
+      justify-content: center;
+      flex-direction: column;
+      }
+
+      .root > div:nth-child(1) {
+        /* 빨간 박스가 들어간 박스 */
+      }
+    
+    .redbox {
+      /* 빨간 박스 */
+      width: 214px;
+      height: 926px;
+      background-color: rgba(255, 115, 115, 0.5);
+      
+      position: absolute;
+      z-index: 1;
+    }
+
+
+    .root > div:nth-child(2) {
+      /* 맨 위 박스 */
+      width: 428px;
+      height: 150px;
+      background-color: rgb(220, 220, 220);
+      border: solid 30px #c4c4c4;
+    }
+
+    .root > div:nth-child(3) {
+      /* 중간 박스 */
+      width: 428px;
+      height: 626px;
+      background-color: #c4c4c4;
+      border: solid 20px #c4c4c4;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+    }
+
+    .whitebox {
+      /* 중간 박스 안 하얀 박스들 */
+      width: 428px;
+      height: 120px;
+      background-color: rgb(220, 220, 220);
+      border: solid 20px #c4c4c4;
+
+    }
+
+    .root > div:nth-child(4) {
+      /* 맨 밑 박스 */
+      width: 428px;
+      height: 150px;
+      border: solid 20px #c4c4c4;
+      color: rgb(220, 220, 220);
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="root">
+    <!-- 큰 박스 -->
+    <div>
+    <div class="redbox"></div>
+    <!-- 빨간 박스 -->
+    </div>
+    <div></div>
+    <!-- 맨 위 박스 -->
+    <div>
+      <!-- 중간 박스 -->
+      <div class="whitebox"></div>
+      <div class="whitebox"></div>
+      <div class="whitebox"></div>
+      <div class="whitebox"></div>
+      <div class="whitebox"></div>
+      <div class="whitebox"></div>
+    </div>
+    <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non quis voluptate qui numquam esse iure a. Consequatur quod, vero incidunt aperiam aliquam sequi voluptatum iure eaque sunt quasi corporis mollitia.</div>
+    <!-- 맨 밑 박스 -->
+  </div>
+</body>
+</html>

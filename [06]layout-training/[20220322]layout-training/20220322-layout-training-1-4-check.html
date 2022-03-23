@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0;
+      padding:0;}
+    #root{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width:100vw;
+      height:100vh;
+      background-color: antiquewhite;
+    }
+    #root>div{
+      background-color: #c4c4c4;
+      width: 428px;
+      height: 926px;
+    }
+/* ----------------------------------------------------------------------------- */
+    .size{
+      width:95%;
+      height:10%;
+      background-color: aqua;
+    }
+    /* -----------header-------------------------------------------------------- */
+
+    #root>div>div:nth-child(1){
+      background-color: palevioletred;
+      width:50%;
+      height:100%;
+      opacity: 0.5;
+      position: relative;
+      z-index: 2;
+    }
+/* ------여기 root>div>div:nth-child(1)이 왜 margin이 있을까요?------- */
+/* -----------------------main-------------------------------------------------- */
+
+    #root>div>div:nth-child(2){
+      position: relative;
+      top: -85%;
+      z-index: 1;
+      border: black 1px solid;
+      width:100%;
+      height:70%;
+    }
+    /* ----한 div의 width값과 height값이 %이면 그 자식들에게는 크기에 %를 적용할 수 없나요?------------ */
+
+    /* 
+    
+    check
+    부모태그의 가로값이 100px 일경우
+    그아래 자식값을 50%로 설정했을때 자식태그의 가로값은 50px이됨
+    다시말해 부모태그의 크기에서의 50%를 가져오는 방식
+    vw, vh 와 %의 차이는 '뷰포트(보이는화면=브라우저)' 기준인가, 혹은 부모태그 기준인가로 나누어짐
+    
+    
+    
+    
+    */
+
+
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+   
+   
+    <div>
+
+      <div>
+        <!-- pink -->
+      </div>
+    
+
+      <div>
+
+        <div>
+          <div class="size"></div>
+        </div>
+
+        <div>
+          <div class="size"></div>
+          <div class="size"></div>
+          <div class="size"></div>
+          <div class="size"></div>
+          <div class="size"></div>
+          <div class="size"></div>
+        </div>
+
+
+        <div></div>
+
+      </div>
+
+
+    </div>  
+
+
+  </div>
+
+
+</body>
+</html>

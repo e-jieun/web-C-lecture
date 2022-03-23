@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      /* display: flex;
+      justify-content: center; */
+    }
+
+    /* border class */
+    /* .border-black {
+      border: 1px solid black;
+    } */
+
+    /* width: 428px; class */
+    :root {
+      --width-1: 428px;
+    }
+
+    #wrapper {
+      display: flex;
+      justify-content: center;
+    }
+
+    #drawer {
+      width: 50%;
+      height: 100%;
+      opacity: 0.5;
+      background-color: #fff;
+      position: absolute;
+      z-index: 1;
+    }
+
+    #container {
+      /* width: 428px; */
+      width: var(--width-1);
+      height: 926px;
+      display: flex;
+      flex-direction: column;
+      background-color: #c4c4c4;
+      position: absolute;
+      /* z-index: 0; */
+    }
+
+    #header {
+      /* width: inherit; */
+      width: var(--width-1);
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #header > div {
+      width: 80%;
+      height: 70%;
+      background-color: #fff;
+    }
+
+    #main {
+      /* width: inherit; */
+      width: var(--width-1);
+      height: 60%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      background-color: gray;
+    }
+
+    #main > div {
+      width: 380px;
+      height: 68px;
+      background-color: #fff;
+    }
+
+    #footer {
+      /* width: inherit; */
+      width: var(--width-1);
+      height: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #footer > p {
+      width: 95%;
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="wrapper" class="border-black">
+    <div id="container" class="border-black">
+      <div id="drawer"></div>
+      <div id="header" class="border-black">
+        <div></div>
+      </div>
+      <div id="main" class="border-black">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="footer" class="border-black">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae dicta laudantium, dolor molestias quos vero
+          adipisci corporis esse saepe accusantium repellat ex eius, incidunt rerum soluta modi blanditiis dolorum
+          nulla.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

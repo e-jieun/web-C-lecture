@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /* style setting */
+
+    .border-1{
+      border: 1px solid black;
+    }
+
+    .border-2{
+      border: 1px solid red;
+    }
+
+    .flex-center-center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .flex-center-center-colum{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .position-z-index-1{
+      position: absolute;
+      z-index: 1;
+    }
+
+    .position-z-index-2{
+      position: absolute;
+      z-index: 2;
+      /* left: 0; */
+    }
+
+    /* --------------------------------------------------------- */
+
+    .root{
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .container{
+      width: 428px;
+      height: 926px;
+
+
+      /* check-point */
+      position:absolute;
+      z-index: 2;
+      overflow: hidden;
+
+      /* 
+      
+      check point : 2
+
+      자식태그에는 absolute 속성이 붙어있는 상태 이기때문에 부모컨테이너가 속성이 따로 없다면(기본값)이라면 무시하는 특성이 있음
+      따라서 부모컨테이너에도 position 다른값을 부여하여 값을 만들어주면 absolute의 z-index 설정이 해결됨
+      
+      
+      */
+
+    }
+
+    .container>div:nth-child(1){
+      width: 428px;
+      height: 926px;
+      background-color: #c4c4c4;
+    }
+
+    .container>div:nth-child(2){
+      width: 12vw;
+      height: 95.7vh;
+      background-color: tomato;
+      opacity: 0.5;
+    }    
+    /* width: 428px;  height: 926px; 범위를 넘어가고 있어 삐져나온 부분을 지우고 싶어서 overflow:hidden; 을 주고싶은데 부모인 컨테이너에 넣어도 적용되지 않음
+    -> 일단 크기조절로 함*/
+
+    .container>div:nth-child(1)>div:nth-child(1){ 
+      width: 428px;
+      height: 126px;
+    }
+
+    .container>div:nth-child(1)>div:nth-child(1)>div{
+      width: 400px;
+      height: 76px;
+      background-color: #e2e2e2;
+    }
+
+    .container>div:nth-child(1)>div:nth-child(2){
+      width: 428px;
+      height: 650px;
+      background-color: #444444;
+    }
+
+    .container>div:nth-child(1)>div:nth-child(2)>div{
+      width: 400px;
+      height: 76px;
+      background-color: #e2e2e2;
+      margin: 10px;
+    }
+
+    .container>div:nth-child(1)>div:nth-child(3){
+      width: 428px;
+      height: 150px;
+    }
+
+    .container>div:nth-child(1)>div:nth-child(3)>div{
+      width: 400px;
+      height: 100px;
+      text-align: justify;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="root flex-center-center">
+    <div class="container">
+      <div class="position-z-index-1">   <!--  전체 박스 -->
+        <div class="flex-center-center">
+          <div></div>
+        </div>   <!-- 위에 박스 -->
+        <div class="flex-center-center-colum">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>   <!-- 중간 박스 -->
+        <div class="flex-center-center">    <!-- 텍스트박스 -->
+          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti veniam earum deserunt, omnis sunt id enim laborum quas sapiente libero</div>
+          </div>   
+      </div>
+      <div class="position-z-index-2"></div>  <!-- 겹쳐진 박스 -->
+    </div>
+  </div>
+</body>
+</html>

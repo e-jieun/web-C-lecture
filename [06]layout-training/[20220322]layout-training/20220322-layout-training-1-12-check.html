@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+*{margin: 0; padding: 0;}
+
+
+.container{
+  width: 428px;
+  height: 926px;
+  background-color: rgb(238, 238, 238);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.container> div:nth-child(1) {
+  width: 50vw;
+  height: 100vh;
+  opacity: 0.5;
+  background-color: rgb(245, 245, 245);
+
+  position: absolute;
+  z-index: 1;
+}
+
+/* 빨간 박스(50vw, 100vh)가 회색상자  안에 들어가게 하고 싶은데 자꾸 작게 만들어지네요..*/
+
+/* 
+
+빨간 박스로 처리하고 싶은 부분을 클래스나 주석으로 표기 할것
+
+
+
+*/
+
+
+
+header{
+  width: 400px;
+  height: 70px;
+  background-color:rgb(240, 233, 233);
+
+  position: relative;
+  top: 15px;
+  left: 15px;
+}
+
+main{
+  width: 428px;
+  height: 700px;
+  background-color: rgb(240, 233, 233);
+  
+  position: relative;
+  top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+}
+
+article{
+  width: 400px;
+  height: 70px;
+  background-color: rgb(248, 239, 239);
+
+  position: relative;
+}
+
+footer> :nth-child(1){
+  margin: 5px;
+  position: relative;
+  top: 40px;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div></div>
+    <header></header>
+
+    <main>
+      <article></article>
+      <article></article>
+      <article></article>
+      <article></article>
+      <article></article>
+      <article></article>
+    </main>
+
+    <footer>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis amet error, quisquam est dolores voluptatem sint sequi aliquid velit delectus praesentium perspiciatis placeat hic eaque odio blanditiis atque ducimus esse.</p>
+    </footer>
+
+  </div>
+</body>
+</html>

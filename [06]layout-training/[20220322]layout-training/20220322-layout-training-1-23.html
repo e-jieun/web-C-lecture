@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout training</title>
+  <style>
+    /* <클래스 세팅> */
+    .flex-cen-cen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .box-1 {
+      background-color: white;
+      width: 380px;
+      height: 80px;
+    }
+    
+
+    * { padding: 0; margin: 0;}
+    body {
+      width: 100vw; height: 109vh;
+    }
+    
+    .root {
+      width: 428px;
+      height: 926px;
+      border: 1px solid red;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .root>div {
+      /* border: 1px solid blue; */
+    }
+
+    .root>div:nth-child(1) {
+      background-color: #ccc;
+      width: inherit;
+      height: 130px;
+    }
+    
+    .root>div:nth-child(1)>div {
+      /* background-color: white;
+      width: 380px;
+      height: 80px; */
+    }
+
+    .root>div:nth-child(2) {
+      background-color: #888;
+      width: inherit;
+      height: 610px;
+
+      flex-direction: column;
+    }
+
+    .root>div:nth-child(2)>div {
+      /* background-color: white;
+      width: 380px;
+      height: 80px; */
+      margin: 10px;
+    }
+
+    .root>div:nth-child(3) {
+      background-color: #ccc;
+      width: inherit;
+      height: 186px;
+    }
+
+    .root>div:nth-child(3)>div {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    .root>div:nth-child(4) {
+      background-color: red;
+
+      width: 50vw;
+      height: 100vh;
+      opacity: 0.5;
+
+      position: absolute;
+      /* margin-top: 0px; */
+      z-index: 4;
+
+      transition: 1s;
+    }
+
+    .root>div:nth-child(4):hover {
+      background-color: #fff;
+    }
+    
+/*     
+    .root에게 지정값을 지정한뒤에 그의 자식인 div:nth-child(4)에서 
+    width:50vw; height: 100vh;를 했는데도 사이즈가 절반이 되지 않음
+    왜 그런걸까...?  종속을 잘못 넣었나.. 개발자도구를 봐도 잘 모르겠다. */
+
+
+  </style>
+</head>
+<body class="flex-cen-cen">
+  <div class="root">
+    <div class="flex-cen-cen">
+      <div class="box-1"></div>
+    </div>
+    <div class="flex-cen-cen">
+      <div class="box-1"></div>
+      <div class="box-1"></div>
+      <div class="box-1"></div>
+      <div class="box-1"></div>
+      <div class="box-1"></div>
+      <div class="box-1"></div>
+    </div>
+    <div class="flex-cen-cen">
+      <div>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo et exercitationem nostrum asperiores. Vero repellendus soluta dolorum sapiente possimus fuga laboriosam corrupti nesciunt numquam iure! Vitae necessitatibus praesentium tempora blanditiis.
+      </div>
+    </div>
+    <div></div>
+  </div>
+</body>
+</html>

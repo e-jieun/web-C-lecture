@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hamburger</title>
+  <style>
+   *{margin:0; padding:0;} 
+    .container {
+      width:100vw;
+      height:100vh;
+      border:1px solid black;
+      display:flex;
+      justify-content: center;
+      
+    }
+    .mobile {
+      width:428px;
+      height:926px;
+      opacity: 0.5;
+      /* 이게 뭐냐 좀있다 찾아보자 불투명하다는건디 */
+      background-color: rgb(245, 236, 236);
+      margin-top: 5px;
+      border:2px solid black;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      
+      
+    }
+    .z {
+      width:214px;
+      height:99vh;
+      background-color: rgb(196, 196, 191);
+      position:absolute;
+      z-index: 1;
+      opacity: 0.5;
+      margin-right:50%
+      
+      
+      
+      
+    }
+
+    .z:hover {background-color: blueviolet; opacity: 0.6;}
+  
+    
+    .text {
+      text-align: center;
+      
+    }
+    
+    
+    .header {
+      width: 80%;
+      height:10%;
+      background-color: rgb(199, 198, 198);
+      margin-top: 20px;
+      text-align:right;
+      
+    }
+    .main {
+      display: flex;
+      justify-content: center;
+      background-color: rgb(233, 221, 221);
+      width:100%;
+      height:70%;
+      margin:20px;
+      flex-direction: column;
+      align-items: center;
+      
+      
+    }
+
+    .main div {
+      width:80%;
+      height:10%;
+      background-color: #fff;
+      margin:10px;
+      text-align:right;
+      
+      
+      
+    }
+    
+    
+    
+    
+    
+  </style>
+  
+  
+  <!-- 욱여넣기 식으로 해서 제가 제대로 한건지에 대한 파악이 어렵습니다... -->
+  
+</head>
+<body>
+  <div class="container">
+       <div class="mobile">
+        <div class="z"></div>
+         <div class="header">햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거햄버거</div>
+            <div class="main">
+              <div>이</div>
+              <div>게</div>
+              <div>맞</div>
+              <div>는</div>
+              <div>지</div>
+              <div>모르겠다</div>
+              
+            </div>
+
+            <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum enim repellendus eum sequi eligendi fugiat et illum dolorum minus, corporis nihil incidunt atque, ducimus ullam doloribus rem corrupti adipisci quos.</div>
+    
+    
+    
+      </div>
+    
+    
+    
+  </div>
+  
+  
+  
+  
+  
+</body>
+</html>

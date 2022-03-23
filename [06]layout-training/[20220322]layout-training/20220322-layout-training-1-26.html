@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    .lineup-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    * {margin: 0; padding: 0;}
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: white;
+    }
+    
+    .root {
+      width: 428px;
+      height: 926px;
+      background-color: #aa8bff;
+
+      position: relative;
+      z-index: 1;
+
+      /* overflow: hidden; */
+    }
+
+    .side {
+      width: 50%;
+      height: inherit;
+      background-color: #888888;
+
+      opacity: 0.5;
+
+      position: absolute;
+      z-index: 2;
+    }
+    
+    header {
+      width: inherit;
+      height: 15%;
+      background-color: #c5c5c5;
+    }
+    
+    header > div {
+      width: 380px;
+      height: 90px;
+      background-color: #f5f5f5;
+    }
+    
+    main {
+      width: inherit;
+      height: 70%;
+      background-color: #444444;
+
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    main > div {
+      width: 380px;
+      height: 90px;
+      background-color: #f5f5f5;
+    }
+    
+    footer {
+      width: inherit;
+      height: 15%;
+      background-color: #c5c5c5;
+    }
+    
+    footer > div {
+      width: 380px;
+      height: 90px;
+      /* background-color: #8bdeff; */
+
+      text-align: justify;
+
+      overflow: hidden;
+    }
+    
+  </style>
+</head>
+<body class="lineup-center">
+  
+  <div class="root">
+
+    <div class="side"></div>
+    
+    <header class="lineup-center">
+      <div></div>
+    </header>
+
+    <main>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </main>
+
+    <footer class="lineup-center">
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam facere, quaerat possimus voluptatum ipsum nemo neque sint tempore quo quidem quos cumque explicabo dicta facilis sequi est porro, aliquid rem accusantium? consectetur elit. </div>
+    </footer>
+
+  </div>
+  
+</body>
+</html>

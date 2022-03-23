@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.con {
+		width:426px;
+		height: 926px;
+		background-color: olive;
+		display: flex;
+		flex-direction: column;
+	}
+	.con>div:nth-child(1){
+		width:428px;
+		height: 150px;
+		background-color: lightgray;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.con>div:nth-child(1)>div{
+		width: 300px;
+		height: 80px;
+		background-color: white;
+	}
+	.con>div:nth-child(2) {
+		background-color: gray;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		width:428px;
+		height: 500px;
+	}
+	.con>div:nth-child(2)>div {
+		width: 300px;
+		height: 100px;
+		background-color: white;
+		margin: 10px;
+	}
+	.con>div:nth-child(3){
+		width: 428px;
+		height: 278px;
+		background-color: lightgray;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.con>div:nth-child(3)>div{
+		width:300px;
+	}
+	.con>div:nth-child(4) {
+		background-color: red;
+		width:214px;
+		height: inherit;
+		opacity: 0.5;
+		position: fixed;
+		right: inherit;
+	}
+	/* Q1 빨간 좌측 menu div을 작성할 때,
+		width, height를 viewport 50vw, 100vh로 설정했더니 class="con" 내에서 작동하지않아
+		일단 px값을 고정값으로 해결하였습니다. */
+
+	/* Q2 각 division 의 값을 일일이 px로 계산해서 작성했는데, inherit * 50% 로 계산하는 방법을
+		검색을 통해 찾아보겠습니다. > 시간내에 검색으로 찾지 못했습니다. */
+
+	/* Q3 width 값을 50% 주는 것과, 50vw를 주는 것은 같은 것인지 궁금합니다. */
+
+	/* Q3-검색결과 width:50%로 지정했을 때 '부모의 절반 값'을 가진다고 되어있는데, browser의 절반값으로 나옵니다. */
+
+		/* Self Review : display,justify-content,align-itmes 3가지 요소가 모두center라면 class 지정하여 div마다 넣어주면 편할듯하다. */
+
+		/* Self Review : vw와 %는 기준이 누구인지에 따라 달라진다는 점을 알았다. */
+</style>
+<body>
+	<div class="con">
+	<div>
+		<div></div>
+	</div>
+	<div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<div>
+		<div>
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat, blanditiis magni commodi officia nesciunt veritatis voluptatum, modi tempora beatae atque illo, expedita possimus cumque autem. Necessitatibus eius molestias corporis ut?
+		</div>
+	</div>
+	<div></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<style>
+:root {
+  --w-big : 400px;
+  --w-small : 200px;
+  --h-1 : 800px;
+  --h-2 : 75px;
+  --color-1 : yellowgreen;
+  --color-2 : green;
+  --color-3: white;
+  --color-4: beige;
+  --trans : 0.3;
+}
+
+.position-ab {position: absolute;}
+.position-re {position: relative;}
+.align-center {display: flex; justify-content: center; align-items: center;}
+.flex-col {flex-direction: column;}
+.test-color {background-color: var(--color-3);}
+.test-color-2 {background-color: var(--color-4);}
+
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+#big-box {
+  width: var(--w-big);
+  height: var(--h-1);
+
+  overflow: hidden; 
+}
+
+#opacity {
+  width: var(--w-small);
+  height: var(--h-1);
+  background-color: var(--color-2);
+  opacity: var(--trans);
+
+  z-index: 1;
+  left: 0px;
+}
+
+#opacity:hover {
+  background-color: var(--color-3);
+}
+
+#box {
+  width: var(--w-big);
+  height: var(--h-1);
+  background-color: var(--color-1);
+
+  z-index: 0;
+}
+  
+#box > div {
+  width: var(--w-big);
+  height: max-content;
+}
+
+.mini-box {
+  width: 90%;
+  height: var(--h-2);
+  margin: 0.5vw;
+}
+
+
+</style>
+
+</head>
+
+<body>
+  <main class="align-center">
+  <!-- 정렬을 위한 제일 큰 박스 -->
+    <div id="big-box" class="align-center position-re">
+    <!-- div 두개(opacity와 box)를 담기 위한 박스 -->
+      <div id="opacity" class="position-ab">
+      <!-- 반투명박스 -->
+      </div>
+      <div id="box" class="align-center position-ab flex-col">
+      <!-- 베이스 박스 -->
+        <div class="align-center">
+          <div class="test-color-2 mini-box">상</div>
+        </div>
+        <div class="align-center flex-col">
+          <div class="test-color mini-box">중1</div>
+          <div class="test-color mini-box">중2</div>
+          <div class="test-color mini-box">중3</div>
+          <div class="test-color mini-box">중4</div>
+          <div class="test-color mini-box">중5</div>
+          <div class="test-color mini-box">중6</div>
+        </div>
+        <div class="align-center">
+          <span class="mini-box test-color-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta placeat dolorum veniam mollitia quisquam asperiores unde ex quasi!</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</body>
+</html>

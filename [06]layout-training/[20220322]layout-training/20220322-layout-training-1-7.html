@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    .flex-center-center {
+      display:flex;
+      justify-content: center;
+      align-items: center;
+     }
+    header {
+      width:100vw;
+      height:20vh;
+      background-color: #ccc;
+       }
+
+
+    header > div {
+      width:85vw;
+      height:10vh;
+      background-color: #e6e6e6;
+      }
+
+    main {
+      width:100vw;
+      height:60vh;
+      background-color: rgb(65, 65, 65);
+
+      flex-direction: column;
+      }
+
+    main > div {
+      width:85vw;
+      height:8vh;
+      background-color: #e6e6e6;
+      margin:5px;
+     }
+
+
+    footer {
+      width:100vw;
+      height:20vh;
+      background-color: #ccc;
+      display:flex;
+      justify-content:center;
+      }
+
+    footer > div {
+      width:85vw;
+      height:10vh;
+      margin:3vh;
+      }
+
+    aside {
+      width:50vw;
+      height:100vh;
+      opacity:0.5;
+      background-color:rgb(241, 95, 95);
+      position:absolute;
+      top:0;
+    }
+
+  </style>
+</head>
+<body>
+  <header class="flex-center-center">
+    <div></div>
+  </header>
+  <main class="flex-center-center">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </main>
+  <footer>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti voluptatibus, optio ea aspernatur laboriosam aliquid dolore accusamus animi. Assumenda, officiis.
+    </div>
+  </footer>
+  <aside>
+
+  </aside>
+</body>
+</html>
