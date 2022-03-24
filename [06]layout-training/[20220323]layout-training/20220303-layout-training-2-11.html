@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    .flex-cen-cen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .box-2vw {
+      background-color: #383838;
+      width: 2vw;
+      height: 2vw;
+      border-radius: 100%;
+    }
+
+    .position-absol {
+      position: absolute;
+    }
+
+    body {width: 100vw; height: 100vh; 
+      border: 1px solid blue;
+    }
+
+    #root {
+      width: 60vw;
+      height: 80vh;
+
+      /* border: 1px solid red; */
+    }
+
+    #war {
+      width: inherit;
+      height: inherit;
+
+      flex-direction: row;
+    }
+
+    /* #war>div {
+      border: 1px solid green;
+    } */
+
+    #war>div:nth-child(1) {
+      background-color: darkgrey;
+      width: 40vw;
+      height: inherit;
+
+      /* position: absolute; */
+      z-index: 1;
+
+      overflow: hidden;
+    }
+
+    /* #war>div:nth-child(1)>div {
+      border: 1px solid red;
+    } */
+
+    #war>div:nth-child(1)>div:nth-child(1) {
+      height: 20vh;
+      width: inherit;
+    }
+
+    #war>div:nth-child(1)>div:nth-child(1)>div:nth-child(1) {
+      color: white;
+      margin: 2vw;
+
+      /* position: absolute; */
+      z-index: 1;
+    }
+
+    #war>div:nth-child(1)>div:nth-child(1)>div:nth-child(2) {
+      background-color:rosybrown;
+      width: 50vw;
+      height: 50vw;
+
+      border-radius: 25vw;
+
+      /* position: absolute; */
+      top: -27vh;
+      left: -5vw;
+    }
+
+    #war>div:nth-child(1)>div:nth-child(2) {
+      height: 60vh;
+      width: inherit;
+
+      flex-direction: column;
+      
+    }
+
+    #war>div:nth-child(1)>div:nth-child(2)>div {
+      /* border: 1px solid green; */
+      margin: 1vw;
+    }
+
+    #war>div:nth-child(1)>div:nth-child(2)>div:nth-child(1){
+      width: 8vw;
+      height: 20vh;
+
+      border: 5px solid #383838;
+      border-radius: 8vw;
+
+      margin-bottom: 4vw;
+      margin-top: 8vw;
+    }
+
+    /* #war>div:nth-child(1)>div:nth-child(2)>div:nth-child(2){
+      background-color: #383838;
+      width: 2vw;
+      height: 2vw;
+      border-radius: 100%;
+    }
+
+    #war>div:nth-child(1)>div:nth-child(2)>div:nth-child(3){
+      background-color: #383838;
+      width: 2vw;
+      height: 2vw;
+      border-radius: 100%;
+    }
+
+    #war>div:nth-child(1)>div:nth-child(2)>div:nth-child(4){
+      background-color: #383838;
+      width: 2vw;
+      height: 2vw;
+      border-radius: 100%;
+    } */
+
+    #war>div:nth-child(1)>div:nth-child(2)>div:nth-child(5){
+      font-size: small;
+      margin: 3vw;
+      margin-top: 4vw;
+    }
+
+    #war>div:nth-child(2) {
+      background-color: #363636;
+      width: 50vw;
+      height: inherit;
+
+      position: absolute;
+      left:37vw;
+
+      border-top-right-radius: 15vw;
+      border-bottom-right-radius:15vw ;
+      /* border-radius: 20vw; */
+    }
+
+    /* <제가 만든 방법이 정답인지는 모르겠으나, 일단 비슷한 형태를 만드는데 어려움은 많이 없었습니다. 다만 원형을 만들고나서 2vw,2vw로 정사각형을 만든뒤 비율을 100%로 해봤는데요.  가로창을 넓히면 가로가 길어지는 타원형이 되버리는데 원래 그런건지 궁금하기도 합니다.
+    
+    안쪽의 스크롤 박스와 아래 원형3개는 어디에서나 같아야하니까 px작업으로 하는게 좋은건가요? > */
+
+
+  </style>
+</head>
+<body class="flex-cen-cen">
+  <div id="root">
+    <div id="war" class="flex-cen-cen">
+      <div class="position-absol">
+        <div>
+          <div class="position-absol">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero, quisquam repellat repellendus officiis eum ea quo, iure magni dolor odio reprehenderit tempore nam voluptas sit sapiente.
+          </div>
+          <div class="position-absol"></div>
+        </div>
+        <div class="flex-cen-cen">
+          <div></div>
+          <div class="box-2vw"></div>
+          <div class="box-2vw"></div>
+          <div class="box-2vw"></div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, iste quisquam beatae nesciunt est rem repellendus, ex quasi architecto dolorem modi. Similique ratione molestiae eveniet perspiciatis fuga temporibus minima tempora qui!
+          </div>
+        </div>
+      </div>
+      <div>
+      </div>
+    </div>
+    <div class="position-absol"></div>
+  </div>
+</body>
+</html>

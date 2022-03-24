@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  *{margin: 0; padding: 0;}
+  .root{
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+.root>div:nth-child(1){
+  width: 500px;
+  height: 900px;
+  background-color: darkgray;
+
+
+  position: absolute;
+  left: 700px;
+
+  z-index: 1;
+}
+
+  header{
+    width: 600px;
+    height: 200px;
+    background-color: rgb(124, 60, 60);
+
+    position: absolute;
+    border-radius: 100px;
+    z-index: 3;
+    /* overflow: hidden; */
+  }
+/* overflow의 사용법을 잘 모르겠습니다. 
+header라고 설정정한 갈색 박스와 container(회색박스)를 overflow를 통해 겹쳐야 하는것 같은데 잘 안됩니다. */
+
+/* 2-6-check 파일 확인 바랍니다. ctrl+F "check point " */
+
+
+
+  .container{
+    width: 500px;
+    height: 900px;
+    background-color: lightgray;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    z-index: 2;
+  }
+
+.container>div:nth-child(1) {
+  width: 500px;
+  height: 200px;
+}
+
+.first{
+  width: 500px;
+  height: 200px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    
+
+}
+
+  .first>div{
+    width: 100px;
+    height: 200px;
+    border: 3px solid darkgray;
+    border-radius: 60px;
+  }
+
+.container>article:nth-child(2) {
+  display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.second{
+width: 500px;
+height: 200px;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+  .second>div{
+    width: 10px;
+    height: 10px;
+    border-radius: 30px;
+    background-color: darkgray;
+  }
+
+.third {
+  width: 500px;
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  text-align: center;
+}
+
+</style>
+</head>
+<body>
+<div class="root">
+  <div></div>
+  <header>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero dolor dolorum ratione dolore nostrum. Non nesciunt doloribus quis magni sit architecto, quaerat commodi minima, optio reiciendis enim beatae vel? Necessitatibus!</p>
+  </header>
+  <div class="container">
+<div></div>
+    <main class="first">
+      <div></div>
+    </main>
+
+    <div class="second">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <footer class="third">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet, adipisci dignissimos. Temporibus et adipisci ratione, qui, debitis fugit porro quaerat culpa voluptatum cum distinctio, ullam excepturi a libero nihil voluptates?</p>
+    </footer>
+  </div>
+
+</div>
+
+</body>
+</html>

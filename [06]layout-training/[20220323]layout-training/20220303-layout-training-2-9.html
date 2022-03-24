@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    
+    :root{
+      --height-1:950px;
+      --width-1:500px;
+      --color-1:#857777;
+      --color-2:#c4c4c4;
+      --color-3:white;
+      --color-4:rgb(65, 65, 65);
+    }
+
+    .border-solid{
+      border: 3px solid var(--color-4) ;
+    }
+
+
+    .flex-center-center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .position-relative{
+      position: relative;
+    }
+
+    .position-absolute{
+      position: absolute;
+    }
+
+  /* ------------------------------------------------- */
+
+
+    .root{
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .wrapper{
+      width: 800px;
+      height: 950px;
+    }
+
+    main{
+      width: var(--width-1);
+      height: var(--height-1);
+      background-color: var(--color-2);
+      overflow: hidden;
+    }
+
+    main>div:nth-child(1){
+      width: 800px;
+      height: 800px;
+      background-color: var(--color-1);
+      border-radius:50%;
+      bottom: 700px;
+      z-index: 0;
+    }
+
+    main>div:nth-child(2){
+      width: 410px;
+      height: 250px;
+      z-index: 1;
+      color: var(--color-3);
+      top: 80px;
+      text-align: center;
+    }
+
+
+    main>div:nth-child(3){
+      width: var(--width-1);
+      height: var(--height-1);
+      flex-direction: column;
+    }
+
+    main>div:nth-child(3)>div:nth-child(1){
+      width: 50px;
+      height: 150px;
+      border-radius: 30px;
+    }
+
+    main>div:nth-child(3)>div:nth-child(2){
+      width: 30px;
+      height: 100px;
+      margin-top: 30px;
+      flex-direction: column;
+    }
+
+    main>div:nth-child(3)>div:nth-child(2)>div{
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      /* margin-top: 20px; */
+      background-color: var(--color-4);
+    }
+
+    main>div:nth-child(3)>div:nth-child(3){
+      width: 410px;
+      text-align: center;
+      top: 100px;
+    }
+
+    /* 가운데 타원, 점 3개 margin을 주지 않으면 붙어 있는데 이런부분은 원래 margin을 써도
+    문제는 없는지, 또 밑에 텍스트 박스는 position을 이용했는데 display만 사용하면 요소들이 
+    서로 붙어서 나오는게 맞나요?  position이나 margin을 많이 안쓰는게 좋다고 하셔서.. 다른
+    방법이 또 있는지 궁굼합니다.*/
+
+    .flex-space-around-center{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* check point
+
+    center로 넣는 값은 사실 여러개 값중 단 하나의 값일 뿐입니다. ㅁ
+
+    
+    
+    
+    
+    */
+
+
+
+
+
+    nav{
+      width: 200px;
+      height: var(--height-1);
+      background-color: var(--color-4);
+      border-radius: 0px 200px 200px 0px;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="root flex-center-center">     <!-- 전체 창 -->
+    <div class="wrapper flex-center-center">   <!-- 메인 박스 -->
+      <main class="flex-center-center position-relative">   <!-- 메인 왼쪽 박스 -->
+        <div class="position-absolute"></div>     <!-- 숨겨지는 둥근 박스 -->
+        <div class="position-absolute">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit, quasi quam. Magnam cum veritatis deleniti nulla nemo animi quod reiciendis, suscipit eveniet dolores reprehenderit vel, eos, eius voluptate dicta iste.</div>      <!-- 위에 텍스트 박스 -->
+        <div class="flex-center-center">  
+          <div class="border-solid"></div>    <!-- 가운데 타원 박스  -->
+          <!-- check point -->
+          <div class="flex-space-around-center">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>    <!-- 점 모양  전체 박스 -->
+          <div class="position-relative">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores eveniet facilis amet quis ipsum harum minima expedita, sed a molestiae natus, pariatur quasi qui quo nobis nam hic quos recusandae.
+          </div>    <!-- 밑에 텍스트 박스 -->
+        </div>
+      </main>
+      <nav></nav>    <!-- 오른쪽 옆에만 둥근 박스 -->
+    </div>
+  </div>
+</body>
+</html>

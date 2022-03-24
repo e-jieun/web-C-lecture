@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<style>
+	:root{
+		--dark:#505050;
+	}
+	.root{
+		width:100vw;
+		height: 100vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.con{
+		width: 500px;
+		height: 1000px;
+		background-color: lightgray;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		overflow: hidden;
+	}
+	.con>div:nth-child(1){
+		width: 700px;
+		height: 700px;
+		background-color: rgb(134, 120, 120);
+		border-radius:500px;
+		position: relative;
+		bottom:400px;	
+	}
+	.con>div:nth-child(2){
+		color: white;
+		font-size: 20px;
+		position: absolute;
+		width: 470px;
+		text-align:justify;
+		margin-top: 30px;
+	}
+	.con>div:nth-child(3){
+		width: 50px;
+		height: 150px;
+		border: 8px solid var(--dark);
+		position: absolute;
+		top:500px;
+		border-radius:100px;
+	}
+	.con>div:nth-child(4){
+		position: absolute;
+		top:700px;
+	}
+	.con>div:nth-child(4)>div{
+		width: 15px;
+		height: 15px;
+		background-color: var(--dark);
+		border-radius: 15px;
+		margin-top: 15px;
+		position: relative;
+	}
+	.con>div:nth-child(5) {
+		text-align: justify;
+		margin-top: 70px;
+		width: 450px;
+	}
+	.root>div:nth-child(1){
+		z-index: 2;
+	}
+	.root>div:nth-child(2){
+		width: 600px;
+		height: 1000px;
+		background-color: rgb(61, 61, 61);
+		border-radius: 300px;
+		z-index: 1;
+		position: relative;
+		right: 300px;
+	}
+</style>
+	<div class="root">
+		<div class="con">
+			<div>
+			</div>
+			<div>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum laboriosam eaque adipisci porro dolores dignissimos ratione modi asperiores magni autem est labore magnam
+			</div>
+			<div>
+			</div>
+			<div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur maiores impedit necessitatibus doloremque laudantium magni laboriosam reiciendis, molestiae delectus ipsa, adipisci amet iste quod id assumenda hic!
+			</div>
+	</div>
+		<div></div>
+	</div>
+</body>
+</html>

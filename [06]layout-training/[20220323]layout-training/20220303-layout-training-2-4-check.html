@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1-0322</title>
+  <style>
+    .border-black {
+      border: 1px solid black;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #root #wrapper {
+      width: 600px;
+      height: 720px;
+      display: flex;
+      justify-content: center;
+    }
+
+    #root #wrapper>div {
+      width: 480px;
+      height: 720px;
+    }
+
+    /* #container-1 */
+    #root #wrapper>div:nth-child(1) {
+      background-color: #c4c4c4;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+    /* ???------------보여지는 창을 크기조절을 하면 container-2(뒤에 위치한 컨테이너)와 container-1이 왜 겹쳐있다가 분리가 되는지 궁금합니다------------ */
+
+    /* check point 
+    
+    이것은 포지션 '기준(offset)'에 따라 생기는 자연스러운 현상입니다.
+    강제로 중앙정렬한 것 + 브라우저의 오른쪽 혹은 왼쪽으로 여백이나 위치를 조정한 것 때문에 생기는 현상이며
+    일반적인 레이아웃이 아니다보니 발생하는 것과
+    이것을 해결하기 위해
+    분리되는 태그 두개를 또하나의 부모태그로 묶어 정렬하면 손쉽게 해결 할 수 있습니다.
+    
+    */
+
+    
+    
+    
+    
+    
+    #container-2 {
+      position: absolute;
+      right: 100px;
+      background-color: rgb(43, 43, 43);
+      border-radius: 0px 100px 100px 0px;
+      box-shadow: 1px 1px 100px 1px rgba(0, 0, 0, 0.2);
+      z-index: 0;
+    }
+
+    #container-1>div:nth-child(1) {
+      width: inherit;
+      height: 200px;
+      position: absolute;
+    }
+
+    #container-1>div:nth-child(2) {
+      width: 500px;
+      height: 400px;
+      background-color: rgb(126, 116, 116);
+      border-radius: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: -120px;
+    }
+
+    #container-1>div:nth-child(2)>h3 {
+      width: 380px;
+      position: relative;
+      top: 20px;
+      color: white;
+      font-weight: 400;
+    }
+
+    #container-1>div:nth-child(3) {
+      width: inherit;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      /* top: -100px; */
+    }
+
+    #container-1>div:nth-child(3)>div {
+      width: 10px;
+      height: 10px;
+      background-color: rgb(49, 49, 49);
+      border-radius: 100%;
+    }
+
+    #container-1>div:nth-child(3)>div:nth-child(1) {
+      width: 40px;
+      height: 130px;
+      border-radius: 30px;
+      border: 8px solid rgb(49, 49, 49);
+      background-color: #c4c4c4;
+      position: relative;
+      top: -20px;
+    }
+
+    #container-1>div:nth-child(4) {
+      width: 480px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container-1>div:nth-child(4) {
+      width: 80%;
+      text-align: center;
+      font-size: small;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="wrapper">
+      <div id="container-1">
+        <!-- header -->
+        <div></div>
+        <!-- header 반원 -->
+        <div>
+          <h3>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aut, explicabo nulla illum error voluptates
+            magnam porro tenetur perspiciatis voluptate?
+          </h3>
+        </div>
+        <!-- main -->
+        <div>
+          <!-- main big elipse -->
+          <div id="empty"></div>
+          <!-- main dots -->
+          <div id="dot-1"></div>
+          <div id="dot-2"></div>
+          <div id="dot-3"></div>
+        </div>
+        <div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab error ea soluta laborum quis ipsam voluptas,
+            dolorum earum facere aliquid, dolorem at magnam voluptatum perspiciatis repellat incidunt nemo adipisci
+            assumenda?
+          </div>
+        </div>
+      </div>
+      <div id="container-2"></div>
+    </div>
+  </div>
+</body>
+
+</html>

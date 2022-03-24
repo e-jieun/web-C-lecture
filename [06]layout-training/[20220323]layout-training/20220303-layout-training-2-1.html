@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-01</title>
+
+<!-- ====== 스타일 영역 ====== -->
+<style>
+  /* ====== 변수 ====== */
+  :root {
+    --color-1 : #fff;
+    --color-2 : #c4c4c4;
+    --color-3 : gray;
+    --color-4 : violet;
+
+    --width-1 : 400px;
+    --width-2 : 380px;
+  }
+
+
+  * {margin: 0; padding: 0;}
+
+  /* 테스트 색상용 클래스 */
+  .test-color-1 { background-color: var(--color-1);}
+  .test-color-2 { background-color: var(--color-2);}
+  .test-color-3 { background-color: var(--color-3);}
+  .test-color-4 { background-color: var(--color-4);}
+    
+  /* 정렬을 위한 클래스 */
+  .align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .align-col { flex-direction: column; }
+  .align-row { flex-direction: row; }
+  .align-space { justify-content: space-between;}
+  .absolute { position: absolute; }
+  .relative { position: relative; }
+  .hidden { overflow: hidden; }
+
+  /* 박스 모양 및 크기를 위한 클래스 */
+  .big-box { width: var(--width-1); height: 800px; }
+  .box-1 { width: var(--width-2); height: 400px;}
+  .box-2 { width: var(--width-2); height: 380px;}
+  .box-3 { width: 360px; height: 300px;}
+  .box-4 { width: 360px; height: 100px;}
+  .round-1 { border-radius: 190px;}
+  .round-2 { border-radius: 30px;}
+  .margin-10 { margin: 10px; }
+  .dot {width: 15px; height: 15px;}
+  .mini-box {width: 30px; height: 120px;}
+  .solid {border: 3px solid var(--color-4);}
+  
+  #root {
+    width: 100vw;
+    height: 100vh;
+  }
+  /* 전체 크기 */
+  
+  #container > main {
+    z-index: 1;
+  }
+  /* 메인 상자(글씨 등등 들어가는 상자) */
+  
+  #container > div {
+    right: 30%;
+    z-index: 0;
+  }
+  /* 옆으로 튀어나오는 상자 */
+  
+  main > div:nth-child(1) > div:nth-child(1) {
+    bottom: 45%;
+  }
+  /* 상단 반쯤 가려진 동그라미 */
+
+  main > div:nth-child(1) > div:nth-child(2) {
+    top: 10%;
+  }
+  /* 상단 흰색 텍스트 */
+
+  span {
+    font-size: 12px;
+  }
+  
+  h3 {
+    color: var(--color-1);
+  }
+
+</style>
+
+
+</head>
+
+
+<body>
+<div id="root" class="align-center">
+  <div id="container" class="align-center">
+    <main class="big-box test-color-3 align-center align-col">
+      <div class="box-2 test-color-2 hidden align-center align-col">
+      <!-- 내용물의 상단 == 반쯤 가려진 동그라미와 글씨가 들어갈 부분 -->
+        <div class="box-2 test-color-4 round-1 relative">
+        <!-- 내용물 안에 있는 반쯤 가려질 동그라미 -->
+        </div>
+        <div class="box-3 absolute margin-10">
+        <!-- 상단 하얀 글씨 -->
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, officia tenetur odit nostrum natus numquam commodi inventore omnis facilis. At.</h3>
+        </div>
+      </div>
+      <div class="box-1 test-color-2 align-center align-col">
+      <!-- 버튼같은것들과 하단의 글씨가 들어갈 부분 -->
+        <div class="mini-box solid round-2 margin-10"></div>
+        <!-- 큰버튼 -->
+        <div class="box-4 align-center align-col">
+        <!-- 작은버튼 세 개 -->
+          <div class="dot round-1 test-color-4 margin-10"></div>
+          <div class="dot round-1 test-color-4 margin-10"></div>
+          <div class="dot round-1 test-color-4 margin-10"></div>
+        </div>
+        <div class="box-4 margin-10">
+        <!-- 글씨 -->
+          <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet consectetur laudantium voluptatum, aliquam a deserunt obcaecati? Molestiae, ut debitis. Sapiente aperiam illum quia quam libero consequuntur error laudantium ut saepe.</span>
+        </div>
+      </div>
+    </main>
+    <div class="big-box test-color-4 round-1 relative"></div>
+    <!-- 옆으로 튀어나오는 상자 -->
+  </div>
+</div>
+</body>
+</html>

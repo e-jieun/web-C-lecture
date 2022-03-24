@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .root{
+      width:100vw; height:100vh;
+      display:flex; justify-content:center;align-items:center;
+    }
+
+    .box{
+      width:400px; height:700px; 
+      background-color:#ccc;
+      /* overflow:hidden; */
+    }
+
+    .lorem{
+      color:white; margin:20px; 
+      text-align:justify;}
+
+    .wrapper-1{ width:450px; height:450px; 
+      position: absolute; top:10px;
+      /* overflow:hidden; */
+
+    }
+
+
+    /* .circle-1{
+      width:450px; height:450px; background-color: rgb(133, 120, 105); border-radius:50%; 
+      } * 상단 원 overflow하는 법 ,원 위치를 position으로 이동하는게 맞나요??/       
+*/
+
+      /* check point
+    
+      overflow 속성과 position 속성을 완전히 구분하는 것이 좋습니다. 
+      
+      overflow의 속성 명세를 정확히 뜯어보면, "자식태그가 해당태그(부모태그)보다 사이즈가 크거나 위치를 벗어나면" 어떤 조치를 취하겠다라는 뜻으로, 기본값은 overflow:scroll입니다. 해당 기본값 때문에, 화면보다 내용이 많아지면 자동으로 스크롤바가 생성되는 것을 알 수 있습니다.
+      이 값을 overflow:hidden; 으로 하면 '크기보다 넘어가는 것은 가리는 상태로 만들겠다' 가 됩니다.
+      
+      poisiton은 말그대로 '위치'를 조정하는 값인데
+      display 속성과 그 모양새는 비슷해 보이지만 브라우저 구현상으로는 완전히 다른 흐름을 가지고 있습니다.
+      
+      display는 "위에 놓을까? 아래에 놓을까?" 라고 한다면,
+      position은 "정확한 어떤 위치에 놓아줘" 라는 부분으로 '원래 배치되어야 할 자리에서 이동'하는 개념입니다.
+
+      구현 순서로 보면, display로 배치될 위치를 정하고 그 다음에서야 position으로 '원래있어야할 위치로부터 얼마쯤 이동' 이라는 뜻으로 브라우저가 해석합니다.
+
+
+      */
+
+
+
+
+  </style>
+</head>
+<body>
+  <div class="root">
+    <div class="box">
+      <div class="lorem">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea officiis qui illo totam non, quaerat odio enim recusandae voluptas magni ex suscipit nulla sapiente, voluptatem sit, sunt doloribus explicabo unde?</div>
+       <div class="wrapper-1">
+         <div class="circle-1"></div>
+       </div>
+
+
+
+
+    </div>
+  </div>
+  
+</body>
+</html>

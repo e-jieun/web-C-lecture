@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  *{margin: 0; padding: 0;}
+  .container{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-items:center;
+    align-items:center;
+  }
+  
+  .container>div:nth-child(1){
+    background-color:darkgray;
+    width:428px;
+    height:926px;
+  }
+  .container>div:nth-child(1)>div:nth-child(1){
+    width:420px;
+    height:214px;
+    border-radius:0px 0px 214px 214px;
+    background-color:gray;
+  }
+  #circle{
+    width:100px;
+    height:300px;
+    margin:10px; border:solid;
+    background-color:darkgray;
+    border-radius:100px;
+  }
+  #cycle{
+  background-color: gray;
+  width:50px;
+  height:50px;
+  border-radius: 25px;
+}
+
+  .container>div:nth-child(4){
+    width:428px;
+    height:120px;
+  }
+  .container>div:nth-child(2){
+    width:300px;
+    height:926px;
+    border:1px solid red;
+    float:left;
+    border-radius:0px 300px 300px 0px;
+    background-color: gray;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div>
+      <div class="text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Hic in eligendi nisi expedita assumenda reprehenderit tenetur, voluptatum non perferendis amet rem vel adipisci vitae, quasi iste blanditiis. Alias, obcaecati esse?</div>
+      <div id="circle"></div>
+      <div id="cycle"></div>
+      <div id="cycle"></div>
+      <div id="cycle"></div>
+      <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim corrupti eos officia. Nostrum magni illum repudiandae quis odio, est velit voluptatem iure nulla sapiente tempora itaque enim ut adipisci voluptas!</div>
+  
+        
+    </div>
+    <div></div> 
+  </div>
+</body>
+</html>

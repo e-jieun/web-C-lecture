@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    .iineup-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .justify-flex-end {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .align-flex-start {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* -------------------------------- */
+
+    * {margin: 0; padding: 0;}
+    
+    body > div {
+      width: 100vw;
+      height: 100vh;
+    }
+    
+    .side {
+      width: 850px;
+      height: 900px;
+      background-color: #383838;
+
+      position: relative;
+
+      border-radius: 280px;
+    }
+    
+    .root {
+      width: 600px;
+      height: inherit;
+      background-color: #c5c5c5;
+
+      position: absolute;
+
+      overflow: hidden;
+    }
+
+    header{
+      width: inherit;
+      height: 30%;
+
+      /* background-color: #fafc8f; */
+      position: relative;
+      z-index: 1;
+    }
+
+    header > div:nth-child(1) {
+      width: 80%;
+      height: 50%;
+
+      /* border: 1px solid salmon; */
+
+      position: relative;
+      z-index: 3;
+      
+      bottom: 30px;
+
+      font-size: 24px;
+      text-align: justify;
+      color: #f4f4f4;
+    }
+
+    
+    header > div:nth-child(2) {
+      width: 120%;
+      height: 200%;
+
+      background-color: #6b6b6b;
+
+      border-radius: 50%;
+
+      position: absolute;
+      bottom: 0%;
+
+      z-index: 2;
+    }
+    
+    main{
+      width: inherit;
+      height: 50%;
+
+      /* background-color: blue; */
+
+    }
+
+    main > div:nth-child(1) {
+      width: inherit;
+      height: 60%;
+
+      /* border: 1px solid salmon; */
+
+      flex-direction: column;
+    }
+
+    main > div:nth-child(1) > div {
+    width: 55px;
+    height: 170px;
+
+    border: 7px solid #383838;
+    border-radius: 50px;
+
+    margin-top: 40px;
+    }
+    
+    main > div:nth-child(2) {
+      width: inherit;
+      height: 40%;
+
+      /* border: 1px solid #d62d7c; */
+
+      flex-direction: column;
+    }
+
+    main > div:nth-child(2) > div {
+    width: 20px;
+    height: 20px;
+
+    background-color: #383838;
+    border-radius: 100px;
+
+    margin: 10px;
+    }
+
+
+    footer{
+      width: inherit;
+      height: 20%;
+
+      /* background-color: #4c996f; */
+    }
+    
+    footer > div {
+      width: 90%;
+      height: 70%;
+
+      /* border: 1px solid #d62d7c; */
+      text-align:center
+    }
+    
+  </style>
+  
+</head>
+<body>
+  <div class="iineup-center">
+    <div class="side">
+      <div class="root">
+        <header class="iineup-center">
+          <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet quisquam libero architecto odio magni quia eaque atque minus, deserunt blanditiis.</div>
+          <div></div>
+        </header>
+        
+        <main>
+          <div class="iineup-center justify-flex-end">
+            <div></div>
+          </div>
+          <div class="iineup-center">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </main>
+
+        <footer class="iineup-center align-flex-start">
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium fugiat culpa, blanditiis, ratione facere ad maxime vero quia commodi maiores pariatur expedita nostrum provident porro repellat corrupti enim voluptatem rerum? Blanditiis magnam quibusdam fugiat tenetur, hic ducimus labore? Voluptas, odit.</div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
