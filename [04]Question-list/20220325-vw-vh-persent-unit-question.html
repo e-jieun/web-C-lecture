@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .vw-value {
+      width: 50vw;
+      height: 50vh;
+      background-color: salmon;
+      color: #fff;
+    }
+
+    .persent-unit {
+      width:50%;
+      height:50%;
+      background-color:blue;
+      color:#fff;
+    }
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <div id="root">
+
+    <h1></h1>
+    <h1></h1>
+
+    <h2>view width</h2>
+    <div class="vw-value">
+      <h3></h3>
+      <div class="persent-unit"></div>
+    </div>
+    <h3>퍼센트와 vw, vh단위는 왜 기준점을 다르게 해놨을까?</h3>
+    <p>
+      단 한개로 통일하면 사람의 입장에서는 명확하여 사용하기 편하겠지만, 고도의 레이아웃 작업을 필요로할때 단위가 매번 '부모'기준이면 정확한 비율을 알기 어려울때가 빈번합니다. 항상 부모의 크기를 따져봐야하는 문제가 발생되었고, <br>
+      그때문에 브라우저의 기준으로만 크기를 결정하는 단위가 필요로 했습니다
+    
+      <br><br>
+      % 퍼센트 단위는 <span style="color:red; font-weight: bold;">부모의 크기</span>를 따른다 <br>
+      vw,vh 뷰포트 단위는 <span style="color:blue; font-weight: bold;">부모크기는 모르겠고 브라우저의 크기</span>를 따른다
+
+
+    </p>
+
+  </div>
+
+
+
+
+  <script>
+    const root = document.getElementById("root");
+    const vwValue = document.querySelector('.vw-value');
+    const persentValue = document.querySelector('.persent-unit');
+    const widthValue = root.children[0];
+    const heightValue = root.children[1];
+    const body = document.querySelector('body');
+    console.dir(body);
+    // console.log(widthValue);
+    console.dir(root);
+
+
+    window.addEventListener('load', function () {
+      widthValue.textContent = `현재 브라우저 창의 가로폭은 ${body.clientWidth}px 입니다.`;
+      heightValue.textContent = `현재 브라우저 창의 가로폭은 ${body.clientHeight}px 입니다.`;
+
+      vwValue.children[0].textContent = `
+        div 태그의 가로값은 50vw 입니다.
+        px로 변환하면${body.clientWidth / 2}px
+        즉 브라우저의 가로폭의 1/2 입니다.`;
+      persentValue.textContent = `
+        파란박스는 분홍색 박스의 퍼센트 단위 % 로 50%를 지정했습니다.
+        부모의 가로값이 얼마인진 모르지만 절반인 50%입니다.
+        pixel로 환산하면 ${(body.clientWidth / 2) /2} px 이되지만, 중요한 값은 아니며
+        '절반'인것이 중요합니다.
+      
+      `;
+    
+    });
+  </script>
+</body>
+
+</html>
