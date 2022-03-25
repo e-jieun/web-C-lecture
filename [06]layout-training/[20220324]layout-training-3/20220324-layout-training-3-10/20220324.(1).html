@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<link rel="stylesheet", href="./css/style.css">
+<body>
+	<div class="root">
+		<div class="con">
+			<div>
+				<div>Lorem ipsum</div>
+			</div>
+			<div>
+				<div>Lorem ipsum</div>
+				<div></div>
+			</div>
+			<!-- 하나의 div 안에 text 요소와 점(도형)요소가 같이 있기 때문에 div을 새로 제작 -->
+			<!-- 사실 점 요소를 ● 키보드 내에서 해결하려고 했지만(이상한 꾀부리지말자) &nbsp를 남발하게 되다보니 코드가 굉장히 지저분해졌고, 텍스트요소와 점요소가 각각 다른 기능을 할 수 있겠다는 생각이
+			들어 div을 하나 만들어 해결하였다.  -->
+			<div> </div>
+			<!-- 공백은 margin값을 넣는 것도 좋지만, 해당 부분에 content가 들어갈 것을 감안하여
+					margin이 아닌 division을 넣어 해결하였다. -->
+			<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae natus dolorum mollitia est adipisci quam, voluptates aliquid recusandae quisquam quae nihil, nobis cum voluptas fuga officiis laudantium dignissimos ad laborum tempora sequi. Tempora sunt iusto necessitatibus molestiae veritatis eaque vel, eum consequatur, provident inventore, mollitia quibusdam voluptas nobis error at.
+			</div>
+			<div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<!-- 사각형 요소 3개를 각각 포함시키는 div을 하나 제작 -->
+			<div> </div>
+			<!-- 마찬가지로 공백을 margin값 보다는 div을 하나 넣어 width와 height 값을 입력하여 공백부분을 해결하였다. -->
+			<div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+	<!-- Self review : div만 쓰지 말고 다양한 시맨틱태그를 사용해보자. -->
+</body>
+</html>

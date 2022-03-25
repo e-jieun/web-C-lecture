@@ -1,0 +1,29 @@
+.radius-100{
+  border-radius: 100%;
+}
+
+.border-bk{
+  border: 1px solid black;
+}
+
+.border-red{
+  border: 1px solid red;
+}
+
+.space-around{
+  justify-content: space-around;
+}
+
+.space-between{
+  justify-content: space-between;
+}
+
+.flex-align-center{
+  display: flex;
+  align-items: center;
+}
+
+.flex-justify-center{
+  display: flex;
+  justify-content: center;
+}

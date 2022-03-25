@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{margin:0; padding:0;}
+    #root{
+      width:100vw;
+      height:100vh;
+      background-color: aliceblue;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #root>div{
+      width:20vw;
+      height:70vh;
+      background-color: #dbdbdb;
+    }
+
+    .center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    /* ------------------------------------------------------------------------------------------------- */
+    
+    #root>div>div:nth-child(1){
+      width:20vw;
+      height:40vh;
+      /* border:1px solid blue; */
+      flex-direction: column;
+    }
+
+
+    #root>div>div:nth-child(1)>div:nth-child(2){
+      width:95%;
+      height:15%;
+      background-color: #5f5f5f;
+    }
+
+    /* id="qeustion" 이 부모 컨테이너를 넘어 가려면 postion값을 줘야하나요? postion값은 비율로 줄수 있을까요?*/
+
+    #root>div>div:nth-child(1)>div:nth-child(1){
+      margin-bottom:50px;
+      margin-right:150px;
+    }
+    #root>div>div:nth-child(1)>div:nth-child(3){
+      font-size: small;
+      margin-top:40px;
+    }
+    #root>div>div:nth-child(1)>div:nth-child(2)>div{
+      width:2vw;
+      height:2vh;
+      background-color: #c4c4c4;
+      margin:40px;
+    }
+    /* ------------------------------------------------------------------------------------------------- */
+    #root>div>div:nth-child(2){
+      width:40vw;
+      height:15vh;
+      /* border:1px solid blue; */
+      flex-direction: row;
+    }
+
+    #root>div>div:nth-child(2)>div{
+      width:60vw;
+      height:10vh;
+      background-color: #5f5f5f;
+      margin:10px;
+    }
+    
+    
+    
+    
+    /* ------------------------------------------------------------------------------------------------- */
+    #root>div>div:nth-child(3){
+      width:20vw;
+      height:10vh;
+      background-color: #5f5f5f;
+    }
+    #root>div>div:nth-child(3)>div{
+      width:2vw;
+      height:2vh;
+      border-radius: 1vh;
+      background-color: #c4c4c4;
+      flex-direction: column;
+      margin:20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+
+    <div>
+
+      <div class="center">
+
+        <div> 
+          lorem ipsum
+        </div>
+
+        <div class="center">
+          Lorem ipsum 
+          <div></div>
+        </div>
+        <div>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus dolorem, ex ab autem mollitia earum quae et fuga iste beatae vitae ea sit delectus. At odit earum recusandae aut maxime.
+        </div>
+
+      </div>
+
+
+
+      <div class="center">
+        <div></div>
+        <div></div>
+        <div id="qeustion"></div>
+      </div>
+
+
+      
+      <div class="center">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+
+
+
+
+    </div>
+
+
+
+
+    
+  </div>
+</body>
+</html>

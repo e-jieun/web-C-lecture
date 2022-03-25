@@ -1,0 +1,67 @@
+  *{margin:0; padding:0;}
+  
+  .display{
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+  .container{
+    width:428px;
+    height:926px;
+    display:inline;
+    background-color:gray;
+
+  }
+  .container>div:nth-child(1){
+    width:428px;
+    height:100px;
+    margin-top:10%;
+    margin-left:5%;
+    font-size:larger;
+  }
+  .container>div:nth-child(2){
+    width:408px;
+    height:100px;
+    margin:10px;
+    background-color: #fff;
+    font-size: larger;
+
+  }
+  .container>div:nth-child(3){
+    width:428px;
+    height:110px;
+  
+  }
+  .container>div:nth-child(4){
+    width:428px;
+    height:150px;
+  }
+  .container>div:nth-child(5){
+    width:350px;
+    height:150px;
+    float:left;     
+    background-color:blue;
+    margin-left:10px;
+  }
+  /* .container>div:nth-child(5)>div:nth-child(1){
+    width:100px;
+    height:100px;
+    background-color: #fff;
+    float:left;
+  }   .container>div:nth-child(5)옆에 사각형을 배치하기위해 float:left;를 사용했지만 옆으로 배치가 되지 않아요               */
+  .container>div:nth-child(7){
+    width:100px;
+    height:100px;
+    float:left;
+    background-color: #fff;
+  }
+  .container>div:nth-child(8){
+    width:40vw;
+    height:10vh;
+    background-color: red;
+  }
+
+
+

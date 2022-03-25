@@ -1,0 +1,153 @@
+    
+    
+    :root {
+      --width-1: 500px;
+      --width-2: 700px;
+      --width-3: 900px;
+      --width-4: 1100px;
+      --width-5: 1300px;
+
+      --height-1: 1200px;
+      --height-2: 1400px;
+      --height-3: 1600px;
+      --height-4: 1800px;
+      --height-5: 2000px;
+    }
+    
+    #base {
+      width: 100vw;
+      height: 100vh;
+
+      background-color: #ffff;
+    }
+
+    #base > div {
+      width: var(--width-1);
+      height: var(--height-1);
+
+      background-color: #c5c5c5;
+    }
+    
+    header {
+      width: inherit;
+      height: 26%;
+
+      /* border: 1px solid salmon; */
+    }
+    
+    header > div {
+      width: 94%;
+    }
+    
+    header > div:nth-child(1) {
+      height: 35%;
+
+      /* background-color: #ffa0a0; */
+
+      font-size: 35px;
+      font-weight: bold;
+      color: #7a7a7a;
+    }
+
+    header > div:nth-child(2) {
+      height: 30%;
+
+      background-color: #a0a0a0;
+    }
+
+    header > div:nth-child(2) > div:nth-child(1) {
+      width: 70%;
+      height: 100%;
+
+      /* border: 1px solid #ff5; */
+
+      font-size: 30px;
+      color: #d8d8d8;
+    }
+
+    header > div:nth-child(2) > div:nth-child(2) {
+    width: 10%;
+    height: 100%;
+
+    /* border: 1px solid #7070ff; */
+    }
+
+    header > div:nth-child(2) > div:nth-child(2) > div {
+      width: 15px;
+      height: 15px;
+      background-color: #d8d8d8;
+      
+      border-radius: 30px;
+    }
+
+    
+    main {
+      width: inherit;
+      height: 66%;
+
+      /* border: 1px solid blue; */
+    }
+
+    main > div {
+      width: 94%;
+    }
+
+    main > div:nth-child(1) {
+      height: 48%;
+
+      /* background-color: aquamarine; */
+
+      font-size: 18px;
+      font-weight: bold;
+      color: #808080;
+      text-align: justify;
+    }
+
+    main > div:nth-child(2) {
+      height: 50%;
+
+      /* background-color: aqua; */
+
+      position: relative;
+      z-index: 1;
+    }
+
+    .wrap {
+      width: 200%;
+      height: 50%;
+
+      /* border: 1px solid salmon; */
+
+      position: absolute;
+      z-index: 2;
+    }
+
+    .wrap > div {
+      width: 32%;
+      height: 100%;
+
+      background-color: #a0a0a0;
+    }
+    
+    footer {
+      width: inherit;
+      height: 8%;
+
+      background-color: #a0a0a0;
+    }
+    
+    footer > div {
+      width: 33%;
+      height: 70%;
+
+      /* border: 1px solid salmon */
+    }
+
+    footer > div > div {
+      width: 30%;
+      height: 72%;
+
+      background-color: #c5c5c5;
+
+      border-radius: 50px;
+    }

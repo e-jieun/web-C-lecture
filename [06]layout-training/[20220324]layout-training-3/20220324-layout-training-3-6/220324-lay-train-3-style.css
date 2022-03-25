@@ -1,0 +1,149 @@
+*{margin:0; padding:0;}
+    
+:root {
+  --color-1:#c4c4c4;
+  --color-2:gray;
+}
+
+#body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.box {
+  /* 큰 회색 박스 */
+  width: 400px;
+  height: 800px;
+  background-color: var(--color-1);
+  flex-direction: column;
+}
+
+.box > div:nth-child(1) {
+/* 맨 위 박스 */
+width: inherit;
+height: 15%;
+text-align: left;
+}
+
+.box > div:nth-child(1) > p {
+/* 맨 위 박스 안 텍스트 */
+font-size: larger;
+font-weight: bold;
+color:var(--color-2);
+
+margin:20px;
+}
+
+.box > div:nth-child(2) {
+/* 두번째 박스 */
+width: inherit;
+height: 20%;
+
+display: flex;
+justify-content: center;
+align-items: start;
+}
+
+.box > div:nth-child(2) > div:nth-child(1) {
+/* 두번째 박스 안 텍스트 박스 */
+width: 370px;
+height: 70px;
+background-color: var(--color-2);
+text-align: left;
+}
+
+.box > div:nth-child(2) > div:nth-child(1) > p {
+/* 두번째 박스 안 텍스트 박스 안 텍스트 */
+font-size: larger;
+font-weight: bold;
+color:var(--color-1);
+
+margin:20px;
+}
+
+.box > div:nth-child(2) >  div:nth-child(1)> div {
+/* 두번째 박스 안 텍스트 박스 안 점 */
+width: 10px;
+height: 10px;
+border-radius: 10px;
+background-color: #c4c4c4;
+
+margin-left: 180px;
+}
+
+.box > div:nth-child(3) {
+/* 세번째 박스 */
+width: inherit;
+height: 30%;
+
+display: flex;
+justify-content: center;
+align-items: flex-end;
+}
+
+.box > div:nth-child(3) > p {
+/* 세번째 박스 안 텍스트 */
+text-align: justify;
+color: var(--color-2);
+font-weight: 700;
+font-size: small;
+
+margin:10px;
+}
+
+.box > div:nth-child(4) {
+/* 네번째 박스 */
+width: inherit;
+height: 30%;
+
+display: flex;
+align-items: flex-start;
+}
+
+.box > div:nth-child(4) > div:nth-child(1) {
+/* 네번째 박스 안 박스들 들어갈 박스 */
+width: 800px;
+height: fit-content;
+margin-left: 5px;
+
+display: flex;
+}
+
+.boxxx {
+/* 네번째 박스의 튀어나온 박스들 */
+width: 200px;
+height: 130px;
+background-color: var(--color-2);
+
+margin: 5px;
+}
+
+.box > div:nth-child(5) {
+/* 맨 밑 메뉴 박스 */
+width: inherit;
+height: 5%;
+background-color: var(--color-2);
+}
+
+.dot {
+  /* 맨 밑 메뉴 박스 안 점들 */
+width: 25px;
+height: 25px;
+border-radius: 25px;
+background-color: var(--color-1);
+
+margin-left:50px;
+margin-right:50px;
+}

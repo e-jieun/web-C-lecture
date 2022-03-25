@@ -1,0 +1,70 @@
+/* -------------- 전체영역 마진 없애기 -------------- */
+*{margin: 0; padding: 0;}
+
+
+/* --------------변수-------------- */
+:root {
+  --width-100: 100px;
+  --width-400: 400px;
+  --width-380: 380px;
+  --width-300: 300px;
+  --height-100: 100px;
+  --height-150: 150px;
+  --height-800: 800px;
+  
+  --color-1: #D979B7;
+  --color-2: #F2D5EA;
+  --color-3: #F2A0CD;
+  --color-4: #F2BDDA;
+}
+
+
+/* -------------- 전체 크기 설정 -------------- */
+main {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+/* --------------테스트용 클래스 -------------- */
+.test-box {width: var(--width-100); height: var(--height-100);}
+.test-bgc {background-color: var(--color-4);}
+.test-line {border: 1px solid var(--color-3);}
+/* -------------- 색상 -------------- */
+.bgc-1 {background-color: var(--color-1);}
+.bgc-2 {background-color: var(--color-2);}
+.bgc-3 {background-color: var(--color-3);}
+.bgc-4 {background-color: var(--color-4);}
+.txt-color-1 {color: var(--color-1)}
+.txt-color-2 {color: var(--color-2)}
+
+
+/* --------------정렬 클래스 -------------- */
+.flex-center {display: flex; justify-content: center; align-items: center;}
+.flex-between {display: flex; justify-content: space-between; align-items: center;}
+.flex-around {display: flex; justify-content: space-around; align-items: center;}
+.flex-end {display: flex; justify-content: center; align-items:flex-end;}
+.flex-col {flex-direction: column;}
+.flex-row {flex-direction: row;}
+
+
+/* -------------- 박스 크기 -------------- */
+.main-box {width: var(--width-400); height: var(--height-800);}
+.large-box {width: var(--width-380); height: 20%;}
+.medium-box {width: var(--width-300); height: var(--height-150)}
+.small-box {width: var(--width-380); height: 50px;}
+.bottom-box {width: var(--width-400); height: 60px;}
+.large-btn {width: 40px; height: 40px;}
+.small-btn {width: 10px; height: 10px;}
+.round {border-radius: 50%;}
+.margin-right {margin-right: 10px;}
+.margin-top {margin-top: 40px;}
+.margin {margin: 10px}
+
+
+/* -------------- 포지션 -------------- */
+.position-ab {position: absolute;}
+.position-re {position: relative;}
+.position-fix {position: fixed;}
+.left-10 {left: 10px;}
+

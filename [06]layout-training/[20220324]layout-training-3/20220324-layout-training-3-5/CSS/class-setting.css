@@ -1,0 +1,160 @@
+/* *{margin: 0; padding: 0;} */
+
+
+:root{
+  --color-black:black;
+  --color-white:white;
+  --color-bright-gray:#c4c4c4;
+  --color-gray:#aaa;
+  --color-dark-gray:rgb(85, 85, 85);
+  --width-root:100vw;
+  --height-root:100vh;
+  --width-mobile-box:70vw;
+  --height-mobile-box:90vh;
+  --width-top-box:65vw;
+  --height-top-box:40vh;
+  --height-under-box:5vh;
+  --width-circle-small:2vw;
+  --height-circle-small:2vw;
+  --width-circle-big:6vw;
+  --height-circle-big:6vw;
+  --border-radius-circle:50%;
+  --opacity:0.5;
+  --text-align-justify:justify;
+  --border-solid-black:1px solid black;
+  --border-solid-red:1px solid red;
+  --border-solid-blue:1px solid blue;
+  --margin:10px;
+}
+
+.top-box{
+  width: var(--width-top-box);
+  height: var(--height-top-box);
+}
+
+
+.flex-left-center{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-center-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-around-center{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.position-relative{position: relative;}
+
+.position-absolute{position: absolute;}
+
+.flex-cloumn{
+  flex-direction: column;
+}
+.flex-row{
+  flex-direction: row;
+}
+
+/* ------------------------------------------------------------- */
+
+
+.root{
+  width: var(--width-root);
+  height: var(--height-root);
+  padding-left: 100px;
+}
+
+#mobile-box{
+  width: var(--width-mobile-box);
+  height: var(--height-mobile-box);
+  background-color: var(--color-bright-gray);
+}
+
+h1{
+  color: var(--color-gray);
+}
+
+.top-box>div:nth-child(2){
+  width: var(--width-top-box);
+  height: var(--height-under-box);
+  background-color: var(--color-gray);
+  color: var(--color-bright-gray);
+  margin-top: 10vh;
+}
+
+.top-box>div:nth-child(2)>h3:nth-child(1){
+  margin-left: var(--margin);
+}
+
+.top-box>div:nth-child(2)>div:nth-child(2){
+  width: var(--width-circle-small);
+  height: var(--height-circle-small);
+  border-radius: var(--border-radius-circle);
+  background-color: var(--color-bright-gray);
+  margin-right: var(--margin);
+}
+
+main>div:nth-child(2){
+  width: var(--width-top-box);
+  height: 20vh;
+  text-align: var(--text-align-justify);
+}
+
+#slide-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 20vh;
+}
+
+main>div:nth-child(3)>div{
+  width: 500px;
+  height: 150px;
+  background-color: var(--color-gray);
+  margin: 20px;
+  position: relative;
+  left: 120px;
+}
+
+#bottom-box{
+  width: var(--width-mobile-box);
+  height: 10vh;
+  background-color: var(--color-gray);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+main>div:nth-child(4)>div{
+  width: var(--width-circle-big);
+  height: var(--height-circle-big);
+  background-color: var(--color-bright-gray);
+  border-radius: var(--border-radius-circle);
+}
+
+/* 작은창에 맞춰 작업을 했는데 창 확대하면 생각한 배치랑 다 달라지는데
+큰창에 맞춰 작업을 해야하나요?  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

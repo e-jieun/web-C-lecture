@@ -1,0 +1,93 @@
+:root {
+  --color-grey:#666666;
+  --color-gray:#9c9c9c;
+}
+
+.box-1 {
+  width: 40vw;
+  height: 16vh;
+  display: flex;
+  background-color: var(--color-grey);
+  margin-left: 1.5vw;
+}
+
+.box-2 {
+  width: 4vw;
+  height: 4vw;
+  background-color: var(--color-gray);
+  border-radius: 50vw;
+  margin: 3vw;
+}
+
+.flex-between-cen-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+.flex-cen-cen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+* { margin: 0; padding: 0;}
+
+#root {
+  width: 40vw;
+  height: 92vh;
+  background-color: var(--color-gray);
+}
+
+#root>div:nth-child(1) {
+  color: var(--color-grey);
+  font-size: x-large;
+  
+  padding-left: 1.5vw;
+  padding-top: 3vw;
+  padding-bottom: 4vw;
+}
+
+#root>div:nth-child(2) {
+  margin-top: 3vw;
+  margin-bottom: 18vw;
+}
+
+#root>div:nth-child(2)>div {
+  background-color: var(--color-grey);
+  width: 37vw;
+  height: 6vh;
+
+}
+
+#root>div:nth-child(2)>div>div:nth-child(1) {
+  
+  margin-left: 3vw;
+  font-size: x-large;
+  color: var(--color-gray);
+}
+
+#root>div:nth-child(3) {
+  color: var(--color-grey);
+  margin: 1.5vw;
+}
+
+#root>div:nth-child(4) {
+  width: 70vw;
+  display: flex;
+  margin-bottom: 17vh;
+}
+
+#root>div:nth-child(4)>div {
+  width: 40vw;
+  height: 16vh;
+  background-color: var(--color-grey);
+  margin-left: 1.5vw;
+}
+
+#root>div:nth-child(5) {
+  background-color: var(--color-grey);
+  width: inherit;
+  height: 6vh;
+}

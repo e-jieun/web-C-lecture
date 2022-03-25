@@ -1,0 +1,98 @@
+.root{
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+}
+.container{
+  width: 428px;
+  height: 926px;
+  background-color: var(--color-c4);
+  display: flex;
+  flex-direction: var(--dir-column);
+}
+/* header */
+.header{
+  flex-grow: 1;
+  flex-direction: var(--dir-column);
+  justify-content: flex-end;
+}
+.header div:nth-child(1){
+  width: var(--per-95);
+  position: relative;
+  top: -30px;
+}
+/* header top text */
+.header div:nth-child(1) h1{
+  color: var(--color-gray);
+}
+/* header gray box */
+.header div:nth-child(2){
+  width: var(--per-95);
+  background-color: var(--color-gray);
+  /* display: flex; */
+  flex-direction: row;
+  position: relative;
+  top: 20px;
+}
+/* header gray box - text */
+.header div:nth-child(2) h1{
+  color: var(--color-c4);
+}
+/* header gray box - dot */
+.header div:nth-child(2) > div{
+  width: 10px;
+  height: 10px;
+  background-color: var(--color-c4);
+  position: relative;
+  top: -2px;
+  left: 40px;
+}
+/* main */
+.main{
+  flex-grow: 3;
+  display: flex;
+  flex-direction: var(--dir-column);
+  justify-content: center;
+  position: relative;
+  top: 30px;
+}
+
+/* main text */
+.main div:nth-child(1) h3{
+  width: var(--per-95);
+  color: var(--color-gray);
+  /* 텍스트 좌우정렬 */
+  text-align: justify;
+}
+/* main div:nth-child(2) */
+.main div:nth-child(2){
+  width: 950px;
+  display: flex;
+  position: relative;
+  left: 10px;
+}
+/* main horizonal boxes */
+.main div:nth-child(2) div{
+width: 300px;
+height: 170px;
+background-color: var(--color-gray);
+}
+/* footer */
+.footer{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: var(--dir-column);
+  justify-content: flex-end;
+}
+/* footer menu */
+.footer > div{
+  width: inherit;
+  height: 70px;
+  background-color: var(--color-gray);
+}
+/* footer menu icons */
+.footer div > div{
+  background-color: var(--color-c4);
+  width: 50px;
+  height: 50px;
+}

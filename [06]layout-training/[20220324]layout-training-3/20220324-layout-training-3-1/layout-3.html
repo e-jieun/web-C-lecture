@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(0324) layout-03</title>
+  <link rel="stylesheet" href="/CSS/class.css">
+
+</head>
+
+
+<body>
+  <main class="flex-center bgc-1">
+    <!---------------- 정렬을 위한 컨테이너 ---------------->
+    <div id="container" class="flex-between flex-col main-box bgc-2">
+
+      <!----------------- 맨 위의 글씨 ----------------->
+      <div class="large-box">
+        <h2 class="margin-top txt-color-1">Lorem ipsum</h2>
+      </div>
+      
+      <!-------------- 좌측 글씨와 우측 버튼 -------------->
+      <div class="large-box">
+        <div class="small-box flex-between bgc-4">
+          <p class="margin txt-color-2">Lorem ipsum</p>
+          <div class="small-btn bgc-2 round margin"></div>
+        </div>
+      </div>
+      
+      <!---------------- 문단 ---------------->
+      <div class="large-box">
+        <p class="txt-color-1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio perspiciatis nam quia omnis velit facere nemo nihil sint delectus in soluta sunt architecto necessitatibus optio reiciendis, eum ex cum cumque dolorem? Obcaecati quo cum pariatur nesciunt. Eum quo ducimus laboriosam!</p>
+      </div>
+      
+      <!---------------- 박스 세개 들어갈 영역 ---------------->
+      <div  class="large-box position-re">
+        <!---------------- 박스 세개 묶음을 위한 가상의 박스 ---------------->
+        <div class="flex-center flex-row position-ab">
+          <!---------------- 박스 세개 ---------------->
+          <div class="medium-box margin-right bgc-4"></div>
+          <div class="medium-box margin-right bgc-4"></div>
+          <div class="medium-box margin-right bgc-4"></div>
+        </div>
+      </div>
+
+      <!---------------- 하단 버튼영역 ---------------->
+      <div class="large-box flex-end">
+        <!---------------- 버튼 세개 들어갈 박스 ---------------->
+        <div class="bottom-box position-fix flex-around flex-row bgc-3">
+          <!---------------- 버튼 세개 ---------------->
+          <div class="large-btn round bgc-2"></div>
+          <div class="large-btn round bgc-2"></div>
+          <div class="large-btn round bgc-2"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

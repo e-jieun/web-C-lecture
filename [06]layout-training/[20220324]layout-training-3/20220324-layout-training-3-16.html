@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+*{margin: 0; padding: 0;}
+ :root{
+  --color-1: #c4c4c4;
+  --color-2: rgb(105, 105, 105);
+}
+
+.root{
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 30vw;
+  height: 80vh;
+  background-color: var(--color-1);
+
+
+}
+
+.container header {
+  width: 30vw;
+  height: 130px;
+
+  font-size: large;
+  color: var(--color-2);
+  
+
+  display: flex;
+  align-items: center;
+  
+
+}
+
+.container>div:nth-child(2) {
+  width: 30vw;
+  height: 10vh;
+  background-color: var(--color-2);
+  color: var(--color-1);
+
+  font-size:medium;
+ 
+
+  display: flex;
+  align-items: center;
+ 
+}
+
+.container>div:nth-child(2)>:nth-child(2){
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-1);
+  border-radius: 20px;
+
+  position: relative;
+  left: 17vw;
+}
+
+.container>main:nth-child(3) {
+  width: 30vw;
+  height: 20vh;
+  color: var(--color-2);
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.container footer{
+  width: 30vw;
+  height: 35vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.second {
+width: 30vw;
+height: 10vh;
+background-color: var(--color-2);
+
+display: flex;
+justify-content: space-around;
+align-items: center;
+}
+
+.second>div {
+  width: 20px;
+  height: 20px;
+  background-color: var(--color-1);
+  border-radius: 20px;
+}
+
+
+.first>div:nth-child(1) {
+  width: 18vw;
+  height: 15vh;
+  background-color: var(--color-2);
+  margin-left: 10px;
+
+  position: absolute;
+  top: 60vh;
+  left: 35vw;
+}
+
+.first>div:nth-child(2) {
+  width: 18vw;
+  height: 15vh;
+  background-color: var(--color-2);
+  margin-left: 10px;
+
+  position: absolute;
+  top: 60vh;
+  left: 55vw;
+}
+
+.first>div:nth-child(3) {
+  width: 18vw;
+  height: 15vh;
+  background-color: var(--color-2);
+  margin-left: 10px;
+
+  position: absolute;
+  top: 60vh;
+  left: 75vw;
+}
+
+/* 모양만들기는 위처럼 nth-child로 하나하나 선택하고, 포지션값으로 욱여넣기 식으로 비슷하게는 만들 수 있지만 비효율적인 방법인 것 같고 강사님께서 원하시는 방법도 아닌 것 같습니다.  */
+
+</style>
+</head>
+<body>
+  <div class="root">
+    <div class="container">
+
+      <header>
+        <h1>lorem ipsum</h1>
+      </header>
+      <div>
+        <h2>ipsum lorem</h2>
+        <div></div>
+      </div>
+      <main><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt unde provident commodi mollitia, ducimus doloremque vitae ipsam eveniet necessitatibus porro doloribus libero numquam. Eum non alias sunt, possimus in est!</p>
+      </main>
+
+
+      <footer>
+      
+        <div class="second">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </footer>
+      </div>
+    </div>
+  </div>
+
+  <div class="first">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+</body>
+</html>
