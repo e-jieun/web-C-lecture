@@ -1,0 +1,100 @@
+* {margin: 0; padding: 0;}
+
+#field {
+  width: 100vw;
+  height: 100vh;
+  background-color: #c5c5c5;
+}
+
+.L {
+  width: 50%;
+  height: 100%;
+
+  /* border: 1px solid #8f8; */
+}
+
+.L > div {
+  width: 46vw;
+  height: 40vh;
+
+  /* border: 1px solid #d65; */
+
+  margin-bottom: 5vw;
+}
+
+.L > div > div{
+  width: 38vw;
+  height: 38vw;
+
+  border-radius: 50%;
+}
+
+.L > div > div:nth-child(1) {
+  background-color: #a0a0a0;
+
+  position: absolute;
+  z-index: 2;
+}
+
+.L > div > div:nth-child(2) {
+  background-color: #4b4b4b;
+
+  position: relative;
+  z-index: 1;
+  
+  left: 8vw;
+  top: 8vh;
+}
+
+.R {
+  width: 50%;
+  height: 100%;
+
+  /* border: 1px solid rgb(255, 136, 205); */
+}
+
+.R > div {
+  margin-bottom: 1vw;
+}
+
+.R > div:nth-child(1) {
+width: 30vw;
+height: 10vh;
+
+/* border: 1px solid #b4f; */
+
+font-size: 6vh;
+}
+
+.R > div:nth-child(2) {
+width: 30vw;
+height: 18vh;
+
+/* border: 1px solid #d7f5d7;   */
+overflow: hidden;
+
+font-size: 2vh;
+text-align: start;
+}
+
+.R > div:nth-child(3) {
+width: 30vw;
+height: 6vh;
+
+/* border: 1px solid #cd3; */
+}
+
+.R > div:nth-child(3) > div {
+  width: 30%;
+  height: 70%;
+
+  background-color: #a0a0a0;
+
+  border-radius: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 2vh;
+}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    *{padding: 0; margin: 0;}
+
+    body{width: 100vw; height: 100vh;
+    background-color: #ccc;
+    }
+
+    #root {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    #root>div {
+      /* border: 1px solid saddlebrown; */
+      width: 40vw;
+      height: inherit;
+      margin: 2vh;
+    }
+
+    #root>div:nth-child(1) {
+      display: flex;
+      flex-direction: row;
+    }
+
+    #root>div:nth-child(1)>div:nth-child(1) {
+      width: 35vw;
+      height: 35vw;
+      border-radius: 100%;
+
+      background-color: rgb(170, 170, 170);
+
+      position: absolute;
+      z-index: 1;
+      
+      top: 2vh;
+    } 
+
+    #root>div:nth-child(1)>div:nth-child(2) {
+      width: 35vw;
+      height: 35vw;
+      border-radius: 100%;
+
+      background-color: grey;
+      position: absolute;
+
+      left: 12vw;
+      top: 10vh;
+
+    } 
+
+    #root>div:nth-child(2) {
+      width: 40vw;
+      height: inherit;
+
+      /* margin-right: 6vw; */
+    }
+
+    #root>div:nth-child(2)>div {
+      /* border: 1px solisd red; */
+    }
+
+    #root>div:nth-child(2)>div:nth-child(1) {
+      font-size: xx-large;
+      font-weight: 700;
+
+      margin-top: 12vh;
+      margin-bottom: 2vh;
+    }
+
+    #root>div:nth-child(2)>div:nth-child(2) {
+      /* margin-bottom: 2vh; */
+    }
+
+    #root>div:nth-child(2)>div:nth-child(3) {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+    }
+    
+    #root>div:nth-child(2)>div:nth-child(3)>div {
+      width: 12vw;
+      height: 2.5vh;
+      background-color: rgb(170, 170, 170);
+      border-radius: 3vw;
+
+      text-align: center;
+      
+      margin: 1vw;
+      margin-top: 2vw;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div>
+      <div>main title</div>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Quas id nihil fugiat, at libero dolor fugit error magnam perspiciatis, voluptates impedit atque aperiam dignissimos. Atque eaque expedita voluptatibus, illo adipisci minima velit quibusdam unde aperiam dicta dolores at quia ipsa!
+      </div>
+      <div>
+        <div>hash</div>
+        <div>hash</div>
+        <div>hash</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

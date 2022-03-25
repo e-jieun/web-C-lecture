@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0; padding: 0;
+    }
+    
+    .root {
+      width: 100vw;
+      height: 100vh;
+      /* border: 1px solid black; */
+      display: flex;
+      align-items: center;
+      background-color: gainsboro;
+    }
+    .root >div {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      flex-direction: row;
+      /* row가 안먹혀요  */
+    }
+    .root > div > div:nth-child(1) {
+      width: 40vw;
+      height: 90vh;
+      display: flex;
+      position: absolute;
+      /* border: 1px solid red; */
+      /* align-items: center; */
+      margin-left: 5vw;
+    }
+    .root > div > div:nth-child(1) > div:nth-child(1){
+      width: 60vmin;
+      height: 60vmin;
+      border-radius: 50%;
+      background-color: #c4c4c4;
+      position: absolute;
+      z-index: 2;
+    }
+    .root > div > div:nth-child(1) > div:nth-child(2){
+      width: 60vmin;
+      height: 60vmin;
+      border-radius: 50%;
+      background-color: gray;
+      position: absolute;
+      top: 20vh;
+      /* right: 0; */
+      left: 20vh;
+      z-index: 1;
+    }
+    .root > div > div:nth-child(2) {
+      width: 30vw;
+      height: 30vh;
+      display: flex;
+      position: absolute;
+      /* border: 1px solid blue; */
+      margin-left: 55vw;
+      margin-right: 5vw ;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .root > div > div:nth-child(2) > div:nth-child(1) {
+      color: black;
+      font-size: 3rem;
+      /* border: 1px solid green; */
+    }
+    .root > div > div:nth-child(2) > div:nth-child(2) {
+      /* border: 1px solid purple; */
+    }
+    .root > div > div:nth-child(2) > div:nth-child(3) {
+      flex-direction:row;
+      /* 여기도 row가 안먹어요 완성본에서는 되긴했는데 모르겠네요 */
+      justify-content: space-between;
+      display: flex;
+    }    
+    .root > div > div:nth-child(2) > div:nth-child(3) > div {
+      width: 8vw;
+      height: 4vh;
+      border-radius: 3vw;
+      background-color: #c4c4c4;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+    .root > div > div:nth-child(2) > div:nth-child(3) > div > div {
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="root">
+    <div>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>
+        <div>main title</div>
+        <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum fugit magnam recusandae laboriosam sint ullam esse necessitatibus! Eaque at voluptate neque, rem veniam porro. Molestias dolor voluptates natus soluta, nobis, dignissimos porro vero veritatis quis facilis illo odit facere harum fugiat. Illo a laudantium sint expedita autem nobis voluptas, corporis eaque vitae repellendus ipsa sapiente minima maxime sunt blanditiis. Fuga?</div>
+        <div>
+          <div>
+            <div>
+              hash
+            </div>
+          </div>
+          <div>
+            <div>
+              hash
+            </div>
+          </div>
+          <div>
+            <div>
+              hash
+            </div>
+          </div>    
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

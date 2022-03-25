@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+  *{margin:0; padding:0;}
+  
+  :root {
+    --color-1:#d1d1d1;
+    --color-2:#9c9c9c;
+    --color-3:rgb(102, 102, 102);
+  }
+
+  #body {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-1);
+  }
+
+  .base {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body > div:nth-child(1) {
+    /* 왼쪽 상자 */
+    width: 50vw;
+    height: 50vh;
+  }
+  
+  body > div:nth-child(1) > div:nth-child(1) {
+    /* 위 원 */
+    width: 25vw;
+    height: 25vw;
+    background-color: var(--color-2);
+    border-radius: 20vw;
+    
+    z-index: 2;
+
+    position: absolute;
+    bottom: 35vh;
+    left: 10vw;
+  }
+  
+  body > div:nth-child(1) > div:nth-child(2) {
+    /* 아래 원 */
+    width: 25vw;
+    height: 25vw;
+    background-color: var(--color-3);
+    border-radius: 20vw;
+    
+    z-index: 1;
+    
+    position: absolute;
+    top:35vh;
+    left:15vw;
+  }
+
+  body > div:nth-child(2) {
+    /* 오른쪽 상자 */
+    width: 50vw;
+    height: 50vh;
+    flex-direction: column;
+  }
+
+  body > div:nth-child(2) > div:nth-child(1) {
+    /* main title 들어간 상자 */
+    width: inherit;
+    height: 10vh;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  body >  div:nth-child(2) > div:nth-child(1) > span {
+    /* main title */
+    text-align: center;
+    font-size: 50px;
+  }
+
+  body > div:nth-child(2) > div:nth-child(2) {
+    /* 텍스트 상자 */
+    width: inherit;
+    height: 20vh;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+
+  body >  div:nth-child(2) > div:nth-child(2) > p {
+    /* 텍스트 */
+    text-align: left;
+    font-size: 20px;
+  }
+
+  body > div:nth-child(2) > div:nth-child(3) {
+    /* 버튼 상자 */
+    width: inherit;
+    height: 5vh;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+  }
+  
+  .button {
+    /* 버튼 */
+    width: 5vw;
+    height: 3vh;
+    background-color: var(--color-2);
+    border-radius: 2vw 2vw 2vw 2vw;
+    margin-right: 1vw;
+    padding-top: 1vh;
+    
+    text-align: center;
+    font-size: small;
+  }
+
+  </style>
+
+</head>
+<body id="body" class="base">
+  <div class="base">
+    <!-- 왼쪽 상자 / 1-->
+    <div></div>
+    <!-- 위 원 / 1-1 -->
+    <div></div>
+    <!-- 아래 원 / 1-2 -->
+  </div>
+
+  <div class="base">
+    <!-- 오른쪽 상자 / 2 -->
+  <div>
+    <!-- main title 들어간 상자 / 2-1 -->
+    <span>main title</span>
+  </div>
+  <div>
+    <!-- 텍스트 상자 / 2-2 -->
+    <p>
+      Lorem ipsum dolor sit amet consectetur<br> adipisicing elit. Ipsa est et explicabo quasi aspernatur iure pariatur eaque! <br> Aut reprehenderit ratione hic similique eum nostrum ullam quod<br> perspiciatis adipisicing elit. Ipsa est et explicabo quasi aspernatur iure pariatur <br> eaque! Aut reprehenderit ratione hic similique eum nostrum ullam spernatur iure <br> Aut reprehenderit ratione hic similique eum nostrum ullam quod <br> perspiciatis adipisicing elit. Ipsa es
+    </p>
+  </div>
+  <div>
+    <!-- 버튼 상자 / 2-3 -->
+    <h1 class="button">hash</h1>
+    <h2 class="button">hash</h2>
+    <h3 class="button">hash</h3>
+  </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  *{margin:0; padding:0;}
+
+  .color{ background-color: #c8c8c8;}
+
+  #root{ width:100vw; height:100vh; display: flex; align-items: center; justify-content: center; flex-direction: row;}
+
+/* ---------------------------------------------------------- */
+  #root div{
+    /* border:1px solid black; */
+  }
+
+  #root>div:nth-child(1)>div:nth-child(1){
+    width:30vw;
+    height:30vh;
+    border-radius: 60%;
+    position: relative;
+    z-index: 2;
+    /* top: 10vh; */
+    left:-15vw;
+    background-color: bisque;
+  }
+  #root>div:nth-child(1)>div:nth-child(2){
+    width:30vw;
+    height:30vh;
+    border-radius: 60%;
+    position: relative;
+    z-index: 1;
+    top: -20vh;
+    left:-10vw;
+    background-color: aliceblue;
+}
+
+
+  #root>div:nth-child(2){
+    width:25vw;
+    height:40vh;
+    display:flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+  }
+  #root>div:nth-child(2)>div:nth-child(3){
+    display: flex;
+    flex-direction: row;
+  }
+
+  #root>div:nth-child(2)>div:nth-child(3)>div{
+    width:8vw;
+    height:3vh;
+    margin:2vw;
+    background-color: aqua;
+    border-radius: 2vw;
+  }
+
+
+</style>
+</head>
+<body>
+  <div class="color" id="root">
+    
+    <div>
+
+      <div></div>
+      <div></div>
+
+
+    </div>
+
+
+
+    <div>
+
+        <h1>main title</h1>
+
+        <div>
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Atque qui tempore facere ipsam saepe nihil quis ipsum ex cumque doloribus dicta adipisci error esse officiis quos, non impedit distinctio consequuntur.
+        </div>
+
+
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        
+      
+      
+      
+    </div>
+
+
+
+  </div>
+</body>
+</html>

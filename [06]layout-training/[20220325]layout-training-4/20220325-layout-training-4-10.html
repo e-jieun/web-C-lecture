@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ <style>
+   *{margin: 0; padding: 0;}
+   .root{
+     width: 100vw;
+     height: 100vh;
+      background-color: rgb(231, 231, 231);
+   }
+   .container{
+    width: 50vw;
+    height: 100vh;
+
+     display: flex;
+     justify-content: left;
+     align-items: center; 
+
+     position: absolute;
+   }
+
+   .container>ract-1 {
+    width: 30vw;
+    height: 60vh;
+    border-radius: 50%;
+    background-color: rgb(180, 179, 179);
+
+    position: absolute;
+    top: 10vh;
+    left: 5vw;
+    z-index: 1;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+
+   .container>ract-2 {
+    width: 30vw;
+    height: 60vh;
+    border-radius: 50%;
+    background-color: rgb(88, 88, 88);
+
+    position: absolute;
+    top: 25vh;
+    left: 16vw;
+    z-index: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+   
+span{
+  color: #fff;
+
+  position: relative;
+  left: 10vw;
+  top: 10vh;
+}
+
+   .title {
+     width: 50vw;
+     height: 100vh;
+   }
+
+   .title>div{
+    width: 30vw;
+
+    position: absolute;
+    left: 50vw;
+    top: 45vh;
+   }
+
+   .title>div:nth-child(1) h1 {
+    font-size: 40px;
+   }
+
+   .menu {
+    width: 30vw;
+    height: 6vw;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   }
+
+   .menu div{
+    width: 9vw;
+    height: 5vh;
+    background-color: gray;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+   }
+
+ </style>
+</head>
+<body>
+  <div class="root">
+    <div class="container">
+      <ract-1>
+        <p>ract-1 element</p>
+      </ract-1>
+      <ract-2>
+        <span>ract-2 element</span>
+      </ract-2>
+    </div>
+    <div class="title">
+      <div>
+        <h1>main title</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At iure dolores aut perferendis voluptate recusandae doloribus ex et! Veniam repellat velit error quas. Sed unde vitae aperiam cumque provident similique!</p>
+        <div class="menu">
+          <div>
+            <p>hash</p>
+          </div>
+          <div>
+            <p>hash</p>
+          </div>
+          <div>
+            <p>hash</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

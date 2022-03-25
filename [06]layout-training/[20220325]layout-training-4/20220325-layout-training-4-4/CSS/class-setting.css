@@ -1,0 +1,145 @@
+*{margin: 0; padding: 0;}
+
+
+:root{
+  --color-black:black;
+  --color-white:white;
+  --color-bright-gray:#e2e2e2;
+  --color-gray:#c4c4c4;
+  --color-dark-gray:#888888;
+  --width-root:100vw;
+  --height-root:100vh;
+  --width-main:90vw;
+  --height-main:90vh;
+  --width-circle-big:40vw;
+  --height-circle-big:40vw;
+  --border-radius-circle:50%;
+  --opacity:0.5;
+  --text-align-justify:justify;
+  --text-align-left:left;
+  --border-solid-black:1px solid black;
+  --border-solid-red:1px solid red;
+  --border-solid-blue:1px solid blue;
+  --margin:10px;
+}
+
+
+.flex-left-center{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-center-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-around-center{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.position-relative{position: relative;}
+
+.position-absolute{position: absolute;}
+
+.flex-column{
+  flex-direction: column;
+}
+.flex-row{
+  flex-direction: row;
+}
+
+/* ----------------------------- style setting-------------------------------- */
+
+
+.root{
+  width: var(--width-root);
+  height: var(--height-root);
+  background-color: var(--color-bright-gray);
+}
+
+.root>div{
+  width: 45vw;
+  height: 80vh;
+  margin: 5vw;
+}
+
+.root>div:nth-child(1)>div:nth-child(1){
+  width: var(--width-circle-big);
+  height: var(--height-circle-big);
+  border-radius: var(--border-radius-circle);
+  background-color: var(--color-gray);
+  z-index: 2;
+  top: 20vh;
+}
+
+.root>div:nth-child(1)>div:nth-child(2){
+  width: var(--width-circle-big);
+  height: var(--height-circle-big);
+  border-radius: var(--border-radius-circle);
+  background-color: var(--color-dark-gray);
+  z-index: 1;
+  top: 25vh;
+  left: 10vw;
+}
+
+/* 
+.root>div:nth-child(1)>div:nth-child(3){
+  width: 20vw;
+  height: 5vh;
+  color: var(--color-black);
+  z-index: 3;
+  top: 36vh;
+  left: 20vw;
+} */
+
+/* 
+.root>div:nth-child(1)>div:nth-child(4){
+  width: 20vw;
+  height: 5vh;
+  color: var(--color-white);
+  z-index: 4;
+  top: 53vh;
+  left: 35vw;
+} */
+
+/* 텍스트를 집어넣으면 화면 확대 시 글자 위치가 다 달라져서 지움 */
+
+.root>div:nth-child(2)>div:nth-child(1){
+  width: 40vw;
+  height: 10vh;
+  font-size: 35px;
+}
+
+.root>div:nth-child(2)>div:nth-child(2){
+  width: 40vw;
+  height: 20vh;
+}
+
+.root>div:nth-child(2)>div:nth-child(3){
+  width: 40vw;
+  height: 10vh;
+}
+
+.root>div:nth-child(2)>div:nth-child(3)>div{
+  width: 10vw;
+  height: 3vh;
+  background-color: var(--color-gray);
+  text-align: center;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+
+
