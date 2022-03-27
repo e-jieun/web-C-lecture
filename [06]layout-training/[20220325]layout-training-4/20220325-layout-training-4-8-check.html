@@ -19,11 +19,24 @@
       background-color: gainsboro;
     }
     .root >div {
+      width:100vw;
+      height:100vh;
       display: flex;
       position: absolute;
+      justify-content: center;
       align-items: center;
       flex-direction: row;
       /* row가 안먹혀요  */
+
+      /* check point */
+      /* 
+      
+      배치 방식에는 항상 기준이 되어주는 사이즈가 필요합니다. 
+      속성기입으로 해결이 안되었을때 가장먼저 확인해보는 중요한 작엄중 하나입니다.
+      
+      */
+
+
     }
     .root > div > div:nth-child(1) {
       width: 40vw;

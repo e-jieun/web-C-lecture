@@ -51,6 +51,10 @@
     background-color: #fff;
     float:left;
   }   .container>div:nth-child(5)옆에 사각형을 배치하기위해 float:left;를 사용했지만 옆으로 배치가 되지 않아요               */
+
+  /* 이것은 float 만의 독특한 작동방식 때문에 흔히 발생하는 일입니다. */
+
+
   .container>div:nth-child(7){
     width:100px;
     height:100px;

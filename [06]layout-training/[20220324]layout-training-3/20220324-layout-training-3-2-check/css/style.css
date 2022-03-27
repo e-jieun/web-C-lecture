@@ -66,6 +66,21 @@ header > div:nth-child(2) > div:nth-child(2) {
   /* 원을 끝으로 가게 한 후 마진으로 조절하고 싶었는데
   원이 끝으로 가지 않아서 left값을 줘서 했습니다. 왜 끝으로 
   가지 않을까요 float같은거 써도 안가요 */
+
+  /* check point */
+
+  /* 
+  
+* 요소를 원하느 위치에 '배치(display)'하는 것은 display:flex로도 가능하게끔 속성들이 마련되어 있습니다. 이 이후에 국소적인 조정은 위에서 사용하신 position과 같은 값으로 미세조정하시면 매우 편리하게 사용할 수 있습니다.
+-> 배치(display) 값으로 모든 스페이싱을 끝낸다. -> poisition으로 나머지 부분 처리를 맡긴다.
+라고 한다면 수월하게 작업을 진행 할 수 있습니다.
+
+여기서 쉽게 빠지기 쉬운 부분이 position이나, float과 같은 속성을 일대일 대응 방식이기 때문에 작성하자 마자 바로 반응 한다는 점인데, -> 추후를 생각했을때 유지보수에서 큰 문제가 발생할 여지가 높습니다. 의도하시는 바가 배치의 수준이라면 display의 flex 하위 속성들로 해결하시는 것을 권장합니다.
+
+  
+  */
+
+
 }
 main {
   width: 18vw;
@@ -101,6 +116,17 @@ footer > div {
   justify-content: center;
   align-items: center;
   /* 원 3개가 세로 가운데로 가지않아요 */
+
+  /* check point */
+  /* 
+  
+  위의 footer > div selector의 컨테이너 사이즈가 정해지지 않았기 때문입니다. 
+  display속성은 무엇을 기준으로 배치 방식을 저장해야되는지 헷갈린 상태입니다.
+  
+  
+  */
+
+
   justify-content: space-around;
 }
 footer > div > div {

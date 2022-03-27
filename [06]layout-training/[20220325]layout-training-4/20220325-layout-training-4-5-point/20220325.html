@@ -32,23 +32,35 @@
         </section>
     </main>
     <script>
-        let Click_hash = document.getElementById("hash");
-        let hush = document.getElementById("hush");
-        let hesh = document.getElementById("hesh");
-        let eash = document.querySelectorAll("div.hash");
+
+        const colorChangerContainer = document.querySelector('#hash-box');
+        console.dir(colorChangerContainer);
+
+        colorChangerContainer.addEventListener('click', (event) => {
+
+            console.log(event);
+            // let randomValue = Math.random()*255;
+            let makeValue = `rgb(${Math.random()*255},${Math.random()*255},${Math.random()*255})`;
+            event.target.style.backgroundColor = makeValue;
+        });
+
+        // let Click_hash = document.getElementById("hash");
+        // let hush = document.getElementById("hush");
+        // let hesh = document.getElementById("hesh");
+        // let eash = document.querySelectorAll("div.hash");
         
-        Click_hash.addEventListener("click", event => {
-            Click_hash.style.backgroundColor = "rgb(" + Math.random()*255 + "," + Math.random()*255 + "," + Math.random()*255 + ")";
-            console.log("h");
-        });
-        hush.addEventListener("mouseover", event => {
-            console.log("hey");
-            hush.style.backgroundColor = "rgb(" + Math.random()*255 + "," + Math.random()*255 + "," + Math.random()*255 + ")";
-        });
-        hesh.addEventListener("mouseenter", event => {
-            hesh.style.backgroundColor = "rgb(" + Math.random()*255 + "," + Math.random()*255 + "," + Math.random()*255 + ")";
-            console.log("hi");
-        });
+        // Click_hash.addEventListener("click", event => {
+        //     Click_hash.style.backgroundColor = "rgb(" + Math.random()*255 + "," + Math.random()*255 + "," + Math.random()*255 + ")";
+        //     console.log("h");
+        // });
+        // hush.addEventListener("mouseover", event => {
+        //     console.log("hey");
+        //     hush.style.backgroundColor = "rgb(" + Math.random()*255 + "," + Math.random()*255 + "," + Math.random()*255 + ")";
+        // });
+        // hesh.addEventListener("mouseenter", event => {
+        //     hesh.style.backgroundColor = "rgb(" + Math.random()*255 + "," + Math.random()*255 + "," + Math.random()*255 + ")";
+        //     console.log("hi");
+        // });
     </script>
 </body>
 </html>
