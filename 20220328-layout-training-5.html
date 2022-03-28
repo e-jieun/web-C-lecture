@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+* {margin:0; padding:0;}
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+    #root>section {
+      width:80vw;
+      height:70vh;
+      
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>section > div {
+      width:20vw;
+      height:70vh;
+      background-color: #ccc;
+      border: 1px solid #000;
+    }
+
+    #root>section > div:nth-child(2){
+      display:flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    #root>section > div:nth-child(3){
+      display:flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    #root>section > div:nth-child(2)> div {
+      width:100%;
+      height:50%;
+      background-color: #fff;
+    }
+    #root>section > div:nth-child(3)> div {
+      width:100%;
+      height:50%;
+      background-color: #fff;
+    }
+
+
+
+  </style>
+  
+</head>
+<body>
+  <div id="root">
+    <section>
+      
+      
+      <div></div>
+      <div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+      </div>
+      <div></div>
+    </section>
+  </div>
+</body>
+</html>
