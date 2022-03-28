@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    * {margin: 0; padding: 0;}
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #wrapper {
+      width: 80vw;
+      height: 70vh;
+      border: 1px solid black;
+    }
+
+    main {
+      display: flex;
+      justify-content: baseline;
+      align-items: baseline;
+    }
+
+    /* main>section:nth-child(1) {
+      width: 20vw;
+      height: 70vh;
+      background-color: #c4c4c4;
+      border: 1px solid black;
+    }
+
+    main>section:nth-child(2) {
+      width: 20vw;
+      height: 35vh;
+      background-color: #c4c4c4;
+      border: 1px solid black;
+    }
+    main>section:nth-child(3) {
+      width: 20vw;
+      height: 35vh;
+      background-color: #c4c4c4;
+      border: 1px solid black; 
+      position: relative;
+      bottom: 35vh; 
+    }
+
+    main>section:nth-child(4) {
+      width: 20vw;
+      height: 70vh;
+      background-color: #c4c4c4;
+      border: 1px solid black;
+    } */
+
+    /* 레이아웃별로 크기를 각각 지정했는데 이런식으로 해도 되는지 모르겠습니다 뭔가 비효율적인거 같기도하도... */
+
+    /* check point
+
+    매우 좋은 의문입니다.
+
+    하나하나 다 선택해서 작성을 진행하면 현재는 해결할 수 있겠으나, 추후 변경할때 문제가 매우 커집니다.
+    
+    */
+
+    main > section {
+      width:20vw;
+      height:70vh;
+      border:1px solid black;
+    }
+    /* 
+    위와 같이 section 태그를 모두 선택해버리면, 개별 작업은 어떻게 하는지 의문이 들법합니다. 
+    이럴땐 최초할당은 위처럼 하고 '한번더 값을 매기는' 재할당을 진행하면 되겠습니다. 
+    */
+
+    main > section:nth-child(2) {
+      height:35vh;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="wrapper">
+      <main>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

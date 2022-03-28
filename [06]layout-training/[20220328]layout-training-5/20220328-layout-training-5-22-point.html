@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+<style>
+  *{margin:0; padding:0;}
+
+  :root {
+    /* size */
+    --w-80 : 80vw;
+    --h-80 : 80vh;
+  }
+  
+  /* --------------- 색상 --------------- */
+  /* .test-solid {border: 1px solid black;} */
+  /* .solid-or {border: 1px solid orangered;} */
+  .color-1 {background-color: orangered;}
+  .color-2 {background-color: orange;}
+
+  /* --------------- 전체크기 --------------- */
+  .main {width: 100vw; height: 100vh;}
+
+  /* ---------------가상의 큰 박스 --------------- */
+  .container {
+    width: var(--w-80);
+    height: var(--h-80);
+  }
+
+  /* ---------------안에 들어갈 박스들 --------------- */
+  .big-box {width: 25%; height: 100%;}
+  .small-box {width: 25%; height: 50%;}
+
+  /* --------------- 정렬 --------------- */
+  .flex {display: flex;}
+  .flex-center {justify-content: center; align-items: center;}
+  .position-re {position: relative;}
+  .top-50 {top: 50%;}
+
+
+</style>
+
+</head>
+
+
+
+<body>
+  <!-- ---------------전체 크기 --------------- -->
+  <div class="main flex flex-center">
+    <!-- --------------- 정렬을 위한 박스 --------------- -->
+    <div class="container flex">
+      <!-- --------------- 내용물 4개 --------------- -->
+      <div class="color-1 big-box"></div>
+      <div class="color-2 small-box position-re top-50"></div>
+      <div class="color-1 small-box"></div>
+      <div class="color-2 big-box"></div>
+
+    </div>
+  </div>
+</body>
+</html>

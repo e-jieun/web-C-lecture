@@ -1,0 +1,77 @@
+    *{margin:0px; padding:0px;}
+    
+    #root{
+      width:1920px;
+      height:1080px;
+      background-color: #ccc;
+      display:flex;
+      justify-content: center;
+      align-items:center;
+      }
+    section{
+        border:1px dotted #000;
+      }
+    
+    #root{
+      display:flex;
+      }
+    #root > section {
+        width: 50vw;
+        height:100vh;
+      }
+    #root>section > div:nth-child(1){
+      width:1100px;
+      height:1000px;
+      background-color: #ccc;
+      justify-content: center;
+      align-items:center;
+    }
+    
+    #root>section> div > div
+    {
+      float:left;
+    }
+
+    /* check point */
+    /* 
+    
+    레이아웃 작업에서 float은 필요없게 되었으므로 참고 바람
+    
+    
+    */
+
+
+
+    #root>section>div:nth-child(1) >div:nth-child(1){
+      width: 200px;
+      height:500px;
+      border:1px solid black;
+      background-color:gray;
+      
+
+
+    }
+    #root>section>div:nth-child(1) >div:nth-child(2){
+      width: 200px;
+      height:250px;
+      border:1px solid black;
+      background-color:gray;
+      margin-top:250px;
+
+
+    }
+    #root>section >div:nth-child(1)>div:nth-child(3){
+      width: 200px;
+      height:250px;
+      border:1px solid black;
+      background-color:gray;
+
+
+    }
+    #root>section >div:nth-child(1)>div:nth-child(4){
+      width: 200px;
+      height:500px;
+      border:1px solid black;
+      background-color:gray;
+
+    }
