@@ -1,0 +1,94 @@
+*{margin: 0; padding: 0;}
+
+
+:root{
+  --color-black:black;
+  --color-white:white;
+  --color-bright-gray:#e2e2e2;
+  --color-gray:#c4c4c4;
+  --color-dark-gray:#888888;
+  --color-dark-blue:#4f508b;
+  --width-root:100vw;
+  --height-root:100vh;
+  --width-box:25%;
+  --height-big-box:90%;
+  --height-small-box:45%;
+  --opacity:0.5;
+  --text-align-justify:justify;
+  --text-align-left:left;
+  --border-solid-black:1px solid black;
+  --border-solid-red:1px solid red;
+  --border-solid-blue:1px solid blue;
+  --margin:10px;
+}
+
+.flex{display:flex ;}
+
+.flex-center-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-around-center{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+.position-relative{position: relative;}
+
+.position-absolute{position: absolute;}
+
+.root{width: var(--width-root); height: var(--height-root);}
+
+.container{width: 90vw; height: 80vh;} 
+
+
+/* ----------------------------- style setting-------------------------------- */
+
+/* basic-style */
+
+.container>div{border: var(--border-solid-black); background-color: var(--color-bright-gray);}
+
+.container>div:nth-child(1){
+  width: var(--width-box); 
+  height: var(--height-big-box);
+}
+
+.container>div:nth-child(2){
+  width: var(--width-box); 
+  height: var(--height-small-box);
+  top: 45%;
+}
+
+.container>div:nth-child(3){
+  width: var(--width-box); 
+  height: var(--height-small-box);
+}
+
+.container>div:nth-child(4){
+  width: var(--width-box); 
+  height: var(--height-big-box);
+}
+
+
+/* mobile-style */
+
+@media(max-width:428px){
+
+  .container>div{border: var(--border-solid-blue); background-color: var(--color-dark-blue);}
+
+  .container>div:nth-child(1){width: 35vw; height: 50vh; }
+  .container>div:nth-child(2){width: 35vw; height: 25vh; top: 25vh;}
+  .container>div:nth-child(3){width: 35vw; height: 25vh; }
+  .container>div:nth-child(4){width: 35vw; height: 50vh; }
+
+}
+
+
+

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+    }
+    .root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+    .root > div {
+      width: 80vw;
+      height: 40vw;
+      /* border: 1px solid black; */
+      flex-direction: row;
+      display: flex;
+    }
+    header {
+      width: 20vw;
+      height: 40vw;
+      /* border: 1px solid red; */
+      border: 1px solid black;
+      background-color: #c4c4c4;
+    }
+    main {
+      width: 40vw;
+      height: 60vh;
+      /* border: 1px solid green; */
+      display: flex;
+      flex-direction: row;
+    }
+    main > div:nth-child(1) {
+      width: 20vw;
+      height: 40vw;
+      /* border: 1px solid purple; */
+      position: relative;
+    }
+    main > div:nth-child(2) {
+      width: 20vw;
+      height: 40vw;
+      /* border: 1px solid yellow; */
+      position: relative;
+    }
+    main > div:nth-child(1) > div {
+      width: 20vw;
+      height: 20vw;
+      background-color: #c4c4c4;
+      border: 1px solid black;
+      /* position:relative; */
+      position: absolute;
+      bottom: 0px;
+    }
+    main > div:nth-child(2) > div {
+      width: 20vw;
+      height: 20vw;
+      background-color: #c4c4c4;
+      border: 1px solid black;
+      /* position:relative; */
+      position: absolute;
+      top: 0px;
+    }
+    footer {
+      width: 20vw;
+      height: 40vw;
+      border: 1px solid black;
+      background-color: #c4c4c4;
+    }
+    
+     /* mobile style */
+    @media (max-width:550px) {
+      * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      flex-direction:column;
+      /* column을 해도 창을 줄였을때, 위 아래 네모가 사라져 버립니다. 어디부터 꼬인건지 모르겠어요 ㅠㅠ 여기저기 넣어봤는데 그래도 안되네요*/
+
+      /* check point */
+      /* 
+      
+      레이아웃(구도) 작업에서 억지로 포지션을 통한 레이아웃 작업이 진행되었기 때문에 유연성이 매우 떨어지는 현상이 발생합니다.
+      absolute라는 단어 자체만으로도 "절대적인" 이기 때문에 반응형레이아웃과 같은 유연한 작업에서는 쥐약일 수밖에 없는 물리적인 한계가 존재합니다.
+      이러한 배치 관계에서는 포지션을 사용하지 않고서도 충분히 구도를 잡을 수 있기 때문에, 
+      역으로 HTML 태그관계를 점검하시는 것이 더 나은 방식입니다.
+
+      20220328-layout-training-5-9-point.html 파일을 확인하시기 바랍니다.        
+
+
+      
+      
+      */
+
+
+    }
+    .root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction:column;
+    }
+    .root > div {
+      width: 80vw;
+      height: 40vw;
+      /* border: 1px solid black; */
+      flex-direction:column;
+      display: flex;
+    }
+    header {
+      width: 20vw;
+      height: 40vw;
+      /* border: 1px solid red; */
+      border: 1px solid black;
+      background-color: #c4c4c4;
+    }
+    main {
+      width: 40vw;
+      height: 60vh;
+      /* border: 1px solid green; */
+      display: flex;
+      flex-direction: row;
+    }
+    main > div:nth-child(1) {
+      width: 20vw;
+      height: 40vw;
+      /* border: 1px solid purple; */
+      position: relative;
+    }
+    main > div:nth-child(2) {
+      width: 20vw;
+      height: 40vw;
+      /* border: 1px solid yellow; */
+      position: relative;
+    }
+    main > div:nth-child(1) > div {
+      width: 20vw;
+      height: 20vw;
+      background-color: #c4c4c4;
+      border: 1px solid black;
+      /* position:relative; */
+      position: absolute;
+      bottom: 0px;
+    }
+    main > div:nth-child(2) > div {
+      width: 20vw;
+      height: 20vw;
+      background-color: #c4c4c4;
+      border: 1px solid black;
+      /* position:relative; */
+      position: absolute;
+      top: 0px;
+    }
+    footer {
+      width: 20vw;
+      height: 40vw;
+      border: 1px solid black;
+      background-color: #c4c4c4;
+    }
+
+
+        }
+  </style>
+</head>
+<body>
+  <div class="root">
+    <div>
+      <header>
+  
+      </header>
+      <main>
+        <div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+        </div>
+      </main>
+      <footer>
+        
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>

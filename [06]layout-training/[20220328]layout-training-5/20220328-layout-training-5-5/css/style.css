@@ -1,0 +1,56 @@
+* {margin: 0; padding: 0;}
+
+.base {
+width: 100vw;
+height: 100vh;
+background-color: #fff;
+}
+
+.root {
+  width: 1600px;
+  height: 800px;
+
+  /* border: 1px solid black; */
+}
+
+.L {
+  width: 50%;
+  height: 100%;
+/* 
+  background-color: #c5c5c5; */
+}
+
+.R {
+  width: 50%;
+  height: 100%;
+
+  /* background-color: #5e5e5e; */
+}
+
+.B {
+  width: 50%;
+  height: 100%;
+
+  background-color: #c5c5c5;
+
+  border: 1px solid black;
+}
+
+.S {
+  width: 50%;
+  height: 50%;
+
+  background-color: #c5c5c5;
+
+  border: 1px solid black;
+}
+
+.L > div:nth-child(2) {
+  position: relative;
+  top: 25%;
+}
+
+.R > div:nth-child(1) {
+  position: relative;
+  bottom: 25%;
+}

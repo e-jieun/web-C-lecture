@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+    }
+    .root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .root > div {
+      width: 80vw;
+      height: 40vw;
+      /* border: 1px solid black; */
+      flex-direction: row;
+      display: flex;
+    }
+    header {
+      width: 20vw;
+      height: 40vw;
+      /* border: 1px solid red; */
+      border: 1px solid black;
+      background-color: #c4c4c4;
+    }
+    main {
+      width: 40vw;
+      height: 60vh;
+      /* border: 1px solid green; */
+      display: flex;
+      flex-direction: row;
+    }
+    main > div:nth-child(1) {
+      width: 20vw;
+      height: 40vw;
+      /* border: 1px solid purple; */
+      position: relative;
+    }
+    main > div:nth-child(2) {
+      width: 20vw;
+      height: 40vw;
+      /* border: 1px solid yellow; */
+      position: relative;
+    }
+    main > div:nth-child(1) > div {
+      width: 20vw;
+      height: 20vw;
+      background-color: #c4c4c4;
+      border: 1px solid black;
+      /* position:relative; */
+      position: absolute;
+      bottom: 0px;
+    }
+    main > div:nth-child(2) > div {
+      width: 20vw;
+      height: 20vw;
+      background-color: #c4c4c4;
+      border: 1px solid black;
+      /* position:relative; */
+      position: absolute;
+      top: 0px;
+    }
+    footer {
+      width: 20vw;
+      height: 40vw;
+      border: 1px solid black;
+      background-color: #c4c4c4;
+    }
+    
+  </style>
+</head>
+<body>
+  <div class="root">
+    <div>
+      <header>
+  
+      </header>
+      <main>
+        <div>
+          <div></div>
+        </div>
+        <div>
+          <div></div>
+        </div>
+      </main>
+      <footer>
+        
+      </footer>
+
+    </div>
+  </div>
+</body>
+</html>

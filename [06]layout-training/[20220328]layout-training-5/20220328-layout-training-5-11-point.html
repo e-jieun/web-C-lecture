@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	.root{
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	/* 전체컨텐츠의 보드의 크기 영역, 그리고 컨텐츠의 위치를 잡기위해
+	justify-content와 align-items를 할당시켰다. */
+	.con{
+	display: flex;
+	}
+	/* con내의 영역들이 flex 속성을 주기 위해 설정 */
+	.con>div{
+		background-color: lightgray;
+		border: 2px solid black;
+	}
+	/* 각각의 div에 색을 일일이 정해주는 것 보다는
+	부모-자식 선택자로 한번에 div의 style속성을 할당 */
+	.con>div:nth-child(1){
+		width: 10vw;
+		height: 20vw;
+	}
+	/* width 값과 height 값의 비율을 맞춰주기 위해서
+	둘다 vw의 값으로 설정하였다. */
+	.con>div:nth-child(2){
+		width: 10vw;
+		height: 10vw;
+		position: relative;
+		top:10vw;
+	}
+	/* div이 row 방향으로 flex 전개되어 있는 관계방식을 유지한 상태에서
+	해당 div만 위치를 바꿔주기 위해 position값을 relative 값을 준 뒤
+	top(이동)을 해당 div 크기만큼 주기 편하도록 vw 단위를 사용하여 이동시켰다. */
+		.con>div:nth-child(3){
+		width: 10vw;
+		height: 10vw;
+	}
+		.con>div:nth-child(4){
+		width: 10vw;
+		height: 20vw;
+		}
+	/* 할당된 과제와 같은 form으로 만들었는데, 핵심은 main content를 담고 있는
+	div 안에서 % 단위로 각각의 작은 div의 width 값을 할당시키는 방법으로 사용하면 될 것 같다.
+	어쨌든 % 속성을 사용하면 부모의 div을 따라가니 여러 layout에서 쓰기 유용해 보인다.  */
+</style>
+<body>
+	<div class="root">
+		<div class="con">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+	</div>
+</body>
+</html>

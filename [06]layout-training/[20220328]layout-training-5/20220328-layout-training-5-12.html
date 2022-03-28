@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * { padding: 0; margin: 0;}
+    
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #war {
+      /* border: 1px solid blue; */
+      width: 80vw;
+      height: 70vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    #war>div {
+      border: 1px solid black;
+    }
+
+    #war>div:nth-child(1) {
+      background-color: #d4d4d4;
+      border: 1px solid black;
+      width: 20vw;
+      height: inherit;
+      
+      position: absolute;
+      left: 9.9vw;
+    }
+
+    #war>div:nth-child(2){
+      background-color: #d4d4d4;
+      border: 1px solid black;
+      width: 20vw;
+      height: 35vh;
+
+      position: absolute;
+      left: 30vw;
+      top: 49.9vh;
+    }
+
+    #war>div:nth-child(3) {
+      background-color: #d4d4d4;
+      border: 1px solid black;
+      width: 20vw;
+      height: 35vh;
+
+      position: absolute;
+      left: 50vw;
+      top: 14.9vh;
+    }
+    
+    #war>div:nth-child(4) {
+      background-color: #d4d4d4;
+      border: 1px solid black;
+      width: 20vw;
+      height: inherit;
+
+      position: absolute;
+      left: 69.9vw;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="war">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>

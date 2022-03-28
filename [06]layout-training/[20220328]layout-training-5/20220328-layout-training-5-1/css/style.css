@@ -1,0 +1,45 @@
+
+*{margin:0; padding:0;}
+
+body {
+  width:100vw;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width:72vw;
+  height:70vh;
+  display:flex;
+}
+
+main > div {
+  border:1px solid black;
+  background-color: #ccc;
+}
+
+main > div:nth-child(1) {
+  width:18vw;
+  height:70vh;
+}
+
+main > div:nth-child(2) {
+  width:18vw;
+  height:35vh;
+  position:relative;
+  top:35vh;
+}
+
+main > div:nth-child(3) {
+  width:18vw;
+  height:35vh;
+
+}
+
+main > div:nth-child(4) {
+  width:18vw;
+  height:70vh;
+}
+
