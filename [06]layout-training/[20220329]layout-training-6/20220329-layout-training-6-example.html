@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* common layout -------------------------------------------- */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      list-style-type: none;
+      border: 1px solid red;
+    }
+
+    #root {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* root child shape */
+
+    #root>div {
+      width: 100vw;
+      height: 30vh;
+      border: 1px solid black;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* header */
+    #root>div:nth-child(1) {}
+
+    #root>div:nth-child(1) ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    /* main */
+    #root>div:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #root>div:nth-child(2)>section {
+      width: 100vw;
+      height: inherit;
+      border: 1px dotted #000;
+      text-align: center;
+    }
+
+
+    /* footer */
+    #root>div:nth-child(3) {}
+
+    /* common layout -------------------------------------------- */
+
+
+    /* tablet layout --------------------------------------------- */
+    @media screen and (min-width:450px) {
+
+      /* screen(보이는 화면) and(그리고) 가로폭 최솟값이 450px 이상일때 스타일링 미디어쿼리 */
+      #root {
+        flex-direction: row;
+      }
+
+      /* header */
+      #root>div:nth-child(1) {
+        height: 100vh;
+      }
+
+      #root>div:nth-child(1) ul {
+        width: 20vw;
+
+        align-items: flex-end;
+        flex-direction: column;
+      }
+
+
+
+      /* main */
+      #root>div:nth-child(2) {
+        height: 100vh;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+
+      #root>div:nth-child(2)>section {
+        width: 80vw;
+        height: 50vh;
+
+      }
+
+      /* footer */
+      #root>div:nth-child(3) {
+        display: none;
+      }
+    }
+
+
+    @media screen and (min-width:1028px) {
+
+      #root {
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      /* header */
+      #root>div:nth-child(1) {
+        width: 100vw;
+        height: 30vh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      #root>div:nth-child(1) ul {
+        width: 80vw;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: row;
+      }
+
+      /* main */
+      #root>div:nth-child(2) {
+        height: 100vh;
+        flex-direction: row;
+        flex-wrap: nowrap;
+      }
+
+      #root>div:nth-child(2)>section {
+        width: 100vw;
+        height: 100vh;
+
+      }
+
+
+
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div>
+      <ul>
+        <li>items-1</li>
+        <li>items-2</li>
+        <li>items-3</li>
+        <li>items-4</li>
+        <li>items-5</li>
+      </ul>
+
+
+    </div>
+    <div>
+      <section>section-1</section>
+      <section>section-2</section>
+      <section>section-3</section>
+      <section>section-4</section>
+      <section>section-5</section>
+      <section>section-6</section>
+
+
+    </div>
+    <div>3</div>
+
+  </div>
+</body>
+
+</html>
