@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400&display=swap" rel="stylesheet">
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+      background-color: #eee;
+    }
+
+    ol {
+      margin: 0;
+      padding: 0;
+    }
+
+    h3,
+    sup,
+    p,
+    li {
+      font-family: 'Noto Serif KR', serif;
+    }
+
+    #root {
+      width: 100vw;
+      height: max-content;
+      margin: 1vw;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    ol {
+      width: inherit;
+      /* border: 1px solid #ccc; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      list-style-type: none;
+      line-height: 2rem;
+    }
+
+    h3 {
+      margin-top: 5vh;
+      margin-left: 3vw;
+
+      color: #333;
+    }
+
+    ol li {
+      width: 90%;
+      margin-top: 3vh;
+      border-radius: 10px;
+      margin-bottom: 3vh;
+      /* border: 1px solid #ccc; */
+      padding: 2vw;
+      color: #333;
+      transition: 1s;
+
+      background-color: #fff;
+    }
+
+    ol li:hover {
+      margin-left: 1vw;
+      box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="root">
+    <h3>다이어그램을 만드는 대략의 절차</h3>
+    <p>
+      다이어그램(diagram)<br>
+      <sup>다이어그램은 정보를 조율,묘사, 상징화 하여 2차원 기하학 모델로 시각화 하는 기술이다.</sup>
+
+
+    </p>
+    <ol>
+
+      <li class="list-items">
+        <span style="font-weight: bold">목록만들기</span>: <br>
+        넣고 싶은 정보를 모두 적는다. "페이지 유형" 등의 상위 카테고리에서 세부 카테고리<sup>제품 페이지, 갤러리 페이지, 제품 토론 페이지, 등</sup>로 점점 구체화 한다.
+
+
+      </li>
+      <li class="list-items">
+        <span style="font-weight: bold">스케치</span>:<br>
+        가능한 한 많은 요소를 펜과 종이로 스케치 한다. 이 스케치의 목적은 세부 항복을 다 적는 것이 아니라 논리적인 틀을 세우는 데 있다.
+
+      </li>
+      <li class="list-items">
+        <span style="font-weight: bold">반복</span>: <br>
+        스케치는 한 번으로 충분하지 않다. 소프트웨어로 그리기 전에 한 번 더 스케치하고 빠진 것이 없는지 확인한다.
+      </li>
+      <li class="list-items">
+        <span style="font-weight: bold">다른 접근법 알아보기</span>: <br>
+        나는 다른 접근 방식을 고려하는 것을 프로세스에 정례화했다. 초기 개념이 탄탄하게 자리 잡을 때까지 몇 번의 반복 작업을 거쳤다면 잠시 그것을 치워두고 문제를 다르게 바라본다. 그 중 한 가지 방법은
+        초창기에 내린 전제를 다시 머릿속에 떠올리는 것이다. 예를 들어, 사이트 타겟 고객을 묘사 할 때 두 가지 속성을 이용했다고 해보자. 다른 접근법을 찾아볼 때는 이와 다른 두가지 속성을 고르거나,
+        라이프
+        사이클과 같은 사용자 그룹간의 관계를 다르게 만들어 본다. 두번째 안이 덜 좋을 수도 있지만 더 좋으면 그것으로 하라. 하다 보면 첫 번째 안을 어떻게 가다듬을지 아이디어가 떠오른다.
+      </li>
+      <li class="list-items">
+        <span style="font-weight: bold">이리저리 옮겨보기</span>: <br>
+        다이어그램의 기본적인 형태를 그리고 나면 요소를 이리 저리 옮겨본다. 플로우차트, 사이트맵, 노드(마디 혹은 요소)와 링크 타입의 다이어그램인 콘셉트 모델에서는 작은 차이로 새로운 인사이트가 떠오를 수
+        있으므로 이런 시도가 특히 유용하다.
+      </li>
+      <li class="list-items">
+        <span style="font-weight: bold">포인트 컬러 확인하기</span>:<br>
+        몇 개의 장에서 다이어그램에 색상을 넣는 방법을 알아보겠다. 색상은 차이를 극명하게 드러낸다. 빨간색과 파란색이 함께 있으면 대조되어 독자의 시선을 사로잡는다. 이것은 차이를 보여주는 고난도의 기술로서
+        매우 조심스럽게 써야 한다. 확신이 서지 않으면 회색을 여러농도로 이용하라.
+      </li>
+      <li class="list-items">
+        <span style="font-weight: bold">시각 언어 규칙 정하기</span>:<br>
+        시각언어를 가다듬어라. 시각 언어란 요소를 설명할 때 쓰는 도형이나 규칙을 말한다. 이시점에서 여러분은 여러분이 사용한 시각 언어가 괜찮은지 느낌이 온다. 예를 들어, 다이어그램에 내용이 너무 많아
+        읽기
+        어렵다거나, 다이어 그램이 일관된 이야기를 들려주지 못하면 시각 언어를 가다듬어 핵심 메시지를 더 명료하게 전달할 수 있다. 또한, 별 의미가 없거나 흐름에 도움을 주지 않는 시각 소음 등의 넘쳐
+        흐르는
+        시각 정보도 잘라낼 수 있다.
+      </li>
+      <li class="list-items"><span style="font-weight: bold">이전 문서 다시 보기</span>: <br>
+        요구사항이나 사용자 조사 보고서와 같은 이전 문서를 토대로 그린 다이어그램이라면 세부 항목을 모두 다루는지 다른 사람과 함께 확인하라. 토대가 되는 문서와 여러분이 그린 다이어그램을 비교하면 중요
+        요소가
+        빠지지 않았는지 알 수 있다. 이전 문서는 팀원의 대리인 역할을 한다. 사람들이 프로젝트를 이해하는 방식이 이전 산출물에 담겨 있으므로 이들이 던질 질문이나 피드백도 여기에서 뽑아낼 수 있다.
+
+      </li>
+      <li class="list-items"><span style="font-weight: bold">이름달기</span>: <br>
+        다이어그램 요소가 알아서 메시지를 전할 것이라고 가정하지 마라. 특히 초안이라면 독자가 자신의 생각과 똑같이 그림을 본다고 가정하기보다는 차라리 이름을 과하게 다는 편이 낫다. 색상이나 선의 두께에에는
+        지나친 것이 있으나, 이름은 아무리 달아도 지나치지 않는다.
+      </li>
+    </ol>
+
+    <hr>
+
+    <h3>다이어그램을 그릴 때 흔히 빠지는 함정</h3>
+    <ol>
+      <li class="list-items"><span style="font-weight: bold">계획 부족</span>: <br>
+        앞에서 언급한 "기초 의사결정"을 어느 정도 정해 두지 않으면 다이어그램이 중심에서 벗어난다. 시간이 5분 밖에 없어도 계획을 세워야 중심을 잡고, 다이어그램에 필요한 의사결정을 내릴 수 있다. 계획을
+        짜면 목표를 세우고, 스케줄을 고려하며, 타겟 고객을 떠올릴 수 있다. 그 외에 어떤 콘텐츠가 들어가고 빠져야 하는지, 어떤 부분이 시각적으로 두드러지고 어떤 부분이 배경에 묻혀야 하는지, 언제 그
+        다이어그램을 공유할지, 누가 초안에 좋은 의견을 줄 지도 생각할 수 있다.
+      </li>
+
+      <li class="list-items"><span style="font-weight: bold">이야기 부재</span>: <br>
+        이것은 "자만심"을 공손하게 말한 것이다. 이야기가 빠진 다이어그램은 다이어그램 혼자서 알아서 살라는 것과 다름없다. 문서에서 벗어나 매우 특별하고 극단적인 상황에 다이어그램이 있다고 상상해 보라.
+        모든 다이어그램은 상황, 자세한 설명, 의사결정, 근거가 함께 보여져야 한다.
+
+
+      </li>
+      <li class="list-items"><span style="font-weight: bold">지나치게 많은 정보</span>: <br>
+        다이어그램에 들어가는 정보는 가지치기 하지 않으면 과도한 이미지가 핵심을 덮어버릴 수 있다. 너무 많은 색상, 너무 굵은 선 두께, 너무 다양한 도형은 지나치게 정보가 많다는 증거나. 메시지기 잘
+        전달되지 않으면 초점을 유지하기 위해 요점을 몇 개를 빼라.
+
+
+
+      </li>
+
+
+
+
+    </ol>
+
+
+
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    root.addEventListener("click", (event) => {
+      console.log(event.target);
+      console.dir(event.target);
+      if(event.target.classList.contains('list-items')) {
+        event.target.style.backgroundColor = "#333";
+        event.target.style.color = "#eee";
+      }
+
+
+
+
+    })
+  </script>
+
+
+
+
+
+</body>
+
+</html>
