@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	#root{
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	/* 대지설정 #root, 주로 대지의 크기나 flex 및 flex 하위 속성값만 부여하기 때문에 ID tag로 사용해도 무방해 보인다.
+	div.con이 가운데로 갈 수 있도록 display 속성 할당 */
+	.con{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	/* con 내 div(사각형)들에 flex 속성부여 */
+	.con>div{
+		width: 20vw;
+		height: 20vw;
+		background-color: salmon;
+		margin: 3vw;
+	} 
+	/* 정사각형으로 만들기 위해 width와 height 모두 같은 vw 단위로 사용 */
+	/* 미디어 쿼리로 500px 이하부터 해당 flex 방향 바뀌도록 속성 할당 */
+	@media (max-width:500px){
+#root{
+	width: 100vw;
+	height: 250vw;
+}
+.con{
+	display: flex;
+	flex-direction: column;
+	margin-top: 5vw;
+	/* 세로로 바뀌면서 div들이 올라가기 때문에 margin값을 조금 주었다. */
+}
+/* Q1 - 미디어쿼리로 2번 div에 새로운 div을 추가하려면 어떻게 해야하나요? 
+당장 생각나는 방법은 가상의div을 하나 만들어 두기만 하고 미디어쿼리 속성에서
+너비나, 높이를 지정하는 등 값을 할당시키는 방법 밖에는 떠오르지 않습니다.*/ 
+
+
+/* check point */
+	/* 
+	
+		Q1 - 미디어쿼리로 2번 div에 새로운 div을 추가하려면 어떻게 해야하나요?
+	
+		A. 이러한 문제를 해결하기 위해서 자바스크립트로 직접 제어하는 방식을 디자이너가 꺼내게 된 전형적인 사례입니다.
+		미디어쿼리는 분별하는데엔 능하지만, 무언가 만들거나 없애는 것은 불가능합니다.CSS 전체가 모두 그렇습니다.
+		우리가 다루는 문서는 이미 다 모두 작성이 완료된 문서라는 뜻의 "정적인static" 언어 라고 말하며,
+		질문 주신 부분을 해갈하기 위해서는 '동적인dynamic' 언어 다시말해, 즉석에서 div 태그와 같은 것들을 만드는
+		'마크업'이 아닌 "프로그래밍"이 매우 중요합니다.
+
+
+	
+	*/
+
+
+
+
+
+.con>div:nth-child(2){
+	background-color: navy;
+	border-radius: 50vw;
+}
+/* 2번째 div만 색을 바꿔줄 수도, 모양을 바꿔줄 수도 있었다. */
+.con>div:nth-child(2):hover{
+	background-color: red;
+	cursor: pointer;
+}
+/* 커서를 올릴 시 색을 바꿀 수도 있다. */
+.con>div:nth-child(1){
+transform: rotate(60deg);
+border-radius: 10vw;
+}
+.con>div:nth-child(3){
+transform: rotate(45deg);
+border-radius: 15vw;
+}
+.con>div{
+	width: 80vw;
+	height: 80vw;
+	background-color: aquamarine;
+	transition: 1s;
+	/* transition을 넣어주어 변화의 속도를 바꿔주어도 된다. */
+}
+}
+	/* 일단은 viewport 단위로 div(사각형)을 설정했기 때문에 width값이 500px 이하로 떨어졌을 때 div(사각형)크기가 작아지는 건 필연적임.
+	그래서 con>div 값을 새로 크게 바꿔준다. / #root의 height 값도 바꿔준다.*/
+	@media (min-width:501px){
+		#root{transition:1s;}
+	}
+	.con{transition: 1s;}
+.con>div:nth-child(1){transition: 1s;}
+.con>div:nth-child(2){transition: 1s;}
+.con>div:nth-child(3){transition: 1s;}
+/* 응용하기 : max-width가 아닌 min-width값을 주어 원래 상태로 돌아올 때도 transition 값을 부여하여
+자연스럽게 원상복구되는 효과를 주었다. */
+
+</style>
+<body>
+	<div id="root">
+		<div class="con">
+		<div></div>
+		<div></div>
+		<div></div>
+		</div>
+	</div>
+</body>
+</html>

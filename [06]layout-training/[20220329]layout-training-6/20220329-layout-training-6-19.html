@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-06</title>
+
+  <style>
+    * {margin: 0; padding: 0;}
+
+    #root{
+      width: 100vw; height: 100vh;
+      background-color: gray;
+      
+      display: flex;
+      justify-content: center;
+    }
+
+    main {
+      margin-top: 5vh;
+      background-color: gray;
+      
+      overflow: hidden;
+    }
+    
+    .box {
+      width: 95vw; height: 35vh;
+      margin: 2vh 0 2vh 0;
+      background-color: lightgray;
+    }
+
+    @media (min-width:800px){
+      #root {
+        align-items: center;
+      }
+
+      main {
+        width: 80vw; height: 40vh;
+        margin-top: 0;
+        
+        display: flex;
+        flex-direction: row;
+      }
+
+      .box{
+        width: 30%; height: 100%;
+        margin: 0 2vh 0 2vh;
+      }
+    }
+
+
+  </style>
+
+</head>
+
+
+<body>
+  <div id="root">
+    <main>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </main>
+  </div>
+</body>
+</html>

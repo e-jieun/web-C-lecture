@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --color-1:#9f9f9f;
+      --color-2:#333;
+      --color-3:#c3c3c3;
+      --color-4:#8d8d8d;
+    }
+    .box-min {
+      width: 9vw;
+      height: 9vw;
+      background-color: var(--color-2);
+      margin: 1.5vw;
+    }
+    .flex-cen-cen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .flex-end-cen {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .flex-between-end {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .flex-cen-end {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+    * {padding: 0; margin: 0;}
+
+    #root { 
+      width: 100vw;
+      height: 100vh;
+      /* border: 1px solid red; */
+    }
+
+    #header {
+      background-color: var(--color-4);
+      width: inherit;
+      height: 12vh;
+    }
+
+    #header>div {
+      width: 75vw;
+      height: 7vh;
+      background-color: var(--color-3);
+      margin-right: 8vw;
+      margin-top: 0.5vh;
+    }
+
+    #main {
+      background-color: var(--color-3);
+      width: inherit;
+      height: 88vh;
+    }
+
+    #main>div {
+      width: 96vw;
+      height: 80vh;
+      background-color: var(--color-1);
+      margin-bottom: 2vh;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #main>div>div {
+      width: 94vw;
+      height: 35vh;
+      background-color: var(--color-2);
+      margin-bottom: 1vh;
+    }
+
+    #main>div>div:nth-child(1) {
+      margin-top: 5vw;
+    }
+
+    #footer {
+      background-color: var(--color-4);
+      width: inherit;
+      height: 10vh;
+
+      position: absolute;
+      z-index: 3;
+      bottom: -2vh;
+    }
+
+    @media (min-width:600px) {
+      #root {
+        display: flex;
+      }
+
+      #header {
+        width: 20vw;
+        height: inherit;
+
+        /* border: 1px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items:flex-start;
+      }
+
+      #header>div {
+        width:15vw;
+        height: 70vh;
+        /* border: 1px solid blue; */
+
+        flex-direction: column;
+        margin-right: 0;
+        margin-top: 6vw;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #main {
+      background-color: var(--color-3);
+      width: 80vw;
+      height: inherit;
+    }
+
+    #main>div {
+      flex-direction: row;
+      width: 76vw;
+      height: 90vh;
+      flex-wrap: wrap;
+    }
+
+    #main>div>div {
+      width: 30vw;
+      height: 40vh;
+      background-color: var(--color-2);
+      margin-bottom: 0;
+      /* margin: 1vw; */
+      margin-left: 2vw;
+    }
+
+    #main>div>div:nth-child(1) {
+      margin-top: 0;
+    }
+
+      #footer {
+        z-index: -1;
+      }
+    }
+
+    @media (min-width:1350px) {
+      #root {
+        flex-direction: column;
+      }
+
+      #header {
+        width: inherit;
+        height: 12vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      #header>div {
+        width: 60vw;
+        height: 7vh;
+        margin-left: 38vw;
+        margin-top: 1vh;
+
+        flex-direction: row;
+        justify-content: space-around;
+      }
+
+      #header>div>div {
+        width: 6vw;
+        height: 6vh;
+        margin: 0;
+        margin-left: 3vw;
+      }
+
+      #main {
+      width: inherit;
+      height: 88vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    #main>div {
+      width: 95vw;
+      height: 80vh;
+
+      margin-bottom: 1vh;
+      flex-wrap: wrap;
+    }
+
+    #main>div>div {
+      width: 30vw;
+      height: 40vh;
+    }
+
+      #footer {
+        z-index: 3;
+      }
+    }
+
+    /* 모바일에서 여러 상자를 숨기는 hidden을 사용을 할 때 애들의 부피의 합이 부모보다 크면 알아서 비율이 정해져서 나오는데 이것은 flex-wrap:warp;를 사용하면 되는걸까...? */ 
+
+    /* check point */
+    /* 
+    
+    아이템 성격의 태그 사이즈가 변화하는 현상은 flex의 매우 중요한 특성중 하나입니다. 말그대로 '가변'한다라는 뜻이기때문에
+    컨테이너 태그를 제외하고 모두 변형될 여지를 만들어 놓습니다. 이는 여러가지 폭에 대응하기 위해 유연함을 심어준 것인데
+    절대값, 혹은 flex가 아닌경우에는 아이템 태그의 사이즈가 변하는 일이 없이 곧대로 다 보여주는 방식입니다.
+
+    -> 정상적인 현상
+
+
+    
+    */
+
+    
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="header" class="flex-end-cen">
+      <div class="flex-between-end">
+        <div class="box-min"></div>
+        <div class="box-min"></div>
+        <div class="box-min"></div>
+        <div class="box-min"></div>
+        <div class="box-min"></div>
+      </div>
+    </div>
+    <div id="main" class="flex-cen-end">
+      <div class="flex-cen-cen">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div id="footer"></div>
+  </div>
+</body>
+</html>

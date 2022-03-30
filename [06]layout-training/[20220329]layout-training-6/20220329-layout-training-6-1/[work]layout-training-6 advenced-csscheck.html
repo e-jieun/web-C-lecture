@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+
+    body {
+      width:100vw;
+      height:130vh;
+      display:flex;
+      flex-direction: column;
+    }
+
+    header {
+      width:100vw;
+      height:20vh;
+      background-color: #9f9f9f;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    header > div {
+      width:90vw;
+      height:10vh;
+      display:flex;
+      justify-content:flex-end;
+    }
+
+    header > div > div {
+      width:65vw;
+      height:10vh;
+      background-color:#c4c4c4;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    header > div > div > div {
+      width:62vw;
+      height:8vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    header > div > div > div > div {
+      width:8vw;
+      height:8vw;
+      background-color:#7d7d7d;
+    }
+
+    main {
+      width:100vw;
+      height:90vh;
+      background-color: #dedede;
+      display:flex;
+      justify-content:flex-end;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    main > div {
+      width:90vw;
+      height:85vh;
+      display:flex;
+      justify-content:flex-end;
+      align-items: center;
+      flex-direction: column;
+      background-color: #c4c4c4;
+    }
+
+    main > div > div {
+      width:88vw;
+      height:80vh;
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    main > div > div > div:nth-child(1) {
+      width:86vw;
+      height:53vh;
+      background-color: #7d7d7d;
+    }
+
+    main > div > div > div:nth-child(2) {
+      width:86vw;
+      height:25vh;
+      background-color: #7d7d7d;
+    }
+
+
+    footer {
+      width:100vw;
+      height:20vh;
+      background-color: #a1a1a1;
+    }
+
+    @media (min-width:800px) {
+      
+      header {display:none;}
+      main {display:none;}
+      footer {display:none;}
+
+      .tablet {
+        width:100vw;
+        height:100vw;
+        display:flex;
+        
+      }
+
+      nav {
+        width:14vw;
+        height:100vh;
+        background-color: #9f9f9f;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      nav > div {
+        width:10vw;
+        height:85vh;
+      }
+
+      nav > div > div {
+        width:10vw;
+        height:45vh;
+        background-color: #c4c4c4;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav > div > div > div:nth-child(1) {
+        width:5vw;
+        height:5vh;
+      }
+
+      nav > div > div > div:nth-child(2) {
+        width:5vw;
+        height:38vh;
+        display:flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      nav > div > div > div:nth-child(2) > div {
+        width:6vw;
+        height:6vw;
+        background-color: #7d7d7d;
+      }      
+
+      section {
+        width:86vw;
+        height:100vh;
+        background-color: #dedede;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+ 
+      }
+
+      section > div {
+        width:82vw;
+        height:94vh;
+        background-color: #c4c4c4;
+        display:flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        overflow:hidden;
+      }
+
+      section > div > div:nth-child(1) {
+        width:80vw;
+        height:6vh;
+      }
+
+      section > div > div:nth-child(2) {
+        width:80vw;
+        height:84vh;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+      }
+
+      section > div > div:nth-child(2) > div {
+        width:35vw;
+        height:35vw;
+        background-color: #7d7d7d;
+
+      }
+
+    }
+  
+    @media (min-width:1070px) {
+
+      
+    }
+
+
+
+
+  </style>
+</head>
+      <body>
+        <header>
+          <div>
+            <div>
+              <div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>          
+            </div>
+          </div>
+        </header>  
+        <main>
+          <div>
+            <div>
+              <div>
+               
+              </div>
+              <div>
+      
+              </div>
+            </div>
+          </div>
+        </main>
+        <footer>
+        </footer>
+      
+       <div class="tablet"> 
+        <nav>
+            <div>
+              <div>
+                <div></div>
+                <div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                  <div></div>
+                </div>
+              </div>
+            </div>
+        </nav>
+      
+        <section>
+            <div>
+              <div></div>
+              <div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+            </div>
+        </section>
+      </div>
+
+    <div class="pc">
+       <div id="header">
+         <div>
+           <div>
+             <div>
+     
+             </div>
+             <div>
+               <div></div>
+               <div></div>
+               <div></div>
+               <div></div>
+               <div></div>
+             </div>
+           </div>
+         </div>
+         </div>
+       <div id="main">
+     
+       </div>
+       <div id="footer">
+     
+       </div>
+      </div>  
+  </div>
+ 
+</body>
+</html>

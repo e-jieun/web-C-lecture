@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin: 0; padding: 0; box-sizing: border-box;
+      transition: 1s;}
+    .root {
+      width: 100vw;
+      height: 100vh;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .root > div {
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+    }
+    .root >  div > div {
+      width: 20vw;
+      height: 20vh;
+      flex-direction: row;
+      background-color: salmon;
+      margin: 1vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: aqua;
+    }
+    @media (max-width:550px) {
+      * {margin: 0; padding: 0; box-sizing: border-box;}
+    .root {
+      width: 100vw;
+      height: 100vh;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* overflow: hidden; */
+      overflow:scroll;
+    }
+    .root > div {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      /* justify-content: space-around; */
+      margin-top: 20vh;
+      align-items: center;
+
+    }
+    .root >  div > div {
+      width: 90vw;
+      height: 30vh;
+      flex-direction: row;
+      background-color: skyblue;
+      justify-content: space-around;
+      margin: 2vw;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    }
+  </style>
+</head>
+<body>
+  <div class="root">
+    <div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+  </div>
+</body>
+</html>

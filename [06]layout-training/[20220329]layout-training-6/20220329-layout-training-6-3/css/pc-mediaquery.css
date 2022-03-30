@@ -1,0 +1,65 @@
+/* pc */
+@media(min-width:1080px){
+  .container{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-e5);
+  }
+  /* header */
+  #header{
+    width: inherit;
+    height: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-color: var(--color-gray);
+  }
+  #header nav{
+    width: 70%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: var(--color-c4);
+    position: relative;
+    right: 2vw;
+  }
+  #header nav > div{
+    width: 10%;
+    height: 70%;
+    display: flex;
+    border: 1px solid var(--color-bk);
+    background-color: var(--color-gray);
+  }
+  /* main */
+  #main{
+    width: inherit;
+    height: 75%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  #main > div{
+    width: 95%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--color-c4);
+    /* flex-wrap: nowrap;은 default */
+    flex-wrap: nowrap;
+  }
+  #main > div > div{
+    width: 15%;
+    height: 50%;
+    border: 1px solid var(--color-bk);
+    background-color: var(--color-gray);
+  }
+  /* footer */
+  #footer{
+    width: inherit;
+    height: 10%;
+    background-color: var(--color-gray);
+  }
+}
+

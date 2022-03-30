@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  :root {
+    --color-1: #F1F2D5;
+    --color-2: #F2CF66;
+    --color-3: #F2AC57;
+    --color-4: #ffffff;
+  }
+
+  main {
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /* 정렬 */
+  .flex {
+    display: flex;
+  }
+
+  .flex-right {
+    justify-content: end;
+  }
+
+  .flex-j-c {
+    justify-content: center;
+  }
+
+  .flex-i-c {
+    align-items: center;
+  }
+
+  .flex-col {
+    flex-direction: column;
+  }
+
+  .flex-row {
+    flex-direction: row;
+  }
+
+  .wrap {
+    flex-wrap: wrap;
+  }
+
+  /* 테스트 */
+  /* .test {border: 1px solid red;} */
+
+  .top {
+    width: 100vw;
+    height: 12vh;
+    background-color: var(--color-2);
+    padding: 1vw 0 1vw 0;
+  }
+
+  .menu {
+    width: 60vw;
+    height: 5vh;
+    background-color: var(--color-1);
+    margin-right: 5vw;
+    padding: 2vh;
+  }
+
+  .menu-btn {
+    width: 20%;
+    height: 70%;
+    margin: 1%;
+    background-color: var(--color-4);
+  }
+
+  .mid {
+    width: 100vw;
+    height: 85vh;
+    background-color: var(--color-1);
+  }
+
+  .content {
+    width: 98%;
+    height: 85%;
+  }
+
+  .box {
+    width: 90%;
+    height: 45%;
+    background-color: var(--color-4);
+    margin: 1vh;
+  }
+
+  .bottom {
+    width: 100vw;
+    height: 12vh;
+    background-color: var(--color-3);
+    position: fixed;
+    bottom: 0px;
+    z-index: 2;
+  }
+
+
+  /* 태블릿 */
+  @media (min-width: 800px) {
+    main {
+      display: flex;
+    }
+
+    main>div:nth-child(1) {
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .top {
+      width: 15vw;
+      height: 100vh;
+    }
+
+    .menu {
+      width: 10vw;
+      height: 50vh;
+      padding: 0;
+      margin-right: 0;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-btn {
+      width: 60%;
+      height: 40%;
+      margin: 2vw;
+    }
+
+    .mid {
+      width: 85vw;
+      height: 100vh;
+    }
+
+    main>div:nth-child(2)>div:nth-child(1) {
+      justify-content: center;
+    }
+
+    .content {
+      width: 95%;
+      height: 95%;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      width: 45%;
+      height: 30%;
+    }
+
+    .bottom {
+      width: 0;
+      height: 0;
+    }
+  }
+
+
+  /* PC */
+  @media (min-width:1200px) {
+    main {
+      display: flex;
+      flex-direction: column;
+    }
+
+    main>div:nth-child(1) {
+      justify-content: end;
+    }
+
+    .top {
+      width: 100vw;
+      height: 10vh;
+    }
+
+    .menu {
+      width: 50vw;
+      height: 8vh;
+      padding: 0;
+      margin-right: 5vw;
+      flex-direction: row;
+      align-items: center;
+      justify-content: end;
+    }
+
+    .menu-btn {
+      width: 15%;
+      height: 50%;
+      margin: 1vw;
+    }
+
+    .mid {
+      width: 100vw;
+      height: 90vh;
+    }
+
+    main>div:nth-child(2)>div:nth-child(1) {
+      justify-content: center;
+    }
+
+    .content {
+      width: 90%;
+      height: 100%;
+      flex-wrap: no-wrap;
+    }
+
+    .box {
+      width: 15%;
+      height: 50%;
+    }
+
+    .bottom {
+      width: 100vw;
+      height: 10vh;
+    }
+  }
+</style>
+
+
+<body>
+  <!-- 전체 감싸는 컨테이너 -->
+  <main>
+    <!-- 1. 상단 메뉴 영역 -->
+    <div class="top flex flex-right flex-i-c">
+      <!-- 메뉴 넣을 박스 -->
+      <section class="menu flex flex-row">
+        <div class="menu-btn"></div>
+        <div class="menu-btn"></div>
+        <div class="menu-btn"></div>
+        <div class="menu-btn"></div>
+        <div class="menu-btn"></div>
+      </section>
+    </div>
+
+    <!-- 2. 컨텐츠 영역 -->
+    <div class="mid flex flex-j-c">
+      <!-- 컨텐츠 들어갈 박스 -->
+      <div class="content flex flex-col flex-i-c flex-wrap">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+      </div>
+    </div>
+
+    <!-- 3. 하단 고정영역 -->
+    <div class="bottom"></div>
+
+  </main>
+  </div>
+</body>
+
+</html>

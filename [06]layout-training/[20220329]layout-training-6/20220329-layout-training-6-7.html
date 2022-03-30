@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0;padding:0;}
+    .display{
+      width:100vw;
+      height:100vh;
+      display:flex;
+      align-items:center;
+    }
+    .container{
+      width:100vw;
+      height:50vh;
+      display:flex;
+
+      /* flex-direction: column-reverse;
+      flex-direction: row; */
+      justify-content: center;
+      justify-content:evenly;
+      align-items: center;
+      
+      background-color:#fff;
+      margin-left:100px;
+      border:5px solid black;
+    }
+    
+    .container> div{
+      width:20vw;
+      height:20vh;
+      background-color:pink;
+      margin:10px;
+      
+    }
+    
+    
+    @media screen and (orientation: landscape){
+      .container{
+        justify-content:start;
+        flex-direction: column;
+        
+      }
+      
+      .container> div{
+        
+        
+        
+      }
+    }
+
+    
+    </style>
+</head>
+<body>
+  <div class="display">
+  <div class="container">
+    <div></div>
+    <div></div>
+    <div></div>
+    
+  </div>
+  </div>
+</body>
+</html>

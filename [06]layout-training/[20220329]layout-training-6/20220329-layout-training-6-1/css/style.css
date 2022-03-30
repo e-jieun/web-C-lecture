@@ -1,0 +1,66 @@
+*{margin:0; padding:0;}
+
+
+body { 
+  width:100vw;
+  height:100vh;
+  border:5px solid black;
+  overflow:hidden;
+  /* 페이지에 스크롤을 없애게 되면 오른쪽 border가 잘 안보입니다 */
+
+  /* check point  */
+
+  /* 박스모델의 특이한 특성때문에 발생하는 문제 입니다. -> 따로 강의로 설명진행 예정 */
+
+
+
+}
+
+.container {
+  margin-top:10vh;
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container > div {
+  width:90vw;
+  height:30vh;
+  background-color: rgb(255, 102, 85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:white;
+}
+
+@media (min-width:1028px) {
+
+  body {
+    width:100vw;
+    height:100vh;
+    border:3px solid black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width:80vw;
+    height:30vh;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: row;
+    margin-top:0;
+  }
+
+  .container > div {
+    width:25vw;
+    height:30vh;
+    background-color: rgb(255, 102, 85);
+  }
+
+}

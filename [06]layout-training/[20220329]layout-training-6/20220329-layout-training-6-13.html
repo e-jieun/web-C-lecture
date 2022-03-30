@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * { padding: 0; margin: 0;}
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #war {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      transition: 2s;
+    }
+
+    #war>div {
+      width: 90vw;
+      height: 30vh;
+      margin-top: 2vh;
+
+      background-color: tomato;
+      transition: 2s;
+    }
+
+    @media (min-width:1000px) {
+      #root>div {
+        width: 90vw;
+        flex-direction: row;
+      }
+
+      #war>div {
+        width: 30vw;
+        background-color: olivedrab;
+
+        margin: 2vw;
+      }
+
+      #war>div:nth-child(2) {
+        position: relative;
+        background-color: teal;
+        bottom: 15vw;
+      }
+
+      #war>div:nth-child(3) {
+        background-color: salmon;
+        position: fixed;
+        bottom: 4vh;
+        left: 60vw;
+        border-radius: 3vw;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="war">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.flex-cc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    width: 90vw;
+    height: 90vh;
+    border: 10px solid;
+}
+main #item{
+    width: 200px;
+    height: 200px;
+    background-color: #c4c4c4;
+    margin: 10px;
+
+    font-size: 50px;
+    line-height: 200px;
+    text-align: center;
+}
+@media(max-width:800px){
+    .flex-cc{
+        flex-direction: column;
+    }
+}

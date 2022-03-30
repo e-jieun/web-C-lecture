@@ -1,0 +1,161 @@
+*{margin: 0;padding: 0;list-style: none;}
+.flex-ac{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.flex-cc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex{
+    display: flex;
+}
+.color-dg{
+    background-color: darkgray;
+}
+.color-c4{
+    background-color: #c4c4c4;
+}
+.color-lg{
+    background-color: lightgray;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+#top-bar{
+    width: 100vw;
+    height: 15%;
+    justify-content: flex-end;
+}
+#menu-box{
+    width: 700px;
+    margin: 20px;
+}
+#menu-box>#menu{
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    margin: 10px;
+}
+
+main{
+    width: 100vw;
+    height: 70%;
+}
+main #item-box{
+    width: 90%;
+    height: 100%;
+}
+main #item-box #item{
+    width: 10%;
+    height: 50%;
+}
+
+footer{
+    width: 100vw;
+    height: 15%;
+}
+footer p{
+    width: 90%;
+    height: 80%;
+    overflow: hidden;
+    color: lightgray;
+}
+
+
+@media(max-width:1200px){
+    body{
+        flex-direction: row;
+    }
+    #top-bar{
+        width: fit-content;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 30%;
+        height: 1000px;
+    }
+    #menu-box{
+        width: fit-content;
+        flex-direction: column;
+        margin: 5px;
+    }
+    #menu-box >#menu{
+        width: 150px;
+        height: 100px;
+    }
+    main{
+        width: 70%;
+        height: 1000px;
+    }
+
+    main #item-box{
+        width: 95%;
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    main #item-box #item{
+        width: 45% !important;
+        height: 30% !important;
+    }
+
+
+
+    body footer{
+        visibility: hidden;
+        width: 0;
+        height: 0;
+    }
+}
+
+@media(max-width:750px){
+    body{
+        flex-direction: column;
+    } 
+    #top-bar{
+        width: 100vw;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        height: fit-content;
+    }
+    #top-bar #menu-box{
+        margin-right: 20px;
+        width: 350px;
+        flex-direction: row;
+        height: fit-content;
+    }
+    #menu-box >#menu{
+        width: 70px;
+        height: 40px;
+    }
+
+    main{
+        width: 100%;
+        height: max-content;
+    }
+    main #item-box{
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        flex-wrap: nowrap;
+    }
+    main #item-box #item{
+        width: 90% !important;
+        height: 300px !important;
+        margin: 10px;
+    }
+
+    footer{
+        visibility: visible !important;
+        position: fixed;
+        width: 100vw !important;
+        height: 150px !important;
+        bottom: 0;
+        left: 0;
+    }
+}

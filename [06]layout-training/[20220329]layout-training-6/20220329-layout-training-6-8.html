@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+
+
+    body { 
+      width:100vw;
+      height:100vh;
+      border:3px solid black;
+      /* overflow:hidden; */
+    }
+
+    .container {
+      margin-top:10vh;
+      width:100vw;
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .container > div {
+      width:90vw;
+      height:30vh;
+      background-color: rgb(255, 102, 85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color:white;
+    }
+
+    @media (min-width:1028px) {
+
+      body {
+        width:100vw;
+        height:100vh;
+        border:3px solid black;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .container {
+        width:80vw;
+        height:30vh;
+        display:flex;
+        justify-content:space-between;
+        align-items: center;
+        flex-direction: row;
+        margin-top:0;
+      }
+
+      .container > div {
+        width:25vw;
+        height:30vh;
+        background-color: rgb(255, 102, 85);
+      }
+
+    }
+
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div>item</div>
+    <div>item</div>
+    <div>item</div>
+  </div>
+</body>
+</html>

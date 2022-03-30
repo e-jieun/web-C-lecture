@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		#root {
+			width: 100vw;
+			height: 1200vh;
+		}
+
+		.con1 {
+			width: inherit;
+			height: 20vh;
+			background-color: gray;
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+
+		.con1>div {
+			width: 50vw;
+			height: 10vh;
+			display: flex;
+			background-color: lightgray;
+			justify-content: space-around;
+			align-items: center;
+		}
+
+		.con1>div>div {
+			width: 3.5vw;
+			height: 3.5vw;
+			background-color: gray;
+			margin: 2vw;
+		}
+
+		.con2 {
+			width: 100vw;
+			height: 1000vh;
+			background-color: lightgray;
+			display: flex;
+			justify-content: center;
+		}
+
+		.con2>div {
+			width: 95vw;
+			height: 990vh;
+			background-color: darkgray;
+			display: flex;
+			justify-content: center;
+			margin-top: 2vh;
+		}
+
+		.con2>div>div>div {
+			width: 90vw;
+			height: 90vh;
+			background-color: gray;
+			margin-top: 1vh;
+		}
+
+		.con3 {
+			width: 100vw;
+			height: 10vh;
+			position: fixed;
+			background-color: beige;
+			top: 90vh;
+		}
+
+		.con3>div {
+			font-size: 32px;
+			color: blue;
+			text-align: center;
+		}
+
+		/* media query의 max-width값을 어떻게 설정해야 할까?
+	모바일로 먼저 전체화면을 만들고 tablet, pc로 바꾸는 과정 */
+
+		/* check point */
+
+		/* 아래의 @media 는 엄밀히 자바스크립트 함수의 형태이기 때문에 여러가지 값을 넣을 수 있습니다. */
+
+		@media all and (min-width:100px) and (max-width:1000px) {
+			/* and 연산자 라는 것이 있고 필요에 따라 이런식으로 작성할 수도 있습니다 */
+
+			#root {
+				background-color: #333;
+			}
+		}
+
+
+
+		/* Mobile mode */
+		@media(min-width:428px) {
+			* {
+				margin: 0;
+				padding: 0;
+			}
+
+			#root {
+				width: 100vw;
+				height: 1200vh;
+			}
+
+			.con1 {
+				width: inherit;
+				height: 20vh;
+				background-color: gray;
+				display: flex;
+				align-items: center;
+				justify-content: flex-end;
+			}
+
+			.con1>div {
+				width: 50vw;
+				height: 10vh;
+				display: flex;
+				background-color: lightgray;
+				justify-content: space-around;
+				align-items: center;
+			}
+
+			.con1>div>div {
+				width: 3.5vw;
+				height: 3.5vw;
+				background-color: gray;
+				margin: 2vw;
+			}
+
+			.con2 {
+				width: 100vw;
+				height: 1000vh;
+				background-color: lightgray;
+				display: flex;
+				justify-content: center;
+			}
+
+			.con2>div {
+				width: 95vw;
+				height: 990vh;
+				background-color: darkgray;
+				display: flex;
+				justify-content: center;
+				margin-top: 2vh;
+			}
+
+			.con2>div>div>div {
+				width: 90vw;
+				height: 90vh;
+				background-color: gray;
+				margin-top: 1vh;
+			}
+
+			.con3 {
+				width: 100vw;
+				height: 10vh;
+				position: fixed;
+				background-color: beige;
+				top: 90vh;
+			}
+
+			.con3>div {
+				font-size: 32px;
+				color: blue;
+				text-align: center;
+			}
+		}
+			/* Tablet mode */
+			@media(min-width:1024px) {
+				#root {
+					display: flex;
+				}
+
+				.con1 {
+					width: 20vw;
+					height: 900vh;
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					justify-content: flex-start;
+				}
+
+				.con1>div {
+					width: 18vw;
+					height: 700vh;
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					margin-top: 5vh;
+				}
+
+				.con1>div>div {
+					width: 15vw;
+					height: 15vw;
+					background-color: blue;
+					margin: 1vw;
+				}
+			}
+
+			.con2 {
+				width: 80vw;
+				height: 700vh;
+			}
+
+			.con2>div>div {
+				display: flex;
+				flex-flow: wrap;
+			}
+
+			.con2>div>div>div {
+				width: 25vw;
+				height: 25vw;
+				margin: 2vw;
+			}
+
+			/*PC*/
+			/* @media (min-width:1728px){
+		
+	} */
+	</style>
+</head>
+
+<body>
+	<div id="root">
+		<div class="con1">
+			<div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+		<div class="con2">
+			<div>
+				<div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+		<div class="con3">
+			<div>
+				/* Menu (fixed) */
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

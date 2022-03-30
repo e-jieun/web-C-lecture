@@ -1,0 +1,81 @@
+/* mediaquery */
+/* mobile */
+@media(max-width:750px){
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .container > div{
+    width: 200px;
+    height: 200px;
+    background-color: var(--color-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/* tablet */
+@media(min-width:500px){
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .container > div{
+    width: 200px;
+    height: 200px;
+    background-color: var(--color-gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+/* pc */
+@media(min-width:1080px){
+  .container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container > div{
+    width: 33.3vw;
+    height: 100vh;
+    background-color: var(--color-bk);
+    transition: 1s;
+  }
+  .container > div > p{
+    color: var(--color-gray);
+
+  }
+}
+
+/* style */
+.root{
+  width: 100vw;
+  height: 100vh;
+  box-sizing: border-box;
+  /* display: flex; */
+  /* justify-content: center; */
+}
+.container{
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 뷰포트 크기마다 다르게 적용해줄 땐 공통적으로 스타일을 적용하면 media query에서 적용되지 않을 수 있음 */
+/* .container > div{
+  width: 200px;
+  height: 200px;
+  background-color: var(--color-salmon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+.container > div > p{
+  color: var(--color-fff);
+}
+
+
+
