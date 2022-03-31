@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>z-index example</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+
+    body {
+      overflow: hidden;
+    }
+
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #ccc;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    #root>div { /*가운데 정렬 컨테이너 */
+      
+      width:90%; /* 부모 root 의 너비크기에서의 90% */
+      height:90%; /* 부모 root 의 높이크기에서의 90% */
+
+      background-color: #fff;
+
+      /* 자식태그 <section> 들 가운데 정렬 */
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+
+      
+      
+    }
+
+    #root>div>section {
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      position:relative;
+    }
+    
+    #root>div>section>section { /* item에 해당하는 자식 태그 <section> 모두 선택 */
+      
+      width:300px;
+      height:500px;
+      /* border:1px solid black; */
+      
+      
+      
+      /* position 값 부여 ★★★★★★★★★★★★★★★ */
+      /* position:relative; */
+      position:absolute;
+
+      transform: translate(-50%,-50%);
+
+      /* absolute 값은 부모가 position 값이 없는 경우 상위 부모의 기준을 찾는다. '상위 부모'에도 포지션값이 마찬가지로 없는 경우 그 위의 상위부모기준을 찾고, 결과적으로, absolute가 적용된 태그 의 부모중에 poisiton 값이 아무것도 없으면 최종기준은 body가 기준 태그가 된다. */
+
+
+    }
+
+
+    /* 아래는 간단히 section 태그 구분을 위한 스타일링 */
+    #root>div>section>section:nth-child(1) {
+      background-color: salmon;
+      top:-20px;
+      left:-20px;
+      
+    }
+
+    #root>div>section>section:nth-child(2) {
+      background-color: darkcyan;
+      top:20px;
+      left:20px;
+    }
+    /* 이해를 위한  클래스 인터렉션  */
+    
+    .card-1:hover {
+      z-index:1;
+    }
+    
+/* card-1 클래스에 마우스 오버를 하면 z-index 값이 1이 되도록 인터렉션을 주었다. */
+/* 기본값으로 z-index가 없으면 맨마지막으로 작성된 요소가 위에 위치한다. */
+/* 따라서 마우스오버 상태가 아니면, 다시 원상태로 돌아가는 구조 이다. */
+
+    .card-2 {
+      z-index:0;
+    }
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div><!-- 가운데 정렬 컨테이너 -->
+      <section>
+        <section class="card-1">salmon card</section>
+        <section class="card-2">darkcyan card</section>
+      </section>
+
+    </div>
+  </div>
+</body>
+</html>
