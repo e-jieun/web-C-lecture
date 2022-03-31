@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    
+    div {
+      border: 1px solid black;
+    }
+
+    /* container */
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      overflow: hidden;
+    }
+
+    #root>div {
+      width: inherit;
+      height: 50%;
+
+    }
+
+
+
+    /* 위 */
+    #root>div:nth-child(1) {
+      /* blank */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    /* 아래 */
+    #root>div:nth-child(2) {}
+
+    #sect-2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #333;
+    }
+
+    #sect-2>section {
+      height: 100%;
+    }
+
+    #sect-2>section:nth-child(1) {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* 왼쪽 메인 컨텐츠 부분 의 자식들  */
+    #sect-2>section:nth-child(1)>div {
+      width: 100%;
+      height: 50%;
+    }
+
+    #main-card {
+      background-color: #fff;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+      /* check point */
+      position: relative;
+      top: -15vh;
+
+      border-top-right-radius: 30px;
+      border-bottom-right-radius: 30px;
+
+    }
+
+    #main-card>section {
+      width: 90%;
+      background-color: salmon;
+    }
+
+    /* 본문 p 태그 컨테이너 */
+    #main-card>section>div {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+    }
+
+    #main-card>section>div>p {
+      padding: 1vw;
+      background-color: #fff;
+    }
+
+    /* #icon  */
+    .icon {
+      width: 2vw;
+      height: 2vw;
+      background-color: #333;
+    }
+
+
+    #thumnail {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+
+      /* check point */
+      position: relative;
+      top: -10vh;
+
+    }
+
+    #thumnail>article {
+      width: 25%;
+      height: 90%;
+      background-color: #fff;
+      padding: 1vw;
+    }
+
+    #thumnail>article>div {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+
+
+
+    /* 오른쪽 슬라이드 부분 */
+    #sect-2>section:nth-child(2) {
+      width: 10%;
+      height: 130%;
+      background-color: #333;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border-top-left-radius: 50px;
+      position: relative;
+      top: -5vh;
+    }
+
+    #sect-2>section:nth-child(2)>div {
+      width: 20%;
+      height: 90%;
+      border-radius: 20px;
+      background-color: #ddd;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #sect-2>section:nth-child(2)>div>nav {
+      width: 20px;
+      height: 40px;
+      background-color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="root">
+    <div id="sect-1">
+      blank
+    </div>
+    <div id="sect-2">
+      <section>
+        <div id="main-card">
+          <section>
+            <h1>title</h1>
+            <div>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia aperiam, numquam maiores excepturi
+                rerum
+                dignissimos esse inventore et dolores mollitia. Sequi quo exercitationem quasi, nisi distinctio saepe
+                sint
+                atque porro quod id placeat nulla recusandae deleniti accusamus maiores similique sit.
+              </p>
+              <div class="icon"></div>
+            </div>
+          </section>
+        </div>
+        <div id="thumnail">
+          <article>
+            <div>
+              <h2>lorem ipsum dolor sit</h2>
+              <div class="icon"></div>
+
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem quibusdam tempora quis error obcaecati
+              molestias, ad, magni laborum nam eaque voluptates, exercitationem tempore repudiandae mollitia
+              necessitatibus nostrum reiciendis eligendi ratione!</p>
+          </article>
+          <article>
+            <div>
+              <h2>lorem ipsum dolor sit</h2>
+              <div class="icon"></div>
+
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem quibusdam tempora quis error obcaecati
+              molestias, ad, magni laborum nam eaque voluptates, exercitationem tempore repudiandae mollitia
+              necessitatibus nostrum reiciendis eligendi ratione!</p>
+          </article>
+          <article>
+            <div>
+              <h2>lorem ipsum dolor sit</h2>
+              <div class="icon"></div>
+
+            </div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem quibusdam tempora quis error obcaecati
+              molestias, ad, magni laborum nam eaque voluptates, exercitationem tempore repudiandae mollitia
+              necessitatibus nostrum reiciendis eligendi ratione!</p>
+          </article>
+
+        </div>
+      </section>
+      <section>
+        <div>
+          <nav></nav>
+        </div>
+      </section>
+
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>
