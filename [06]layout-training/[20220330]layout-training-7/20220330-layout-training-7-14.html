@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0;padding:0;}
+    .display{
+      width:100vw;
+      height:100vh;
+      display:flex;
+      align-items:center;
+    }
+    .container{
+      width:50vw;
+      height:50vh;
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      justify-content:evenly;
+      
+      background-color:#fff;
+      margin-left:100px;
+      border:5px solid black;
+    }
+    .container> div:nth-child(1){
+      width:45vw;
+      height:45vh;
+      background-color:pink;
+    }
+    .container> div{
+      width:45vw;
+      height:45vh;
+      background-color:green;
+      margin:10px;
+    }
+    .container> div:nth-child(3){
+      display : flex;
+      justify-content : center;
+      align-items : center;
+      
+    }
+    .container> div:nth-child(3)> span{
+      opacity:0;
+    }
+    
+    @media screen and (min-width:480px) and (max-width:768px){
+      .container{
+        width:50vw;
+        height:50vh;
+        display:flex;
+        flex-direction: column;
+        margin:10px;
+      }
+    .container> div{
+      width:45vw;
+      height:45vh;
+      display:flex;
+      flex-direction: column;
+      margin:10px;
+    }
+  }
+  @media screen and (min-width:1500px) {
+    .container{
+        width:50vw;
+        height:70vh;
+        
+        margin:10px;
+        
+      }
+    .container> div{
+      width:45vw;
+      height:45vh;
+      
+      margin:10px;
+
+    }
+    .container> div:nth-child(1){
+      width:45vw;
+      height:45vh;
+      background-color:pink;
+    }
+    .container:hover> div:nth-child(3)> span{
+      opacity:100;
+    }
+  }
+  
+
+
+    
+  </style>
+</head>
+<body>
+  <div class="display">
+    <div class="container">
+      <div></div>
+      <div></div>
+      <div><span>hello this is hover selector</span></div>
+      <div></div>
+    </div>
+    </div>
+</body>
+</html>

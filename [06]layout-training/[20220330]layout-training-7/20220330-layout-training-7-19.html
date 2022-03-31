@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 큰틀 */
+    .work{
+      width: 100vw;
+      height: 100vh;
+      border: 1px solid black;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: row;
+    }
+    /* 안쪽 박스들 */
+    .work>div:nth-child(1){
+      width: 23vw;
+      height: 90vh;
+      background-color: lightcoral;
+    }
+    .work>div:nth-child(2){
+      width: 23vw;
+      height: 90vh;
+      background-color: lightgreen;
+    }
+
+    .work>div:nth-child(3){
+      width: 23vw;
+      height: 90vh;
+      background-color: lightgreen;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: lightgreen;
+      font-size: 50px;
+      word-break:break-all;
+  
+    }
+    .work>div:nth-child(3):hover{
+      color: black;
+      transition: 5s;
+    }
+
+
+    .work>div:nth-child(4){
+      width: 23vw;
+      height: 90vh;
+      background-color: lightgreen;
+    }
+    @media (min-width:1000px) {
+     /* 큰틀 */
+      .work{
+      width: 100vw;
+      height: 100vh;
+      border: 1px solid black;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-direction: column;
+      }
+      /* 안에박스들 */
+      .work>div:nth-child(1){
+      width: 90vw;
+      height: 23vh;
+      background-color: lightcoral;
+        
+    }
+
+    .work>div:nth-child(2){
+      width: 90vw;
+      height: 23vh;
+      background-color: lightgreen;
+    }
+
+    .work>div:nth-child(3){
+      width: 90vw;
+      height: 23vh;
+      background-color: lightgreen;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: lightgreen;
+
+    }
+    .work>div:nth-child(4){
+      width: 90vw;
+      height: 23vh;
+      background-color: lightgreen;
+    }
+}
+/* 이렇게 하는게 맞나요? 호버부분이 잘 이해되지 않습니다*/
+
+/* 잘 하셧습니다. */
+
+  </style>
+</head>
+<body>
+  <div class="work">
+    <div></div>
+    <div></div>
+    <div>hello this is hover selector</div>
+    <div></div>
+  </div>
+</body>
+</html>

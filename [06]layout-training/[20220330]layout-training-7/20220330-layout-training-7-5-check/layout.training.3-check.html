@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+	}
+	#root{
+		width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.con{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.con>section{
+		width: 90vw;
+		height: 20vh;
+		margin: 1vw;
+		background-color: lightgreen;
+	}
+	.con>section:nth-child(1){
+		background-color: salmon;
+	}
+.con>section:nth-child(3){
+	color: lightgreen;
+	align-items: center;
+	justify-content: center;
+	display: flex;
+}
+.con>section:nth-child(3):hover{
+	color:#333;
+	/* display: flex; */
+	font-weight:900;
+	font-size: larger;
+}
+/* 없던 글씨가 나오게 하는 방법은 생각이 나지 않아서
+div 색과 p tag의 색을 같게 하다가 hover시에 색이 바뀌도록
+설정하였다. */
+/*Q1  display:none을 사용하면 되는 것 같은데, hover로 변경 시
+어떤 tag를 써야할지 모르겠습니다. */
+
+/* check point
+
+간단한 트릭을 예제로 듦
+배경색과 글씨색이 같으면 소비자 입장에서는 글씨를 발견하지 못하기때문에 '없다가 나타남'으로 해석시킬 수 있는점
+
+
+
+*/
+
+
+
+
+</style>
+<body>
+	<div id="root">
+		<div class="con">
+			<section></section>
+			<section></section>
+			<section>
+				<p>hello this is hover seletor</p>
+			</section>
+			<section></section>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-7</title>
+
+<style>
+  *{margin: 0; padding: 0;}
+
+  #root{
+    width: 100vw; height: 100vh;
+    background-color: slateblue;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /*---------- div 전체 크기와 색상 지정 ----------*/
+  #root > div {
+    width: 23%; height: 95%;
+    background-color: white;
+  }
+
+  /*---------- 첫번째 박스 (색상 변경) ----------*/
+  #root > div:nth-child(1) {
+    background-color: skyblue;
+  }
+
+  /*-------- 정렬을 위한 가상의 박스 (세 번째 박스를 담은 그릇) --------*/
+  #root > div:nth-child(3) {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+  }
+
+  /*------------ 마우스오버 하면 글씨가 나오는 세 번째 박스 ------------*/
+  #root > div:nth-child(3) > div:nth-child(1) {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+
+    position: absolute;
+    z-index: 2;
+  }
+
+  /*------------ 마우스오버 하면 나올 글씨 ------------*/
+  #root > div:nth-child(3) > p:nth-child(2) {
+    width: 100%;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: violet;
+
+    position: absolute;
+    z-index: 1;
+  }
+
+
+
+  /* 태블릿 */
+  @media(min-width: 800px){
+    /*------------ 정렬 바꾸기 ------------*/
+    #root {
+      flex-direction: column;
+    }
+
+    /*------------ 박스크기 바꾸기 ------------*/
+    #root > div {
+      width: 95%; height: 23%;
+    }
+
+    /*------------ 마우스오버하면 글씨가 나올 수 있도록 z-index 값 변경 ------------*/
+    #root > div:nth-child(3) > div:nth-child(1):hover {
+      z-index: 0;
+    }
+  }
+
+</style>
+
+</head>
+
+
+
+<body>
+  <!------------ 정렬을 위한 박스 ------------>
+  <div id="root">
+
+    <!------------ 내용물 (div 4개) ------------>
+    <div></div>
+    <div></div>
+
+    <!------------ 글씨를 숨기기 위한 가상의 박스 ------------>
+    <div>
+      <div></div>
+      <p>숨겨진 글씨</p>
+    </div>
+
+    <div></div>
+  
+  </div>
+
+</body>
+</html>

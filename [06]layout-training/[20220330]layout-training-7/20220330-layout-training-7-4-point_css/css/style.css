@@ -1,0 +1,158 @@
+.d-flex {
+  display: flex;
+}
+
+.middle-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-top {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.middle-bottom {
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.left-center {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.left-top {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.left-bottom {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.right-center {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.right-top {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.right-bottom {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-re {
+  flex-direction: row-reverse
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-column-re {
+  flex-direction: column-reverse;
+}
+
+/* -------------------------------------- */
+
+* {margin: 0; padding: 0;}
+
+#base {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #fff;
+}
+
+.root {
+  width: 390px;
+  height: 844px;
+
+  border: 1px solid #000;
+}
+
+.root > div {
+  width: 22%;
+  height: 96%;
+
+  background-color: #ceffc8;
+}
+
+.root > div > div {
+  color: #ceffc8;
+} 
+
+.root > div:nth-child(1) {
+  background-color: #ffb1b1;
+}
+
+/* ----------------media----------------- */
+@media (min-width:1440px) {
+
+.root {
+  width: 1440px;
+  height: 1024px;
+
+  border: 1px solid #000;
+
+  flex-direction: column;
+}
+
+.root > div {
+  width: 96%;
+  height: 22%;
+
+  background-color: #ceffc8;
+}
+
+.root > div:nth-child(1) {
+  background-color: #ffb1b1;
+}
+
+.root > div:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.root > div:nth-child(3) > div {
+  width: 100%;
+  height: 100%;
+
+  color: #ceffc8;
+  font-size: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: 1s;
+} 
+
+.root > div:nth-child(3) > div:hover {
+  color: #000;
+}
+
+}

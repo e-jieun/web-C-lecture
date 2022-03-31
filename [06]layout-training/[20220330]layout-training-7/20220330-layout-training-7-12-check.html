@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./CSS/style.css">
+
+
+  <!-- css 파일을 외부 시트로 처리했다면 제출시 전체 프로젝트 폴더를 보낼것(압축) -->
+
+
+
+
+  <style>
+    #war {
+      width: 98vw;
+      height: 98vh;
+
+      transition: 2s;
+    }
+
+    #war>div {
+      width:24vw;
+      height: inherit;
+
+      background-color: var(--color-3);
+
+      margin: 1vw;
+    }
+
+    #war>div:nth-child(1) {
+      background-color: var(--color-4);
+    }
+
+
+    @media (min-width:1000px) {
+      #war {
+        flex-direction: column;
+      }
+
+      #war>div {
+        width: inherit;
+        height: 24vh;
+      }
+
+      #war>div:nth-child(3):hover {
+        background-color:var(--color-2);
+      }
+      /* 글씨를 배경색이랑 똑같이 하지않고 class를 넣어봤다./ */
+      #war>div:nth-child(3):hover .textbox-1 {
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root" class="flex-cen-cen">
+    <div id="war" class="flex-cen-cen">
+      <div></div>
+      <div></div>
+      <div>
+        <p class="textbox-1">
+          hello this is hover selector
+        </p>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>

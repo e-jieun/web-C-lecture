@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title><link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Ramaraja&family=Roboto:ital,wght@0,400;1,500&display=swap" rel="stylesheet">
+  
+  <style>
+
+    .text{font-family: 'Hurricane', cursive;
+     font-family: 'Ramaraja', serif;
+     font-family: 'Roboto', sans-serif;
+    }
+
+
+
+    #root{
+      width:100vw; height:100vh;
+      display: flex; justify-content: center; align-items: center;
+    }
+
+    #root>div{
+      width:95vw; height:95vh; 
+      /* border:1px solid blue; */
+      display:flex; flex-direction:column;
+      justify-content: space-between;
+    }
+
+    section{
+      width:95vw; height:20vh;
+      background-color:rgb(215, 241, 176);
+    }
+
+    div>section:nth-child(1){
+      width:95vw; height:20vh;
+      background-color:pink;
+    }
+
+    div>section:nth-child(3){
+      display: flex; justify-content: center; align-items: center;
+      
+      
+    }
+
+    .text:hover{
+      font-size:30px;
+      visibility:visible;
+      opacity:100%;
+     
+    }
+
+    .text{
+     opacity:0;
+     
+     
+    }
+
+    /* section>div{
+      visibility: hidden;
+    } * visibility 를 활용해 요소 숨기는법 ???/ 
+
+ 
+
+    /* check point */
+
+    /* 따로 강의를 통해 소개예정 */
+
+
+  
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <section></section>
+      <section></section>
+      <section>
+        
+          <div class="text">hello this is hover selector</div>
+        
+      </section>
+      <section></section>
+    </div>
+  </div>
+  
+</body>
+</html>

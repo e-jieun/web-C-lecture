@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #root {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #wrap {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    #wrap > div {
+      width: 20vw;
+      height: 90vh;
+      background-color: aquamarine;
+      margin: 1vh;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #wrap > div:nth-child(1){
+      background-color: salmon;
+    }
+
+    /* 4개의 레이아웃을 묶어서 설정했서 바꾸면 한꺼번에 바뀌는데 1번 레이아웃만 색을 따로 바꿀라면 따로 꺼내는 방법 밖에 없는건가요? */
+
+    /* check point */
+
+/* 
+
+    한번에 모든 레이아웃 아이탬을 일괄 스타일링한 다음 -> 부분부분 덧붙이는 방식으로 다른 개별 스타일들을 붙여주는 방식(재할당)
+    하는 방식이 가장 이상적인 방식입니다.
+    작업간에는 4개의 요소만을 사용했지만, 필요에 따라선 4000개라는 가정도 필요하기때문입니다.
+
+    따라서 훈련생이 작성하신 방법이 가장 이상적인 방법이라 할 수 있겠습니다.
+
+
+
+*/
+
+
+
+    #selector:hover > div:nth-child(3) {
+      transition: 1s;
+      color: #333;
+    }
+
+
+    @media screen and (min-width:1080px) {
+      #root {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #wrap {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border: 1px solid black;
+    }
+
+
+    #wrap > div {
+      width: 90vw;
+      height: 20vh;
+      margin: 1vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid black;
+    }
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="wrap">
+      <div></div>
+      <div></div>
+      <div>hello this is hover sellector</div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>

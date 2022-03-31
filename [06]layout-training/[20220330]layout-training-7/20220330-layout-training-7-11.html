@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* mobile */
+  *{margin:0; padding:0; box-sizing: border-box; transition: 1s;}
+  
+  body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #back {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  border: solid #000 2px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  flex-direction: row;
+  }
+
+  section {
+  width: 22%;
+  height: 98%;
+  background-color: rgb(194, 236, 169);
+
+  margin:1%;
+  }
+
+  #back > section:nth-child(1) {
+    background-color: rgb(255, 174, 174);
+  }
+
+  #back > section:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+  }
+
+  p {
+    color: rgb(194, 236, 169);
+    font-size: xx-small;
+  }
+
+  @media (min-width:430px) and (max-width:1920px) {
+    /* desktop */
+    *{margin:0; padding:0; box-sizing: border-box; transition: 1s;}
+  
+  body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+
+  #back {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  border: solid #000 2px;
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  flex-direction: column;
+  }
+
+  section {
+  width: 98%;
+  height: 22%;
+  background-color: rgb(194, 236, 169);
+
+  margin:0%;
+  }
+
+  #back > section:nth-child(1) {
+    background-color: rgb(255, 174, 174);
+  }
+  
+  #back > section:nth-child(3) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  p {
+    color: rgb(194, 236, 169);
+    font-size: larger;
+  }
+
+  p:hover {
+    color: #333;
+    }
+
+  }
+
+  </style>
+</head>
+<body>
+  <div id="back">
+    <section></section>
+    <section></section>
+    <section>
+      <p>hello this is hover selector</p>
+    </section>
+    <section></section>
+  </div>
+</body>
+</html>

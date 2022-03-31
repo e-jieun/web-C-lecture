@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{ margin: 0; padding: 0; transition: 0.7s;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+    section {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    section > div {
+      width: 23vw;
+      height: 95vh;
+      display: flex;
+      background-color: #d6f6a4 ;
+    }
+    section > div:nth-child(1) {
+      width: 23vw;
+      height: 95vh;
+      display: flex;
+      background-color: #ffc0cb  ;
+    }
+    section > div:nth-child(3)  {
+      display: flex;
+      color: rgb(0, 0, 0,0);
+    }
+    @media (min-width:550px) {
+      *{ margin: 0; padding: 0; transition: 0.7s;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+    section {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    section > div {
+      width: 95vw;
+      height: 25vh;
+
+      /* width: 23vw;
+      height: 95vh; */
+      /* 정렬을 바꿨을때 width값과 height값을 서로 바꿔줘야
+      옆으로 길게 나오던데 원래 그런건가요 아니면 방법이 잘못되서 코드를 더 많이 바꿔야 하는건가요? 정렬방법만 바꿔서는 레이아웃이 한번에 안나옵니다 (모바일버전에선 width25 height 95였습니다)*/
+
+      /* check point
+      
+      width 값과 height 값을 일일히 바꿔주면 당장은 해결이 가능하지만, 마크업자체에 문제가 있는 점을 잘 짚으셧습니다.
+      이러한 문제를 해결하려고 '축(axis)' 개념을 도입하였습니다 justify는 가로로 사용하긴하지만 사실 '주축'을 의미합니다. 
+
+      justify : 주축 (main axis)
+      align : 교차축 (cross axis)
+
+      flex-direction은 '축'을 설정하는 속성이기때문에 값을 바꿀경우 '축'의 방향을 반대로 바꾸어주는 일련의 법칙 변경이 있습니다.
+      flex-direction:column으로 하였을 경우 주축이 세로 기준이 되기 때문에 space-around 값을 align-items 속성에 값을 부여하면 width, height 값을 바꾸지 않아도 원하는 레이아웃으로 변화시킬 수 있습니다. 
+      
+      
+      
+      */
+
+
+
+      display: flex;
+      flex-direction: column;
+
+      background-color: #d6f6a4 ;
+    }
+    section > div:nth-child(1) {
+      width: 95vw;
+      height: 23vh;
+      
+      /* width: 23vw;
+      height: 95vh; */
+      display: flex;
+      background-color: #ffc0cb;
+    }
+    section > div:nth-child(3) {
+      width: 95vw;
+      height: 23vh;
+      /* width: 23vw;
+      height: 95vh; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    section > div:nth-child(3){
+      width: 95vw;
+      height: 23vh;
+      display: flex;
+      color: rgb(0, 0, 0, 0);
+      font-size: 3rem;
+    }
+    section > div:nth-child(3):hover {
+      transition: 1s;
+      opacity: 100%;
+      color: rgb(0, 0, 0);
+    }
+    }
+  </style>
+</head>
+<body>
+<div id="root">
+  <section>
+    <div></div>
+    <div></div>
+    <div>
+        hello this is hover selector
+    </div>
+    <div></div>
+  </section>
+</div>
+</body>
+</html>

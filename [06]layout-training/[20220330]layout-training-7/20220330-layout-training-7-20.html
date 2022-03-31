@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    .container {
+      width:100vw;
+      height:100vh;
+      border:1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      
+    }
+    .main {
+      width:80vw;
+      height:80vh;
+      border:1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    @media (min-width:1000px) { .main {flex-direction: column; }}
+    
+
+    .main div {
+      width:15vw;
+      height:75vh;
+      background-color: orangered;
+      margin:2vw;      
+      transition:1s;
+    }       
+    @media (min-width:1000px) { .main div {width:75vw; }}
+    @media (min-width:1000px) { .main div:nth-child(1) {background-color: springgreen; }}
+    
+    @media (max-width:1000px) { .main div:nth-child(1) {background-color: rgba(216, 163, 18, 0.863); }}
+
+   
+
+    .main p:hover {opacity:1;}
+    
+    .main p {opacity : 0;}
+    .main p {text-align: center; font-size: x-large; font-weight: bolder;}
+    .main p {transition: 0.8s;}
+
+    
+    
+    
+    
+    
+    
+  </style>
+</head>
+<body>
+  <div class="container">
+      <div class="main">
+        <div><p>아룡아룡 아룡하니 호롤롤롤로로로로롤롤롤롤<br>아라라아로로로로로오로로아랄랄랄랄랄랄<br>날씨가 왜이러냐 비올것같다아아아아아아ㅏ랑라앙아아리이라이링</p></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        
+        
+        
+        
+      </div>
+    
+    
+    
+
+    
+  </div>
+  
+  
+  
+  
+  
+  
+</body>
+</html>

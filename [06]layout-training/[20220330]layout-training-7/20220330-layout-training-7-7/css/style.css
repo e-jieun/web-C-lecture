@@ -1,0 +1,342 @@
+.lineup-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.align-start {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.align-end {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.justify-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-column {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+.space-evenly {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ------------------------------------ */
+
+* {margin: 0; padding: 0;}
+
+#base {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  }
+
+.root {
+  width: 428px;
+  height: 926px;
+
+  background-color: #c5c5c5;
+}
+
+header {
+  width: 100%;
+  height: 12%;
+
+  background-color: #8b8b8b;
+}
+
+header > div {
+  width: 86%;
+  height: 70%;
+
+  border: 1px solid rgb(140, 78, 255);
+}
+
+header > div > div {
+  width: 80%;
+  height: 90%;
+
+  background-color: #c5c5c5;
+}
+
+.wrap {
+  width: 96%;
+  height: 80%;
+
+  background-color: #a4ffa4;
+}
+
+.wrap > div {
+  width: 16%;
+  height: 86%;
+
+  background-color: #ff735b;
+}
+
+main {
+  width: 100%;
+  height: 80%;
+
+  background-color: aqua;
+
+  overflow: hidden;
+
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+main > div {
+  width: 94%;
+  height: 340%;
+
+  border: 1px solid salmon;
+  background-color: #a4ffa4;
+
+  position: absolute;
+  z-index: 2;
+
+  margin-top: 50px;
+}
+
+main > div > div {
+  width: 390px;
+  height: 400px;
+
+  background-color: #494949;
+
+  margin-top: 10px;
+}
+
+footer {
+  width: 100%;
+  height: 8%;
+
+  background-color: aquamarine;
+
+  position:relative;
+  z-index: 3;
+}
+
+/* ------------------media------------------- */
+
+@media (min-width:1024px) {
+
+  .root {
+    width: 1024px;
+    height: 1366px;
+  
+    background-color: #c5c5c5;
+    flex-direction: row;
+  }
+  
+  header {
+    width: 20%;
+    height: 100%;
+  
+    background-color: #90a73f;
+  }
+
+  header > div {
+    width: 86%;
+    height: 90%;
+  
+    border: 1px solid rgb(255, 78, 78);
+
+    flex-direction: column-reverse;
+  }
+  
+  header > div > div {
+    width: 100%;
+    height: 70%;
+  
+    background-color: #c5c5c5;
+  }
+  
+  .wrap {
+    width: 100%;
+    height: 96%;
+  
+    background-color: #a4ffa4;
+
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .wrap > div {
+    width: 86%;
+    height: 16%;
+  
+    background-color: #ff735b;
+  }
+  
+  main {
+    width: 80%;
+    height: 100%;
+  
+    background-color: aqua;
+    
+    align-items: center;
+  }
+  
+  main > div {
+    width: 94%;
+    height: 96%;
+  
+    border: 1px solid salmon;
+    background-color: #a4b5ff;
+  
+    margin-top: 0px;
+
+    flex-wrap: wrap;
+  }
+  
+  main > div > div {
+    width: 370px;
+    height: 400px;
+  
+    background-color: #494949;
+  
+    margin-top: 10px;
+  }
+  
+  footer {
+    width: 0px;
+    height: 0px;
+  }
+}
+
+/* --------------media PC---------------- */
+
+@media (min-width:1728px) {
+
+  .root {
+    width: 1728px;
+    height: 1117px;
+  
+    background-color: #c5c5c5;
+    flex-direction: column;
+  }
+  
+  header {
+    width: 100%;
+    height: 12%;
+  
+    background-color: #8b8b8b;
+  }
+  
+  header > div {
+    width: 86%;
+    height: 70%;
+  
+    border: 1px solid rgb(140, 78, 255);
+  }
+  
+  header > div > div {
+    width: 80%;
+    height: 90%;
+  
+    background-color: #c5c5c5;
+  }
+  
+  .wrap {
+    width: 96%;
+    height: 80%;
+  
+    background-color: #a4ffa4;
+  }
+  
+  .wrap > div {
+    width: 16%;
+    height: 86%;
+  
+    background-color: #ff735b;
+  }
+  
+  main {
+    width: 100%;
+    height: 80%;
+  
+    background-color: aqua;
+  
+    overflow: hidden;
+  
+    position: relative;
+    z-index: 1;
+  
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  main > div {
+    width: 94%;
+    height: 340%;
+  
+    border: 1px solid salmon;
+    background-color: #a4ffa4;
+  
+    position: absolute;
+    z-index: 2;
+  
+    margin-top: 50px;
+  }
+  
+  main > div > div {
+    width: 390px;
+    height: 400px;
+  
+    background-color: #494949;
+  
+    margin-top: 10px;
+  }
+  
+  footer {
+    width: 100%;
+    height: 8%;
+  
+    background-color: aquamarine;
+  
+    position:relative;
+    z-index: 3;
+  }
+  
+}

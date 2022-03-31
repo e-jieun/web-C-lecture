@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+*{margin: 0; padding 0;}
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+align-items: center;
+}
+
+.container>div{
+  width: 95vw;
+  height: 23vh;
+  background-color: rgb(169, 224, 179);
+}
+
+.container>div:nth-child(1) {
+  background-color: salmon;
+}
+
+.text{
+  opacity: 0;
+  font-size: 80px;
+  color: #333;
+  width: 95vw;
+  height: 23vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+.textbox:hover, .text:hover {
+ opacity: 1;
+ color: #333;
+ transition: 0.5s;
+}
+
+@media (max-width:1000px){
+  .container{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 255, 255);
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .container>div{
+  width: 23vw;
+  height: 100vh;
+  background-color: rgb(169, 224, 179);
+}
+
+.textbox{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text{
+  opacity: 0;
+  font-size: 80px;
+  color: #333;
+  width: 23vh;
+  height: 100vh;
+
+  writing-mode: vertical-rl;
+}
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="first"></div>
+    <div></div>
+    <div class="textbox">
+      <div class="text">
+        this is hover selector
+      </div>
+    </div>
+    <div></div>
+  </div>
+</body>
+</html>

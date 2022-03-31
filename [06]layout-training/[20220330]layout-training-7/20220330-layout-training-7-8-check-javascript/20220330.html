@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>layout-training-7</title>
+    <link rel="stylesheet" href="./css/20220330.css">
+</head>
+
+<body>
+    <main class="flex-ac">
+        <section class="flex-cc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur beatae facere consectetur iusto,
+                fugit similique sed! Consequuntur perspiciatis eum dolorum rem voluptatum asperiores in reprehenderit,
+                iusto distinctio nam minima cupiditate!</p>
+        </section>
+        <section class="flex-cc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores corrupti doloribus maiores! Saepe ipsam
+                obcaecati molestias sed est, libero distinctio tempora pariatur asperiores nesciunt laudantium, fuga,
+                laborum blanditiis. Porro, numquam!</p>
+        </section>
+        <section class="flex-cc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora, cum? Sunt ut pariatur repellat, vitae,
+                aliquid reiciendis excepturi dignissimos voluptate, officia enim dolores eos qui repellendus? Ipsa,
+                laborum. Sunt, ad?</p>
+        </section>
+        <section class="flex-cc">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, commodi optio est a suscipit
+                officia. Asperiores ea dignissimos repudiandae eos quidem, laborum odit inventore ratione veritatis
+                iusto quos corrupti cupiditate.</p>
+        </section>
+    </main>
+
+
+
+    <!-- student work ---------------------------------------------------------------------- -->
+    <!-- <script>
+        let Color333 = document.querySelectorAll('section');
+
+        // i를 인덱스 값으로 지정
+        for(let i = 0; i < Color333.length; i++){
+            // 마우스가 들어갈때
+            Color333[i].addEventListener('mouseover', event => {
+                // console.log("he");
+                Color333[i].style.color = "#333";
+                Color333[i].style.backgroundColor = "darkturquoise";
+            });
+            // 마우스가 나갔을때
+            Color333[i].addEventListener('mouseout', event => {
+                // console.log("ha");
+                Color333[i].style.color = "#fff";
+                Color333[i].style.backgroundColor = "turquoise";
+            });
+            
+        }
+    </script> -->
+
+    <script>
+        // ? 변수는 첫글자를 대문자로 사용하는 것과 변수명에는 숫자를 되도록 사용하지 않는 관습이 있음
+        // Color333 보다는 sectionItems "섹선 아이템 노드들" 이라는 이름을 권장함 (법칙은 아니나, 변수이름에서 직관적으로 무엇을 의미하는지 알아보게끔 하는 것은 매우 중요)
+        // let -> const 변경 이유 마치 셀렉터 처럼 사용하는 용도이기때문에 문서를 바꾸지 않는한 바뀔일이 없다는 결론이 나므로 -> 상수 선언인 const를 사용하는 것을 권장
+        // 대부분의 경우 const로 대체 될 수 있음
+        const sectionItems = document.querySelectorAll('section');
+        console.log(
+            sectionItems
+            ); // 좌측과 같이 제대로 선택되었는지, 혹은 검증을 '반드시' 해야 작동하는것에서 오류를 예방할 수 있음. 당연시 하다가 어이없는 실수를 왕왕 하는 것이 일반적인 실수 이기 때문에 습관이 생길필요
+
+        // querySelectorAll의 특성때문에 어쩔 수 없이 반복문을 먼저 사용하는 것은 매우 흔한 초심자의 선택이나, 사실은 이벤트를 발생시킬 때마다, 반복문 조건식에 모두 부합하는 요소들을 하나씩 다 체크하기 때문에 성능면에서 매우 떨어지는 사이드 이펙트(부수효과)가 발생함 
+
+        // 이것을 간편하게 해결하기 위해 만들어 놓은 것이 이벤트 객체(event object) 이며 직접적으로 '모두' 반복문을 실행시켜야할 section태그들을 선택하기보단, 위의 컨테이너 성격인 요소를 선택해주는 것이 이벤트 객체를 사용하는 방식
+        // 훈련생이 작성한 데이터에서는 <main> 태그가 컨테이너에 해당됨
+
+        const sectionContainer = document.querySelector('main');
+        // 마치 dlsplay:flex를 사용할때 부모태그에서 배치방식을 결정시키는 것과 이치가 같음
+
+
+        sectionContainer.addEventListener('click', (event) => {
+            console.log(event); // 이벤트 객체는 무엇을 발생시키는지(엄밀히는 무엇을 반환 return)를 확인해야 제대로된 작업을 진행시킬 수 있음
+            // 위와같은 event object는 반복문이나, '반응하는 무엇' 만 솎아 내고싶을때 .target이라는 프로퍼티를 사용하기때문에 매우 요긴하며 적극 사용할 경우 DOM 제어에서 매우 큰 생산성을 확보할 수 있음
+            console.dir(event
+            .target); // <-- '이벤트를 발생시키는 요소'를 선택하고자 할떄 사용하며 -> 위의 event 객체의 수많은 키값중에 한가지임을 학습할 것
+
+
+            if (event.target.classList.contains("flex-cc")) {
+                // 조건식 설명 : event를 발생시킨 요소가 가지고있는 클래스 중 flex-cc 라는 이름의 클래스를 가지고 있다면 true
+                console.log('event drive section tag');
+
+                event.target.style.color = "#eee";
+                event.target.style.backgroundColor = "darkturquoise";
+            }
+
+        });
+    </script>
+
+
+
+</body>
+
+</html>
