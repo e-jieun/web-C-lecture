@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <style>
+    *{margin:0; padding:0;}
+
+    #root{
+      width: 100vw;
+      height: 100vh;
+      
+      display: flex;
+    }
+    
+    #root > main {
+      width: 90vw;
+      height: 100vh;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    
+/* =================== 튀어나온 상자 */
+    #root > main > header{
+      width: 90vw; height: 45vh;
+      border-radius: 0 5vw 5vw 0;
+      background-color: white;
+      box-shadow: 0 0 1.5vh #888888;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: fixed;
+      top: 13%;
+      z-index: 2;
+    }
+
+    /* 내용물 전체 크기 설정 */
+    #root > main > header > div {
+      width: 70%; height: 50%;
+      /* border: 1px solid gray; */
+    }
+
+    /* 상단 숫자 */
+    #root > main > header > div > div:nth-child(1) {
+      width: 100%; height: 4vh;
+      display: flex;
+      justify-content: flex-end;
+    }
+    
+    #root > main > header > div > div:nth-child(1) > p {
+      margin-left: 2vw;
+      color: lightgray;
+      font-size: 0.8em;
+      font-weight: bold;
+    }
+
+    #root > main > header > div > div:nth-child(1) > p:nth-child(1) {
+      color: black;
+    }
+
+    /* 텍스트 영역 */
+    #root > main > header > div > div:nth-child(2) {
+      width: 100%; height: 60%;
+    }
+
+    #root > main > header > div > div:nth-child(2) > h3 {
+      margin-bottom: 1vh;
+    }
+
+    /* 버튼 영역 */
+    #root > main > header > div > div:nth-child(3) {
+      width: 100%; height: 4vh;
+      display: flex;
+      justify-content: end;
+    }
+
+    #root > main > header > div > div:nth-child(3) > div {
+      width: 4vh; height: 4vh;
+      border-radius: 1vh;
+      background-color: seagreen;
+      
+      /* h3으로 처리한 화살표모양을 정렬하기 위한 flex */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+
+
+
+/* =================== 단락 영역 */
+    #root > main > div:nth-child(2){
+      width: 100%; height: 70%;
+      background-color: #c4c4c4;
+
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    /* 단락 텍스트박스 크기 지정 */
+    #root > main > div:nth-child(2) > div {
+      width: 30%; height: 28vh;
+      margin: 0 1vh 10vh 0;
+    }
+
+    /* 단락 상단 소제목 영역 */
+    #root > main > div:nth-child(2) > div > div:nth-child(1){
+      width: 100%; height: 4vh;
+      margin-bottom: 2vh;
+      
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* 소제목 */
+    #root > main > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(1){
+      width: 80%; height: 4vh;
+
+      display: flex;
+      align-items: center;
+    }
+    /* 버튼 */
+    #root > main > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2){
+      width: 4vh; height: 4vh;
+      display: flex;
+      align-items: center;
+    }
+    
+    
+/* =================== 슬라이드바 */
+    #root > article {
+      width: 10vw;
+      height: 100vh;
+    }
+
+    #root > article > div:nth-child(1){
+      width: 100%; height: 25%;
+    }
+
+    #root > article > div:nth-child(2){
+      width: 100%; height: 75%;
+      
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+    }
+    
+    #root > article > div:nth-child(2) > div {
+      width: 20%; height: 80%;
+      border-radius: 20vh;
+      background-color: white;
+      
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+
+      position: relative;
+      z-index: 1;
+    }
+
+    #root > article > div:nth-child(2) > div:nth-child(2){
+      width: 20vw; height: 100%;
+      border-radius: 10vh 0 0 0;
+      background-color: #c4c4c4;
+      position: absolute;
+      z-index: 0;
+      left: 0vw;
+    }
+
+
+
+    #root > article > div:nth-child(2) > div > div {
+      width: 80%; height: 10%;
+      border-radius: 20vh;
+      margin-top: 10%;
+      background-color: #888888;
+    }
+    
+
+  </style>
+</body>
+
+<div id="root">
+  <!-- 컨텐츠 영역 -->
+  <main>
+    
+    <!-- 튀어나온 상자(고정) -->
+    <header>
+      <!-- 정렬용 div -->
+      <div>
+        <!-- 내용물 -->
+        <div>
+          <p>1</p>
+          <p>2</p>
+          <p>3</p>
+          <p>4</p>
+        </div>
+        <div>
+          <h3>Lorem ipsum dolor, sit</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti optio tenetur culpa debitis eligendi, nisi qui eum numquam asperiores inventore facilis est reiciendis eius, repellendus adipisci sed, labore eaque delectus doloribus corporis? Voluptatum quaerat eum fuga repellat itaque, dicta eius?</p>
+        </div>
+        <!-- 버튼 -->
+        <div>
+          <div><h3>→</h3></div>
+        </div>
+      </div>
+    </header>
+    
+    <!-- 하단 단락 영역 -->
+    <div>
+      <!-- 단락 1 -->
+      <div>
+        <div>
+          <div><h3>Lorem, ipsum dolor, sit</h3></div>
+          <div><h3>→</h3></div>
+        </div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga iusto minima debitis magni, illo ipsa, ut, sint dignissimos incidunt cumque quam? Magnam ratione ea asperiores eius exercitationem blanditiis minus quos.</p>
+      </div>
+      <!-- 단락 2 -->
+      <div>
+        <div>
+          <div><h3>Lorem, ipsum dolor, sit</h3></div>
+          <div><h3>→</h3></div>
+        </div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga iusto minima debitis magni, illo ipsa, ut, sint dignissimos incidunt cumque quam? Magnam ratione ea asperiores eius exercitationem blanditiis minus quos.</p>
+      </div>
+      <!-- 단락 3 -->
+      <div>
+        <div>
+          <div><h3>Lorem, ipsum dolor, sit</h3></div>
+          <div><h3>→</h3></div>
+        </div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fuga iusto minima debitis magni, illo ipsa, ut, sint dignissimos incidunt cumque quam? Magnam ratione ea asperiores eius exercitationem blanditiis minus quos.</p>
+      </div>
+    </div>
+  
+  </main>
+  
+
+  <!-- 슬라이드바 영역 -->
+  <article>
+    <!-- 영역잡기를 위한 빈 div -->
+    <div></div>
+    <!-- 슬라이드바가 들어갈 div -->
+    <div>
+      <div>
+        <div></div>
+      </div>
+      <div></div>
+    </div>
+  </article>
+</div>
+
+</html>

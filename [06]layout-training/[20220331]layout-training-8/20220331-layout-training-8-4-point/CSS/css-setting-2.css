@@ -1,0 +1,82 @@
+
+.flex{display:flex ;}
+
+.flex-center-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-around-center{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.flex-evenly-center{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.flex-between-center{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-between-end{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.flex-between-start{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+
+.flex-end-center{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.flex-start-center{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-center{
+  display: flex;
+  justify-content: center;
+}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;} 
+
+.flex-row{flex-direction: row;}
+
+.flex-nowrap{flex-wrap: nowrap;}
+
+.flex-wrap{flex-wrap: wrap;}
+
+.box-1-bgc{background-color: var(--color-white);}
+
+.box-2-bgc{background-color: var(--color-gray);}
+
+.border-black{border: var(--border-solid-black);}
+
+.box-shadow{box-shadow: 2px 2px 2px 2px #797878;}
+
+.border-radius{border-radius: 40px;}
+
+
+/* ----------------------------- style setting-------------------------------- */
+
+
+

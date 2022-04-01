@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    body {
+      overflow-x: hidden;
+    }
+    #root {
+      width: 100vw;
+      height: 400vh;
+      background-color: #eceff1;
+    }
+    header {
+      width: 100vw;
+      height: 13vh;
+      border: 1px solid red;
+      display: flex;
+      justify-content: center;
+    }
+    /* 여백 */
+    header > div {
+      width: 60vw;
+      border: 1px solid salmon;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    #logo {
+      width: 8vh;
+      height: 8vh;
+      border-radius: 50%;
+      background-color:#263238;
+    }
+    header > div > div{
+      width: 52VW;
+      border: 1px solid rebeccapurple;
+    }
+
+    main {
+      width: 100vw;
+      height: 345vh;
+      border: 1px solid blue;
+      display: flex;
+      flex-direction: column;
+    }
+    /* 배너 */
+    main >div:nth-child(2) {
+      /* width: 100vw; */
+      height: 65vh;
+      background-color: #b0bec5;
+      display: flex;
+    }
+
+    main > div:nth-child(3) {
+      /* width: 100vw; */
+      height: 7vh;
+      background-color: #37474f;
+      display: flex;
+    }
+    main > div:nth-child(4) {
+      height: 23vh;
+      background-color: #455a64;
+    }
+    /* 스프링시즌 */
+    main > div:nth-child(5) {
+      height: 60vh;
+      background-color: #78909c;
+    }
+    main > div:nth-child(6) {
+      height: 40vh;
+      background-color: #b0bec5;
+    }
+    main > div:nth-child(7) {
+      height: 70vh;
+      background-color: #546e7a;
+    }
+    main > div:nth-child(8) {
+      height: 40vh;
+      background-color:#78909c;
+    }    
+    main > div:nth-child(9) {
+      height: 40vh;
+      background-color:#b0bec5;
+    }
+    footer {
+      width: 100vw;
+      height: 60vh;
+      background-color: #263238;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="root">
+    <!-- 상단 로고, 메뉴바 -->
+    <header>
+      <!-- 양옆 여백을 가진 박스 -->
+      <div>
+        <div id="logo"></div>
+        <div>
+          <!-- 위에 메뉴 -->
+          <div>
+            <div>sign in</div>
+            <div>My Starbucks</div>
+            <div>Customer Service & ldeas</div>
+            <div>Find a Store</div>
+            <div>icon</div>
+          </div>
+          <!-- 아래메뉴 -->
+          <div>
+            <div>COFFEE</div>
+            <div>MENU</div>
+            <div>STORE</div>
+            <div>RESPONSIBILITY</div>
+            <div>STARBUCKS REWARDS</div>
+            <div>WHAT'S NEW</div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- 배너, 사이트 내용 -->
+    <main>
+      <!-- 스크롤해도 고정, 여백에 위치 -->
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <!-- 양옆 여백 필요, 가로로 우선 나누고, 여백하나하나?;다시줌 -->
+      <!-- 큰 배너 -->
+      <div>
+        <div></div>
+      </div>
+      <!-- 공지사항,프로모션 -->
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <!-- 스타벅스리워드  여까지만 스크롤안해도댐(좀 짤림)-->
+      <div>
+        <div>
+          <div id="logo2"></div>
+          <div></div>
+        </div>
+      </div>
+        <!-- 스프링시즌 어쩌구 -->
+      <div>
+        <div>
+          <div>제품이미지</div>
+          <div></div>
+        </div>
+      </div>  
+      <!-- 노란배너 -->
+      <div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      <!-- 큰배너 -->
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <!-- 매거진 -->
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+    </main>
+    <!-- 맨 밑 사이트 정보 -->
+    <footer></footer>
+  </div>
+</body>
+</html>

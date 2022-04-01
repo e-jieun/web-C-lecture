@@ -1,0 +1,27 @@
+:root{
+  --color-black:black;
+  --color-white:white;
+  --color-bright-gray:#e2e2e2;
+  --color-gray:#c4c4c4;
+  --color-dark-gray:#838383;
+  --color-box-1: #f3aec3;
+  --color-box-2: #6fe28c;
+  --width-root:100vw;
+  --height-root:100vh;
+  --border-solid-black:1px solid black;
+  --border-solid-gray:1px solid #888;
+  --border-solid-red:1px solid #613c3c;
+  --border-solid-blue:1px solid #4f508b;
+  --border-dotted-color:1px dotted #3b3e49;
+  --border-radius:50%;
+  --border-radius-round:20px;
+}
+
+
+
+
+
+
+
+
+

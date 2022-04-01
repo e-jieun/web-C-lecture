@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+*{margin:0; padding:0; list-style-type: none;}
+
+#back {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+
+  display: flex;
+}
+
+header {
+  /* 스크롤 제외 모든 것을 담은 박스.. */
+  width: 95%;
+  height: 100%;
+
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  flex-direction: column;
+}
+
+main {
+  /* 하얀 박스 */
+  width: 95%;
+  height: 50%;
+  border-radius: 0px 100px 100px 0px;
+  box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+
+  position: absolute;
+  top:15%;
+  z-index: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main > div {
+  /* 하얀 박스 안 박스 */
+  width: 60%;
+  height: 60%;
+
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+ul {
+  width: 100%;
+  height: 15%;
+  
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+li {
+font-size: xx-small;
+color: #ccc;
+margin-left: 5%;
+font-weight: bold;
+}
+
+ul > li:nth-child(1) {
+  color: black;
+}
+
+h1 {
+  width: 100%;
+  height: 20%;
+  text-align: left;
+
+  font-weight: normal;
+  font-size: x-large;
+  color: #8a8a8a;
+}
+
+main > div > p {
+  width: 100%;
+  height: 40%;
+  text-align: justify;
+
+  font-weight: lighter;
+  font-size: small;
+  color: #8a8a8a;
+}
+
+.green {
+  /* 초록화살표가 있는 박스 */
+  width: 100%;
+  height: 10%;
+
+  display: flex;
+  justify-content: flex-end;
+}
+
+.green > nav {
+  /* 초록화살표 */
+  width: 30px;
+  height: 30px;
+  background-color: rgb(124, 231, 81);
+  border-radius: 30%;
+
+  color: #fff;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+}
+
+footer {
+  /* 회색 박스 */
+  width: 100%;
+  height: 50%;
+  background-color: #8a8a8a;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.box {
+  width: 97%;
+  height: 100%;
+  
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+section {
+  /* 회색 박스 안 글씨 박스*/
+  width: 30%;
+  height: 60%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+section > div {
+  /* 글씨 박스 안 첫 박스 */
+  width: 100%;
+  height: 20%;
+  
+  display: flex;
+}
+
+section > div > h2 {
+  width: 90%;
+  height: 20%;
+
+  text-align: left;
+  font-size: x-large;
+  font-weight: normal;
+  color: rgb(75, 75, 75);
+}
+
+section > div > div{
+  /* 화살표 박스 */
+  width: 10%;
+  height: 20%;
+
+  color: rgb(63, 63, 63);
+  font-weight: bold;
+  font-size: x-large;
+  text-align: right;
+}
+
+section > p {
+  text-align: justify;
+  font-size: x-small;
+  color: rgb(75, 75, 75);
+}
+
+.scroll {
+  /* 스크롤이 들어간 박스 */
+  width: 5%;
+  height: 100%;
+  
+  display: flex;
+  justify-content: end;
+  flex-direction: column;
+}
+
+.scroll > div {
+  /* 회색 박스 */
+width: 100%;
+height: 75%;
+background-color: #8a8a8a;
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+border-radius: 100px 0px 0px 0px ;
+}
+
+.scroll > div > div {
+  /* 흰색 스크롤 바 */
+  width: 20%;
+  height: 70%;
+  background-color: #fff;
+  border-radius: 15px 15px 15px 15px;
+
+  display: flex;
+justify-content: center;
+align-items: flex-start;
+}
+
+.scroll > div > div > div {
+  /* 흰색 스크롤 바 안 버튼*/
+  width: 80%;
+  height: 7%;
+  background-color: gray;
+  border-radius: 15px 15px 15px 15px;
+
+  margin-top: 30%;
+}
+
+
+  </style>
+</head>
+<body>
+  <div id="back">
+    <header>
+      <!-- 스크롤 제외 모든 것을 담은 박스.. -->
+    <main>
+      <!-- 하얀 박스 -->
+      <div>
+      <!-- 하얀 박스 안 박스 -->
+        <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+      </ul>
+
+      <h1>Lorem ipsum dolor sit amet</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia facere! Quisquam nam ad, sed aperiam laudantium quasi sequi eaque minima repellendus consequuntur quibusdam suscipit repellat consectetur porroctus quo autem id voludantium quasi sequi eaque minima repellendus consequuntur quibusdam suscipit repellat consectetur porroctus quo autem id voluepellat consectetur porroctus quo autem id voludantium quasi sequum dolor sit amet, consectetur adipisicing elit. Earum, officia facere! Quisquam nam ad, sed aperiam laudantium quasi sequi eaque minima repellendus consequuntur quibusdam suscipit re  officia facere! Quisquam nam ad, sed aperiam laudantium quasi sequi eaque minima repellendus consequuntur quibusdam suscipit re</p>
+
+      <div class="green">
+        <!-- 초록 화살표가 있는 박스 -->
+        <nav>↓</nav>
+      </div>
+
+    </div>
+</main>
+
+    <footer>
+      <!-- 회색 박스 -->
+      <div class="box">
+    <section>
+      <!-- 글씨 박스 -->
+      <div>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <div>→</div>
+      </div>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia facere! Quisquam nam ad, sed aperiam laudantium quasi sequi eaque minima repellendus consequuntur quibusdam suscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur abscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur ab Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia facere! Quisquam nam ad, sed aperiam laudantium quasi sequi eaque minima repellendus consequuntur quibusdam suscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur abscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur ab</p>
+    </section>
+
+    <section>
+      <!-- 글씨 박스 -->
+      <div>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <div>→</div>
+        <!-- 화살표 박스 -->
+      </div>
+      
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia facere! Quisquam nam ad, sed aperiam laudantium quasi sequi eaque minima repellendus consequuntur quibusdam suscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur abscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur ab Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia facere! Quisquam nam ad, sed aperiam laudantium quasi sequi eaque minima repellendus consequuntur quibusdam suscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur abscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur ab</p>
+    </section>
+
+    <section>
+      <!-- 글씨 박스 -->
+      <div>
+        <h2>Lorem ipsum dolor sit amet.</h2>
+        <div>→</div>
+      </div>
+      
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia facere! Quisquam nam ad, sed aperiam laudantium quasi sequi eaque minima repellendus consequuntur quibusdam suscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur abscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur ab Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum, officia facere! Quisquam nam ad, sed aperiam laudantium quasi sequi eaque minima repellendus consequuntur quibusdam suscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur abscipit repellat consectetur porroctus quo autem id voluptatem. Alias tempora commodi maxime quia consequatur ab. ectus quo autem id voluptatem. Alias temporaxime quia consequatur ab</p>
+    </section>
+    </div>
+
+    </footer>
+
+  </header>
+
+  <nav class="scroll">
+    <!-- 스크롤이 들어간 박스 -->
+    <div>
+      <!-- 회색 박스 -->
+    <div>
+      <!-- 흰색 바 -->
+      <div></div>
+      <!-- 흰색 바 안 스크롤 버튼 -->
+    </div>
+  </div>
+  </nav>
+
+  </div>
+</body>
+</html>

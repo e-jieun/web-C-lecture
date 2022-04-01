@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+      .container {
+        width:100vw;
+        height:100vh;
+        background-color:steelblue;
+        display:flex;
+        justify-content: center;
+        align-items: center;  
+      }
+      .main {
+        width:80vw;
+        height:80vh;
+        background-color: white;
+        display: flex;
+        /* flex-direction: column; */
+        
+      }
+      
+        .no1 {
+          display: flex;
+          flex-direction: column;
+          background-color: white;
+        }
+      
+      .top {
+        width:75vw;
+        height:35vh;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        margin-top: 10%;
+        border-radius: 0px 50px 50px 0px;
+        position: relative;
+        top:25px;
+        box-shadow: 2px 2px 2px 2px;
+      }
+
+        /* 겹치기를 해보려고 이런저런 시도를 해봤으나
+        현재 제가 사용할 수 있는 태그중에 가장 깔끔하게 겹쳐질 수 있는 relative를 사용했습니다. 웬만하면 쓰지 않으려 했는데..! */
+      
+        
+      /* check point  */
+  
+      /* 
+      
+      훈련생께서 사용한 position은 매우 적절한 용도로 사용한 모범적인 사례입니다. position으로 일일히 지정하는 경향이 있기때문에 지양하라고 강의 하는 부분인데, '필요에' 따라서 사용하는 것은 너무나 바람직한 방식이며, 이것이 포지션 속성의 본래 용도입니다. 
+      매우 잘 사용하고 있으니 응용하는 방향으로 연구해보시기 바랍니다.
+      
+      
+      */
+
+
+
+
+
+
+
+      .top div {
+        width:60vw;
+        height:20vh;
+        /* border: 1px solid black; */
+        
+        
+      }
+      
+      .numb {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        
+      }
+      
+      
+      .numb div {
+        width:3vw;
+        height:3vh;
+        /* border: 1px solid rgb(228, 8, 8); */
+        margin:10px;
+
+      }
+      
+      .numb p {
+        font-weight: bolder;
+        color: darkgray;
+        
+      }
+      
+      
+      
+      
+      .text {
+        text-align: center;
+        /* flex-direction: row; */
+
+      }
+        .arrow {
+          display: flex;
+          justify-content: flex-end;
+          /* 화살표 만드는 방법을 모르겠습니다 
+          오늘 안에 방법을 찾도록 하겠습니다! */
+
+          /* check point */
+
+          /* 
+          
+          위와같이 만드는건 매우 좋은 방식이지만, 아무래도 복잡합니다.
+          지난번 소개드렸었던 font-awesome과 같은 방식으로 간단하게 해결할 수 있고,
+          또 해당 훈련은 레이아웃 디자인 능력을 훈련하는 것이 가장 중요하기 때문에
+          디테일한 부분은 천천히 진행하셔도 좋겠습니다.
+
+          
+          
+          */
+
+
+
+        }
+      
+      
+      .arrow  div{
+        width:5vw;
+        height:5vw;
+        background-color: greenyellow;
+        
+        
+      }
+      
+      
+      
+      
+      
+      .bottom {
+       /* width:70vw; */
+       height:60vh;
+       /* background-color: aqua;  */
+       display: flex;
+       background-color: darkgray;
+       justify-content:space-around;
+       align-items: center;
+        
+      }
+
+
+      .bottom div {
+        width: 20vw;
+        height:20vh;
+        /* border: 1px solid black; */
+        /* margin-top: 5%; */
+
+        
+        
+        
+      }
+      
+      
+      
+      .bar {
+        width:10vw;
+        height:80vh;
+        /* border: 1px solid black; */
+        display: flex;
+        align-items: flex-end;
+        background-color: white;
+        
+      }
+
+      .side {
+        width:10vw;
+        height:60vh;
+        background-color: darkgray;
+        border-radius: 90px 0px 0px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+
+      .side div {
+        width:3vw;
+        height:40vh;
+        background-color: white;
+        /* border: 1px solid black; */
+        border-radius: 50px;
+        display: flex;
+        justify-content: center;
+        
+      }
+
+      .side div:nth-child(1) div {
+        width:2vw;
+        height:4vh;
+        background-color:chartreuse;
+        margin-top: 10px;
+        
+      }
+      
+    
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <div class="main">
+             <div class="no1">
+                <div class="top">
+                  <div class="numb">
+                    <div class="no1">
+                      <p>1</p></div>
+                      <div><p>2</p></div>
+                      <div><p>3</p></div>
+                      <div><p>4</p></div>
+                    </div>
+                    <div class="text"><h2>Lorem ipsum dolor sit.</h2><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis unde, omnis dicta iste nobis corrupti recusandae! Voluptate, maiores eveniet! Libero possimus officiis dolorem rem sit vitae neque maxime debitis.</p></div>
+                    <div class="arrow">
+                      <div><p></p></div>
+                    </div>
+                      
+                  </div>
+                  <div class="bottom">
+                  <div><p><h1>화살표뭐여↗</h1> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, quaerat.아배아퍼</p></div>
+                  <div><p><h2>히히히↗</h2>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit, quod.</p></div>
+                  <div><p><h3>호호호↗</h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, ipsa exercitationem officia ab rerum mollitia?</p></div>
+                </div>
+                  </div>
+      <div class="bar">
+        <div class="side">
+          <div>
+              <div></div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+      
+      
+      
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  
+  
+  
+  
+  
+</body>
+</html>

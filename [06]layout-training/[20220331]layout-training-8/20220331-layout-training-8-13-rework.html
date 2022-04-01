@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    *{margin: 0px; padding:0px;}
+
+
+    #root { width: 100vw;
+            height: 100vh;
+            background-color: white;
+            border: 1px solid black;
+            align-items: center;
+
+
+
+}
+
+#root > div {
+  width: 100vw;
+  height: 30vh;
+  background-color: lightgray;
+  border: 1px solid black;
+
+  display: flex;
+  align-items: center;
+  
+}
+
+#root :nth-child(2){
+      width: 80vw;
+      height: 70vh;
+      background-color: gray;
+      opacity: 50%;
+
+      flex-direction: column;
+      justify-content: left;
+
+      float: left;
+}
+
+
+#root :nth-child(2) h {
+  width:  80vw;
+  height: 40vh;
+  background-color: pink;
+  border: 1px solid black;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root :nth-child(2) h p {
+  width: 70vw;
+  height: 20vh;
+  background-color: yellow;
+  opacity: 60%;
+  border: 1px solid black;
+
+  display: flex;
+  align-items: center;
+}
+
+
+
+
+
+#root :nth-child(2) main {
+  width:  70vw;
+  height: 20vh;
+  background-color: lightgreen;
+  border: 1px solid black;
+  
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  
+  margin: 30px;
+
+}
+
+#root :nth-child(2) main p{
+  width: 13vw;
+  height: 14vh;
+  background-color: yellow;
+  opacity: 60%;
+  border: 1px solid black;
+  margin: 20px;
+}
+
+
+#root footer{
+  width: 10px;
+  height: 3vh;
+  background-color: gray;
+/* A.좌우 배열을 했는데 속성이 반영이 되지 않는 이유가 궁금합니다.*/
+  float: right;
+
+
+  
+}
+
+  </style>
+
+
+
+</head>
+<body>
+  <div id="root">
+    <div></div>
+
+
+    <div>
+        <h>
+          <p></p>
+        </h>
+
+    
+      <main>
+      <p></p>
+      <p></p>
+      <p></p>
+      </main>
+   </div>
+
+   <footer></footer>
+
+</div>
+
+</body>
+</html>

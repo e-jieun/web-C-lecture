@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+<style>
+	#root{
+		width: 100vw;
+		height: 100vh;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+	}
+	/* 모양을 자세히보면 우리가 한 쪽 방향에만 border-radius를 주는게 아닌 전체적으로 속성을 부여시킨다음
+	overflow:hidden과 position 사용으로 충분히 가능한 레이아웃임을 알 수 있다. */
+
+
+	/* 방법 1) 상단 흰색 메뉴 / 하단 문단+우측 스크롤 메뉴를 하나의 container로 보고 전체적 direction은 column으로/ 하단+우측 row로 배치하는 방법
+		방법2) 상단 흰색메뉴 / 하단 문단 / 우측 스크롤 메뉴를 각각 하나의 contaioner로 보고 z-index속성 값을 할당하여 배치하는 방법 (일단은 방법2로 마크업하다가 방법1이 생각이 났다.) */
+	.con1{
+		display: flex;
+		flex-direction: column;
+		width: 100vw;
+		height: 50vh;
+		/* box-shadow */
+		position: relative;
+		top:3.5vh;
+		right: 4.5vw;
+		justify-content: center;
+		align-items: center;
+		border-radius: 3vw;
+		background-color: white;
+		z-index: 3;
+		box-shadow: 2px 2px 10px 2px gray;
+	}
+	.con1>div{
+		width: 60vw;
+		height: 30vh;
+		/* background-color: blue; */
+		position:relative;
+		left: 5vw;
+	}
+.con1>div>div:nth-child(1){
+	display: flex;
+	justify-content: flex-end;
+	color:gray;
+}
+.con1>div>div:nth-child(1)>p{
+	margin-left: 1vw;
+	margin-right: 1vh;
+}
+.con1>div>div:nth-child(4){
+	width: inherit;
+	height: 5vh;
+	display: flex;
+	justify-content: flex-end;
+}
+.con1>div>div:nth-child(4)>div{
+	width: 2vw;
+	height: 2vw;
+	background-color: green;
+	border-radius: 0.5vw;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}
+.con1>div>div:nth-child(4)>div>div{
+	color: white;
+	font-size:larger;
+}
+.con2{
+	display: flex;
+	width: 100vw;
+	height: 30vh;
+	background-color: darkgray;
+	color:black;
+	justify-content: center;
+	/* align-items: center; */
+	position: relative;
+	top:2vh;
+	/* height 값을 적당히 설정한 뒤 align-items를 center를 주니 여백이 아쉬운 감이 있어서 position:relative를 주어 배치하였다. 
+ height값을 조정하는 것도 하나의 방법이 될 수 있을 것 같다.*/
+}
+.con2>div{
+	display: flex;
+	flex-direction: column;
+	width: 25vw;
+	height: 20vh;
+	text-align: justify;
+	margin-left: 2vw;
+	margin-right: 2vw;
+	z-index: 1;
+}
+.con2>div>div:nth-child(1){
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.con3{
+	width: 8vw;
+	height: 60vh;
+	background-color: darkgray;
+	border-radius: 5vw;
+	display: flex;
+	z-index: 2;
+	position: absolute;
+	left:95vw;
+	top:30vh;
+}
+.con3>div{
+	width: 1.5vw;
+	height: 40vh;
+	background-color:white;
+	border-radius: 2vw;
+	position: relative;
+	left: 2vw;
+	top:10vh;
+	display: flex;
+	justify-content: center;
+}
+.con3>div>div{
+	width: 1vw;
+	height: 5vh;
+	background-color:rgb(46,46,46);
+	border-radius: 1vw;
+	position: relative;
+	top: 1vh;
+
+}
+</style>
+</head>
+
+<body>
+	<div id="root">
+		<div class="con1">
+			<!-- con1>div(1) -->
+			<div>
+				<!-- div 태그마다 몇번 째 div인지 적어두니까 일일이 셀 필요도 없고 매우 편해졌다. 근데 시맨틱태그를 더 많이 쓰는게 이득일 것 같긴 하다. -->
+				<!-- p태그를 감싸는 div(1) -->
+				<div>
+					<p style="font-weight: 900; color:black">1</p>
+					<!-- 내부 스타일 시트에 p태그 전체의 속성을 할당시킨 뒤 해당 p태그만 강조를 위해서 inline 방식으로 스타일링 해주었다. -->
+					<p>2</p>
+					<p>3</p>
+					<p>4</p>
+				</div>
+				<!-- 제목 div(2) -->
+				<div><p style="font-size: 2rem;">Lorem, ipsum dolor sit amet</p></div>
+				<!-- 본문 div(3) -->
+				<div>
+					<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, itaque atque! Ipsum corrupti rerum eum. Accusantium, sed. Quibusdam dolorum quisquam libero, facere itaque quae! Quia excepturi quam maiores dolor quas.
+					</p>
+				</div>
+				<!-- 우측 하단 화살표 div(4) -->
+				<div>	
+				<div>
+						<div>
+							&#8600;
+							<!-- HTML 화살표 태그를 검색을 통해 알아보았다. 화살표도 ㅁ 한자 쓰면 안되나 싶기도 하고..?
+							Q1 HTML 에서 화살표 등의 특수문자는 'ㅁ'+ 한자를 써서 표기해도 괜찮은가요? 그렇게 하면 기능상에서 호환 문제가 생기나요?-->
+						</div>
+					</div>
+					</div>
+				</div>
+		</div>
+		
+
+		<!-- 하단 본문 글  같은 구조 3개이기 때문에 하나만 스타일링 해서 복사 붙혀넣기 하면 된다.
+		하나의 div 속에 방향이 flex : row / column 둘다 있기 때문에 신경써서 작업하기-->
+		<div class="con2">
+			<div>
+				<div>
+					<p style="font-size: 1.5rem;">Lorem ipsum dolor sit amet</p>
+					<div style="font-size: 2rem;">&#8599;	</div>
+					
+				</div>
+				<div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt consequatur deleniti eligendi aliquam doloribus explicabo debitis, quam neque repellat architecto ex accusantium placeat distinctio commodi praesentium quas dolore minima quis tempora asperiores dicta provident nihil pariatur! Amet repudiandae nobis, accusantium quidem expedita neque ex vitae distinctio, maiores facere, sequi error.</div>
+			</div>
+			<div>
+				<div>
+					<p style="font-size: 1.5rem;">Lorem ipsum dolor sit amet</p>
+					<div style="font-size: 2rem;">&#8599;	</div>
+				</div>
+				<div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt consequatur deleniti eligendi aliquam doloribus explicabo debitis, quam neque repellat architecto ex accusantium placeat distinctio commodi praesentium quas dolore minima quis tempora asperiores dicta provident nihil pariatur! Amet repudiandae nobis, accusantium quidem expedita neque ex vitae distinctio, maiores facere, sequi error.</div>
+			</div>
+			<div>
+				<div>
+					<p style="font-size:1.5rem">Lorem ipsum dolor sit amet</p>
+					<div style="font-size: 2rem;">&#8599;</div>
+				</div>
+				<div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt consequatur deleniti eligendi aliquam doloribus explicabo debitis, quam neque repellat architecto ex accusantium placeat distinctio commodi praesentium quas dolore minima quis tempora asperiores dicta provident nihil pariatur! Amet repudiandae nobis, accusantium quidem expedita neque ex vitae distinctio, maiores facere, sequi error.</div>
+			</div>
+		</div>
+		<!-- 우측 스크롤 메뉴바 -->
+		<div class="con3">
+			<div>
+				<div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

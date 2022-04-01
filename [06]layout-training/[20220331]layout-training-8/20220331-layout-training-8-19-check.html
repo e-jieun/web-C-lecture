@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    /* 구조를 잘못짠거같습니다 집에서 다시해보겠습니다 */
+    
+    /* check point */
+
+    /* 
+    
+    flex의 원리를 다시한번 점검한다면 수월하게 해결 할 수 있을 것
+    
+    
+    
+    
+    */
+
+
+    .table{
+      width: 100vw;
+      height: 100vh;
+      border: 1px solid black;
+      background-color: gray;
+    }
+    
+    .header{
+      width: 100vw;
+      height: 35vh;
+      border: 1px solid black;
+        background-color: white;
+    }
+
+    .main{
+      width: 95vw;
+      height: 30vh;
+      border: 1px solid black;
+      display: flex;
+      justify-content:flex-end;
+      list-style-type:none;
+      align-items: center;
+      border-radius: 0px 0px 150px 0px;
+      background-color: white;
+    box-shadow: 0px 0px 1px 0px black;
+
+    }
+    .main>li{
+      margin:20px;
+    }
+    .main2{
+      width: 70vw;
+      height: 20vh;
+      border: 1px  solid black;
+      position: relative;
+      bottom: 200px;
+      left: 75px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      border-radius: 0px 100px 0px 0px;
+    }
+    .main3{
+    width: 5vw;
+    height: 70vh;
+    position: relative;
+    left: 75px;
+    top:147px;
+    background-color: gray;
+    display: flex;
+    justify-content: center;
+    border-radius: 100px 0% 0% 0%;
+
+    }
+    .main3>div{
+      width: 2vw;
+      height: 50vh;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+      background-color: white;
+      border-radius: 20px 20px 20px 20px
+    }
+    .main3>div>div{
+      width: 1vw;
+      height: 2vh;
+      border: 1px solid black;
+      background-color:black;
+      margin-top: 10px;
+      border-radius: 50%;
+    }
+    .footer{
+      width: 95vw;
+      height: 35vh;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: gray;
+
+    }
+    .footer>div{
+      width: auto;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     
+    }
+    .footer>div>div{
+      width: 30vw;
+      height: 30vh;
+  
+    }
+      
+  </style>
+</head>
+<body>
+  <div class="table">
+
+    <div class="header"></div>
+    
+    <div class="main">
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+
+      <div class="main2">
+        <h1>lorem ipsum dolor sit amet</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sint id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio quae recusandae possimus eaque deleniti!int id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio quae recusandae</p>
+      </div>
+
+      <div class="main3">
+        <div>
+          <div></div>
+        </div>
+      </div>
+    
+    </div>
+
+    
+    <div class="footer">
+      <div>
+        <div>
+          <h1>lorem ipsum dolor sit amet↗</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sint id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio quae recusandae possimus eaque deleniti!int id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio quae recusandae possimus eaque deleniti!harum nisi non, assumenda optio quae recusandae possimus eaque deleniti!int id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio qua</p>
+        </div>
+        <div>
+          <h1>lorem ipsum dolor sit amet↗</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sint id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio quae recusandae possimus eaque deleniti!int id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio quae recusandae possimus eaque deleniti!harum nisi non, assumenda optio quae recusandae possimus eaque deleniti!int id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio qua</p>
+        </div>
+        <div>
+          <h1>lorem ipsum dolor sit amet↗</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed sint id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio quae recusandae possimus eaque deleniti!int id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio quae recusandae possimus eaque deleniti!harum nisi non, assumenda optio quae recusandae possimus eaque deleniti!int id consectetur, natus eligendi, soluta quas sunt dolorem voluptatem ducimus harum nisi non, assumenda optio qua</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

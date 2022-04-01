@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    * {margin: 0; padding: 0;}
+    :root {
+      --color-1:#9f9f9f;
+      --color-2:#333;
+      --color-3:#c3c3c3;
+      --color-4:#8d8d8d;
+      --color-5:#e6e6e6;
+    }
+
+    .title-1 {
+      font-size: x-large;
+      color: var(--color-2);
+      margin-bottom: 2vh;
+    }
+
+    .title-2 {
+      font-size: x-large;
+      color: var(--color-2);
+      margin-bottom: 1.5vh;
+      width: 20vw;
+    }
+
+    .text-1 {
+      font-size: smaller;
+      color: var(--color-4);
+      text-align: justify;
+      margin-bottom: 1vh;
+    }
+
+    .text-2 {
+      font-size: smaller;
+      color: var(--color-2);
+      text-align: justify;
+    }
+
+    .box-1 {
+      width: 2vw;
+      height: 2vw;
+      background-color: var(--color-3);
+      margin-left: 7vw;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+    }
+
+    main {
+      /* border: 1px solid red; */
+      width: 94vw;
+      height: inherit;
+    }
+
+    main>div:nth-child(1) {
+      width: inherit;
+      height: 50vh;
+
+      background-color: var(--color-5);
+      border-top-right-radius: 5vw;
+      border-bottom-right-radius: 5vw;
+
+      box-shadow: -2px 4px 10px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: absolute;
+      top: 9vh;
+      z-index: 2;
+    }
+
+    main>div:nth-child(1)>div {
+      width: 60vw;
+      height: 25vh;
+
+      /* border: 1px solid green; */
+      margin-left: 5vw;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-bottom: 3vh;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+    }
+
+    li {
+      font-size: smaller;
+      margin-left: 2vw;
+      color: var(--color-1);
+      font-weight: 700;
+    }
+    
+    ul>li:nth-child(1) {
+      color: var(--color-2);
+    }
+
+    main>div:nth-child(1)>div>div:nth-child(4) {
+      width: 3vw;
+      height: 3vw;
+      border-radius: 0.5vw;
+      background-color: olive;
+      margin-left: 57vw;
+    }
+
+    main>div:nth-child(2) {
+      width: inherit;
+      height: 49vh;
+      background-color: var(--color-4);
+
+      display: flex;
+      justify-content:flex-end;
+      align-items: center;
+
+      position: absolute;
+      top: 51vh;
+    }
+
+    main>div:nth-child(2)>div {
+      width: 90vw;
+      height: 30vh;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-top: 10vh;
+    }
+
+    main>div:nth-child(2)>div>div {
+      width: 28vw;
+      height: 25vh;
+      /* border: 1px solid blue; */
+    }
+
+    main>div:nth-child(2)>div>div:nth-child(1) {
+      margin-left: 2vw;
+    }
+
+
+    nav {
+      width: 6vw;
+      height: inherit;
+      /* border: 1px solid green; */
+
+      display: flex;
+      align-items: flex-end;
+    }
+
+    nav>div {
+      width: inherit;
+      height: 73vh;
+
+      background-color: var(--color-4);
+      border-top-left-radius: 5vw;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+
+    }
+    
+    nav>div>div {
+      width: 2vw;
+      height: 45vh;
+      margin-top: 8vh;
+      
+      background-color: var(--color-3);
+      border-radius: 2vw;
+
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    nav>div>div>div {
+      width: 1.6vw;
+      height: 5vh;
+
+      background-color: var(--color-2);
+      border-radius: 1vw;
+
+      margin-top: 1vh;
+    }
+
+  </style>
+</head>
+    <!--레이아웃 구상시 좌우로 main과 nav로 나누어 본문(기사) main구역과 스트롤이 있는 nav구역을 나누었고, main에서는 상하로 두군데로 나누어 main>div:nth-child(1)과 main>div:nth-child(2)로 구역을 지정하여 추후 position:absolute와 z-index로 겹치게 만들었다. 
+
+    강사님이 만드신 레이아웃구성의 상단의 초록색 구역이 빠졌는데 현재로서는 해당 초록색 구역이 없어도 문제가 없다고 생각해서 그대로 진행하였습니다. 
+    
+    처음 레이아웃을 어떻게 구상할지에대해 고민이 있었지만 위처럼 main과 nav구역으로 나뉘는 레이아웃으로 방향을 설정하고 나서는 구현하는데 큰 어려움은 없었습니다. 하지만 과연 제가 알맞게 작성을 했는지는 모르겠습니다. -->
+<body>
+  <div id="root">
+    <main>
+      <!-- 윗 박스 -->
+      <div> <!--윗박스 큰 상자-->
+        <div> <!--윗박스 작은 안보이는 상자 정렬용-->
+          <div>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+          </ul>
+          </div>
+          <div class="title-1">
+            Lorem ipsum dolor sit amet
+          </div>
+          <div class="text-1">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit quia iste provident numquam, perspiciatis nobis blanditiis accusantium? Fugit consequuntur vero libero tenetur officiis hic, animi ipsum quia commodi quae, aliquid, magni enim dolorem a similique ab reiciendis mollitia exercitationem eveniet saepe cumque alias ut neque? Amet voluptatibus rem quis qui, id blanditiis sequi dolorem debitis sapiente, voluptate consectetur unde, tempora veritatis earum. Labore ut velit qui doloribus eveniet aut consequatur soluta odit similique vel tenetur, fugiat, consectetur laudantium iure pariatur beatae incidunt minima. Doloremque, ut. Nihil aliquid tempora ipsam enim, quibusdam eos veniam, quo itaque earum corrupti, facere quidem soluta!
+          </div>
+          <div></div>
+        </div>
+      </div>
+      <!-- 아래 박스 -->
+      <div>
+        <div> <!--정렬용 박스-->
+          <!-- text-1 -->
+          <div>
+            <div class="flex">
+              <div class="title-2">Lorem ipsum dolor sit amet</div>
+              <div class="box-1"></div>
+            </div>
+            <div class="text-2">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, voluptas libero. Quidem, harum consectetur, ad saepe ex animi nihil voluptatum impedit nobis minus fuga voluptas veniam illo itaque consequatur dolores accusantium nisi. Consequuntur nobis minima recusandae! Dolores molestiae, corrupti optio rerum eligendi temporibus provident voluptas beatae ratione, omnis nam accusantium numquam iusto? Ab id sit corporis facilis eum minus officia atque? Officiis placeat perspiciatis laboriosam numquam, rerum veritatis tempore recusandae itaque modi voluptas debitis id sit culpa, quas nemo dolores reprehenderit magnam
+            </div>
+          </div>
+          <!-- text-2 -->
+          <div>
+            <div class="flex">
+              <div class="title-2">Lorem ipsum dolor sit amet</div>
+              <div class="box-1"></div>
+            </div>
+            <div class="text-2">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cupiditate possimus adipisci quisquam eos maxime facere placeat eum natus consequatur, et obcaecati voluptatum laborum cum accusamus unde fuga, iusto delectus dignissimos voluptatem. Repudiandae consequuntur veniam consectetur adipisci aut quae! Provident nesciunt exercitationem ratione ullam odio ea architecto, facilis, fugit sapiente eum molestiae tempora quod ipsam incidunt dignissimos aperiam sunt quibusdam dolor magnam, id ab. Fugiat reiciendis quos nihil eligendi quam, saepe odio ducimus autem eveniet facere aliquid dolorem velit aliquam! Recusandae, eaque.
+            </div>
+          </div>
+          <!-- text-3 -->
+          <div>
+            <div class="flex">
+              <div class="title-2">Lorem ipsum dolor sit amet</div>
+              <div class="box-1"></div>
+            </div>
+            <div class="text-2">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio ut incidunt, accusantium placeat inventore corrupti minima ducimus cupiditate unde tenetur consequuntur illum modi, aut saepe quod ipsam porro nisi autem omnis reiciendis voluptas aliquam quisquam sunt. Dolorem, non! Sapiente officiis, cumque hic porro laboriosam voluptate numquam itaque maxime quia delectus eaque esse id iure laudantium? Assumenda aut minus asperiores quia suscipit, dolorum possimus id eveniet est quaerat maiores dicta accusamus deleniti odit ad nostrum dignissimos totam sed, delectus odio aspernatur fugiat. 
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <nav>
+      <div>
+        <div>
+          <div></div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</body>
+</html>

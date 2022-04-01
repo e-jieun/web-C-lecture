@@ -1,0 +1,315 @@
+.d-flex {
+  display: flex;
+}
+
+.middle-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-top {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.middle-bottom {
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.left-center {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.left-top {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.left-bottom {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.right-center {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.right-top {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.right-bottom {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-re {
+  flex-direction: row-reverse
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-column-re {
+  flex-direction: column-reverse;
+}
+
+/* —------------css------------- */
+
+* {margin: 0; padding: 0;}
+
+#base {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #fff;
+}
+
+.root {
+  width: 1920px;
+  height: 1080px;
+}
+
+.L {
+  width: 94%;
+  height: 100%;
+
+  /* border: 1px solid #4366ff; */
+
+  position: relative;
+
+}
+
+.L > div:nth-child(1) {
+  width: 130%;
+  height: 54%;
+
+  background-color: #ffffff;
+  border-radius: 100px;
+
+  box-shadow: 0px 0px 20px #525252 ;
+
+  position: absolute;
+  z-index: 3;
+
+  right: 0%;
+  top: 10%
+}
+
+.L > div:nth-child(1) > div {
+  width: 80%;
+  height: 50%;
+
+  /* border: 1px solid #4366ff; */
+}
+
+/* ----------------숫자패널-------------------- */
+
+.L > div:nth-child(1) > div > div:nth-child(1) {
+  width: 64%;
+  height: 12%;
+  
+  /* border: 1px solid #2a5a1b; */
+}
+
+.L > div:nth-child(1) > div > div:nth-child(1) > div {
+  width: 5%;
+  height: 100%;
+
+  /* border: 1px solid #7a5cff; */
+
+  text-align: right;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* -------------------------------------------- */
+
+.L > div:nth-child(1) > div > div:nth-child(2) {
+  width: 64%;
+  height: 78%;
+
+  /* border: 1px solid salmon; */
+}
+
+.L > div:nth-child(1) > div > div:nth-child(2) > div {
+  width: 100%;
+  height: 24%;
+
+  /* border: 1px solid #180c0c; */
+}
+
+.L > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > div {
+  width: 50%;
+  height: 100%;
+
+  /* background-color: #4366ff; */
+
+  font-size: 32px;
+}
+
+.L > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(3) > div {
+  width: 4.5%;
+  height: 100%;
+
+  background-color: #11e7a7;
+  border-radius: 5px;
+}
+
+
+.L > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(2) {
+  height: 42%;
+
+  /* border: 1px solid #ffffff; */
+
+  text-align: justify;
+
+}
+
+/* -------------------왼쪽 아래 시작-------------------- */
+
+.L > div:nth-child(2) {
+  width: 100%;
+  height: 60%;
+
+  background-color: #c5c5c5;
+
+  position: relative;
+  z-index: 2;
+}
+
+.L > div:nth-child(2) > div {
+  width: 96%;
+  height: 74%;
+
+  /* border: 1px solid #f158ff; */
+
+}
+
+.L > div:nth-child(2) > div > div {
+  width: 32%;
+  height: 50%;
+
+  /* background-color: #51aa36; */
+}
+
+.section-title {
+  width: 100%;
+  height: 18%;
+
+  /* border: 1px solid #ff5c5c; */
+}
+
+.section-title > div:nth-child(1) {
+  width: 80%;
+  height: 100%;
+
+  /* background-color: #f158ff; */
+
+  font-size: 32px;
+}
+
+.section-title > div:nth-child(2) {
+  width: 8%;
+  height: 100%;
+
+  border: 1px solid #000000;
+}
+
+.section-content {
+  width: 100%;
+  height: 72%;
+
+  /* border: 1px solid #7a5cff; */
+
+  text-align: justify;
+}
+
+/* ------------------오른쪽 시작------------------- */
+
+.R {
+  width: 6%;
+  height: 100%;
+
+  /* border: 1px solid #ffae43; */
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+.R > div {
+  width: 200%;
+  height: 80%;
+
+  background-color: #c5c5c5;
+  border-radius: 100px;
+
+  position: absolute;
+
+  bottom: -10%;
+}
+
+.R > div > div {
+  width: 50%;
+  height: 90%;
+
+  /* border: 1px solid salmon; */
+}
+
+
+/* 임의의 영역 생성 */
+.scroolBar { 
+  width: 60%;
+  height: 60%;
+  /* border: 1px solid slateblue; */
+  overflow-y: scroll;
+}
+
+.scroolBar > div {
+  width: 100%;
+  height: 800%;
+} 
+
+
+/* 아래의 모든 코드는 영역::코드로 사용 */
+
+.scroolBar::-webkit-scrollbar {
+    width: 20px;  /* 스크롤바의 너비 */
+}
+
+.scroolBar::-webkit-scrollbar-thumb {
+    height: 1%; /* 스크롤바의 길이 */
+    background: #3b3b3b; /* 스크롤바의 색상 */
+    
+    border-radius: 10px;
+
+    background-clip: padding-box; /*스크롤바와 트랙사이에 공간주는법*/
+    border: 3px solid transparent; /* 2px transparen 투명 */
+}
+
+.scroolBar::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;  /*스크롤바 뒷 배경 색상*/
+}

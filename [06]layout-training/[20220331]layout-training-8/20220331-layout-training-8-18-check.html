@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    #root{
+      width:100vw; height:100vh;
+      background-color:lightblue;
+
+      display: flex; 
+    }
+
+    #root>div{
+      display: flex; justify-content:flex-start;
+      margin-top:20vh;
+      flex-direction: column;
+
+    }
+
+    .container-1{
+      width:90vw; height: 40vh;
+      background-color:lightpink;
+
+      display:flex; justify-content: center; align-items: center;
+    }
+
+    .container-1>div{
+      width: 50vw; height:28vh;
+      background-color:lightcoral;
+    }
+
+
+    .container-2{
+      width:10vw; height:80vh;
+      background-color:lightcyan;
+
+      display: flex;
+  
+      align-items: center;
+    }
+
+    .container-2>div{
+      width:8vw; height:60vh;
+      background-color:skyblue;
+
+    }
+
+    .container-3{
+      width:80vw; height:30vh;
+      background-color:lightgray;
+
+      display: flex; justify-content: center; align-items: center;
+
+    }
+
+    #root>div:nth-child(2){
+      display: flex; justify-content: center; align-items: center;
+    }
+
+    .wrapper{
+      display: flex; justify-content: center; align-items: center;
+
+      margin-top:5vh;
+    }
+
+    section{
+      width:20vw; height:20vh; background-color:lightslategray;
+      margin-left:2vw;
+
+    }
+
+    .container-3>div{
+      display: flex; flex-direction: row; 
+      justify-content:space-between; align-items: center;
+
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- class container-1, -2, -3  -->
+
+  <!-- 
+
+    check point
+
+    각각개별로 선택하고자 이름을 구분해서 사용하는 경우 id로 활용할 것을 권장
+
+
+   -->
+
+
+
+  <div id="root">
+    <div>
+      <div class="container-1">
+        <div></div>
+      </div>
+      <div class="wrapper">
+        <div class="container-3">
+          <div>
+            <section></section>
+            <section></section>
+            <section></section>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="container-2">
+        <div></div>
+      </div>
+    
+  </div>
+
+  
+</body>
+</html>

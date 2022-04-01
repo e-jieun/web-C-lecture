@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+    
+    body {
+      width:100vw;
+      height:100vh;
+    }
+
+    header {
+      width:100vw;
+      height:25vh;
+      background-color: rgb(255, 255, 255);
+    }
+
+    #container {
+      width:100vw;
+      height:75vh;
+      display:flex;
+      flex-direction: row;
+    }
+
+    #container > section {
+      width:95vw;
+      height:75vh;
+    }
+
+    #container > section > main {
+      width:95vw;
+      height:55vh;
+      border-radius: 0 5vw 5vw 0;
+    
+      position:absolute;
+      top:5vh;
+      z-index: 1;
+
+      box-shadow:0 1px 15px rgba(0, 0, 0, 0.4);
+      background-color:rgb(255, 255, 255);
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container > section > main > div{
+      width:60vw;
+      height:40vh;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    #container > section > main > div > div:nth-child(1) {
+      width:inherit;
+      height:5vh;
+      display:flex;
+      justify-content: flex-end;
+    }
+
+    #container > section > main > div > div:nth-child(1) > div {
+      width:30px;
+      height:30px;
+      font-size:20px;
+      color: rgb(161, 161, 161);
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container > section > main > div > div:nth-child(1) > div:nth-child(1){
+      color: black;
+    }
+
+    #container > section > main > div > div:nth-child(2) {
+      width:inherit;
+      height:20vh;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #container > section > main > div > div:nth-child(2) > div:nth-child(1) {
+      width:inherit;
+      height:8vh;
+      font-size:35px;
+      color: rgb(129, 129, 129);
+    }
+
+    #container > section > main > div > div:nth-child(2) > div:nth-child(2) {
+      width:inherit;
+      height:10vh;
+      color: rgb(129, 129, 129);
+    }
+
+    #container > section > main > div > div:nth-child(3) {
+      width:inherit;
+      height:5vh;
+      display:flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    #container > section > main > div > div:nth-child(3) > div {
+      width:40px;
+      height:40px;
+      background-color:rgb(56, 191, 151);
+      border-radius:5px;
+    }
+
+
+
+    #container > section > footer {
+      width:95vw;
+      height:75vh;
+      background-color:#ccc;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+    }    
+
+
+
+    #container > section > footer > div:nth-child(1) {
+      width:95vw;
+      height:45vh;
+    }
+    
+    #container > section > footer > div:nth-child(2) {
+      width:90vw;
+      height:30vh;
+      display:flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    /* 하단 글 상자들 */
+    #container > section > footer > div:nth-child(2) > div {
+      width:27vw;
+      height:30vh;
+      color: rgb(129, 129, 129);
+    }
+
+    #container > section > footer > div:nth-child(2) > div > div:nth-child(1) {
+      height:5vh;
+      font-size:25px;
+    }
+
+    #container > aside {
+      width:5vw;
+      height:75vh;
+    }
+
+    #container > aside > div {
+      width:5vw;
+      height:75vh;
+      border-radius: 5vw 0 0 0;
+      background-color: #ccc;
+    }
+
+  </style>
+</head>
+<body>
+  <header></header>
+  <div id="container">
+    <section>
+      <main>
+        <div>
+          <div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+          </div>
+          <div>
+            <div>Lorem ipsum dolor sit amet</div>
+            <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere ad, nobis nostrum maiores ipsum at totam quis. Culpa alias perspiciatis cupiditate, nobis, doloribus, magni perferendis mollitia id in optio dignissimos blanditiis earum dolores dolor debitis rem illum unde quae qui enim. Quos eligendi ex earum praesentium animi, nostrum quod doloribus quam, tempore ullam aliquam, esse ducimus eveniet magni rerum et!</div>
+          </div>
+          <div>
+            <div></div>
+          </div>
+        </div>
+      </main>
+      <footer>
+        <div></div>
+        <div>
+            <div>
+              <div>Lorem ipsum dolor sit amet</div>
+              <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore natus excepturi sed numquam ipsa, provident voluptas repudiandae perferendis id illum tenetur unde praesentium, eligendi delectus amet iure laudantium, molestias nihil. Cumque quasi asperiores, iusto corporis aut eaque sit numquam minus!</div>
+            </div>
+            <div>
+              <div>Lorem ipsum dolor sit amet</div>
+              <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quam minus dignissimos placeat laboriosam tempora nulla, quia, cum a eius facere quod! Sapiente repudiandae aliquid distinctio quasi laborum dolor iure illo dignissimos atque consequatur et, accusamus quos ipsum vel. Commodi, saepe.</div>
+            </div>
+            <div>
+              <div>Lorem ipsum dolor sit amet</div>
+              <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam laborum numquam officia alias saepe rem, dolorem excepturi consequatur vero vitae earum! Laudantium porro tempora, cupiditate aliquam, aliquid, rerum quod dignissimos ipsa modi magnam a non maiores repudiandae libero ad rem.</div>
+            </div>
+        </div>
+      </footer>
+    </section>
+    <aside>
+      <div>
+        <div></div>
+      </div>
+    </aside>
+  </div>
+</div>
+</body>
+</html>

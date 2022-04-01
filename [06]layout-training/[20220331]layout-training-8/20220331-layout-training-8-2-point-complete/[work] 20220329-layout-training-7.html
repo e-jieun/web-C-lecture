@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{ margin: 0; padding: 0; transition: 0.7s;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+    section {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    section > div {
+      width: 23vw;
+      height: 95vh;
+      display: flex;
+      background-color: #d6f6a4 ;
+    }
+    section > div:nth-child(1) {
+      width: 23vw;
+      height: 95vh;
+      display: flex;
+      background-color: #ffc0cb  ;
+    }
+    section > div:nth-child(3)  {
+      display: flex;
+      color: rgb(0, 0, 0,0);
+    }
+    @media (min-width:550px) {
+      *{ margin: 0; padding: 0; transition: 0.7s;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+    section {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+    section > div {
+      width: 95vw;
+      height: 25vh;
+
+      /* width: 23vw;
+      height: 95vh; */
+      /* 정렬을 바꿨을때 width값과 height값을 서로 바꿔줘야
+      옆으로 길게 나오던데 원래 그런건가요 아니면 방법이 잘못되서 코드를 더 많이 바꿔야 하는건가요? 정렬방법만 바꿔서는 레이아웃이 한번에 안나옵니다 (모바일버전에선 width25 height 95였습니다)*/
+      display: flex;
+      flex-direction: column;
+
+      background-color: #d6f6a4 ;
+    }
+    section > div:nth-child(1) {
+      width: 95vw;
+      height: 23vh;
+      
+      /* width: 23vw;
+      height: 95vh; */
+      display: flex;
+      background-color: #ffc0cb;
+    }
+    section > div:nth-child(3) {
+      width: 95vw;
+      height: 23vh;
+      /* width: 23vw;
+      height: 95vh; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    section > div:nth-child(3){
+      width: 95vw;
+      height: 23vh;
+      display: flex;
+      color: rgb(0, 0, 0, 0);
+      font-size: 3rem;
+    }
+    section > div:nth-child(3):hover {
+      transition: 1s;
+      opacity: 100%;
+      color: rgb(0, 0, 0);
+    }
+    }
+  </style>
+</head>
+<body>
+<div id="root">
+  <section>
+    <div></div>
+    <div></div>
+    <div>
+        hello this is hover selector
+    </div>
+    <div></div>
+  </section>
+</div>
+</body>
+</html>

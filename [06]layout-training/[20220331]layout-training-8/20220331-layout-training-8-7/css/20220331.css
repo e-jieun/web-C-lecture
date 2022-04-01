@@ -1,0 +1,126 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+.pos-rel{
+    position: relative;
+}
+.pos-abso{
+    position: absolute;
+}
+.flex-ac{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.flex-bc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-cc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body{
+    overflow: hidden;
+}
+main{
+    width: 100vw;
+    height: 100vh;
+}
+
+#main-box{
+    width: 90vw;
+    height: 55%;
+}
+#main-box > #main{
+    width: 110%;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 5px 10px black;
+    
+    top: 10%;
+    left: -10%;
+}
+
+#main-box #slide-box {
+    width: 60%;
+    height: 50%;
+    border: 1px solid red;
+    z-index: 100;
+}
+#main-box #slide-box #top-box{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+#main-box #slide-box #top-box span{
+    font-size: 20px;
+    padding: 10px;
+    font-weight: 200;
+}
+#main-box #slide-box #top-box span:hover{
+    font-weight: 500;
+}
+#main-box #slide-box #txt-box{
+    width: 80%;
+}
+#main-box #slide-box #txt-box h1{
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 3rem;
+}
+#main-box #slide-box #arrow-box{
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #aaaccc;
+    bottom: 10%;
+    right: 2%;
+}
+
+
+
+
+
+
+#style-box{
+    width: 45%;
+    height: 1400px;
+    background-color: #c4c4c4;
+    z-index: -1;
+    border-radius: 50px;
+
+    top: 20%;
+    right: -45%;
+    /* transform: translate(30%,0); */
+}
+
+#sub-bar{
+    width: 90%;
+    height: 45%;
+    background-color: #c4c4c4;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#sub-box{
+    width: 100%;
+    height: 750px;
+}
+#sub-box > #item{
+    width: 500px;
+}
+#sub-box > #item  h1{
+    font-size: 2rem;
+    font-weight: lighter;
+}
+#sub-box > #item  #arrow-box{
+    width: 30px;
+    height: 30px;
+    background-color: #fffddd;
+}
+#sub-box > #item p{
+    font-size: 13px;
+    margin-top: 10px;
+}

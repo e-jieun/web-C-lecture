@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{ margin: 0; padding: 0; box-sizing: border-box;}
+    body { overflow: hidden;}
+    #root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+    }
+    #root > div {
+      width: 100vw;
+      height: 90vh;
+      /* border: 1px solid black; */
+      display: flex;
+      flex-direction: row;
+    }
+    #left {
+      width: 95vw;
+      height: 90vh;
+      /* border: 1px solid red; */
+    }
+    #left > div:nth-child(1) {
+      width: 95vw;
+      height: 55vh;
+      background-color: #fff;
+      box-shadow: 1px 1px 10px 3px rgb(168, 168, 168);
+      border-top-right-radius: 100px;
+      border-bottom-right-radius:100px ;
+      position:relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #box {
+      width: 55vw;
+      height: 32vh;
+      /* border: 1px solid black; */
+      position: relative;
+      left: 5vw;
+    }
+    #box > div:nth-child(1) {
+      height: 5vh;
+      /* border: 1px solid red; */
+      display: flex;
+      justify-content: flex-end;
+    }
+    #box > div:nth-child(1) > div {
+      height: 5vh;
+      width: 15vw;
+      /* border: 1px solid black; */
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #box > div:nth-child(1) > div > div {
+      width: 5vh;
+      height: 5vh;
+      color: gray;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+    #box > div:nth-child(2) {
+      height: 7vh;
+      overflow: hidden;
+      /* border: 1px solid green; */
+    }
+    #box >div:nth-child(2) > p {
+      color: gray;
+      font-size: 1.5rem;
+    }
+
+
+
+    #box > div:nth-child(3) {
+      height: 15vh;
+      overflow: hidden;
+      /* border: 1px solid blue; */
+    }
+
+    #box > div:nth-child(3) > p {
+      color: gray;
+      text-align: justify;
+    } 
+
+    #box > div:nth-child(4) {
+      height: 5vh;
+      display: flex;
+      justify-content: flex-end;
+    }
+    #box > div:nth-child(4) >div {
+      height: 5vh;
+      width: 5vh;
+      border-radius: 5px;
+      background-color: rgb(98, 192, 164);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .arrow {
+      height: 2vh;
+      width: 2vh;
+      transform: rotate(90deg);
+    }
+    #left > div:nth-child(2) {
+      width: 95vw;
+      height: 70vh;
+      background-color: #c4c4c4;
+      position: absolute;
+      /* 포지션을 반드시 써야했을까 */
+      top: 50vh;
+      z-index: 1;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      /* align-items: flex-end; */
+    }
+    .container {
+      width: 85vw;
+      height: 40vh;
+      /* border: 1px solid black; */
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .container > div{
+      width: 27vw;
+      height: 23vh;
+      /* border: 1px solid black; */
+    }
+    .container > div >div:nth-child(1) {
+      width: 27vw;
+      height: 5vh;
+      /* border: 1px solid red; */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow: hidden;
+    }
+    .container >div >div:nth-child(1) > p {
+      width: 22vw;
+      color: gray;
+      font-weight: 500;
+      font-size: 1.5rem;
+    }
+    .container >div >div:nth-child(1) > div:nth-child(2) {
+      width: 3vh;
+      height: 3vh;
+      /* background-color: #fff; */
+
+    }
+
+    .container > div >div:nth-child(2) {
+      width: 27vw;
+      height: 18vh;
+      overflow: hidden;
+      /* border: 1px solid blue; */
+    }
+    .container > div > div:nth-child(2) {
+      color: gray;
+      text-align: justify;
+    }
+
+    /* 끝 */
+    #right {
+      width: 5vw;
+      height: 100vh;
+      /* border: 1px solid green; */
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column;
+    }
+    #right > div{
+      width: 5vw;
+      height: 75vh;
+      border-top-left-radius:100px;
+      /* border: 1px solid green; */
+      background-color: #c4c4c4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #right > div > div {
+      margin-top: -20vh;
+      width: 1.7vw;
+      height: 40vh;
+      background-color: #fff;
+      border-radius: 50px;
+      display: flex;
+      justify-content: center;
+    }
+    #right > div > div >div {
+      width: 1.3vw;
+      height: 7vh;
+      background-color: gray;
+      border-radius: 50px;
+      margin-top: 1vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <!-- 왼쪽 큰부분 -->
+      <div id="left">
+        <div>
+          <!-- 여백 -->
+          <div id="box">
+            <!-- 1234 -->
+            <div>
+              <div>
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+              </div>
+            </div>
+
+            <div>
+              <p>Lorem ipsum dolor sit amet</p>
+            </div>
+            <div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero reiciendis et animi facere illo cupiditate voluptates in sit quis adipisci, voluptas magnam perspiciatis omnis laborum, ipsa reprehenderit, voluptatum necessitatibus? Ullam repudiandae nostrum vel veniam? Veritatis nesciunt nobis adipisci molestiae, provident eveniet odio, doloribus possimus vitae fuga iure unde quibusdam placeat.</p>
+            </div>
+            <!-- 초록버튼 -->
+            <div>
+              <div>
+                <div class="arrow">
+                  <img src="흰 화살표.svg" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 아래박스 -->
+        <div>
+          <div class="container">
+            <div>
+              <div>
+                <p>Lorem ipsum dolor sit amet</p>
+                <div>
+                  <img src="회색화살표.svg" alt="">
+                </div>
+              </div>
+              <div>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore autem laborum aliquid suscipit possimus cupiditate odit, enim reprehenderit aliquam quam? Accusamus, saepe hic tenetur, nulla in cumque explicabo nihil laboriosam voluptatum cum nisi aliquid! Similique, odio adipisci saepe aut sint vero natus temporibus fugit repudiandae quam tempora molestiae aliquam nesciunt?</div>
+            </div>
+
+            <div>
+              <div>
+                <p>Lorem ipsum dolor sit amet</p>
+                <div>
+                  <img src="회색화살표.svg" alt="">
+                </div>
+              </div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, non reprehenderit quidem error repudiandae omnis ipsam fuga fugit. Dolorem odio, hic voluptatem autem sequi eos? Impedit esse voluptate, error quibusdam rem nam dolore veniam tempora animi molestias perspiciatis incidunt cum tempore totam qui dignissimos accusamus aliquam illum nobis, corrupti enim.
+              </div>
+            </div>
+            <div>
+              <div>
+                <p>Lorem ipsum dolor sit amet</p>
+                <div>
+                  <img src="회색화살표.svg" alt="">
+                </div>
+              </div>
+              <div>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam explicabo tempore voluptatum, quia ratione est. Deleniti architecto id fugit? Explicabo ad voluptate rem cumque incidunt deserunt assumenda dicta molestias eum minus harum repellat voluptatibus aperiam magni amet, sit quis, animi eaque delectus quod fugit atque sint repellendus vel? Labore, velit.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 오른쪽 휠부분 -->
+      <div id="right">
+        <div>
+          <div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
