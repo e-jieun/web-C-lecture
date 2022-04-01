@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0;padding:0;}
+    .table{
+      width: 100vw;
+      height: 100vh;
+      display:flex
+    }
+    /* 왼쪽도형 */
+    .left{
+      width: 70vw;
+      height: 100vh;
+      background-color: gray;
+      display: flex;
+      justify-content:flex-end;
+      align-items: center;
+    }
+
+    .left>div{
+      width: 60vw;
+      height: 90vh;
+      background-color: white;
+      display: flex;
+    }
+
+    .left>div>div:nth-child(1){
+      width: 5vw;
+      height: 90vh;
+      background-color: darkslategray;
+    }
+
+    .left>div>div:nth-child(2){
+      width: 100vw;
+      height: 90vh;
+      background-color:white;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+    }
+
+    h1{
+      font-size: 100px;
+    }
+    p{
+      margin-top: 20px;
+    }
+    .left>div>div>div:nth-child(1){
+    margin:50px;
+    }
+
+
+    /* 오른쪽 도형 */
+
+    .right{
+      width: 30vw;
+      height: 100vh;
+      background-color: #c4c4c4;
+      display: flex;
+      align-items: center;
+    }
+    .right>div{
+      width: 20vw;
+      height: 90vh;
+      display: flex;
+    }
+    .right>div>div:nth-child(1){
+      width: 5vw;
+      height: 90vh;
+      background-color: white;
+    }
+    .right>div>div:nth-child(2){
+      width: 15vw;
+      height: 90vh;
+      background-color:darkslategray;
+      
+    }
+    .right>div>div:nth-child(2)>div{
+      width: 15vw;
+      height: 80vh;
+      background-color: gray;
+      margin-top:25px;
+    }
+
+
+
+  </style>
+</head>
+<body>
+  <div class="table">
+    <div class="left">
+      <div>
+        <div></div>
+        <div>
+            <div>
+              <h1>Main title</h1>
+              <h2>suv title</h2>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ad inventore voluptate nostrum, perspiciatis suscipit ab sint amet officia maxime nulla, eos itaque neque facere corporis hic perferendis, voluptas alias culpa.sectetur adipisicing elit. Ad inventore voluptate nostrum, perspiciatis suscipit ab sint amet officia maxime nulla, eos itaque neque facere corporis hic perferendis, voluptas alias culpa.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+     <div>
+       <div></div>
+       <div>
+         <div></div>
+       </div>
+     </div>
+  </div>
+</body>
+</html>

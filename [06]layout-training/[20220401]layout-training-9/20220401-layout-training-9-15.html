@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+
+  <style>
+    *{margin:0; padding:0;}
+
+    #root{
+      width: 100vw; height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+    }
+
+
+
+/* ================ 튀어나온 상자 ================*/
+    #root > section:nth-child(1) {
+      width: 80vw; height: 90vh;
+      background-color: #ffffff;
+
+      display: flex;
+      position: absolute;
+      z-index: 2;
+    }
+
+    /* 높이값 할당 */
+    #root > section:nth-child(1) > div {
+      height: 100%;
+    }
+
+    /* 첫번째 상자 (내용없음) */
+    #root > section:nth-child(1) > div:nth-child(1) {
+      width: 3%;
+      background-color: black;
+    }
+
+    /* 두번째 상자 (텍스트 영역) */
+    #root > section:nth-child(1) > div:nth-child(2) {
+      width: 72%;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #root > section:nth-child(1) > div:nth-child(2) > div{
+      width: 80%;
+      font-family: 'Nunito', sans-serif;
+    }
+
+    #root > section:nth-child(1) > div:nth-child(2) > div > h1{
+      font-size: 10vh;
+      
+    }
+
+    /* 세개로 쪼개지는 상자 */
+    #root > section:nth-child(1) > div:nth-child(3) {
+      width: 25%;
+      background-color: gray;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #root > section:nth-child(1) > div:nth-child(3) > div:nth-child(1) {
+      width: 100%; height: 5%;
+      background-color: black;
+    }
+    #root > section:nth-child(1) > div:nth-child(3) > div:nth-child(2) {
+      width: 100%; height: 15%;
+      background-color: black;
+    }
+
+
+
+/* ================ 배경상자 ================ */
+    #root > section:nth-child(2) {
+      width: 65%; height: 100vh;
+      background-color: gray;
+    }
+
+    #root > section:nth-child(3) {
+      width: 35%; height: 100vh;
+      background-color: lightgray;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- 튀어나올 상자 -->
+    <section>
+      <div></div>
+      <div>
+        <div>
+          <h1>Main title</h1>
+          <h2>sub title</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus deleniti eius enim dolor itaque, magnam eligendi odit nemo incidunt modi nesciunt quas consequatur tempora, quos debitis aliquid id corporis doloremque.</p>
+        </div>
+      </div>
+      <!-- 세개로 쪼개질 상자 -->
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+    </section>
+    <!-- 배경 상자 -->
+    <section></section>
+    <section></section>
+  </div>
+</body>
+</html>

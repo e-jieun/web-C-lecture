@@ -1,0 +1,18 @@
+/* class-setting */
+.border-bk{
+  border: 1px solid black;
+}
+.border-red{
+  border: 1px solid red;
+}
+.flex{
+  display: flex;
+}
+.flex-justify-center{
+  display: flex;
+  justify-content: center;
+}
+.flex-align-center{
+  display: flex;
+  align-items: center;
+}

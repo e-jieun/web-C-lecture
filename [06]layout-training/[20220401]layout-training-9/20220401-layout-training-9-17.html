@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>play</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+      .container {
+        width:100vw;
+        height:100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      h1 {font-size:100px;}  
+      
+      
+      .main {
+        display: flex;
+      }
+
+      .left {
+        width:60vw;
+        height:80vh;
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        justify-content: right;
+      }
+
+                
+      
+            /* left div 와 right div 에 꼼수(?) 를 적용했습니다...
+            겹치지 않고  보여주는 이미지에 치중해 같은 컬러를 적용해 겹쳐보이는 효과를
+            냈습니다. 부적절한 방식이였다면 지적해주십시오!!!!!!!!!!*/
+      
+
+      
+      .text {
+        width:50vw;
+        height:50vh;
+        background-color: aliceblue;
+        display: flex;
+        align-items: center;
+
+      }
+      
+      .text div:nth-child(1) {
+        width:10vh;
+        height:50vh;
+        background-color: rgb(44, 41, 41);
+        
+      }
+      
+      .text div:nth-child(2){
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+      
+      
+
+      .right {
+        width:40vw;
+        height:80vh;
+        background-color: darkgray;
+        display: flex;
+        align-items: center;
+      }  
+        
+      
+      .box1 {
+        width:5vw;
+        height:50vh;
+        background-color: aliceblue;
+        
+      }
+      .box2 {
+        width:15vw;
+        height:50vh;
+        background-color: gray;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        
+        
+      }
+      
+      
+      .box2 div {
+        width:15vw;
+        height:5vh;
+        background-color: rgb(59, 56, 56);
+        
+        
+      }
+
+      .box2 div:nth-child(1) {
+        height:3vh;
+        
+      }
+      
+    
+    
+  </style>
+  
+  
+  
+  
+  
+  
+  
+</head>
+<body>
+  <div class="container">
+      <div class="main">
+        <div class="left">
+          <div class="text">
+                <div></div>
+                  <div><p><h1>안녕하십니까</h1><h2>안녕합니다.</h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid ad distinctio ullam. Nobis, aut officia. Iure non ipsum laborum quod maiores sequi. Dolore enim praesentium voluptatibus pariatur. Optio, itaque quod.</p></div>
+              </div>
+          </div>
+          <div class="right">
+
+            <div class="box1"></div>
+            <div class="box2">
+              <div></div>
+              <div></div>
+              
+              </div>
+            
+          </div>
+        
+        
+          
+      </div> 
+
+        
+      
+
+    
+    
+    
+    
+    
+    
+  </div>
+  
+  
+  
+  
+  
+  
+</body>
+</html>

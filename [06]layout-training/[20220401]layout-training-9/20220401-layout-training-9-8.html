@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{ margin: 0; padding: 0; box-sizing: border-box;}
+    :root {
+      --color-0:#f8f8f8;
+      --color-1:#d0d0d0;
+      --color-2:#a7a7a7;
+      --color-3:#7e7e7e;
+      --color-4:#555;
+      --color-5:#2c2c2c;
+    }
+    #root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #bg {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: row;
+      position: relative;
+      z-index: 1;
+    }
+    #bg > div:nth-child(1) {
+      width: 70vw;
+      background-color: var(--color-2);
+    }
+    #bg > div:nth-child(2) {
+      width: 30vw;
+      background-color:var(--color-1);
+    }
+/* 뒷배경 끝 */
+
+/* 메인영역 */
+    main {
+      width: 80vw;
+      height: 80vh;
+      position: absolute;
+      z-index: 2;
+      display: flex;
+    }
+    /* 왼쪽 */
+    main > div:nth-child(1) {
+      width: 80%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      /* border: 1px solid red; */
+    }
+    main > div:nth-child(1) > div:nth-child(1) {
+      width: 4vw;
+      background-color:var(--color-4);
+    }
+    main > div:nth-child(1) > div:nth-child(2) {
+      width: 100vw;
+      /* width값을 100으로 해도 좌측 3vw짜리가 보이는데 이유를 모르겠어요
+      코딩할때 제일 무서운게 되면안되는데 될때라던데;; */
+      background-color:var(--color-0);
+      display: flex;
+      align-items: center;
+      justify-content:center ;
+    }
+    #text {
+      width: 60vw;
+      height: 25vh;
+      /* border: 1px solid black; */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      color: var(--color-4);
+      /* overflow: hidden; */
+    }
+    #text > div:nth-child(1) {
+      font-size: 5rem;
+    }
+    #text > div:nth-child(2) {
+      font-size: 2rem;
+    }
+    /* 오른쪽 */
+    main > div:nth-child(2) {
+      width: 20%;
+      height: 100%;
+      background-color:var(--color-4);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    main > div:nth-child(2) > div:nth-child(1) {
+      height: 5vh;
+      background-color:var(--color-5);
+    }
+    main > div:nth-child(2) > div:nth-child(2) {
+      height: 10vh;
+      background-color:var(--color-5);
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="bg">
+      <div></div>
+      <div></div>
+    </div>
+  
+    <main>
+      <!-- 왼쪽 -->
+      <div>
+        <div></div>
+        <div>
+          <div id="text">
+            <div>Main title</div>
+            <div>sub title</div>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae voluptas iure, aspernatur iusto quasi corrupti at eaque, perferendis a maxime nulla esse neque atque doloribus, assumenda provident? Distinctio culpa consequatur sequi aspernatur ducimus eaque beatae quidem ipsum nobis laudantium sit natus, minus porro nesciunt numquam, sint vel optio non inventore.</div>
+          </div>
+        </div>
+      </div>
+      <!-- 오른쪽 -->
+      <div>
+        <div></div>
+        <div></div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

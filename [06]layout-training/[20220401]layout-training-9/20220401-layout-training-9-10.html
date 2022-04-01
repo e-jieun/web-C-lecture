@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+
+    #display {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    #left {
+      width: 70%;
+      height: 100%;
+      background-color: #949494;
+    }
+
+    #right {
+      width:30%;
+      height: 100%;
+      background-color: #c4c4c4;
+    }
+
+    main {
+      width: 80vw;
+      height: 80vh;
+      position: absolute;
+      display: flex;
+    }
+
+    main > section:nth-child(1) {
+      width: 3%;
+      height: 100%;
+      background-color: rgb(100, 100, 100);
+    }
+
+    main > section:nth-child(2) {
+      width: 80%;
+      height: 100%;
+      background-color: #e7e7e7;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #text {
+      width: 90%;
+      height: 40%;
+      
+      display: flex;
+      flex-direction: column;
+    }
+
+    .text-2 {
+      width: 100%;
+
+      display: flex;
+
+      color:rgb(100, 100, 100);
+      font-weight: normal;
+    }
+
+    h1 {
+      height: 55%;
+      font-size: 100px;
+      align-items: end;
+
+      margin-left: -1%;
+      margin-bottom: -1%;
+    }
+
+    h2 {
+      height: 20%;
+      font-size: xx-large;
+      align-items: center;
+    }
+
+    p {
+      height: 25%;
+      font-size: small;
+      align-items: center;
+    }
+
+    main > section:nth-child(3) {
+      width: 17%;
+      height: 100%;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+  #first {
+    width: 100%;
+    height: 5%;
+
+    background-color: rgb(100, 100, 100);
+  }
+
+  #second {
+    width: 100%;
+    height: 85%;
+
+    background-color: gray;
+  }
+
+  #third {
+    width: 100%;
+    height: 10%;
+
+    background-color: rgb(100, 100, 100);
+  }
+
+  </style>
+</head>
+<body>
+  <div id="display">
+  <div id="left"></div>
+  <!-- 왼쪽 회색 -->
+  <main>
+    <!-- 가운데 -->
+    <section></section>
+    <!-- 왼쪽 회색 바 -->
+
+    <section>
+      <!-- 가운데 흰 박스 -->
+    <div id="text">
+      <!-- 텍스트 박스 -->
+    <h1 class="text-2">Main title</h1>
+    <h2 class="text-2">sub title</h2>
+    <p class="text-2">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempore nobis aut odit unde harum, dolores, amet ducimus nesciunt incidunt pariatur, enim facere mollitia vel reiciendis dignissimos tempora. Sunt nisi nobis eligendi inventore quod blanditiis reiciendis est. Asperiores non perspiciatis magni eius ratione vero iste, repudiandae aperiam omnis facere consectetur illo! inventore quod blanditiis reiciendis est. Asperiores non perspiciatis magni eius ratione vero iste, repudiandae aperiam omnis facere consectetur illo!</p>
+    </div>
+    </section>
+    
+    <section>
+      <!--오른쪽 회색 박스-->
+    <div id="first"></div>
+    <!-- 맨 위 -->
+    <div id="second"></div>
+    <!-- 가운데 -->
+    <div id="third"></div>
+    <!-- 맨 밑 -->
+    </section>
+  </main>
+  <div id="right"></div>
+  <!-- 오른쪽 회색 -->
+
+  </div>
+</body>
+</html>
