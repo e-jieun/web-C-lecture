@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    #root {
+      width: 100vw;
+      height: 200vh;
+      background-color: #ccc;
+    }
+
+    nav {
+      width: inherit;
+      height: 5vh;
+      /* border:1px solid #000; */
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+
+    }
+
+    nav>div {
+      /* width:inherit; */
+      height: inherit;
+      background-color: #ddd;
+      /* margin:1vw; */
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    /* item태그에 직접적으로 가로폭 flex-grow는 컨테이너와 아이템간의 비율로 판단한다. 두번째 메인 매뉴부분이 양쪽보다 3배 가량 넓게 비율로 할당 */
+    nav>div:nth-child(1) {
+      flex-grow: 1;
+    }
+
+    nav>div:nth-child(2) {
+      flex-grow: 3;
+    }
+
+    nav>div:nth-child(3) {
+      flex-grow: 1;
+    }
+
+    nav>div>ul {
+      padding-top:calc(5vh/2);
+      height: 5vh;
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    nav>div>ul>li {
+      padding-top:1vw;
+      padding-bottom:1vw;
+
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <nav>
+      <div></div>
+      <div>
+        <ul class="menu-contain">menu-1
+          <li class="items">items-1</li>
+          <li class="items">items-2</li>
+          <li class="items">items-3</li>
+          <li class="items">items-4</li>
+          <li class="items">items-5</li>
+        </ul>
+        <ul class="menu-contain">menu-2
+          <li class="items">items-1</li>
+          <li class="items">items-2</li>
+          <li class="items">items-3</li>
+          <li class="items">items-4</li>
+          <li class="items">items-5</li>
+        </ul>
+        <ul class="menu-contain">menu-3
+          <li class="items">items-1</li>
+          <li class="items">items-2</li>
+          <li class="items">items-3</li>
+          <li class="items">items-4</li>
+          <li class="items">items-5</li>
+        </ul>
+        <ul class="menu-contain">menu-4
+          <li class="items">items-1</li>
+          <li class="items">items-2</li>
+          <li class="items">items-3</li>
+          <li class="items">items-4</li>
+          <li class="items">items-5</li>
+        </ul>
+        <ul class="menu-contain">menu-5
+          <li class="items">items-1</li>
+          <li class="items">items-2</li>
+          <li class="items">items-3</li>
+          <li class="items">items-4</li>
+          <li class="items">items-5</li>
+        </ul>
+      </div>
+      <div></div>
+    </nav>
+
+  </div>
+</body>
+
+</html>
