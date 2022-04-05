@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>training</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+      .container {
+        width:100vw;
+        height:100vh;
+        border: 1px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+      }
+      
+      .main {
+        width:90vw;
+        height:90vh;
+        border: 2px solid white;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+      }
+      
+      body {background-image: url('bird.png');
+            background-size:cover;
+            
+    }
+      
+      
+      nav {
+        width:90vw;
+        height:10vh;
+        /* border: 1px solid black; */
+        background-color: rgb(29, 29, 78);
+        opacity: 0.5;
+        display: flex;
+        /* border: 1px solid white; */
+        justify-content:flex-end;
+        align-items: center;
+       
+                
+      }
+
+      nav li {
+        color: rgb(255, 255, 255);
+        margin:20px;
+        float: left;
+
+        
+        
+      }
+      .center {
+        width:90vw;
+        height:20vh;
+        /* border: 3px solid white; */
+        display: flex;
+        justify-content: space-around;
+        /* margin-top:5%; */
+        padding:20px;
+        background-color: rgb(38, 40, 177);
+        opacity: 0.8;
+        /* align-items: center; */
+        /* justify-content: center; */
+      }
+
+      .center div {
+        width:10vw;
+        height:40vh;
+        /* border: 1px solid black; */
+        text-align: center;
+        /* padding:10px; */
+        color:white;
+        font-size: 20px;
+        /* font-family: impact ; */
+        
+        
+      }
+    
+      .img {
+        width:85vw;
+        height:50vh;
+        /* border:2px solid blue; */
+        opacity: 0.7;
+        margin-top: 7%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .img div {
+        width:10vw;
+        height: 45vh;
+        flex-grow: 1;
+        background-color: blue;
+        border: 3px solid rgb(11, 11, 112);
+        margin:5px;
+        
+      }
+      
+      .img div:nth-child(2) {
+        flex-grow: 2;
+        
+      }
+    
+      .left img {
+        width:100%;
+        height:100%;
+        
+      }
+   
+      .mid img {
+        width:100%;
+        height:100%;
+      }
+      .right img {
+        width:100%;
+        height:100%;
+      }
+      
+      ul li {list-style:none;}
+    
+  </style>
+</head>
+<body>
+  <div class="div container">  
+    <div class="main">
+      <nav>
+      <ul>
+        <li>공지사항</li>
+        <li>쇼핑몰</li>
+        <li>블로그</li>
+        <li>회원가입</li>
+        <li>로그인</li>
+      </ul>
+        
+      </nav>
+          <div class="center">      
+            <div>
+              <ul>
+                <li>제휴/문의</li>
+              
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>회사소개</li>
+                
+              </ul>
+            </div>
+            <div>
+              <ul>
+                <li>갤러리</li>
+              
+              </ul>
+            </div>
+            <div>  
+              <ul>
+              <li>이용후기</li>
+           
+            </ul></div>
+            <div>
+              <ul>
+              <li>블로그</li>
+           
+            </ul>
+        </div>
+      
+      
+    </div>
+      <div class="img">
+        <div class="left">
+          <img src="./left.png">
+        </div>
+        <div class="mid">
+          <img src="./center.png">
+        </div>
+        <div class="right">
+          <img src="./right.png">
+        </div>
+        
+      </div>
+    
+    
+    
+    
+    
+  </div>
+  
+</body>
+</html>

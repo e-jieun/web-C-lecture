@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+#root .con {
+  width: inherit;
+  height: inherit;
+}
+
+#root .con > div:nth-child(1) {
+  width: inherit;
+  height: inherit;
+}
+
+#root .con > div:nth-child(1) > img {
+  width: 100vw;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  top: 0px;
+}
+
+#root .con > div:nth-child(1) > div:nth-child(2) {
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#root .con > div:nth-child(1) > div:nth-child(2) > ul {
+  width: 20vw;
+  height: 50vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: black;
+  color: #fff;
+  opacity: 0.9;
+}
+
+#root .con > div:nth-child(1) > div:nth-child(2) > ul > li {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  list-style-type: none;
+  background-color: #c4c4c4;
+  color: #575757;
+  margin: auto;
+}
+/*# sourceMappingURL=style.css.map */

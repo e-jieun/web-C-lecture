@@ -1,0 +1,88 @@
+// common
+*{
+  margin: 0;
+  padding: 0;
+}
+//variable
+$color-bk: black;
+$color-fff: #fff;
+$color-c4: #c4c4c4;
+$border-bk: 1px solid black;
+$border-red: 1px solid red;
+$center: center;
+$per100: 100%;
+//class-set
+@mixin flex-align-justify($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+@mixin border($px,$color){
+  border: $px solid $color;
+}
+// style
+#root{
+  width: 100vw;
+  height: 100vh;
+  .con{
+    width: inherit;
+    height: inherit;
+    >div:nth-child(1){
+      width: inherit;
+      height: inherit;
+      >img{
+        width: 100vw;
+        // min-height: 100vh;
+        height: 100vh;
+        // object-fit을 사용하면 이미지를 배경으로 사용할 때 채워줄 수 있다
+        // 값
+        // fill - This is default. The image is resized to fill the given dimension. If necessary, the image will be stretched or squished to fit
+        // contain - The image keeps its aspect ratio, but is resized to fit within the given dimension
+        // cover - The image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit -> 비율, 크기 맞춤
+        // none - The image is not resized
+        // scale-down - the image is scaled down to the smallest version of none or contain
+        // https://www.w3schools.com/css/css3_object-fit.asp
+        object-fit: cover;
+        position: absolute;
+        top: 0px;
+      }
+      >div:nth-child(2){
+        width: inherit;
+        @include flex-align-justify(flex-start, $center);
+        // opacity: 0.8;
+        >ul{
+          // Q1. ul과 li의 background-color를 다르게 했더니 border를 넣은 것처럼 보입니다 border를 주석처리해도 사라지지 않아서 무엇이 원인인지 궁금합니다
+
+          // check point
+
+          // 작성은 매우 잘 하셧고, scss <-> css 로 변환(convert)하는 과정이 일시적으로 중단되어서 생긴 문제입니다. 
+          // scss로는 잘 만들었는데 css로 변환이 안된상태
+
+          //  >ul {} 이렇게 사용하는 것에 덧데서 &(엠퍼센드) 기호를 함께 사용하시면 더욱 좋은 직관성을 가지게 됩니다.
+          // &>ul {}
+
+
+
+          width: 20vw;
+          height: 50vh;
+          // @include border(1px, $color-bk);
+          @include flex-align-justify($center, space-around);
+          flex-direction: column;
+          background-color: $color-bk;
+          color: $color-fff;
+          opacity: 0.9;
+          >li{
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            list-style-type: none;
+            background-color: $color-c4;
+            color: rgb(87, 87, 87);
+            margin: auto;
+            // background: rgba(0,0,0,.2);
+          } 
+        }
+      }
+    }
+  }
+}

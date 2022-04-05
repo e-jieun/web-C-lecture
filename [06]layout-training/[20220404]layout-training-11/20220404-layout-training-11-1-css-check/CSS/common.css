@@ -1,0 +1,102 @@
+*{margin:0; padding: 0;}
+
+  :root {
+    --color-1: rgb(226, 226, 226);
+    --color-2: rgb(105, 105, 105);
+    
+  }
+
+  #root {
+    width: 100vw; height: 100vh;
+    background-color: var(--color-2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+
+  #root > nav:nth-child(1) {
+    width: 100%; height: 10vh;
+    background-color: var(--color-1);
+    position: fixed;
+    top:0;
+    mix-blend-mode: multiply;
+  }
+
+  #root > nav:nth-child(2) {
+    width: 100%; height: 30vh;
+    background-color: var(--color-1);
+    display: flex;
+    mix-blend-mode: soft-light;
+    position: fixed;
+    top:0
+  }
+
+  #root > div:nth-child(3) {
+    width: 100%; height: 100%;
+    background-color: rgb(121, 120, 136);
+    overflow: hidden;
+    /* 이미지의 세로 사이즈가 화면크기보다 커서 스크롤이 생기는 것을 방지하기 위해 overflow:hidden을 적용했다. */
+  }
+  
+  #root > div:nth-child(3) > img {
+    background-size: cover;
+    /* 이미지의 크기를 화면 크기에 맞추기 위해 cover를 적용했다. */
+    /* 궁금한 점 : 이미지의 크기가 작은 경우 cover로 이미지의 크기를 화면에 맞출 수 있는데,
+    이미지의 크기가 화면보다 큰 경우에는 이미지가 줄어드는 것이 아니라 잘려져서 나옵니다.
+    background-repeat이나 max-width 등의 속성도 사용해봤는데 해결되지 않아서 더 작은 이미지를
+    넣는 것으로 타협했습니다. */
+    mix-blend-mode: soft-light;
+
+    /* check point 
+    
+    문서에 이미지를 삽입하는 방법은 특이하게도 두가지 방법이 있습니다.
+    1. 본 훈련생께서 작업하신 것처럼 문서의 요소로 넣는 방식
+    2. CSS에서 '배경'으로 넣는 방식
+
+    이 두가지가 존재합니다.
+    일반적으로 문서에 요소로서 <img> 태그를 사용하는 경우에는, '언젠가 바뀔 여지'가 있는 이미지일때 이러한 방식을 차용합니다. (슬라이드 형식 등등,) 
+
+    두번째 방식은 이미지가 그 서비스에 대표적인 상징과도 같아 '거의 변할일 없는 이미지' 와 같은경우 배경으로 처리하는 방식입니다. 
+
+    태그는 부모자식 구조로 타고들어가기때문에 일련의 셀렉팅과정과 스타일링으로 정리가 필요한 반면
+    css 이미지 처리는 '해당 선택자' 자체가 이미지의 틀로서 사용하기 때문에 따로 선택자를 만들어주지 않아도 된다는 큰 특징이 있습니다.
+
+    ref
+    ? background-image:url("파일경로 혹은 이미지 호스팅 주소");
+    ? background-size:cover, contain 관련
+    * 요소블럭 사이즈와 이미지사이즈가 같지 않았을때 어떻게 처리할 것인가를 결정하는 속성과 값 입니다.
+    * 가로를 기준으로 할 것인가, 세로를 기준으로 할 것인가 하는 처리 방법을 다루며
+    * 일반적으로 이미지를 '리사이즈'하는 개념이 깔려있습니다.
+    * 현재의 접속환경(다양한 가로폭)을 대응 해야하는 문제 때문에 "이미지는 적당히 크게" -> 삽입될 요소는 디자인에 필요한 만큼만 처리하는 경향이 있습니다.
+
+    * background와 같은 디자인 부분에서 매우 중요하게 다루어지는 것은 두루 살펴볼 필요가 있습니다.
+    
+
+
+
+
+    */
+
+
+
+
+  }
+  
+
+  .menu-contain {
+    list-style: none;
+    flex-grow: 1;
+    line-height: 6.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-2);
+  }
+
+
+  .items{
+    line-height: 1.5rem;
+    font-weight: normal;
+    
+  }

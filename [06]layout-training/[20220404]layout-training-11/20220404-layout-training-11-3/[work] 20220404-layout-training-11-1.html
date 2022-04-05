@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+
+    ul {list-style-type: none;}
+
+      #root {
+        width:100vw;
+        height:100vh;
+      }
+      
+      #root > nav {
+        width:100vw;
+        height:15vh;
+        border:1px solid black;
+        
+        display:flex;
+        flex-direction:row;
+      }
+      
+      #root > nav > div {
+        width:25vw;
+        height:inherit;
+      }
+
+      #root > nav > div:nth-child(2) {
+        width:50vw;
+        height:60vh;
+
+        display:flex;
+        flex-direction: column;
+      }
+
+      #root > nav > div:nth-child(2) > div {
+          width:50vw;
+          height:5vh;
+      }
+
+      #root > nav > div:nth-last-child(2) > div:nth-child(2) {
+          width:50vw;
+          height:40vh;
+          display:flex;
+          flex-direction: row;
+          justify-content:space-around;
+          background-color: rgb(153, 153, 153);
+      }
+
+      .menu-contain {
+          margin-top:10px;
+      }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <nav>
+      <div></div>
+      <div>
+          <div></div>
+          <div>
+            <ul class="menu-contain">menu
+              </ul>
+              <ul class="menu-contain">menu
+
+              </ul>
+              <ul class="menu-contain">menu
+
+              </ul>
+              <ul class="menu-contain">menu
+
+              </ul>
+              <ul class="menu-contain">menu
+
+              </ul>
+          </div>
+      </div>
+      <div></div>
+    </nav>
+  </div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+}
+.flex-cc{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pos-rel{
+    position: relative;
+}
+.pos-abso{
+    position: absolute;
+}
+
+#menu-box{
+    border: 1px solid;
+}
+#menu-box > ul{
+    z-index: 10;
+}
+#menu-box> ul >li{
+    background-color: #b9b9b9;
+}
+#menu-box >ul >li>a{
+    border-bottom: 2px solid;
+}
+#menu-box ul >li>a{
+    display: block;
+    text-align: center;
+    padding: 30px;
+}
+#menu-box >ul ul{
+    display: none;
+    width: 100%;
+    top: 100%;
+    left: 0;
+    z-index: 0;
+}
+#menu-box > ul > li:hover > ul{
+    display: block;
+}

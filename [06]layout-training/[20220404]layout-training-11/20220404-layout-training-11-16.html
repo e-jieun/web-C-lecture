@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {padding: 0; margin: 0;}
+
+    :root {
+      --color-1:#c4c4c4;
+      --color-2:rgb(48, 48, 48);
+      --color-3:#444;
+    }
+
+    
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    header{
+      width: inherit;
+      height: 10vh;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      position: absolute;
+      z-index: 2;
+    }
+    
+    header>div {
+      background-color: var(--color-2);
+      /* background- */
+      width: 30vw;
+      height: inherit;
+      
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    
+    header>div:nth-child(1)>div {
+      width: 20vw;
+      height: 8vh;
+      background-color: var(--color-1);
+    }
+    
+    nav {
+      background-color: var(--color-2);
+      width: 70vw;
+      height: inherit;
+      
+      display: flex;
+      justify-content: center;
+    }
+    
+    nav>div {
+      width: 60vw;
+      height: 5vh;
+      position: relative;
+      top: 3vh;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #menu-contain {
+      width: inherit;
+      height: 5vh;
+      list-style-type: none;
+      color: white;
+      font-size: 110%;
+      text-align: center;
+      
+      flex-grow: 1;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    #menu-contain>li {
+      margin-left: 2vw;
+    }
+    
+    #submenu{
+      width: 7vw;
+      height: 18vh;
+      font-size: medium;
+    
+      margin-top: 2.3vw;
+      background-color: var(--color-3);
+      list-style-type: none;
+      opacity: 0;
+      visibility: hidden;
+      
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      
+    }
+    
+    #submenu>li {
+      margin-bottom: 0.5vw;
+    }
+    
+    #menu-contain>li:hover #submenu {
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    main {
+      width: inherit;
+      height: 100vh;
+    }
+    
+    main>div {
+      width: inherit;
+      height: inherit;
+      
+      background-image: url(https://cdn.pixabay.com/photo/2017/12/08/19/49/bath-balls-3006585_960_720.jpg);
+      background-size: cover;
+    }
+    </style>
+</head>
+<body>
+  <header>
+    <div>
+      <div></div>
+    </div>
+    <nav>
+      <div>
+        <ul id="menu-contain">
+          <li>menu-1
+            <ul id="submenu">
+              <li>submenu-1</li>
+              <li>submenu-2</li>
+              <li>submenu-3</li>
+              <li>submenu-4</li>
+              <li>submenu-5</li>
+            </ul>
+          </li>
+          <li>menu-2
+            <ul id="submenu">
+              <li>submenu-1</li>
+              <li>submenu-2</li>
+              <li>submenu-3</li>
+              <li>submenu-4</li>
+              <li>submenu-5</li>
+            </ul>
+          </li>
+          <li>menu-3
+            <ul id="submenu">
+              <li>submenu-1</li>
+              <li>submenu-2</li>
+              <li>submenu-3</li>
+              <li>submenu-4</li>
+              <li>submenu-5</li>
+            </ul>
+          </li>
+          <li>menu-4
+            <ul id="submenu">
+              <li>submenu-1</li>
+              <li>submenu-2</li>
+              <li>submenu-3</li>
+              <li>submenu-4</li>
+              <li>submenu-5</li>
+            </ul>
+          </li>
+          <li>menu-5
+            <ul id="submenu">
+              <li>submenu-1</li>
+              <li>submenu-2</li>
+              <li>submenu-3</li>
+              <li>submenu-4</li>
+              <li>submenu-5</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div></div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#root{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+		}
+	nav{
+			width: 90vw;
+			height: 30vh;
+			border: 1px solid black;
+			display: flex;
+			justify-content: center;
+		}
+	nav>div{
+		width: 50vw;
+		height: 50vh;
+		display: flex;
+		justify-content: center;
+	}
+	nav>div>ul{
+		list-style: none;
+		display: flex;
+		justify-content:space-around;
+		width: inherit;
+		height:30vh;
+		background-color: gray;
+		position: relative;
+		top: 10vh;
+	}
+	nav>div>ul>li{
+		width: 10vw;
+		height: 10vh;
+		position: relative;
+		top: 5vh;
+	}
+
+
+
+
+	</style>
+</head>
+<body>
+	<div id="root">
+		<nav>
+			<div>
+				<ul>
+					<li>menu</li>
+					<li>menu</li>
+					<li>menu</li>
+					<li>menu</li>
+					<li>menu</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</body>
+</html>

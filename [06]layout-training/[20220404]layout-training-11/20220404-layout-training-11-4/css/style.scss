@@ -1,0 +1,55 @@
+// common
+*{
+  margin: 0;
+  padding: 0;
+}
+//variable
+$color-bk: black;
+$color-fff: #fff;
+$color-c4: #c4c4c4;
+$border-bk: 1px solid black;
+$border-red: 1px solid red;
+$center: center;
+$per100: 100%;
+//class-set
+@mixin flex-align-justify($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+@mixin border($px,$color){
+  border: $px solid $color;
+}
+// style
+#root{
+  width: 100vw;
+  height: 100vh;
+  .con{
+    width: inherit;
+    height: inherit;
+    @include border(1px, $color-bk);
+    @include flex-align-justify(flex-start, $center);
+    nav{
+      width: 90%;
+      height: 20%;
+      @include border(1px, $color-bk);
+      @include flex-align-justify(flex-start, $center);
+      position: relative;
+      top: 10vh;
+      ul{
+        width: 80%;
+        height: 50vh;
+        background-color: $color-c4;
+        @include flex-align-justify(flex-start, space-around);
+        position: relative;
+        top: 5vh;
+        li{
+          list-style-type: none;
+          position: relative;
+          top: 10vh;
+        }
+      }
+    }
+  }
+}
+

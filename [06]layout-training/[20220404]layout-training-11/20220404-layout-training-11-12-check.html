@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+.display{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.root{
+  width: 100vw;
+  height: 100vh;
+  background-image: url(송강호.png);
+  /* check point 
+  
+  위에 작성하신 background-image 활용이 매우 좋습니다.
+  다만 현재 해당 작업이 정상작동 될텐데, 마크업 언어가 영어로 기반이 되어있다보니, 한글파일이름은 권장하지 않습니다. root-background-img와 같은 이름으로 '성격'을 알 수 있는 방식을 채택하시면 더욱 매끄러운 마크업이 되겠습니다.
+  
+  */
+  background-size:cover;
+  /* background-color: antiquewhite; */
+}
+
+.root>nav{
+  width: 100vw;
+  height: 20vh;
+  background-color: rgb(77, 77, 77);
+  opacity: 70%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.root>nav>ul{
+  width: 50vw;
+  height: 20vh;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.root>nav>ul>li{
+  width: 5vw;
+  height: 5vw;
+  color: rgb(218, 218, 218);
+}
+
+.main{
+  width: 100vw;
+  height: 40vh;
+  background-color: rgb(177, 177, 177);
+  opacity: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main>div{
+  width: 10vw;
+  height: 40vh;
+  
+
+}
+
+.main>div>ul{
+  width: 5vw;
+  height: 40vh;
+  list-style-type: none;
+  margin-left: 35px;
+
+}
+
+.main>div>ul>li{
+  width: 5vw;
+  height: 5vh;
+  
+}
+  </style>
+</head>
+<body>
+  <div class="root">
+    <nav class="display">
+      <ul>
+        <li class="display">items-0</li>
+        <li class="display">items-0</li>
+        <li class="display">items-0</li>
+        <li class="display">items-0</li>
+        <li class="display">items-0</li>
+      </ul>
+    </nav>
+    
+    <div class="main display">
+      <div class="display">
+        <ul>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+        </ul>
+      </div>
+      <div class="display">
+        <ul>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+        </ul>
+      </div>
+      <div class="display">
+        <ul>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+        </ul>
+      </div>
+      <div class="display">
+        <ul>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+        </ul>
+      </div>
+      <div class="display">
+        <ul>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+          <li>items-1</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

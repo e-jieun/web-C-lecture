@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			/* background image 넣는 방법 검색하기. 단순 웹 주소로는 안돼서 이미지로 새창열기를 눌러 해당 url을 복사하여 넣었다. */
+			background-image:url(https://cdn.pixabay.com/photo/2018/11/19/15/06/machang-bridge-3825439_960_720.jpg);
+			background-repeat: no-repeat;
+			background-size: cover;
+			/* cover 속성을 부여하면 사진이 웹사이트 크기에 맞게 조절이 된다. */
+		}
+		#root{
+			width: 100vw;
+			height: 100vh;
+		}
+		#root>div{
+			display: flex;
+			flex-direction: column;
+
+		}
+		#root>div>div:nth-child(1){
+			width: inherit;
+			height: 10vh;
+			background-color: black;
+			opacity:0.6;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		#root>div>div:nth-child(1)>ul{
+			list-style: none;
+			display: flex;
+			justify-content: space-around;
+			width: 50%;
+			height: max-content;
+			color: white;
+		}
+		#root>div>div:nth-child(2){
+			width: inherit;
+			height: 30vh;
+			display: flex;
+			background-color: black;
+			opacity: 0.5;
+			justify-content: center;
+		}
+		#root>div>div:nth-child(2)>ul{
+			width: 10vw;
+			height: inherit;
+			display: flex;
+			flex-direction: column;
+			list-style: none;
+			align-content: center;
+			position: relative;
+			left: 3.5vw;
+			justify-content: center;
+			color: white;
+		}
+		#root>div>div:nth-child(2)>ul>li{
+			margin-top: 0.5vh;
+			margin-bottom: 0.5vh;
+			color: white;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="root">
+		<div>
+			<!-- div을 계속 추가하면 nth-child 태그를 사용할 때 조금 복잡해지기는 하지만, 갑자기 display 속성을 바꿔야 한다든지 position 값을 넣어주는 등의 예상치 못한
+			변수가 생겼을 때 코드가 꼬이는 현상을 방지할 수 있다고 생각한다. 일단은 div이 익숙해서 계속 쓰지만 시맨틱 태그나 div에 class를 부여하고 class의 numbering 해주면서
+			사용하면 될 듯하다. -->
+			<div>
+				<ul>
+					<li>items-0</li>
+					<li>items-0</li>
+					<li>items-0</li>
+					<li>items-0</li>
+					<li>items-0</li>
+				</ul>
+			</div>
+			<div>
+				<!-- <div> (ul.menu-contain{menu-$}>li.items{itmes-$}*5)*5 을 사용하면 쉽게 만들 수 있고, (코드만 따로 저장해두고 나중에 연습해보기)
+					일단은 ul>li*6 을 입력하여 멀티커서로 li 들 사이에 text를 넣어주었고 해당 ul 태그를 4번 추가로 복사하여 완성했다.
+				</div> -->
+				<ul>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+				</ul>
+				<ul>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+				</ul>
+				<ul>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+				</ul>
+				<ul>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+				</ul>
+				<ul>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+					<li>items-1</li>
+				</ul>
+			</div>
+	</div>
+</div>
+</body>
+</html>
