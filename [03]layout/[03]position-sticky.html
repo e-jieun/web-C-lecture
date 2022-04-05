@@ -13,33 +13,139 @@
       box-sizing: border-box;
     }
 
+    body {
+      overflow-x: hidden;
+      /* 100vw; <-- 가로폭 지정때문에 발생한 가로스크롤 안보이게 처리 */
+      /* x축 === 가로 */
+    }
+
     :root {
       --bg-col-1:#4FA1B0;
       --bg-col-2:#326770;
       --bg-col-3:#6CDCF0; 
       --bg-col-4:#72E8FC;
       --bg-col-5:#60C5D6;  
-
     }
-
-
-
-
-
-
-
+    
     #root>section {
       width: 100vw;
       height: 100vh;
     }
-  </style>
+    /* 
+    * 같은태그를 일괄지정하는 습관은 마크업을 짧게 처리하는데 매우 유용하다.
+    
+    */
+
+
+    /* <nav>태그가 첫번째 자식이기때문에 <section>태그 중 첫번째는 2번이 된다. */
+    #root>section:nth-child(2) {background-color:var(--bg-col-1);}  
+    #root>section:nth-child(3) {background-color:var(--bg-col-2);}
+    #root>section:nth-child(4) {background-color:var(--bg-col-3);}
+    #root>section:nth-child(5) {background-color:var(--bg-col-4);}
+    #root>section:nth-child(6) {background-color:var(--bg-col-5);}
+
+    
+    #menu-bar {
+      width:100vw;
+      height:10vh;
+      background-color: salmon;
+
+      /* check point */
+      position:sticky;
+      top:0;
+
+      /* 
+      
+      * position:sticky 
+      * 단어그대로 '달라붙는다'라는 특이한 포지션 값이 존재한다.
+      * html 마크업 구조를 확인하면 <nav> 태그(#menu-bar)다음형제로 <section> 태그가 위치해 있기때문에 나란히 세로로 나열된 상태로 배치된다.
+      * 하지만 '본래'에 위치해 있어야할 자리를 벗어나면(스크롤 등)
+      * 컨테이너 태그의 속성을 무시하고 fixed 처럼 모든 부모를 무시한 채
+      * 뷰포트, 즉 브라우저 기준으로 포지션 성격이 바뀐다.
+
+      * 스크롤했을때 분홍박스아래로 글씨들이 가려지는 것을 확인할 수 있다.
+
+      * 원래의 자리에 곱게 있다가 -> 갑자기 변동이 생기면 브라우저에 달라붙는다. 라고 관점을 잡으면 좋을 것
+
+      * 폴리필(원래의 구조)은
+      * position:relative -> 스크롤이벤트 발생 -> position:fixed로 변환
+      * 되는 현상을 sticky 라는 이름으로 합쳐진 사례이며, 최근에 CSS로 도입되었다.
+
+      * 첫화면에서는 '레이아웃'의 일부였다가 스크롤과 같은 변화가 생겼을때, 
+      항상 보여야 하는 메뉴 성격에서 매우 자주 활용하며
+      * posision:relative, position:fixed의 정확한 원리를 알고 난다음에 활용해야 원인을 추적할 수 있다. (자동화되어있는 부분이 많다)
+
+      *fixed 처럼 하위속성으로, top, bottom, left, right 네개 중 하나를 지정하여 '기준'위치를 할당해주어야 정상 작동한다.
+      * 위의 마크업 top:0는 "브라우저 윗부분에 해당요소를 붙여줘"로 해석할 수 있다.
+
+      
+      
+      */
+    }
+
+
+    /* em, rem 단위 차이 */
+
+    section {
+      font-size:20px;
+    }
+
+    #em {
+      font-size:1em;
+    }
+
+    #rem {
+      font-size:1rem;
+    }
+  
+    /* 
+    
+    두개의 p태그에 각각, em, rem 이라는 단위를 활용해 글씨크기를 할당했다.
+
+    이름은 비슷하지만 작동방식은 마치 vw, % 단위의 차이처럼
+
+    em은 부모태그의 기준을 1로 하겠다. 라는 방식이다.
+    따라서 id #em은 부모태그 section의 폰트사이즈 20px이 1이 된다.
+    2em으로 작성한다면 -> 40px로 바뀌게 될 것
+
+    rem은 root em의 뜻으로 기준을 "뿌리"에 두겠다는 뜻이다.
+    따라서 부모의 할당값을 상속받지 않고 최초의 기준값 root에 따른다.
+    root이 되는 <body> 기본사이즈는 16px이며 (필요에 따라서는 직접 root 기본값을 바꿀 수 있다) #rem 값은 결과적으로 16px이 된다.
+      2rem으로 설정할경우 32px이 된다.
+    
+    
+    
+    
+    
+    
+    */
+
+
+
+
+
+</style>
 
 
 </head>
 
 <body>
   <div id="root">
-    <section></section>
+    <nav id="menu-bar"></nav>
+    <section>
+      <p>이 텍스트는 id menu-bar 태그의 다음형제요소에 위치해 있습니다.</p>
+      <p id="em">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit suscipit rerum quasi recusandae molestias dolore repellat, tempore quo perferendis delectus modi vel dignissimos quidem quia necessitatibus corrupti, aliquam accusamus incidunt?</p>
+      <p id="rem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quam nihil dolor, corrupti officiis mollitia autem similique expedita quidem culpa quasi doloremque possimus cum ducimus adipisci, natus assumenda ipsam ipsum.
+      Vitae dignissimos porro vero est eligendi nisi laborum distinctio voluptatibus explicabo, quos accusantium magnam ducimus tempora. Veniam delectus possimus, eaque quis odit quia voluptas architecto, repudiandae mollitia maxime neque vel.
+      Labore obcaecati error alias, explicabo provident similique maxime. Iste voluptate quibusdam temporibus quis doloribus, a sed dolore corrupti magni consectetur, doloremque laboriosam dicta harum hic rem, voluptates ullam illo? Corrupti.
+      Voluptas quidem doloremque ipsa ratione commodi rerum sequi cupiditate corrupti id consectetur dicta consequuntur ipsam dolorem harum, alias similique in eaque tempore officiis illum earum? Exercitationem, praesentium ducimus. Porro, suscipit.
+      Iusto quam minima voluptates ullam cupiditate facilis dignissimos voluptatibus consectetur quia sequi. Mollitia, natus, eligendi assumenda quidem quibusdam deleniti voluptatibus beatae error velit facilis, laboriosam quaerat alias nemo nihil voluptates!
+      Quaerat neque tempora reiciendis nesciunt vitae, dolor iusto quos veritatis fugit recusandae consequuntur unde iure eum quas perspiciatis beatae dolorum repellat labore nisi, incidunt aliquam praesentium expedita! Earum, quasi voluptatibus.
+      Consectetur eveniet molestias quas optio vitae nihil id nesciunt, quisquam neque quo culpa aliquam odio repellat fugit molestiae? Molestiae, nostrum esse. Beatae voluptatum deleniti expedita nostrum odio culpa vitae quisquam?
+      Quos praesentium inventore doloremque possimus ducimus. Enim quidem maiores odit provident architecto eligendi dolorum, dolores quas necessitatibus fugit libero, quia impedit, alias temporibus ipsum a numquam modi ipsam nulla corporis!
+      Ut culpa ex nam itaque asperiores libero repudiandae molestias maxime expedita, ea dolore quo id provident incidunt minima possimus iusto neque deleniti tempora eligendi, saepe voluptate sunt! Quasi, veniam iure.
+      Rem quod facilis animi magni deserunt quibusdam nesciunt consequatur cupiditate officia sequi debitis vel adipisci, repellendus est nobis, quas accusantium voluptatem? Quis reiciendis blanditiis maiores aut dolorum fugit nostrum recusandae?</p>
+    </section>
     <section></section>
     <section></section>
     <section></section>
