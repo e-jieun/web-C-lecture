@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    @font-face {
+      font-family: impact;
+      src: url('../김주은/Impact.ttf');
+    }
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: rgb(36, 36, 36);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #root > div {
+      width: 95vw;
+      height: 95vh;
+      border: 1px solid gray;
+    }
+    #root > div > div {
+      width: 95vw;
+      height: 95vh;
+      padding: 5vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    header {
+      display: flex;
+      height: 15vh;
+      /* border: 1px solid red; */
+      padding: 2vh;
+    }
+    .arrow {
+      position: relative;
+    }
+    .arrow::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 1vh;
+      height: 1vh;
+      content: '';
+      border-top: 2px solid #c4c4c4;
+      border-right: 2px solid #c4c4c4;
+      transform: rotate(225deg);
+    }
+    main {
+      display:flex ;
+      height: 55vh;
+      /* border: 1px solid green; */
+      display: flex;
+      align-items: center;
+    }
+    main > div {
+      height: 55vh;
+      display: flex;
+      flex-direction: column;
+    }
+    main > div >div {
+      height: 8vh;
+      color: #c4c4c4;
+      font-family: impact;
+      font-size: 6rem;
+    }
+    footer {
+      display: flex;
+      height: 15vh;
+      /* border: 1px solid blue; */
+    }
+    footer > div {
+      width: 100vw;
+      height: 8vh;
+      border-radius: 50px;
+      background-color: rgb(92, 92, 92);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    footer > div > div {
+      color: white;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div>
+        <header>
+          <div class="arrow"></div>
+        </header>
+        <main>
+          <div>
+            <div>this is</div>
+            <div>just</div>
+            <div>exam</div>
+            <div>but</div>
+            <div>make</div>
+            <div>my own</div>
+          </div>
+        </main>
+        <footer>
+          <div>
+            <div>view more</div>
+          </div>
+        </footer>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

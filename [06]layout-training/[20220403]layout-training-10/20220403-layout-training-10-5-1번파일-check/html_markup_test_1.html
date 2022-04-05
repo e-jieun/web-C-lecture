@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  #root
+    >div
+      >div:nth-child(3)
+        >div:nth-child(3)
+          >div{
+            color: blue;
+            }
+
+  /* check point
+
+  태그를 구별해서 사용하기 제한되면서 부모자식 구조가 매우 복잡한 상태라면
+  위와같이 들여쓰기(indent) 로라도 가독성을 확보하는 것을 제안
+  (일반적인 방법은 아님)
+  
+  
+  
+  
+  */
+
+
+</style>
+
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div></div>
+      <div></div>
+      <div>
+        <div></div>
+        <div></div>
+        <div>
+          <div>point</div>
+        </div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>

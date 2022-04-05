@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin:0; padding:0; box-sizing: border-box;}  
+
+        body {
+            width:100vw;
+            height:100vh;
+            background-color:black;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #frame {
+            width:98vw;
+            height:98vh;
+            border:1px solid rgb(58, 58, 58);
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #frame > header {
+            width:90vw;
+            height:15vh;
+            display:flex;
+            align-items: center;
+        }
+
+        #frame > header > div {
+            width:20px;
+            height:20px;
+            border-top:4px solid #ccc;
+            border-left: 4px solid #ccc;
+            transform:rotate(-45deg);
+        }
+
+        #frame > main {
+            width:90vw;
+            height:70vh;
+        }
+
+        #frame > main > p {
+            font-size: 95px;
+            font-family:impact;
+            color:#ccc;
+            line-height:11vh;
+        }
+
+        #frame > footer {
+            width:90vw;
+            height:15vh;
+            display:flex;
+            justify-content: center;
+        }
+
+        #frame > footer > div {
+            width:90vw;
+            height:10vh;
+            background-color: gray;
+            border-radius: 10vw;
+
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #frame > footer > div > p {
+            color:rgb(255, 255, 255);
+        }
+
+    </style>
+</head>
+<body>
+    <div id="frame">
+        <header>
+            <div>
+
+            </div>
+        </header>
+        <main>
+            <p>
+                this is just exam but make my own
+            <p>
+        </main>
+        <footer>
+            <div>
+                <p>
+                    view more
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --color-1:rgb(182, 182, 182);
+      --color-2:rgb(124, 124, 124);
+      --color-3:rgb(63, 63, 63);
+  }
+
+    * {padding: 0; margin: 0;}
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #root>div:nth-child(1) {
+      background-color: var(--color-1);
+      width: inherit;
+      height: 33.333333333333336vh;
+      /* 100/3계산 결과 값  */
+
+      /*  
+      check point
+      
+      윗처럼 부동소수점으로 나누어지는 값은 작업하기 매우불편하여, 최근 CSS에 새로운 기능이 추가되었습니다.
+
+      height:calc(100vh/3); <-- calc는 calculrator(계산기) 라는 뜻이며, /(슬래쉬)는 나눈다라는 프로그래밍 언어의 사칙연산 중 하나입니다. 이렇게 작성한다면 100의 삼분의 일 이라는 추상화가 가능하기 때문에 응용하여 사용하시기 바랍니다.
+
+      
+
+
+
+      
+      
+      */
+
+
+
+
+    }
+
+    #root>div:nth-child(2) {
+      background-color: var(--color-2);
+      width: inherit;
+      height: 33.333333333333336vh;
+      /* 100/3계산 결과 값  */
+    }
+
+    #root>div:nth-child(3) {
+      background-color: var(--color-3);
+      width: inherit;
+      height: 33.333333333333336vh;
+      /* 100/3계산 결과 값  */
+    }
+    
+    #root>div:nth-child(4) {
+      /* border: 1px solid blue; */
+      width: 86vw;
+      height: 100vh;
+      /* 100/3계산 결과 값  */
+
+      position: absolute;
+      z-index: 4;
+
+      display: flex;
+    }
+
+    #root>div:nth-child(4)>div {
+      width: 12vw;
+      height: 12vw;
+      border-radius: 50%;
+      background-color: #fff;
+
+      position: relative;
+    }
+
+    #root>div:nth-child(4)>div:nth-child(1) {
+      top: 21vh;
+      left: 3vw;
+    }
+
+    #root>div:nth-child(4)>div:nth-child(2) {
+      top: 2vh;
+      left: 18vw;
+    }
+
+    #root>div:nth-child(4)>div:nth-child(3) {
+      top: 21vh;
+      left: 37vw;
+    }
+
+    #root>div:nth-child(4)>div:nth-child(4) {
+      top: 50vh;
+      /* left: 2vw; */
+    }
+
+    #root>div:nth-child(4)>div:nth-child(5) {
+      top: 74vh;
+      left: 13vw;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>

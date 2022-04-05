@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{ padding: 0; margin: 0;}
+    .round {
+      width: 20vh;
+      height: 20vh;
+      border-radius: 50%;
+      background-color: #fff;
+      position: absolute;
+      z-index: 2;
+    }
+    #root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #root > div {
+      display: flex;
+      flex-direction: column;
+    }
+    #root > div> div:nth-child(1){
+      height: 33vh;
+      background-color: #c4c4c4;
+    }
+    #root > div> div:nth-child(1) > .round{
+      left: 40vw;
+      top: 5vh;
+    }
+    #root > div > div:nth-child(2){
+      height: 33vh;
+      background-color: rgb(153, 153, 153);
+    }
+    #root > div> div:nth-child(2) > .round:nth-child(1){
+      left: 10vw;
+      top: 23vh;
+    }
+    #root > div> div:nth-child(2) > .round:nth-child(2){
+      left: 70vw;
+      top: 23vh;
+    }
+    #root > div> div:nth-child(2) > .round:nth-child(3){
+      left: 50vw;
+      top: 50vh;
+    }
+    #root > div > div:nth-child(3){
+      background-color: gray;
+      height: 34vh;
+    }
+    #root > div> div:nth-child(3) > .round{
+      left: 70vw;
+      top: 70vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div>
+        <div class="round"></div>
+      </div>
+      <div>
+        <div class="round"></div>
+        <div class="round"></div>
+        <div class="round"></div>
+      </div>
+      <div>
+        <div class="round"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

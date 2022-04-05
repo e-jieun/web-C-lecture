@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    :root {
+      --color-1:#ddd;
+      --color-2:rgb(124, 124, 124);
+      --color-3:rgb(63, 63, 63);
+    }
+
+    .arrow {
+      position: relative;
+    }
+
+    .arrow::after {
+      position: absolute;
+      left: 0;
+      top: 0;
+      content: '';
+      width: 1.5vw;
+      height: 1.5vw;
+      border-top: 4px solid var(--color-1);
+      border-right: 4px solid var(--color-1) ;
+      transform: rotate(225deg);
+    }
+
+    * {padding: 0; margin: 0;}
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: var(--color-3);
+    }
+
+    #root>div {
+      width: 95vw;
+      height: 95vh;
+
+      border: 1px solid var(--color-1);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+    }
+    
+    #root>div>div {
+      /* border: 1px solid yellow; */
+      width: 90vw;
+    }
+
+    #root>div>div:nth-child(1)>div {
+      /* background-color: var(--color-1);
+
+      width: 3vw;
+      height: 3vw;
+       */
+      margin-bottom: 10vh;
+      margin-left: 2vw;
+    }
+
+    #root>div>div:nth-child(2) {
+      color: var(--color-1);
+      font-size: 750%;
+      font-family: impact;
+      
+      line-height: 75%;
+    }
+    
+    #root>div>div:nth-child(3) {
+      background-color: var(--color-2);
+      height: 8vh;
+      border-radius: 10vw;
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+      margin-top: 5vh;
+      margin-bottom: 5vh;
+    }
+    
+    #root>div>div:nth-child(3)>div {
+      color: var(--color-1);
+      font-size: 110%;
+      /* text-align: center; */
+
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div>
+        <div class="arrow"></div>
+      </div>
+      <div>
+        this is <br>
+        just <br>
+        exam <br>
+        but <br>
+        make <br>
+        my own
+      </div>
+      <div>
+        <div>view more</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
