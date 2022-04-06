@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-11-스타일 변경</title>
+
+  <style>
+    * {padding: 0; margin: 0;}
+
+    /* 색상 변수 */
+    :root{
+      --color-1: rgba(255, 255, 255, 0.63);
+      --color-2: rgb(235, 181, 101);
+      --color-3: rgb(207, 220, 230);
+      --color-4: rgb(68, 87, 112);
+      --color-5: rgb(31, 42, 58);
+    }
+
+    /* 텍스트 스타일 */
+    .txt-small{font-size: 0.8rem; }
+    .txt-normal{font-size: 1.2rem;}
+    .txt-big{font-size: 2rem;}
+    .txt-bold{font-weight: bold;}
+
+    #container {
+      width: 100vw; height: 100vh;
+      background-image: 
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(0, 0, 0, 0.5)),
+      url(https://images.unsplash.com/photo-1585238827373-5e93e53b01f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+/* ============== 상단 글씨 영역 */
+    #container > header {
+      width: 90vw; height: 15vh;
+      color:var(--color-5);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    #container > header > div:nth-child(1) {
+      color: var(--color-4);
+    }
+
+
+/* ============== 바 형태가 들어갈 영역 */
+    #container > section {
+      width: 90vw; height: 16vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      position: relative;
+    }
+
+    /* 짧은 바 형태와 글씨가 들어갈 영역 (정렬을 위한 가상의 div) */
+    #container > section > div:nth-child(1) {
+      width: 100%;
+      /* 짧은 바 위의 글씨 색상 일괄적용 */
+      color:var(--color-1);
+      display: flex;
+      justify-content: space-between;
+      position: absolute;
+    }
+    
+    /* 짧은 바 속성 일괄적용 */
+    #container > section > div:nth-child(1) > div > div:nth-child(2) {
+      width: 100%; height: 1.5vh;
+      margin-top: 0.7vh;
+      border-radius: 1.5vh;
+      /* background-color: var(--color-1); */
+    }
+    
+    /* 첫번째 (Landscape)만 색상 변경 */
+    #container > section > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+      color: var(--color-5);
+    }
+
+    #container > section > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) {
+      background-color: var(--color-2);
+    }
+
+    /* 긴 바(하얀색) */
+    #container > section > div:nth-child(2) {
+      width: 100%; height: 1.5vh;
+      border-radius: 1.5vh;
+      background-color: var(--color-1);      
+    }
+
+
+/* ============== 동그란 형태가 들어갈 영역 */
+    #container > div:nth-child(3) {
+      width: 62vw; height: 22vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    #container > div:nth-child(3) > div:nth-child(1) {
+      width: 13vh; height: 13vh;
+      border-radius: 13vh;
+      background-color: var(--color-4);
+    }
+
+    #container > div:nth-child(3) > div:nth-child(2) {
+      width: 12vh;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: absolute;
+      right: 0;
+    }
+
+    #container > div:nth-child(3) > div:nth-child(2) > div {
+      width: 1.5vh; height: 1.5vh;
+      border-radius: 1.5vh;
+      background-color: var(--color-2);
+    }
+
+    #container > div:nth-child(3) > div:nth-child(2) > p {
+      color: var(--color-5);
+    }
+
+/* ============== 하단 텍스트 영역 */
+    #container > main:nth-child(4) {
+      width: 84vw; height: 38vh;
+      padding: 3vh 3vw 2vh 3vw;
+      border-radius: 3vh;
+      box-shadow: 1vw 1vw 1.5vw var(--color-5);
+      background-color: var(--color-1);
+    }
+
+    #container > main:nth-child(4) > div:nth-child(1){
+      color: var(--color-4);
+      margin-bottom: 1vh;
+      text-align: right;
+    }
+
+    #container > main:nth-child(4) > div:nth-child(2){
+      color: var(--color-5);
+      text-align: justify;
+      margin-bottom: 3vh;
+    }
+
+    #container > main:nth-child(4) > div:nth-child(3) > button{
+      padding: 1vh 3vw 1vh 3vw;
+      border: none;
+      border-radius: 2vh;
+      background-color: var(--color-5);
+      color: var(--color-3);
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+  
+  <div id="container">
+    <!-- header(1) 상단 텍스트 -->
+    <header>
+      <div><p class="txt-small">Horizontal Aesthetics</p></div>
+      <div><p class="txt-big txt-bold">Horizontal Aesthetics</p></div>
+    </header>
+
+    <!-- section(2) 바 형태 들어갈 곳-->
+    <section>
+      <!-- section(2) > div(1) 텍스트와 작은 바 -->
+      <div>
+        <div>
+          <div class="txt-normal txt-bold">Landscape</div>
+          <div></div>
+        </div>
+        <div>
+          <div class="txt-normal txt-bold">Deserted</div>
+          <div></div>
+        </div>
+        <div>
+          <div class="txt-normal txt-bold">Extensive</div>
+          <div></div>
+        </div>
+      </div>
+      <!-- section(2) > div(2) 긴 바 -->
+      <div></div>
+    </section>
+
+    <!-- div(3) 원형 버튼같은 것 -->
+    <div>
+      <!-- 원 -->
+      <div></div>
+      <!-- 작은 원과 글씨 -->
+      <div>
+        <div></div>
+        <p class="txt-small txt-bold">Arrow button</p>
+      </div>
+    </div>
+
+    <!-- main(4) 텍스트 영역 -->
+    <main>
+      <div><p class="txt-big txt-bold">Control your day</p></div>
+      <div><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero tempore deleniti nesciunt accusantium odio, explicabo alias! Minus iste illum blanditiis delectus atque quaerat cupiditate tenetur at dolorem veniam, tempore accusamus inventore et, id fugiat quasi commodi voluptatem beatae ratione. Nostrum, nam. Blanditiis magnam quo magni vitae sint necessitatibus soluta consectetur.</p></div>
+      <div><button>View more</button></div>
+    </main>
+
+  </div>
+
+</body>
+</html>

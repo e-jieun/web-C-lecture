@@ -1,0 +1,330 @@
+.d-flex {
+  display: flex;
+}
+
+.middle-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.middle-top {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.middle-bottom {
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.left-center {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.left-top {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.left-bottom {
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.right-center {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.right-top {
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.right-bottom {
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.space-around {
+  justify-content: space-around
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-row-re {
+  flex-direction: row-reverse
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-column-re {
+  flex-direction: column-reverse;
+}
+
+/* —----------css-------------- */
+
+
+/* check point 
+
+위의 클래스 정의같이
+아래의 커스터마이징(스타일링) 작업에서도
+공통된 속성이나 값이 많다면, 자연스럽게 변수활용이나 클래스 활용을 도입하여
+눈에 보이는 코드량을 물리적으로 줄일 필요가 있음
+
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#base {
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #fff;
+}
+
+.root {
+  width: 390px;
+  height: 844px;
+  background-color: aquamarine;
+
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+header {
+  width: 100%;
+  height: 16%;
+
+  background-color: #ff8282;
+}
+
+header>div {
+  width: 90%;
+  height: 46%;
+
+  border: 1px solid #82ff88;
+}
+
+header>div>div:nth-child(1) {
+  width: 100%;
+  height: 30%;
+
+  background-color: #2f00ff;
+
+  font-size: 12px;
+  color: #797979;
+}
+
+header>div>div:nth-child(2) {
+  width: 100%;
+  height: 60%;
+
+  background-color: #82ff88;
+
+  font-size: 30px;
+  font-weight: bold;
+  color: #504646;
+}
+
+
+main {
+  width: 100%;
+  height: 42%;
+
+  background-color: #9982ff;
+}
+
+main>div {
+  width: 90%;
+  height: 70%;
+
+  border: 1px solid #ff1b1b;
+}
+
+main>div>div:nth-child(1) {
+  width: 100%;
+  height: 30%;
+
+  /* background-color: #82ff88; */
+}
+
+.bar-text {
+  width: 100%;
+  height: 36%;
+
+  /* background-color: #914646; */
+}
+
+.bar-text>div {
+  flex-grow: 1;
+  border: 1px solid #2f00ff;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.bar-text>div:nth-child(2) {
+  text-align: center;
+}
+
+.bar-text>div:nth-child(3) {
+  text-align: right;
+}
+
+.bar {
+  width: 100%;
+  height: 40%;
+
+  /* background-color: #395f3b; */
+}
+
+.bar>div {
+  width: 100%;
+  height: 40%;
+
+  background-color: #e9e9e9;
+
+  border-radius: 10px;
+
+  overflow: hidden;
+
+  position: relative;
+}
+
+.bar>div>div {
+  width: 30%;
+  height: 100%;
+  background-color: #4d4d4d;
+
+  border-radius: 10px;
+
+  position: absolute;
+  left: -10px;
+}
+
+main>div>div:nth-child(2) {
+  width: 100%;
+  height: 70%;
+
+  background-color: #eae6ff;
+}
+
+.toggle {
+  width: 26%;
+  height: 52%;
+
+  border: 2px dotted #383838;
+
+  border-radius: 100px;
+}
+
+.toggle>div {
+  width: 96%;
+  height: 96%;
+
+  background-color: #806969;
+
+  border-radius: 100px;
+}
+
+.toggle>div>div {
+  width: 8%;
+  height: 10%;
+
+  background-color: #444444;
+
+  border-radius: 100px;
+
+  margin: 4px;
+}
+
+
+footer {
+  width: 100%;
+  height: 42%;
+
+  background-color: #ecff82;
+}
+
+footer>div:nth-child(1) {
+  width: 90%;
+  height: 90%;
+
+  background-color: #ffb1f9;
+
+  border-radius: 30px;
+}
+
+footer>div:nth-child(1)>div {
+  width: 90%;
+
+  border: 1px solid red;
+}
+
+footer>div:nth-child(1)>div:nth-child(1) {
+  height: 20%;
+}
+
+footer>div:nth-child(1)>div:nth-child(2) {
+  height: 48%;
+
+  font-size: 14px;
+}
+
+footer>div:nth-child(1)>div:nth-child(3) {
+  height: 32%;
+}
+
+footer>div:nth-child(1)>div:nth-child(3)>div {
+  width: 32%;
+  height: 34%;
+
+  background-color: #806969;
+  border-radius: 20px;
+
+  margin-top: 14px;
+}
+
+
+footer>div:nth-child(2) {
+  width: 90%;
+  height: 6%;
+
+  background-color: #82ff88;
+}
+
+footer>div:nth-child(2)>div {
+  width: 40%;
+  height: 26%;
+
+  background-color: #504646;
+  border-radius: 20px;
+}

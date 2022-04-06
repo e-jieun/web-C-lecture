@@ -1,0 +1,222 @@
+// common
+*{
+  margin: 0;
+  padding: 0;
+}
+//variable
+$color-bk: black;
+$color-c4: #c4c4c4;
+$color-dp: #8068AD;
+$color-pp: #C8B5C8;
+$color-yel: #EDEBB2;
+$color-cr: #FFFEF9;
+$border-bk: 1px solid black;
+$border-red: 1px solid red;
+$per100: 100%;
+//class-set
+@mixin flex-align-justify($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+@mixin border($px, $color) {
+  border: $px solid $color;
+}
+
+@mixin linear-gra($direction, $color, $color) {
+  background: linear-gradient($direction, $color, $color);  
+}
+//style
+// https://developer.mozilla.org/ko/docs/Web/CSS/gradient
+#root{
+  width: 100vw;
+  height: 100vh;
+
+
+  #con{
+    width: inherit;
+    height: inherit;
+    background-color: #d3d3d3be;
+    @include flex-align-justify(center, center);
+    flex-direction: column;
+    // !flex-grow 값은 item 태그에 부여해주기
+    // flex-grow: 1;
+    // @include border(5px, #000);
+    header{
+      width: 80%;
+      flex-grow: 1;
+      // @include border(1px, #000);
+      @include flex-align-justify(center, flex-start);
+      // small text
+      >div{
+        >div:nth-child(1){
+          font-size: small;
+          color: $color-c4;
+        }
+        >div:nth-child(2){
+          font-size: 2em;
+          color: gray;
+          font-weight: 700;
+        }
+      }
+    }
+    // -----------------------------------------
+    main{
+      width: 80%;
+      flex-grow: 1;
+      // @include border(1px, #000);
+      // menu bar con
+      // !이곳에서 자식 선택자 순서를 정해주지 않아서 둘다 적용이 돼버려서 arrow button에까지 적용된 것!
+      // !순서 선택자 잘 써주자!
+      >div:nth-child(1){
+        height: 20%;
+        // menu text con
+        >div:nth-child(1){
+          @include flex-align-justify(flex-start, space-between);
+          >div{
+            color: $color-c4;
+          }
+          >div:nth-child(1){
+            color: gray;
+            font-weight: 700;
+          }
+        }
+        // bar con
+        >div:nth-child(2){
+          width: inherit;
+          height: 1em;
+          // bar bg item
+          >div{
+            width: inherit;
+            height: 50%;
+            background-color: #fff;
+            border-radius: 100px;
+            // bar content item
+            >div{
+              width: 22%;
+              height: $per100;
+              background-color: $color-c4;
+              border-radius: 100px;
+            }
+          }
+        }
+      }
+      >div:nth-child(2){
+        width: $per100;
+        height: 80%;
+        // @include border(1px, black);
+        @include flex-align-justify(center, center);
+        >div:nth-child(1){
+          width: 70%;
+          height: $per100;
+          // @include border(1px, black);
+          @include flex-align-justify(center, flex-end);
+          >div{
+            width: 30vw;
+            height: 30vw;
+            background-color: $color-c4;
+            border-radius: $per100;
+            // @include linear-gra(to right, black, #ff6666);
+            background:linear-gradient(to bottom, rgba(0, 0, 0,1), rgba(200,200,200,1));
+
+            // check point
+
+            /* 
+
+            ? @include 적용이 안되는 이유,
+            ? 제작자가 만들어둔 @mixin linear-gra 함수의 첫번째 변수(이것을 매개가 되어준다고 하여 매개변수, parameter라 부름)
+            ? 첫번째 매개변수와 함수 내에 활용하는 것은 모두 정상적으로 작성하였으나,
+            ? 본래의 스타일링 속성인 liearn-gradient() <-- 가 가진 특정 규칙때문에 정상으로 적용되지 않는 문제가 있음
+            * 만드는 함수 () 소괄호 자리에 사용할 변수를 넣어 두는 것 = 파라미터(parameter), 매개변수, '인자' 라고 부름
+            * 사용하는 함수 () 소괄호 자리에 사용할 '값'을 넣어주는 것 = 아규먼트(argument), '인수' 라고 부름
+
+            * 사용할때 명확한 '법칙'이 존재하기 때문에 적용이 정상적으로 되지 않았다는 점을 확인 할 수 있고
+            * 이런 현상을 일반적으로 "인수에 타입이 지정되어있다" 라고 말로 표현함.
+
+            * 조치 -> mixin을 사용하지 않고 직접 지정(할당)하여 처리
+
+            */
+
+
+
+            @include flex-align-justify(center, flex-end);
+            position: relative;
+            right: 5vw;
+            >div{
+              width: 3vw;
+              height: 3vw;
+              background-color: gray;
+              border-radius: $per100;
+              position: relative;
+              right: 1vw;
+            }
+          }
+        }
+        >div:nth-child(2){
+          width: 30%;
+          height: $per100;
+          // @include border(1px, black);
+          @include flex-align-justify(center, flex-start);
+          >div{
+            font-size: 0.5em;
+            color: gray;
+          }
+        }
+      }
+      }
+        
+    }
+    // -----------------------------------------
+
+    section{
+      width: inherit;
+      flex-grow: 1.5;
+      @include flex-align-justify(center, center);
+      // shadow box con
+      >div{
+        width: 90%;
+        height: 90%;
+        // @include border(1px, #000);
+        background-color: $color-c4;
+        border-radius: 30px;
+        box-shadow: 5px 5px 5px rgba($color: #000000, $alpha: .2);
+        @include flex-align-justify(center, center);
+        // shadow box
+        >div{
+          width: inherit;
+          height: inherit;
+          // @include border(1px, #000);
+          @include flex-align-justify(center, center);
+          // text con
+          >div{
+            // title
+            position: relative;
+            bottom: 7vh;
+            >div:nth-child(1){
+              font-size: 2em;
+              color: gray;
+              text-align: end;
+            }
+            >div:nth-child(2){
+              text-align: justify;
+              color: gray;
+            }
+            >div:nth-child(3){
+              width: 20vw;
+              height: 1.5em;
+              background-color: gray;
+              border-radius: 30px;
+              @include flex-align-justify(center, center);
+              position: relative;
+              top: 2vh;
+              >div{
+                font-size: 0.8em;
+                color: #d6d6d6;
+              }
+            }
+          }
+          
+          }
+        }
+      }
+    }

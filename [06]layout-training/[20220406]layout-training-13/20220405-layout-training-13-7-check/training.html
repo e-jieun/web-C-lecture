@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>desert</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main {
+      width: 70vw;
+      height: 90vh;
+      background-color: antiquewhite;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .header {
+      width: 70vw;
+      height: 25vh;
+      /* border: 1px solid black; */
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header div {
+      align-items: center;
+      justify-content: center;
+      width: 60vw;
+      height: 10vh;
+      /* border: 1px solid black; */
+      text-align: center;
+      font-weight: bold;
+      color: sienna;
+      font-size: 50px;
+    }
+
+
+    .text {
+      width: 70vw;
+      height: 3vh;
+      display: flex;
+      color: sienna;
+      font-weight: bold;
+      padding: 2px;
+    }
+
+    .text div {
+      flex-grow: 1;
+      width: 30vw;
+      height: 3vh;
+      /* border: 1px solid black; */
+      border-radius: 50px;
+
+
+    }
+
+    .bar {
+      width: 69vw;
+      height: 2vh;
+      background-color: white;
+      display: flex;
+      border-radius: 50px;
+
+    }
+
+    .bar div {
+      width: 23vw;
+      height: 2vh;
+      background-color: sienna;
+      border-radius: 50px;
+
+    }
+
+    .circle2 {
+      width: 120px;
+      height: 120px;
+      /* border: 1px solid black; */
+      display: flex;
+      margin-top: 5%;
+      align-items: center;
+      justify-content: center;
+      border: 3px solid rgb(116, 105, 48);
+      border-style: dotted;
+      border-radius: 50%;
+    }
+
+    .circle2 div {
+      width: 23vw;
+      height: 13vh;
+      display: flex;
+      justify-content: center;
+      /* border: 1px solid black; */
+      align-items: center;
+    }
+
+    .circle2 div:nth-child(2) div {
+      width: 110px;
+      height: 110px;
+      background-color: sienna;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .circle2 div:nth-child(2) div div {
+      width: 15px;
+      height: 15px;
+      background-color: rgb(117, 58, 30);
+      border-radius: 50%;
+      justify-content: space-around;
+    }
+
+
+    .bottom {
+      width: 65vw;
+      height: 40vh;
+      background-color: rgb(214, 205, 205);
+      margin-top: 10%;
+      border-radius: 20px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      opacity: 0.7;
+    }
+
+
+    .bottom div {
+      /* width:60vw; */
+      height: 10vh;
+      /* background-color: aquamarine; */
+      padding: 5%;
+
+    }
+
+    .bottom div:nth-child(1) {
+      width: 100px;
+      height: 30px;
+      background-color: sienna;
+      border-radius: 50px;
+      font-size: smaller;
+      text-align: center;
+      color: white;
+    }
+
+
+    /* check point
+
+    ./image/desert.png
+    위와 같이 "경로와 파일명"이 함께 명시되어있는 방식으로 url 데이터를 작성해버릇 할 것
+
+    ※ 현재는 테가 나지 않는 작업이지만, 작업 분량이 많아질수록 에러의 여지가 발생
+
+    desert.png-> main-page-bg-img-1-desert.png 
+    위의 예시는 파일이름으로사용하기에 매우 불편하게 되어있지만, 제작하는 입장에서는
+    어디에 쓰이는지 어떤모습인지를 쉽게 알아 볼 수 있기 때문에 권장되는 작업
+    디렉토리 설계와 넘버링을 잘 붙이면 자동정렬과 에디터의 도움으로 쉽게 꺼내올 수 있는 것을 고려할 것
+
+
+
+    */
+
+
+    .main {
+      background-image: url(desert.png);
+      opacity: 0.8;
+      background-size: cover;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="main">
+      <div class="header">
+        <div>
+          <p>미적인 수평선</p>
+        </div>
+      </div>
+      <div class="text">
+        <div>풍경</div>
+        <div>사막</div>
+        <div>광범위</div>
+      </div>
+      <div class="bar">
+        <div></div>
+      </div>
+
+      <div class="circle2">
+        <div></div>
+
+        <div class="line">
+          <div>
+            <div class="circle3"></div>
+          </div>
+        </div>
+        <div></div>
+      </div>
+      <div class="bottom">
+        <h2><span style=color:sienna;> 너의 날을 지배하라</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium, nulla iusto, aspernatur voluptas,
+          exercitationem voluptates ad enim in inventore beatae unde culpa. Officia provident porro molestiae odit quas
+          dolorem nam voluptas alias facere, obcaecati repellendus quis expedita quia nisi ut illum modi quaerat nobis
+          fugiat nihil corrupti eveniet? Consequatur, architecto.</p>
+        <div>
+          <div>
+            <p>view more</p>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+</body>
+
+</html>

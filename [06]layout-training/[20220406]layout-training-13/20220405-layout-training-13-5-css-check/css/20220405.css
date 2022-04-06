@@ -1,0 +1,155 @@
+*{
+    margin: 0;
+    padding: 0;
+    color: #747474;
+}
+.pos-rel{
+    position: relative;
+}
+.pos-abso{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.flex-bc{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-e{
+    display: flex;
+    justify-content: flex-end;
+}
+.margin-0-auto{
+    margin: 0 auto;
+}
+main{
+    width: 428px;
+    height: 869px;
+    border: 1px solid;
+}
+main >div{
+    width: 95%;
+}
+
+#top{
+    height: 100px;
+    flex-direction: column;
+}
+#top p {
+    line-height: 15px;
+    padding: 0 10px;
+}
+#top h1{
+    line-height: 40px;
+    font-size: 40px;
+    letter-spacing: -0.5px;
+    text-align: center;
+}
+
+#mid{
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+#mid #txt-box{
+    width: 100%;
+}
+#mid #txt-box h4{
+    line-height: 25px;
+    font-size: 18px;
+    font-weight: 300;
+}
+#mid #txt-box h4:nth-child(1){
+    font-weight: 700;
+}
+
+#mid #scroll-box{
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    margin: 10px 0;
+}
+#mid #scroll-box #scroll{
+    width: 100px;
+    height: 10px;
+    background-color: #c4c4c4;
+    border-radius: 5px;
+}
+#mid #arrow-box{
+    width: 100%;
+    margin-top: 40px;
+}
+#mid #arrow-box #circle-box{
+    width: 120px;
+    height: 120px;
+    background-color: #c4c4c4;
+    border-radius: 50%;
+}
+#mid #arrow-box #circle-box #circle{
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #747474;
+
+    top: 50% !important;
+    transform: translateY(-50%);
+    right: 0 !important;
+    left: inherit;
+    margin: 0 10px;
+}
+#mid #arrow-box p{
+    width: 110px;
+    padding: 10px;
+    line-height: 100px;
+}
+
+
+#bottom{
+    border-radius: 24px;
+    padding: 40px 0;
+}
+#bottom h1{
+    padding: 10px;
+    text-align: end;
+    color: #b0b0b0;
+}
+#bottom p{
+    padding: 10px;
+    color: #8a8a8a;
+}
+#bottom #btn-box{
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: #c4c4c4;
+    line-height: 30px;
+    text-align: center;
+    color: #fdfdfd;
+    margin: 10px;
+}
+#bottom #bgc-box{
+    width: 100%;
+    height: 100%;
+    background-color: #747474;
+    opacity: 0.3;
+    border-radius: 24px;
+    z-index: -10;
+
+    /* check point */
+
+
+    /* 
+    매우 훌륭이 잘 작성하였으나 z-index를 지나치게 높거나 낮게 설정했을때,
+    현재는 요소가 많지 않아 불편하지 않지만, 제어하는 단계나 정리하는 단계에서 매우 애를 먹을 수 있는점 참고
+    class를 활용하여 따로 관리하는 경우도 다수 존재
+
+    
+    */
+
+
+
+
+}

@@ -1,0 +1,286 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+#root #con {
+  width: inherit;
+  height: inherit;
+  background-color: #d3d3d3be;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#root #con header {
+  width: 80%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#root #con header > div > div:nth-child(1) {
+  font-size: small;
+  color: #c4c4c4;
+}
+
+#root #con header > div > div:nth-child(2) {
+  font-size: 2em;
+  color: gray;
+  font-weight: 700;
+}
+
+#root #con main {
+  width: 80%;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+#root #con main > div:nth-child(1) {
+  height: 20%;
+}
+
+#root #con main > div:nth-child(1) > div:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#root #con main > div:nth-child(1) > div:nth-child(1) > div {
+  color: #c4c4c4;
+}
+
+#root #con main > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) {
+  color: gray;
+  font-weight: 700;
+}
+
+#root #con main > div:nth-child(1) > div:nth-child(2) {
+  width: inherit;
+  height: 1em;
+}
+
+#root #con main > div:nth-child(1) > div:nth-child(2) > div {
+  width: inherit;
+  height: 50%;
+  background-color: #fff;
+  border-radius: 100px;
+}
+
+#root #con main > div:nth-child(1) > div:nth-child(2) > div > div {
+  width: 22%;
+  height: 100%;
+  background-color: #c4c4c4;
+  border-radius: 100px;
+}
+
+#root #con main > div:nth-child(2) {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#root #con main > div:nth-child(2) > div:nth-child(1) {
+  width: 70%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#root #con main > div:nth-child(2) > div:nth-child(1) > div {
+  width: 30vw;
+  height: 30vw;
+  background-color: #c4c4c4;
+  border-radius: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(black), to(#c8c8c8));
+  background: linear-gradient(to bottom, black, #c8c8c8);
+  /* 
+
+            ? @include 적용이 안되는 이유,
+            ? 제작자가 만들어둔 @mixin linear-gra 함수의 첫번째 변수(이것을 매개가 되어준다고 하여 매개변수, parameter라 부름)
+            ? 첫번째 매개변수와 함수 내에 활용하는 것은 모두 정상적으로 작성하였으나,
+            ? 본래의 스타일링 속성인 liearn-gradient() <-- 가 가진 특정 규칙때문에 정상으로 적용되지 않는 문제가 있음
+            * 만드는 함수 () 소괄호 자리에 사용할 변수를 넣어 두는 것 = 파라미터(parameter), 매개변수, '인자' 라고 부름
+            * 사용하는 함수 () 소괄호 자리에 사용할 '값'을 넣어주는 것 = 아규먼트(argument), '인수' 라고 부름
+
+            * 사용할때 명확한 '법칙'이 존재하기 때문에 적용이 정상적으로 되지 않았다는 점을 확인 할 수 있고
+            * 이런 현상을 일반적으로 "인수에 타입이 지정되어있다" 라고 말로 표현함.
+
+            * 조치 -> mixin을 사용하지 않고 직접 지정(할당)하여 처리
+
+            */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  position: relative;
+  right: 5vw;
+}
+
+#root #con main > div:nth-child(2) > div:nth-child(1) > div > div {
+  width: 3vw;
+  height: 3vw;
+  background-color: gray;
+  border-radius: 100%;
+  position: relative;
+  right: 1vw;
+}
+
+#root #con main > div:nth-child(2) > div:nth-child(2) {
+  width: 30%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#root #con main > div:nth-child(2) > div:nth-child(2) > div {
+  font-size: 0.5em;
+  color: gray;
+}
+
+#root section {
+  width: inherit;
+  -webkit-box-flex: 1.5;
+      -ms-flex-positive: 1.5;
+          flex-grow: 1.5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#root section > div {
+  width: 90%;
+  height: 90%;
+  background-color: #c4c4c4;
+  border-radius: 30px;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+          box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#root section > div > div {
+  width: inherit;
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#root section > div > div > div {
+  position: relative;
+  bottom: 7vh;
+}
+
+#root section > div > div > div > div:nth-child(1) {
+  font-size: 2em;
+  color: gray;
+  text-align: end;
+}
+
+#root section > div > div > div > div:nth-child(2) {
+  text-align: justify;
+  color: gray;
+}
+
+#root section > div > div > div > div:nth-child(3) {
+  width: 20vw;
+  height: 1.5em;
+  background-color: gray;
+  border-radius: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  top: 2vh;
+}
+
+#root section > div > div > div > div:nth-child(3) > div {
+  font-size: 0.8em;
+  color: #d6d6d6;
+}
+/*# sourceMappingURL=style.css.map */
