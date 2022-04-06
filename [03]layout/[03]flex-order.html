@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex-grow, flex-order</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+
+    :root {
+      --bg-col-1:#ddd;
+      --bg-col-2:#ccc;
+      --bg-col-3:#bbb;
+    }
+
+
+    #root {
+      width:100vw; 
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #root>section {
+      width:100vw;
+      height:100vh;
+
+      /* section 자식들 중앙정렬 */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+
+    #root>section:nth-child(1){background-color:var(--bg-col-1);}
+    #root>section:nth-child(2){background-color:var(--bg-col-2);}
+    #root>section:nth-child(3){background-color:var(--bg-col-3);}
+
+
+    /* layout selector */
+    #root>section:nth-child(1){order:1;}
+    #root>section:nth-child(2){order:2;}
+    #root>section:nth-child(3){order:3;}
+    /* display:flex의 아이템용 속성 order
+
+    * order : 순서를 할당하는 order 값은 item에 직접 할당하는 방식이다. (flex-grow와 사용방법이 같다.)
+    * 일반 웹사이트에서는 기획한 순서대로 마크업을 하기때문에 별도로 사용하는 경우가 흔하지는 않지만,
+    * 반응형 웹사이트에서는 '보고있는 디바이스'의 환경에 따라 정렬 순서를 바꾸기도 한다.
+    * 매우 편리한 기능이므로 직접 사용해보고 응용점을 찾을 것 
+    */
+
+    @media (max-width:1000px) {
+    /* condition : 뷰포트(브라우저 화면)가 1000이하 일때 @media 영역(scope)의 스타일링을 사용하도록 의도 */
+    /* condition : 1000px 이하일 때와 1000px 이상일 때 디자인이 바뀌는 구조 */
+    
+    #root>section:nth-child(1){order:3;}
+    #root>section:nth-child(2){order:2;}
+    #root>section:nth-child(3){order:1;}
+
+      /* order는 flex 전용 하위 속성이므로, 컨테이너 태그에 flex속성을 부여할 것 */
+      /* 
+      
+      결과적으로,
+      PC 버전일때는 마크업과 동일한 순서로 배치되어 보여지고,
+      해당영역(@media) 조건 하에서는 역순으로 배치하도록 순서를 뒤바꾸었다.
+      단순히 배치순서를 통째로 역순으로 하고자 한다면, flex-reverse 를 사용하면 일괄 변경이 가능하나,
+      order와 같이 커스텀은 불가능 하기때문에 리버스 값과 오더 값을 구분하여 사용할 것
+      
+      
+      */
+
+
+
+    #root>section:nth-child(1){color:#fff; background-color: salmon;}
+    #root>section:nth-child(2){color:#fff; background-color: darkcyan;}
+    #root>section:nth-child(3){color:#fff; background-color: chocolate;}
+
+    /* 
+    
+    정보 소개의 가독성을 위해 같은 선택자를 두번 하여 구분 했으므로
+    필요한 만큼만 할당하여 스타일링 하는 것을 권장 (예제와 같이 거듭해서 선택자를 사용하면 유지보수에 문제가 생김)
+
+
+    */
+
+
+
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+
+  <div id="root">
+    <section class="items-1">
+      <h1>1번 섹션입니다.</h1>
+    </section>
+    <section class="items-2">
+      <h1>2번 섹션입니다.</h1>
+    </section>
+    <section class="items-3">
+      <h1>3번 섹션입니다.</h1>
+    </section>
+  </div>
+  
+
+
+</body>
+</html>
