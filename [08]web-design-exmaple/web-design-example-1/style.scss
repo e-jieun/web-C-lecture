@@ -1,0 +1,144 @@
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background: #333;
+  color: #ccc;
+  font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+#menu-toggle {
+  display: block;
+
+  
+  position: relative;
+  top: 50px;
+  left: 50px;
+
+  z-index: 1;
+
+  // 낮설은 attribute
+  user-select: none;
+}
+
+#menu-toggle a {
+  text-decoration: none;
+  color: #333;
+
+  transition: color 0.3s ease;
+  // 컬러값에만 가속도 변화를 부여한 화면전환을 진행 시키겠다는 뜻
+}
+
+#menu-toggle a:hover {
+  color: salmon;
+}
+
+
+#menu-toggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+
+  cursor: pointer;
+
+  opacity: 0;
+  /* hide this */
+  z-index: 2;
+}
+
+
+#menu-toggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+
+  background: #ccc;
+  border-radius: 3px;
+
+  z-index: 1;
+
+  // transform setting
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+    opacity 0.55s ease;
+
+    // easing : 가속도 관련 제어
+    // bezier: 곡선
+    // 움직임을 제어할때 '등속도'만으로는 표현하기 어려운 탄력을 부여하기위해 모션등에서 매우 자주 활용
+
+
+}
+
+#menu-toggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menu-toggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+
+#menu-toggle input:checked~span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #333;
+}
+
+#menu-toggle input:checked~span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menu-toggle input:checked~span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+
+#menu {
+  
+  position: absolute;
+  // menu container setting을 위한 속성 부여 
+  
+  width: 300px;
+  height: 100vh;
+
+
+  // margin set
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+
+  background: #ededed;
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+
+  // flex setting
+  display:flex;
+  justify-content: center;
+  align-items:center;
+  flex-direction:column;
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+
+#menu-toggle input:checked~ul {
+
+  // <input> ~ <ul> input element 와 ul element 사이의 span선택자들을 가리킨다.
+
+  transform: none;
+}
