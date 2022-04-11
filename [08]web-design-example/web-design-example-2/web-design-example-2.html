@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+
+    #root {
+      width:100vw;
+      height:100vh;
+
+      /* #carousel 중앙정렬 */
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    #root>div {
+      border:1px solid black;
+
+      /* #carousel의 div 자식들 가로 정렬 */
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    /* #carousel */
+
+    #carousel>div:first-child {
+      /* 첫번째 자식을 선택하는 선택자 */
+      /* 
+      
+      nth-child(1) 방식의 선택자와 동일하지만, 
+      1번과 첫번째라는 부분이 사람에게는 동일 취급이나, 프로그래밍에서는 다른 취급일때가 있다.
+      (프로그래밍에서의 첫번째는 0번이다.)
+
+      (0번 이라는 것이 CSS를 다루는 디자이너에게 직관적이지 않기 때문에 사람이 사용하는 어휘적 표현으로 바꾼것으로 추정된다.)
+      
+      두가지를 병용해보는 것을 권한다.
+      
+      
+      */
+
+      width:5vw;
+      height:30vh;
+      background-color: #ccc;
+    }
+
+    #carousel>div:nth-child(2) {
+      /* #carousel의 세 자식 중 가운데 <div> 선택 */
+      /* n번째중 두번째인 2를 선택자로 활용한 것을 주목할 것 */
+      
+      width:50vw;
+      height:30vh;
+
+      background-color: #ddd;
+
+      /* 해당선택자의 양옆의 간격을 벌려 주기 위해 마진값 부여 */
+      /* 
+      축약형태로 margin을 사용하고자 하는 경우
+      margin: top, right, bottom, left / TRBL 순서 이다.
+      여러가지 축약 방식이 있으나, 마진값을 각각 다르게 지정하는 경우는 특정 제어에 관련되어 있을 여지가 매우 높기 때문에 각각 명시해주는 것이 유지보수 관점에서는 이점으로 발휘 될 수 있다.
+      
+       */
+
+
+      margin-left:5vw;
+      margin-right:5vw;
+
+      
+        /* 자식태그들 중앙정렬을 위한 배치방식 설정 */
+      display:flex;
+      justify-content:center;
+      align-items:center;
+
+      
+    }
+
+    #carousel>div:nth-child(2)>section {
+      flex-grow: 1;
+      /* width값 대신 flex의 item 속성 활용 */
+      height:inherit;
+      background-color: #eeefff;
+      border:1px solid #000;
+    }
+
+
+    #carousel>div:last-child {
+      width:5vw;
+      height:30vh;
+      background-color: #ccc;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="carousel">
+      <div class="left">left</div>
+      <div>
+        <section></section>
+        <section></section>
+        <section></section>
+      </div>
+      <div class="right">right</div>
+    </div>
+  </div>  
+</body>
+</html>
