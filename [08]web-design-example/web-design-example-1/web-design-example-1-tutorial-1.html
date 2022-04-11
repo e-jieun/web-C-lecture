@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 
+      주석에 색깔로 구분하여 확인하고자 하는 훈련생은 아래의 확장 플러그인을 설치 할 것
+      이름 : better comment
+      https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments
+
+      ? 파일확장자or버전에 따라 일시적으로 적용이 안되는 경우가 흔함
+      
+    */
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+
+    #root>div { /* 3개의 <div> 태그를 가운데에 놓기위해 컨테이너 생성 */
+      /* 
+      컨테이너를 만들지 않고도 가운데 정렬할 수 있으나, 
+      1. 유지보수관점에서 wrap(랩핑)이 되지 않기 때문에 추후에 관리 부적절
+      2. position 과 같은 제어를 위해 핸들링할때 부모자식관계가 따로 설정이 되어있지 않는 문제로 레이아웃이 틀어지는 현상 발생
+      3. 반복작업이 필요하는 경우 산재
+      
+      */
+      border: 1px solid black;
+      /* 컨테이너 영역확인용 외곽선 */
+    }
+    
+    
+    
+
+    /* 
+    
+    #root>div 직계자식중 div라면 모두 다 선택 -> 일괄지정 -> 스타일링
+
+    */
+    #root>div>div {
+      width: 5vw;
+      height: 1vw;
+      background-color: #333;
+      margin: 0.5vw;
+    }
+
+    /* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+
+    /* animation 스타일링 */
+
+    /* 제어 구상하기 */
+    /* 
+    
+    1. 마우스 오버하면 두번째 <div>이 사라진다. -> hover가 떠오름
+
+    
+    
+    */
+
+    #root>div>div:nth-child(2):hover {
+      display:none;
+    }
+
+    /* 
+    
+    display:none을 했을때 정상적으로 작동은 잘되지만 
+    요소 자체가 사라져 폭이 줄어드는 현상 발견
+    
+    */
+
+
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div> <!-- 세개의 <div> 태그를 가운데 놓기 위해 컨테이너 생성-->
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+  </div>
+</body>
+
+</html>
