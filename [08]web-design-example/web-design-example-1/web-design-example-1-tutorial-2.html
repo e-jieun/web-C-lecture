@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+
+    #root>div {
+      border: 1px solid black;
+      /* 컨테이너 영역확인용 외곽선 */
+    }
+    
+    #root>div>div {
+      width: 5vw;
+      height: 1vw;
+      background-color: #333;
+      margin: 0.5vw;
+      
+      
+    }
+    
+    /* ★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★★ */
+    
+    /* animation 스타일링 */
+    
+    /* 제어 구상하기 */
+    /* 
+    
+    1. 마우스 오버하면 두번째 <div>이 사라진다. -> hover가 떠오름
+
+      
+      
+      */
+
+      #root>div>div:nth-child(2) {
+
+        /* check point 1 */
+        /* 트랜지션(화면전환) 속성을 부여하였으나 visibility 자체의 성격 "보이는가 안보이는가" 라는 부분 때문에 
+        visibility 속성이 transition에 부여한 값 만큼의 시간동안 마치 지체(딜레이)되는 것처럼 현상이 발견됨
+        
+        */
+        transition:1s;
+      }
+
+
+      #root>div>div:nth-child(2):hover {
+      /* 1. 요소 자체가 사라지는 현상이 발견되어 "배치를 하지 않겠다" 라는 속성 주석처리 display:none; */
+      visibility: hidden;
+
+
+
+    /* 
+    
+    display:none을 했을때 정상적으로 작동은 잘되지만 
+    요소 자체가 사라져 폭이 줄어드는 현상 발견
+
+    check point : 1
+
+    visibility (보이는지 여부를 정하는 속성)을 확인
+    "마우스 오버하면 감추는 것"으로 설정했으나
+    마우스 오버를 하는 그 순간에는 사라지긴하지만, 마우스가 약간 움직일때마다 '다시사라지는' 현상 발생
+
+    
+    */
+
+
+
+
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div>
+      <!-- 세개의 <div> 태그를 가운데 놓기 위해 컨테이너 생성-->
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+  </div>
+</body>
+
+</html>
