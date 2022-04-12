@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin flex-setting($a, $b) {
+  display: flex;
+  justify-content: $a;
+  align-items: $b;
+}
+
+
+
+
+#root {
+  width:100vw;
+  height:100vh;
+  background-color: #c4c4c4;
+
+  @include flex-setting(center);
+
+  &>div {
+    width:50vw;
+    height:50vh;
+    background-color: #aaa;
+
+    @include flex-setting(flex-start);
+      
+    &>section {
+
+      width:100px;
+      height:100px;
+      background-color: salmon;
+      border: 1px solid #000;
+    }
+
+    &>section:nth-child(2) {
+      width:200px;
+      background-color: blue;
+    }
+
+
+  }
+}
