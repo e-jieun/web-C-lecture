@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0;}
+
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+
+
+
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #ccc;
+    }
+
+    #root>div{
+      width:100px;
+      height:100px;
+      /* background-color: salmon; */
+      opacity: 1;
+
+      animation: 0.5s fade-in infinite;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div id="root">
+    <div>div</div>
+  </div>
+
+</body>
+</html>
