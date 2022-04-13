@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  *{margin:0; padding:0; list-style-type: none;}
+
+  :root {
+    --color-1:#fff;
+    --color-2:rgb(216, 216, 216);
+    --color-3:rgb(158, 158, 158);
+    --color-4:rgb(83, 83, 83);
+  }
+
+  #page {
+    width: 100vw;
+    height: 200vw;
+    background-color:var(--color-1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ----------page-1---------- */
+  #page-1{
+    width: 100%;
+    height: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  nav {
+    width: 95%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+  }
+
+  nav > h1 {color: var(--color-4); z-index: 2;}
+
+  nav > ul {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 3;
+  }
+
+  nav > ul > li {color: var(--color-4); z-index: 3;}
+
+  header {
+    width: 95%;
+    height: 30%;
+    display: flex;
+    align-items: flex-end;
+    z-index: 2;
+  }
+
+  header > p {
+    font-size: 110px;
+    font-weight: bold;
+    color:var(--color-4);
+    z-index: 1;
+  }
+
+  section {
+    width: 75%;
+    height: 65%;
+    display: flex;
+    z-index: 1;
+  }
+
+  section > p {
+    color:var(--color-4);
+    line-height: 5;
+  }
+
+  .circle-1 {
+    width: 1000px;
+    height: 1000px;
+    border-radius: 1000px;
+    background-color: var(--color-2);
+    position: absolute;
+
+    top:-40%;
+    left:60%;
+    z-index:0;
+  }
+
+  .circle-2 {
+    width: 700px;
+    height: 700px;
+    border-radius: 700px;
+    background-color: var(--color-2);
+    position: absolute;
+
+    left:-28%;
+    top:30%
+  }
+
+  /* ----------page-2---------- */
+  #page-2{
+    width: 100%;
+    height: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-top: #ccc 1px solid;
+  }
+
+  .gray-text {
+  width: 15%;
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  }
+
+  .gray {
+    width: 100%;
+    height: 90%;
+    background-color: var(--color-3);
+  }
+
+  .text {
+    color:var(--color-4);
+    font-weight: bold;
+    font-size: larger;
+    padding-top: 3%;
+  }
+
+  main {
+    width: 50%;
+    height: 28%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  main > p {
+    width: 95%;
+    font-size: small;
+    color: black;
+    text-align: justify;
+  }
+
+  </style>
+</head>
+<body>
+  <div id="page">
+  <div id="page-1">
+
+  <nav>
+    <h1>nature.</h1>
+    
+    <ul>
+    <li>individual</li>
+    <li>deserve</li>
+    <li>unfair</li>
+    <li>return</li>
+  </ul>
+  </nav>
+
+  <header>
+    <p>Habit is a second nature.</p>
+    
+    <div class="circle-1"></div>
+    <div class="circle-2"></div>
+  </header>
+  
+  <section>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. At quibusdam voluptatibus itaque quod blanditiis totam error et incidunt ullam deserunt quia minus porro, cupiditate exercitationem doloribus officiis quisquam nisi sed illo beatae ducimus. Nostrum recusandae quo fuga nemo. Aperiam qui omnis adipisci nisi neque commodi aliquid, inventore explicabo magnam odio iusto, corporis itaque eveniet, ut impedit reiciendis veniam culpa expedita mollitia libero dolorem! Perspiciatis ipsum hic nemo a deleniti nisi expedita repellendus laboriosam assumenda eveniet eligendi maiores vitae, neque non reprehenderit unde accusamus suscipit dolores deserunt, aliquam vero repellat veritatis mollitia! Eos corrupti voluptas perferendis iusto ipsum itaque sit. Perspiciatis.Lorem, ipsum dolor sit amet consectetur adipisicing elit. At quibusdam voluptatibus itaque quod blanditiis totam error et incidunt ullam deserunt quia minus porro, cupiditate exercitationem doloribus officiis quisquam nisi sed illo beatae ducimus. Nostrum recusandae quo fuga nemo. Aperiam qui omnis adipisci nisi neque commodi aliquid, inventore explicabo magnam odio iusto, corporis itaque eveniet, ut impedit reiciendis veniam culpa expedita mollitia libero dolorem! Perspiciatis ipsum hic nemo a deleniti nisi expedita repellendus laboriosam assumenda eveniet eligendi maiores vitae, neque non reprehenderit unde accusamus suscipit dolores deserunt, aliquam vero repellat veritatis mollitia! Eos corrupti voluptas perferendis iusto ipsum itaque sit. Perspiciatis.</p>
+  </section>
+
+  </div>
+  <!-- page-1 -->
+
+  <div id="page-2">
+
+  <div class="gray-text">
+  <div class="gray"></div>
+  <div class="text">LOREM IPSUM</div>
+  </div>
+
+  <main>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita, nostrum soluta. Perspiciatis quod autem repellat ullam dolore earum. Modi pariatur fuga delectus reprehenderit voluptates. Perferendis at amet quisquam iure voluptatem illo laudantium vitae iusto tenetur. Illum fugit alias iusto animi rem eligendi, at reiciendis sed! Velit reiciendis aliquam, ea, voluptas culpa nihil id quae harum reprehenderit similique repellendus obcaecati? Sit praesentium porro, autem cumque dignissimos ea nemo dolor suscipit veritatis nisi tempora magni distinctio quas ut, voluptatibus, sed ducimus! Assumenda illum laboriosam maxime praesentium dolore blanditiis iste vel consectetur mollitia sequi. Doloremque odit voluptatum reprehenderit aliquid nostrum aut natus modi.</p>
+  </main>
+
+  </div>
+  <!--page-2-->
+
+  </div>
+  <!-- page -->
+</body>
+</html>

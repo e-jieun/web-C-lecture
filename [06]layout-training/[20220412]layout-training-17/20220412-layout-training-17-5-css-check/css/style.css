@@ -1,0 +1,648 @@
+@font-face {
+	font-family: 'Noto Sans KR', sans-serif;
+	src: url(https://fonts.google.com/noto/specimen/Noto+Sans+KR?subset=korean);
+	}
+
+
+/* 
+
+check point : 1
+
+위에 작성된 @font-face 구문을 통해
+폰트 적용방식을 -> CSS에서도 관리할 수 있다.
+
+장점
+1. 스타일관련의 문제이기때문에 HTML 파일에 섞을 필요없이 직관적으로 css 파일에서 다룰 수 있다는 이점
+
+단점
+1. css파일에 문제가 생길경우(거의 그런일은 없긴하지만) 폰트까지 모두 유실되어 랜더링됨(폰트적용이 무효화됨)
+
+
+
+
+
+
+*/
+
+
+	
+	body
+	{	font-family: 'Noto Sans KR', sans-serif;}
+	
+		*{padding: 0;
+		margin: 0;}
+	:root{
+		--g:gray;
+		--lg:lightgray;
+		--dig:dimgray;
+		--dag:darkgray;
+		--08:#080808;
+		--fa:#fafafa;
+		--cy:#ffbb09;
+		--tt:transparent;
+		--bg:rgb(73, 73, 73);
+	}
+	/* 높이를 viewport 100으로 쓰는 root div */
+	#root-1{
+		width: 100vw;
+		height:100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	/* 높이를 viewport 없이 컨텐츠 기준으로 쓰는 root div */
+	#root-2{
+		width: 100vw;
+		height: max-content;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	#root-3{
+		width: 100vw;
+		height: max-content;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	#root-4{
+		width: 100vw;
+		height: 200vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	/* direction-row , container div */
+	.con-r{
+		width:20vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--fa);
+	}
+	.con-r-2{
+		width:20vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: row;
+		background-color: var(--fa);
+	}
+	.con-r-3{
+		width:20vw;
+		height:max-content;
+		display: flex;
+		flex-direction: row;
+		background-color: var(--fa);
+	}
+	.con-r-100{
+		width:100vw;
+		height:max-content;
+		display: flex;
+		flex-direction: row;
+		background-color: var(--fa);
+	}
+	.con-r-100-100{
+		width:100vw;
+		height:100vh;
+		display: flex;
+		flex-direction: row;
+		background-color: var(--fa);
+	}
+	/* direction-column , container div */
+	
+	.con-c{
+		width: 20vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		background-color: var(--fa);
+	}
+	.con-c-2{
+		width: 20vw;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		background-color: var(--fa);
+	}
+	.con-c-3{
+		width: 20vw;
+		height:max-content;
+		display: flex;
+		flex-direction: column;
+		background-color: var(--fa);
+	}
+	.con-c-4{
+		width: 20vw;
+		height:max-content;
+		display: flex;
+		flex-direction: column;
+		background-color: var(--fa);
+	}
+	.con-c-5{
+		width: 100vw;
+		height:100vh;
+		display: flex;
+		flex-direction: column;
+	}
+	.b-box{
+		width: 15vw;
+		height: 5vh;
+		background-color:var(--lg);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 1vh;
+		border-radius: 1vw;
+	}
+	.s-box{
+		width: 4vw;
+		height: 3vh;
+		background-color: var(--08);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius:1vw;
+		color:var(--fa);
+	}
+	header{
+		width: 20vw;
+		background-color:var(--lg);
+		height: 8vh;
+		position: fixed;
+		top: 0;
+		display: flex;
+		align-items: center;
+		z-index: 1;
+	}
+	.profile-1{
+		width: 0.5vw;
+		height: 0.5vw;
+		border-radius:100%;
+		background-color: var(--g);
+		margin-right:1vw;
+		margin-left: 1vw;
+	}
+	.profile-2{
+		width: 2vw;
+		height: 2vw;
+		border-radius:100%;
+		background-color: var(--g);
+		margin-right:1vw;
+		margin-left: 1vw;
+	}
+	.square-2{
+		width: 2vw;
+		height: 2vw;
+		background-color: var(--dag);
+		position: relative;
+		left: 10vw;
+	}
+	/* 이런식으로 하나하나 만들어서 조립 */
+	.width-1-vw {width:1vw;}
+	.width-50-vw {width:50vw;}
+	.height-50-vh {height:50vh;}
+	.border-radius-50-per {border-radius: 50%;}
+	/* 조립연습하는 요소들 */
+	.main{
+		width:20vw;
+		height:max-content;
+		background-color: var(--fa);
+		text-align: center;
+		margin-top: 2vh;
+	}
+	.space{
+		width: 20vw;
+		height: 8vh;
+	}
+	.space-10{
+		width: 100vw;
+		height: 10vh;
+	}
+	.b-img{
+	width: 20vw;
+	height: 30vh;
+	background-color: var(--dig);
+	}
+	.m-img{
+		width: 20vw;
+		height: 20vh;
+		background-color: var(--dig);
+		}
+	.s-img{
+		width: 5vw;
+		height: 5vw;
+		background-color: var(--lg);
+		display:flex;
+		flex-direction: column;
+		align-items: center;
+		margin-left: 1vw;
+		margin-right: 1vw;
+		border-radius:20%;
+	}
+	.s-img-2{
+		width: 4vw;
+		height: 4vw;
+		background-color: var(--lg);
+		margin-left: 1vw;
+		margin-right: 1vw;
+		border-radius:20%;
+	}
+	.s-img-layout{
+		width: 8vw;
+		height: 8vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.s-img-layout-2{
+		width: 6vw;
+		height: 6vw;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.nametag{
+	width: 8vw;
+	height: 3vh;
+	background-color:var(--lg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1vw;
+	position: relative;
+	top: 1vh;
+	left:0.5vw;
+	z-index:0;
+	}
+	.center-text{
+		display: flex;
+		justify-content: center;
+		margin-bottom: 2vh;
+		margin-top: 2vh;
+	}
+	footer{
+		width:20vw;
+		height:7vh;
+		background-color:var(--08);
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		position:fixed;
+		top:93vh;
+	}
+	.footer-icon{
+		width: 2vw;
+		height: 2vw;
+		background-color:var(--g);
+		border-radius:30%;
+	}
+	.wrap{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.text{
+		text-align: left;
+		line-height: 3vh;
+		margin-bottom: 2vh;
+		margin-top: 1vh;
+	}
+	.recipe{
+		margin-top: 2vh;
+	}
+	.recipe-img{
+		width: 10vw;
+		height: 10vw;
+		border-radius: 10%;
+		background-color: var(--g);
+		margin-right: 1vw;
+	}
+	.flex-r{
+		display: flex;
+		justify-content:space-between;
+		align-items: center;
+	}
+	.flex-c{
+		display: flex;
+		flex-direction: column;
+	}
+	.m-t{
+		width: 20vw;
+		display: flex;
+		justify-content:center;
+		margin-top: 3vh;
+	}
+	.m-b{
+		width: 20vw;
+		display: flex;
+		justify-content:center;
+		margin-bottom: 3vh;
+	}
+	.nametag-full{
+		width: 20vw;
+		height: 5vh;
+	background-color:var(--lg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1vw;
+	position: relative;
+	top: 1vh;
+	left:0.5vw;
+	z-index:0;
+	}
+	.timer{
+		width: 15vw;
+		height: 15vw;
+		background-color:var(--fa);
+		position:fixed;
+		top: 30vh;
+		left: 42.5vw;
+		border-radius:100%;
+		color: var(--08);
+		display: flex;
+		align-items:center;
+		justify-content: center;
+	}
+	.position-fixed{
+		position: fixed;
+		top:30vh;
+		left: 42.5vw;
+	}
+	.b-box-c{
+		width: 20vw;
+		height: 10vh;
+		background-color:var(--lg);
+	}
+	.center{
+		align-items: center;
+		justify-content: center;
+	}
+	.left-1{
+		position: relative;
+		left: 1vw;
+	}
+	.left-2{
+		position: relative;
+		left: 2vw;
+	}
+	.top-2{
+		position: relative;
+		margin-top:2vh;
+	}
+	.nametag-full-2{
+		width: 20vw;
+		height: 5vh;
+	background-color:var(--lg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1vw;
+	position: relative;
+	top: 1vh;
+	margin-bottom: 1vh;
+	z-index:0;
+	}
+	.nametag-full-3{
+		width: 20vw;
+		height: 3vh;
+	background-color:var(--lg);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 1vw;
+	position: relative;
+	top: 1vh;
+	margin-bottom: 1vh;
+	z-index:0;
+	}
+	.main-2{
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.space-around{
+		width: inherit;
+		display: flex;
+		justify-content:space-between;
+		margin: 1vw;
+		margin-left: 0.5vw;
+		margin-right: 0.5vw;
+	}
+	.font-weight-100{
+		font-weight: 100;
+		text-align: center;
+	}
+.flex-c-c{
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.mini-bar{
+	width:2vw;
+	height: 0.3vh;
+	background-color:black;
+}
+.p-t{
+	position: relative;
+	top:10vh;
+}
+.p-t-20{
+	position: relative;
+	top:55vh;
+}
+.m-l-r{
+	margin-left:0.5vw;
+	margin-right: 0.5vw;
+}
+.b-lg{
+	background-color: var(--lg);
+}
+.m-t-1{
+	margin-top: 1vh;
+}
+.m-t-3{
+	margin-top: 3vh;
+}
+.m-t-5{
+	margin-top: 5vh;
+}
+.m-t-10{
+	margin-top: 10vh;
+}
+.m-t-20{
+	margin-top: 20vh;
+}
+.j-s-a{
+	justify-content:space-around;
+}
+.j-s-b{
+	justify-content:space-between;
+}
+.p-l{
+	position: relative;
+	left: 2vw;
+}
+.apc{
+width: 50vw;
+height: 100vh;
+display: flex;
+flex-direction: column;
+background-color: whitesmoke;
+align-items: center;
+}
+.apc>div:first-child>ul{
+	display: flex;
+	flex-direction: row;
+	width: 48vw;
+	justify-content: space-between;
+	list-style: none;
+	font-weight: 500;
+}
+.apc>div:nth-child(2)>ul{
+	display: flex;
+	flex-direction: column;
+	width: 48vw;
+	justify-content: space-between;
+	list-style: none;
+	font-size: 2rem;
+	height: 80vh;
+}
+
+.img{
+	width: 50vw;
+	height: 100vh;
+	background-color:var(--dag);
+}
+.img>div>ul{
+	list-style: none;
+	text-align: right;
+	margin-right: 1vw;
+	margin-top: 1vh;
+}
+.m-b-02{
+	margin-bottom: 0.2vh;
+}
+.m-b-05{
+	margin-bottom: 0.5vh;
+}
+.m-b-1{
+	margin-bottom: 1vh;
+}
+.m-b-3{
+	margin-bottom: 3vh;
+}
+.m-b-5{
+	margin-bottom: 5vh;
+}
+.f-r{
+	display: flex;
+}
+.width-90{
+	width:90%;
+}
+.m-r{
+	margin-right: 1vw;
+}
+.m-r-2{
+	margin-right: 2vw;
+}
+.text-left{
+	text-align: left;
+}
+.width-4vw{
+	width: 4vw;
+}
+.m-t-1{
+	margin-top: 1vh;
+}
+.f-w-100{
+	font-weight: 100;
+}
+.f-w-500{
+	font-weight: 500;
+}
+.f-c{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.w30-text{
+	width: 30vw;
+	text-align: left;
+	line-height: 4vh;
+}
+.w30-text-2{
+	width: 30vw;
+	text-align: left;
+	line-height: 2vh;
+}
+.w50-text-2{
+	width: 50vw;
+	text-align: left;
+	line-height: 2vh;
+}
+.p-r-20{
+	position: relative;
+	right: 20vw;
+}
+.p-r-15{
+	position: relative;
+	right: 15vw;
+}
+.box{
+	width: 10vw;
+	height: 70vh;
+	background-color: var(--lg);
+}
+.m-l{
+	margin-left:0.5vw;
+}
+.m-l-10{
+	margin-left:10vw;
+}
+.circle-b{
+	width:50vw;
+	height: 50vw;
+	border-radius: 100%;
+	background-color:var(--lg);
+}
+.circle-m{
+	width:40vw;
+	height: 40vw;
+	border-radius: 100%;
+	background-color:var(--lg);
+}
+.circle-s{
+	width:25vw;
+	height: 25vw;
+	border-radius: 100%;
+	background-color:var(--lg);
+}
+.p-a-ver1{
+	position: absolute;
+	top: -40vh;
+	right: -10vw;
+}
+.p-a-ver2{
+	position: absolute;
+	top: 20vh;
+	left: -15vw;
+}
+
+.z-2{
+	z-index: 2;
+}
+.z-1{
+	z-index: 1;
+}

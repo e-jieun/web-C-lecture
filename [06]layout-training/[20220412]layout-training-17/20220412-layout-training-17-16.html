@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding: 0; box-sizing: border-box;}
+
+    .flex-center{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    :root{
+      --color-1: #ececec;
+      --color-2: #c4c4c4;
+      --color-3: #929292;
+    }
+
+
+
+    #root{
+      width: 100vw;
+      height: 200vh;
+    }
+
+    .container{
+      width: 100vw;
+      height: 100vh;
+
+    }
+
+    .top{
+      width: 100vw;
+      height: 10vh;
+
+      display: flex;
+      justify-content: space-between;
+    }
+    .top>div:nth-child(1){
+      width: 10vw;
+      height: 10vh;
+
+      color: var(--color-3);
+    }
+
+    .top>ul{
+      width: 25vw;
+      height: 10vh;
+
+      margin-right: 2vw;
+
+      list-style-type: none;
+      display: flex;
+      justify-content: space-around;
+
+    }
+    .top>ul>li{
+      width: 10vw;
+      height: 10vh;
+      z-index: 2;
+      color: var(--color-3);
+    }
+    /* nav 끝 */
+    
+    .main{
+      width: 90vw;
+      height: 90vh;
+      
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+    }
+
+    .main>div:nth-child(1){
+      width: 86vw;
+      height: 12vh;
+
+      font-size: 3rem;
+      color: var(--color-3);
+      z-index: 2;
+    }
+    .main>div:nth-child(2)>div:nth-child(1){
+      width: 70vw;
+      height: 40vh;
+
+      display: flex;
+      align-items: center;
+      
+      line-height: 50px;
+    }
+    .main>div:nth-child(2)>div:nth-child(1)>p{
+      width: 50vw;
+      height: 30vh;
+
+      color: var(--color-2);
+      z-index: 2;
+    }
+
+    .c1{
+      width: 40vw;
+      height: 40vw;
+      border-radius: 50%;
+      background-color: var(--color-2);
+
+      position: absolute;
+      left: 70vw;
+      top: -30vh;
+      z-index: 1;
+    }
+    .c2{
+      width: 30vw;
+      height: 30vw;
+      border-radius: 50%;
+      background-color: var(--color-2);
+
+      position: absolute;
+      left: -20vw;
+      top: 10vh;
+      z-index: 1;
+    }
+
+
+    /* page1 */
+
+    .container2{
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+    }
+
+    .container2>div:nth-child(1){
+      width: 25vw;
+      height: 95vh;
+      
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      justify-content: flex-end;
+
+      
+    }
+
+    .container2>div:nth-child(1)>div:nth-child(1){
+      width: 15vw;
+      height: 85vh;
+      background-color: var(--color-3);
+    }
+
+    .container2>div:nth-child(1)>div:nth-child(2){
+      width: 15vw;
+      height: 5vh;
+
+      color: var(--color-3);
+      display: flex;
+      align-items: center;
+    }
+
+    .container2>div:nth-child(2){
+      width: 75vw;
+      height: 80vh;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container2>div:nth-child(2)>div:nth-child(1){
+      width: 85vw;
+      height: 65vh;
+    }
+
+    .container2>div:nth-child(2)>div:nth-child(2){
+      width: 75vw;
+      height: 20vh;
+      display: flex;
+      align-items: flex-end;
+      
+
+      
+    }
+    .container2>div:nth-child(2)>div:nth-child(2)>p{
+      width: 63vw;
+      height: 8vh;
+      margin: 1vw;
+      display: flex;
+      align-items: center;
+
+      line-height: 30px;
+      color: var(--color-3);
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="container">
+      <div class="top">
+        <div class="flex-center">
+          <p>nature.</p>
+        </div>
+      <ul class="flex-center">
+        <li class="flex-center">individual</li>
+        <li class="flex-center">deserve</li>
+        <li class="flex-center">unfair</li>
+        <li class="flex-center">return</li>
+      </ul>
+    </div>
+
+    <!-- nav 끝 -->
+    <div style="width: 120vw; height: 45vh; position: absolute; z-index: 1; display: flex; justify-content: flex-start; align-items: flex-start;">
+      <div class="c1"></div>
+    </div>
+    <!-- 사이 -->
+    <div class="main">
+      <div>
+        <h1>Habit is a second nature.</h1>
+      </div>
+      <div>
+        <div>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores provident excepturi, mollitia in, enim ipsam alias ipsum odio doloremque dolore quasi. Ipsum, molestiae blanditiis provident praesentium sapiente autem aliquid voluptates suscipit, assumenda delectus nesciunt in dignissimos veritatis porro quos tempora qui quaerat fuga numquam, itaque nulla alias magni! Sit, nisi. Ipsum, molestiae blanditiis provident praesentium sapiente autem aliquid voluptates suscipit.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!-- main 끝 -->
+
+
+    <div class="c2"></div>
+
+    </div>
+
+    <div class="container2">
+      <div>
+        <div></div>
+        <div>
+          <p>LOREM IPSUM</p>
+        </div>
+      </div>
+
+      <div>
+        <div></div>
+        <div>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi reprehenderit, eius, earum dignissimos illum magni placeat itaque nobis quaerat, minus incidunt aliquid rerum amet. Natus doloribus voluptas consectetur assumenda voluptate. eius, earum dignissimos illum magni placeat itaque nobis quaerat, minus incidunt aliquid rerum amet. Natus doloribus voluptas consectetur assumenda voluptate. Quasi reprehenderit, eius, earum dignissimos illum magni placeat itaque nobis quaerat, minus incidunt aliquid rerum amet. Natus doloribus voluptas consectetur assumenda voluptate. eius, earum dignissimos illum magni placeat itaque nobis quaerat, minus incidunt aliquid rerum amet. Natus doloribus voluptas consectetur assumenda voluptate.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+$width-root:100vw;
+$height-root:200vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$solid-red:1px solid #613c3c;
+$width-per:45%;
+$height-per:90%;
+$color-1:#e0dede;
+$color-2:#d3d1d1;
+$color-3:#c4c4c4;
+$color-4:#9c9c9c;
+$color-5:#8b8b8b;
+$color-6:#5f5f5f;
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0;}
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+
+
+// check point 1
+
+/*
+
+@mixin 문법을 활용하여 매우 잘 사용하였으나
+
+아래의 사항 "플랙스 유형별로 대처하기 힘든 문제를 해결하기위해
+아래와 같이 작성을 하여 작업을 진행하는 편
+
+@mixin tutorial($justify-content, $align-items, $flex-directon:row;) {
+  dlsplay:flex;
+  justify-content : $justify-content;
+  align-items : $align-items;
+  flex-direction: $flex-direction;
+  
+}
+
+@include tutorial(첫번째자리, 두번째자리, 세번째 자리);
+@include tutorial(첫번째자리, 두번째자리, 세번째 자리의 값이 없으면 기본값 row 실행);
+
+@include tutorial(center, center, column);
+
+* 값이 새겨지는 조건을 확인하면 -> 그때그때 '같은 속성' 이지만, '그 안의 값'은 달라지게 할 수 있다.
+
+
+
+
+
+
+*/
+
+
+
+
+
+
+
+@mixin flex-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-b-c{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-a-c{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+@mixin flex-e-c{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@mixin flex-c-e{
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;
+}  
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h) {
+  width: $w;
+  height: $h;
+  background-color: $color-3;
+}
+
+@mixin circle-style($w, $h) {
+  width: $w;
+  height: $h;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  opacity: 0.6;
+}
+
+
+
+// ----------------------------------------------------------------
+
+#root{
+  @include root-style;
+  overflow: hidden;
+}
+
+header{
+  @include size($w:100%, $h:5%);  
+  @include flex-c-c;
+
+  &>nav{
+    @include size($w:90%, $h:90%);  
+    @include flex-b-c;
+
+    &>div{
+      @include size($w:10%, $h:90%);  
+      @include flex-c-c;
+
+
+      &>h3{
+        color: $color-4;
+      }
+    }
+
+    &>ul{
+      @include size($w:40%, $h:90%);  
+      list-style-type: none;
+      @include flex-b-c;
+      color: $color-4;
+      font-weight: 600;
+    }
+  }
+}
+
+main{
+  @include size($w:100%, $h:50%);
+
+  &>section:nth-child(1){
+    @include size($w:100%, $h:40%);
+    @include flex-b-c;
+
+
+    &>div:nth-child(1){
+      @include circle-style($w:400px,$h:400px );
+      top: 150px;
+      right: 200px;
+      mix-blend-mode:darken;
+    }
+
+    &>div:nth-child(2){
+      @include circle-style($w:900px,$h:900px );
+      mix-blend-mode:hue;
+      left: 200px;
+      bottom: 100px;
+    }
+  }
+
+  &>section:nth-child(2){
+    @include size($w:100%, $h:60%);
+    @include flex-a-c;
+
+    &>h1{
+      @include size($w:90%, $h:20%);
+      color: $color-6;
+      font-size: 120px;
+      @include flex-c-c;
+      letter-spacing: 2px;
+    }
+
+    &>p{
+      @include size($w:60%, $h:70%);
+      color: $color-6;
+      line-height: 50px;
+    }
+  }
+}
+
+footer{
+  @include size($w:100%, $h:45%);
+  @include flex-a-c;
+
+
+  &>section:nth-child(1){
+    @include size($w:20%, $h:90%);
+    @include flex-a-c;
+
+    &>div{
+      @include box-style($w:95%, $h:85%);
+    }
+
+    &>h3{
+      @include size($w:100%, $h:10%);
+      color: $color-5;
+    }
+  }
+
+  &>section:nth-child(2){
+    @include size($w:75%, $h:90%);
+
+    &>p{
+      @include size($w:95%, $h:80%);
+      color: $color-5;
+      @include flex-c-e()
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

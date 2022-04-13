@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="test.css">
+
+  <title>Document</title>
+</head>
+<style>
+  *{margin:0; padding:0;}
+  #root{
+    width:100vw;
+    height:200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    padding:1%;
+  }
+  .header{
+    width:100vw;
+    height:10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+  }
+
+  .header>div{
+    margin-left:3%;
+  }
+
+  .header>div:nth-child(1){
+    justify-content:flex-start;
+    margin:0;
+    /* position으로 이동시켰더니 padding 값안으로 들어오지 않는다  */
+
+    /* 이해해봐야 하는 사항
+    
+    1. 부모자식 관계를 통해 "전체 레이아웃"이 종료된 시점에서 나머지 아이템(글씨와 같은) 요소들이 들어와야한다.
+    2. 디자인 작업부터 -> 역순으로 작업하면 해당 작업과 같은 문제들이 발생한다.
+    3. 틀이 잡혀있지 않는 상태에서 margin이나 padding으로 제어 하는 것으로 끼워맞추면 -> 다른 디바이스에서 대응하지 못한다.
+    
+
+
+    
+    */
+
+
+
+    }
+
+    h1{
+      font-family: 'Roboto', sans-serif;
+      font-size:8em;
+      margin-top:8%;
+      margin-bottom:2%;
+      color: #c4c4c4;
+    }
+
+    .lorem{
+      width:55vw;
+      height:30vh;
+    }
+
+    .lorem>div{
+      line-height:3em;
+      margin-left:14%;
+      color: #c4c4c4;
+    }
+
+    #box{
+      width:10vw;
+      height:50vh;
+      background-color:#c4c4c4;
+      margin-top:40%;
+    }
+
+    .p{
+      width:50vw;
+      height:10vh;
+    }
+
+    #wrapper-1{
+      margin-right:10%;
+      margin-bottom:10%;
+      position:absolute;
+      left:5%;
+      margin-top:40%;
+    }
+
+    p{
+      color:#c4c4c4;
+      line-height:1.5em;
+    }
+
+</style>
+<body>
+  <div id="root">
+    <div class="header">
+      <!-- <div class="nature">nature</div> -->
+      <div>individual</div>
+      <div>deserve</div>
+      <div>unfair</div>
+      <div>return</div>
+    </div>
+
+    <div id="circle-1"></div>
+
+    <h1>Habit is a second nature.</h1>
+    <div class="lorem">
+      <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus libero illum dignissimos magnam voluptatibus minima, sequi quod omnis provident. Omnis illo soluta pariatur accusantium atque ipsum facere, provident voluptates explicabo.
+      Molestias quasi amet quam officia dolor atque quis dolores iure cumque eius. Cupiditate, nostrum. Debitis fugit excepturi recusandae minus maiores nobis id magni cum saepe consequuntur. Quod mollitia reiciendis placeat.
+      Obcaecati qui corrupti cupiditate voluptate, ea aliquid excepturi ipsum magnam officia quasi provident nisi unde repudiandae dolorem rem nam hic dicta? In quis facere veritatis nemo ratione. Facere, vero illum?
+      Inventore perferendis, eligendi sit explicabo optio tenetur. Iste architecto laboriosam maxime incidunt corporis veritatis maiores repellendus tempora magni sunt. Tempora qui necessitatibus debitis, et velit laboriosam. Ratione unde nulla molestias.
+      </div>
+
+
+      <div id="wrapper-1">
+        <div class="p">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque animi consequuntur iusto fuga, sequi perferendis omnis numquam. Facere tenetur quasi similique! Tempore est expedita vel a ipsum quasi quis laudantium?
+          Necessitatibus dolores asperiores suscipit dolorum id vero facilis? Accusantium corrupti obcaecati laudantium nulla perferendis, eligendi, tempora placeat, delectus veniam ipsam quibusdam doloremque! Maiores nulla possimus maxime saepe praesentium, nemo laudantium.
+          Modi hic, aliquid corporis nihil explicabo cumque numquam ratione blanditiis fuga, consequuntur voluptates quibusdam eaque, repellat cupiditate porro quasi iure cum voluptatem dolorum. Quaerat velit molestias minus? Reprehenderit, provident odio?</p>
+        </div>
+      </div>
+      <div id="box"></div>
+      <div>LOREM IPSUM</div>
+
+    </div>
+
+  
+  </div>
+</body>
+</html>

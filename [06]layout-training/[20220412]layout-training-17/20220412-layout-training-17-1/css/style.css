@@ -1,0 +1,200 @@
+*{margin:0; padding:0; box-sizing: border-box;}
+
+#root {
+  width:100vw;
+  height:200vh;
+}
+
+  /* 상단 */
+
+#root > header {
+  width:100vw;
+  height:8vh;
+  display:flex;
+  flex-direction: row;
+}
+
+#root > header > h1 {
+  width:10vw;
+  height:inherit;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color:rgb(114, 114, 114);
+}
+
+#root > header > div:nth-child(2) {
+  width:60vw;
+  height:inherit;
+}
+
+#root > header > div:nth-child(3) {
+  width:30vw;
+  height:inherit;
+
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  color:rgb(114, 114, 114);
+}
+
+  /* 중단 */
+
+#root > main {
+  width:inherit;
+  height:92vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#root > main > div:nth-child(1) {
+  width:inherit;
+  height:20vh;
+}
+
+#root > main > div:nth-child(2) {
+  width:inherit;
+  height:72vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#root > main > div:nth-child(2) > div:nth-child(1) {
+  width:95vw;
+  height:15vh;
+  font-size: 80px;
+  font-weight: bold;
+  color:rgb(114, 114, 114);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root > main > div:nth-child(2) > div:nth-child(2) {
+  width:inherit;
+  height:57vh;
+  display:flex;
+  flex-direction: row;
+
+  align-items: center;
+}
+
+#root > main > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) {
+  width:70vw;
+  height:inherit;
+  display:Flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root > main > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > p {
+  width:40vw;
+  height:inherit;
+  line-height: 5vh;
+  color:rgb(114, 114, 114);
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root > main > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) {
+  width:30vw;
+  height:inherit;
+}
+
+  /* 원 */
+
+#root > .circle-1 {
+  width:30vw;
+  height:30vw;
+  border-radius: 50%;
+  background-color: rgb(237, 237, 237);
+
+  position:absolute;
+  top:15vh;
+  left:-22vw;
+  z-index: -1;
+}
+
+#root > .circle-2 {
+  width:50vw;
+  height:50vw;
+  border-radius: 50%;
+  background-color: rgb(237, 237, 237);
+
+  position:absolute;
+  top:-35vh;
+  left:65vw;
+  z-index: -1;
+}
+
+  /* 하단 */
+
+#root > footer {
+  width:100vw;
+  height:100vh;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root > footer > div {
+  width:80vw;
+  height:80vh;
+  display:flex;
+  flex-direction: row;
+
+}
+
+#root > footer > div > div:nth-child(1) {
+  width:16vw;
+  height:inherit;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+#root > footer > div > div:nth-child(1) > div:nth-child(1) {
+  width:15vw;
+  height:60vh;
+  background-color: rgb(196, 196, 196);
+}
+
+#root > footer > div > div:nth-child(1) > div:nth-child(2) {
+  width:15vw;
+  height:5vh;
+  color:rgb(114, 114, 114);
+  font-weight: bold;
+
+  display:flex;
+  align-items: center;
+}
+
+#root > footer > div > div:nth-child(2) {
+  width:64vw;
+  height:inherit;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+#root > footer > div > div:nth-child(2) > div:nth-child(1) {
+  width:inherit;
+  height:50vh;
+}
+
+#root > footer > div > div:nth-child(2) > div:nth-child(2) {
+  width:inherit;
+  height:30vh;
+  color:rgb(114, 114, 114);
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mark-17</title>
+    <style>
+       *{margin:0; padding:0; box-sizing: border-box;}
+      .container {
+        width:1000px;
+        height:100vh;
+        display: flex;
+        /* align-content: center; */
+        flex-direction:column;
+        overflow: hidden;
+      }
+       li {list-style: none; }
+
+        
+      .header {
+        width:1000px;
+        height:5vh;
+        display: flex;
+        position: none;
+        z-index: 2;
+      } 
+       
+      .header div {
+        width:500px;
+        height:5vh;
+        /* border: 1px solid black; */
+        font-weight: bold;
+      }
+       .header div:nth-child(1) {
+          display: flex;
+          align-items: center;
+          
+      }
+      .header div:nth-child(2) {
+        display: flex;
+        padding:10px;
+        justify-content: space-between;
+      }
+      .main {
+        width:1000px;
+        height:50vh;
+        /* border: 1px solid black; */
+
+      }
+       
+       .main div {
+         width:80vw;
+         height:15vh;
+         /* background-color: gray; */
+         margin:1px;
+       }
+       
+       .main div:nth-child(1) {display: flex;}
+       
+       
+       .main div:nth-child(1) div {
+         width:100px;
+         height:100px;
+         /* border: 1px solid black; */
+         border-radius: 50%;
+       }
+       
+       .main div:nth-child(1) div:nth-child(1) {
+         background-color: blue;
+         width:250px;
+         height:250px;
+         position: relative;
+         right:130px;
+         top:50px;
+         z-index:1;
+       }
+      
+     
+       .main div:nth-child(1) div:nth-child(2) {
+         background-color: red;
+         width:400px;
+         height:400px;
+         position: relative;
+         left:400px;
+         bottom:120px;
+         z-index:1;
+
+       }
+
+       
+      
+       .text1 {
+         font-size: 80px;
+         display: flex;
+         /* justify-content: center; */
+         /* align-items: center; */
+         font-family: impact;
+         z-index:2;
+         position: relative;
+       }
+       
+       
+       .text2 {
+         width:1000px;
+         height:20vh;
+         /* border: 1px solid black; */
+         display: flex;
+         justify-content: center;
+       }
+       .text3 {
+         width:1000px;
+         height:350px;
+         /* border: 1px solid black; */
+         display: flex;
+       }
+       
+       .text3 div:nth-child(1) {
+         width:150px;
+         height:350px;
+         background-color: rgb(130, 189, 189);
+       }
+       
+       .text3 div:nth-child(2) {
+         display: flex;
+         align-items: flex-end;
+         
+
+       }
+       
+       .footer {
+         width:1000px;
+         height:10px;
+         font-weight: bold;
+       }
+       
+       
+       
+      
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div><p>nature</p></div>
+      <div>
+        <li>individual</li>
+        <li>deserve</li>
+        <li>unfair</li>
+        <li>return</li>
+      </div>
+    </div>
+      <div class="main">
+          <div>
+              <div></div>
+              <div></div>
+          </div>
+          <div class="text1"><p>Habit is a second nature.</p></div>
+          <div class="text2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam, maxime perspiciatis obcaecati consequatur saepe ex neque provident ullam veniam itaque!<br><br>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, placeat.<br><br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae iusto molestiae, at laudantium temporibus dignissimos debitis rem tempora dolorem a?</div>
+        
+      </div>
+        <div class="text3">
+          <div></div>
+          <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque culpa dolore harum fugit ipsum.<br> Similique dicta expedita explicabo illum voluptas, odio corrupti asperiores. <br>Cupiditate quasi id delectus voluptas rerum at perspiciatis asperiores voluptatem quas! Recusandae fugiat nemo minus porro provident ratione tenetur. <br>Aut nisi accusantium, aliquid exercitationem et officiis dignissimos?</div>
+        </div>
+          <div class="footer">LOREM IPSUM</div>
+    
+    
+    
+    
+    
+    
+    
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-17</title>
+
+  <style>
+    *{margin:0; padding:0;}
+
+    #root {
+      width: 100%; height: 200vh;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #root > div:nth-child(4) {
+      width: 100%; height: 80vh;
+      position: absolute;
+    }
+
+    #root > div:nth-child(4) > div {
+      width: 40vh; height: 40vh;
+      border-radius: 30vh;
+      background-color: lightseagreen;
+      opacity: 0.3;
+      mix-blend-mode: multiply;
+      position: absolute;
+    }
+
+    #root > div:nth-child(4) > div:nth-child(1) {
+      top: 40vh; left: -10vw;
+    }
+
+    #root > div:nth-child(4) > div:nth-child(2) {
+      width: 80vh; height: 80vh;
+      border-radius: 70vh;
+      top: -20vh; right: -10vw;
+    }
+
+
+/* 정렬 class */
+    .flex {display: flex;}
+    .flex-col {flex-direction: column;}
+    .flex-j-c {justify-content: center;}
+    .flex-a-c {align-items: center;}
+    .flex-a-e {align-items: flex-end;}
+    .flex-j-b {justify-content: space-between;}
+    .flex-j-e {justify-content: flex-end;}
+
+    
+    /* 텍스트 class */
+    .p-big {font-size: 7rem;}
+    .p-mid {font-size: 1.2rem;}
+    .p-line {line-height: 2.2rem;}
+    .p-b {font-weight: bold;}
+    .p-margin-l {margin-left: 2vw;}
+    .p-margin-b {margin-bottom: 2vh;}
+    .p-margin-lr {margin: 0 40vw 0 6vw;}
+    .p-sea {color: seagreen;}
+    .p-gray {color: rgb(85, 85, 85);}
+    
+
+    #root > header {
+      width: 90%; height: 5vh;
+      padding: 1vh 5% 1vh 5%;
+      /* 메뉴를 상단에 고정하고싶어서 fixed를 사용함 */
+      position: fixed;
+    }
+
+    #root > main {
+      width: 90%; height: 53vh;
+      /* border: 1px solid black; */
+      margin-top: 30vh;
+    }
+
+    #root > footer {
+      width: 90%; height: 70vh;
+      margin-top: 40vh;
+    }
+
+    #root > footer > div:nth-child(1){
+      width: 100%; height: 95%;
+
+    }
+
+    #root > footer > div:nth-child(1) > div:nth-child(1){
+      width: 20%; height: 100%;
+      background-color: lightseagreen;
+      margin-right: 1%;
+    }
+
+
+    
+
+  </style>
+
+</head>
+
+<body>
+  
+  <div id="root" class="flex flex-col flex-a-c">
+
+    <header class="flex flex-j-b flex-a-c">
+      <!-- 좌측 로고영역 -->
+      <div class="p-mid p-b p-sea">nature.</div>
+      <!-- 우측 메뉴영역 -->
+      <div class="p-gray">
+        <span class="p-margin-l">individual</span>
+        <span class="p-margin-l">deserve</span>
+        <span class="p-margin-l">unfair</span>
+        <span class="p-margin-l">return</span>
+      </div>
+    </header>
+
+    <main class="flex flex-col flex-j-e">
+      <p class="p-big p-b p-margin-b p-gray"><span class="p-sea">Habit</span> is a second nature.</p>
+      <p class="p-line p-margin-lr p-gray">Lorem ipsum dolor sit amet consectetur adipisicing elit. A provident quis non quasi consectetur nihil placeat, nulla et ducimus omnis eaque atque asperiores, totam quas iure nisi debitis dolorum impedit libero dolore aliquam quia, voluptates dolorem exercitationem! Rerum voluptatibus perspiciatis nulla expedita iusto, quibusdam unde totam accusantium incidunt odio optio obcaecati quidem labore harum maxime tempore facere veritatis. Rem nobis mollitia at pariatur aspernatur sequi corporis tempora nam assumenda.</p>
+    </main>
+
+    <footer class="flex flex-col">
+      <!-- 네모기둥과 텍스트 영역 -->
+      <div class="flex flex-a-e">
+        <div></div>
+        <p class="p-gray">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempore, omnis eveniet molestias facilis, temporibus quis architecto saepe laborum quibusdam dolor aliquam eos aut suscipit magni a, commodi at cum repudiandae. Amet consequuntur culpa ut consectetur corporis enim obcaecati est magni deserunt dignissimos esse, saepe quaerat quibusdam doloribus quis perspiciatis atque.</p>
+      </div>
+      <!-- 덤으로 붙은 작은글씨 (?) -->
+      <div>
+        <p class="p-b p-sea">LOREM IPSUM</p>
+      </div>
+
+    </footer>
+
+    <!-- 배경으로 쓸 원 두 개 (뒤로 숨길 것) -->
+    <div>
+      <div></div>
+      <div></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
