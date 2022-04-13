@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+      
+      
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div {
+      width:30vw;
+      height:5vh;
+      background-color: salmon;
+    }
+
+    
+    
+  </style>
+</head>
+
+<body>
+  <!-- check point : 1 -->
+  <div id="root"></div>
+  <!-- 
+    * id값 root 특성을 가지고 있는 <div> 태그 외에 다른 태그는 작성하지 않았다.
+   -->
+
+   <script>
+
+    const root = document.querySelector('#root');
+    
+    root.addEventListener('click', function() {
+      // * #root을 클릭하면 무언가 동작하게 만들겠다는 뜻이다.
+      // * 일반적으로 부르고 있는 '동작'을 프로그래밍에서는 '이벤트' 라고 부른다.
+      // 사람말로 위의 자바스크립트 코드를 해석하면
+      // "아이디값이 root 인 <div>태그를 클릭하면" 으로 해석할 수 있다.
+      let createElem = document.createElement('div');
+        // click 이라는 이벤트가 진행되었을때 자바스크립트에게 <div>태그를 만들어 놓으라는 뜻으로 위의 코드를 해석할 수 있다.
+      createElem.textContent = "hello";
+        // 즉석에서 만들어진 <div>태그에 '텍스트 노드' 부분을 'hello' 라는 글씨도 함께 새겨지게 한다고 해석 할 수 있다.
+      root.appendChild(createElem);
+
+          // id값 root의 자식으로 위에서 즉석으로 만든 <div> 태그를 추가해달라는 함수를 사용했다. 
+    });
+
+    // 결과적으로 "문서 중 아무곳이나 클릭하면 즉석으로 <div> 태그를 만들어 내는 애플리케이션"을 만들어낸 셈이다.
+    // 자바스크립트를 통해 -HTML을 '즉석'으로 만들어내는 간단한 예시이나,
+    // 대부분의 서비스들이 활용하고 있는 매우 중요한 개념중 하나다.
+
+
+   </script>
+</body>
+
+</html>
