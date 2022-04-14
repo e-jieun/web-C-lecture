@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    @keyframes move-top {
+      0%{
+        top:0px;
+      }
+      50% {
+        top:26vw;
+        background-color: salmon;
+      }
+      100% {
+        top:0px;
+      }
+    }
+
+    @keyframes move-bottom {
+      0%{
+        bottom:0px;
+      }
+      50% {
+        bottom:26vw;
+        background-color: darkcyan;
+
+      }
+      100% {
+        bottom:0px;
+        
+      }
+    }
+
+    
+    @keyframes move-left {
+      0%{
+        left:0px;
+      }
+      50% {
+        left:26vw;
+        background-color: darkturquoise;
+
+      }
+      100% {
+        left:0px;
+      }
+    }
+
+    @keyframes move-right {
+      0%{
+        right:0px;
+      }
+      50% {
+        right:26vw;
+        background-color: royalblue;
+      }
+      100% {
+        right:0px;
+      }
+    }
+
+    @keyframes root-background-color {
+      0%{
+        background-color: #fff;
+      }
+      50% {
+        background-color: #ccc;
+      }
+      100% {
+        background-color: #fff;
+      }
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+
+      /* flex */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      /* position 추가 부여*/
+      position:relative;
+      animation: 5s root-background-color infinite;
+    }
+
+    /* #root의 직계자식 section 전체 */
+    #root>section {
+      width: 20vw;
+      height: 20vw;
+      background-color: #fff;
+      position: absolute;
+      opacity: 0.5;
+
+
+      /* 
+      
+      1. <section> 태그에 모두 position 값 absolute를 부여했다.
+      2. 부모태그인 #root은 별도의 position 값이 지정되어있지 않기 때문에
+      3. 현재 <section> 태그는 <body> 태그의 기준으로 포지셔닝이 되고 있다. 
+
+      4. #root의 기준으로 포지션을 지정 하고 싶기 때문에 -> #root 선택자에 position:relative를 추가로 부여했다.
+      */
+    }
+
+    #root>section:nth-child(1) {
+      top:27vw;
+      background-color: #ddd;
+      animation: 5s move-top infinite;
+    }
+    #root>section:nth-child(2) {
+      bottom:27vw;
+      background-color: #eee;
+      animation: 5s move-bottom infinite;
+    }
+    #root>section:nth-child(3) {
+      left:27vw;
+      background-color: #bbb;
+      animation: 5s move-left infinite;
+    }
+    #root>section:nth-child(4) {
+      right:27vw;
+      background-color: #aaa;
+      animation: 5s move-right infinite;
+    }
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+</body>
+
+</html>
