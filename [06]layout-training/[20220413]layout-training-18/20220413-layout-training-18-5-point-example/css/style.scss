@@ -1,0 +1,186 @@
+// common
+*{
+  margin: 0;
+  padding: 0;
+}
+//variable
+$color-bk: black;
+$color-c4: #618099;
+$color-dp: #8068AD;
+$color-pp: #C8B5C8;
+$color-d6: #d0e1ec;
+$color-yel: #EDEBB2;
+$color-cr: #FFFEF9;
+$border-bk: 1px solid black;
+$border-red: 1px solid red;
+$per100: 100%;
+$tablet: 600px;
+//class-set
+@mixin flex-align-justify($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+@mixin border($px, $color) {
+  border: $px solid $color;
+}
+@mixin width-height($width, $height){
+  width: $width;
+  height: $height;
+}
+
+// pc media query
+@mixin tablet{
+  @media (min-width: $tablet){
+    @content;
+  }
+}
+%flex-center-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+%flex-column{
+  flex-direction: column;
+}
+// @use 'base';
+// https://sass-lang.com/documentation/at-rules/use
+
+// style
+#root{
+  @include width-height(100vw, 100vh);
+  #con{
+    @include width-height(inherit, inherit);
+    box-sizing: border-box;
+    color: rgb(91, 121, 177);
+    // border: $border-bk;
+    // menu con
+    &>div:nth-child(1){
+      @include width-height(inherit, 10%);
+      // border: $border-bk;
+      nav{
+        @include width-height(inherit, $per100);
+        // border: $border-red;
+        @extend %flex-center-center;
+        ul{
+          @include width-height(400px, $per100);
+          // border: $border-red;
+          list-style-type: none;
+          @include flex-align-justify(flex-start, space-between);
+          li{
+            @include width-height(80px, $per100);
+            // border: $border-red;
+            @extend %flex-center-center;
+            color: #000;
+            font-size: 0.8rem;
+          }
+          li:nth-child(2){
+            @include flex-align-justify(center, space-between);
+            @extend %flex-column;
+            // border: $border-red;
+            &>div:nth-child(1){
+              @include width-height($per100, 90%);
+              background: $color-c4;
+              @extend %flex-center-center;
+              &>div{
+                color: #fff;
+              }
+            }
+            &>div:nth-child(2){
+              @include width-height($per100, 5%);
+              background-color: $color-c4;
+            }
+          }
+        }
+      }
+    }
+    // main con
+    &>div:nth-child(2){
+      @include width-height(inherit, 90%);
+      // border: $border-bk;
+      @include tablet{
+        @include flex-align-justify(center, center);
+      }
+      &>div{
+        // border: $border-bk;
+        @include width-height(inherit, $per100);
+        @extend %flex-center-center;
+        @include tablet{
+          @include width-height(90%, $per100);
+          @include flex-align-justify(center, space-evenly);
+          column-gap: 2vw;
+        }
+      // pale blue con
+      &>div:nth-child(1){
+        @include width-height(70vw, 60vh);
+        // border: $border-bk;
+        order: 2;
+        @extend %flex-center-center;
+        @extend %flex-column;
+        background-color: $color-d6;
+        &>div:nth-child(1){
+          color: #fff;
+          font-family: 'Plus Jakarta Sans', sans-serif;
+          font-size: 5rem;
+          font-weight: 900;
+          @extend %flex-center-center;
+          // !con에 relative를 주고 글자의 position 값을 옯기자!
+          position: relative;
+          &>div:nth-child(1){
+            position: absolute;
+            // !고정값으로 지정해줘야 틀어지지 않음
+            top: -45px;
+            right: -28px;
+            color: gray;
+            opacity: .5;
+          }
+          &>div:nth-child(2){
+            position: absolute;
+            // top: 40vh;
+            // right: 34vw;
+          }
+        }
+        &>div:nth-child(2){
+          @include width-height(100px, 2px);
+          background-color: $color-c4;
+          position: relative;
+          top: 10vh;
+        }
+        &>div:nth-child(3){
+          // border: $border-red;
+          width: 90%;
+          position: relative;
+          top: 15vh;
+          @extend %flex-center-center;
+          &>div{
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 500;
+          }
+        }
+      }
+      // dark blue con
+      &>div:nth-child(2){
+        @include width-height(40vw, 60vh);
+        // border: $border-bk;
+        background-color: $color-c4;
+        order: 3;
+        position: absolute;
+        top: 20vh;
+        right: -5vw;
+        z-index: -1;
+        @include tablet{
+          position: static;
+        }
+      }
+      // arrow con
+      &>div:nth-child(3){
+        @include width-height(10vw, 60vh);
+        order: 1;
+        // border: $border-bk;
+        @extend %flex-center-center;
+      }
+    }
+    }
+  }
+}
