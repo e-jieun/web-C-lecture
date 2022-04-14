@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    @media (max-width:100vw)
+    {
+      body {background-color: #fff}
+    }
+
+    #root {
+
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root > div {
+
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    #root > div > div > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root > div > div > div:nth-child(1) > section {
+
+      width: 100px;
+      height: 50px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      text-align: center;
+
+    }
+
+    #root > div > div > div:nth-child(1) > section:nth-child(2) {
+
+      background-color: rgb(141, 183, 219);
+      border-bottom: 5px solid rgb(43, 81, 114);
+
+    }
+
+    #root > div > div > div:nth-child(2) > section {
+
+      margin-top: 200px;
+
+    }
+
+    #root > div > div > div:nth-child(2) > section:nth-child(1) {
+
+      width: 300px;
+      height: 400px;
+      background-color: rgb(153, 192, 226);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      flex-direction: column;
+      
+      position: absolute;      
+    }
+
+    #root > div > div > div:nth-child(2) > section:nth-child(1) > h2 {
+
+      color: white;
+      font-size: 100px;
+      font-weight: bolder;
+      text-shadow: -5px 10px 1px gray;
+
+    }
+
+    hr {width: 150px;}
+
+    #root > div > div > div:nth-child(2) > section:nth-child(1) > p {
+
+      font-size: small;
+      text-align: center;
+
+      color: rgb(24, 67, 105);
+
+      margin-bottom: 100px;
+
+    }
+
+    #root > div > div > div:nth-child(2) > section:nth-child(2) {
+
+      width: 250px;
+      height: 500px;
+      background-color: rgb(28, 76, 117);
+
+      margin-left: 30vw;
+      margin-top: 100px;
+
+    } 
+
+    .arrow {
+
+      border: solid rgb(161, 155, 155);
+      border-width: 0 4px 4px 0;
+      display: inline-block;
+      padding: 10px;
+
+      transform: rotate(135deg);
+    }
+  </style>
+
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div class="arrow"></div>
+      <div>
+
+        <div>
+          <section>lorem</section>
+          <section>lorem</section>
+          <section>lorem</section>
+          <section>lorem</section>
+        </div>
+
+        <div>
+          <section>
+            <h2>G</h2>
+            <hr>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, numquam eos magnam, facere distinctio dolore qui at debitis illo sunt voluptas, vero in vel tempora sint perferendis praesentium. Asperiores, quasi.</p>
+          </section>
+          <section></section>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

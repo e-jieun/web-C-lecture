@@ -1,0 +1,310 @@
+*{margin: 0; padding: 0; box-sizing: border-box;} 
+
+@mixin flex-center($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+:root{
+  --color-1: #11337e;
+  --color-2: #4270d3;
+  --color-3: #a7bff3;
+}
+
+#root{
+  width: 100vw;
+  height: 100vh;
+
+
+  &>div:nth-child(1){
+    width: 100vw;
+    height: 10vh;
+
+    @include flex-center(center, center);
+    &>ul{
+      width: 100vw;
+      height: 15vh;
+      color: var(--color-3);
+
+      list-style-type: none;
+      @include flex-center(space-around, center);
+      
+      &>li:nth-child(2){
+        width: 25vw;
+        height: 10vh;
+        background-color: var(--color-1);
+
+        color: #fff;
+
+        @include flex-center(center, center)
+      }
+      // 리스트에 밑줄을 어떻게 넣는건지 모르겠다
+
+      /* 
+
+      * check point 1
+
+      * 여러가지 방법이 존재하는데 간단한 아이디어가 필요하다.
+      * border-bottom 으로 해결하는 법
+      * <div>과 같은 태그로 스타일링 하는 법
+
+      */
+
+
+      // div을 하나 더 씌워서 밑줄을 만드는건가, 해봤는데 잘 안된다. 태그 지정이 잘못되었는지 원인을 잘 모르겠다.
+
+    }
+  }
+  // nav
+  &>div:nth-child(2){
+    width: 100vw;
+    height: 15vh;
+      // border: 1px solid red;
+  }
+
+  &>div:nth-child(3){
+    width: 100vw;
+    height: 70vh;
+    
+    // container
+
+    
+    &>div:nth-child(1){
+      width: 100vw;
+      height: 60vh;
+      position: absolute;
+      z-index: 1;
+
+      @include flex-center(flex-end, center);
+
+      &>div{
+        width: 70vw;
+        height: 60vh;
+        background-color: var(--color-2);
+        z-index: 1;
+
+        @include flex-center(center, center);
+
+
+      }
+    }
+    &>div:nth-child(2){
+      width: 100vw;
+      height: 70vh;
+
+      @include flex-center(center, flex-end);
+      position: absolute;
+      z-index: 2;
+    
+
+      &>div{
+        width: 90vw;
+        height: 65vh;
+
+        background-color: var(--color-3);
+        @include flex-center(center, flex-start);
+        flex-direction: column;
+
+        &>div:nth-child(1){
+          width: 50vw;
+          height: 10vh;
+
+          color: #fff;
+          font-size: 2.5rem;
+          @include flex-center(space-between, center);
+// G에 그림자 만드는 방법을 잘 모르갰다. Position을 써서 겹치는것 같은데 정확한 방법을 잘 모르겠다
+
+/*
+
+  check point 2
+
+  최종 모습은 글자이지만 -> 사실 <div> 태그를 포개놓은 것과 다르지 않음을 확인 할 것
+  포개는 것이 가능하면 글씨를 포개는 것이 가능해짐
+  
+
+
+
+*/
+
+
+
+          &>div:nth-child(1){
+            width: 10vw;
+            height: 10vw;
+            // border: 1px solid red;
+            @include flex-center(center,center);
+            flex-direction: column;
+
+            &>div:nth-child(1){
+              width: 25px;
+              height: 5px;
+              background-color: #fff;
+
+              transform: rotate(45deg);
+              
+            }
+            &>div:nth-child(2){
+              width: 25px;
+              height: 5px;
+              background-color: #fff;
+              margin-top: 10px;
+
+              transform: rotate(-225deg);
+            }
+
+            // >꺽쇠 만드는 방법을 아직 잘 모르겠다.
+            // 로테이션으로 돌리는것 까지는 알겠는데  정확하게 > 이 모양을 만드는 방법을 잘 모르겠다
+
+            // 구글 검색해서 마진값을 10px 주라고 해서 줬더니 해결!
+          }
+
+        }
+        &>div:nth-child(2){
+          width: 87vw;
+          height:3vh;
+          @include flex-center(center, center);
+
+          &>div{
+            width: 15vw;
+            height: 0.3vh;
+            background-color: #fff;
+          }
+        }
+
+        &>div:nth-child(3){
+          width: 90vw;
+          height: 25vh;
+          color: var(--color-2);
+
+          @include flex-center(center, flex-end);
+          text-align: center;
+
+          &>p{
+            width: 80vw;
+            height: 20vh;
+          }
+        }
+      }
+  }
+}
+}
+
+
+
+
+
+
+
+@media (min-width: 800px){
+
+
+  #root{
+    @include flex-center(flex-start,center);
+    flex-direction: column;
+
+    &>div:nth-child(1){
+      width: 50vw;
+      height: 10vh;
+
+      @include flex-center(center,center);
+
+      &>ul{
+        width: 30vw;
+        height: 15vh;
+        // background-color: #4270d3;
+        @include flex-center(space-around,center);
+
+        &>li:nth-child(2){
+          width: 5vw;
+          height: 10vh;
+          @include flex-center(center,center);
+        }
+      }
+    }
+      // nav 끝
+    &>div:nth-child(2){
+      width: 100vw;
+      height: 20vh;
+      
+    }
+    &>div:nth-child(3){
+      width: 100vw;
+      height: 60vh;
+
+      display: flex;
+
+      &>div:nth-child(1){
+        width: 90vw;
+        height: 60vh;
+        @include flex-center(flex-end, center);
+        
+
+        
+        &>div{
+          width: 24vw;
+          height: 60vh;
+          background-color: var(--color-1);
+
+          margin-left: 2vw;
+        }
+      }
+      &>div:nth-child(2){
+        width: 100vw;
+        height: 50vw;
+        
+        @include flex-center(center, flex-start );
+        
+        &>div:nth-child(1){
+          width: 30vw;
+          height: 60vh;
+
+          @include flex-center(center,center );
+          flex-direction: column;
+
+          &>div:nth-child(1){
+            width: 50vw;
+            height: 20vh;
+            @include flex-center(flex-start,flex-end );
+
+            &>div:nth-child(1){
+              width: 23vw;
+              height: 10vh;
+
+              @include flex-center(center,flex-start )
+              ;
+            }
+            &>div:nth-child(1)>div{
+              width: 31px;
+              background-color: var(--color-1);
+              margin-bottom: 5px;
+            }
+          }
+          &>div:nth-child(2){
+            width: 20vw;
+            height: 3vh;
+            &>div{
+              width: 5vw;
+              height: 0.3vh;
+            }
+          }
+          &>div:nth-child(3){
+            width: 40vw;
+            height: 15vh;
+            @include flex-center(center,center);
+            &>p{
+              width: 40vh;
+              height: 5vh;
+            }
+          }
+        }
+      }
+    }
+  } 
+}
+// ☆미디어쿼리를 쓸 경우 마크업 작업에서부터 화면 크기에 다라 어떻게 움직일지 염두해 두어야 한다☆
+
+
+
+// 이번 레이아웃 작업에서 전체적으로 마크업이 망한것 같습니다.. 어찌어찌 구색은 맞추긴 했으나
+// 하면서도 이런식의 마크업은 잘못되었다는 것을 스스로 느꼈습니다.
+// 아직 scss로 작업하는 것에 익숙하지 않은데 거기에 미디어쿼리까지 넣다보니 더욱 엉망이 된 것같습니다. 개인적으로 이번 레이아웃을 몇 번 더 연습해 볼 생각입니다.

@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0;padding:0;}
+    .table{
+      width: 100vw;
+      height: 100vh;
+      border: 1px solid black;
+    }
+
+    .menu{
+      width: 100vw;
+      height: 10vh;
+      display: flex;
+      
+    }
+
+    .menu>div:nth-child(1){
+      width: 25vw;
+      height: 9vh;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .menu>div:nth-child(2){
+      width: 16vw;
+      height: 10vh;
+      border-bottom: 4px solid lightgreen;
+    }
+
+    .menu>div:nth-child(2)>div{
+      width: 16vw;
+      height: 9vh;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      background-color: lightgreen;
+      color: white;
+      font-weight: bold;
+    }
+    
+
+    .menu>div:nth-child(3){
+      width: 25vw;
+      height: 9vh;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      font-weight: bold;
+    }
+    .menu>div:nth-child(4){
+      width: 25vw;
+      height: 9vh;
+      
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .main{
+      width: 100vw;
+      height: 90vh;
+      display: flex;
+      align-items:center;
+      justify-content: flex-end;
+
+    }
+
+    .main>div:nth-child(1){
+      width: 90vw;
+      height: 70vh;
+      background-color:green;
+      position:absolute;
+      left: 10px;
+      bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+    }
+
+    .main>div:nth-child(2){
+      width: 70vw;
+      height: 80vh;
+      background-color: lightgreen;
+      
+      
+    }
+
+
+    .main2>div:nth-child(1){
+      width: 87vw;
+      height: 20vh;
+      display: flex;
+    }
+
+    .main2>div:nth-child(1)>div:nth-child(1){
+      width: 38vw;
+      height: 20vh;
+    }
+
+    .main2>div:nth-child(1)>div:nth-child(2){
+      width: 10vw;
+      height: 20vh;
+      border-bottom:10px solid lightgreen;
+      display: flex;
+      justify-content: center;
+    }
+
+    .main2>div:nth-child(1)>div:nth-child(2)>div:nth-child(1){
+      font-size: 200px;
+      position:absolute;
+      bottom: 390px;
+    }
+
+    .main2>div:nth-child(1)>div:nth-child(2)>div:nth-child(2){
+      font-size: 200px;
+      position:absolute;
+      bottom: 398px;
+      color: white;
+    }
+
+    .arrow-prev{
+    position: relative;
+    float:left;
+    width:100px;
+    height:100px;
+    margin-right:5px;
+    right: 10px;
+    }
+    
+
+    .arrow-prev::after {
+    position: absolute;
+    left: 35px; 
+    top: 20px;
+    content: '';
+    width: 30px; /* 사이즈 */
+    height: 30px; /* 사이즈 */
+    border-top: 5px solid lightgreen; /* 선 두께 */
+    border-right: 5px solid lightgreen; /* 선 두께 */
+    transform: rotate(225deg); /* 각도 */
+    }
+
+
+    .main2>div:nth-child(2){
+      width: 85vw;
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .main2>div:nth-child(2)>div{
+      width: 80vw;
+      height: 15vh;
+      color: lightgreen;
+    }
+
+
+    @media (min-width:800px) {
+      *{margin:0;padding:0;}
+    .table{
+      width: 100vw;
+      height: 100vh;
+      border: 1px solid black;
+    }
+
+    .menu{
+      width: 100vw;
+      height: 10vh;
+      display: flex;
+      justify-content: center;
+
+    }
+
+    .menu>div:nth-child(1){
+      width: 5vw;
+      height: 9vh;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+
+    .menu>div:nth-child(2){
+      width: 3vw;
+      height: 10vh;
+      border-bottom: 4px solid black;
+    }
+
+    .menu>div:nth-child(2)>div{
+      width: 3vw;
+      height: 9vh;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+    
+
+    .menu>div:nth-child(3){
+      width: 5vw;
+      height: 9vh;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+    .menu>div:nth-child(4){
+      width: 5vw;
+      height: 9vh;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+    }
+
+    .main{
+      width: 100vw;
+      height: 90vh;
+      background-color: white;
+      display: flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    .main>div:nth-child(1){
+      width: 40vw;
+      height: 70vh;
+      background-color:green;
+      position:relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .main>div:nth-child(2){
+      width: 20vw;
+      height: 70vh;
+      background-color:lightgreen;
+      position:relative;
+      left: 25px;
+      bottom: 10px;
+    }
+
+
+    .main2>div:nth-child(1){
+      width: 87vw;
+      height: 20vh;
+      display: flex;
+    }
+
+    .main2>div:nth-child(1)>div:nth-child(1){
+      width: 38vw;
+      height: 20vh;
+      position: relative;
+      left: 350px;
+      top:40px      
+      
+    }
+
+    .main2>div:nth-child(1)>div:nth-child(2){
+      width: 10vw;
+      height: 20vh;
+      border-bottom:10px solid lightgreen;
+      display: flex;
+      justify-content: center;
+    }
+
+    .main2>div:nth-child(1)>div:nth-child(2)>div:nth-child(1){
+      font-size: 200px;
+      position:absolute;
+      bottom: 350px;
+    }
+
+    .main2>div:nth-child(1)>div:nth-child(2)>div:nth-child(2){
+      font-size: 200px;
+      position:absolute;
+      bottom: 360px;
+      color: white;
+    }
+
+    .arrow-prev{
+    position: relative;
+    float:left;
+    width:100px;
+    height:10px;
+    margin-right:5px;
+    right: 10px;
+    }
+    
+
+    .arrow-prev::after {
+    position: absolute;
+    left: 35px; 
+    top: 20px;
+    content: '';
+    width: 30px; /* 사이즈 */
+    height: 30px; /* 사이즈 */
+    border-top: 5px solid lightgreen; /* 선 두께 */
+    border-right: 5px solid lightgreen; /* 선 두께 */
+    transform: rotate(225deg); /* 각도 */
+    }
+
+
+    .main2>div:nth-child(2){
+      width: 85vw;
+      height: 20vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    .main2>div:nth-child(2)>div{
+      width: 30vw;
+      height: 15vh;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+
+
+
+      
+    }
+
+    
+
+
+
+
+    
+
+    
+  </style>
+</head>
+<body>
+  <div class="table">
+    <!-- 머리메뉴바 -->
+    <div class="menu">
+      <div>MODERN</div>
+      <div>
+        <div>ART</div>
+      </div>
+      <div>WITH</div>
+      <div>TASTE</div>
+    </div>
+    <!-- 메인 -->
+    <div class="main">
+
+      <div class="main2">
+
+        <div>
+          <div>
+            <span class="arrow-prev"></span>
+          </div>
+
+          <div>
+            <div>s</div>
+            <div>s</div>
+          </div>
+          
+        
+        </div>
+
+
+        <div>
+          <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Delectus perferendis dicta repudiandae, officia consequatur eaque similique voluptates, quia ea doloremque deserunt iste ipsa fuga reprehenderit aperiam mollitia? Accusamus, distinctio repe</div>
+        </div>
+      
+      </div>
+
+
+      
+      <div class="main3"></div>
+
+    </div>
+</body>
+</html>

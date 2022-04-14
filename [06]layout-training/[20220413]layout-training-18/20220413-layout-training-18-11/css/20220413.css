@@ -1,0 +1,149 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  color: inherit;
+  list-style: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 95vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+nav {
+  width: 400px;
+  height: 80px;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: inherit;
+      -ms-flex-align: inherit;
+          align-items: inherit;
+}
+
+nav ul a {
+  padding: 10px 0;
+}
+
+nav ul a li {
+  line-height: 50px;
+  width: 70px;
+  text-align: center;
+}
+
+nav ul a:hover {
+  border-bottom: 3px solid darkcyan;
+}
+
+nav ul a:hover li {
+  background-color: darkcyan;
+}
+
+#main {
+  position: relative;
+}
+
+#main #arrow {
+  width: 50px;
+  height: 50px;
+  color: #c4c4c4;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+}
+
+#main #box {
+  width: 400px;
+  height: 80vh;
+  background-color: lightblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#main #box h1 {
+  padding-top: 25%;
+  text-align: center;
+  font-size: 5rem;
+  color: #fff;
+  text-shadow: -5px 5px 0 #999;
+}
+
+#main #box > div {
+  border: 2px solid #fff;
+  width: 5rem;
+}
+
+#main #box > p {
+  width: 90%;
+}
+
+#main #sub-box {
+  width: 400px;
+  height: 80vh;
+  background-color: cadetblue;
+  position: absolute;
+  top: -20px;
+  left: 30%;
+  z-index: -1;
+}
+
+@media (min-width: 1000px) {
+  #main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 80vw;
+  }
+  #main #arrow {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+  #main #box {
+    margin: 0 20px;
+    width: 40vw;
+  }
+  #main #sub-box {
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+}
+/*# sourceMappingURL=20220413.css.map */

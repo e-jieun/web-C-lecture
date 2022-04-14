@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-1: rgb(231, 203, 217);
+  --color-2: rgb(255, 208, 230);
+  --color-3: rgb(255, 91, 170);
+  --color-4: rgb(255, 239, 247);
+  --color-5: rgb(168, 52, 108);
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: none;
+  flex-direction: column;
+  overflow: hidden;
+}
+#root > nav {
+  width: 95vw;
+  height: 7vh;
+  display: flex;
+  align-items: none;
+  justify-content: center;
+  flex-direction: none;
+  position: relative;
+}
+#root > nav > span {
+  color: var(--color-1);
+  font-size: 0.7rem;
+  font-weight: bold;
+  height: 50%;
+  padding: 10px 20px 20px 20px;
+}
+#root > nav > span:nth-child(2) {
+  color: var(--color-3);
+  font-size: 0.7rem;
+  font-weight: bold;
+  background-color: var(--color-2);
+}
+#root > nav > div:last-child {
+  width: 100%;
+  border-bottom: 3px solid white;
+  z-index: 2;
+  top: 5.5vh;
+  position: absolute;
+}
+#root > main {
+  width: 95vw;
+  height: 72vh;
+  margin-top: 15vh;
+  transition: 1s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: none;
+}
+#root > main > div:first-child {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 5vh;
+  position: absolute;
+  z-index: 2;
+  left: 14vw;
+  top: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: none;
+  color: var(--color-3);
+  font-size: 2rem;
+  font-weight: none;
+}
+#root > main > div:nth-child(2) {
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-4);
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#root > main > div:nth-child(2) > div:first-child {
+  color: var(--color-2);
+  font-size: 6rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 4vh;
+  position: relative;
+}
+#root > main > div:nth-child(2) > div:first-child > p:first-child {
+  position: absolute;
+  right: 12px;
+  top: -9px;
+  z-index: 2;
+}
+#root > main > div:nth-child(2) > div:first-child > p:nth-child(2) {
+  color: var(--color-3);
+  font-size: 6rem;
+  font-weight: bold;
+  position: absolute;
+  left: 12px;
+  z-index: 1;
+}
+#root > main > div:nth-child(2) > div:nth-child(2) {
+  width: 30%;
+  height: 0.5vh;
+  margin-bottom: 3vh;
+  background-color: var(--color-3);
+}
+#root > main > div:nth-child(2) > div:nth-child(3) {
+  width: 90%;
+  color: var(--color-5);
+  font-size: none;
+  font-weight: thin;
+  text-align: center;
+}
+#root > main > div:nth-child(3) {
+  width: 80%;
+  height: 100%;
+  background-color: var(--color-3);
+  position: absolute;
+  z-index: 0;
+  bottom: 5vh;
+  right: -10vw;
+}
+
+@media (min-width: 1000px) {
+  #root > main {
+    width: 70vw;
+    height: 55vh;
+    margin-top: 20vh;
+  }
+  #root > main > div:first-child {
+    left: -6vw;
+    top: 19vh;
+  }
+  #root > main > div:nth-child(2) {
+    width: 50%;
+    height: 100%;
+    padding: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  #root > main > div:nth-child(3) {
+    width: 40%;
+    height: 100%;
+    position: relative;
+    bottom: 0;
+    right: 0;
+  }
+}/*# sourceMappingURL=style.css.map */

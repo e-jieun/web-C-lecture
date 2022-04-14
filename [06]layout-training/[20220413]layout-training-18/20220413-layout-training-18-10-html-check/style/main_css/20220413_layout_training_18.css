@@ -1,0 +1,147 @@
+.select-menu-color {
+  color: #fff;
+}
+
+#base {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+}
+#base > .root {
+  width: 390px;
+  height: 844px;
+  border: 1px solid black;
+  overflow: hidden;
+}
+#base > .root > .menu {
+  width: 100%;
+  height: 10%;
+  position: relative;
+}
+#base > .root > .menu > .select-menu {
+  width: 80%;
+  height: 100%;
+  position: relative;
+}
+#base > .root > .menu > .select-menu > div {
+  width: 20%;
+  height: 100%;
+  position: relative;
+  right: 9%;
+}
+#base > .root > .menu > .select-menu > div > div:nth-child(1) {
+  width: 100%;
+  height: 80%;
+  background-color: #737f9c;
+}
+#base > .root > .menu > .select-menu > div > div:nth-child(2) {
+  width: 100%;
+  height: 20%;
+}
+#base > .root > .menu > .select-menu > div > div:nth-child(2) > div {
+  width: 100%;
+  height: 34%;
+  background-color: #737f9c;
+  border-radius: 10%;
+}
+#base > .root > .menu > .menu-text {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+}
+#base > .root > .menu > .menu-text > span {
+  height: 100%;
+}
+#base > .root > .menu > .menu-text > span > p {
+  font-weight: bold;
+}
+#base > .root > .main {
+  width: 100%;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+}
+#base > .root > .main > div {
+  width: 92%;
+  height: 88%;
+  justify-content: center;
+  align-items: flex-end;
+  position: relative;
+}
+#base > .root > .main > div > div:nth-child(1) {
+  width: 80%;
+  height: 82%;
+  background-color: #737f9c;
+  position: absolute;
+  right: -14%;
+  bottom: 10%;
+}
+#base > .root > .main > div > div:nth-child(2) {
+  width: 100%;
+  height: 82%;
+  background-color: #c4e2e0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#base > .root > .main > div > div:nth-child(2) > div {
+  width: 92%;
+  height: 60%;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(1) {
+  width: 100%;
+  height: 40%;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(1) > div {
+  width: 10%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(1) > div > div {
+  width: 100%;
+  height: 30%;
+  justify-content: flex-start;
+  align-items: center;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(1) > div > div > i {
+  font-size: 1.5rem;
+  color: #737f9c;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) {
+  width: 80%;
+  height: 100%;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div {
+  width: 50%;
+  height: 86%;
+  justify-content: center;
+  align-items: flex-end;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(2) > div > p {
+  font-size: 6.375rem;
+  font-weight: bolder;
+  color: #e8eff1;
+  text-shadow: -5px 5px 2px #737f9c;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(2) {
+  width: 100%;
+  height: 14%;
+  justify-content: center;
+  align-items: center;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(2) > div {
+  width: 20%;
+  height: 10%;
+  background-color: #737f9c;
+  border-radius: 30px;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(3) {
+  width: 100%;
+  height: 40%;
+}
+#base > .root > .main > div > div:nth-child(2) > div > div:nth-child(3) > p {
+  font-size: 0.875rem;
+  text-align: center;
+  color: #394e80;
+}/*# sourceMappingURL=20220413_layout_training_18.css.map */

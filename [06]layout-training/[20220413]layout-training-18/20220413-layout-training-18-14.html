@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    @keyframes fade-out {
+
+      0% {opacity: 0;}
+      50% {opacity: 1;}
+      100%{opacity: 0;}
+    }
+
+  #root {
+
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+      background: url(https://i.picsum.photos/id/1000/5626/3635.jpg?hmac=qWh065Fr_M8Oa3sNsdDL8ngWXv2Jb-EE49ZIn6c0P-g);
+      background-size: cover;
+    
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+  }
+
+  .box {
+
+    width: 800px;
+    height: 800px;
+    color: white;
+
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    font-size: 50px;
+    backdrop-filter: blur(5px);
+
+    animation: 10s fade-out infinite;
+
+  }
+
+  </style>
+
+</head>
+<body>
+  <div id="root">
+    <div class="box">
+      <h2>LET THERE BE LIGHT</h2>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+$width-root:100vw;
+$height-root:100vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$solid-red:1px solid #613c3c;
+$width-per:45%;
+$height-per:90%;
+$color-1:#dedfe0;
+$color-2:#b6c6d6;
+$color-3:#5f87ac;
+$color-4:#6f7a85;
+$color-5:#4d5b69;
+$color-6:#202a33;
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0;}
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;
+}  
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($z-in,){
+  position: relative;
+  z-index: $z-in;
+}
+
+
+
+
+
+// ----------------------------------------------------------------
+
+#root{
+  @include root-style;
+}
+
+header{
+  @include size(100%, 20%);
+  @include flex-setting(center, center);
+
+  &>nav{
+    @include size(90%, 100%);
+    @include flex-setting(flex-start, center);
+
+
+    &>ul{
+      @include size(100%, 30%);
+      list-style-type: none;
+      @include flex-setting(space-between, flex-start);
+
+      &>li{
+        @include size(15%, 95%);
+      @include flex-setting(center, center);
+      }
+
+      &>li:nth-child(2){
+        color: $color-1;
+        background-color:$color-5 ;
+      }
+    }
+
+    &>div{
+      @include size(45%, 20%);
+
+      &>div{
+        @include size(35%, 10%);
+        background-color:$color-5 ;
+        margin-left: 2px
+      }
+    }
+  }
+}
+
+
+
+main{
+  @include size(100%, 80%);
+  @include flex-setting(center, center);
+
+  &>section:first-child{
+    @include box-style(80%, 80%, $color-2);
+    @include flex-setting(center, center);
+    @include position-setting(2);
+    left: 120px;
+
+
+    &>div{
+      @include size(90%, 30%);
+      @include flex-setting(space-between, center);
+    }
+
+    &>div:nth-child(1){
+
+      &>div:nth-child(1){
+        @include size(20%, 50%);
+        @include flex-setting(flex-start, center);
+        font-size: 35px;
+        color: $color-4;
+      }
+
+      &>div:nth-child(2){
+        @include size(60%, 50%);
+        @include flex-setting(center, center);
+
+        &>div{
+        @include size(100%, 100%);
+          font: {
+            size: 80px;
+            weight: 900;
+            family: 'Roboto', sans-serif;
+          }
+        }
+
+        &>div:nth-child(1){
+          color: $color-white;
+          z-index: 2;
+          
+        }
+
+        &>div:nth-child(2){
+          color: $color-3;
+          z-index: 1;
+          top: 5px;
+          right: 100px;
+        }
+      }
+    }
+
+    &>div:nth-child(2){
+      @include flex-setting(space-between, center);
+
+      &>div:nth-child(1){
+        @include size(25%, 2%);
+        background-color: $color-5;
+        border-radius: 20px;
+      }
+
+      &>div:nth-child(2){
+        @include size(100%, 70%);
+        text-align: center;
+        color: $color-5;
+      }
+    }
+  }
+
+  &>section:last-child{
+    @include box-style(60%, 90%, $color-3);
+    @include position-setting(1);
+    bottom: 50px;
+    right: 100px;
+  }
+}
+
+
+
+
+
+
+
+
+

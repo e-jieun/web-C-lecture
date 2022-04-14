@@ -1,0 +1,108 @@
+*{margin: 0;padding: 0;text-decoration: none;color: inherit; list-style: none;box-sizing: border-box;}
+
+@mixin flex($justify, $align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+body{
+    height: 95vh;
+    flex-direction: column;
+    @include flex(space-around, center );
+    overflow: hidden;
+
+}
+nav{
+    width: 400px;
+    height: 80px;
+
+    ul{
+        @include flex(space-between, inherit );
+        
+        a{
+            padding: 10px 0;
+            
+            li{
+                line-height: 50px;
+                width: 70px;
+                text-align: center;
+            }
+        }
+        a:hover {
+            border-bottom: 3px solid darkcyan;
+
+            li{
+                background-color: darkcyan;
+            }
+        }
+    }
+}
+
+#main{
+    position: relative;
+    #arrow{
+        width: 50px;
+        height: 50px;
+        color: #c4c4c4;
+
+        position: absolute;
+        top: 50%;
+        left: 10%;
+    }
+    #box{
+        width: 400px;
+        height: 80vh;
+        background-color: lightblue;
+        @include flex(space-around, center );
+        flex-direction: column;
+
+        h1{
+            padding-top: 25%;
+            text-align: center;
+            font-size: 5rem;
+            color: #fff;
+            text-shadow:-5px 5px 0 #999;
+        }
+        &>div{
+            border: 2px solid #fff;
+            width: 5rem;
+        }
+        &>p{
+            width: 90%;
+        }
+    }
+    #sub-box{
+        width: 400px;
+        height: 80vh;
+        background-color: cadetblue;
+
+        position: absolute;
+        top:-20px;
+        left: 30%;
+
+        z-index: -1;
+    }
+}
+
+@media (min-width: 1000px){
+    #main{
+        @include flex(center,center );
+        width: 80vw;
+
+        #arrow{
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        #box{
+            margin: 0 20px;
+            width: 40vw;
+        }
+        #sub-box{
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+    }
+}

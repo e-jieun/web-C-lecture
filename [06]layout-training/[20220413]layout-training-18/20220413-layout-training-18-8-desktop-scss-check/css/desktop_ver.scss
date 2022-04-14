@@ -1,0 +1,185 @@
+$width-root:100vw;
+$height-root:100vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$solid-red:1px solid #613c3c;
+$width-per:45%;
+$height-per:90%;
+$color-1:#dedfe0;
+$color-2:#b6c6d6;
+$color-3:#5f87ac;
+$color-4:#6f7a85;
+$color-5:#4d5b69;
+$color-6:#202a33;
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0;}
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;
+}  
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($z-in,){
+  position: relative;
+  z-index: $z-in;
+}
+
+// ----------------------------------------------------------------
+
+@media (min-width:700px){
+
+
+
+
+
+  header{
+    &>nav{
+  
+      &>ul{
+        @include size(40%, 40%);
+  
+        &>li{
+          @include size(15%, 95%);
+        }
+      }
+  
+      &>div{
+        @include size(25%, 20%);
+  
+        &>div{
+          @include size(22%, 10%);
+          margin-left: 70px;
+          border-radius: 20px
+        }
+      }
+    }
+  }
+  
+  
+  
+  main{
+  
+    &>section:first-child{
+      @include box-style(40%, 80%, $color-2);
+      left: 0;
+
+      &>div:nth-child(1){
+
+        &>div:nth-child(1){
+          @include size(20%, 50%);
+
+          &>i{
+            right: 100px;
+          }
+        }
+  
+        &>div:nth-child(2){
+
+          &>div{
+          @include size(50%, 100%);
+          }
+  
+          &>div:nth-child(2){
+            top: 5px;
+            right: 210px;
+          }
+        }
+      }
+
+      &>div:nth-child(2){
+        @include flex-setting(space-between, center);
+  
+        &>div:nth-child(1){
+          @include size(10%, 2%);
+          margin-right: 90px;
+        }
+      }
+    }
+  
+    &>section:last-child{
+      @include box-style(20%, 80%, $color-3);
+      bottom: 0;
+      right: 0;
+      left: 10px;
+    }
+
+  }
+
+}
+
+// 큰 레이아웃을 flex로 잡긴 했는데 미세한 부분은 어쩔수 없이 margin과 position을 써서 이동을 했는데 화면이. 조금 변할 때 마다 계속 위치가 틀어져서 어디까지 flex를 쓰고 margin은 어디부터 써야 하는 것일지...
+
+/*
+
+
+* CSS의 한계 
+* display :: 배치 방식을 결정하기때문에 여러 요소들을 일괄 지정하는데 능함
+* display :: 하지만, 세세한 제어는 하기 까다로운 점 (용도의 문제에서 배제됨)
+
+* position :: 위치 지정 방식을 '직접적으로 명령' 하기 때문에 까다로운 포지셔닝을 하기에 적합
+* position :: display와 같은 일괄 배치 방식을 결정하는것에는 한계점이 분명하기에 레이아웃 용으로 부적합
+
+? ※특이한 사항
+? display:flex, display:grid가 표준이 되기전에는 모두 position 값으로 디자인을 했어야만 했고, 데이터량이 많아질때(코드가 많아질때) 수정작업에 물리적인 한계를 드러냄
+? 인터넷 상에서 기능사목적이나, 옛날 방식의 레이아웃 잡는 방법 튜토리얼이 무분별하게 올라오기 때문에 용도에 대한 부분을 주의할 필요가 있음
+
+? display로 안되는 레이아웃은 없음
+? position으로 안되는 위치지정은 없음
+
+? 반대용도로 사용할때는 여러가지 제약이 발생
+
+
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+

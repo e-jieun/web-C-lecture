@@ -1,0 +1,213 @@
+@mixin position($justify, $align) {
+  justify-content: $justify;
+  align-items: $align;
+}
+
+
+@media (min-width: 900px) {
+
+  #base {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+  
+    & > .root {
+      width: 1440px;
+      height: 1024px;
+      border: 1px solid black;
+      overflow: hidden;
+  
+      & > .menu {
+        width: 100%;
+        height: 10%;
+        // border: 1px solid red;
+  
+        position: relative;
+  
+        & > .select-menu {
+          width: 40%;
+          height: 100%;
+          // border: 1px solid #13928c;
+  
+          position: relative; 
+  
+          & > div {
+            width: 18%;
+            height: 100%;
+            // border: 1px solid blue;
+  
+            position: relative;
+            right: 12.5%;
+  
+            & > div:nth-child(1) {
+              width: 100%;
+              height: 80%;
+              background-color: #737f9c;
+            }
+  
+            & > div:nth-child(2) {
+              width: 100%;
+              height: 20%;
+              // border: 1px solid salmon;
+  
+              & > div {
+                width: 100%;
+                height: 34%;
+                background-color: #737f9c;
+  
+                border-radius: 10%;
+              }
+            }
+          }
+        }
+  
+        & > .menu-text {
+          width: 40%;
+          height: 80%;
+          // border: 1px solid red;
+  
+          position: absolute;
+  
+          & > span {
+            height: 100%;
+            // border: 1px solid gold;
+  
+            & > p {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+  
+      & > .main {
+        width: 100%;
+        height: 90%;
+  
+        @include position(center, center);
+        // border: 1px solid blue;
+  
+        & > div {
+          width: 56%;
+          height: 62%;
+          // border: 1px solid seagreen;
+          @include position(center, flex-end);
+          position: static;
+
+          justify-content: space-between;
+  
+          & > div:nth-child(1) {
+            width: 38%;
+            height: 100%;
+            // background-color: #737f9c;
+            
+            position: static;
+  
+            right: 0;
+            bottom: 0;
+
+            order: 2;
+  
+          }
+  
+          & > div:nth-child(2) {
+            width: 60%;
+            height: 100%;
+            background-color: #c4e2e0;
+            @include position(center, flex-end);
+            position: static;
+
+            order: 1;
+  
+            & > div {
+              width: 92%;
+              height: 60%;
+  
+              // border: 1px solid blueviolet;
+  
+              & > div:nth-child(1) {
+                width: 100%;
+                height: 40%;
+                // background-color: #c2d4fd;
+                
+  
+                & > div:nth-child(1) {
+                  width: 10%;
+                  height: 100%;
+                  // background-color: #ff934b;
+                  @include position(center, center);
+
+                  position: relative;
+
+                  right: 20%;
+  
+                  & > div {
+                    width: 100%;
+                    height: 30%;
+                    // border: 1px solid red;
+                    @include position(flex-start, center);
+  
+                    & > i {
+                      font-size: 1.5rem;
+                      color: #737f9c;
+                    }
+                  }
+                }
+  
+                & > div:nth-child(2) {
+                  width: 80%;
+                  height: 100%;
+                  // background-color: #ffb9f0;
+  
+                  & > div {
+                    width: 50%;
+                    height: 86%;
+                    // border: 1px solid red;
+                    @include position(center, flex-end);
+  
+                    & > p {
+                      font-size: 6.375rem;
+                      font-weight: bolder;
+                      color: #e8eff1;
+                      text-shadow: -5px 5px 2px #737f9c;
+                    }
+                    
+                  }
+                }
+              }
+  
+              & > div:nth-child(2) {
+                width: 100%;
+                height: 14%;
+                // background-color: #98f8f3;
+                
+                @include position(center, center);
+  
+                
+  
+                & > div {
+                  width: 10%;
+                  height: 10%;
+                  background-color: #737f9c;
+                  border-radius: 30px;
+                }
+              }
+  
+              & > div:nth-child(3) {
+                width: 100%;
+                height: 40%;
+                // background-color: #bbf898;
+  
+                & > p {
+                  font-size: 0.875rem;
+                  text-align: center;
+                  color: #394e80;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+}

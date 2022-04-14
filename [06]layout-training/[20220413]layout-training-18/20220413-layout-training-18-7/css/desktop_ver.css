@@ -1,0 +1,83 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+@media (min-width: 700px) {
+  header > nav > ul {
+    width: 40%;
+    height: 40%;
+  }
+  header > nav > ul > li {
+    width: 15%;
+    height: 95%;
+  }
+  header > nav > div {
+    width: 25%;
+    height: 20%;
+  }
+  header > nav > div > div {
+    width: 22%;
+    height: 10%;
+    margin-left: 70px;
+    border-radius: 20px;
+  }
+
+  main > section:first-child {
+    width: 40%;
+    height: 80%;
+    background-color: #b6c6d6;
+  }
+  main > section:first-child > div:nth-child(1) > div:nth-child(1) {
+    width: 20%;
+    height: 50%;
+  }
+  main > section:first-child > div:nth-child(1) > div:nth-child(1) > i {
+    right: 100px;
+  }
+  main > section:first-child > div:nth-child(1) > div:nth-child(2) > div {
+    width: 50%;
+    height: 100%;
+  }
+  main > section:first-child > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+    top: 5px;
+    right: 210px;
+  }
+  main > section:first-child > div:nth-child(2) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main > section:first-child > div:nth-child(2) > div:nth-child(1) {
+    width: 10%;
+    height: 2%;
+    margin-right: 90px;
+  }
+  main > section:last-child {
+    margin-left: -55px;
+    width: 20%;
+    height: 80%;
+    background-color: #5f87ac;
+    bottom: 0;
+  }
+}/*# sourceMappingURL=desktop_ver.css.map */
