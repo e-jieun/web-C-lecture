@@ -1,0 +1,151 @@
+*{margin: 0; padding: 0;}
+
+:root {
+  --color-1: rgb(255, 103, 222);
+  --color-2: rgb(116, 204, 255);
+  --color-3: rgb(255, 170, 72);
+  --color-4: rgb(123, 255, 152);
+}
+
+@mixin size ($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin bg-color ($bg) {
+  background-color: $bg;  
+}
+
+@mixin flex ($flex, $justy, $align, $direc) {
+  display: $flex;
+  justify-content: $justy;
+  align-items: $align;
+  flex-direction: $direc;
+}
+
+@mixin position ($position) {
+  position: $position;
+}
+
+@keyframes move-left-bottom{
+  0%{
+    left: 0;
+    top: 0;
+  }
+  50%{
+    left: 10vw;
+    top: 3vw;
+    border-radius: 35vw;
+  }
+  100%{
+    left: 0;
+    top: 0;
+  }
+}
+
+@keyframes move-rignt-bottom{
+  0%{
+    right: 0vw;
+    top: 0vw;
+  }
+  50%{
+    right: 3vw;
+    top: 10vw;
+    border-radius: 35vw;
+  }
+  100%{
+    right: 0vw;
+    top: 0vw;
+  }
+}
+
+@keyframes move-left-top{
+  0%{
+    left: 0vw;
+    bottom: 0vw;
+  }
+  50%{
+    left: 3vw;
+    bottom: 10vw;
+    border-radius: 35vw;
+  }
+  100%{
+    left: 0vw;
+    bottom: 0vw;
+  }
+}
+
+@keyframes move-right-top{
+  0%{
+    right: 0vw;
+    bottom: 0vw;
+  }
+  50%{
+    right: 10vw;
+    bottom: 3vw;
+    border-radius: 35vw;
+  }
+  100%{
+    right: 0vw;
+    bottom: 0vw;
+  }
+}
+
+
+
+
+
+#root{
+  @include size(100vw, 100vh);
+  @include flex(flex, center, center, none);
+
+
+  &>section {
+    @include size(70vh, 70vh);
+    @include flex(grid, none, none, none);
+    @include position(relative);
+    grid-template-columns: repeat(2, 1fr);
+
+
+    &>div {
+      @include size(35vh, 35vh);
+      @include position(absolute);
+      mix-blend-mode: multiply;
+      // 색상이 섞이는 부분이 더 진해지면 좋을 것 같아서 블랜드모드를 multiply로 변경했다.
+      opacity: .5;
+    }
+
+    // 왼쪽 위
+    &>div:first-child {
+      @include bg-color(var(--color-1));
+      left: 10vw;
+      top: 3vw;
+      animation: 3s infinite move-left-bottom;
+    }
+
+    // 오른쪽 위
+    &>div:nth-child(2) {
+      @include bg-color(var(--color-2));
+      right: 3vw;
+      top: 10vw;
+      animation: 3s infinite move-rignt-bottom;
+    }
+
+    // 왼쪽 아래
+    &>div:nth-child(3) {
+      @include bg-color(var(--color-3));
+      left: 3vw;
+      bottom: 10vw;
+      animation: 3s infinite move-left-top;
+    }
+
+    // 오른쪽 아래
+    &>div:nth-child(4) {
+      @include bg-color(var(--color-4));
+      right: 10vw;
+      bottom: 3vw;
+      animation: 3s infinite move-right-top;
+    }
+  }
+
+}

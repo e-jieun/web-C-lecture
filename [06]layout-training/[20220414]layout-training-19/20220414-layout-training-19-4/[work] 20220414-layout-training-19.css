@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+#root > div:nth-child(1) {
+  width: 40vh;
+  height: 40vh;
+  background-color: red;
+  opacity: 0.5;
+  position: absolute;
+  mix-blend-mode: multiply;
+  left: 35vw;
+  top: 10vh;
+  -webkit-animation: 5s moving-1 infinite;
+          animation: 5s moving-1 infinite;
+}
+#root > div:nth-child(2) {
+  width: 40vh;
+  height: 40vh;
+  background-color: green;
+  opacity: 0.5;
+  position: absolute;
+  mix-blend-mode: multiply;
+  left: 45vw;
+  top: 20vh;
+  -webkit-animation: 3s moving-2 infinite;
+          animation: 3s moving-2 infinite;
+}
+#root > div:nth-child(3) {
+  width: 40vh;
+  height: 40vh;
+  background-color: purple;
+  opacity: 0.5;
+  position: absolute;
+  mix-blend-mode: multiply;
+  left: 30vw;
+  top: 30vh;
+  -webkit-animation: 8s moving-3 infinite;
+          animation: 8s moving-3 infinite;
+}
+#root > div:nth-child(4) {
+  width: 40vh;
+  height: 40vh;
+  background-color: blue;
+  opacity: 0.5;
+  position: absolute;
+  mix-blend-mode: multiply;
+  left: 40vw;
+  top: 40vh;
+  -webkit-animation: 6s moving-4 infinite;
+          animation: 6s moving-4 infinite;
+}
+
+@-webkit-keyframes moving-1 {
+  50% {
+    opacity: 0.8;
+    background-color: rgb(67, 150, 206);
+    top: 5vh;
+  }
+}
+
+@keyframes moving-1 {
+  50% {
+    opacity: 0.8;
+    background-color: rgb(67, 150, 206);
+    top: 5vh;
+  }
+}
+@-webkit-keyframes moving-2 {
+  30% {
+    background-color: rgb(106, 179, 192);
+  }
+  50% {
+    left: 60vw;
+  }
+  70% {
+    opacity: 0.8;
+    background-color: rgb(234, 255, 175);
+  }
+}
+@keyframes moving-2 {
+  30% {
+    background-color: rgb(106, 179, 192);
+  }
+  50% {
+    left: 60vw;
+  }
+  70% {
+    opacity: 0.8;
+    background-color: rgb(234, 255, 175);
+  }
+}
+@-webkit-keyframes moving-3 {
+  50% {
+    left: 10vw;
+    opacity: 1;
+    background-color: rgb(175, 255, 192);
+  }
+}
+@keyframes moving-3 {
+  50% {
+    left: 10vw;
+    opacity: 1;
+    background-color: rgb(175, 255, 192);
+  }
+}
+@-webkit-keyframes moving-4 {
+  30% {
+    background-color: rgb(255, 180, 42);
+  }
+  50% {
+    top: 70vh;
+  }
+  70% {
+    opacity: 1;
+    background-color: rgb(255, 175, 219);
+  }
+}
+@keyframes moving-4 {
+  30% {
+    background-color: rgb(255, 180, 42);
+  }
+  50% {
+    top: 70vh;
+  }
+  70% {
+    opacity: 1;
+    background-color: rgb(255, 175, 219);
+  }
+}/*# sourceMappingURL=[work] 20220414-layout-training-19.css.map */

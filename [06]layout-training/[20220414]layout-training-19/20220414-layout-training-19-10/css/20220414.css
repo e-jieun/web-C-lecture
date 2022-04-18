@@ -1,0 +1,51 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  width: 90vw;
+  height: 100vh;
+  margin: 0 auto;
+  position: relative;
+}
+
+main > #box {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  opacity: 0.5;
+}
+
+main > #box:nth-child(1) {
+  top: 0;
+  bottom: inherit;
+  left: 10%;
+  right: inherit;
+  background-color: palevioletred;
+}
+
+main > #box:nth-child(2) {
+  top: inherit;
+  bottom: 0;
+  left: inherit;
+  right: 10%;
+  background-color: paleturquoise;
+}
+
+main > #box:nth-child(3) {
+  top: inherit;
+  bottom: 10%;
+  left: 0;
+  right: inherit;
+  background-color: palegoldenrod;
+}
+
+main > #box:nth-child(4) {
+  top: 10%;
+  bottom: inherit;
+  left: inherit;
+  right: 0;
+  background-color: palegreen;
+}
+/*# sourceMappingURL=20220414.css.map */

@@ -1,0 +1,105 @@
+// @import './base.scss'; 
+// => @use "css/base"; 
+// !외부 스타일시트를 연결해주는 것처럼 css 파일 안에 들어있으면 ./를 입력하고 scss 파일을 찾아줘야 함
+// https://sass-lang.com/documentation/at-rules/use
+
+// Q1. base.scss를 연결해주면 적용되는 것에는 문제가 없는데 출력창에서 자꾸 에러가 뜹니다 이유를 모르겠습니다
+@use "css/base" as b;
+// => b라는 이름으로 축약해 사용해준다
+// @import url(./base.scss);
+
+// animation
+// 
+@keyframes moving{
+  0%{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+  }
+  25%{
+    position: absolute;
+    top: 40vh;
+    left: 40vw;
+    
+  }
+  50%{
+    position: absolute;
+    top: 30vh;
+    left: 30vw;
+  }
+  75%{
+    position: absolute;
+    top: 40vh;
+    left: 40vw;
+  }
+  100%{
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+  }
+}
+// style
+#root{
+  @extend %view-100;
+  #con{
+    @extend %inherit;
+    @extend %flex-center-center;
+    &>div{
+      @include width-height(30vw, 30vw);
+      @extend %circle;
+    }
+    // !이곳에서 position 값을 지정해주지 않고, 시간을 조정해서 각자 다른 값을 지정해 움직이는 것처럼 보이게 해줄 수 있다
+    &>div:nth-child(1){
+      background-color: pink;
+      opacity: .5;
+      position: absolute;
+      mix-blend-mode: multiply;
+      animation: 2s moving infinite;
+    }
+    &>div:nth-child(2){
+      background-color: yellowgreen;
+      opacity: .5;
+      position: absolute;
+      mix-blend-mode: multiply;
+      animation: 3s moving infinite;
+    }
+    &>div:nth-child(3){
+      background-color: b.$color-dp;
+      opacity: .5;
+      position: absolute;
+      mix-blend-mode: multiply;
+      animation: 4s moving infinite;
+    }
+    &>div:nth-child(4){
+      background-color: skyblue;
+      opacity: .5;
+      position: absolute;
+      mix-blend-mode: multiply;
+      animation: 5s moving infinite;
+    }
+  }
+}
+// !mix-blend-mode: 값;
+// /* 키워드 값 */
+// mix-blend-mode: normal;
+// 곱해준다
+// mix-blend-mode: multiply;
+// mix-blend-mode: screen;
+// mix-blend-mode: overlay;
+// mix-blend-mode: darken;
+// mix-blend-mode: lighten;
+// mix-blend-mode: color-dodge;
+// mix-blend-mode: color-burn;
+// mix-blend-mode: hard-light;
+// mix-blend-mode: soft-light;
+// mix-blend-mode: difference;
+// mix-blend-mode: exclusion;
+// mix-blend-mode: hue;
+// mix-blend-mode: saturation;
+// mix-blend-mode: color;
+// mix-blend-mode: luminosity;
+
+// /* 전역 값 */
+// mix-blend-mode: initial;
+// mix-blend-mode: inherit;
+// mix-blend-mode: unset;

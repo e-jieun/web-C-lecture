@@ -1,0 +1,146 @@
+  *{margin: 0; padding: 0;}
+
+@keyframes slidein1{
+  0%{
+    left: 0vw;
+    top: 50vh;
+  }
+  30%{
+    top: 10vh;
+    left: 30vw;
+    border-radius: 50%;
+  }
+  100%{
+    top: 10vh;
+    left: 30vw;
+    border-radius: 25%;
+  }
+}
+
+@keyframes slidein2{
+  0%{
+    left: 50vw;
+    top: 0vh;
+  }
+  30%{
+    top: 25vh;
+    left: 40vw;
+    border-radius: 50%;
+  }
+  100%{
+    top: 25vh;
+    left: 40vw;
+    border-radius: 25%;
+  }
+}
+@keyframes slidein3{
+  0%{
+    left: 50vw;
+    top: 50vh;
+  }
+  30%{
+    top: 35vh;
+    left: 25vw;
+    border-radius: 50%;
+  }
+  100%{
+    top: 35vh;
+    left: 25vw;
+    border-radius: 25%;
+  }
+}
+@keyframes slidein4{
+  0%{
+    left: 100vw;
+    top: 100vh;
+  }
+  30%{
+    top: 42vh;
+    left: 35vw;
+    border-radius: 50%;
+  }
+  100%{
+    top: 42vh;
+    left: 35vw;
+    border-radius: 25%;
+  }
+}
+@keyframes fadein{
+  0%{
+  opacity: 0;
+  }
+  30%{
+  opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+
+
+  #root{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>div{
+  width: 20vw;
+  height: 20vw;
+    }
+  &>div:nth-child(1){
+    background-color: rgb(194, 82, 82);
+    opacity: 0.5;
+
+    position: absolute;
+    top: 10vh;
+    left: 30vw;
+    mix-blend-mode: multiply;
+    
+    animation: 4s slidein1 
+    ease infinite;
+    
+  }
+  &>div:nth-child(2){
+    background-color: lightgreen;
+    opacity: 0.5;
+    position: absolute;
+    top: 25vh;
+    left: 40vw;
+    mix-blend-mode: multiply;
+
+    animation: 4s slidein2 ease infinite;
+  }
+  &>div:nth-child(3){
+    background-color: lightskyblue;
+    opacity: 0.5;
+    position: absolute;
+    top: 35vh;
+    left: 25vw;
+    mix-blend-mode: multiply;
+
+    animation: 4s slidein3 ease infinite;
+  }
+  &>div:nth-child(4){
+    background-color: rgb(189, 83, 162);
+    opacity: 0.5;
+    position: absolute;
+    top: 42vh;
+    left: 35vw;
+    mix-blend-mode: multiply;
+
+    animation: 4s slidein4 ease infinite;
+  }
+  &>div:nth-child(5){
+    color: rgb(13, 15, 95);
+    
+    position: absolute;
+    top: 34vh;
+    left: 30vw;
+
+    animation: 4s fadein ease infinite;
+
+  }
+}

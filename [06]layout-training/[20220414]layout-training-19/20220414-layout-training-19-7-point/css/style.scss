@@ -1,0 +1,214 @@
+$width-root:100vw;
+$height-root:100vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$solid-red:1px solid #613c3c;
+$width-per:45%;
+$height-per:90%;
+$color-1:#98bee4;
+$color-2:#ece7b3;
+$color-3:#e7b5db;
+$color-4:#7e66d3;
+$color-5:#4d5b69;
+$color-6:#202a33;
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0;}
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;}
+
+
+@mixin box-style($w, $h) {
+  width: $w;
+  height: $h;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  border-radius: 50%;
+}
+
+@mixin position-setting ($posi, $z-in){
+  position: $posi;
+  z-index: $z-in;
+}
+
+@mixin animation($name){
+  animation-duration: 5s;
+  animation-name: $name;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@mixin keyframe($ani_name) {
+  @keyframes #{$ani_name} {
+    @content;
+  }
+}
+
+@include keyframe(move1){
+  0%{
+    top: 10vh; 
+    left: 50vw; 
+    width: 200px; 
+    height: 200px;}
+
+  50%{
+    top: 50vh; 
+    left: 60vw; 
+    width: 100px; 
+    height: 100px;
+  }
+
+  100%{
+    top: 10vh; 
+    left: 50vw; 
+    width: 200px; 
+    height: 200px;
+  }
+}
+
+@include keyframe(move2){
+  0%{
+    top: 10vh; 
+    left: 20vw; 
+    width: 200px; 
+    height: 200px;
+  }
+
+  50%{
+    top: 20vh; 
+    left: 10vw; 
+    width: 100px; 
+    height: 100px;
+  }
+
+  100%{
+    top: 10vh; 
+    left: 20vw; 
+    width: 200px; 
+    height: 200px;
+  }
+}
+
+@include keyframe(move3){
+  0%{
+    top: 0; 
+    left: 20vw; 
+    width: 200px; 
+    height: 200px;
+  }
+
+  50%{
+    top: -10vh; 
+    left: 20vw; 
+    width: 100px; 
+    height: 100px;
+  }
+
+  100%{
+    top: 0; 
+    left: 20vw; 
+    width: 200px; 
+    height: 200px;
+  }
+}
+
+@include keyframe(move4){
+  0%{
+    top: 20vh; 
+    left: 50vw; 
+    width: 200px; 
+    height: 200px;
+  }
+
+  50%{
+    top: 60vh; 
+    left: 50vw; 
+    width: 100px; 
+    height: 100px;
+  }
+
+  100%{
+    top: 20; 
+    left: 50; 
+    width: 200px; 
+    height: 200px;
+  }
+}
+
+
+
+
+// ----------------------------------------------------------------
+*{margin: 0; padding: 0;}
+
+#root{
+  @include root-style;
+  position: relative;
+
+
+  &>div{
+    @include box-style(200px, 200px);
+  }
+
+  &>div:nth-child(1){
+    @include position-setting(absolute, 4);
+    background-color: $color-1;
+    left: 50vw;
+    top: 10vh;
+
+    @include animation(move1);
+    }
+  
+
+  &>div:nth-child(2){
+    @include position-setting(relative, 3);
+    background-color: $color-2;
+    left: 20vw;
+    top: 10vh;
+
+    @include animation(move2);
+  }
+
+  &>div:nth-child(3){
+    @include position-setting(relative, 2);
+    background-color: $color-3;
+    left: 20vw;
+    @include animation(move3);
+  }
+
+  &>div:nth-child(4){
+    @include position-setting(absolute, 1);
+    background-color: $color-4;
+    left: 50vw;
+    top: 20vh;
+    @include animation(move4);
+  }
+}

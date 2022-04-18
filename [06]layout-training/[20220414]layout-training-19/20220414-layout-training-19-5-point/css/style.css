@@ -1,0 +1,125 @@
+@import url(./base.scss);
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root #con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+#root #con {
+  width: inherit;
+  height: inherit;
+}
+
+@-webkit-keyframes moving {
+  0% {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+  }
+  25% {
+    position: absolute;
+    top: 40vh;
+    left: 40vw;
+  }
+  50% {
+    position: absolute;
+    top: 30vh;
+    left: 30vw;
+  }
+  75% {
+    position: absolute;
+    top: 40vh;
+    left: 40vw;
+  }
+  100% {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+  }
+}
+
+@keyframes moving {
+  0% {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+  }
+  25% {
+    position: absolute;
+    top: 40vh;
+    left: 40vw;
+  }
+  50% {
+    position: absolute;
+    top: 30vh;
+    left: 30vw;
+  }
+  75% {
+    position: absolute;
+    top: 40vh;
+    left: 40vw;
+  }
+  100% {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+  }
+}
+
+#root #con > div {
+  width: 30vw;
+  height: 30vw;
+}
+
+#root #con > div:nth-child(1) {
+  background-color: pink;
+  opacity: .5;
+  position: absolute;
+  mix-blend-mode: multiply;
+  -webkit-animation: 2s moving infinite;
+          animation: 2s moving infinite;
+}
+
+#root #con > div:nth-child(2) {
+  background-color: yellowgreen;
+  opacity: .5;
+  position: absolute;
+  mix-blend-mode: multiply;
+  -webkit-animation: 3s moving infinite;
+          animation: 3s moving infinite;
+}
+
+#root #con > div:nth-child(3) {
+  background-color: #8068AD;
+  opacity: .5;
+  position: absolute;
+  mix-blend-mode: multiply;
+  -webkit-animation: 4s moving infinite;
+          animation: 4s moving infinite;
+}
+
+#root #con > div:nth-child(4) {
+  background-color: skyblue;
+  opacity: .5;
+  position: absolute;
+  mix-blend-mode: multiply;
+  -webkit-animation: 5s moving infinite;
+          animation: 5s moving infinite;
+}
+/*# sourceMappingURL=style.css.map */

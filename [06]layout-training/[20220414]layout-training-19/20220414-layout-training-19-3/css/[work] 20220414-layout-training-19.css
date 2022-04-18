@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+@-webkit-keyframes moving {
+  0% {
+    top: 30vh;
+    left: 30vw;
+  }
+}
+
+@keyframes moving {
+  0% {
+    top: 30vh;
+    left: 30vw;
+  }
+}
+
+#root > div {
+  width: 25vw;
+  height: 25vw;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+}
+
+#root > div:nth-child(1) {
+  background-color: #ffc8c8;
+  position: absolute;
+  z-index: 1;
+  left: 30vw;
+  top: 10vh;
+  animation: 3s moving infinite alternate-reverse;
+}
+
+#root > div:nth-child(2) {
+  background-color: #d2ecc7;
+  position: absolute;
+  z-index: 2;
+  left: 45vw;
+  top: 30vh;
+  animation: 3s moving infinite alternate-reverse;
+}
+
+#root > div:nth-child(3) {
+  background-color: #d2d0fc;
+  position: absolute;
+  z-index: 3;
+  left: 26vw;
+  top: 40vh;
+  animation: 3s moving infinite alternate-reverse;
+}
+
+#root > div:nth-child(4) {
+  background-color: #c4f7f4;
+  position: absolute;
+  z-index: 4;
+  left: 40vw;
+  top: 47vh;
+  animation: 3s moving infinite alternate-reverse;
+}
+/*# sourceMappingURL=[work] 20220414-layout-training-19.css.map */

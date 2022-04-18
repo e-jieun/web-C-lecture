@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+@mixin top-left($top, $bottom, $left, $right) {
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+}
+
+main{
+    width: 90vw;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative;
+
+    &>#box{
+        width: 500px;
+        height: 500px;
+
+        position: absolute;
+        opacity: 0.5;
+    }
+    &>#box:nth-child(1){
+        @include top-left(0, inherit, 10%, inherit);
+        background-color: palevioletred;
+    }
+    &>#box:nth-child(2){
+        @include top-left(inherit, 0, inherit, 10%);
+        background-color: paleturquoise;
+    }
+    &>#box:nth-child(3){
+        @include top-left(inherit, 10%, 0, inherit);
+        background-color: palegoldenrod;
+    }
+    &>#box:nth-child(4){
+        @include top-left(10%, inherit, inherit, 0);
+        background-color: palegreen;
+    }
+}

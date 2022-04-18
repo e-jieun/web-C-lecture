@@ -1,0 +1,98 @@
+* {margin: 0; padding: 0;
+overflow: hidden;}
+@mixin square($color) {
+  width: 40vh;
+  height: 40vh;
+  background-color: $color;
+  opacity: 0.5;
+  position: absolute;
+  mix-blend-mode: multiply;
+}
+
+#root{
+  width: 100vw;
+  height: 100vh;
+  
+  &>div:nth-child(1){
+    @include square(red);
+    left: 35vw;
+    top: 10vh;
+    animation: 5s moving-1 infinite;
+  }
+  &>div:nth-child(2){
+    @include square(green);
+    left: 45vw;
+    top: 20vh;
+    animation: 3s moving-2 infinite;
+  }
+  &>div:nth-child(3){
+    @include square(purple);
+    left: 30vw;
+    top: 30vh;
+    animation: 8s moving-3 infinite;
+
+  }
+  &>div:nth-child(4){
+    @include square(blue);
+    left: 40vw;
+    top: 40vh;
+    animation: 6s moving-4 infinite;
+
+  }
+}
+
+@keyframes moving-1 {
+  0%{
+  }
+  50% {
+    opacity: 0.8;
+    background-color: rgb(67, 150, 206);
+    top: 5vh;
+  }
+  100% {
+  }
+}
+@keyframes moving-2 {
+  0%{
+  }
+  30%{
+    background-color: rgb(106, 179, 192);
+  }
+  50%{
+    left: 60vw;
+  }
+  70% {
+    opacity: 0.8;
+    background-color: rgb(234, 255, 175);
+  }
+  100% {
+  }
+}
+@keyframes moving-3 {
+  0%{
+  }
+  50% {
+    left: 10vw;
+    opacity: 1;
+    background-color: rgb(175, 255, 192);
+  }
+  100% {
+  }
+}
+@keyframes moving-4 {
+  0%{
+  }
+
+  30%{
+    background-color: rgb(255, 180, 42);
+  }
+  50%{
+    top: 70vh;
+  }
+  70% {
+    opacity: 1;
+    background-color: rgb(255, 175, 219);
+  }
+  100% {
+  }
+}

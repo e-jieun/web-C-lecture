@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes smc {
+      0%{
+        left:100px;
+      }
+      50%{
+
+      }
+      100%{
+
+      }
+    }
+    @keyframes smc2 {
+      0%{
+        bottom:100px;
+      }
+      50%{
+
+      }
+      100%{
+
+      }
+    }
+   
+    @keyframes smc3 {
+      0%{
+        bottom:100px;
+      }
+      50%{
+
+      }
+      100%{
+
+      }
+    }
+    @keyframes smc4 {
+      0%{
+        right:100px;
+      }
+      50%{
+
+      }
+      100%{
+
+      }
+    }
+    *{margin:0; padding:0;}
+    .table{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .table>div:nth-child(1){
+      width: 25vw;
+      height: 25vw;
+      border: 1px solid black;
+      background-color: blueviolet;
+      mix-blend-mode: multiply;
+      opacity: 0.5;
+      position: relative;
+      top:50px;
+      left: 400px;
+      animation: 3s infinite;
+      animation-name: smc;
+      z-index: 1;
+      
+    }
+
+    .table>div:nth-child(2){
+      width: 25vw;
+      height: 25vw;
+      border: 1px solid black;
+      background-color: pink;
+      mix-blend-mode: multiply;
+      opacity: 0.5;
+      position: relative;
+      bottom:200px;
+      animation: 3s infinite;
+      animation-name: smc2;
+      z-index: 2;
+
+    }
+
+    .table>div:nth-child(3){
+      width: 25vw;
+      height: 25vw;
+      border: 1px solid black;
+      background-color: greenyellow;
+      mix-blend-mode: multiply;
+      opacity: 0.5;
+      position: relative;
+      right: 200px;
+      bottom: 30px;
+      animation: 3s infinite;
+      animation-name: smc3;
+      z-index: 3;
+
+    }
+
+    .table>div:nth-child(4){
+      width: 25vw;
+      height: 25vw;
+      background-color: skyblue;
+      mix-blend-mode: multiply;
+      opacity: 0.5;
+      position: relative;
+      right: 750px;
+      top:200px;
+      animation: 3s infinite;
+      animation-name: smc4;
+      z-index: 4;
+
+    }
+
+   
+    
+  </style>
+</head>
+<body>
+  <div class="table">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>

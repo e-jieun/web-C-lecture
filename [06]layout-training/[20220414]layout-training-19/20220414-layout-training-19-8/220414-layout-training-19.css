@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@-webkit-keyframes moving {
+  0% {
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+  }
+  25% {
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+  }
+  50% {
+    background: #000;
+  }
+  75% {
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+  }
+}
+
+@keyframes moving {
+  0% {
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+  }
+  25% {
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+  }
+  50% {
+    background: #000;
+  }
+  75% {
+    width: 300px;
+    height: 300px;
+    border-radius: 300px;
+  }
+  100% {
+    width: 500px;
+    height: 500px;
+    border-radius: 500px;
+  }
+}
+
+#back {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#back .red, #back .purple, #back .blue, #back .green {
+  width: 300px;
+  height: 300px;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  position: absolute;
+  -webkit-animation: 1s moving infinite;
+          animation: 1s moving infinite;
+}
+
+#back .red {
+  background-color: #ff9797;
+  top: 20%;
+  left: 40%;
+}
+
+#back .purple {
+  background-color: #ff89ff;
+  top: 40%;
+  left: 35%;
+}
+
+#back .blue {
+  background-color: #a8a8ff;
+  top: 30%;
+  right: 35%;
+}
+
+#back .green {
+  background-color: #a0ffa0;
+  bottom: 20%;
+  right: 40%;
+}
+/*# sourceMappingURL=220414-layout-training-19.css.map */

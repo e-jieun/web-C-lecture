@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>color-mix</title>
+    <style>
+      *{margin:0; padding:0; box-sizing: border-box;}
+        .container {
+          width:100vw;
+          height:100vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+        }
+        @keyframes color {
+          0% { background-color: red;
+
+          }
+          
+          10% {background-color: yellow; width:50px; height:50px; }
+
+          30% {background-color: white; width:100px; height:100px;}
+
+          50% {background-color: blue; width:200px; height:200px;}
+
+          70% {background-color: tomato; width:300px; height:300px;}
+
+          100% {background-color: green; width:100px; height:100px; }
+         
+        }
+
+      
+        
+        
+        
+        .container div {
+          width:200px;
+          height:200px;
+          /* border: 1px solid black; */
+          position:relative;
+          opacity: 0.55;
+          mix-blend-mode:color-burn;
+          animation: 0.2s color infinite;
+         
+          
+        }
+        
+        .container div:nth-child(1) {
+          bottom:70px;
+          left:290px;
+          background-color: yellow;
+          animation: 4s color infinite;
+        }
+        .container div:nth-child(2){
+          left:50px;
+          top:50px;
+          background-color: red;
+          animation: 6s color infinite;
+        }
+        
+        .container div:nth-child(3) {
+          background-color: green;
+          animation: 8s color infinite;
+        }
+        
+        .container div:nth-child(4) {
+          background-color: blue;
+          right:270px;
+          top:120px;
+          animation: 11s color infinite;
+          
+        }
+        
+        
+        
+              
+    </style>
+</head>
+<body>
+  <div class="container">시공
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    
+  </div>
+</body>
+</html>

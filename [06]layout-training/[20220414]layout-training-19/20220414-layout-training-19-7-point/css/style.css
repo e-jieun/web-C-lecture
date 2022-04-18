@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.flex {
+  display: flex;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+@-webkit-keyframes move1 {
+  0% {
+    top: 10vh;
+    left: 50vw;
+    width: 200px;
+    height: 200px;
+  }
+  50% {
+    top: 50vh;
+    left: 60vw;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 10vh;
+    left: 50vw;
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@keyframes move1 {
+  0% {
+    top: 10vh;
+    left: 50vw;
+    width: 200px;
+    height: 200px;
+  }
+  50% {
+    top: 50vh;
+    left: 60vw;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 10vh;
+    left: 50vw;
+    width: 200px;
+    height: 200px;
+  }
+}
+@-webkit-keyframes move2 {
+  0% {
+    top: 10vh;
+    left: 20vw;
+    width: 200px;
+    height: 200px;
+  }
+  50% {
+    top: 20vh;
+    left: 10vw;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 10vh;
+    left: 20vw;
+    width: 200px;
+    height: 200px;
+  }
+}
+@keyframes move2 {
+  0% {
+    top: 10vh;
+    left: 20vw;
+    width: 200px;
+    height: 200px;
+  }
+  50% {
+    top: 20vh;
+    left: 10vw;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 10vh;
+    left: 20vw;
+    width: 200px;
+    height: 200px;
+  }
+}
+@-webkit-keyframes move3 {
+  0% {
+    top: 0;
+    left: 20vw;
+    width: 200px;
+    height: 200px;
+  }
+  50% {
+    top: -10vh;
+    left: 20vw;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 0;
+    left: 20vw;
+    width: 200px;
+    height: 200px;
+  }
+}
+@keyframes move3 {
+  0% {
+    top: 0;
+    left: 20vw;
+    width: 200px;
+    height: 200px;
+  }
+  50% {
+    top: -10vh;
+    left: 20vw;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 0;
+    left: 20vw;
+    width: 200px;
+    height: 200px;
+  }
+}
+@-webkit-keyframes move4 {
+  0% {
+    top: 20vh;
+    left: 50vw;
+    width: 200px;
+    height: 200px;
+  }
+  50% {
+    top: 60vh;
+    left: 50vw;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 20;
+    left: 50;
+    width: 200px;
+    height: 200px;
+  }
+}
+@keyframes move4 {
+  0% {
+    top: 20vh;
+    left: 50vw;
+    width: 200px;
+    height: 200px;
+  }
+  50% {
+    top: 60vh;
+    left: 50vw;
+    width: 100px;
+    height: 100px;
+  }
+  100% {
+    top: 20;
+    left: 50;
+    width: 200px;
+    height: 200px;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+#root > div {
+  width: 200px;
+  height: 200px;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  border-radius: 50%;
+}
+#root > div:nth-child(1) {
+  position: absolute;
+  z-index: 4;
+  background-color: #98bee4;
+  left: 50vw;
+  top: 10vh;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-name: move1;
+          animation-name: move1;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+#root > div:nth-child(2) {
+  position: relative;
+  z-index: 3;
+  background-color: #ece7b3;
+  left: 20vw;
+  top: 10vh;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-name: move2;
+          animation-name: move2;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+#root > div:nth-child(3) {
+  position: relative;
+  z-index: 2;
+  background-color: #e7b5db;
+  left: 20vw;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-name: move3;
+          animation-name: move3;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+#root > div:nth-child(4) {
+  position: absolute;
+  z-index: 1;
+  background-color: #7e66d3;
+  left: 50vw;
+  top: 20vh;
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-name: move4;
+          animation-name: move4;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}/*# sourceMappingURL=style.css.map */
