@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <h1 id="main-text">자바스크립트 별거없네</h1>
+      <button id="click-button">click</button>
+    </div>
+  </div>
+  <script>
+
+    const root = document.getElementById('root');
+    // javascript styling 
+
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.backgroundColor = "#c4c4c4";
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+    root.style.flexDirection = "column";
+
+    const mainText = document.getElementById('main-text');
+    const clickButton = document.getElementById('click-button');
+
+    let fontValue = 1;
+    mainText.style.fontSize = fontValue + "rem";
+     
+    clickButton.addEventListener("click", function() {
+      fontValue += 0.1;
+      mainText.style.fontSize = fontValue + "rem";
+    });
+
+    
+
+
+
+  </script>
+</body>
+</html>
