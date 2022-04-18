@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  background-color: aliceblue;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@-webkit-keyframes move1 {
+  0% {
+    top: 60px;
+    left: 110px;
+  }
+  50% {
+    top: 60px;
+    left: 175px;
+  }
+  100% {
+    top: 60px;
+    left: 110px;
+  }
+}
+
+@keyframes move1 {
+  0% {
+    top: 60px;
+    left: 110px;
+  }
+  50% {
+    top: 60px;
+    left: 175px;
+  }
+  100% {
+    top: 60px;
+    left: 110px;
+  }
+}
+
+@-webkit-keyframes move2 {
+  0% {
+    top: 100px;
+    left: 250px;
+  }
+  50% {
+    top: 100px;
+    left: 180px;
+  }
+  100% {
+    top: 100px;
+    left: 250px;
+  }
+}
+
+@keyframes move2 {
+  0% {
+    top: 100px;
+    left: 250px;
+  }
+  50% {
+    top: 100px;
+    left: 180px;
+  }
+  100% {
+    top: 100px;
+    left: 250px;
+  }
+}
+
+#root {
+  width: 428px;
+  height: 1000px;
+  background-color: black;
+}
+
+#root > div {
+  border: 1px solid white;
+  width: 100%;
+}
+
+#root > div:nth-child(1) {
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#root > div:nth-child(1) > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100px;
+  width: 100%;
+}
+
+#root > div:nth-child(1) > div > div {
+  width: 10px;
+  height: 10px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.465);
+}
+
+#root > div:nth-child(2) {
+  height: 300px;
+}
+
+#root > div:nth-child(2) > div:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  background-color: rgba(255, 0, 0, 0.618);
+  position: relative;
+  -webkit-animation: 2s move1 infinite;
+          animation: 2s move1 infinite;
+}
+
+#root > div:nth-child(2) > div:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: rgba(17, 255, 0, 0.618);
+  position: relative;
+  -webkit-animation: 2s move2 infinite;
+          animation: 2s move2 infinite;
+}
+
+#root > div:nth-child(2) > div:nth-child(3) {
+  width: 150px;
+  height: 80px;
+  border-radius: 30px;
+  background-color: rgba(255, 255, 255, 0.223);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  position: relative;
+  top: -15px;
+  left: 130px;
+}
+
+#root > div:nth-child(3) {
+  height: 100px;
+}
+
+#root > div:nth-child(4) {
+  height: 400px;
+  z-index: 1;
+}
+
+#root > div:nth-child(5) {
+  height: 100px;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
+}
+/*# sourceMappingURL=style.css.map */

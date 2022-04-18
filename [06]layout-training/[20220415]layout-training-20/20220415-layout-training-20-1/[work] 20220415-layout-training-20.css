@@ -1,0 +1,196 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-1:#BEBFD9;
+  --color-2:#4B4C5B;
+  --color-3:#212529;
+  --color-4:#aa2020;
+  --color-5:#bcff65;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--color-3);
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  opacity: 0.5;
+}
+header > nav {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  margin-top: 10vh;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+header > nav > div {
+  width: 2vh;
+  height: 2vh;
+  border-radius: 50%;
+  background-color: var(--color-1);
+}
+
+main {
+  margin-top: 20vh;
+}
+main > article {
+  padding: 5vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main > article > div > div:nth-child(1) {
+  width: 35vw;
+  height: 12vh;
+  background-color: rgba(190, 191, 217, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  position: relative;
+  z-index: 2;
+}
+main > article > div > div:nth-child(1) > h1 {
+  color: var(--color-1);
+  font-size: 4rem;
+}
+main > article > div > div:nth-child(2) {
+  width: 20vw;
+  height: 20vw;
+  border-radius: 50%;
+  position: absolute;
+  left: 25vw;
+  top: 40vh;
+  z-index: 1;
+  -webkit-animation: 8s moving-2 infinite;
+          animation: 8s moving-2 infinite;
+  background-color: var(--color-4);
+}
+main > article > div > div:nth-child(3) {
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  top: 54vh;
+  left: 60vw;
+  -webkit-animation: 8s moving-1 infinite;
+          animation: 8s moving-1 infinite;
+  background-color: var(--color-5);
+}
+main > article > p {
+  margin-top: 8vh;
+  color: var(--color-1);
+  text-align: center;
+}
+main > section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0.5;
+}
+main > section > div:nth-child(2) {
+  margin-top: 1vh;
+  width: 90vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+main > section > div:nth-child(2) > div:nth-child(1) {
+  width: 50vw;
+  height: 25vh;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: var(--color-1);
+}
+main > section > div:nth-child(2) > div:nth-child(2) {
+  width: 35vw;
+  height: 25vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: var(--color-2);
+}
+main > section > div:nth-child(1) {
+  width: 90vw;
+  height: 2vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+}
+main > section > div:nth-child(1) > div:nth-child(1) {
+  width: 50vw;
+  height: 1px;
+  background-color: var(--color-1);
+}
+main > section > div:nth-child(1) > div:nth-child(2) {
+  width: 35vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+main > section > div:nth-child(1) > div:nth-child(2) > div {
+  width: 5vw;
+  height: 1px;
+  background-color: var(--color-2);
+}
+
+footer {
+  width: 100vw;
+  height: 10vh;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background-color: rgba(75, 76, 91, 0.5);
+}
+
+@-webkit-keyframes moving-1 {
+  50% {
+    left: 40vw;
+    opacity: 0.5;
+    background-color: rgb(0, 94, 20);
+  }
+}
+
+@keyframes moving-1 {
+  50% {
+    left: 40vw;
+    opacity: 0.5;
+    background-color: rgb(0, 94, 20);
+  }
+}
+@-webkit-keyframes moving-2 {
+  50% {
+    left: 65vw;
+    opacity: 0.5;
+    background-color: rgb(80, 0, 0);
+  }
+}
+@keyframes moving-2 {
+  50% {
+    left: 65vw;
+    opacity: 0.5;
+    background-color: rgb(80, 0, 0);
+  }
+}/*# sourceMappingURL=[work] 20220415-layout-training-20.css.map */

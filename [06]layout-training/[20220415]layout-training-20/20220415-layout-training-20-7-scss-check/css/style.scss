@@ -1,0 +1,263 @@
+$width-root:100vw;
+$height-root:120vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:1px solid #888;
+$solid-red:1px solid #613c3c;
+$per-100:100%;
+$color-1:rgba(190, 191, 217,0.4);
+$color-2:rgb(33, 37, 41);
+$color-3:rgb(75, 76, 91);
+$color-4:rgb(192, 104, 109);
+$color-5:rgb(83, 113, 105);
+$color-6:rgb(190, 191, 217);
+
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0;}
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  flex-direction: column;
+}
+
+
+  @mixin size($w, $h) {
+    width: $w;
+    height: $h;
+  }
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($posi, $z-in){
+  position: $posi;
+  z-index: $z-in;
+}
+
+@mixin animation($name){
+  animation-duration: 5s;
+  animation-name: $name;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@mixin keyframe($ani_name) {
+  @keyframes #{$ani_name} {
+    @content;
+  }
+}
+
+@include keyframe(move1){
+  0%{left: 10%; bottom: 10%;} 
+
+  50%{left: 35%; bottom: 10%;}
+
+  100%{left: 10%; bottom: 10%;}
+}
+
+@include keyframe(move2){
+  0%{  right: 10%; top: 10%;} 
+  50%{ right: 35%; top: 10%;}
+  100%{right: 10%; top: 10%;}
+}
+// ------------------------------------------------------------------
+
+
+#root{
+  @include root-style;
+}
+
+header{
+  @include box-style($per-100, 10%, $color-3);
+  @include position-setting(sticky, 2);
+  opacity: 0.6;
+  bottom: 0;
+  border-radius: 20px 20px 0 0 ;
+  @include flex-setting(space-around, center);
+
+  &>div{
+    @include size(10%, 70%);
+    @include flex-setting(center, center );
+    font-size: 40px;
+    color: $color-1;
+  }
+
+  &>div:nth-child(2){
+    transform: rotate(-90deg);
+  }
+
+  &>div:nth-child(3){
+    transform: rotate(0.25turn);
+  }
+
+  &>div:nth-child(4){
+    transform: rotate(0.5turn);
+  }
+}
+
+main{
+  @include box-style($per-100, $per-100, $color-2);
+  @include position-setting(relative, 1);
+  @include flex-setting(center, center );
+
+  &>section:nth-child(1){
+    @include size($per-100, 5%);
+
+    &>div{
+      @include size($per-100, 90%);
+      @include flex-setting(space-around, center);
+
+      &>div{
+        @include box-style(8px, 8px, $color-1);
+        border-radius: 50%;
+      }
+    }
+  }
+
+  &>section:nth-child(2){
+    @include size($per-100, 55%);
+    @include flex-setting(space-around, center);
+
+
+    &>div:nth-child(1){
+      @include size(90%,70% );
+      @include flex-setting(center, center);
+      
+      &>div:nth-child(1){
+        @include box-style(100px, 100px, $color-4);
+        border-radius: 50%;
+        @include position-setting(relative, 1);
+        left: 10%;
+        bottom: 10%;
+        @include animation(move1);
+      }
+
+      &>div:nth-child(2){
+        @include box-style(200px, 150px,$color-1 );
+        // opacity: 0.5;
+        border-radius: 30px;
+        @include position-setting(relative, 2);
+        @include flex-setting(center, center);
+        backdrop-filter: blur(5px);
+
+        &>p{
+          color: $color-6;
+          font-size: 60px;
+          font-weight: 900;
+        }
+      }
+
+      // rgb값으로 컬러를 바꿔줬는데 backdrop-filter가 안먹히고 있음 
+      // 
+
+      /*
+      
+      check point : 1
+      rgb() -> rgba() 값으로 컬러 값을 바꾸고 a(알파값) = 투명도 값을 반투명 상태로 변환하면 정상작동
+      
+      
+      */
+
+
+
+      &>div:nth-child(3){
+        @include box-style(80px, 80px, $color-5);
+        border-radius: 50%;
+        @include position-setting(relative, 1);
+        right: 10%;
+        top: 10%;
+        @include animation(move2);
+      }
+
+    }
+
+    &>div:nth-child(2){
+      @include size(90%, 10%);
+      color: $color-1;
+    }
+  }
+
+  &>section:nth-child(3){
+    @include size($per-100, 35%);
+    @include flex-setting(space-around, center);
+    
+    &>div:nth-child(1){
+      @include size(90%, 5%);
+      @include flex-setting(space-between, center);
+
+      &>div:first-child{
+        @include box-style(55%, 30%, $color-1);
+        border-radius:20px;
+      }
+
+      &>div:last-child{
+        @include size(40%, 30%);
+        @include flex-setting(space-around, center);
+        
+        &>div{
+          @include box-style(15%, $per-100, $color-3 );
+          border-radius:20px;
+        }
+      }
+    }
+
+    &>div:nth-child(2){
+      @include size(90%, 85%);
+      @include flex-setting(space-around, center);
+
+      &>div:nth-child(1){
+        @include box-style(55%, $per-100, $color-1);
+        border-radius:50px;
+      }
+
+      &>div:nth-child(2){
+        @include box-style(40%, $per-100, $color-3);
+        border-radius:50px;
+      }
+    }
+  }
+
+
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

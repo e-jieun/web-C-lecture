@@ -1,0 +1,217 @@
+*{margin:0; padding:0;}
+
+:root {
+  --c-light:#c3d1e9;
+  --c-mid: #69697e;
+  --c-dark: #33363f;
+}
+
+$dark: var(--c-dark);
+$mid: var(--c-mid);
+$light: var(--c-light);
+
+
+/* 
+
+ * check point 1
+
+* :root {
+    --key : value;
+  }
+* var(--key);
+? 위의 변수 선언 방식은 정식으로 CSS 에서 지원하는 표준 방식
+
+* $dark:value;
+? 위의 달러 기호가 있는 방식은 SCSS의 변수 선언 방식으로 사용처를 혼동하는 경우가 잦음
+
+? 따라서 제작자가 작성한 위의 방식은 전혀 문제가 되지 않으나, scss가 지원하는 변수를 사용할 것인지 css 표준이 지원하는 변수를 사용할 것인지 결정하는 과정은 협업과정에서 코딩 방식 통일하는 주요 부분이 됨을 인지 할 것
+
+
+
+
+
+
+*/
+
+
+
+
+@mixin flex($j, $a, $d) {
+  display: flex;
+  justify-content: $j;
+  align-items: $a;
+  flex-direction: $d;
+}
+
+@mixin size($w, $h) {
+  width: $w; height: $h;
+}
+
+@mixin position($po) {
+  position: $po;
+}
+
+@keyframes left-right {
+  to {
+    left: 40%;
+    top: 7%;
+  }
+  from {
+    left: 20%;
+    top: 7%;
+  }
+}
+
+@keyframes right-left {
+  to {
+    right: 43%;
+    bottom: 42%;
+  }
+  from {
+    right: 24%;
+    bottom: 42%;
+  }
+}
+
+
+#root {
+  @include size(100%, 105vh);
+  @include flex(none, center, column);
+  @include position(relative);
+  background-color: $dark;
+
+
+  & > div {
+    @include size(10%, 7vh);
+    @include flex(space-between, center, column);
+    margin: 5vh 0 13vh 0;
+
+    & > div {
+      @include size(1vh, 1vh);
+      border-radius: 1vh;
+      background-color: $mid;
+    }
+  }
+
+  
+  & > main {
+    @include size(90%, 40vh);
+    @include flex(center, center, column);
+    @include position(relative);
+
+    & > div:first-child {
+      @include size(150px, 100px);
+      // 사이즈 변하지 않게 하기위해 절대값 사용
+      @include flex(center, center, none);
+      @include position(relative);
+      z-index: 1;
+      border-radius: 3vh;
+      background-color: $light;
+      backdrop-filter: blur(10px);
+      mix-blend-mode: soft-light;
+      font-size: 3rem;
+      font-weight: bold;
+      color: black;
+
+    }
+
+    & > div:nth-child(2) {
+      @include size(8vh, 8vh);
+      @include position(absolute);
+      z-index: 0;
+      left: 20%;
+      top: 7%;
+      animation: left-right 1s linear infinite alternate;
+      border-radius: 8vh;
+      background-color: rgb(109, 238, 255);
+    }
+
+    & > div:nth-child(3) {
+      @include size(5vh, 5vh);
+      @include position(absolute);
+      z-index: 0;
+      right: 24%;
+      bottom: 42%;
+      animation: right-left 1s linear infinite alternate;
+      border-radius: 5vh;
+      background-color: rgb(146, 255, 161);
+    }
+
+    & > div:nth-child(4) {
+      @include size(90%, 2vh);
+      @include flex(center, center, none);
+      margin-top: 7vh;
+      color: $light;
+      text-align: center
+    }
+
+
+  }
+
+  &> section {
+    @include size(90%, 50vh);
+    @include flex(space-between, center, row);
+
+
+    & > div {
+      @include size(47%, 40vh);
+      @include flex(space-between, center, column);
+
+      // 왼쪽 상자
+      &:first-child > div:nth-child(1) {
+        @include size(100%, 1%);
+        border-radius: 1vh;
+        background-color: $light;
+      }
+
+      &:first-child > div:nth-child(2) {
+        @include size(100%, 95%);
+        border-radius: 2vh;
+        background-color: $light;
+      }
+
+      // 오른쪽 상자
+      &:nth-child(2) > div:nth-child(1) {
+        @include size(100%, 1%);
+        @include flex(space-between, center, row);
+
+
+        & > div {
+          @include size(18%, 100%);
+          border-radius: 1vh;
+          background-color: $mid;
+        }
+      }
+
+      &:last-child > div:nth-child(2) {
+        @include size(100%, 95%);
+        border-radius: 2vh;
+        background-color: $mid;
+      }
+
+    }
+
+  }
+
+
+  & > header {
+    @include size(100vw, 10vh);
+    @include flex(space-around, center, row);
+    @include position(sticky);
+    bottom: 0;
+    z-index: 3;
+    border-radius: 2vh 2vh 0 0;
+    background-color: $dark;
+    backdrop-filter: blur(10px);
+    mix-blend-mode: screen;
+
+    & > div {
+      @include size(5vh, 5vh);
+      border-radius: 5vh;
+      background-color: $mid;
+    }
+
+  }
+
+
+}

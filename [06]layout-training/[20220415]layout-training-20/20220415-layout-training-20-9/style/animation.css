@@ -1,0 +1,31 @@
+@keyframes circle-1 {
+  0%{
+    left: 0%;
+  }
+
+  50% {
+    left: 76%;
+  }
+  
+
+  100% {
+    left: 0%
+  }
+
+}
+
+
+@keyframes circle-2 {
+  0%{
+    right: 0%;
+  }
+
+  50% {
+    right: 82%;
+  }
+  
+
+  100% {
+    right: 0%;
+  }
+}

@@ -1,0 +1,184 @@
+*{
+  margin: 0;padding: 0;
+  box-sizing: border-box;
+}
+@mixin width-height($width,$height) {
+  width: $width;
+  height: $height;
+}
+@mixin top-left($top,$left) {
+  top: $top;
+  left: $left;
+}
+@keyframes rotate-red{
+  0%{
+    @include top-left(20%, 20%);
+  }
+  25%{
+    @include top-left(20%, 60%);
+
+  }
+  50%{
+    @include top-left(60%, 60%);
+  }
+  75%{
+    @include top-left(60%, 20%);
+  }
+  100%{
+    @include top-left(20%, 20%);
+  }
+}
+@keyframes rotate-yellow{
+  0%{
+    @include top-left(60%, 60%);
+  }
+  25%{
+    @include top-left(60%, 30%);
+
+  }
+  50%{
+    @include top-left(30%, 30%);
+  }
+  75%{
+    @include top-left(30%, 60%);
+  }
+  100%{
+    @include top-left(60%, 60%);
+  }
+}
+#mob{
+  @include width-height(428px, fit-content);
+  background-color: #666;
+  
+  &>#box{
+    padding: 10px 0;
+    &>div{
+      @include width-height(15px, 15px);
+      border-radius: 50%;
+      background-color: #ccc;
+      margin: 10px auto;
+    }
+  }
+
+  &>#blur-box{
+    @include width-height(inherit, 300px);
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    &>#box{
+      @include width-height(30%, 100px);
+      border-radius: 20px;
+
+      z-index: 10;
+
+      color: #fff;
+      line-height: 100px;
+      text-align: center;
+      font-size: 2rem;
+      letter-spacing: 5px;
+      backdrop-filter:blur(10px) brightness(1.1);
+    }
+    #red{
+      @include width-height(80px, 80px);
+      border-radius: 50%;
+      background-color: red;
+
+      position: absolute;
+      animation: rotate-red 5s infinite;
+      opacity: 0.5;
+
+      z-index: 2;
+    }
+    #yellow{
+      @include width-height(40px, 40px);
+      border-radius: 50%;
+      background-color: yellow;
+
+      position: absolute;
+      opacity: 0.5;
+      z-index: 2;
+      animation: rotate-yellow 5s infinite;
+    }
+  }
+
+  &>p{
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #slide-box{
+    @include width-height(100%,300px );
+    margin: 20px auto;
+
+    #slide{
+      @include width-height(100%,100%);
+      display: flex;
+
+      &>#item{
+        @include width-height(80%,100%);
+        margin: auto 10px;
+
+        #bar{
+          @include width-height(90%,10px);
+          background-color: #ccc;
+          margin: 0 auto;
+          border-radius: 50px;
+        }
+        #item-box{
+          @include width-height(90%,80%);
+          margin: 10px auto;
+          background-color: #ccc;
+          border-radius: 10px;
+        }
+      }
+      &>#item:nth-child(2){
+        width: 20%;
+        opacity: 0.5;
+      }
+      &>#item:nth-child(3){
+        opacity: 0.5;
+        width: 20%;
+      }
+      &>#item:nth-child(4){
+        opacity: 0.5;
+        width: 20%;
+      }
+    }
+  }
+  
+  
+  
+}
+#mob >header{
+  @include width-height(inherit, 10%);
+  position: sticky;
+  bottom: 0;
+  left: 0;
+
+  padding: 10px 0;
+  margin: 0 auto;
+  backdrop-filter: blur(5px);
+  
+  #box{
+    display: flex;
+    justify-content: space-around;
+    
+
+
+    &>div{
+      @include width-height(50px, 50px);
+      width: 50px;
+      height: 50px;
+
+      &>i{
+        color: #fff;
+        text-align: center;
+        line-height: 50px;
+        width: 100%;
+      }
+    }
+  }
+}

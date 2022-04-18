@@ -1,0 +1,210 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --c-light:#c3d1e9;
+  --c-mid: #69697e;
+  --c-dark: #33363f;
+}
+
+@-webkit-keyframes left-right {
+  to {
+    left: 40%;
+    top: 7%;
+  }
+  from {
+    left: 20%;
+    top: 7%;
+  }
+}
+
+@keyframes left-right {
+  to {
+    left: 40%;
+    top: 7%;
+  }
+  from {
+    left: 20%;
+    top: 7%;
+  }
+}
+@-webkit-keyframes right-left {
+  to {
+    right: 43%;
+    bottom: 42%;
+  }
+  from {
+    right: 24%;
+    bottom: 42%;
+  }
+}
+@keyframes right-left {
+  to {
+    right: 43%;
+    bottom: 42%;
+  }
+  from {
+    right: 24%;
+    bottom: 42%;
+  }
+}
+#root {
+  width: 100%;
+  height: 105vh;
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+  background-color: var(--c-dark);
+}
+#root > div {
+  width: 10%;
+  height: 7vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  margin: 5vh 0 13vh 0;
+}
+#root > div > div {
+  width: 1vh;
+  height: 1vh;
+  border-radius: 1vh;
+  background-color: var(--c-mid);
+}
+#root > main {
+  width: 90%;
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+#root > main > div:first-child {
+  width: 150px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: none;
+  position: relative;
+  z-index: 1;
+  border-radius: 3vh;
+  background-color: var(--c-light);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  mix-blend-mode: soft-light;
+  font-size: 3rem;
+  font-weight: bold;
+  color: black;
+}
+#root > main > div:nth-child(2) {
+  width: 8vh;
+  height: 8vh;
+  position: absolute;
+  z-index: 0;
+  left: 20%;
+  top: 7%;
+  -webkit-animation: left-right 1s linear infinite alternate;
+          animation: left-right 1s linear infinite alternate;
+  border-radius: 8vh;
+  background-color: rgb(109, 238, 255);
+}
+#root > main > div:nth-child(3) {
+  width: 5vh;
+  height: 5vh;
+  position: absolute;
+  z-index: 0;
+  right: 24%;
+  bottom: 42%;
+  -webkit-animation: right-left 1s linear infinite alternate;
+          animation: right-left 1s linear infinite alternate;
+  border-radius: 5vh;
+  background-color: rgb(146, 255, 161);
+}
+#root > main > div:nth-child(4) {
+  width: 90%;
+  height: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: none;
+  margin-top: 7vh;
+  color: var(--c-light);
+  text-align: center;
+}
+#root > section {
+  width: 90%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+#root > section > div {
+  width: 47%;
+  height: 40vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+#root > section > div:first-child > div:nth-child(1) {
+  width: 100%;
+  height: 1%;
+  border-radius: 1vh;
+  background-color: var(--c-light);
+}
+#root > section > div:first-child > div:nth-child(2) {
+  width: 100%;
+  height: 95%;
+  border-radius: 2vh;
+  background-color: var(--c-light);
+}
+#root > section > div:nth-child(2) > div:nth-child(1) {
+  width: 100%;
+  height: 1%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+#root > section > div:nth-child(2) > div:nth-child(1) > div {
+  width: 18%;
+  height: 100%;
+  border-radius: 1vh;
+  background-color: var(--c-mid);
+}
+#root > section > div:last-child > div:nth-child(2) {
+  width: 100%;
+  height: 95%;
+  border-radius: 2vh;
+  background-color: var(--c-mid);
+}
+#root > header {
+  width: 100vw;
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  z-index: 3;
+  border-radius: 2vh 2vh 0 0;
+  background-color: var(--c-dark);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  mix-blend-mode: screen;
+}
+#root > header > div {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 5vh;
+  background-color: var(--c-mid);
+}/*# sourceMappingURL=style.css.map */

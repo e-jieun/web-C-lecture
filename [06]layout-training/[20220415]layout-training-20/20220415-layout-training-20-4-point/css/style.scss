@@ -1,0 +1,202 @@
+// @import base.scss
+@import './base.scss';
+// @keyframes
+@keyframes slide1 {
+  0%{
+    position: absolute;
+    top: 30vh;
+    left: 60vw;
+  }
+  50%{
+    position: absolute;
+    top: 50vh;
+    left: 30vw;
+  }
+  100%{
+    position: absolute;
+    top: 30vh;
+    left: 60vw;
+  }
+}
+@keyframes slide2 {
+  0%{
+    position: absolute;
+    top: 50vh;
+    left: 40vw;
+  }
+  50%{
+    position: absolute;
+    top: 30vh;
+    left: 50vw;
+  }
+  100%{
+    position: absolute;
+    top: 50vh;
+    left: 40vw;
+  }
+}
+// style
+#root{
+  @extend %view-100;
+  #con{
+    @extend %inherit;
+    background-color: $color-dg;
+    color: #fff;
+    
+    // con2 - main con
+    &>div:nth-child(1){
+      @extend %inherit;
+      @extend %flex-center-center;
+      @extend %flex-column;
+      &>div{
+        width: inherit;
+        flex-grow: 1;
+      }
+      &>div:nth-child(1){
+        @extend %flex-center-center;
+        &>ul{
+          @include width-height($per100, 50%);
+          list-style-type: none;
+          @include flex-align-justify(center, space-around);
+          @extend %flex-column;
+          &>li{
+            @include width-height(2vw, 2vw);
+            background-color: $color-lg;
+            @extend %circle;
+          }
+        }
+      }
+      &>div:nth-child(2){
+        flex-grow: 2;
+        width: inherit;
+        @include flex-align-justify(center, flex-end);
+        @extend %flex-column;
+        &>div:nth-child(1){
+          width: inherit;
+          flex-grow: 2;
+          @extend %flex-center-center;
+          @extend %flex-column;
+          &>div:nth-child(1){
+            order: 2;
+            @include width-height(30vw, 20vw);
+            border-radius: 30px;
+            // backdrop-filter가 안된 특징
+            // 겹쳐놓고 위에 있는 요소만 추가하면되는 속성 -> 작성 방식이 잘못된 것
+            // color: salmon;
+            // rgba로 써주면 됨
+            // rgba(red, green, black, alpha);
+            // => 0-255
+            background-color: rgba($color: #fff, $alpha: .5);
+            backdrop-filter: blur(.5);
+            @extend %flex-center-center;
+            position: absolute;
+            z-index: 2;
+            &>div{
+              color: #fff;
+              opacity: 1;
+              font-size: 3rem;
+            }
+          }
+          &>div:nth-child(2){
+            order: 1;
+            @include width-height(20vw, 20vw);
+            @extend %circle;
+            position: absolute;
+            top: 30vh;
+            background-color: rgb(255, 0, 0);
+            opacity: .5;
+            z-index: 1;
+            animation: 3s slide1 infinite;
+          }
+          &>div:nth-child(3){
+            order: 3;
+            @include width-height(10vw, 10vw);
+            @extend %circle;
+            position: absolute;
+            top: 50vh;
+            background-color: green;
+            opacity: .5;
+            z-index: 1;
+            animation: 3s slide2 infinite;
+          }
+        }
+        &>div:nth-child(2){
+          width: inherit;
+          flex-grow: 1;
+          @extend %flex-center-center;
+          &>div{
+            @include width-height(90%, inherit);
+            text-align: center;
+            font-size: small;
+          }
+        }
+      }
+      &>div:nth-child(3){
+        // @extend %flex-center-center;
+        @include flex-align-justify(center, flex-start);
+        @extend %flex-column;
+        &>div:nth-child(1){
+          @include width-height($per100, inherit);
+          @extend %flex-center-center;
+          &>ul{
+            @include width-height(90%, 5vw);
+            @extend %flex-center-center;
+            list-style-type: none;
+            column-gap: 1vw;
+            &>li{
+              flex-grow: 1;
+              height: 3px;
+              background-color: $color-na;
+            }
+            &>li:nth-child(1){
+              flex-grow: 10;
+              background-color: $color-lg;
+            }
+          }
+        }
+        &>div:nth-child(2){
+          @include width-height(90%, $per100);
+          @extend %flex-center-center;
+          list-style-type: none;
+          column-gap: 2vw;
+          &>div:nth-child(1){
+            height: 90%;            
+            flex-grow: 1.5;
+            background-color: $color-lg;
+            border-radius: 10px;
+          }
+          &>div:nth-child(2){
+            height: 90%;
+            flex-grow: 1;
+            border-radius: 10px;
+            background-color: $color-na;
+            
+          }
+        }
+      }
+      nav{
+        @include width-height($per100, 10%);
+        background-color: $color-dg;
+        opacity: .5;
+        position: absolute;
+        // Q1. position: sticky;는 잘 적용되지만 겹쳐지지 않고 아래로 위치만 변경돼서 어떻게 해야 absolute 값을 준 것처럼 적용이 될까요?? 
+        // position: sticky;
+        bottom: 0;
+        ul{
+          @include width-height($per100, $per100);
+          @include flex-align-justify(center, space-around);
+          list-style-type: none;
+          li{
+            height: inherit;
+            flex-grow: 1;
+            @extend %flex-center-center;
+            i{
+              font-size: 2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

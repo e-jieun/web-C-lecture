@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mark-20</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+
+    @keyframes moving {
+      0% {margin-bottom: 20px;}
+      
+      
+      30% {margin-top:20%;}
+      
+      50% {margin-right:50%;}
+
+      70%{margin-top:40px;}
+
+      100%{margin-bottom:20px;}
+      
+      
+    }
+    @keyframes moving-2 {
+      0% {margin-tpo: 10px;}
+      
+      
+      30% {margin-right:30%;}
+      
+      50% {margin-right:60%;}
+
+      70%{margin-left:60%;}
+
+      100%{margin-top:10px;}
+      
+      
+      
+      
+    }
+    
+    
+    
+    
+    
+    .container {
+      width:100vw;
+      height:100vh;
+      display: flex;
+      background-color: rgb(61, 59, 59);
+      flex-direction: column;
+      align-items: center;
+    }
+    .dot {
+      width:100vw;
+      height:20vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+      
+    .dot div {
+      width:20px;
+      height:20px;
+      background-color: gray;
+      margin:10px;
+      border-radius: 50%;
+    }
+    .ball {
+      width:100vw;
+      height:30vh;
+      /* border: 1px solid white; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }    
+    
+    .ball div {
+      width:80px;
+      height:80px;
+      border-radius: 50%;
+      background-color: rgb(216, 187, 25);
+      margin:5px;
+      opacity: 0.5;
+    }
+    .ball div:nth-child(1){
+      width:120px;
+      height:120px;
+      backdrop-filter:blur(50px);
+      background-color: rgb(8, 195, 219);
+      animation: moving 3s infinite;
+    }
+    .ball div:nth-child(2) {
+      animation: moving-2 6s infinite;
+      
+    }
+    
+    
+    .bcdrop {
+      width:100px;
+      height:80px;
+      border-radius: 20px;
+      position: relative;
+      bottom:190px;
+      backdrop-filter: blur(60px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      backdrop-filter: blur(10px);
+      background-color: rgba(200,200,200,0.5);
+      color: white;
+      opacity: 0.6;
+      
+    }
+
+    .text {
+      width:100vw;
+      height:10vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* border: 1px solid white; */
+      margin-bottom: 30px;
+      color: white;
+    }
+    .bar {
+      width:100vw;
+      height:1vh;
+      /* border: 1px solid white; */
+      display: flex;
+      justify-content: space-evenly;
+    }
+    
+    .bar div:nth-child(1) {
+      width:60vw;
+      height:0.5vh;
+      background-color: rgb(105, 98, 98)
+      
+    }
+    
+    .bar div:nth-child(2) {
+      width:30vw;
+      height:0.1vh;
+      border: 1px solid rgb(105, 98, 98);
+      border-style:dashed;
+      
+    }
+    .box {
+      width:100vw;
+      height:20vh;
+      /* border: 1px solid white; */
+      display: flex;
+      justify-content: space-evenly;
+    }
+    
+    .box div {
+      border-radius: 20px;
+      
+    }
+    .box div:nth-child(1) {
+      width:60vw;
+      height:18vh;
+      background-color: rgb(216, 187, 25)
+      
+    }
+    
+    .box div:nth-child(2) {
+      width:30vw;
+      height:18vh;
+      background-color: rgb(8, 195, 219)
+      
+    }
+    .footer {
+      width:100vw;
+      height:5vh;
+      background-color: rgb(8, 195, 219);
+      position: sticky;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    
+    .footer div {
+      width:70px;
+      height:100%;
+      background-color: rgb(216, 187, 25)
+      
+    }
+    
+  </style>
+  
+  
+</head>
+<body>
+  <div class="container">
+    <div class="dot">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+      <div class="ball">
+        <div></div>
+        <div></div>
+      </div>
+      <div class="bcdrop">6.6</div>
+      <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat doloribus ea facilis, corporis vero eaque quis. Atque recusandae sapiente aspernatur.</div>
+      <div class="bar">
+        <div></div>
+        <div></div>
+      </div>  
+      <div class="box">
+        <div></div>
+        <div></div>
+      </div>
+      
+      <div class="footer">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    
+    
+  </div>
+</body>
+</html>

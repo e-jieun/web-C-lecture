@@ -1,0 +1,264 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes rotate-red {
+  0% {
+    top: 20%;
+    left: 20%;
+  }
+  25% {
+    top: 20%;
+    left: 60%;
+  }
+  50% {
+    top: 60%;
+    left: 60%;
+  }
+  75% {
+    top: 60%;
+    left: 20%;
+  }
+  100% {
+    top: 20%;
+    left: 20%;
+  }
+}
+
+@keyframes rotate-red {
+  0% {
+    top: 20%;
+    left: 20%;
+  }
+  25% {
+    top: 20%;
+    left: 60%;
+  }
+  50% {
+    top: 60%;
+    left: 60%;
+  }
+  75% {
+    top: 60%;
+    left: 20%;
+  }
+  100% {
+    top: 20%;
+    left: 20%;
+  }
+}
+
+@-webkit-keyframes rotate-yellow {
+  0% {
+    top: 60%;
+    left: 60%;
+  }
+  25% {
+    top: 60%;
+    left: 30%;
+  }
+  50% {
+    top: 30%;
+    left: 30%;
+  }
+  75% {
+    top: 30%;
+    left: 60%;
+  }
+  100% {
+    top: 60%;
+    left: 60%;
+  }
+}
+
+@keyframes rotate-yellow {
+  0% {
+    top: 60%;
+    left: 60%;
+  }
+  25% {
+    top: 60%;
+    left: 30%;
+  }
+  50% {
+    top: 30%;
+    left: 30%;
+  }
+  75% {
+    top: 30%;
+    left: 60%;
+  }
+  100% {
+    top: 60%;
+    left: 60%;
+  }
+}
+
+#mob {
+  width: 428px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: #666;
+}
+
+#mob > #box {
+  padding: 10px 0;
+}
+
+#mob > #box > div {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin: 10px auto;
+}
+
+#mob > #blur-box {
+  width: inherit;
+  height: 300px;
+  margin: 20px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+#mob > #blur-box > #box {
+  width: 30%;
+  height: 100px;
+  border-radius: 20px;
+  z-index: 10;
+  color: #fff;
+  line-height: 100px;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 5px;
+  -webkit-backdrop-filter: blur(10px) brightness(1.1);
+          backdrop-filter: blur(10px) brightness(1.1);
+}
+
+#mob > #blur-box #red {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: red;
+  position: absolute;
+  -webkit-animation: rotate-red 5s infinite;
+          animation: rotate-red 5s infinite;
+  opacity: 0.5;
+  z-index: 2;
+}
+
+#mob > #blur-box #yellow {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: yellow;
+  position: absolute;
+  opacity: 0.5;
+  z-index: 2;
+  -webkit-animation: rotate-yellow 5s infinite;
+          animation: rotate-yellow 5s infinite;
+}
+
+#mob > p {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#mob #slide-box {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+}
+
+#mob #slide-box #slide {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#mob #slide-box #slide > #item {
+  width: 80%;
+  height: 100%;
+  margin: auto 10px;
+}
+
+#mob #slide-box #slide > #item #bar {
+  width: 90%;
+  height: 10px;
+  background-color: #ccc;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+#mob #slide-box #slide > #item #item-box {
+  width: 90%;
+  height: 80%;
+  margin: 10px auto;
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+#mob #slide-box #slide > #item:nth-child(2) {
+  width: 20%;
+  opacity: 0.5;
+}
+
+#mob #slide-box #slide > #item:nth-child(3) {
+  opacity: 0.5;
+  width: 20%;
+}
+
+#mob #slide-box #slide > #item:nth-child(4) {
+  opacity: 0.5;
+  width: 20%;
+}
+
+#mob > header {
+  width: inherit;
+  height: 10%;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  padding: 10px 0;
+  margin: 0 auto;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+
+#mob > header #box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+#mob > header #box > div {
+  width: 50px;
+  height: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+#mob > header #box > div > i {
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  width: 100%;
+}
+/*# sourceMappingURL=20220415.css.map */

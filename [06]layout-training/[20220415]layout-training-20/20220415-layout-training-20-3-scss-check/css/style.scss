@@ -1,0 +1,201 @@
+*{ margin:0; padding:0;}
+
+#container{
+  width:100vw;
+  height:100vh;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+@keyframes move1 {
+  0%{
+    top:60px;
+    left: 110px;
+  }
+  50%{
+    top:60px;
+    left: 175px;
+  }
+
+  100%{
+    top:60px;
+    left: 110px;
+  }
+}
+
+@keyframes move2 {
+  0%{
+    top:100px;
+    left: 250px;
+  }
+  50%{
+    top:100px;
+    left: 180px;
+  }
+
+  100%{
+    top:100px;
+    left: 250px;
+  }
+}
+
+
+
+
+#root{
+  width:428px;
+  height:1000px;
+  background-color:black;
+
+  // sticky라는 새로운 속성을 써봤다
+  // 강사님이 sticky를 써서 만들라는 촐력이 뭘까 
+  // 위로 올릴때 밑에 붙어 있으라는 것일까 
+  // 아래로 내릴 떄 밑에 붙어 있으라는 의미일까
+
+  // check point 1
+
+
+  /*
+
+  * sticky 속성을 파악하면 -> 어떤 스크롤 환경에서도 항상 화면상에서 보이는 요소를 만들 수 있게 됩니다.
+  * position:relative, position:absolute 처럼 동일하게 top, bottom, laft, light, 와 같은 하위속성이 있으며
+  * 스크롤 상으로 "해당 요소가 보이지 않게 되면" -> fixed 로 속성이 바뀌는 것을 훈련하시기 바랍니다.
+  * 레퍼런스 검색
+
+
+
+
+  */
+
+
+
+
+
+
+
+  
+
+
+  // --> 일단 다른걸 해보기로 함
+    &>div{
+      border:1px solid white;
+      width:100%;
+      
+      
+    }
+    
+    // 위의 점 세개
+    
+    // 일단 div 3개로 나누어서 생각함
+    // 1. 빨간원 2. 초록원 3. backdrop-filter div
+    // 겹쳐야하니까 position만 써서 자리 배치 
+    
+    
+    &>div:nth-child(1){
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      
+      &>div{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height:100px;
+        width:100%;
+  
+  
+        &>div{
+          width:10px;
+          height:10px;
+          border-radius: 5px;
+          background-color: rgba(255, 255, 255, 0.465);
+        }
+      }
+    }
+
+
+
+    
+    // 중간 움직이는 점
+    &>div:nth-child(2){
+      height:300px;
+
+      &>div:nth-child(1){
+        width:80px;
+        height:80px;
+        border-radius: 40px;
+        background-color: rgba(255, 0, 0, 0.618);
+        position: relative;
+        animation: 2s move1 infinite;
+      }
+      
+      &>div:nth-child(2){
+        width:60px;
+        height:60px;
+        border-radius: 30px;
+        background-color: rgba(17, 255, 0, 0.618);
+        position: relative;
+        animation:2s move2 infinite;
+      }
+
+      &>div:nth-child(3){
+        width:150px;
+        height:80px;
+        border-radius: 30px;
+        background-color: rgba(255, 255, 255, 0.223);
+        backdrop-filter: blur(5px);
+        position: relative;
+        top:-15px;
+        left: 130px;
+      }
+      
+      
+      
+    }
+
+    // 글씨
+    
+    &>div:nth-child(3){
+      height:100px;
+    }
+    
+
+    // 블록
+    &>div:nth-child(4){
+      height:400px;
+      z-index: 1;
+    }
+    
+
+  // 모바일 화면을 검은색으로 꽉차게 만들고 싶은데 빈 공간이 #Q1만큼 늘어난다 이 빈 자리를 지우려면 어떻게 해야할까
+
+    // check point 2
+
+    /*
+
+    * id Q1의 문제는 sticky 활용이 어떤 작용을 하는지 정확하게 이해하는 경우 해결 할 수 있으나
+    * 구조설계 레이아웃(display) 해결 -> 포지셔닝(sticky)등 -> 나머지 애니메이션 작업 순으로 진행하면 문제를 찾기 수월함
+    * 현재의 작업은 디자인속성(backdrop-filter) 먼저 작업-> 주요 요소 나중작업 하다보니 원인을 찾기 어려워지는 문제
+
+    */
+
+
+
+
+    // sticky
+    &>div:nth-child(5){
+      width:400px;
+      height:100px;
+      background-color: #777;
+      position: sticky;
+      // position: absolute;
+      bottom: 0;
+      z-index: 2;
+    }
+}

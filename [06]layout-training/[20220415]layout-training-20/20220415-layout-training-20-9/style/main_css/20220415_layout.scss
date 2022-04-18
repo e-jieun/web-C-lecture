@@ -1,0 +1,206 @@
+@mixin position($justify, $align) {
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// ------------------------------
+
+#base {
+  width: 100vw;
+  height: 100vh;
+  background-color: #fff;
+  @include position(center, center);
+
+  & > .root {
+    width: 390px;
+    height: 844px;
+    border: 1px solid black;
+    @include position(center, center);
+    position: relative;
+    
+    & > .text-4 {
+      width: 20%;
+      height: 8%;
+      // border: 1px solid goldenrod;
+      position: absolute;
+      z-index: 2;
+
+      & > p {
+        font-size: 3rem;
+        text-align: center;
+        font-weight: bold;
+        color: #f8f8f8;
+      }
+    }
+
+    & > .fillter {
+      width: 30%;
+      height: 10%;
+      background-color: rgba(255, 255, 255, .4);
+      position: absolute;
+      border-radius: 20%;
+      z-index: 1;
+      backdrop-filter: blur(5px);
+    }
+
+    & > header {
+      width: 100%;
+      height: 10%;
+      background-color: rgba(49, 49, 49, 0.5);
+      backdrop-filter: blur(5px);
+      position: absolute;
+      bottom: 0;
+      z-index: 5;
+    }
+
+    & > div:nth-child(4) {
+      width: 100%;
+      height: 100%;
+      background-color: #17151d;
+      @include position(center, center);
+
+      & > .top {
+        width: 100%;
+        height: 20%;
+        // border: 1px solid salmon;
+        @include position(center, flex-end);
+
+        & > div {
+          width: 10%;
+          height: 56%;
+          // border: 1px solid red;
+          @include position(center, center);
+          justify-content: space-around;
+
+          & > div {
+            width: 22%;
+            height: 10%;
+            background-color: #54555f;
+            border-radius: 100%;
+          }
+        }
+      }
+  
+      & > .center {
+        width: 100%;
+        height: 54%;
+        // border: 1px solid blue;
+
+        & > div:nth-child(1) {
+          width: 100%;
+          height: 80%;
+          // background-color: antiquewhite;
+          @include position(center, center);
+          position: relative;
+
+          & > div {
+            width: 90%;
+            height: 80%;
+            // border: 1px solid green;
+            @include position(flex-end, center);
+
+            & > .c-1 {
+              width: 24%;
+              height: 28%;
+              background-color: #b84949;
+              border-radius: 100%;
+              animation: 3s circle-1 infinite;
+              position: absolute;
+              bottom: 28%;
+            }
+  
+            & > .c-2 {
+              width: 18%;
+              height: 21%;
+              background-color: #5e8f4b;
+              border-radius: 100%;
+              animation: 3s circle-2 infinite;
+              position: absolute;
+
+            }
+
+          }
+        }
+
+        & div:nth-child(2){
+          width: 100%;
+          height: 20%;
+          // border: 1px solid salmon;
+          @include position(center, center);
+
+          & > div {
+            width: 80%;
+            height: 80%;
+            // border: 1px solid greenyellow;
+            @include position(center, center);
+
+            & > p {
+              text-align: center;
+              color: #a2a3ad;
+            }
+          }
+        }
+      }
+  
+      & > .bottom {
+        width: 100%;
+        height: 26%;
+        // border: 1px solid gold;
+        @include position(center, center);
+
+        & > div:nth-child(1) {
+          width: 90%;
+          height: 20%;
+          // border: 1px solid salmon;
+          @include position(center, center);
+          justify-content: space-between;
+
+          & > div:nth-child(1){
+            width: 59%;
+            height: 16%;
+            // border: 1px solid red;
+
+            & > hr {
+              height: 6px;
+              background-color: #9798a3;
+              border: 0;
+            }
+          }
+
+          & > div:nth-child(2) {
+            width: 39%;
+            height: 16%;
+            // border: 1px solid green;
+
+            & > hr {
+              border: none;
+              border-top: 6px dashed #43435e;
+            }
+          }
+        }
+
+        & > div:nth-child(2) {
+          width: 90%;
+          height: 90%;
+          // border: 1px solid gold;
+          @include position(center, center);
+          justify-content: space-between;
+
+          & > div:nth-child(1){
+            width: 59%;
+            height: 100%;
+            background-color: #9798a3;
+            border-radius: 10%;
+          }
+
+          & > div:nth-child(2) {
+            width: 39%;
+            height: 100%;
+            background-color: #43435e;
+            border-radius: 10%;
+          }
+        }
+      }
+    }
+  }
+}

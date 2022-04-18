@@ -1,0 +1,222 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+@mixin flex-center($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@keyframes move {
+  0%{
+    left: 0;
+    top: 50vh;
+  }
+  25%{
+    left: 25vw;
+    top: 20vh;
+  }
+  50%{
+    left: 87vw;
+    top: 53vh;
+  }
+  75%{
+    left: 50vw;
+    top: 41vh;
+  }
+  100%{
+    left: 0;
+    top: 50vh;
+  }
+}
+@keyframes move2 {
+  0%{
+    left: 40vw;
+    top: 40vh;
+  }
+  25%{
+    left: 48vw;
+    top: 42vh;
+  }
+  50%{
+    left: 13vw;
+    top: 53vh;
+  }
+  75%{
+    left: 45vw;
+    top: 33vh;
+  }
+  100%{
+    left: 40vw;
+    top: 40vh;
+  }
+}
+
+  #root {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(31, 31, 34);
+    &>div:nth-child(1){
+      width: 100vw;
+      height: 15vh;
+      @include flex-center(flex-end, center);
+      flex-direction: column;
+
+      &>div:nth-child(1){
+        width: 100vw;
+        height: 10vh;
+        @include flex-center(space-around, center);
+        flex-direction: column;
+
+        &>div{
+          width: 2vw;
+          height: 2vw;
+          border-radius: 50%;
+          background-color: #c4c4c4;
+        }
+      }
+    }
+
+    // top 점 세개
+
+    &>div:nth-child(2){
+      width: 100vw;
+      height: 45vh;
+
+      @include flex-center(center, center);
+
+      &>div:nth-child(1){
+        width: 20vw;
+        height: 20vw;
+        background-color: #98bd43;
+        border-radius: 50%;
+
+        position: absolute;
+        z-index: 1;
+        animation: move 4s ease infinite;
+      }
+
+      &>div:nth-child(2){
+        width: 15vw;
+        height: 15vw;
+        background-color: #291e88;
+        border-radius: 50%;
+
+        position: absolute;
+        z-index: 1;
+        animation: move2 4s ease infinite;
+      }
+      &>div:nth-child(3){
+        width: 50vw;
+        height: 15vh;
+        
+        color: #fff;
+
+        
+        font-size: 2rem;
+        @include flex-center(center, center);
+        z-index: 2;
+
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        &>div:nth-child(1){
+          width: 40vw;
+          height: 15vh;
+          
+          @include flex-center(center, center);
+          z-index: 2;
+
+          }
+        }
+      }
+
+      // 4.5 box
+      &>div:nth-child(3){
+        width: 100vw;
+        height: 10vh;
+        @include flex-center(center, center);
+        text-align: center;
+        color: #fff;
+
+        &>p{
+          width: 80vw;
+          height: 10vh;
+          @include flex-center(center,center);
+        }
+      }
+
+        // 하단 글상자
+
+
+
+        &>div:nth-child(4){
+          width: 100vw;
+          height: 5vh;
+
+          @include flex-center(center,center);
+
+          &>div:nth-child(1){
+            width: 55vw;
+            height: 1vh;
+            @include flex-center(center, center);
+
+            &>div:nth-child(1){
+              width: 50vw;
+              height: 0.5vh;
+              background-color: rgb(74, 72, 110);
+            }
+          }
+
+          &>div:nth-child(2){
+            width: 50vw;
+            height: 1vh;
+            @include flex-center(space-around, center);
+            &>div{
+              width: 10vw;
+              height: 0.5vh;
+              background-color: rgb(74, 72, 110);
+              opacity: 0.5;
+            }
+          }
+          }
+
+          &>div:nth-child(5){
+            width: 100vw;
+            height: 25vh;
+
+            @include flex-center(space-around, center);
+
+            &>div:nth-child(1){
+              width: 60vw;
+              height: 25vh;
+              background-color: rgb(74, 72, 110);
+              border-radius: 20px;
+            }
+            &>div:nth-child(2){
+              width: 35vw;
+              height: 25vh;
+              background-color: rgb(74, 72, 110);
+              border-radius: 20px;
+              opacity: 0.5;
+            }
+          }
+
+          // 하단상자 2개
+
+          &>div:nth-child(6){
+            width: 100vw;
+            height: 10vh;
+
+            background-color: #3d3d44;
+            
+            opacity: 0.5;
+            position: sticky;
+            bottom: 0;
+            @include flex-center(space-around, center);
+            &>div{
+              width: 10vw;
+              height: 10vw;
+
+              background-color: #c4c4c4;
+            }
+          }
+        }
