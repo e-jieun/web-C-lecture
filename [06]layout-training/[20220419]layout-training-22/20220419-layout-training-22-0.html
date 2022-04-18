@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+
+    #root {
+      width:100vw;
+      background-color: #333;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    /* root 자식 두개의 스타일 동시에 진행 */
+    #root>div {
+
+      border:1px solid white;
+    }
+/* --------------------------------------------------- */
+    /*  첫번째 자식 #shape */
+    #shape {
+      /* #shape들의 자식들에게 absolute를 사용할 예정이기 때문에 #shape에 특별한 포지셔닝은 없으나 임의의 값을 부여 */
+      position:relative;
+      width:inherit;
+      height:50vh;
+    }
+
+    /* #shape의 직계자식 div 들에게 일괄 position:absolute 부여 */
+    #shape>div {
+      position:absolute;
+    }
+
+    /* 첫번째 자식 빨간원 */
+    #shape>div:nth-child(1){
+      width:10vw;
+      height:10vw;
+      background-color: salmon;
+      border-radius: 50%;
+      left:10vw;
+      top:10vh;
+      /* 맨 밑에 깔리게 하기 위해 z-index 가장 낮은값 부여 */
+      z-index:0;
+    }
+    /* 두번째 자식 노란 선 */
+    #shape>div:nth-child(2){
+      width:15vw;
+      height:15vw;
+      border-radius: 50%;
+      border: 2px solid yellow;
+      left:14vw;
+      top:15vh;
+    }
+    /* 세번째 자식 쩜쩜쩜 */
+    #shape>div:nth-child(3){
+      width:1vw;
+      height:10vw;
+      border: 1px solid #fff;
+      left:10vw;
+      top:20vh;
+    
+    }
+    #shape>div:nth-child(3)>div {
+      width:1vw;
+      height: 1vw;
+      background-color: #ccc;
+      border-radius: 50%;
+      margin-top:2vh;
+    }
+/* --------------------------------------------------- */
+
+
+    #card-section {
+      display:flex;
+      justify-content:center;
+      align-items: center;
+      flex-direction:column;
+    }
+
+    .card-contains {
+      width:90vw;
+      height:50vh;
+      position:relative;
+      background-color: rgba(200,200,200,0.2);
+      backdrop-filter: blur(20px);
+      padding:1vw;
+      top:-20vh;
+      margin-bottom:2vh;
+      border-radius: 3vw;
+      transition:1s;
+    }
+
+    .card-contains>h1 { 
+     width:80vw;
+      height:20vh;
+      /* background-color: #fff; */
+      margin:2vw;
+      font-size:4rem;
+      color:#fff;
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="shape">
+      <div></div>
+      <div></div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div id="card-section">
+      <div id="card-one" class="card-contains">
+        <h1>DON'T<br>DWELL<br>ON<br>THE<br>PAST</h1>
+      </div>
+      <div id="card-two" class="card-contains">
+        <h1>SEIZE<br>THE<br>DAY</h1>
+      </div>
+    </div>
+  </div>
+  <script>
+    const cardOne = document.querySelector('#card-one');
+    cardOne.style.order = 1;
+    const cardTwo = document.querySelector('#card-two');
+    cardTwo.style.order = 2;
+
+    cardOne.addEventListener('click', function() {
+      console.dir(cardOne);
+      cardOne.style.order = 2;
+      cardTwo.style.order = 1;
+    });
+  </script>
+</body>
+</html>
