@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">hello</div>
+  <script>
+    let root = document.querySelector('#root');
+    // 문서에서 아이디값 root 인 선택자를 변수 root으로 대입했다.
+    let heightValue = 100;
+    // 숫자 100을 임의의 변수 이름(heightValue)에 대입했다.
+    let heightUnit = "vh";
+    // 문자열 "vh"를 임의의 변수 이름(heightUnit)에 대입했다.
+    console.dir(root);
+    // console <-- 문서(외부)가 아닌 내부 접근
+    root.style.height = heightValue + heightUnit;
+    // root으로 지정한 어떤 selector의 구조를 살펴 무언가의 값을 대입했다.
+    let salmon = "salmon";
+    // 문자열 "salmon" 이라는 값을 변수인 salmon에 대입했다.
+    root.style.backgroundColor = salmon;
+    // root의 어떤 구조에 salmon이라는 변수의 값을 대입했다.
+  </script>
+</body>
+</html>
