@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* #root {
+      width:100vw;
+      height:100vh;
+      background-color: salmon;
+    } */
+
+  </style>
+</head>
+<body>
+  <div id="root">
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    // getElementById() 인수(argumnet)로 문자열(string)로만 받는 규칙이 들어있다.
+    
+    let back = 100;
+
+    root.style.width = back + "vw";
+    root.style.height = back + "vh";
+    root.style.backgroundColor = "salmon";
+    
+    console.dir(root);
+
+    const member = ["손만충","장준형","임소희","이누리"];
+    
+    let count = 0;
+    root.addEventListener("click", function() {
+      let result = back * 2;
+      root.style.width = result + "vw";
+      root.style.height = result + "vh";
+      root.style.backgroundColor = "darkgray";
+      root.textContent = member[count] + "님 반갑습니다.";
+      count = count + 1;
+      if(count > member.length-1) {
+        count = 0;
+      }
+    });
+
+  </script>
+</body>
+</html>
