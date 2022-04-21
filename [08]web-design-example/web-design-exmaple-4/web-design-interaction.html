@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+
+    
+  </div>
+
+  <script>
+    /* 
+    ? 도전해보기 ★★★★★★★★★★★★★★★★★★★★★★★★
+    TODO: 아래의 자바스크립트 명령에 대한 의도를 유추 하시오.
+    */
+    document.body.style.padding = "0";
+    // 
+    document.body.style.margin = "0";
+    // 
+    const root = document.getElementById("root");
+    // 
+    let widthValue = 100;
+    // 
+    let heightValue = 100;
+    // 
+    root.style.width = `${widthValue}vw`;
+    // 
+    root.style.height = `${heightValue}vh`;
+    // 
+    root.style.backgroundColor = "darkblue";
+    // 
+    let backgroundColorArray = ["#ff0000", "#333333"];
+    // 
+    let setSwitch = 0;
+    // 
+    root.addEventListener("click", function() {
+      // 
+      if(setSwitch === 0) {
+        // 
+        root.style.backgroundColor = backgroundColorArray[1];
+        // 
+        setSwitch = 1;
+        // 
+      } else {
+        // 
+        root.style.backgroundColor = backgroundColorArray[0];
+        // 
+        setSwitch = 0;
+        // 
+      }
+
+    });
+
+
+
+
+    
+
+
+  </script>
+</body>
+</html>
