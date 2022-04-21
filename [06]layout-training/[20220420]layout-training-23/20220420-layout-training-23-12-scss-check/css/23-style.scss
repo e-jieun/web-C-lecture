@@ -1,0 +1,176 @@
+*{margin:0; padding:0;}
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Playfair+Display+SC:ital,wght@1,700&display=swap');
+
+$white : #fff;
+$gray-1 : rgb(236, 236, 236);
+$gray-2 : rgb(211, 211, 211);
+$gray-3 : rgb(160, 160, 160);
+$gray-4 : rgb(124, 124, 124);
+$serif :'Kaisei Decol', serif;
+$serif-big : 'Old Standard TT', serif;
+
+
+@mixin size($w, $h) {
+  width: $w;
+  height: $h;
+}
+
+@mixin flex($jus, $ali, $dir) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+  flex-direction: $dir;
+}
+
+@mixin big-p {
+  font-size: 22rem;
+  font-weight: bold;
+  font-family: 'Playfair Display SC', serif;
+}
+
+
+#root {
+
+  @include size(100vw, 100vh);
+  @include flex(center, center, row);
+  
+  & > div:first-child {
+    @include size(17vw, 100vh);
+    // background-color: $gray-1;
+    background-color: $white;
+    position: relative;
+    z-index: 3;
+
+    & > p {
+      @include size(90vw, 10vh);
+      position: absolute;
+      left: 0;
+      top: 2vh;
+      text-align: right;
+      padding: 0 5vw 0 5vw;
+      font-size: 0.7rem;
+    }
+  }
+  
+  // B
+  & > div:nth-child(2) {
+    @include size(13vw, 100vh);
+    @include flex(flex-start, center, row);
+    @include big-p();
+    // background-color: $gray-2;
+    background-color: $white;
+    position: relative;
+    z-index: 2;
+
+    & > p {
+      position: absolute;
+      left: -4vw;
+    }
+  }
+  
+  // I
+  & > div:nth-child(3) {
+    @include size(35vw, 100vh);
+    @include flex(flex-start, center, row);
+    @include big-p();
+    // background-color: $gray-3;
+    background-color: $white;
+    position: relative;
+    z-index: 1;
+
+    & > p:first-child {
+      position: absolute;
+      left: -4vw;
+    }
+    
+  }
+  
+  // G
+  & > div:nth-child(4) {
+    @include size(35vw, 100vh);
+    @include flex(flex-start, center, row);
+    @include big-p();
+    background-color: $white;
+    // background-color: $gray-4;
+    position: relative;
+    z-index: 0;
+    
+    & > p {
+      position: absolute;
+      left: -4vw;
+    }
+  }
+
+  // text
+  & > div:last-child {
+    @include size(50vw, 70vh);
+    @include flex(space-between, flex-end, row);
+    position: absolute;
+    right: 35vw;
+    bottom: 10vh;
+    z-index: 4;
+    // border: 1px solid #fff;
+
+
+    & > div:nth-child(1){
+      @include size(37vw, 70vh);
+      @include flex(flex-end, flex-end, column);
+      position: absolute;
+      right: 6vw;
+
+      // Lorem ipsum 
+      & > div:first-child {
+        @include size(30vw, 10vh);
+        @include flex(flex-end, flex-start, column);
+        // border: 1px solid yellow;
+        transform: rotate(-90deg);
+        transform-origin: left top;
+        position: absolute;
+        bottom: 0vh;
+        left: 32vw;
+        font-size: 4rem;
+        font-weight: bold;
+        font-family: $serif;
+      }
+
+      // 아래 가로정렬된 텍스트
+      & > div:nth-child(2) {
+        @include size(38vw, 12vh);
+        @include flex(flex-end, flex-end, column);
+        // border: 1px solid yellow;
+        font-size: 1.2rem;
+        text-align: right;
+        font-family: $serif;
+      }
+    }
+
+    // 오른쪽 돌아간 텍스트
+    & > div:nth-child(2){
+      @include size(60vh, 6vw);
+      // background-color: red;
+      transform: rotate(-90deg);
+      transform-origin: left bottom;
+      position: absolute;
+      left: 100%;
+      bottom: 0;
+      font-size: 1.2rem;
+      font-family: $serif;
+    }
+  }
+
+
+  // ??
+  // position 값을 이용해서 전체화면 기준으로 위치를 억지로 맞춰놨는데,
+  // 화면을 줄이면 텍스트 정렬이 틀어져버립니다. 
+  // 미디어쿼리를 이용해 일정 가로길이 이하가 되면 텍스트 정렬을 바뀌도록
+  // 하는 것 밖에는 방법이 없을까요...?
+
+
+  // check point :1
+  // css 속성 구성을 매우 훌륭하게 잘 진행하셧습니다.
+  // 다만 질문 주신 부분은 마크업에서 해결해보아야할 부분이기때문에
+  // 23-0.html 에서 텍스트 정렬이 바뀌는 현상을 어떻게 해결했는지 확인 해보기를 권합니다. 특히 html 마크업이 중요합니다.
+
+
+}

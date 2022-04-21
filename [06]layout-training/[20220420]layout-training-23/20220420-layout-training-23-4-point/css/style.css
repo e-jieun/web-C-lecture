@@ -1,0 +1,174 @@
+#root #con, #root #con > div:nth-child(1) {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#root #con, #root #con > div:nth-child(1), #root #con > div:nth-child(2) {
+  width: inherit;
+  height: inherit;
+}
+
+#root {
+  font-stretch: condensed;
+}
+
+#root #con {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#root #con > div:nth-child(1) {
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  z-index: 5;
+  font-weight: 600;
+}
+
+#root #con > div:nth-child(1) > div {
+  font-family: serif;
+}
+
+#root #con > div:nth-child(1) > div:nth-child(1) {
+  position: fixed;
+  right: 2vh;
+  top: 1vh;
+  font-size: xx-small;
+}
+
+#root #con > div:nth-child(1) > div:nth-child(2) {
+  width: 80vw;
+  height: 20vh;
+  position: absolute;
+  top: 2vh;
+  left: 20vh;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: relative;
+}
+
+#root #con > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) {
+  font-size: 3rem;
+  position: relative;
+  right: -13vh;
+}
+
+#root #con > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) {
+  width: 80vh;
+  height: 20vh;
+}
+
+#root #con > div:nth-child(1) > div:last-child {
+  width: 50vh;
+  height: 10vh;
+  position: relative;
+  right: 10vh;
+  bottom: 11vh;
+}
+
+#root #con > div:nth-child(1) > div:last-child > div {
+  text-align: end;
+}
+
+#root #con > div:nth-child(2) {
+  -webkit-box-ordinal-group: 2;
+      -ms-flex-order: 1;
+          order: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 900;
+}
+
+#root #con > div:nth-child(2) > div {
+  height: 100%;
+  -webkit-box-flex: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#root #con > div:nth-child(2) > div > div {
+  font-size: 10rem;
+  font-weight: bold;
+}
+
+#root #con > div:nth-child(2) > div:nth-child(1) {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  z-index: 4;
+  background-color: #FFFEF9;
+}
+
+#root #con > div:nth-child(2) > div:nth-child(2) {
+  -webkit-box-flex: 1.5;
+      -ms-flex-positive: 1.5;
+          flex-grow: 1.5;
+  z-index: 3;
+  position: relative;
+  right: 2vh;
+  background-color: #d6d6d6;
+}
+
+#root #con > div:nth-child(2) > div:nth-child(2) > div {
+  position: relative;
+  right: 1vh;
+}
+
+#root #con > div:nth-child(2) > div:nth-child(3) {
+  z-index: 2;
+  position: relative;
+  right: 2.5vh;
+  background-color: #c4c4c4;
+}
+
+#root #con > div:nth-child(2) > div:nth-child(3) > div {
+  position: relative;
+  right: 1vh;
+}
+
+#root #con > div:nth-child(2) > div:nth-child(4) {
+  background-color: dimgray;
+  position: relative;
+  right: 1vh;
+}
+
+#root #con > div:nth-child(2) > div:nth-child(4) > div {
+  position: relative;
+  right: 3vh;
+}
+/*# sourceMappingURL=style.css.map */

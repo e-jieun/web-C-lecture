@@ -1,0 +1,192 @@
+*{margin: 0; padding: 0;}
+
+@mixin flex($d, $j, $a) {
+  display: ($d);
+  justify-content: ($j);
+  align-items: ($a);
+}
+
+@mixin border {
+
+  border: 1px solid black;
+}
+
+// --------------------------------------
+
+#root {
+
+  width: 100vw;
+  height: 100vh;
+
+// --------------------------------------
+
+  & > div {
+
+    width: 100vw;
+    height: 100vh;
+
+    @include flex(flex,  center, center);
+  }
+
+//-------------------------------------- 
+
+  & > div  > div {
+
+    width: 60vw;
+    height: 100vh;
+    
+  }
+
+  // ------------------------------------
+
+  .box1 {
+    background-color: rgb(238, 238, 238);
+    width: 40vw;
+    position: relative;
+  }
+
+  .box2 {
+
+    width: 25vw;
+    background-color: rgb(187, 187, 187);
+    @include flex(flex, center, center);
+  }
+
+  .box2 > h1 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20vw;
+    margin-left: -240px;
+  }
+
+  .box3 {
+    background-color: rgb(187, 187, 187);
+    width: 5vw;
+    position: relative;
+  }
+
+  .box4 {
+
+    width: 60vw;
+    background-color: rgb(107, 104, 104);
+
+    @include flex(flex, center, center);
+  }
+
+  .box4 > div > h1 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20vw;
+    margin-left: -18vw;
+  }
+
+  .box4 > p {
+
+    width: 1300px;
+    height: 150px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: -1000px;
+    margin-bottom: -950px;
+    text-align: right;
+    position:absolute;
+
+  } 
+
+  .box5 {
+    background-color: rgb(37, 35, 35);
+    width: 5vw;
+    position:relative;
+
+  }
+
+  .box6 {
+    background-color: rgb(107, 104, 104);
+    width: 60vw;
+    @include flex(flex, center, center);
+
+  }
+
+  .box6 > div:nth-child(1) > h1 {
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20vw;
+    margin: 20px;
+    margin-left: -18.5vw;
+
+  }
+
+  .box6 > div:nth-child(2) > h1 {
+    width: 810px;
+    height: 150px;
+    font-family:'Times New Roman', Times, serif;
+    font-size: 150px;
+    transform: rotate(-90deg);
+    margin-left: -1300px;
+    margin-top: -150px;
+  }
+
+  .box6 > div > p {
+    width: 900px;
+    height: 300px;
+    font-size: 40px;
+    font-weight: bolder;
+    position:absolute;
+    transform: rotate(-90deg);
+    margin-left: -1100px;
+    margin-top: 8px;
+
+  } 
+
+  // box1, box3에 position relative 를 줘서 B,I는 숨겼는데 G는 box4에 relative를 주면 I가 튀어나오고 해서 box5를 하나 더 만들어서 하긴 했는데 보기가 영 그렇습니다. 어떻게 해야되는지 방법을 알고 싶습니다.  
+
+  // check point : 1
+
+  // 23-0.html 예제 파일을 분석해보면
+
+  /* 
+
+  글씨에 직접적인 제어를 하고자 한것이 아닌,
+  임의의 <div> 태그를 겹치는 것에 집중한 것을 확인 할 수 있습니다.(노란색박스)
+  그것을 형제관계에서 상대적인 위치값을 가질 수 있는 relative 값을 활용했고
+  겹치는 부분에 대한 제어는 z-index로 역순을 만들어 해결했음을 예제 파일에서 확인 할 수 있습니다.
+
+
+  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

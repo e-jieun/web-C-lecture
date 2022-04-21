@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+#bg {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: absolute;
+  z-index: 0;
+}
+#bg > div:nth-child(1) {
+  background-color: #ccc;
+  display: grid;
+  grid-template-columns: 1fr 0.8fr;
+}
+#bg > div:nth-child(1) > :nth-child(1) {
+  background-color: #e2e2e2;
+}
+#bg > div:nth-child(1) > :nth-child(2) {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+#bg > div:nth-child(1) > :nth-child(2) > h1 {
+  position: relative;
+  left: -3vw;
+}
+#bg > div:nth-child(2) {
+  background-color: #999999;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+#bg > div:nth-child(2) > h1 {
+  position: relative;
+  left: -3vw;
+}
+#bg > div:nth-child(3) {
+  background-color: #5a5a5a;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+#bg > div:nth-child(3) > h1 {
+  position: relative;
+  left: -3vw;
+}
+#bg > div:nth-child(3) > p {
+  font-size: 0.5rem;
+  position: absolute;
+  top: 3vh;
+  right: 3vw;
+}
+
+h1 {
+  font-size: 25rem;
+  font-family: "DM Serif Display", serif;
+}
+
+section {
+  height: 70vh;
+  top: 22vh;
+  left: 11vw;
+  width: 55vw;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+}
+section > h2 {
+  width: 30vw;
+  font-family: "DM Serif Display", serif;
+  font-size: 5rem;
+  position: absolute;
+  left: 30vw;
+  bottom: 35vh;
+  transform: rotate(270deg);
+}
+section > div:nth-child(2) {
+  font-size: 1.5rem;
+  font-family: "DM Serif Display", serif;
+  width: 35vw;
+  top: 28.5vh;
+  position: relative;
+  left: 34vw;
+  transform: rotate(270deg);
+}
+section > div:nth-child(3) {
+  width: 48vw;
+  font-size: 1.5rem;
+  font-family: "DM Serif Display", serif;
+  text-align: end;
+  position: absolute;
+  bottom: 0;
+}/*# sourceMappingURL=0420.css.map */

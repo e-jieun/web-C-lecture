@@ -1,0 +1,147 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+:root{
+  --color-1: #dbdbdb;
+  --color-2: #c4c4c4;
+  --color-3: #8b8b8b;
+  --color-4: #494949;
+}
+@mixin flex-center($a, $b) {
+  display: flex;
+  justify-content: $a;
+  align-items: $b;
+}
+
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+
+&>div{
+  position: absolute;
+}
+
+&>div:nth-child(1){
+  width: 25vw;
+  height: 100vh;
+  background-color: #fff;
+
+  z-index: 4;
+}
+#B{
+  width: 40vw;
+  height: 100vh;
+  background-color: #fff;
+
+  font-size: 18rem;
+  @include flex-center(center, center);
+  font-family: 'Smokum', cursive;
+
+  z-index: 3;
+  &>div:nth-child(1){
+    width: 28vw;
+    height: 80vh;
+    @include flex-center(flex-end, flex-end);
+  }
+}
+
+#I{
+  width: 70vw;
+  height: 100vh;
+  background-color: #fff;
+
+  @include flex-center(center, center);
+  flex-direction: column;
+
+  z-index: 2;
+
+  &>div:nth-child(1){
+    width: 18vw;
+    height: 82vh;
+    @include flex-center(flex-end, flex-end);
+    &>h2{
+      font-size: 36rem;
+      font-family: 'Smokum', cursive;
+    }
+  }
+  &>div:nth-child(2){
+    position: relative;
+    z-index: 3;
+  }
+
+  &>div:nth-child(3){
+    width: 30vw;
+    height: 10vh;
+    flex-direction: column;
+    @include flex-center(center, center);
+    transform: rotate(-90deg);
+  }
+
+}
+
+#G{
+  width: 100vw;
+  height: 100vh;
+  // background-color: var(--color-4);
+  z-index: 1;
+  @include flex-center(center, center);
+
+  &>div:nth-child(1){
+    width: 60vw;
+    height: 80vh;
+    @include flex-center(flex-end, flex-end);
+    font-size: 35rem;
+    font-family: 'Smokum', cursive;
+  }
+}
+
+&>div:nth-child(5){
+  width: 30vw;
+  height: 10vh;
+  text-align: right;
+  z-index: 6;
+  left: 32vw;
+  top: 80vh;
+  font-weight: 900;
+  font-family: 'Indie Flower', cursive;
+}
+
+&>div:nth-child(6){
+  width: 30vw;
+  height: 15vh;
+  @include flex-center(center, center);
+  flex-direction: column;
+  transform: rotate(-90deg);
+
+  left: 49vw;
+  top: 50vh;
+  z-index: 6;
+
+  &>h3{
+    font-size: 4rem;
+    font-weight: 2000;
+    font-family: 'Indie Flower', cursive;
+  }
+  &>p{
+    font-size: 1rem;
+    text-align: left;
+    font-weight: 900;
+    font-family: 'Indie Flower', cursive;
+  }
+}
+
+&>div:nth-child(7){
+  z-index: 6;
+  width: 40vw;
+  height: 5vh;
+  @include flex-center(center, center);
+  left: 60vw;
+  top: 2vh;
+  &>p{
+    font-weight: 900;
+    font-family: 'Indie Flower', cursive;
+  }
+}
+
+}

@@ -1,0 +1,216 @@
+@mixin position($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin space($space-type) {
+  justify-content: $space-type;
+}
+// space-around space-between space-evenly
+
+:root {
+  --main-color-1: #fff;
+  --main-color-2: #D9D9D9;
+  --main-color-3: #C4C4C4;
+  --main-color-4: #8B8B8B;
+  --main-color-5: #545454;
+  --main-color-6: #000000;
+}
+
+
+#base {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+  @include position(center, center);
+
+  & > .root {
+    width: 1440px;
+    height: 1024px;
+    background-color: aqua;
+    @include position(center, center);
+    position: relative;
+
+    & > .text {
+      width: 90%;
+      height: 90%;
+      // border: 1px solid #2bff00;
+      position: relative;
+      z-index: 6;
+      @include position(center, center);
+
+
+      & > .text-top {
+        width: 106%;
+        height: 10%;
+        // border: 1px solid salmon;
+        @include position(flex-end, flex-start);
+
+
+        & > div {
+          width: 54%;
+          height: 50%;
+          // border: 1px solid white;
+
+          font-size: 1.25rem;
+          text-align: end;
+        }
+      }
+
+      & > .text-bottom {
+        width: 100%;
+        height: 90%;
+        // border: 1px solid #ff2faf;
+        @include position(center, center);
+
+
+        & > div:nth-child(1) {
+          width: 60%;
+          height: 100%;
+          // border: 1px solid blueviolet;
+          @include position(flex-end, center);
+
+          & > div:nth-child(1) {
+            width: 96%;
+            height: 64%;
+            // border: 1px solid gold;
+            position: relative;
+
+            & > div {
+              width: 100%;
+              height: 20%;
+              // border: 1px solid #2bff00;
+              font-size: 5rem;
+              font-family: 'Abril Fatface', cursive;
+              font-weight: bold;
+              transform: rotate(-90deg);
+              position: absolute;
+              right: -45.5%;
+              bottom: 60%;
+            }
+          }
+
+          & > div:nth-child(2) {
+            width: 96%;
+            height: 22%;
+            // border: 1px solid blue;
+            @include position(flex-end, flex-end);
+
+
+            & > div {
+              font-size: 1.5rem;
+              font-weight: bold;
+              text-align: end;
+            }
+          }
+        }
+
+        & > div:nth-child(2) {
+          width: 40%;
+          height: 100%;
+          // border: 1px solid #0077ff;
+          @include position(center, center);
+          position: relative;
+
+          & > div {
+            width: 160%;
+            // border: 1px solid yellow;
+            font-size: 1.5rem;
+            font-weight: bold;
+            transform: rotate(-90deg);
+            position: absolute;
+            right: 8%;
+            bottom: 43%;
+          }
+        }
+      }
+    }
+
+    & > .top {
+      width: 21%;
+      height: 100%;
+      background-color: var(--main-color-2);
+      // border: 1px solid red;
+      position: absolute;
+      z-index: 5;
+      left: 0;
+    }
+
+    & > .B {
+      width: 23%;
+      height: 100%;
+      background-color: var(--main-color-3);
+      // border: 1px solid #2bff00;
+      position: absolute;
+      z-index: 4;
+      left: 16%;
+      @include position(flex-start, center);
+
+      & > div {
+        width: 70%;
+        height: 40%;
+        // border: 1px solid salmon;
+        @include position(center, center);
+
+        & > span {
+          // border: 1px solid red;
+          font-size: 30rem;
+          font-family: 'Abril Fatface', cursive;
+          
+        }
+      }
+    }
+
+    & > .I {
+      width: 43%;
+      height: 100%;
+      background-color: var(--main-color-4);
+      // border: 1px solid #2f00ff;
+      position: absolute;
+      z-index: 3;
+      left: 26%;
+      @include position(flex-start, center);
+
+      & > div {
+        width: 60%;
+        height: 40%;
+        // border: 1px solid salmon;
+        @include position(center, center);
+
+        & > span {
+          // border: 1px solid red;
+          font-size: 30rem;
+          font-family: 'Abril Fatface', cursive;
+          
+        }
+      }
+    }
+
+    & > .G {
+      width: 40%;
+      height: 100%;
+      background-color: var(--main-color-5);
+      // border: 1px solid #ff008c;
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      @include position(flex-start, center);
+
+      & > div {
+        width: 70%;
+        height: 40%;
+        // border: 1px solid salmon;
+        @include position(center, center);
+
+        & > span {
+          // border: 1px solid red;
+          font-size: 30rem;
+          font-family: 'Abril Fatface', cursive;
+          // font-stretch: narrower;
+        }
+      }
+
+    }
+  }
+}

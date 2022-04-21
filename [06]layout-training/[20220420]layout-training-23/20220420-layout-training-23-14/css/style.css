@@ -1,0 +1,111 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #ccc;
+}
+#container > div {
+  height: 100vh;
+}
+#container > div:nth-child(1) {
+  background-color: #ffffff;
+  width: 25vw;
+  position: absolute;
+  z-index: 4;
+}
+#container > div:nth-child(1) > div {
+  width: 40em;
+  text-align: right;
+  position: absolute;
+  top: 52em;
+  left: 32em;
+}
+#container > div:nth-child(2) {
+  background-color: #ffffff;
+  position: absolute;
+  width: 15vw;
+  left: 25vw;
+  z-index: 3;
+}
+#container > div:nth-child(2) > div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 20rem;
+  font-weight: bold;
+  position: relative;
+  left: -4rem;
+  top: 12rem;
+}
+#container > div:nth-child(3) {
+  background-color: #ffffff;
+  position: absolute;
+  left: 40vw;
+  z-index: 2;
+  width: 25vw;
+}
+#container > div:nth-child(3) > div:nth-child(1) {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 20rem;
+  font-weight: bold;
+  position: relative;
+  left: -3rem;
+  top: 12rem;
+}
+#container > div:nth-child(3) > div:nth-child(2) {
+  transform: rotate(270deg);
+  position: relative;
+  left: 9em;
+  top: 9em;
+}
+#container > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) {
+  font-size: 4em;
+  margin-left: 1em;
+}
+#container > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) {
+  font-size: 1em;
+}
+#container > div:nth-child(4) {
+  height: 2vh;
+  font-size: 1em;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  left: 19em;
+  margin: 1rem;
+  z-index: 6;
+}
+#container > div:nth-child(5) {
+  width: 35vw;
+  background-color: #ffffff;
+  position: absolute;
+  left: 65vw;
+  z-index: 1;
+}
+#container > div:nth-child(5) > div {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 20rem;
+  font-weight: bold;
+  position: relative;
+  left: -3rem;
+  top: 12rem;
+}/*# sourceMappingURL=style.css.map */

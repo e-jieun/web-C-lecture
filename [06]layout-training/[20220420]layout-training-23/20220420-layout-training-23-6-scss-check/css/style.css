@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#root > section {
+  position: relative;
+}
+#root > section:nth-child(1) {
+  width: 30%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+}
+#root > section:nth-child(1) > div:nth-child(1) {
+  width: 55vw;
+  height: 5vh;
+  position: absolute;
+  z-index: 2;
+  top: 2vh;
+  left: 45vw;
+  font-family: "Playfair Display", serif;
+  font-weight: 600;
+}
+#root > section:nth-child(1) > div:nth-child(2) {
+  width: 40vw;
+  height: 15vh;
+  position: absolute;
+  z-index: 2;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  text-align: end;
+  bottom: 7vh;
+  left: 15vw;
+}
+#root > section:nth-child(1) > div:nth-child(3) {
+  width: 40vw;
+  height: 15vh;
+  position: absolute;
+  z-index: 2;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  text-align: start;
+  bottom: 44vh;
+  left: 40vw;
+  transform: rotate(270deg);
+}
+#root > section:nth-child(1) > div:nth-child(4) {
+  width: 30vw;
+  height: 6vh;
+  position: absolute;
+  z-index: 2;
+  left: 39vw;
+  top: 45vh;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 50px;
+  transform: rotate(270deg);
+}
+#root > section:nth-child(2) {
+  width: 20%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+#root > section:nth-child(2) > div {
+  width: 15vw;
+  height: 40vh;
+  position: absolute;
+  top: 20vh;
+  left: -6vw;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 400PX;
+}
+#root > section:nth-child(3) {
+  width: 50%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+#root > section:nth-child(3) > div {
+  width: 15vw;
+  height: 40vh;
+  position: absolute;
+  top: 20vh;
+  left: -5vw;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 400PX;
+}
+#root > section:nth-child(4) {
+  width: 50%;
+  height: 100%;
+  background-color: rgb(255, 255, 255);
+  overflow: hidden;
+}
+#root > section:nth-child(4) > div {
+  width: 15vw;
+  height: 40vh;
+  position: absolute;
+  top: 20vh;
+  left: -6vw;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-size: 400PX;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap" rel="stylesheet">
+
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+  
+    #root{
+      width:100vw;
+      height:100vh;
+      display: flex;
+      z-index: 0;
+    }
+
+    .box-1{
+      width: 25vw;
+      height: 100vh;
+      background-color:#ccc;
+      z-index: 6;
+    }
+    .B{
+      position:absolute;
+      left: 23%;
+      top: 24%;
+      z-index: 5;
+      font-size: 20em;
+      font-family: 'DM Serif Display', serif;
+    }
+
+    .box-2{
+      width:15vw;
+      height: 100vh;
+      background-color: #aaaaaa;
+      position: static;
+      /* 정적 위치(static position) 지정 방식 */
+      z-index: 4;
+
+
+    }
+    .I{
+      font-size: 20em;
+      font-family: 'DM Serif Display', serif;
+      position:absolute;
+      left:38%;
+      top: 24%;
+      z-index:3;
+
+
+    }
+
+    .box-3{
+      width:30vw;
+      height: 100vh;
+      background-color: #838383;
+      position: relative;
+      z-index: 2;
+    }
+
+    .box-4{
+      width:30vw;
+      height: 100vh;
+      background-color: #777777;
+    }
+
+    .G{
+      font-size: 20em;
+      font-family: 'DM Serif Display', serif;
+      position: relative;
+      top: 24%;
+      right:6%;
+      z-index: 1;
+    }
+
+    .text-1{
+      position: absolute;
+      width: 100vw;
+      height:5vh;
+      /* border: 1px solid white; */
+      z-index: 7;
+      top:2%;
+      text-align:right;
+      font-family: 'DM Serif Display', serif;
+      font-size: 0.6em
+    }
+
+    .text-2{
+      position: absolute;
+      width: 45vw;
+      height:15vh;
+      /* border: 1px solid white; */
+      z-index: 7;
+      bottom:10%;
+      left: 12%;
+      text-align:right;
+      font-size: 1.2em;
+      font-family: 'DM Serif Display', serif;
+    }
+
+    h1{
+      position: absolute;
+      z-index: 7;
+      font-size: 5em;
+      font-family: 'DM Serif Display', serif;
+      transform: rotate(-90deg);
+      /*element 회전 */
+      bottom:46%;
+      left: 42%;
+    }
+
+    .text-3{
+      position: absolute;
+      width: 38vw;
+      height:10vh;
+      z-index: 7;
+      text-align:left;
+      font-size: 1.2em;
+      font-family: 'DM Serif Display', serif;
+      transform: rotate(-90deg);
+      right:21.5%;
+      top:43%;
+
+    }
+
+
+    
+
+
+    
+    
+
+</style>
+</head>
+<body>
+
+<!-- check point 1 -->
+
+  <!-- class 사용과 id 사용의 관계 -->
+
+  <!-- 작업에 문제는 없는 좋은 클래스 방식이긴 하나, 아래와 같이 사용(넘버링)을 붙일때는 id를 사용하는 것이 유지 보수 측면에서는 유리할 수 있습니다. 
+  
+    class는 언제든지 '재활용'한다라는 암묵적인 용도가 합의되어있기때문에
+    팀원이 클래스를 확인할때 "이거 다른 부분에서는 변하는가?" 라고 의문을 품습니다.
+    혹은 이러한 요소가 수백개일땐 넘버링을 하나하나 붙이는 것이 한계가 올것을 예상한다면 더욱 매끄러운 마크업이 되겠습니다.
+    
+    
+  
+  -->
+
+
+
+  <div id="root">
+    <div class="B">B</div>
+    <div class="box-1">
+    </div>
+    
+    <div class="box-2"></div>
+    <div class="I">I</div>
+
+    <div class="box-3"></div>
+    <div class="box-4">
+      <div class="G">G</div>
+    </div>
+
+    <div class="text-1">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus voluptatibus aspernatur temporibus dolor doloribus deserunt tempora minima amet autem dolorum
+    </div>
+
+    <div class="text-2">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestiae impedit rem obcaecati voluptate maxime sequi mollitia ipsam eaque itaque adipisci sint qui, molestias similique aliquam, consectetur autem earum libero? Quidem, aspernatur sed, omnis amet quae magnam, saepe dolor ut repellendus odit tempora iusto quia molestiae alias eius.
+    </div>
+
+    <h1>LOREM IUSUM</h1>
+
+    <div class="text-3">
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis molestiae impedit rem obcaecati voluptate maxime sequi mollitia ipsam eaque itaque adipisci sint qui, molestias similique aliquam, consectetur autem earum libero? Quidem, aspernatur sed, omnis amet quae magnam, saepe dolor ut repellendus odit tempora iusto quia molestiae alias eius.
+    </div>
+
+
+
+
+  </div>
+  
+</body>
+</html>

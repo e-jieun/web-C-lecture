@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Abril Fatface', cursive;
+}
+
+:root {
+  --color-1:#fff;
+  --color-2:#ccc;
+  --color-3:rgb(167, 167, 167);
+  --color-4:rgb(112, 112, 112);
+  --color-5:rgb(58, 58, 58);
+  --color-6:#000;
+}
+
+#display {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+#display p {
+  font-size: large;
+  width: 50%;
+  text-align: right;
+  position: absolute;
+  z-index: 5;
+  left: 10%;
+  bottom: 5%;
+}
+
+#display .one {
+  width: 20%;
+  height: 100%;
+  background-color: var(--color-2);
+  z-index: 4;
+}
+
+#display .two {
+  width: 15%;
+  height: 100%;
+  background-color: var(--color-3);
+  position: relative;
+  z-index: 3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#display .two h1 {
+  font-size: 300px;
+  position: absolute;
+  left: -15%;
+}
+
+#display .three {
+  width: 35%;
+  height: 100%;
+  background-color: var(--color-4);
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+#display .three h1 {
+  font-weight: lighter;
+  font-size: small;
+  position: absolute;
+  z-index: 4;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  top: 3%;
+  right: 2%;
+}
+
+#display .three h2 {
+  font-size: 300px;
+  position: absolute;
+  left: 33%;
+}
+
+#display .three h3, #display .three h4 {
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  -webkit-transform: scale(-1);
+          transform: scale(-1);
+}
+
+#display .three h3 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 80px;
+  margin-bottom: -15%;
+}
+
+#display .three h4 {
+  font-size: large;
+  font-weight: normal;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 85%;
+  text-align: left;
+  padding-left: 5%;
+  margin-bottom: -5%;
+}
+
+#display .four {
+  width: 30%;
+  height: 100%;
+  background-color: var(--color-5);
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+
+#display .four h1 {
+  font-size: 300px;
+  position: absolute;
+  left: -10%;
+}
+/*# sourceMappingURL=220420-layout-training-23.css.map */

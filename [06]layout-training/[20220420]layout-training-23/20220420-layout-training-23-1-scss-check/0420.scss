@@ -1,0 +1,133 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  // overflow: hidden;
+}
+#root{
+  width: 100vw;
+  height: 100vh;
+}
+#bg{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  position: absolute;
+  z-index: 0;
+  &>div:nth-child(1){
+    background-color: #ccc;
+    display: grid;
+    grid-template-columns: 1fr  0.8fr;
+
+    &>:nth-child(1){
+      background-color: #e2e2e2;
+    }
+    &>:nth-child(2){
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      &>h1{
+        position: relative;
+        left: -3vw;
+        // 화면 축소시 가려지지않는다 vw라서 그런가
+
+        // check point 1
+        
+        /* 
+        해당 훈련은 z-index와 position 값을 유연하게 사용할 수 있는가에 목적이 있습니다. 
+        따라서 &>h1 태그의 z-index 및 position 값을 조정 한다면 쉽게 해결 할 수 있습니다.
+        
+        23-0.html 파일 참조
+
+
+        */
+
+        
+
+
+      }
+    }
+  }
+  
+  &>div:nth-child(2){
+    background-color: #999999;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+      &>h1{
+        position: relative;
+        left: -3vw;
+      }
+  }
+  
+  &>div:nth-child(3){
+    background-color: #5a5a5a;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+      &>h1{
+        position: relative;
+        left: -3vw;
+      }
+      &>p{
+        font-size: 0.5rem;
+        position: absolute;
+        top: 3vh;
+        right: 3vw;
+      }
+  }
+}
+
+h1{
+  font-size: 25rem;
+  font-family: 'DM Serif Display', serif;
+}
+
+section{
+  // display: flex;
+  height: 70vh;
+  top: 22vh;
+  left: 11vw;
+  width: 55vw;
+  position: absolute;
+  z-index: 1;
+  overflow: hidden;
+  // border: 1px solid red;
+  &>h2{
+    width: 30vw;
+  font-family: 'DM Serif Display', serif;
+
+    font-size: 5rem;
+    position: absolute;
+    left: 30vw;
+    bottom: 35vh;
+    // border: 1px solid green;
+    transform: rotate(270deg);
+  }
+  &>div:nth-child(2){
+    font-size: 1.5rem;
+  font-family: 'DM Serif Display', serif;
+
+    width: 35vw;
+    top: 28.5vh;
+    position: relative;
+    left: 34vw;
+    // border: 1px solid blue;
+    transform: rotate(270deg);
+
+  }
+  &>div:nth-child(3){
+    width: 48vw;
+    font-size: 1.5rem;
+  font-family: 'DM Serif Display', serif;
+
+    text-align: end;
+    // border: 1px solid gold;
+    position: absolute;
+    bottom: 0;
+    
+  }
+}
+
+// 페이지 확대축소시 글씨위치가 상당히 틀어지는데 다른 개선방향이 있나요?

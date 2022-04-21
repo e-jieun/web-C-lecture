@@ -1,0 +1,107 @@
+@import './base.scss';
+
+// style
+#root{
+  font-stretch: condensed;
+  #con{
+    @extend %inherit;
+    // paragraph con
+    @include flex-align-justify(center, center);
+    @extend %flex-column;
+    &>div:nth-child(1){
+      order: 2;
+      @extend %inherit;
+      @include flex-align-justify(center, space-between);
+      @extend %flex-column;
+      position: absolute;
+      z-index: 5;
+      font-weight: 600;
+      &>div{
+        font-family: serif;
+      }
+      
+      &>div:nth-child(1){
+        position: fixed;
+        right: 2vh;
+        top: 1vh;
+        font-size: xx-small;
+      }
+      &>div:nth-child(2){
+        @include width-height(80vw, 20vh);
+        position: absolute;
+        top: 2vh;
+        left: 20vh;
+        transform: rotate(-90deg);
+        position: relative;
+        &>div:nth-child(1){
+          font-size: 3rem;
+          position: relative;
+          right: -13vh;
+        }
+        &>div:nth-child(2){
+          @include width-height(80vh, 20vh);
+        }
+      }
+      &>div:last-child{
+        @include width-height(50vh, 10vh);
+        position: relative;
+        right: 10vh;
+        bottom: 11vh;
+        &>div{
+          text-align: end;
+        }
+        }
+      }
+    &>div:nth-child(2){
+      order: 1;
+      @extend %inherit;
+      @include flex-align-justify(center, center);
+      font-weight: 900;
+      &>div{
+        height: $per100;
+        flex-grow: 3;
+        @include flex-align-justify(center, flex-start);
+        &>div{
+          font-size: 10rem;
+          font-weight: bold;
+        }
+      }
+      &>div:nth-child(1){
+        flex-grow: 1;
+        z-index: 4;
+        background-color: $color-cr;
+      }
+      &>div:nth-child(2){
+        flex-grow: 1.5;
+        z-index: 3;
+        position: relative;
+        right: 2vh;
+        background-color: $color-d6;
+        &>div{
+          position: relative;
+          right: 1vh;
+        }
+      }
+      &>div:nth-child(3){
+        z-index: 2;
+        position: relative;
+        right: 2.5vh;
+        background-color: $color-c4;
+        &>div{
+          position: relative;
+          right: 1vh;
+        }
+
+      }
+      &>div:nth-child(4){
+        background-color: $color-dg;
+        position: relative;
+        right: 1vh;
+        &>div{
+          position: relative;
+          right: 3vh;
+        }
+      }
+    }
+  }
+}

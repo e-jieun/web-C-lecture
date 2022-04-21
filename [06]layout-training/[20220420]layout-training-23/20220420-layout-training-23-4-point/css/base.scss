@@ -1,0 +1,85 @@
+//variable
+$color-bk: black;
+$color-c4: #c4c4c4;
+$color-d6: #d6d6d6;
+$color-dg: dimgray;
+$color-e5: #e5e5e5;
+$color-dp: #8068AD;
+$color-pp: #C8B5C8;
+$color-yel: #EDEBB2;
+$color-cr: #FFFEF9;
+$color-hp: #D94A7E;
+$color-pk: #F2A0C6;
+$color-sa: salmon;
+$color-note: #F2F2F2;
+$color-coal: #262626;
+$border-bk: 1px solid black;
+$border-red: 1px solid red;
+$per100: 100%;
+$pc: 1080px;
+$tablet: 600px;
+
+//class-set
+@mixin flex-align-justify($align, $justify) {
+  display: flex;
+  align-items: $align;
+  justify-content: $justify;
+}
+@mixin border($px, $color) {
+  border: $px solid $color;
+}
+@mixin width-height($width, $height){
+  width: $width;
+  height: $height;
+}
+@mixin pc{
+  @media(min-width: $pc){
+    @content;
+  }
+}
+@mixin tablet{
+  @media(min-width: $tablet){
+    @content;
+  }
+}
+@mixin max($width, $height){
+  max-width: $width;
+  max-height: $height;
+}
+@mixin radius($radius-value){
+  border-radius: $radius-value;
+}
+%card-contains{
+  @include width-height(90vw, 50vh);
+  position: relative;
+  top: -20vh;
+  background-color: rgba(200,200,200,.2);
+  backdrop-filter: blur(20px);
+  padding: 1vw;
+  margin-bottom: 2vh;
+  @include radius(3vw);
+  transition: 1s;
+}
+%flex-center-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+%flex-column{
+  flex-direction: column;
+}
+%view-100{
+  width: 100vw;
+  height: 100vh;
+}
+%per-100{
+  width: 100%;
+  height: 100%;
+}
+%inherit{
+  width: inherit;
+  height: inherit;
+}
+%circle{
+  border-radius: 100%;
+}

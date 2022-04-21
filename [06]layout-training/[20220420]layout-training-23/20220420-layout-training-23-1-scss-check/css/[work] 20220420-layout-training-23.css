@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#root > .bgc-1 {
+  width: 22vw;
+  height: inherit;
+  background-color: #d9d9d9;
+  position: relative;
+  z-index: 4;
+}
+
+#root > .bgc-2 {
+  width: 14vw;
+  height: inherit;
+  background-color: #c4c4c4;
+  position: relative;
+  z-index: 3;
+}
+
+#root > .bgc-2 > h1 {
+  width: 7vw;
+  height: 30vh;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 300px;
+  color: black;
+  position: relative;
+  top: 25vh;
+  right: 4vw;
+  z-index: 3;
+}
+
+#root > .bgc-3 {
+  width: 32vw;
+  height: inherit;
+  background-color: #8b8b8b;
+  position: relative;
+  z-index: 2;
+}
+
+#root > .bgc-3 > h1 {
+  width: 7vw;
+  height: 30vh;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 300px;
+  color: black;
+  position: relative;
+  top: 25vh;
+  right: 3vw;
+  z-index: 2;
+}
+
+#root > .bgc-3 > div {
+  width: 30vw;
+  height: 20vh;
+  position: relative;
+  top: 10vh;
+  left: 11vw;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#root > .bgc-3 > div > h2 {
+  font-size: 60px;
+  font-family: 'Abril Fatface', cursive;
+}
+
+#root > .bgc-3 > div > p {
+  font-family: 'Abril Fatface', cursive;
+  overflow: hidden;
+}
+
+#root > .bgc-4 {
+  width: 32vw;
+  height: inherit;
+  background-color: #545454;
+  position: relative;
+  z-index: 1;
+}
+
+#root > .bgc-4 > h1 {
+  width: 7vw;
+  height: 30vh;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 300px;
+  color: black;
+  position: relative;
+  top: 25vh;
+  right: 4vw;
+  z-index: 1;
+}
+
+#root > .text-1 {
+  font-family: 'Abril Fatface', cursive;
+  font-size: 10px;
+  position: absolute;
+  top: 4vh;
+  right: 3vw;
+  z-index: 3;
+}
+
+#root > .text-2 {
+  width: 50vw;
+  height: 10vh;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 26px;
+  text-align: end;
+  position: absolute;
+  left: 10vw;
+  bottom: 17vh;
+  z-index: 4;
+}
+/*# sourceMappingURL=[work] 20220420-layout-training-23.css.map */

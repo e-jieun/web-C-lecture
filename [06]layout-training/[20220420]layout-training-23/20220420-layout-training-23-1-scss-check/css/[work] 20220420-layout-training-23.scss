@@ -1,0 +1,130 @@
+  *{margin:0; padding:0; box-sizing: border-box;}
+
+  @mixin flex-setting($a,$b) {
+    display:flex;
+    justify-content: $a;
+    align-items: $b;
+  }
+
+  #root {
+    width:100vw;
+    height:100vh;
+    
+    @include flex-setting(center,center );
+
+    & > .bgc-1 {
+      width:22vw;
+      height:inherit;
+      background-color: rgb(217, 217, 217);
+      position:relative;
+      z-index:4;
+    }
+
+    & > .bgc-2 {
+      width:14vw;
+      height:inherit;
+      background-color: rgb(196, 196, 196);
+      position:relative;
+      z-index:3;
+
+      & > h1 {
+        width:7vw;
+        height:30vh;
+        font-family: 'Abril Fatface', cursive;
+        font-size:300px;
+        color:black;
+        position:relative;
+        top:25vh;
+        right:4vw;
+        z-index:3;
+        
+      }
+    }
+
+    & > .bgc-3 {
+      width:32vw;
+      height:inherit;
+      background-color: rgb(139, 139, 139);
+      position:relative;
+      z-index:2;
+
+      & > h1 {
+        width:7vw;
+        height:30vh;
+        font-family: 'Abril Fatface', cursive;
+        font-size:300px;
+        color:black;
+        position:relative;
+        top:25vh;
+        right:3vw;
+        z-index:2;
+      }
+
+      & > div {
+        width:30vw;
+        height:20vh;
+
+
+        position:relative;
+        top:10vh;
+        left:11vw;
+        transform:rotate(-90deg);
+
+        @include flex-setting(flex-start,center);
+        flex-direction: column;
+
+        & > h2 {
+          font-size:60px;
+          font-family: 'Abril Fatface', cursive;
+        }
+
+        & > p {
+          font-family: 'Abril Fatface', cursive;
+          overflow: hidden;
+        }
+      }
+    }
+
+    & > .bgc-4 {
+      width:32vw;
+      height:inherit;
+      background-color: rgb(84, 84, 84);
+      position:relative;
+      z-index: 1;
+
+      & > h1 {
+        width:7vw;
+        height:30vh;
+        font-family: 'Abril Fatface', cursive;
+        font-size:300px;
+        color:black;
+        position:relative;
+        top:25vh;
+        right:4vw;
+        z-index:1;
+      }
+    }
+    
+    & > .text-1 {
+      font-family: 'Abril Fatface', cursive;
+      font-size:10px;
+      
+      position:absolute;
+      top:4vh;
+      right:3vw;
+      z-index:3;
+    }
+
+    & > .text-2 {
+      width:50vw;
+      height:10vh;
+      font-family: 'Abril Fatface', cursive;
+      font-size:26px;
+      text-align: end;
+      
+      position:absolute;
+      left:10vw;
+      bottom:17vh;
+      z-index:4;
+    }
+  }

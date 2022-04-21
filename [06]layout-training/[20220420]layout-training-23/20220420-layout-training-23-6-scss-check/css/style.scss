@@ -1,0 +1,181 @@
+$width-root:100vw;
+$height-root:100vh;
+$color-black:black;
+$color-white:white;
+$solid-black:8px solid black;
+$solid-gray:2px solid rgb(88, 88, 88);
+$solid-red:1px solid #613c3c;
+$per-100:100%;
+$color-1:rgb(255, 255, 255);
+$color-2:rgb(192, 190, 190);
+$color-3:rgb(170, 170, 170);
+$color-4:rgb(121, 121, 121);
+$color-5:rgb(88, 88, 88);
+$color-6:rgb(54, 54, 54);
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@mixin size($w, $h) {
+    width: $w;
+    height: $h;
+  }
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($posi, $z-in){
+  position: $posi;
+  z-index: $z-in;
+}
+
+@mixin font-style($bold) {
+font-family: 'Playfair Display', serif;
+font-weight: $bold;
+}
+
+
+// ------------------------------------------------------------------
+
+
+#root{
+  @include root-style;
+
+  &>section{
+    position: relative;
+  }
+
+  &>section:nth-child(1){
+    @include box-style(30%, $per-100, $color-1 );
+
+    &>div:nth-child(1){
+      @include size(55vw, 5vh);
+      @include position-setting(absolute, 2);
+      top: 2vh;
+      left: 45vw;
+      @include font-style(600);
+    }
+
+    &>div:nth-child(2){
+      @include size(40vw, 15vh);
+      @include position-setting(absolute, 2);
+      @include font-style(900);
+      text-align: end;
+      bottom: 7vh;
+      left: 15vw;
+    }
+
+    &>div:nth-child(3){
+      @include size(40vw, 15vh);
+      @include position-setting(absolute, 2);
+      @include font-style(900);
+      text-align: start;
+      bottom: 44vh;
+      left: 40vw;
+      transform: rotate(270deg);
+    }
+
+
+    &>div:nth-child(4){
+      @include size(30vw, 6vh);
+      @include position-setting(absolute, 2);
+      left: 39vw;
+      top: 45vh;
+      @include font-style(900);
+      font-size: 50px;
+      transform: rotate(270deg);
+    }
+  }
+  
+  &>section:nth-child(2){
+    @include box-style(20%, $per-100, $color-1 );
+    overflow: hidden; 
+
+    &>div{
+      @include size(15vw, 40vh);
+      position: absolute;
+      top: 20vh;
+      left: -6vw;
+      @include font-style(900);
+      font-size: 400PX;
+    }
+  }
+  
+  &>section:nth-child(3){
+    @include box-style(50%, $per-100, $color-1 );
+    overflow: hidden; 
+
+    &>div{
+      @include size(15vw, 40vh);
+      position: absolute;
+      top: 20vh;
+      left: -5vw;
+      @include font-style(900);
+      font-size: 400PX;
+    }
+  }
+  
+  &>section:nth-child(4){
+    @include box-style(50%, $per-100, $color-1 );
+    overflow: hidden; 
+
+
+    &>div{
+      @include size(15vw, 40vh);
+      position: absolute;
+      top: 20vh;
+      left: -6vw;
+      @include font-style(900);
+      font-size: 400PX;
+    }
+  
+  }
+}
+
+// 오늘 작업은 너무 어려웠습니다. overflow를 사용하는 것이 맞는지 z-index로 사용했어야 하는지 잘 모르겠습니다.
+
+// check point : 1
+// 23-0.html
+
+// 파일 확인해 볼 것
+
+
+
+
+
+
+
+

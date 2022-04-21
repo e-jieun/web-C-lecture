@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Lobster&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- element를 transforem: rotate(deg); -->
+  <div id="root">
+    <div id="con">
+      <!-- paragraph con -->
+      <div>
+        <!-- small text con -->
+        <div>
+          <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, laborum! Lorem, ipsum.
+          </div>
+        </div>
+        <!-- lorem ipsum bold con -->
+        <div>
+          <div>LOREM IPSUM</div>
+          <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, blanditiis culpa id accusamus quisquam
+            nostrum consequatur ea accusantium illum cumque quod, est placeat, debitis tempora in obcaecati harum alias
+            possimus?</div>
+        </div>
+        <div>
+          <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, ut, temporibus nihil corrupti dicta ex
+            quos maiores velit deleniti iure ad, enim eos deserunt similique dolore. Veniam rerum facilis quasi!</div>
+        </div>
+      </div>
+      <!-- bg con -->
+      <div>
+        <!-- empty white con -->
+        <div></div>
+        <!-- d6 con -->
+        <div>
+          <div>B</div>
+        </div>
+        <!-- c4 con -->
+        <div>
+          <div>I</div>
+        </div>
+        <!-- dg con -->
+        <div>
+          <div>G</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    let body = document.querySelector('body');
+    console.dir(body);
+    let zero = 0;
+    body.style.margin = zero;
+    body.style.padding = zero;
+
+    const root = document.getElementById('root');
+    let hun = 100;
+    let widthUnit = 'vw';
+    let heightUnit = 'vh';
+    let color_dg = 'dimgray';
+    let coal = '#262626';
+    console.dir(root);
+    root.style.width = hun+widthUnit;
+    root.style.height = hun+heightUnit;
+    root.style.boxSizing = 'border-box';
+    root.style.fontFamily = 'DM Serif Display', 'serif';
+    // The font-stretch property allows you to make text narrower (condensed) or wider (expanded)
+    root.style.backgroundColor = color_dg;
+    root.style.color = coal;
+
+  </script>
+</body>
+
+</html>

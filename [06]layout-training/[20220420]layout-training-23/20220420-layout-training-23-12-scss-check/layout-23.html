@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/23-style.css">
+
+</head>
+<body>
+  
+  <div id="root">
+
+    <!-- 1번 div = z-index : 3 -->
+    <div>
+      <!-- 상단에 좌측정렬할 글씨 -->
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni tempora aperiam fugiat laborum eaque iure ex! Incidunt inventore laudantium tenetur dolor asperiores</p>
+    </div>
+
+    <!-- 2번 div = z-index : 2 -->
+    <div>
+      <p>B</p>
+    </div>
+
+    <!-- 3번 div = z-index : 1 -->
+    <div>
+      <p>I</p>
+    </div>
+
+    <!-- 4번 div = z-index : 0 -->
+    <div>
+      <p>G</p>
+    </div>
+
+    <!-- z-index : 4 -->
+    <div>
+      <div>
+        <div><p>Lorem ipsum</p></div>
+        <div>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni tempora aperiam fugiat laborum eaque iure ex! Incidunt inventore laudantium tenetur dolor asperiores consequuntur ullam mollitia! Omnis iusto adipisci nostrum.</div>
+      </div>
+      <div>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et magni tempora aperiam fugiat laborum eaque iure ex! Incidunt inventore laudantium tenetur dolor asperiores consequuntur ullam mollitia! Omnis iusto adipisci nostrum.
+        </p>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

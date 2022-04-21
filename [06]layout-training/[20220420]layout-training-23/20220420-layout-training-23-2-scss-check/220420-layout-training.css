@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+#root > div {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#root > div > div {
+  width: 60vw;
+  height: 100vh;
+}
+
+#root .box1 {
+  background-color: #eeeeee;
+  width: 40vw;
+  position: relative;
+}
+
+#root .box2 {
+  width: 25vw;
+  background-color: #bbbbbb;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#root .box2 > h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20vw;
+  margin-left: -240px;
+}
+
+#root .box3 {
+  background-color: #bbbbbb;
+  width: 5vw;
+  position: relative;
+}
+
+#root .box4 {
+  width: 60vw;
+  background-color: #6b6868;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#root .box4 > div > h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20vw;
+  margin-left: -18vw;
+}
+
+#root .box4 > p {
+  width: 1300px;
+  height: 150px;
+  font-size: 40px;
+  font-weight: bold;
+  margin-left: -1000px;
+  margin-bottom: -950px;
+  text-align: right;
+  position: absolute;
+}
+
+#root .box5 {
+  background-color: #252323;
+  width: 5vw;
+  position: relative;
+}
+
+#root .box6 {
+  background-color: #6b6868;
+  width: 60vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#root .box6 > div:nth-child(1) > h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 20vw;
+  margin: 20px;
+  margin-left: -18.5vw;
+}
+
+#root .box6 > div:nth-child(2) > h1 {
+  width: 810px;
+  height: 150px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 150px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  margin-left: -1300px;
+  margin-top: -150px;
+}
+
+#root .box6 > div > p {
+  width: 900px;
+  height: 300px;
+  font-size: 40px;
+  font-weight: bolder;
+  position: absolute;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  margin-left: -1100px;
+  margin-top: 8px;
+}

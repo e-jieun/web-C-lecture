@@ -1,0 +1,122 @@
+*{margin:0; padding :0; box-sizing: border-box;}
+
+
+
+#container{
+  width:100vw;
+  height:100vh;
+  background-color: #ccc;
+  
+  
+
+  
+  &>div{
+    height:100vh;
+    // border: 1px solid black;
+  }
+  
+  &>div:nth-child(1){
+    background-color: #ffffff;
+    width:25vw;
+    position: absolute;
+    z-index: 4;
+
+    &>div{
+      width:40em;
+      text-align: right;
+      position: absolute;
+      top:52em;
+      left:32em;
+    }
+  }
+
+
+
+  &>div:nth-child(2){
+    background-color: #ffffff;
+    position: absolute;
+    width:15vw;
+    left:25vw;
+    z-index: 3;
+    &>div{
+      width:fit-content;
+      height:fit-content;
+      font-size: 20rem;
+      font-weight: bold;
+      position: relative;
+      left:-4rem;
+      top: 12rem;
+    }
+  }
+
+
+
+
+  &>div:nth-child(3){
+    background-color: #ffffff;
+    position: absolute;
+    left:40vw;
+    z-index: 2;
+    width:25vw;
+
+    // I
+    &>div:nth-child(1){
+      width:fit-content;
+      height:fit-content;
+      font-size: 20rem;
+      font-weight: bold;
+      position: relative;
+      left:-3rem;
+      top: 12rem;
+    }
+    
+    // 돌아간 글자
+    &>div:nth-child(2){
+      transform: rotate(270deg);
+      position: relative;
+      left:9em;
+      top:9em;
+
+
+      &>div:nth-child(1){
+        font-size: 4em;
+        margin-left:1em;
+      }
+      
+      &>div:nth-child(2){
+        font-size: 1em;
+      }
+    }
+    
+    
+  }
+  &>div:nth-child(4){
+    height: 2vh;
+    font-size: 1em;
+    width:fit-content;
+    position: absolute;
+    left: 19em;
+    margin: 1rem;
+    z-index: 6;
+  }
+
+  &>div:nth-child(5){
+    width:35vw;
+    background-color: #ffffff;
+    position: absolute;
+    left:65vw;
+    z-index: 1;
+    
+    &>div{
+      width:fit-content;
+      height:fit-content;
+      font-size: 20rem;
+      font-weight: bold;
+      position: relative;
+      left:-3rem;
+      top: 12rem;
+    }
+    
+  }
+  
+}

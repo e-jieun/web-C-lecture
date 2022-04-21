@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'DM Serif Display', serif;
+}
+
+.con1 {
+  width: 20vw;
+  height: 100vh;
+  z-index: 5;
+  background-color: white;
+}
+
+.con2 {
+  width: 15vw;
+  height: 100vh;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 4;
+}
+
+.con2 > p {
+  font-size: 25rem;
+  position: relative;
+  right: 6vw;
+}
+
+.con3 {
+  width: 30vw;
+  height: 100vh;
+  background-color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 3;
+}
+
+.con3 > div:nth-child(1) {
+  font-size: 25rem;
+  position: relative;
+  right: 3vw;
+}
+
+.con3 > div:nth-child(2) {
+  white-space: nowrap;
+  font-size: 5rem;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: relative;
+  left: 4vw;
+}
+
+.con3 > div:nth-child(3) {
+  white-space: nowrap;
+  width: 50vw;
+  text-align: left;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  position: relative;
+  right: 18vw;
+  top: 15vh;
+}
+
+.con4 {
+  width: 35vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.con4 > div {
+  font-size: 25rem;
+  position: relative;
+  right: 7vw;
+}
+
+.text1 {
+  width: 40vw;
+  text-align: right;
+  position: absolute;
+  top: 82vh;
+  left: 19vw;
+  z-index: 6;
+}
+
+.text2 {
+  z-index: 7;
+  position: absolute;
+  top: 3vh;
+  right: 3vw;
+  font-size: small;
+}
+/*# sourceMappingURL=style2.css.map */
