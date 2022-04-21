@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>filter</title>
+
+  <style>
+    *{margin: 0;padding: 0;}
+    .show{
+      visibility: visible;
+    }
+    .hide{
+      visibility: hidden;
+    }
+    #root{
+      width: 100vw;
+      height: 100vh;
+      background-color: antiquewhite;
+    }
+    #filter-box{
+      width: 90%;
+      margin: 0 auto;
+      border: 1px solid;
+    }
+    button{
+      width: 50px;
+      height: 50px;
+    }
+    #list-box{
+      width: 90%;
+      margin: 0 auto;
+      border: 1px solid;
+      display: flex;
+      justify-content: space-between;
+      align-items:inherit;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    a{
+      width: 30%;
+      height: 100px;
+      display: block;
+      margin: 10px 0;
+      background-color: darkgoldenrod;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="filter-box">
+      <button data-value="all">all</button>
+      <button data-value="a">a</button>
+      <button data-value="b">b</button>
+      <button data-value="c">c</button>
+    </div>
+    <div id="list-box">
+      <a href="#" data-group="all a b"></a>
+      <a href="#" data-group="all a c"></a>
+      <a href="#" data-group="all b c"></a>
+      <a href="#" data-group="all a"></a>
+      <a href="#" data-group="all b"></a>
+      <a href="#" data-group="all c"></a>
+      <a href="#" data-group="all a b c"></a>
+      <a href="#" data-group="all a d"></a>
+      <a href="#" data-group="all b d"></a>
+    </div>
+  </div>
+<!--   
+  <script>
+    const filterBox = document.querySelector('#filter-box');
+    const listBox = document.querySelector('#list-box');
+    const list = document.querySelectorAll('a');
+
+    filterBox.addEventListener('click', event =>{
+      // console.log(event.target);
+      let fil = event.target.dataset.value;
+      // console.log(fil);
+
+      /*
+      //선언문
+      list.forEach(listBox =>{
+        let splitList = listBox.dataset.group.split(' ');
+        // ' '을 잘라서 배열
+        // console.log(splitList);
+
+        // console.log(splitList.includes(fil));
+        // button의 dataset 값이 포함되었는가?
+        if(splitList.includes(fil) === true){
+          // console.log('red');
+          listBox.style.backgroundColor = "red";
+        }
+        else if(splitList.includes(fil) === false){
+          listBox.style.backgroundColor = "green";
+          // console.log('green');
+        }
+      })
+      */
+
+      // 명령문? 
+      for(var item of list){
+        let itemSplit = item.dataset.group.split(' ')
+        // console.log(itemSplit)
+
+        if(itemSplit.includes(fil) === true){
+          console.log('?');
+          item.style.backgroundColor = "red";
+        }
+        else{
+          console.log('!')
+          item.style.backgroundColor = "blue";
+        }
+      }
+    })
+  </script>
+
+ -->
+
+<script>
+  const root = document.getElementById('root');
+  // first child
+  const filterBox = root.children[0];
+  const filterBoxBtns = filterBox.children;
+  // second child
+  const listBox = root.children[1];
+  const listBoxAnchors = listBox.children;
+
+
+
+  let dataAttributeArray = [];  
+  filterBox.addEventListener('click', function(event) {
+    let getDatasetValue = event.target.dataset.value;
+    console.dir(getDatasetValue);
+    dataAttributeArray.push(getDatasetValue);
+    console.log(dataAttributeArray);
+    // for(let i = 0 ; i<data){}
+  });
+
+
+
+
+</script>
+</body>
+</html>
