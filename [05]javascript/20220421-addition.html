@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root">
+    <div></div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    // root이라는 문서 요소에 사이즈를 스타일링 하였다.
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems ="center";
+    root.style.fontSize = "3rem";
+
+
+    console.dir(root);
+    // 식별자 (identifier) root의 구조를 보았을때 키값 중 children이라는 키값이 있다.
+    // children이라는 키값을 유심히 살펴 보면 0번에 <div> 태그가 있는 것을 발견할 수 있다.
+    // children이란 키는 값의 데이터 타입이 배열이라는 것을 '파악' 할 수 있다.
+    // 배열이라면 배열에 맞는 작성방식인 [] 대괄호를 활용한다면 자식 요소에도 접근 할 수 있게 된다.
+
+    let count = 0;
+    // 숫자 0을 핸들링 하고자 변수에 '대입' 시켰다.
+    root.addEventListener('click', function () {
+      // root 요소에 문서 전용 이벤트 발생 내장함수를 사용했고, 함수가 짜여진 규칙을 따랐다. 
+      // 첫번째 '인수(argument)'는 문자열 일것
+      // 두번째 '인수(argument)'는 함수 형식 일것
+
+      // root에.(온점)을 붙여 함수를 설치 할 수 있었던 것은 root이라는 식별자의 값은 객체 이고, 그안에 addEventListener라는 함수가 내장 되어있다는 것을 의미한다.
+
+      root.children[0].textContent = count;
+      // root 객체의 구조를 찾아보니 children이라는 키를 발견했고 그 안에 0번째에 <div> 태그가 있다는 것을 찾았다.
+      // 텍스트 부분을 관장하는 textContent 라는 키값에 'count'라는 변수를 대입했다.
+
+      // 해당 알고리즘은 31행까지의 동작에서 숫자 0 이라는 값이 <div>태그의 텍스트 노드부분에 새겨지게 된다.
+
+      count++;
+      // 증가 연산자 increase operator
+      // ++ (더하기 표시 두개)
+      // 클릭 한번 할 때 마다 count 변수에 대입된 '어떠한 값'이 1씩 증가하게 된다.
+
+      
+
+    });
+  </script>
+
+</body>
+
+</html>
