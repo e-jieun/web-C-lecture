@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --color-1: #aaa;
+      --color-2: #bbb;
+      --color-3: #ccc;
+      --color-4: #ddd;
+      --color-5: #eee;
+      --color-6: #999;
+      --color-7: #888;
+      --color-8: #777;
+      --color-9: #666;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #header-text {
+      display: inline;
+      position:fixed;
+      top:0;
+      right:0;
+      z-index:5;
+      margin:40px;
+
+    }
+
+    #footer-text {
+      display: inline;
+      position:fixed;
+      bottom:0;
+      left:0;
+      z-index:5;
+      margin:40px;
+    }
+
+    #rotate-text {
+      width:600px;
+      height:200px;
+      border:1px solid black;
+      position:fixed;
+      top:40%;
+      left:55%;
+      z-index:5;
+      margin:40px;
+      transform:rotate(-90deg);
+    }
+
+
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ff6666;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>section {
+      flex-grow: 1;
+      height: 100vh;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      position: relative;
+
+
+    }
+
+    #root>section:nth-child(1) {
+      background-color: var(--color-1);
+      z-index:4;
+    }
+
+    #root>section:nth-child(2) {
+      background-color: var(--color-2);
+      z-index:3;
+
+    }
+
+    #root>section:nth-child(3) {
+      background-color: var(--color-3);
+      z-index:2;
+
+    }
+
+    #root>section:nth-child(4) {
+      background-color: var(--color-4);
+      z-index:1;
+
+    }
+
+    #root>section>div {
+      width: 400px;
+      height: 400px;
+      background-color: #ffdd00;
+      position: relative;
+      left:-200px;
+      font-size:400px;
+      padding:50px;
+      transition:1s;
+    }
+
+    #root>section>div:hover {
+      left:0px;
+    }
+  </style>
+</head>
+
+<body>
+  <p id="header-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, perferendis.</p>
+  <p id="footer-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, perferendis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus iusto, consectetur dolorum ab perspiciatis sunt. Sit repellat beatae non nesciunt! </p>
+  <p id="rotate-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Earum, perferendis. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus iusto, consectetur dolorum ab perspiciatis sunt. Sit repellat beatae non nesciunt! </p>
+  <div id="root">
+    <section>
+      <div>1</div>
+    </section>
+    <section>
+      <div>2</div>
+    </section>
+    <section>
+      <div>3</div>
+    </section>
+    <section>
+      <div>4</div>
+    </section>
+  </div>
+
+
+
+</body>
+
+</html>
