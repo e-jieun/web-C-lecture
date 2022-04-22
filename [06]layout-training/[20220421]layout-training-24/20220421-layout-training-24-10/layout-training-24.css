@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+}
+
+.section-1 {
+  top: 40%;
+  font-family: "Kite One", sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  left: 15%;
+  color: #838383;
+}
+
+.section-2 {
+  top: 42.5%;
+  font-family: "Kite One", sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  left: 15%;
+  color: #838383;
+}
+
+.section-3 {
+  top: 45%;
+  font-family: "Kite One", sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  left: 15%;
+  color: #838383;
+}
+
+.section-4 {
+  color: #232323;
+  top: 47.5%;
+  left: 15%;
+  font-family: "Kite One", sans-serif;
+  font-size: 1rem;
+  position: absolute;
+}
+
+.section-5 {
+  color: #838383;
+  top: 47.5%;
+  left: 22.5%;
+  font-family: "Kite One", sans-serif;
+  font-size: 1rem;
+  position: absolute;
+}/*# sourceMappingURL=24.css.map */

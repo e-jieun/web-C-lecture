@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+  <title>Document</title>
+  <style>
+  *{margin:0; padding:0; font-family: 'Bad Script', cursive; font-size: 1rem;}
+
+  #pc {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  main {
+    width: 70%;
+    height: fit-content;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    color: rgb(105, 105, 105);
+    font-weight:lighter;
+    margin:-0.2%;
+  }
+
+  #text {
+    display: flex;
+    width: 30%;
+    height: fit-content;
+    margin:-0.2%;
+  }
+
+  #text > h1:nth-child(1) {
+    color:black;
+    font-weight: bold;
+  }
+
+  #text > h1:nth-child(2) {
+    margin-left: 1%;
+  }
+
+  </style>
+</head>
+<body>
+  <div id="pc">
+    <main>
+    <h1>If you cannot fly, then run.</h1>
+    <h1>If you cannot run, then walk.</h1>
+    <h1>And, if you cannot walk, then crawl.</h1>
+
+    <div id="text">
+    <h1>But whatever you do,</h1>
+    <h1>you have to keep moving forward.</h1>
+  </main>
+  </div>
+  </div>
+
+  <script>
+    let mungu = document.getElementsByTagName('h1');
+    let main = document.getElementsByTagName('main');
+
+/* 
+
+    check point : 1
+
+    아래의 작업에서 매우 훌륭히 배열로 접근 하셧듯
+    getElementsByTagName() 메서드는 값을 배열로 가져오는 규칙이 있습니다.
+    <h1> 태그를 get 한다면 문서의 부모자식을 구분치 않고 모두 배열로 수집하여 반환하기 때문에
+    다량의 태그를 한번에 처리하고자 할때 매우 편리하게 처리할 수 있습니다. (반복문이 필요합니다)
+
+    이러한 시도를 재미나게 계속하시기를 권합니다.
+
+
+*/
+
+
+
+    mungu[3].addEventListener('click', function(event) {
+      event.target.style.color = 'red';});
+    mungu[4].addEventListener('click', function(event) {
+      event.target.style.fontWeight = 'bold';});
+    main[0].addEventListener('mouseover', function(event) {
+      event.target.style.color = 'black';});
+  
+  </script>
+</body>
+</html>

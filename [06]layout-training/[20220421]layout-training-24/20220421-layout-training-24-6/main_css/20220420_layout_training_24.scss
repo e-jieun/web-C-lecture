@@ -1,0 +1,64 @@
+@mixin position($justify, $align) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin space($space-type) {
+  justify-content: $space-type;
+}
+// space-around space-between space-evenly
+
+:root {
+  --main-color-1: #fff;
+  --main-color-2: #777777;
+  --main-color-3: #303030;
+}
+
+
+#base {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-color-1);
+  @include position(center, center);
+
+  & > .root {
+    width: 70%;
+    height: 12%;
+    // border: 1px solid salmon;
+    @include position(center, flex-start);
+    @include space(space-between);
+
+
+    & > div {
+      width: 80%;
+      height: 22%;
+      // border: 1px solid green;
+      font-family: 'Kite One', sans-serif;
+      color: var(--main-color-2);
+      font-size: 1rem;
+
+      & > span:nth-child(1) {
+        height: 100%;
+        // border: 1px solid blue;
+        color: var(--main-color-3);
+        font-weight: 600;
+      }
+
+      & > div {
+        width: 1%;
+        height: 100%;
+      }
+
+      & > span:nth-child(2) {
+        height: 100%;
+        // border: 1px solid #ff7b00;
+      }
+    }
+
+    & > div:nth-child(4) {
+      @include position(flex-start, center);
+
+    }
+  }
+}

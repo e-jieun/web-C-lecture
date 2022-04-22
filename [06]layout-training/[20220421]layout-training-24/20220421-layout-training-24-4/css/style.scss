@@ -1,0 +1,90 @@
+$width-root:100vw;
+$height-root:100vh;
+$color-black:black;
+$color-white:white;
+$solid-black:1px solid black;
+$solid-gray:2px solid rgb(88, 88, 88);
+$solid-red:1px solid #613c3c;
+$per-100:100%;
+$color-1:rgb(255, 255, 255);
+$color-2:rgb(192, 190, 190);
+$color-3:rgb(170, 170, 170);
+$color-4:rgb(121, 121, 121);
+$color-5:rgb(88, 88, 88);
+$color-6:rgb(29, 29, 29);
+
+// ------------------------------------------------------------------
+
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+// ------------------------------------------------------------------
+
+.flex{display: flex;}
+
+.position-absolute{position: absolute;}
+
+.position-relative{position: relative;}
+
+.flex-column{flex-direction: column;}
+
+.flex-row{flex-direction: row;}
+
+
+@mixin flex-setting($jus, $ali) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+}
+
+@mixin root-style {
+  width: $width-root;
+  height: $height-root;
+  display: flex;
+}
+
+
+@mixin size($w, $h) {
+    width: $w;
+    height: $h;
+  }
+
+@mixin box-style($w, $h, $col) {
+  width: $w;
+  height: $h;
+  background-color: $col;
+}
+
+@mixin position-setting ($posi, $z-in){
+  position: $posi;
+  z-index: $z-in;
+}
+
+@mixin font-style($col) {
+  font-family: 'Kite One', sans-serif;
+  color: $col;
+}
+
+
+// ------------------------------------------------------------------
+
+#root{
+  @include root-style;
+  justify-content: flex-end;
+
+  &>div{
+    @include size(80%, $per-100);
+    @include flex-setting(center, flex-start);
+    flex-direction: column;
+
+    &>p{
+      @include size(30vw, 3vh);
+      @include font-style($color-4);
+
+      &>span{
+      @include font-style($color-6);
+      }
+    }
+  }
+}
+

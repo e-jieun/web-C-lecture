@@ -1,0 +1,48 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+main {
+  width: 70vw;
+}
+main > h1 {
+  font-family: "Kite One", sans-serif;
+  font-size: 1rem;
+  color: #838383;
+  font-weight: normal;
+}
+main > h2 {
+  font-family: "Kite One", sans-serif;
+  font-size: 1rem;
+  color: #838383;
+  font-weight: normal;
+}
+main > h3 {
+  font-family: "Kite One", sans-serif;
+  font-size: 1rem;
+  color: #838383;
+  font-weight: normal;
+}
+main > p {
+  font-family: "Kite One", sans-serif;
+  font-size: 1rem;
+  color: #838383;
+  font-weight: normal;
+}
+main > p > span {
+  font-family: "Kite One", sans-serif;
+  font-size: 1rem;
+  color: #838383;
+  font-weight: normal;
+  color: #232323;
+}/*# sourceMappingURL=[work]20220421-layout-training-24.css.map */

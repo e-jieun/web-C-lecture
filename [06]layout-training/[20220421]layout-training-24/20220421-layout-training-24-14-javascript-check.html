@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kite+One&display=swap" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <!-- bg con -->
+    <div id="con">
+      <!-- text con -->
+      <div id="text-con">
+        <!-- text item -->
+        <div id="text-item1">If you cannot fly then run</div>
+        <div id="text-item2">If you cannot run, then walk.</div>
+        <div id="text-item3">And if you cannot walk, then crawl</div>
+        <!-- 4th sentence -->
+        <div id="text-item4">
+          <div id="bold">but whatever you do,  </div>
+          <div>you have to keep moving forward.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // call body
+    let body = document.querySelector('body');
+    // body strunture
+    console.dir(body);
+    // body style log
+    console.log(body.style);
+    // body style
+    body.style.margin = 0;
+    body.style.padding = 0;
+
+    // get #root
+    const root = document.getElementById('root');
+    // #root structure
+    console.dir(root);
+    // #root dtyle log
+    console.log(root.style);
+    // variable declaration
+    let hun = 100;
+    let widthUnit = 'vw';
+    let heightUnit = 'vh';
+    let center = 'center';
+    // #root style
+    // width: 100vw;
+    root.style.width = hun+widthUnit;
+    // height: 100vh;
+    root.style.height = hun+heightUnit;
+    // 만약에 #root의 넓이값이 100vw이 true이면 backgroundColor를 #e5e5e5로 돌려줘
+    if(root.style.width === '100vw'){
+      root.style.backgroundColor = 'cream';
+    } else{
+      // 만약에 위의 조건식이 false면 backgroundColor를 null 값으로 돌려줘
+      root.style.backgroundColor = null;
+    }
+    root.style.display = 'flex';
+    root.style.alignItems = center;
+
+    // get #text-con
+    const textCon = document.getElementById('text-con');
+    // #text-con structure
+    console.dir(textCon);
+    // #text-con style log
+    console.log(textCon.style);
+    // variable declaration
+    // #text-con style
+    textCon.style.position = 'relative';
+    textCon.style.left = 20+widthUnit;
+    textCon.style.fontFamily = 'Kite One', 'sans-serif';
+
+    // get #text-item
+    const textItem1 = document.getElementById('text-item1');
+    // #text-item1 structure 
+    console.dir(textItem1);
+    // #text-item1 style log
+    console.log(textItem1.style);
+    // variable declaration
+      let colorC4 = '#c4c4c4';
+      let colorDg = 'dimgray';
+      let colorCoal = '#262626';
+    // #text-item1 style
+    textItem1.style.color = colorC4;
+
+    // get #text-item
+    const textItem2 = document.getElementById('text-item2');
+    // #text-item1 structure 
+    console.dir(textItem2);
+    // #text-item1 style log
+    console.log(textItem2.style);
+    // #text-item1 style
+    textItem2.style.color = colorC4;
+
+    // get #text-item
+    const textItem3 = document.getElementById('text-item3');
+    // #text-item1 structure 
+    console.dir(textItem3);
+    // #text-item1 style log
+    console.log(textItem3.style);
+    // #text-item1 style
+    textItem3.style.color = colorC4;
+
+    // get #text-item
+    const textItem4 = document.getElementById('text-item4');
+    // #text-item1 structure 
+    console.dir(textItem4);
+    // #text-item1 style log
+    console.log(textItem4.style);
+    // #text-item1 style
+    textItem4.style.color = colorC4;
+    textItem4.style.display = 'flex';
+
+    // !이 부분을 html에서 span태그로 써도 span태그를 전체 중 하나만 사용했기 때문에 querySelector로 불러올 수 있다
+    // let boldText = document.querySelector('span');
+
+    // Q1. #item-$ 태그마다 일일이 속성을 부여하지 않아도 값을 할당해줄 수 있는 방법이 있을 것 같은데, 아직 모르겠어서 질문드립니다  
+
+    
+    /* 
+
+      check point : 1
+
+      * '반복적인 무언가' 를 발견했다는 것은 질문주신것처럼 해결 할 수 있는 기능이 분명히 있습니다. 매우 훌륭한 궁금증입니다.
+      * 이럴때 필요한 것이 바로 숫자를 활용하는 배열, 즉 순서값이 필요합니다.
+      * 그리고 숫자를 덧셈뺄셈하는 연산이나, 매우 중요하게 다루어질 "반복문"을 사용하면 한번에 일괄처리 할 수 있는 퍼포먼스를 챙기게 됩니다.
+      * 
+
+    
+    
+    */
+
+    
+    // get #bold
+    const boldText = document.getElementById('bold'); 
+    // #bold structure
+    console.dir(boldText);
+    // #bold style log
+    console.log(boldText.style);
+    // #bold style
+    boldText.style.color = colorDg;
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+:root {
+  --main-color-1: #fff;
+  --main-color-2: #777777;
+  --main-color-3: #303030;
+}
+
+#base {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--main-color-1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#base > .root {
+  width: 70%;
+  height: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+#base > .root > div {
+  width: 80%;
+  height: 22%;
+  font-family: "Kite One", sans-serif;
+  color: var(--main-color-2);
+  font-size: 1rem;
+}
+#base > .root > div > span:nth-child(1) {
+  height: 100%;
+  color: var(--main-color-3);
+  font-weight: 600;
+}
+#base > .root > div > div {
+  width: 1%;
+  height: 100%;
+}
+#base > .root > div > span:nth-child(2) {
+  height: 100%;
+}
+#base > .root > div:nth-child(4) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}/*# sourceMappingURL=20220420_layout_training_24.css.map */

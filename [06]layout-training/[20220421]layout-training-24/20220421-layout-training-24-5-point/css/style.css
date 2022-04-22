@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.space {
+  width: 20vw;
+  height: 100vh;
+}
+
+.con {
+  font-family: 'Kite One', sans-serif;
+  font-size: 0.8rem;
+  color: gray;
+  position: relative;
+  right: 0.1vw;
+  margin-top: 30vh;
+}
+
+.con > p {
+  margin-bottom: 1vh;
+}
+
+.con > p:nth-child(3) {
+  position: relative;
+  right: 0.1vw;
+}
+
+.con > p:nth-child(4) {
+  position: relative;
+  right: 0.1vw;
+}
+
+.con > p:nth-child(4) > span {
+  color: black;
+}
+/*# sourceMappingURL=style.css.map */

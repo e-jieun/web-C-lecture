@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Kite+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Kite One", sans-serif;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#root > p {
+  width: 50vw;
+  height: 2.2vh;
+  margin-left: 10vw;
+  color: #838383;
+}
+#root #title {
+  color: #232323;
+}/*# sourceMappingURL=24-style.css.map */

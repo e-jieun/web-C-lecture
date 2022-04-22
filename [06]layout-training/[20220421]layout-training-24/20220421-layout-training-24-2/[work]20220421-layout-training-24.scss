@@ -1,0 +1,42 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+@mixin font {
+  font-family: 'Kite One', sans-serif;
+  font-size: 1rem;
+  color: #838383;
+  font-weight: normal;
+}
+
+#root{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main{
+  width: 70vw;
+  // border: 1px solid black;
+
+  &>h1{
+    @include font;
+  }
+
+  &>h2{
+    @include font;
+  }
+
+  &>h3{
+    @include font;
+  }
+    
+  &>p{
+    @include font;
+
+      &>span{
+        @include font;
+        color:#232323;
+        //후에 쓴 코드가 적용되는 원리
+      }
+    }  
+}

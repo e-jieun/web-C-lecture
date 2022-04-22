@@ -1,0 +1,37 @@
+$main-c: #838383;
+$point-c: #232323;
+
+
+@import url('https://fonts.googleapis.com/css2?family=Kite+One&display=swap');
+
+
+@mixin flex($jus, $ali, $dir) {
+  display: flex;
+  justify-content: $jus;
+  align-items: $ali;
+  flex-direction: $dir;
+}
+
+
+*{
+  margin:0; padding:0;
+  font-family: 'Kite One', sans-serif;
+  // font스타일을 전체 페이지에 넣어봤다. 잘 작동하는 것 같다.
+}
+
+    #root {
+      width: 100vw; height: 100vh;
+      @include flex(center, flex-start, column);
+
+      & > p {
+        width: 50vw; height: 2.2vh;
+        margin-left: 10vw;
+        color: $main-c;
+      }
+
+      #title {
+        color: $point-c;
+        // 포인트를 줄 텍스트에 id를 붙여서 스타일을 지정했는데, 이 경우에도 부모태그인 #root 안에 넣어야 할까요...? #root 밖으로 빼도 작동은 제대로 되는 것 같습니다.
+      }
+
+    }

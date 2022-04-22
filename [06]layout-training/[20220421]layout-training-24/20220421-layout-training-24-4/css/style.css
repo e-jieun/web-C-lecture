@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.flex {
+  display: flex;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-end;
+}
+#root > div {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+#root > div > p {
+  width: 30vw;
+  height: 3vh;
+  font-family: "Kite One", sans-serif;
+  color: rgb(121, 121, 121);
+}
+#root > div > p > span {
+  font-family: "Kite One", sans-serif;
+  color: rgb(29, 29, 29);
+}/*# sourceMappingURL=style.css.map */

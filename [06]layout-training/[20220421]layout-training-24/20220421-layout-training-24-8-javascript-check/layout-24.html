@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-24</title>
+  <link rel="stylesheet" href="./24-css/24-style.css">
+</head>
+
+<body>
+  <div id="root">
+
+    <p>If you cannot fly then run.</p>
+    <p>If you cannot run, then walk.</p>
+    <p>And, if you cannot walk, then crawl,</p>
+    <p><span id="title">but whatever you do</span>, you have to keep moving forward.</p>
+
+  </div>
+
+
+  <script>
+    // 스크립트로 간단하게 제어해보기
+
+    /* 
+
+    ? check point : 1
+    
+    매우 훌륭한 시도입니다. 이러한 연습을 꾸준하게 한다면 어느시점 부터 css로 연결하기 불편해지는(?) 시점에 다다르게 됩니다.
+    현재 강의나, 개인작업 면에서는 성능의 차이를 느끼기 어렵지만, 볼륨이 커질 수록 이러한 습관하나가 최적화 및 로딩 성능 개선에 엄청난 영향을 끼칩니다.
+
+    훌륭히 작성하였고, 또 문제는 없으나 권장되는 사항이 몇가지 있습니다.
+    1. let (변수) let 변수선언은 '언젠가 변한다' 라는 암묵적인 약속이 있습니다.
+    -> 아래의 title과 같은 값은 사실 변할일이 그렇게 많지 않습니다. (강의때는 let을 써서 사용하고 있긴하지만.)
+    -> 따라서 변하지 않을 값들이라면 상수(contant) 개념인 const 선언을 해주는 것이 좋은 방식입니다.
+    -> 암묵적으로 해당 선언은 변하지 않을 것이다.(특히 데이터 타입) 라는 확인이 되기때문에 권장됩니다.
+    -> 심지어 const는 변수의 문법을 따르긴 하지만 변수처럼 마음대로 바꿀 수 없기 때문에 안전합니다.
+    
+    
+
+
+
+    */
+
+
+
+    let title = document.getElementById("title");
+    // "title"이라는 id를 가진 element를 가져와서 title변수에 대입하겠다.
+    let pointColor = '#000';
+    // pointColor라는 변수에 '#000'을 대입하겠다.
+
+    // console.log(title);
+    // console.dir(title);
+
+    if(title.style.color !== null){
+    // title의 style > color에 값이 없는게 아니라면
+      title.style.color = pointColor;
+    // title의 style > color를 변수 pointColor로 바꿔달라.
+    }
+
+  </script>
+</body>
+</html>

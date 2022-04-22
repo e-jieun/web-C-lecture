@@ -1,0 +1,56 @@
+*{margin: 0; padding:0;}
+
+    #root{
+      width:100vw;
+      height: 100vh;
+    }
+
+    @mixin font-position-absolute {
+      font-family: 'Kite One', sans-serif;
+      font-size: 1rem;
+      position: absolute;
+    }
+
+    @mixin left-15-color-83 {
+      left:15%;
+      color: #838383;
+      
+    }
+
+    .section-1{
+      top:40%;
+      
+      @include font-position-absolute;
+      @include left-15-color-83;
+    }
+
+    .section-2{
+      top:42.5%;
+
+      @include font-position-absolute;
+      @include left-15-color-83;
+    }
+
+    .section-3{
+      top:45%;
+
+      @include font-position-absolute;
+      @include left-15-color-83;
+    }
+
+    .section-4{
+      color: #232323;
+      top:47.5%;
+      left:15%;
+
+      @include font-position-absolute;
+    }
+
+    .section-5{
+      color: #838383;
+      top:47.5%;
+      left:22.5%;
+
+      @include font-position-absolute;
+    }
+

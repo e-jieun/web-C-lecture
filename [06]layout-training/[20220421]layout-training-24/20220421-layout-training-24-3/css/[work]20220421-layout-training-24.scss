@@ -1,0 +1,29 @@
+  *{margin:0; padding:0; box-sizing: border-box;}
+
+  #root {
+    width:100vw;
+    height:100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+    & > div {
+      width:80vw;
+
+      & > h1 {
+        font-size: 1rem;
+        font-family: "Kite One";
+        color:rgb(131, 131, 131);
+        white-space: nowrap;
+      }
+
+      & > h1:nth-child(4) {
+        display:flex;
+
+        & > p:nth-child(1) {
+          color:rgb(35, 35, 35);
+        }
+
+      }
+    }
+  }
