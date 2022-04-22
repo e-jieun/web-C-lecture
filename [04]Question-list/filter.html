@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,48 +7,38 @@
   <title>filter</title>
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-    }
-
-    .show {
+    *{margin: 0;padding: 0;}
+    .show{
       visibility: visible;
     }
-
-    .hide {
+    .hide{
       visibility: hidden;
     }
-
-    #root {
+    #root{
       width: 100vw;
       height: 100vh;
       background-color: antiquewhite;
     }
-
-    #filter-box {
+    #filter-box{
       width: 90%;
       margin: 0 auto;
       border: 1px solid;
     }
-
-    button {
+    button{
       width: 50px;
       height: 50px;
     }
-
-    #list-box {
+    #list-box{
       width: 90%;
       margin: 0 auto;
       border: 1px solid;
       display: flex;
       justify-content: space-between;
-      align-items: inherit;
+      align-items:inherit;
       flex-direction: row;
       flex-wrap: wrap;
     }
-
-    a {
+    a{
       width: 30%;
       height: 100px;
       display: block;
@@ -58,7 +47,6 @@
     }
   </style>
 </head>
-
 <body>
   <div id="root">
     <div id="filter-box">
@@ -79,7 +67,7 @@
       <a href="#" data-group="all b d"></a>
     </div>
   </div>
-  <!--   
+  
   <script>
     const filterBox = document.querySelector('#filter-box');
     const listBox = document.querySelector('#list-box');
@@ -126,58 +114,5 @@
       }
     })
   </script>
-
- -->
-
-  <script>
-    const root = document.getElementById('root');
-    // first child
-    const filterBox = root.children[0];
-    const filterBoxBtns = filterBox.children;
-    // second child
-    const listBox = root.children[1];
-    const listBoxAnchors = listBox.children;
-
-
-
-
-
-    filterBox.addEventListener('click', function (event) {
-      let dataAttributeArray = [];
-      let getDatasetValue = event.target.dataset.value;
-      console.dir(getDatasetValue);
-      dataAttributeArray.push(getDatasetValue);
-      console.log(dataAttributeArray);
-
-      for (let i = 0; i < listBoxAnchors.length; i++) {
-        let setTargetItemsArray = listBoxAnchors[i].dataset.group.split(' ');
-
-        for(let j = 0; j<setTargetItemsArray.length; j++) {
-          console.log(` ${i} 에서 ${j}개`);
-        }
-        
-        
-        
-        // setTargetItemsArray.find(function (item) {
-        //   if(item === dataAttributeArray[0]) {
-        //     console.log('hello');
-        //   } else {
-        //     console.log('bye');
-        //   }
-        // })
-        
-        
-      }
-
-
-
-      // console.dir(listBoxAnchors);
-
-
-
-
-    });
-  </script>
 </body>
-
 </html>
