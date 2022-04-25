@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  
+</head>
+<body>
+  <div id="root">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+  <script>
+    document.body.style.padding = "0";
+    document.body.style.margin = "0";
+    document.body.style.backgroundColor = "#333";
+
+    document.querySelector('#root').style.width = "100vw";
+    document.querySelector('#root').style.height = "100vh";
+    document.querySelector('#root').style.display = "flex";
+    document.querySelector('#root').style.justifyContent = "center";
+    document.querySelector('#root').style.alignItems = "center";
+    document.querySelector('#root').style.flexWrap = "wrap";
+    
+    for(let i = 0; i < document.querySelector('#root').children.length; i++) {
+      document.querySelector('#root').children[i].style.width = "10vw";
+      document.querySelector('#root').children[i].style.height = "10vw";
+      document.querySelector('#root').children[i].style.backgroundColor = "#ccc";
+      document.querySelector('#root').children[i].style.border = "1px solid red";
+    }
+
+
+
+  </script>    
+</body>
+</html>
