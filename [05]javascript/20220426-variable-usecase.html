@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <script>
+    const arr = ["피카츄", "라이츄", "김주은", "꼬부기"];
+    const test = ["피카츄", "라이츄", "파이리", "꼬부기"];
+    console.log(arr[2] === test[2]);
+    if(arr[2] === test[2]) {
+      console.log("야호");
+    } else {
+      test[2] = "김주은";
+      console.log(test);
+    } // 16번 행 if() 영역이야
+
+    if(arr[2] === test[2]) {
+      arr[2] = "비둘기";
+      test[2] = "비둘기";
+      console.log(arr);
+      console.log(test);
+    } else {
+      console.log("메롱");
+    }
+
+
+  </script> -->
+  <!-- <script>
+    
+    <div id="root"></div>
+    let a;
+    // 변수만 선언해준 것;
+    console.log(a);
+    a = 1;
+    console.log(a);
+
+    const root = document.getElementById("root");
+    // 선언과 동시에 값을 대입해 주는 것이 룰 : 변하지 않을 거니까
+    // 변수선언과동시에 초기화 했다. 라는 어휘로 쓴다.
+    // 쉐입만들고 레이어 이름 정해주고
+    console.log(b);
+
+
+  </script> -->
+
+
+
+
+
+
+
+  <div id="root"></div>
+  <script>
+    const a = document.querySelector("#root");
+    let value = 100; // 변수로 꺼냈다. 
+    let colorValue = 333;
+    a.style.width = value + "vw";
+    a.style.height = `${value}vh`;
+    a.style.backgroundColor =`#${colorValue}`;
+    a.addEventListener("click", function() {
+      let result;
+      console.log("리절트 연산이 시작되기전 :" + value + ": 이값이다.");
+      result = value / 2;
+      a.style.width = result + "vw";
+      a.style.height = result + "vh";
+      value = result;
+      console.log("리절트 값을 value 변수에 대입시키고 난 후의 value 값" + value);
+    });
+  </script>
+
+
+
+
+
+
+</body>
+
+</html>
