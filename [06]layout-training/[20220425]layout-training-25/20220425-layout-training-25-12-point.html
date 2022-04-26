@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/20220425.css">
+  <title>layout-training</title>
+</head>
+<body>
+  <div id="root">
+    <div id="box-a">
+      <div id="one">element-1</div>
+      <div id="three">element-3</div>
+    </div>
+    <div id="box-b">
+      <div id="two">element-2</div>
+    </div>
+  </div>
+
+  <script>
+    const root = document.getElementById('root');
+    const one = document.getElementById('one');
+    const two = document.getElementById('two');
+    const three = document.getElementById('three');
+
+    root.setAttribute('style','width:100vw;height:100vh;display:flex;line-height:250px;');
+    one.setAttribute('style','background-color:#555; margin:10px; text-align:center;');
+    two.setAttribute('style','background-color:#999; margin:10px; text-align:center;')
+    three.setAttribute('style','background-color:#777; margin:10px; text-align:center;')
+
+    // check point : 1
+    // 매우 훌륭한 시도!
+    // 태그의 속성부분을 자바스크립트에서도 제어해줄 수 있다!
+
+
+
+    let lengh = 250;
+    
+    document.body.style.margin = '0';
+    document.body.style.padding = '0';
+
+
+    one.style.width =`${lengh}px`;
+    one.style.height =`${lengh}px`;
+    two.style.width = `${lengh *2 }px`;
+    two.style.height = `${lengh}px`;
+    three.style.width =`${lengh}px`;
+    three.style.height =`${lengh *2}px`;
+    three.style.lineHeight =`${lengh *2}px`;
+    
+    one.addEventListener('click',event =>{
+      two.style.backgroundColor = '#ff6666';
+
+      two.addEventListener('click',e =>{
+        two.style.backgroundColor = '#999';
+      })
+    })
+
+  </script>
+</body>
+</html>

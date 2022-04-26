@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0;padding:0;}
+
+    /* #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    #root>div {
+      width: 600px;
+      border: 1px solid red;
+
+      display:flex;
+      justify-content:flex-start;
+      align-items:center;
+      flex-wrap: wrap;
+    }
+
+    #root>div>div{
+      margin:10px;
+      width:250px;
+      height:250px;
+      background-color: #ccc;
+    }
+
+    #root>div>div:nth-child(4) {
+      display:none;
+    } */
+
+
+  </style>
+
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.backgroundColor="#333";
+    root.style.display = "flex";
+    root.style.justifyContent ="center";
+    root.style.alignContent ="center";
+    // console.dir(root);
+
+    const rootDiv = root.children[0];
+    rootDiv.style.width = "600px";
+    rootDiv.style.height = "600px";
+    // rootDiv.style.border = "1px soild #ff0000";
+    rootDiv.style.border = "1px solid red";
+    // // border style을 넣었는데 console.dir으로 찾아보니 border 값이 비어있습니다
+    rootDiv.style.display = "flex";
+    rootDiv.style.justifyContent ="flex-start";
+    rootDiv.style.alignContent ="center";
+    rootDiv.style.flexWrap = "wrap";
+
+
+    console.dir(rootDiv);
+
+    // const div = root>div>div[0];
+
+    // check point : 1 
+
+    // 꺽쇠로 자식을 찾는 방식은 CSS의 방식이기 때문에
+    // root의 자식 프로퍼티를 찾는 과정이 필요합니다.
+
+
+
+    // div.style.margin = "10px";
+    // div.style.width = "250px";
+    // div.style.height = "250px";
+    // div.style.backgroundColor = "#ccc";
+    
+
+    // const nthChild4 = root>div>div>nth-child(4);
+    // nthChild4.style.display = "none";
+
+
+
+    
+
+
+
+
+
+    
+
+
+
+
+
+
+  </script>
+
+
+
+</body>
+</html> 

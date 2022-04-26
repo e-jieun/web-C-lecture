@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    
+    #root { 
+
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root > div {
+
+      width: 800px;
+      height: 800px;
+
+      display:flex;
+      justify-content:flex-start;
+      align-items:center;
+      flex-wrap: wrap;
+
+    }
+
+    #root > div > div {
+
+      width: 250px;
+      height: 250px;
+      border: 1px solid black;
+      margin: 10px;
+      background-color: #ccc;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div>element-1</div>
+      <div>element-2</div>
+      <div>element-3</div>
+    </div>
+  </div>
+  <script>
+
+    const root = document.getElementById("root");
+
+    const back = root.children[0].children[0];
+    const one = root.children[0].children[1];
+    const two = root.children[0].children[2];
+    const three = root.children[0].children[3];
+
+    console.dir(root);
+    
+//-------------------------------------- 
+
+      back.addEventListener('click', function(){
+
+      back.style.backgroundColor = "salmon";
+      back.style.transition = "1s";
+
+    });
+
+// ----------------------------------
+
+      one.addEventListener('click', function(){
+
+      one.style.width = "500px";
+      one.style.backgroundColor = "#ff6666";
+      one.style.transition = "1s";
+
+    });
+
+//-------------------------------------- 
+
+      two.addEventListener('click', function(){
+
+      two.style.height = "500px";
+      two.style.backgroundColor = "#ff6666";
+      two.style.transition = "1s";
+
+    });
+</script> 
+</body>
+</html>

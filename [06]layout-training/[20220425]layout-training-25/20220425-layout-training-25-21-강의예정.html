@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+  <!-- <div id="foot"></div> -->
+
+  <script>
+    // let width = "250px";
+    // let height = "250px";
+
+    let gray = "#c3c3c3";
+    let grey = "#7d7d7d";
+    let change = "#ff6666";
+    //색상 변수 지정
+    
+    const body = document.querySelector("body");
+    
+    console.log(body);
+    console.dir(body);
+
+    body.style.margin=0;
+    body.style.padding=0;
+    body.style.width=100+"vw";
+    body.style.height=100+"vh";
+    body.style.display = "flex";
+    body.style.justifyContent="center";
+    body.style.alignItems="center";
+
+
+
+    const root = document.getElementById("root");
+    // root.style.display="flex";
+    //블럭이 되지 않게 플렉스 지정해서 가로로 나열되게 함 >> 그리드로 변경
+    root.style.display="grid";
+    root.style.gridTemplateColumns="1fr 2fr";
+    root.style.gridTemplateRows="1fr 2fr";
+    //그리드 속성
+    root.style.columnGap="10px";
+    root.style.rowGap="10px";
+    //그리드 안의 간격 
+
+    // root.style.width= 760 +"px";
+    // root.style.height= 760 +"px";
+    
+    
+
+    console.log(root);
+    console.dir(root);
+    
+    console.log(root.children[0]);
+    console.dir(root.children[0]);
+    console.log(root.children[1]);
+    console.dir(root.children[1]);
+
+    //콘솔 로그 잘 띄워졌나 확인
+
+    
+    root.children[0].style.width= 250+"px";
+    root.children[0].style.height= 250 + "px";
+    root.children[0].style.backgroundColor=gray;
+
+    root.children[1].style.width= 250*2 + "px";
+    root.children[1].style.height=250 + "px";
+    root.children[1].style.backgroundColor= grey;
+
+    root.children[2].style.width= 250 + "px";
+    root.children[2].style.height=250*2 + "px";
+    root.children[2].style.backgroundColor= grey;
+
+    root.children[3].style.width= 250*2 + "px";
+    root.children[3].style.height=250*2 + "px";
+    root.children[3].style.backgroundColor= grey;
+    root.children[3].style.display = "none";
+
+    root.children[0].addEventListener("click", function(){
+      root.children[0].style.backgroundColor=change;
+      // if(root.children[0].style.backgroundColor === "gray"){
+      //   root.children[0].style.backgroundColor = change;
+      // } else {
+      //   root.children[0].style.backgroundColor = gray;
+      // }
+      // 만약 자식0번째의 배경색이 gray이라면 변수 change로 바꿔줘.
+      // gray가 아니라면 (변수 change 일때) 변수 gray로 바꿔줘.
+      // 라는 제어을 만들고 싶은데 잘 안된다. > 다시 색을 되돌리는 방법
+      // 검색을 했는데도 잘 찾는 법을 모르겠습니다. 
+      // 어느 곳에서는 clicked를 넣어준다는데 이해가 잘 안갑니다. //
+    });
+
+    // 이벤트 삽입 root의 자식중에 0번째 자식에게 이벤트를 부여
+    // 클릭을 하면 배경색을 change라는 변수로 바꿔줘.
+    
+
+
+    // root.children[0].style.width = width;
+    // root.children[0].style.height = height;
+    // root.children[0].style.backgroundColor = #333;
+
+    
+    
+  </script>
+</body>
+</html>

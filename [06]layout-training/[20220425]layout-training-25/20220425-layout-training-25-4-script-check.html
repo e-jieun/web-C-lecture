@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div></div>
+  <div></div>
+  <div></div>
+</body>
+<script>
+
+let body = document.querySelector('body');
+let element1 = document.querySelector('div:nth-child(1)');
+let element2 = document.querySelector('div:nth-child(2)');
+let element3 = document.querySelector('div:nth-child(3)');
+
+let size = "250";
+
+
+document.body.style.width = 3.1 * size + "px";
+document.body.style.height = 3.1 * size + "px";
+document.body.style.display = "flex";
+document.body.style.justifyContent = "space-between";
+document.body.style.alignItems = "space-between";
+// alignItems가 적용이 안되는 이유를 찾아보자
+
+// check point : 1
+
+/*
+
+위에서 만들어 놓은 변수 이름 size의 데이터 타입이 "문자열" 이기 때문에 3.1 * size 가 정해지지 않습니다.
+따라서 가로값 세로값이 없다보니 alignItems 가 작동하지 않게 되는 결과가 생깁니다.
+
+
+
+
+*/
+
+
+
+
+
+document.body.style.flexWrap = "wrap";
+
+let flexsetting = {
+  display : "flex",
+  justifyContent : "center",
+  alignItems : "center"
+}
+// 플렉스 셋팅값을 할당하고 여러곳에 다 적용시킬수는 없을까 
+
+console.dir(body);
+
+element1.style.width = size + "px";
+element1.style.height = size + "px"
+element1.style.backgroundColor = "#ccc";
+element1.textContent = "element-1";
+element1.style.display = "flex";
+element1.style.justifyContent = "center";
+element1.style.alignItems = "center";
+
+// element1.style = {
+//   width : size + "px",
+//   height : size + "px",
+//   backgroundColor : "#ccc",
+//   display : "flex",
+//   justifyContent : "center",
+//   alignItems : "center"
+// }
+//  혹시 이런 방법도 될까 했지만 안된다. 
+console.dir(element1);
+
+
+element2.style.width = 2 * size + "px";
+element2.style.height = size + "px";
+element2.style.backgroundColor = "#999999";
+element2.textContent = "element-2";
+element2.style.display = "flex";
+element2.style.justifyContent = "center";
+element2.style.alignItems = "center";
+
+element3.style.width = size + "px";
+element3.style.height = 2 * size + "px";
+element3.style.backgroundColor = "#727272";
+element3.textContent = "element-3";
+element3.style.display = "flex";
+element3.style.justifyContent = "center";
+element3.style.alignItems = "center";
+
+
+element1.addEventListener('click', function() {
+  element2.style.backgroundColor = "#ff6666";
+})
+
+
+
+
+</script>
+</html>

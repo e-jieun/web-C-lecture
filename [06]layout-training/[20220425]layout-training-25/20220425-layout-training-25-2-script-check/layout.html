@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- <link rel="stylesheet" href="layout.css"> -->
+  <title>Document</title>
+
+</head>
+<body>
+  <div id="root">
+    <div id = "container">
+      <div id = "first"></div>
+      <div id = "second"></div>
+    </div>
+    <div id = last></div>
+  </div>
+
+<script>
+
+
+// check point : 1
+
+// 세미콜론을 일괄되게 쓸것 
+
+
+
+
+
+
+const root = document.getElementById("root");
+
+console.log (root);
+console.dir (root);
+
+root.style.width = 100 + "vw";
+root.style.height = 100 + "vh";
+
+
+const container = document.getElementById("container");
+
+console.log (container);
+console.dir (container);
+
+container.style.width = 100 + "vw";
+container.style.height = 250 + "px";
+container.style.display = "flex";
+
+
+
+const first = document.getElementById("first");
+
+console.log (first);
+console.dir (first);
+
+first.style.width = 250 + "px";
+first.style.height = 250 + "px";
+first.style.backgroundColor = "#c4c4c4";
+
+first.addEventListener("click", function(){
+  second.style.backgroundColor = "#ff6666";
+  
+})
+
+const second = document.getElementById("second");
+
+console.log (second);
+console.log (second);
+
+second.style.width = 500 + "px";
+second.style.height = 250 + "px";
+second.style.backgroundColor = "#c4c4c4";
+second.style.marginLeft = 10 + "px"
+
+const last = document.getElementById("last");
+
+console.log (last);
+console.dir (last);
+
+last.style.width = 250 + "px";
+last.style.height = 500 + "px";
+last.style.backgroundColor = "#c4c4c4"
+last.style.marginTop = 10+ "px"
+</script>
+</body>
+</html>

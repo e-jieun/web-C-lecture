@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="root">
+		<div id="ele1"></div>
+		<div id="ele2"></div>
+	</div>
+	<div id="ele3"></div>
+
+
+	<script>
+		const root = document.getElementById("root");
+		const e1 = document.getElementById("ele1");
+		const e2 = document.getElementById("ele2");
+		const e3 = document.getElementById("ele3");
+
+		//root.children[0]~[2]로 쓰는게 맞아 보인다.
+		console.log(root);
+		console.dir(root);
+		console.log(e1);
+		console.dir(e1);
+		console.log(e2);
+		console.dir(e2);
+		console.log(e3);
+		console.dir(e3);
+		// 일단 콘솔 다 찍어보기
+
+		const flex = "flex"
+		const column = "column"
+
+		// check point 1
+
+		/*
+
+		* 자바스크립트의 프레임워크를 활용한 프론트엔드 작업에서는 세미콜론(;)을 안쓰는 경향이 있긴하지만,
+		* 훈련상 세미콜론을 써버릇 하여 "명령이 끝났다" 라는 것을 명시해주는게 좋겠습니다.
+		* 추후에 익숙해질 때는 세미콜론을 전혀 안쓰는 방향 vs 무조건 쓰는 방향 두가지를 정하는 편입니다.
+
+
+		*/
+
+
+
+		const b = 250;
+		const bb = b*2;
+		// b로 이름을 정해줬더니 b*2도 먹는구나
+
+		document.body.style.width=`100vw`;
+		document.body.style.height=`100vh`;
+		document.body.style.backgroundColor=`skyblue`;
+
+		// document.body.style.display =`${flex}`;
+		document.body.style.flexDirection =`${column}`;
+
+		document.body.style.display =flex; 
+
+		//check point 2 
+		//  flex 라는 변수는 이미 문자열이기 때문에 위와같이 적어주는 것이 옳습니다.
+		//  변수가 아니라 문자열 자체를 사용할 것이라면 ` `, " " 를 작성해야 올바른 작성법입니다.
+
+
+		// 일단 element 별로 flexDirection이 다르고 결과적으론 세로방향이니 body에다 column을 처리했다.
+
+		root.style.display=`${flex}`;
+
+		root.children[0].style.width=`${b}px`;
+		root.children[0].style.height=`${b}px`;
+		root.children[0].style.backgroundColor=`lightgray`;
+		root.children[0].style.marginRight=`20px`;
+		root.children[0].style.marginBottom=`20px`;
+		
+		root.children[1].style.width=`${bb}px`;
+		root.children[1].style.height=`${b}px`;
+		root.children[1].style.backgroundColor=`gray`;
+
+		
+		e3.style.width=`${b}px`;
+		e3.style.height=`${bb}px`;
+		e3.style.backgroundColor=`darkgray`;
+
+
+
+	document.body.addEventListener('click', function(){
+		root.children[0].style.backgroundColor = "#ff6666";
+	})
+		
+	</script>
+</body>
+</html>

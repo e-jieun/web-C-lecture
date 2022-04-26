@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* main{
+      width: 80vw;
+      height: 80vh;
+      display: grid;
+      grid-template-columns: 250px 500px;
+      grid-template-rows: 250px 500px;
+    }
+    main > div{
+      background-color: gray;
+      border: 1px solid white;
+
+    } */
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <main>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <!-- !빈 공간을 위해서 .item하나가 더 있단 것을 잊지 말기 -->
+      <div class="item"></div>
+    </main>
+  </div>
+  <script>
+    // body style
+    document.body.style.margin = 0;
+    document.body.style.padding = 0;
+
+    // variable declaration
+    let widthUnit = 'vw';
+    let heightUnit = 'vh';
+    let colorC4 = '#c4c4c4';
+    let center = 'center';
+    let px250 = '250'; 
+
+    // get #root
+    const root = document.getElementById('root');
+    // #root log
+    console.log(root);
+    // #root style
+    console.log(root.style);
+    root.style.width = 100+widthUnit;
+    root.style.height = 100+heightUnit;
+    // main을 중앙 정렬
+    root.style.display = 'flex';
+    root.style.alignItems = center;
+    root.style.justifyContent = center;
+
+    /* css로 작성 
+      main{
+        width: 80vw;
+        height: 80vh;
+        display: grid;
+        grid-template-columns: 250px 500px;
+        grid-template-rows: 250px 500px;
+      }
+      main > div{
+        background-color: gray;
+        border: 1px solid white;
+      }*/
+    
+    // 변수 main에 선택자 main을 가져옴
+    let main = document.querySelector('main');
+    // #main log
+    console.log(main);
+    console.log(main.style);
+    // #main style
+    main.style.width = 80+widthUnit;
+    main.style.height = 80+heightUnit;
+    // grid
+    // grid element에 적용해 줄 부분 
+    main.style.display = 'grid';
+    // !gridTemplate은 값을 한 문자열에 써줘야 잘 적용이 됨
+    // !item을 크기를 정해주고, 비율 단위로 정해주면 쉽게 크기를 정할 수 있다
+    // !반복적으로 쓸 때는 이렇게도 쓸 수 있음, 한 트랙이나 한 섹션을 반복할 때 repeat을 사용
+    // !grid-template-columns: repeat(3, 1fr);
+    // 열
+    main.style.gridTemplateColumns = '1fr 2fr';
+    // 행
+    main.style.gridTemplateRows = '1fr 2fr';
+    main.style.gridGap = '10px';
+
+    // https://developer.mozilla.org/ko/docs/Web/API/Element/getElementsByClassName
+    // class name으로 가져오면 .item이름을 가진 div들이 배열처럼 인덱스가 매겨짐
+    const item = document.getElementsByClassName('item');
+    console.log(item);
+    
+    // .item style
+    // 첫번째 .item의 width: 250px; height: 250px;
+    item[0].style.width = px250+'px';
+    item[0].style.height = px250+'px';
+
+    // .item마다 배경색을 다르게 지정해줌
+    item[0].style.background = '#c4c4c4';    
+    item[1].style.background = 'gray';    
+    item[2].style.background = '#e3e3e3';    
+
+  </script>
+</body>
+
+</html>

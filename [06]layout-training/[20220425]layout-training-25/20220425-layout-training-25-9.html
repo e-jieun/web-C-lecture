@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>26</title>
+
+  <style>
+
+* {margin: 0; padding: 0;}
+
+  .root {
+   /* background-color: #3d3d3d; */
+  }
+
+  </style>
+  
+</head>
+<body>
+  
+  <div id="base">
+    <div class="root">
+
+      <div class="first">
+        <div></div>
+        <div></div>
+      </div>
+
+      <div class="second"></div>
+    </div>
+  </div>
+  
+</body>
+
+<script>
+//
+const mainbase = document.getElementById('base');
+console.log(mainbase);
+
+mainbase.style.width = '100vw';
+mainbase.style.height = '100vh';
+//
+let basicWidth = '250';
+let basicHeight = '250';
+//
+const mainroot = document.getElementsByClassName('root');
+console.log(mainroot);
+
+mainroot[0].style.width = `${basicWidth*3.05}px`;
+mainroot[0].style.height = `${basicHeight*3.05}px`;
+// mainroot[0].style.border = '1px solid blue';
+mainroot[0].style.display = 'flex';
+mainroot[0].style.flexDirection = 'column';
+mainroot[0].style.justifyContent = 'space-between';
+
+//
+const No1 = document.getElementsByClassName('first');
+console.log(No1);
+
+No1[0].style.width = `${basicWidth*3.05}px`;
+No1[0].style.height = `${basicHeight}px`;
+// No1[0].style.border = '1px solid red';
+No1[0].style.display = 'flex';
+No1[0].style.justifyContent = 'space-between';
+
+//
+
+// const one = document.getElementsByClassName(`${No1[0].children[0]}`);
+// console.log(one);
+
+const one = No1[0].children[0];
+console.log(one);
+
+one.style.width = `${basicWidth}px`;
+one.style.height = `${basicHeight}px`;
+one.style.backgroundColor = '#c5c5c5';
+
+//
+
+const two = No1[0].children[1];
+console.log(two);
+
+two.style.width = `${basicWidth*2}px`;
+two.style.height = `${basicHeight}px`;
+two.style.backgroundColor = '#888888';
+//
+
+const three = document.getElementsByClassName('second');
+console.log(three);
+
+three[0].style.width = `${basicWidth}px`;
+three[0].style.height = `${basicHeight*2}px`;
+three[0].style.backgroundColor = '#3d3d3d';
+
+//
+
+one.addEventListener('click', function() {
+      two.style.transition = '1s';
+      // two.textContent = "클릭!";
+      two.style.backgroundColor = "#ff6666";
+      // two.style.width = "200px";
+    });
+
+</script>
+
+</html>

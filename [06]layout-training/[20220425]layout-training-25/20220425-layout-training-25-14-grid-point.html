@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div></div>
+    <div></div>
+    <div></div>
+    </div>
+  </div>
+
+  <script>
+    document.body.style.padding = "0";
+    document.body.style.margin = "0";
+
+
+    let root = document.getElementById("root");
+    
+    
+    let one = root.children[0];
+    let two = root.children[1];
+    let three = root.children[2];
+    console.dir(root);
+    console.dir(one);
+    console.dir(two);
+    console.dir(three);
+    
+    document.body.style.display = "flex";
+    document.body.style.alignItems = "center";
+    document.body.style.width = "100vw";
+    document.body.style.height = "100vh";
+    
+    root.style.display = "grid";
+    root.style.justifyContent = "center";
+    root.style.gridTemplateColumns = " 250px 500px";
+    root.style.gridTemplateRows = " 250px 500px";
+    //그리드가 훨씬 깔끔한듯
+    root.style.gap = "3vh";
+    root.style.marginLeft = "20vw";
+    
+    one.style.backgroundColor = "#c4c4c4";
+    two.style.backgroundColor = "#999999";
+    three.style.backgroundColor = "#666666";
+
+
+    let backgroundColorArray = ["#999999", "#ff6666"];
+
+    let setSwitch = 0;
+// 클릭 이벤트를 위한 임의의 값, 이거 숫자 일치 불일치로 색 변경할것
+    one.addEventListener("click", function(){
+      if(setSwitch===0) {
+        two.style.backgroundColor = backgroundColorArray[1];
+        setSwitch = 1;
+      }
+      else {
+        two.style.backgroundColor = backgroundColorArray[0];
+        setSwitch = 0;
+      }
+      
+    });
+
+  </script>
+</body>
+</html>

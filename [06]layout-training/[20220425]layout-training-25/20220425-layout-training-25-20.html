@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mark-26</title>
+</head>
+<body>
+  <div id="root">
+    <div id="box">
+          <div id="box1"></div>
+          <div id="box2"></div>
+   </div>
+    <div id="box3"></div>
+  </div>
+
+  <script>
+    document.body.style.padding = "0";
+    document.body.style.margin = "0";
+    
+    
+    const rootObject = document.getElementById("root");
+    const box = document.getElementById("box");
+    const box1 = document.getElementById("box1");
+    const box2 = document.getElementById("box2");
+    const box3 = document.getElementById("box3");
+    
+    let widthValue = 100;
+    let heightValue = 100;
+    let boxValue2 = 900;
+    let boxSizeValue = 250;
+    let boxSizeValue2 = 500;
+    
+    
+    rootObject.style.width = `${widthValue}vw`;
+    rootObject.style.height = `${heightValue}vh`;
+    // rootObject.style.backgroundColor = "red";
+    // rootObject.style.display = "flex";
+    
+    let boxSizeArray = [250, 500] ;
+    let backgroundColorArray = ["#ff6666"];
+    box.style.width = `${boxValue2}px`;
+    box.style.height = `${boxSizeValue}px`;
+    box.style.display = "flex";
+
+    box1.style.width = `${boxSizeValue}px`;
+    box1.style.height = `${boxSizeValue}px`;
+    box1.style.backgroundColor = "blue";
+    console.log ("box1 클릭하면 변해라!");
+    
+    box2.style.width = `${boxSizeValue2}px`;
+    box2.style.height = `${boxSizeValue}px`;
+    box2.style.backgroundColor = "gray";
+    box2.style.marginLeft = "20px";
+
+    box3.style.width = `${boxSizeValue}px`;
+    box3.style.height = `${boxSizeValue2}px`;
+    box3.style.backgroundColor = "gray";
+    box3.style.marginTop = "20px";
+    
+    box1.addEventListener("click", function() {
+      box1.style.backgroundColor = backgroundColorArray[0];
+      
+    })
+    
+  </script>
+  
+  
+</body>
+</html>

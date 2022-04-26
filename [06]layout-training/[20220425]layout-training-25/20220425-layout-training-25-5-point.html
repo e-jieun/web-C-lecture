@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="one">
+      <div></div>
+      <div></div>
+    </div>
+    <div id="two">
+      <div></div>
+    </div>
+  </div>
+
+  <script>
+    document.body.style.padding = "0";
+    document.body.style.margin = "0";
+
+
+    let root = document.getElementById("root");
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    console.dir(root);
+    
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.flexDirection = "column";
+    let one = document.getElementById("one");
+    console.dir(one);
+    one.style.display = "flex";
+    let one_1 = one.children[0];
+    console.dir(one_1);
+    let one_2 = one.children[1];
+    console.dir(one_2);
+    let two = document.getElementById("two");
+    let two_1 = two.children[0];
+    console.dir(two);
+
+    let widthValue = 250;
+    let heightValue = 250;
+//이거 *2 로 긴 박스들 사이즈 정해주기. 숫자로 작용해야하기에 ""사용하지 않는다
+    one.style.marginLeft = "20vw";
+
+    one_1.style.width = `${widthValue}px`;
+    one_1.style.height = `${heightValue}px`;
+    one_1.style.backgroundColor = "#c4c4c4";
+    one_1.style.marginRight = "3vh";
+
+    one_2.style.width = `${widthValue*2}px`;
+    one_2.style.height = `${heightValue}px`;
+    one_2.style.backgroundColor = "#999999";
+
+    two.style.width =`${widthValue*3}px`;
+    two.style.marginTop = "3vh";
+    two.style.marginLeft = "20vw"
+
+    two_1.style.width = `${widthValue}px`;
+    two_1.style.height = `${heightValue*2}px`;
+    two_1.style.backgroundColor = "#666666";
+
+    let backgroundColorArray = ["#999999", "#ff6666"];
+
+    let setSwitch = 0;
+//클릭 이벤트를 위한 임의의 값, 이거 숫자 일치 불일치로 색 변경할것
+    one_1.addEventListener("click", function(){
+      if(setSwitch===0) {
+        one_2.style.backgroundColor = backgroundColorArray[1];
+        setSwitch = 1;
+      }
+      else {
+        one_2.style.backgroundColor = backgroundColorArray[0];
+        setSwitch = 0;
+      }
+      
+    });
+
+  </script>
+</body>
+</html>

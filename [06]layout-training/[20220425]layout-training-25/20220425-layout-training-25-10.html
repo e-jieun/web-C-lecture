@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    /* #root {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #top-box{
+      width: 800px;
+      height: 250px;
+      display: flex;
+      justify-content: space-around;
+      
+    }
+
+    #top-box>div:first-child{
+      width: 250px;
+      height: 250px;
+      background-color: #c4c4c4;
+    }
+
+    #top-box>div:last-child{
+      width: 500px;
+      height: 250px;
+      background-color: #525252;
+    }
+
+    #bottom-box{
+      width: 250px;
+      height: 500px;
+      background-color: rgb(82, 82, 82);
+      margin: 11px;
+    } */
+
+
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="top-box">
+      <div></div>
+      <div></div>
+    </div> 
+    <!-- box-top -->
+    <div id="bottom-box">
+    </div>
+    <!-- box-bottom -->
+  </div>
+
+  <script>
+
+  const root = document.getElementById('root');
+  
+  let hundred = 100;
+  
+  root.style.width = hundred + "vw";
+  root.style.height = hundred + "vh";
+  
+  console.log(root);
+
+  console.dir(root);
+  
+  root.style.display = "flex";
+  root.style.flexDirection = "column";
+
+  const topBox = document.getElementById('top-box');
+
+  let baseBoxSize = 250;
+  let pixel = "px";
+
+  topBox.style.width = (baseBoxSize*3) + 50 + pixel;
+  topBox.style.height = baseBoxSize + pixel;
+  topBox.style.display = "flex";
+  topBox.style.justifyContent = "space-around"
+
+
+  console.dir(topBox);
+
+    topBox.children[0].style.width = baseBoxSize + pixel;
+    topBox.children[0].style.height = baseBoxSize + pixel;
+    topBox.children[0].style.backgroundColor = "#c4c4c4";
+
+
+    topBox.children[0].addEventListener('click', function(){
+      topBox.children[1].style.backgroundColor = "#ff6666"
+    }
+    )
+
+  console.dir(topBox.children[0]);
+
+    topBox.children[1].style.width = (baseBoxSize*2) + pixel;
+    topBox.children[1].style.height = baseBoxSize + pixel;
+    topBox.children[1].style.backgroundColor = "rgb(82,82,82)";
+
+  console.dir(topBox.children[1]);
+
+
+  const bottomBox = document.getElementById('bottom-box');
+
+  console.dir(bottomBox);
+
+  bottomBox.style.width = baseBoxSize +"px"
+  bottomBox.style.height = (baseBoxSize*2) + "px"
+  bottomBox.style.background =  "rgb(82,82,82)";
+  bottomBox.style.margin = 11 + pixel
+
+
+
+  </script>
+</body>
+</html>

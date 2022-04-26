@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0;padding:0;}
+
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+
+    #root>div {
+      width: 1000px;
+      border: 1px solid red;
+
+      display:flex;
+      justify-content:flex-start;
+      align-items:center;
+      flex-wrap: wrap;
+    }
+
+    #root>div>div{
+      margin:10px;
+      width:250px;
+      height:250px;
+      background-color: #ccc;
+    }
+
+    #root>div>div:nth-child(4) {
+      display: none;
+    }
+
+
+    #root>div>div:nth-child(2){
+      width:500px;
+    }
+
+    #root>div>div:nth-child(3){
+      height:500px;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="root">
+    <div id="box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+
+    </div>
+  </div>
+  <script>
+    const box = document.getElementById("box");
+    // document(html)에서 box의 데이터를 가져와줘 데이터값은 상수야
+    const one = box.children[0]; 
+    //박스의 첫번째 자식을 변수one으로 설정할게   
+    const two = box.children[1]; 
+    //박스의 첫번째 자식을 변수two으로 설정할게   
+
+    
+    
+    console.log(box);
+    //박스의 html 트리구조를 보고싶어
+    console.dir(box);
+    //박스의 json 트리구조를 보고싶어
+    console.dir(box.children[0]);
+    //박스의 첫번째 자식 json 트리구조를 보고싶어
+    
+    one.addEventListener('click',function() {
+      two.style.transition = "1s";
+      //two의 css속성 변하는 시간은 1초야
+      two.style.backgroundColor="#ff6666";
+      //two  배경색은 #ff6666야
+      
+
+
+    });
+
+
+
+
+
+  </script>
+</body>
+</html> 

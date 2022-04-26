@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+  <div id="pc">
+  
+  <div id="display">
+  <main>
+    <div class = "color-1"></div>
+    <div class = "color-2"></div>
+  </main>
+
+  <div class = "color-3"></div>
+</div>
+
+  </div>
+
+  <script>
+    let pc = document.querySelector("#pc");
+    let main = document.querySelector("main");
+    let dis = document.querySelector("#display");
+    let el1 = document.querySelector(".color-1");
+    let el2 = document.querySelector(".color-2");
+    let el3 = document.querySelector(".color-3");
+
+    console.log(pc); 
+    console.log(main);
+    console.log(dis);
+    console.log(el1);
+    console.log(el2);
+    console.log(el3);
+    // console.dir(pc); 
+    // console.dir(main);
+    // console.dir(dis);
+    // console.dir(el1);
+    // console.dir(el2);
+    // console.dir(el3);
+
+    let flex = ["flex", "center", "column"];
+    let colors = ["#ccc", "#c1c1c1", "gray"];
+    let size = ["250", "10", "100"];
+    
+    pc.style.width = size[2]+"vw";
+    pc.style.height = size[2]+"vh";
+    pc.style.display = flex[0];
+    pc.style.alignItems = flex[1];
+    pc.style.justifyContent = flex[1];
+
+    dis.style.width = "90%";
+    dis.style.height = "90%";
+    dis.style.display = flex[0];
+    dis.style.flexDirection = flex[2];
+
+    main.style.display = flex[0];
+
+    el1.style.width = size[0] + "px";
+    el1.style.height = size[0] + "px";
+    el1.style.backgroundColor = colors[0];
+    el1.style.margin = size[1]+"px";
+
+    el2.style.width = size[0]*2+"px";
+    el2.style.height = size[0]+"px";
+    el2.style.backgroundColor = colors[1];
+    el2.style.margin = size[1]+"px";
+
+    el3.style.width = size[0]+"px";
+    el3.style.height = size[0]*2+"px";
+    el3.style.backgroundColor = colors[2];
+    el3.style.margin = size[1]+"px";
+
+    el1.addEventListener("click", function() {
+      el2.style.backgroundColor = "#ff6666";
+    });
+  </script>
+</body>
+</html>

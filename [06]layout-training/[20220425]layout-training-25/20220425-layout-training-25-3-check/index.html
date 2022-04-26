@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="container">
+    <div ></div>
+    <div ></div>
+    <div ></div>
+    <div></div>
+  </div>
+  <script>
+//     let container = document.getElementById("container");
+//     console.log(container);
+//     console.dir(container);
+    
+    
+    
+//     container.style.width = ("100vw");
+//     container.style.height = ("100vh");
+//     // container.style.backgroundColor = ("salmon");
+//     // nth-child처럼 지정하는 방법 (일일히 아이디로 지정할 수는 없으니까)찾기
+//     // container의 요소에서 children을 찾아서 그 안에 있는 div을 배열로 표현
+    
+    
+//     let one = container.children[0];
+//     one.style.backgroundColor = ("gray");
+//     let value = 250;
+//     one.style.width = (value + "px");
+//     one.style.height = (value + "px");
+//     one.style.margin = (30 + "px");
+    
+    
+//     let two = container.children[1];
+//     two.style.width = (value *2 + "px");
+//     two.style.height = (value + "px");
+//     two.style.backgroundColor = ("gray");
+//     two.style.margin = (30 + "px");
+//     two.style.position = "absolute"
+//     two.style.left = "270px";
+//     two.style.top = "0px";
+
+    
+    
+//     let three = container.children[2];
+//     three.style.width = (value  + "px");
+//     three.style.height = (value*2 + "px");
+//     three.style.backgroundColor = ("gray");
+//     three.style.margin = (30 + "px");
+    
+//     console.dir(two);
+    
+// // event적용시키는 방법에 익숙하지 않아서 찾아봄 
+// // 더 많이써봐서 손에 익혀 술술 나오게 할 것
+//     one.addEventListener ( "click", function(){
+//       two.style.backgroundColor = "#ff6666"
+//     });
+
+  let container = document.getElementById("container");
+  console.log(container);
+  console.dir(container);
+
+  container.style.width = "100vw";
+  container.style.height = "100vh";
+  container.style.display = "grid";
+  container.style.gridTemplateColumns = "250px 500px ";
+  container.style.gridTemplateRows = "250px 500px ";
+  container.style.gridGap = "20px";
+  // container.style.children.backgroundColor = "gray";
+
+  // let value = 250;
+
+  // container의 자식 div을 전부 묶어서 부를수는 없을까?\
+  
+  // check point : 1
+
+  // 배열로 수집이 되는 주요 메서드(함수)들이 존재합니다. 강의 예정
+  
+
+  let one = container.children[0];
+  // one.style.width = (value + "px");
+  // one.style.height = (value + "px");
+  one.style.backgroundColor = "gray";
+
+  let two = container.children[1];
+  // two.style.width = (value *2 + "px");
+  // two.style.height = (value + "px");
+  two.style.backgroundColor = "gray";
+
+  // display : grid를 잘 안써봐서 잘 모름
+  // 찾아봐서 익힐 것 
+
+  let three = container.children[2];
+  // three.style.width = (value + "px");
+  // three.style.height = (value *2+ "px");
+  three.style.backgroundColor = "gray";
+
+
+    one.addEventListener ( "click", function(){
+      two.style.backgroundColor = "#ff6666";
+    });
+
+    </script>
+      
+    </body>
+    
+    
+    </html>
