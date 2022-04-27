@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="220426-layout-training.css">
+</head>
+<body>
+  
+  <div id="root">
+    <div>
+      <div class="ele ele1" ></div>
+      <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div class="box1">
+          <h2>lorem title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum nobis, sunt quod et debitis dolores recusandae officiis delectus, voluptate officia ipsam eaque. Repellendus aut ex at quis quos ad itaque.</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    const root = document.getElementById("root");
+
+    console.dir(root);
+
+//--------------------------------------
+
+    const one = root.children[0].children[0];
+
+    console.dir(one);
+
+//--------------------------------------
+
+    one.addEventListener('click', function(){
+      
+      one.classList.toggle('ele1');
+
+      });
+
+  </script>
+</body>
+</html>

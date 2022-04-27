@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div></div>
+      <div>
+        <div>
+          <div class="title">Lorem title</div>
+          <div class="text-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad accusantium officiis commodi, explicabo quam modi illo id, neque iusto hic ipsa cum recusandae adipisci error. Sint et esse doloribus, ipsum, animi cum sequi minima voluptate labore veritatis non assumenda alias voluptates! Quasi, nulla.</div>
+        </div>
+        <div id="box">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+
+    const root = document.getElementById("root");
+
+    console.log(root);
+    console.dir(root);
+
+    root.style.width= "100vw";
+    root.style.height= "100vh";
+    root.style.margin= 0;
+    root.style.padding= 0;
+    root.style.display= "flex";
+    root.style.justifyContent= "center";
+    root.style.alignItems= "center";
+
+    const gridbox = root.children[0];
+
+    console.log(gridbox);
+    console.dir(gridbox);
+
+    let wValue = 100/4;
+    let hValue = 100/4;
+    
+
+    gridbox.style.width="55vw";
+    gridbox.style.height= hValue + "vw";
+    gridbox.style.display="grid";
+    gridbox.style.gridTemplateColumns= "1fr 1fr";
+    gridbox.style.gridTemplateRows= "1fr";
+    gridbox.style.gridGap= "2vw";
+
+    const boxone = gridbox.children[0];
+
+    console.log(boxone);
+    console.dir(boxone);
+
+    boxone.style.width=wValue +"vw" ;
+    boxone.style.height=hValue + "vw" ;
+    boxone.style.backgroundColor="gray";
+
+    const boxtwo = gridbox.children[1];
+
+    console.log(boxtwo);
+    console.dir(boxtwo);
+
+    boxtwo.style.display="grid";
+    boxtwo.style.gridTemplateColumns= "1fr";
+    boxtwo.style.gridTemplateRows= "1fr 1fr";
+    boxtwo.style.gridGap= "2.8vw";
+
+    const textbox = boxtwo.children[0];
+
+    console.log(textbox);
+    console.dir(textbox);
+
+    textbox.children[0].style.fontSize="400%";
+    textbox.children[0].style.fontWeight= 100;
+    textbox.children[0].style.color="gray";
+    textbox.children[0].style.marginTop="1vw";
+    
+    textbox.children[1].style.fontSize="80%";
+    textbox.children[1].style.textAlign="justify";
+    textbox.children[1].style.color="gray";
+    textbox.children[1].style.marginTop="1vw";
+    
+
+    const boxthr= boxtwo.children[1];
+
+    console.log(boxthr);
+    console.dir(boxthr);
+
+    boxthr.style.display="grid";
+    boxthr.style.gridTemplateColumns= "1fr 1fr 1fr";
+    boxthr.style.gridTemplateRows= "1fr";
+    boxthr.style.gridGap= "1vw";
+
+    // const childlist =document.getElementById("box").childNodes;
+
+    // console.log(childlist);
+    // console.dir(childlist);
+
+
+    // //인터넷에서 나온 짝수 홀수 색 다르게 하는 법에서 차용한 것
+    // let count =0;
+    // for(let i=0; i<childlist.length; i++){
+    //   if(childlist[i].nodeName.toLowerCase() == "div"){ //노드 속성이 특정 태그인 경우 
+    //     count++; //카운트 증가 
+    //   }
+    //   if(count%2==0){ //%짝수로 나눠 떨어지는 경우
+    //     childlist[i].style.backgroundColor="white";
+    //   }else { // 홀수인 경우 
+    //     childlist[i].style.backgroundColor="gray";
+    //   }
+    // };
+
+    //인터넷에서 나온 짝수 홀수 색 다르게 하는 법에서 차용한 것인데 아래 if(count===0)부터 뭔가 잘 안맞는것 같다. 
+    // let count =0;
+    // for(let i=0; i<childlist.length; i++){
+    //   if(childlist[i].nodeName.toLowerCase() == "div"){
+    //     count++;
+    //   }
+    //   if(count === 0){
+    //     childlist[i].style.backgroundColor="gray";
+    //   }
+    // };
+    //div의 자식들을 한번에 스타일 해주고싶은데 반복문으로 하려고 하는데 잘 안된다. 무엇이 문제지..? 
+
+      // check point 1
+      /*
+      if(childlist[i].nodeName.toLowerCase() == "div") 해당 조건식의 논리의 접근을 확인하면 이러합니다.
+      childlist[i]의 프로퍼티중 nodeName을 toLowerCase(소문자)로 바꾸어줘 -> 그값이 === 조건식 "div" 와 같은지 확인해줘
+      맞다면 count의 변수값을 1더해줘
+      하고 알고리즘이 종료됩니다.
+
+      논리합, 논리곱 혹은 and, or 연산자를 이해하실때 매우 수월하게 해결 할 수 있겠습니다 :)
+
+
+
+
+
+      */
+
+
+
+    // childlist.style.backgroundColor="gray";
+    // for(let i =0; i<boxthr.length; i++){
+    // boxthr[i].style.width = wValue/3 + "vw";
+    // boxthr[i].style.height = hValue/3 + "vw";
+    // boxthr[i].style.backgroundColor="gray";
+    // };
+
+    console.dir(boxthr.children[0]);
+
+    boxthr.children[0].style.backgroundColor = "gray";
+    boxthr.children[0].style.width= wValue/3 + "vw";
+    boxthr.children[0].style.height= hValue/3 + "vw";
+
+    boxthr.children[1].style.backgroundColor = "gray";
+    boxthr.children[1].style.width= wValue/3 + "vw";
+    boxthr.children[1].style.height= hValue/3 + "vw";
+
+    boxthr.children[2].style.backgroundColor = "gray";
+    boxthr.children[2].style.width= wValue/3 + "vw";
+    boxthr.children[2].style.height= hValue/3 + "vw";
+
+    //제출하기 위해서 일단 3개다 각각 스타일을 부여, 같은 자식들에게 한번에 스타일 속성 부여하는 것이 잘 안됨, 어느 부분이 틀렸는지 알수있으면 좋을 것 같다, 
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

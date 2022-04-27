@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    
+    #root {
+      width:100vw;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items: center;
+    }
+
+    #root > div:nth-child(1) {
+      width:25vw;
+      height:25vw;
+      background-color: rgba(255, 102,  102, 1);
+    }
+
+    #root > div:nth-child(2) {
+      width:35vw;
+      height:25vw;
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #root > div:nth-child(2) > div:nth-child(1) {
+      width:30vw;
+      height:14vw;
+    }
+
+    #root > div:nth-child(2) > div:nth-child(1) > h1 {
+      width:inherit;
+      height:5vw;
+      color:rgb(202, 74, 74);
+      font-size: 50px;
+      font-weight: lighter;
+    }
+
+    #root > div:nth-child(2) > div:nth-child(1) > p {
+      color:rgb(202, 74, 74);
+    }
+    
+
+    #root > div:nth-child(2) > div:nth-child(2) {
+      width:30vw;
+      height:calc(25vw/3);
+      display:flex;
+      justify-content: space-between;
+    }
+
+    #root > div:nth-child(2) > div:nth-child(2) > div {
+      width:calc(25vw/3);
+      height:calc(25vw/3);
+      background-color: rgb(255, 102,  102);
+    }
+    
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div></div>
+    <div>
+      <div>
+        <h1>lorem title</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum totam, qui omnis officiis quaerat temporibus voluptas! In, aspernatur, eveniet similique est ex officia maxime odit, unde eum id fugiat accusamus!</p>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

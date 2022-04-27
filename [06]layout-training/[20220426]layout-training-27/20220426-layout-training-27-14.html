@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0; box-sizing: border-box;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    main{
+      display: flex;
+      flex-direction: row;
+    }
+    #left{
+      width: 25vw;
+      height: 25vw;
+      background-color: salmon;
+    }
+    #right{
+      margin-left: 1vw;
+      width: 27vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #right > section:nth-child(2){
+      display: flex;
+      justify-content: space-between;
+    }
+    .nemo{
+      width: 8vw;
+      height: 8vw;
+      background-color: salmon;
+    }
+    h1{
+      font-size: 3rem;
+      color: salmon;
+    }
+    p{
+      color: salmon;
+      font-size: 0.7rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <main>
+      <div id="left"></div>
+      <div id="right">
+        <section>
+          <h1>Lorem title</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores iusto obcaecati, beatae accusantium amet maiores aspernatur porro magni illum incidunt quis, impedit dolore doloremque voluptatibus et eius enim fuga adipisci?</p>
+        </section>
+        <section>
+          <div class="nemo"></div>
+          <div class="nemo"></div>
+          <div class="nemo"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

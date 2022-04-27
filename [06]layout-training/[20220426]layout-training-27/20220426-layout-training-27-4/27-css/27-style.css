@@ -1,0 +1,61 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  background-color: #c4c4c4;
+}
+#root > main {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  grid-template-columns: 1fr 3fr;
+  /* 여태 완전 바보짓함......repeat(n, n)이 아니고서는 ,를 쓰지 않는다.
+  ====> 지금까지 grid-template-columns가 안먹혔던 이유는 ,때문이었다.
+  */
+  grid-gap: 1rem;
+  width: 80vw;
+  height: 60vh;
+}
+#root > main > div:nth-child(1) {
+  height: 100%;
+  background-color: #ff0000;
+}
+#root > main > div:nth-child(2) {
+  display: flex;
+  justify-content: flex-end;
+  align-items: space-between;
+  flex-direction: column;
+  height: 100%;
+}
+#root > main > div:nth-child(2) > p:nth-child(1) {
+  font-size: 4.5rem;
+  color: #ff0000;
+}
+#root > main > div:nth-child(2) > p:nth-child(2) {
+  height: 30%;
+  font-size: 0.8rem;
+  color: #ff0000;
+}
+#root > main > div:nth-child(2) > div:last-child {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  height: 50%;
+}
+#root > main > div:nth-child(2) > div:last-child > div {
+  height: 100%;
+  background-color: #ff0000;
+}/*# sourceMappingURL=27-style.css.map */

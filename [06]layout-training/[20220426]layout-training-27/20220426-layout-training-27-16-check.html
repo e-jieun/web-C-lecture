@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    :root {
+      --color-cr: rgb(253, 103, 86);
+    }
+    
+    /* * {
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+    } */
+
+    /* #root { */
+      /* width: 100vw; */
+      /* height: 50vh; */
+      /* display: flex; */
+      /* flex-direction: row; */
+      /* grid-template-rows: 25vw; */
+      /* grid-template-columns: 3fr 1fr 1fr 1fr; */
+      /* align-items: flex-end; */
+      /* justify-content: center; */
+    /* } */
+
+    /* #con>div { */
+      /* margin: 1vw; */
+      /* background-color: var(--color-cr); */
+    /* } */
+
+    /* #element { */
+      /* !css에선 연산이 안됨 */
+      /* width: 25vw; */
+      /* height: 25vw; */
+    /* } */
+
+    /* .thum { */
+      /* border: 1px solid black; */
+      /* width: 8vw; */
+      /* height: 8vw; */
+    /* } */
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <!-- 가로폭 1/4 크기 -->
+    <div id="con">
+      <div id="element"></div>
+      <!-- element의 1/3 크기 -->
+      <div class="thum"></div>
+      <div class="thum"></div>
+      <div class="thum"></div>
+    </div>
+  </div>
+  <script>
+    // variable declaration
+    let colorCr = '#c4c4c4';
+    let vw = 'vw';
+    let vh = 'vh';
+    let center = 'center';
+    let documentSize = 100;
+    let conChildSize = documentSize/4;
+
+    // body style
+    console.log(document.body.style);
+    document.body.style.margin = 0;
+    document.body.style.padding = 0;
+
+    // get #root
+    const root = document.getElementById('root');
+    console.log(root);
+    console.log(root.style);
+    // #root style
+    root.style.width = documentSize+vw;
+    root.style.height = documentSize+vh;
+    // #root의 자식요소인 #con가운데 정렬
+    console.log(root.children);
+    root.style.display = 'flex';
+    root.style.alignItems = center;
+    root.style.justifyContent = center;
+
+    // get #con
+    const con = document.getElementById('con');
+    console.log(con);
+    console.log(con.style);
+    // #con style
+    con.style.width = 'inherit';
+    // con.style.height = documentSize/4+vh;
+    // !grid로 자식요소의 크기 설정해줌
+    con.style.display = 'flex';
+    // con.style.gridTemplateColumns = 'documentSize/4vh 25/3vh conChildSize/3vh conChildSize/3vh';
+    // 바닥으로 정렬
+    con.style.justifyContent = center;
+    con.style.alignItems = 'flex-end';
+    // 자식요소 간의 
+    con.style.columnGap = 2+vw;
+    
+    // #con의 자식요소들을 변수 conChild로 가져온다
+    const conChild = document.getElementById('con').children;
+    console.log(conChild);
+    // !여기서 숫자로 연산을 해주려면 
+    // #element style = conChild[0]
+    conChild[0].style.width = (documentSize/4)+vh;
+    console.log(conChild[0]);
+    // Q1. root.style.width의 값을 불러와서 1/4로 나눠 값을 속성값을 할당해주려고 했는데 conChild[0].style을 콘솔에서 기록했을 때 높이값이 적용되지 않아서, 숫자로밖에 연산이 되지 않아서 우선 값을 변수로 선언해 숫자로 값을 할당해서 적용해줬는데요!
+    //  인터넷을 찾아보니까 정규식(?)을 써서 문자열에서 숫자만 도출해내 값으로 돌려주는 식을 작성해서 숫자로 받는데, 문자열을 숫자로 바꿀 수 있는 다른 방법이 있을까요?
+
+    // check point 1
+    // 27-8번 작업의 check point 1을 참조하시기 바랍니다!
+    // 자바스크립트 작동원리를 더욱 이해하시면 찾은 데이터 보다 쉽게 처리가 가능하니, 안심하시고
+    // 작성법, 적응이 익숙해지는 시점에 자세하게 다룰 예정입니다.
+
+
+
+    // 찾아본 문자열을 정수로 바꿔주는 작업
+    // var testString = "안녕? Hi! 123456789.0";	// 원래 문자열
+    // var regex = /[^0-9]/g;				// 숫자가 아닌 문자열을 선택하는 정규식
+    // var result = testString.replace(regex, "");	// 원래 문자열에서 숫자가 아닌 모든 문자열을 빈 문자로 변경
+    // console.log(result);				// 결과 출력
+
+    conChild[0].style.height = `${documentSize/4}vh`;
+    conChild[0].style.width = `${documentSize/4}vh`;
+    // conChild 배열의 요소들에게 배경색을 반복해서 값을 준다
+    for(let i = 0; i<conChild.length; i++){
+      conChild[i].style.backgroundColor = colorCr;
+    }
+    // conChild[0]을 제외한 [1-3]까지의 conChild의 크기를 반복해서 설정해준다
+    console.log(conChild[0].style);
+    for(let i = 1; i < conChild.length; i++){
+      // 
+      conChild[i].style.height = (conChildSize/3)+vh;      
+      conChild[i].style.width = (conChildSize/3)+vh;
+      console.log(conChild[i]);
+    }
+    // 값이 숫자면 제어할 수 있다
+    // 문자열 숫자 형태라면 숫자로 변형할 수 있다
+    // 값을 문자열을 제외한 숫자만으로 가져와야 연산이 가능한데, 함수를 사용해서 대체해주는 것 같음
+    </script>
+</body>
+
+</html>

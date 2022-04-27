@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<style>
+  *{margin: 0px; padding: 0px; box-sizing: border-box;}
+
+
+#root{
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items:center;
+}
+
+.container{
+  width: 40%;
+  height: inherit;
+  
+  margin-right: 2vw;
+}
+
+.container>div{
+  width: 40vw;
+  height: 80vh;
+  background-color: salmon;
+
+  position: relative;
+  top: 30vh;
+}
+
+.container-2{
+  width: 60%;
+  height: inherit;
+
+
+}
+
+.container-2>div{
+  width: 100vw;
+  height: 40vh;
+  text-align: center;
+  display: inline-block;
+  margin-top: 400px;
+}
+
+.container-2>span{
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+}
+
+.container-2>span>section{
+  width: calc(40vh/1);
+  height: 20vh;
+  background-color: salmon;
+  margin-right: 2vh;
+
+  position: relative;
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+  <div id="root">
+    <div class="container">
+      <div></div>
+    </div>
+    <div class="container-2"> 
+
+
+    <div>
+      <h1>lorem Title</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, id! Tenetur enim impedit sequi ad consequuntur officia dolorem optio possimus sed assumenda, voluptatibus eum beatae culpa animi eaque dolorum minima.</p>
+    </div>
+
+
+    <span>
+     <section></section>
+     <section></section>
+     <section></section>
+    </span>
+    
+    </div>
+  </div>
+
+  <script>
+
+    
+  
+  </script>
+</body>
+</html>

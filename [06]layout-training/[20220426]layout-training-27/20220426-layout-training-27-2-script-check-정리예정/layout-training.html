@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		*{margin: 0; padding: 0;}
+		#root{
+			width: 100vw;
+			height: 100vh;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			max-width: 100%;
+			max-height: 100%;
+		}
+		.con{
+			width: 60vw;
+			height: 60vh;
+			display: flex;
+		}
+		.con>div:nth-child(1){
+			width: 25vw;
+			height: 25vw;
+			background-color:salmon;
+			margin-right: 2vw;
+		}
+		.con>div:nth-child(2){
+			width: 25vw;
+			height: 25vw;
+			display: flex;
+			flex-direction: column;
+		}
+		.con>div:nth-child(2)>div{
+			width: 25vw;
+			height: 25vw;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+		.con>div:nth-child(2)>div>div:nth-child(1)>p:nth-child(1){
+			font-size: 3rem;
+			color: salmon;
+			margin-bottom: 1vh;
+		}
+		.con>div:nth-child(2)>div>div:nth-child(1)>p:nth-child(2){
+			font-size: 0.5rem;
+			color: salmon;
+		}
+		.con>div:nth-child(2)>div>div:nth-child(2){
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+		.con>div:nth-child(2)>div>div:nth-child(2)>div{
+			width: 8vw;
+			height: 8vw;
+			background-color: salmon;
+
+		}
+
+	</style>
+</head>
+<body>
+	<div id="root">
+		<div class="con">
+			<div></div>
+			<div>
+				<div>
+					<div>
+						<p>Lorem title</p>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum libero aspernatur hic ipsam omnis officiis aut maiores sed neque asperiores sint id incidunt, expedita commodi qui quaerat labore deleniti dolorem laudantium alias nostrum atque! Itaque odit veritatis molestiae magni odio, at architecto animi optio vitae cum explicabo numquam labore aspernatur nam, </p>
+					</div>
+					<div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+*{margin:0; padding:0;}
+
+@mixin display ($dis, $jus, $ali, $dir){
+  display: $dis;
+  justify-content: $jus;
+  align-items: $ali;
+  flex-direction: $dir;
+}
+
+#root {
+  @include display (flex, center, center, row);
+  width: 100vw; height: 100vh;
+  background-color: #c4c4c4;
+
+  & > main {
+    @include display (grid, center, center, row);
+    grid-template-columns: 1fr 3fr;
+    /* 여태 완전 바보짓함......repeat(n, n)이 아니고서는 ,를 쓰지 않는다.
+    ====> 지금까지 grid-template-columns가 안먹혔던 이유는 ,때문이었다.
+    */
+    grid-gap: 1rem;
+    // grid-template-columns: 1fr 3fr는 25% 75%와 같은 값이지만, fr단위를 사용하면 gap을 1rem주더라도 너비값이 변하지 않고 알아서 계산된다. (%를 사용하면 %만큼 너비값에서 빼줘야함)
+    width: 80vw; height: 60vh;
+    // background-color: #fff;
+
+    & > div:nth-child(1){
+      // 가로폭 4분의1
+      // width: 25%;
+      height: 100%;
+      background-color: #ff0000;
+    }
+
+    & > div:nth-child(2){
+      // width: 75%;
+      @include display(flex, flex-end, space-between, column);
+      height: 100%;
+      // border: 1px solid #ff0000;
+
+      & > p:nth-child(1) {
+        font-size: 4.5rem;
+        // 4.5rem = 72pt
+        color: #ff0000;
+      }
+
+      & > p:nth-child(2) {
+        height: 30%;
+        font-size: 0.8rem;
+        color: #ff0000;
+      }
+
+      & > div:last-child {
+        @include display(grid, center, center, row);
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 1rem;
+        height: 50%;
+        
+        & > div {
+          height: 100%;
+          background-color: #ff0000;
+        }
+      }
+    }
+
+  }
+
+
+}

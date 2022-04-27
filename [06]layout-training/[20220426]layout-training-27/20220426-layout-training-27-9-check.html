@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* #root{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+    }
+
+    #left-box{
+      width: 25vw;
+      height: 25vw;
+      background-color: thistle;
+    }
+
+    #right-box{
+      width: 50vw;
+      height: 25vw;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #right-box>div:first-child{
+      width: 100%;
+      height: 30%;
+      color: darksalmon;
+    }
+
+    #right-box>div:first-child>h1{
+      width: 100%;
+      height: 35%;
+    }
+
+    #right-box>div:first-child>div{
+      width: 100%;
+      height: 65%;
+    }
+
+
+    #right-box>div:last-child{
+      width: 100%;
+      height: 50%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    #right-box>div:last-child>div{
+      width: 9vw;
+      height: 9vw;
+      background-color: steelblue;
+    } */
+
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="left-box"></div>
+    <div id="right-box">
+      <div>
+        <h1>lorem title</h1>
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis tempora non porro, vero numquam adipisci! Sunt perferendis fugit quis nisi voluptatum deleniti ut eius sed debitis et mollitia, vitae nostrum soluta ad error dolor, quibusdam natus officiis rerum. Molestiae, assumenda nam.</div>
+      </div>      <!-- right-box-top -->
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>      <!-- right-box-bottom -->
+    </div>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    console.log(root);
+    console.dir(root);
+
+    root.style.width = "100vw"
+    root.style.height = "100vh"
+    root.style.display = "flex";
+    root.style.justifyContent = "space-evenly";
+    root.style.alignItems = "center"
+
+    let width = 100;
+
+    const leftBox = document.getElementById('left-box');
+
+    console.log(leftBox);
+    console.dir(leftBox);
+
+    leftBox.style.width = width/4 + "vw" ;
+    leftBox.style.height = width/4 + "vw" ;
+    leftBox.style.backgroundColor = "steelblue";
+
+    leftBox.addEventListener('click', function(){
+      leftBox.style.transition = "1s"
+      leftBox.style.backgroundColor = "thistle";
+    }
+    )
+
+    const rightBox = document.getElementById('right-box');
+
+    console.log(rightBox);
+    console.dir(rightBox);
+
+    rightBox.style.width =  "50vw";
+    rightBox.style.height = width/4 + "vw" ;
+    rightBox.style.display = "flex";
+    rightBox.style.flexDirection = "column";
+    rightBox.style.justifyContent="space-between";
+    rightBox.style.alignItems="center";
+
+    console.dir(rightBox.children);
+
+    rightBox.children[0].style.width = "100%";
+    rightBox.children[0].style.height = "30%"
+    rightBox.children[0].style.color = "darksalmon";
+
+    console.dir(rightBox.children[0].children);
+
+    rightBox.children[0].children[0].style.width =  "100%";
+    rightBox.children[0].children[0].style.height = "35%";
+
+    rightBox.children[0].children[1].style.width =  "100%";
+    rightBox.children[0].children[1].style.height = "65%";
+
+    rightBox.children[1].style.width = "100%";
+    rightBox.children[1].style.height = "50%"
+    rightBox.children[1].style.display = "flex";
+    rightBox.children[1].style.justifyContent="space-between";
+    rightBox.children[1].style.alignItems="flex-end";
+
+    console.dir(rightBox.children[1].children);
+
+    let sBoxWidth = width/4 ;
+
+    
+    rightBox.children[1].children[0].style.width = sBoxWidth/3 + "vw";
+    rightBox.children[1].children[0].style.height = sBoxWidth/3 + "vw";
+    rightBox.children[1].children[0].style.backgroundColor = "steelblue";
+    
+    rightBox.children[1].children[1].style.width = sBoxWidth/3 + "vw";
+    rightBox.children[1].children[1].style.height = sBoxWidth/3 + "vw";
+    rightBox.children[1].children[1].style.backgroundColor = "steelblue";
+    
+    rightBox.children[1].children[2].style.width = sBoxWidth/3 + "vw";
+    rightBox.children[1].children[2].style.height = sBoxWidth/3 + "vw";
+    rightBox.children[1].children[2].style.backgroundColor = "steelblue";
+    
+    // 여러번 말고 한번에 쓸 수 없나? children[0,1,2] 이렇게?
+    // check point 1
+    // for() loop 제어를 구상해보시기 바랍니다!  
+  
+  </script>
+</body>
+</html>

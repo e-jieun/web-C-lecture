@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="box">
+      <div id="box-1">
+      </div>
+
+      <div id="box-2">
+      <div class="text">
+      <h1>Lorem Title</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio quidem voluptate officiis nisi, recusandae itaque earum, eveniet sequi asperiores quam ea nostrum impedit consequatur eaque et exercitationem tempora sapiente voluptatibus aperiam in iusto deserunt ratione vel? Numquam magni corporis, accusamus nobis totam saepe sed atque impedit dolore odio! Explicabo animi asperiores aut nulla natus, laborum deserunt autem deleniti velit laudantium repudiandae mollitia nisi necessitatibus cupiditate dolores assumenda hic magnam nobis eaque eum eveniet ab id ipsa exercitationem. Doloribus pariatur architecto nemo officiis ut in adipisci voluptas accusantium. Nesciunt enim animi, praesentium deleniti id sequi laboriosam, sint vel distinctio blanditiis tempora.</p>
+      </div>
+
+      <div class="boxes">
+      <div></div>
+      <div></div>
+      <div></div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const body = document.querySelector("body");
+    const root = document.querySelector("#root");
+    const box = document.querySelector("#box");
+    const box1 = document.querySelector("#box-1");
+    const box2 = document.querySelector("#box-2");
+    const text = document.querySelector(".text");
+    const boxes = document.querySelector(".boxes");
+    const lorem = text.children;
+    const div = boxes.children;
+
+    // console.log(root);
+    // console.log(box);
+    // console.log(box1);
+    // console.log(box2);
+    // console.log(text);
+    // console.log(boxes);
+    // console.log(lorem);
+    // console.log(div);
+
+    let wid = box1.style.width;
+    console.log(wid);
+    //Q.왜 콘솔에 뜨지 않을까요? 이건 잘못된 작성법인가요??
+    //변수.style.width = 다른변수.style.width/4*2 같은 방식도 사용이 안되는건가요?
+    
+    // check point 1
+
+    /*
+
+    * 자바스크립트를 다루다보면 꼭 마주치게 되는 매우 좋은 에러 입니다.
+    * 코딩테스트의 주요 문제이기도 하는데
+    
+    * 데이터를 가리킨다. 대입한다. 라는 어휘의 이해가 여기에서 필요합니다.
+
+    * 변수.style.width는 결과적으로 typeof 체크를 하면 string 이라는 결론이 나올것이고
+    * 이것을 형변환을 잘 하면 되는 문제로 일단락 되긴 하는데
+    * 완전히 제어하려면
+    * 원시값, 참조값 이라는 어려운 개념을 이해해야 합니다.
+    * 
+    * number, string 과 같은 명확한 값은 '원시값'이라고 부르며, 
+    * array, object 와 같은 값은 '참조값' 이라고 부르는데 
+    * 작성법이 익숙해지는 시점에서 자세하게 다룰 예정입니다.
+    * 1. 현재는 타입체크를 통해 값을 확인한다.
+    * 2. 값을 변수에 담는다 -> 원하는 연산 (4*2와같은)을 진행한다. 로 보시면되겠습니다.
+    * 3. 고도의 변수 활용이 필요한 부분입니다.
+
+
+
+
+
+    */
+
+
+
+    
+    body.style.padding = "0";
+    body.style.margin = "0";
+
+    root.style.width ="1920px";
+    root.style.height ="1080px";
+    root.style.display ="flex";
+    root.style.alignItems ="center";
+    root.style.justifyContent ="center";
+    
+    box.style.width ="80%";
+    box.style.height ="80%";
+    box.style.display ="flex";
+    box.style.alignItems ="center";
+    box.style.justifyContent ="space-around";
+    
+    box1.style.width = 1920/4+"px";
+    box1.style.height = "700px";
+    box1.style.backgroundColor = "#ccc";
+
+    box2.style.width = "48%";
+    box2.style.height = "700px";
+    box2.style.display ="flex";
+    box2.style.alignItems ="center";
+    box2.style.justifyContent ="center";
+    box2.style.flexDirection ="column";
+
+    text.style.width ="100%";
+    text.style.height ="55%";
+    text.style.display ="flex";
+    text.style.justifyContent ="center";
+    text.style.flexDirection ="column";
+
+    boxes.style.width ="100%";
+    boxes.style.height ="45%";
+    boxes.style.display ="flex";
+    boxes.style.alignItems ="flex-end";
+    boxes.style.justifyContent ="space-between";
+
+    lorem[0].style.fontSize = "50px";
+    lorem[1].style.fontSize = "15px";
+
+    div[0].style.width = 1920/4/3+"px";
+    div[0].style.height = 700/3+"px";
+    div[0].style.backgroundColor = "#ccc";
+
+    div[1].style.width =1920/4/3+"px";
+    div[1].style.height = 700/3+"px";
+    div[1].style.backgroundColor = "#ccc";
+
+    div[2].style.width = 1920/4/3+"px";
+    div[2].style.height = 700/3+"px";
+    div[2].style.backgroundColor = "#ccc";
+    //Q.↑위 div들처럼 작성할 때, 한번에 적용하고 싶어서 div라고만 쓰거나 div[0,1,2]라고 하면 적용이 안되는데 그건 잘못된 작성법인가요?
+    // check point 2
+    // 앞서 배운 for() loop 제어가 해당 질문의 해결 방안이 되겠습니다. 
+
+
+    //중복되는 스타일을 적용할 때도 변수 한개가 아니라 >변수,변수,변수.style.attribute="value";<처럼 작성하는 법도 잘못된 것 같은데 사용할 수 없는 방법인가요?
+    // check point 3
+    // 이럴 때를 위한 선물 '함수'라는 것이 존재합니다!!!
+
+
+
+    box1.addEventListener("click", function() {
+      box1.style.backgroundColor = "salmon";
+      lorem[0].style.color = "salmon";
+      lorem[1].style.color = "salmon";
+      div[0].style.backgroundColor = "salmon";
+      div[1].style.backgroundColor = "salmon";
+      div[2].style.backgroundColor = "salmon";
+    });
+
+  </script>
+</body>
+</html>

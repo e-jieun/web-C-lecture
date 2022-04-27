@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="root">
+		<div class="con">
+			<div></div>
+			<div>
+				<div>
+					<div>
+						<p>Lorem title</p>
+						<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum libero aspernatur hic ipsam omnis officiis aut maiores sed neque asperiores sint id incidunt, expedita commodi qui quaerat labore deleniti dolorem laudantium alias nostrum atque! Itaque odit veritatis molestiae magni odio, at architecto animi optio vitae cum explicabo numquam labore aspernatur nam, </p>
+					</div>
+					<div>
+						<div></div>
+						<div></div>
+						<div></div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<script>
+	const b=`100`;
+
+		// check point 1
+
+		// * 일반적으로 `` 백틱 템플릿 문자열 표현법은 문자열에 변수를 활용할 때 '만' 사용하는 암묵적인 룰이 있습니다.
+		// * 백틱이 보이면 변수가 무엇인지 찾게 되는 개발의 습관 때문인데, 위와같은 변수 b는 숫자이기때문에 문자열처럼 선언하지 않는 것이 좋으며(엄격한 상태가 따로 있는데 그땐 에러로 처리됨) 문자열을 사용하는데 변수를 사용하지 않을 것이라면 따옴표를 사용하는 것이 옳습니다.
+
+		// let b = 100; 
+
+
+	console.log(b);
+	// 100이라는 값을 가진 상수 선언했다.
+	document.body.style.margin=`0`;
+	document.body.style.padding=`0`;
+	const root = document.getElementById(`root`);
+	console.log(root);
+	console.dir(root);
+	root.style.width=`${b}vw`;
+	root.style.height=`${b}vh`;
+	root.style.display=`flex`;
+	root.style.justifyContent=`center`;
+	root.style.alignItems=`center`;
+	root.style.maxWidth=`${b}%`;
+	root.style.maxHeight=`${b}%`;
+	// 너비높이 넘치지 않게 조절//
+
+	const con = document.getElementsByClassName('con');
+	con[0].style.width=`60vw`;
+	con[0].style.height=`60vh`;
+	con[0].style.display=`flex`;
+
+
+	con[0].children[0].style.width=`${b/4}vw`;
+	// 가로폭이 100vw에서 1/4이니까 100이라는 상수 지정 후 n/4 했다.
+	con[0].children[0].style.height=`${b/4}vw`;
+	con[0].children[0].style.backgroundColor=`pink`;
+	con[0].children[0].style.marginRight=`2vw`;
+
+	con[0].children[1].style.width=`${b/4+3}vw`;
+	// 여백을 줘야해서 width값을 조금 더 줬다. 어차피 나눗셈먼저 연산이 되니까
+	// 문제도리 건 없었다.
+	con[0].children[1].style.height=`${b/4}vw`;
+	con[0].children[1].style.display=`flex`;
+	con[0].children[1].style.flexDirection=`column`;
+
+	
+	con[0].children[1].children[0].style.width=`inherit`;
+	con[0].children[1].children[0].style.height=`inherit`;
+	con[0].children[1].children[0].style.display=`flex`;
+	con[0].children[1].children[0].style.flexDirection=`column`;
+	con[0].children[1].children[0].style.justifyContent=`space-between`;
+// Q1 너비와 높이를 알맞게 지정했고, flexDirection이 column이라서
+// 세로 배치는 justifyContent를 space-between을 주었지만,
+// p tag를 감싼 div이 위로 올라가지 않습니다.
+
+
+
+
+		
+	con[0].children[1].children[0].children[0].style.width=`${b/4}vw`;
+	con[0].children[1].children[0].children[0].style.height=`${b/4/4}vw`;
+
+
+	console.log(con[0].children[1].children[0]);
+
+
+
+	con[0].children[1].children[0].children[0].style.flexDirection=`column`;
+	con[0].children[1].children[0].children[0].style.justifyContent=`space-between`;
+
+
+	con[0].children[1].children[0].children[0].children[0].style.fontSize=`5rem`;
+	// 바로 직계자식도 children을 [0]으로 해줘야한다. 
+	con[0].children[1].children[0].children[0].children[0].style.color=`salmon`;
+	con[0].children[1].children[0].children[0].children[0].style.fontWeight=`100`;
+	con[0].children[1].children[0].children[0].children[0].style.marginBottom=`1vh`;
+
+	con[0].children[1].children[0].children[0].children[1].style.fontSize=`0.5rem`;
+	con[0].children[1].children[0].children[0].children[1].style.color=`salmon`;
+
+
+
+
+
+
+
+	con[0].children[1].children[0].children[1].style.
+	display=`flex`;
+	con[0].children[1].children[0].children[1].style.
+	flexDirection=`row`;
+	con[0].children[1].children[0].children[1].style.
+	justifyContent=`space-between`;
+	con[0].children[1].children[0].children[1].children[0].style.width=`${b/4/3}vw`;
+	con[0].children[1].children[0].children[1].children[0].style.height=`${b/4/3}vw`;
+	con[0].children[1].children[0].children[1].children[0].style.backgroundColor=`salmon`;
+	
+	con[0].children[1].children[0].children[1].children[1].style.width=`${b/4/3}vw`;
+	con[0].children[1].children[0].children[1].children[1].style.height=`${b/4/3}vw`;
+	con[0].children[1].children[0].children[1].children[1].style.backgroundColor=`salmon`;
+
+	con[0].children[1].children[0].children[1].children[2].style.width=`${b/4/3}vw`;
+	con[0].children[1].children[0].children[1].children[2].style.height=`${b/4/3}vw`;
+	con[0].children[1].children[0].children[1].children[2].style.backgroundColor=`salmon`;
+
+
+
+
+
+
+	
+</script>
+
+</body>
+</html>

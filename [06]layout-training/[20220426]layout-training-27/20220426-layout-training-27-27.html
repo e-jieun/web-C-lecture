@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div></div>
+    <div>
+      <div>
+        <h1>lorem title</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum totam, qui omnis officiis quaerat temporibus voluptas! In, aspernatur, eveniet similique est ex officia maxime odit, unde eum id fugiat accusamus!</p>
+      </div>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+
+document.body.style.margin = "0";
+document.body.style.padding = "0";
+
+
+const root = document.getElementById('root');
+const bigdiv = root.children[0];
+const right = root.children[1];
+
+const text = right.children[0];
+const h1 = text.children[0];
+const p = text.children[1];
+
+const section = right.children[1];
+const divnumber = section.children.length;
+
+
+const one = section.children[0];
+const two = section.children[1];
+const three = section.children[2];
+
+const result1 = 100/4 + "vw";
+const result2 = 25/divnumber + "vw";
+
+console.log(result1);
+console.log(result2);
+
+root.style.width = "100vw";
+root.style.height = "100vh";
+root.style.display = "flex";
+root.style.justifyContent = "center";
+root.style.alignItems = "center";
+
+bigdiv.style.width = result1;
+bigdiv.style.height = result1;
+bigdiv.style.backgroundColor = "rgb(255, 102,  102)";
+
+right.style.width = "35vw";
+right.style.height = result1;
+right.style.display = "flex";
+right.style.flexDirection = "column";
+right.style.justifyContent = "space-between";
+right.style.alignItems = "center";
+
+text.style.width = "30vw";
+text.style.height = "14vw";
+
+h1.style.width = "30vw";
+h1.style.height = "5vw";
+h1.style.color = "rgb(202, 74, 74)";
+h1.style.fontSize = "50px";
+h1.style.fontWeight = "lighter";
+h1.style.margin = "0";
+// 자바스크립트로 하게 되니 h1 태그에 마진값이 들어갔다.
+
+p.style.color = "rgb(202, 74, 74)";
+p.style.margin = "0";
+// 자바스크립트로 하게 되니 p 태그에 마진값이 들어갔다.
+
+section.style.width = "30vw";
+section.style.height = result2;
+section.style.display = "flex";
+section.style.justifyContent = "space-between";
+
+// smalldiv.style.width = result;
+// smalldiv.style.height = result;
+// smalldiv.style.backgroundColor = "rgb(225, 102, 102)";
+
+
+one.style.width = result2;
+one.style.height = result2;
+one.style.backgroundColor = "rgb(255, 102,  102)";
+
+two.style.width = result2;
+two.style.height = result2;
+two.style.backgroundColor = "rgb(255, 102,  102)";
+
+three.style.width = result2;
+three.style.height = result2;
+three.style.backgroundColor = "rgb(255, 102,  102)";
+
+</script>
+</html>

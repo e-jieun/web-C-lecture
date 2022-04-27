@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+</head>
+<body>
+  <div id="root">
+    <div id="one"></div>
+    <div id="box-a">
+      <div id="txt-box">
+        <h1>Lorem, ipsum.</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere repellendus ea vel, odit explicabo, voluptate earum quo, quae nesciunt excepturi sequi? Eveniet dolor quas eligendi possimus sequi corporis. Voluptas tempore voluptates voluptatem beatae dolorem dolores, consequuntur id minima quas omnis quibusdam ab excepturi nobis error nemo dolorum fugiat ratione? Doloremque ea assumenda minima rem, a molestias consequuntur. Mollitia, ad. Molestias a vero minus rem! Pariatur accusamus dolor excepturi aliquam aperiam quae dicta non saepe commodi ab? Beatae, repudiandae facere ex quidem atque veritatis ad iusto quam et ut iure quisquam? Repellendus vitae ex ab fugiat sequi dolores velit culpa nisi!</p>
+      </div>
+      <div id="box-b">
+        <div id="thum"></div>
+        <div id="thum"></div>
+        <div id="thum"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.body.style.margin = '0';document.body.style.padding = '0';
+
+    function size(i,w,h){
+      i.style.width = `${w}`;
+      i.style.height = `${h}`;
+    }
+    function flex(name){
+      name.style.display = 'flex';
+      name.style.justifyContent = 'space-between';
+      name.style.alignItems = 'center';
+    }
+
+    const root =  document.getElementById('root');
+    let color = 'rgb(255, 85, 85)';
+    const txtBox = document.getElementById('txt-box');
+    const boxB = document.getElementById('box-b');
+
+    for(let b = 0; b<root.children.length; b++){
+      size(root.children[`${b}`],'48%','90%');
+    }
+    for(let c = 0; c<boxB.children.length ; c++){
+      size(boxB.children[`${c}`],'30%','100%');
+      boxB.children[`${c}`].style.backgroundColor = color;
+    }
+    size(root,'100vw','100vh');
+    size(txtBox,'100%','50%');
+    size(boxB,'100%','30%');
+
+    flex(root);
+    flex(root.children[1]);
+    flex(boxB);
+
+    root.children[0].style.backgroundColor = color;
+    root.children[1].style.color = color;
+    root.children[1].style.flexDirection = 'column';
+
+    txtBox.children[0].style.fontSize = '5rem';
+    txtBox.children[0].style.lineHeight = '10rem';
+    txtBox.children[1].style.lineHeight = '2rem';
+  </script>
+</body>
+</html>

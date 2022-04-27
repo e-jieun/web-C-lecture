@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <main>
+      <div id="left"></div>
+      <div id="right">
+        <section>
+          <h1>Lorem title</h1>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores iusto obcaecati, beatae accusantium amet maiores aspernatur porro magni illum incidunt quis, impedit dolore doloremque voluptatibus et eius enim fuga adipisci?</p>
+        </section>
+        <section>
+          <div class="nemo"></div>
+          <div class="nemo"></div>
+          <div class="nemo"></div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+
+  <script>
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.boxSizing = "border-box";
+
+    let root = document.getElementById("root");
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+    console.dir(root);
+
+    let main = root.children[0];
+    main.style.display = "flex";
+    main.style.flexDirection = "row";
+    console.log(main);
+    console.dir(main);
+    
+    let WidthValue100 = 100;
+    let HeightValue100 = 100;
+
+    let WidthValue100_4 = `${WidthValue100/4}vw`; 
+    let HeightValue100_4 = `${HeightValue100/4}vw`; 
+
+
+    let left = document.getElementById("left");
+    left.style.width = WidthValue100_4;
+    left.style.height = HeightValue100_4;
+    left.style.backgroundColor = "salmon";
+    console.log(left);
+    console.dir(left);
+
+    let right = document.getElementById("right");
+    right.style.marginLeft = "1vw";
+    right.style.width = "27vw";
+    right.style.display = "flex";
+    right.style.flexDirection = "column";
+    right.style.justifyContent = "space-between";
+
+    let h1 = document.querySelector("h1");
+    console.log(h1);
+    h1.style.color = "salmon";
+    h1.style.fontSize = "3rem";
+    h1.style.margin = "0";
+
+    let p = document.querySelector("p");
+    p.style.color = "salmon";
+    p.style.fontSize = "0.7rem"
+    p.style.margin = "0";
+
+
+    let section2 = right.children[1];
+    section2.style.display = "flex";
+    section2.style.justifyContent = "space-between";
+    console.log(section2);
+    console.dir(section2);
+
+    // let nemo = document.querySelector(.nemo);
+    // let nemo = section2.children[0];
+    //자식 여러개를 불러오는 법을 모르겠다
+    //검색해도 못찾겠는데 하나씩 불러오는게 최선인가
+    //따로 알고리즘을 만들어서 해야하나
+
+    // check point 1
+
+    // 자식 여러개를 가져오는 방법이 강의한 방법보다 훨씬 종류가 많습니다!!
+    // getElementsByClassName()
+    // getElementsByTagName()
+    // querySeletorAll()
+    // 과 같은 녀석들이 질문을 통쾌하게 해결 해줄 것입니다.
+    // 리턴값즉, 가져오는 방식이 배열인것을 확인하세요!
+
+
+
+    let nemo1 = document.getElementsByClassName("nemo")[0];
+    nemo1.style.width = `${WidthValue100/4/3}vw`;
+    nemo1.style.height = `${HeightValue100/4/3}vw`;
+    nemo1.style.backgroundColor = "salmon";
+
+    let nemo2 = document.getElementsByClassName("nemo")[1];
+    nemo2.style.width = `${WidthValue100/4/3}vw`;
+    nemo2.style.height = `${HeightValue100/4/3}vw`;
+    nemo2.style.backgroundColor = "salmon";
+
+    let nemo3 = document.getElementsByClassName("nemo")[2];
+    nemo3.style.width = `${WidthValue100/4/3}vw`;
+    nemo3.style.height = `${HeightValue100/4/3}vw`;
+    nemo3.style.backgroundColor = "salmon";
+
+
+    </script>
+</body>
+</html>

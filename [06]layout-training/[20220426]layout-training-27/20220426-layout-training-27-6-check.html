@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  #root {
+    width: 80vw;
+    height: 50vh;
+    display: flex;
+  }
+
+  #root>div {
+    width: 35vw;
+    height: 70vh;
+    margin: 1vw;
+  }
+
+  #root>div:nth-child(1) {
+    background-color: pink;
+  }
+
+  #root>p {
+    font-size: small;
+    width: 20vw;
+    height: 10vh;
+  }
+
+  .box-1 {
+    width: 35vw;
+    height: 30vh;
+  }
+
+  .box {
+    width: 35vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+  }
+
+  .box>div {
+    width: 50px;
+    height: 50px;
+    background-color: pink;
+    border: 1px solid black;
+    margin: 10px;
+  }
+</style>
+
+<body>
+  <div id="root">
+    <div></div>
+
+
+
+    <div>
+      <h1>
+        Lorem tittle
+      </h1>
+
+      <p>
+
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta, eaque, sit culpa officiis magni quaerat
+        excepturi animi beatae ad, quam molestiae dolore similique suscipit provident perferendis! Architecto maiores
+        autem consectetur.
+
+      </p>
+      <div class="box-1">
+
+      </div>
+
+      <div class="box">
+
+        <div></div>
+        <div></div>
+        <div></div>
+
+      </div>
+    </div>
+  </div>
+  </div>
+  <script>
+    // let root = document.getElementById("root");
+    // root.style.width="80vw"
+    // root.style.width="50vh"
+    // root.style.display="flex"
+    // css를 java스크립트로 변경할려고했으나 적용이 안됬습니다.적용하는방법이 문제 인지 문법이 문제인지 알고싶습니다.
+
+
+    const root = document.getElementById("root");
+    const one = root.children[0];
+    const two = root.children[1];
+
+
+    console.log(root);
+    console.dir(root);
+    console.dir(root.children[1]);
+
+    let data = true;
+    two.addEventListener('click', function () {
+      one.style.trasition = "1s";
+
+
+      if (data === true) {
+
+        data = false;
+        console.dir(`${one}`);
+        // check point 1
+
+        // console.dir(one);
+        // 변수 one 은 문자열이 아니기 때문에 문자열 형식을 취하지 않습니다.
+        // 코드상으로는 two라는 요소를 클릭했을때 one의 스타일이 바뀌어야 하는 의도로 보이는데
+        // 아래의 스타일링이 적용되기전에 data 변수가 false로 바로 바뀌었기때문에 적용이 안되었습니다.
+        // 스타일을 미리 적용하고 안되는 것을 찾는것은 매우 어려운 일이니
+        // 한줄 한줄 적용되는지 검사하시면서 코딩 하시기 바랍니다.
+
+
+
+        one.style.width = "50px";
+        one.style.height = "50px";
+      } else {
+        data = true;
+        console.dir(`${one}`);
+        one.style.width = "35vw";
+        one.style.height = "70vh";
+      }
+
+
+    });
+  </script>
+</body>
+
+</html>

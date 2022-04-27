@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;}
+
+    .title {
+      font-size: 400%;
+      font-weight:lighter;
+      color: gray;
+
+      margin-top: 1vw;
+    }
+
+    .text-1 {
+      color: gray;
+      font-size: 80%;
+      text-align: justify;
+      margin-top: 1.5vw;
+      margin-bottom: 12vh;
+    }
+
+    #root { 
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div {
+      width: 55vw;
+      height: 25vw;
+      
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-gap:2.3vw;
+    }
+    
+    #root>div>div:nth-child(1){
+      width: 25vw;
+      height: 25vw;
+      background-color: gray;
+    }
+    
+    #root>div>div:nth-child(2){
+      width: 28vw;
+      height: 25vw;
+
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+    }
+
+    #root>div>div:nth-child(2)>div:nth-child(2){
+      width: 28vw;
+      height: 8.4vw;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      grid-gap:1vw;
+    }
+
+    #root>div>div:nth-child(2)>div:nth-child(2)>div {
+      width: 8.4vw;
+      height: 8.4vw;
+      background-color: gray;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div></div>
+      <div>
+        <div>
+          <div class="title">Lorem title</div>
+          <div class="text-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad accusantium officiis commodi, explicabo quam modi illo id, neque iusto hic ipsa cum recusandae adipisci error. Sint et esse doloribus, ipsum, animi cum sequi minima voluptate labore veritatis non assumenda alias voluptates! Quasi, nulla.</div>
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+</html>
