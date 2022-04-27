@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <div id="root"></div>
+ 
+  <script>
+    const body = document.body;
+    const circle = document.createElement("div");
+    circle.setAttribute("id", "circle");
+    body.insertBefore(circle, body.firstChild);
+
+
+    // circle style
+    circle.style.width = "20vw";
+    circle.style.height = "20vw";
+    circle.style.borderRadius = "50%";
+    circle.style.backgroundColor = "rgba(200,0,0,0.3)";
+    circle.style.position = "absolute";
+    circle.style.bottom = "20vh";
+    circle.style.right = "40vw";
+    circle.style.backdropFilter = "blur(15px)";
+
+    const root = document.getElementById("root");
+    const container = document.createElement("div");
+    container.setAttribute("id", "container");
+    root.appendChild(container);
+
+    // * body style
+    body.style.padding = "0";
+    body.style.margin = "0";
+
+    // * root style / display set
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.backgroundColor = "#333";
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+
+    container.style.display = "flex";
+    container.style.justifyContent = "center";
+    container.style.alignItems = "center";
+
+
+    
+    
+    
+    for(let i = 0 ; i <= 10; i++) {
+      const divElement = document.createElement("div");
+      divElement.textContent = i;
+      divElement.style.width = 50 + "px";
+      divElement.style.height = 700 + "px";
+      divElement.style.backgroundColor = "#c4c4c4";
+      divElement.style.margin = "10px";
+
+      container.appendChild(divElement);
+    }
+
+
+
+  </script>
+
+</body>
+</html>
