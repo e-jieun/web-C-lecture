@@ -77,6 +77,20 @@
     elemB.style.zIndex = 1;
 
   
+    // 이벤트 설치 ***********************************************************************************
+
+    // elemA 부분 이벤트
+    elemA.addEventListener("click", function() {
+      elemA.style.zIndex = 1;
+      elemB.style.zIndex = 0;
+    });
+
+    // elemB 부분 이벤트
+    elemB.addEventListener("click", function() {
+      elemB.style.zIndex = 1;
+      elemA.style.zIndex = 0;
+    });
+
 
 
 
