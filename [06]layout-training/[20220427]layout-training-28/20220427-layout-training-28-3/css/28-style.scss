@@ -1,0 +1,37 @@
+*{margin:0; padding:0;}
+
+@mixin flex ($justifyc, $aligni, $direction){
+  display: flex;
+  justify-content: $justifyc;
+  align-items: $aligni;
+  flex-direction: $direction;
+}
+
+#root {
+  @include flex(center, center, row);
+  width: 100vw; height: 100vh;
+
+  & > #box {
+    @include flex(space-between, center, row);
+    width: 700px; height: 700px;
+    position: relative;
+
+    & > div {
+      width: 50px; height: 100%;
+      background-color: #c4c4c4;
+    }
+
+    & > div:nth-child(1) {
+      width: 350px; height: 350px;
+      border-radius: 200px;
+      background-color: rgba(255, 102, 102, 0.5);
+      backdrop-filter: blur(5px);
+      // blur 30px을 하면 뒷배경이 아예 안보여서 5px정도만 해줌
+      position: absolute;
+      top: 40vh;
+      right: 0;
+    }
+  }
+
+
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>layout-training</title>
+</head>
+<body>
+  <div id="root">
+    <div id="cir"></div>
+    <section>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+  </div>
+
+  <script>
+    const root = document.getElementById('root');
+    const cirBox = root.children[0];
+    const divBox = root.children[1];
+
+    console.log(cirBox, divBox);
+
+    function size(a,w,h){
+      a.style.width = w;
+      a.style.height = h;
+    }
+
+    size(root,'100vw','100vh');
+    size(cirBox,'500px','500px');
+    size(divBox,'100%','100%');
+    for(let i of divBox.children){
+      size(i,'50px','700px');
+      i.style.backgroundColor = '#ccc';
+      i.style.margin = '0 10px';
+    }
+
+    root.style.position = 'relative';
+
+    cirBox.style.position = 'absolute';
+    cirBox.style.backgroundColor = 'rgba(255,85,85,0.5)';
+    cirBox.style.backdropFilter = 'blur(10px)';
+    cirBox.style.borderRadius = '50%';
+    cirBox.style.bottom = '0';
+    cirBox.style.right = '15%';
+
+    divBox.style.display = 'flex';
+    divBox.style.justifyContent = 'center';
+    divBox.style.alignItems = 'center';
+
+    divBox.addEventListener('click', event =>{
+      let div = document.createElement('div');
+
+      size(div,'50px','700px');
+      div.style.backgroundColor = '#ccc';
+      div.style.margin = '0 10px';
+      divBox.append(div);
+    })
+  </script>
+</body>
+</html>

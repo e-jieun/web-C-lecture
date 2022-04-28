@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .table{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    .stick{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .stick>div{
+      width: 50px;
+      height: 700px;
+      background-color: #ccc;
+      margin:10px;
+    }
+
+    .eclip{
+      width: 500px;
+      height: 500px;
+      background-color:rgba(247, 29, 29, 0.3);
+      /* opacity: 0.5; */
+      backdrop-filter: blur(10px);
+      border-radius: 50%;
+      position: absolute;
+      top:450px;
+      left:808px;
+    }
+  </style>
+</head>
+<body>
+  <div class="table">
+    <div class="stick">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div class="eclip"></div>  
+
+    <script>
+      const table = document.getElementsByClassName("table");
+      const stick = document.getElementsByClassName("stick");
+      const stickch = stick[0].children;
+      const arr = [0,1,2,3,4,5,6,7,8,9];
+      const starr = stickch + arr
+      console.dir(starr);
+
+      //전체 선택 해서 스타일링하는법을 모르겠다
+      //console.log(table);
+      //console.dir(table);
+     // console.log(stick);
+      //console.dir(stick);
+    // console.dir(stickarr);
+      table[0].style.width = "100vw";
+      table[0].style.height = "100vh";
+      table[0].style.display = "flex";
+      table[0].style.justifyContent = "center";
+      table[0].style.alignItems = "center";
+      table[0].style.flexDirection = "column";
+
+      stick[0].style.display = "flex"
+      stick[0].style.justifyContent = "center"
+      stick[0].style.alignItems = "center"
+
+      starr.style.width = "50px";
+      
+
+
+    </script>
+</body>
+</html>

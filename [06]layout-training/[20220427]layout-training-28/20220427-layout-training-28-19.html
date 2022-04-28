@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* *{
+      margin: 0;
+      padding: 0;
+    } */
+    /* #root{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    } */
+    /* #root>#circle{
+      width: 50vw;
+      height: 50vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      z-index: 2;
+      top: 60vh;
+      right: 5vw;
+    } */
+    /* #root>#circle>div{
+      /* width: 50vw; */
+      /* height: 50vw; */
+      /* background-color: rgba(255, 102, 102, 0.5); */
+      /* border-radius: 50%; */
+      /* rgba 값으로 해줘야 적용됨 */
+      /* backdrop-filter: blur(10px); */
+    /* } */
+    /* #root>#stick{
+      width: 90%;
+      height: 90%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    } */
+    /* #root>#stick>ul{
+      width: inherit;
+      height: inherit;
+      display: flex;
+      justify-content: space-between;
+      list-style-type: none;
+      column-gap: 2vw;
+    } */
+    /* #root>#stick>ul>li{
+      width: 50px;
+      height: 700px;
+      background-color: #c4c4c4;
+    } */
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="circle">
+      <div></div>
+    </div>
+    <div id="stick">
+      <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    document.body.style.margin = 0;
+    document.body.style.padding = 0;
+
+    // #root
+    const root = document.getElementById('root');
+    console.log(root);
+    // 변수 선언
+    let hun = 100;
+    // #root style
+    root.style.width = `${hun}vw`;
+    root.style.height = `${hun}vh`;
+    // #root 자식요소들을 가운데 정렬
+    root.style.display = 'flex';
+    root.style.alignItems = 'center';
+    root.style.justifyContent = 'center';
+
+    // #circle
+    const circle = document.getElementById('circle');
+    // #circle style
+    circle.style.width = `${hun/3}vh`;
+    circle.style.height = `${hun/3}vh`;
+    // 가운데 정렬
+    circle.style.display = 'flex';
+    circle.style.alignItems = 'center';
+    circle.style.justifyContent = 'center';
+    // 백드롭필터가 적용된 원으로 만들어 줄 부분
+    circle.style.backgroundColor = `rgba(225, 102, 102, 0.5)`;
+    circle.style.borderRadius = `50%`;
+    circle.style.backdropFilter = 'blur(10px)';
+    console.log(circle);
+    // 포지션 조절
+    circle.style.position = 'absolute';
+    circle.style.zIndex = '5vw';
+    circle.style.top = '60vh';
+    circle.style.right = '2vh';
+
+    // #stick
+    const stick = document.getElementById('stick');
+    console.log(stick);
+    // #stick style
+    stick.style.width = '90%';
+    stick.style.height = '90%';
+    // 가운데 정렬
+    stick.style.display = 'flex';
+    stick.style.alignItems = 'center';
+    stick.style.justifyContent = 'center';
+
+    // #stick의 자식요소 ul
+    const ul = document.getElementsByTagName('ul');
+    ul[0].style.width = `${hun}%`;
+    ul[0].style.height = `${hun}%`;
+    ul[0].style.display = 'flex';
+    ul[0].style.justifyContent = 'space-between';
+    ul[0].style.listStyleType = 'none';
+    ul[0].style.columnGap = '1vh';
+    console.log(ul[0]);
+
+    const li = document.getElementsByTagName('li');
+    console.log(li);
+    // li의 스타일을 반복해서 적용
+    for(let i = 0; i < li.length; i++){
+      li[i].style.width = '50px';
+      li[i].style.height = '700px';
+      li[i].style.backgroundColor = '#c4c4c4';
+      console.log(li[i]);
+      console.log(li);
+    }
+    
+
+  </script>
+</body>
+</html>

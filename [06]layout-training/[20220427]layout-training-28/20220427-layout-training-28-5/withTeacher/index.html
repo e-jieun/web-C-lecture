@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="click"> click</button>
+  <div id="root">
+    <div>회색 바</div>
+    
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    console.dir(root);
+    const grayBar = root.children[0];
+    console.dir(grayBar);
+    const clickBtn = document.getElementById("click")
+    // grayBar.innerHTML = "<section> hello </section>";
+    // console.log(i);
+
+    clickBtn.addEventListener("click", function(){
+      console.log("test");
+      let sectionString = "<section> hello </section>";
+      let value = 1;
+  
+      for (let i= 0; i < value; i++){
+        let makeSection = document.createElement("section");
+        makeSection.innerHTML = sectionString;
+        makeSection.style.width = "50px";
+        makeSection.style.backgroundColor = "gray";
+        makeSection.style.height = "700px";
+        root.appendChild(makeSection);
+      }
+    });
+    
+    console.dir(document);
+    
+    
+    
+    
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+#root > #box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 700px;
+  height: 700px;
+  position: relative;
+}
+#root > #box > div {
+  width: 50px;
+  height: 100%;
+  background-color: #c4c4c4;
+}
+#root > #box > div:nth-child(1) {
+  width: 350px;
+  height: 350px;
+  border-radius: 200px;
+  background-color: rgba(255, 102, 102, 0.5);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  position: absolute;
+  top: 40vh;
+  right: 0;
+}/*# sourceMappingURL=28-style.css.map */

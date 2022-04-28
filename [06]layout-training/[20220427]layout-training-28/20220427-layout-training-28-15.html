@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /*
+    *{margin: 0px; padding: 0px; box-sizing: border-box;}
+    
+    #root{
+      width: 100vw;
+      height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+    }
+
+    #section{
+      width: 50px;
+      height: 700px;
+      background-color: #c4c4c4;
+      margin-right: 2vw;
+
+      z-index: 1;
+    }
+
+    #circle{
+      width: 30vw;
+      height: 30vw;
+      border-radius: 60%;
+      background-color: #ff6666;
+      opacity: 0.5;
+      backdrop-filter: blur(30px);
+
+      position: absolute;
+      bottom: 20vw;
+      z-index: 2;
+
+    }*/
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+
+    <div id="circle"></div>
+  </div>
+
+  <script>
+    let vw = "vw";
+    let vh = "vh";
+    let px = "px";
+
+    
+
+    document.body.style.margin = 0;
+    document.body.style.padding = 0;
+    document.body.style.boxSizing = "border-box";
+
+    const root = document.getElementById('root'); 
+    console.log('root');
+    
+    
+    root.style.width =  100 + "vw";
+    root.style.height = 100 + "vh";
+    root.style.zIndex =1;
+    root.style.display = "flex";
+    root.style.justifyContent ="center";
+    root.style.alignItems = "center";
+
+
+    const Section  = document.getElementById('root').children[0];
+    console.log(Section);
+
+    Section.style.width = 50 + px;
+    Section.style.height = 700 + px;
+    Section.style.backgroundColor = "#c4c4c4";
+    Section.style.marginRight = 2 + "vw";
+
+    
+
+
+
+    const Sectionn  = document.getElementById('root').children[1];
+    console.log(Section);
+
+    Sectionn.style.width = 50 + px;
+    Sectionn.style.height = 700 + px;
+    Sectionn.style.backgroundColor = "#c4c4c4";
+    Sectionn.style.marginRight = 2 + "vw";
+
+
+    const Three  = document.getElementById('root').children[2];
+    console.log(Section);
+
+    Three.style.width = 50 + px;
+    Three.style.height = 700 + px;
+    Three.style.backgroundColor = "#c4c4c4";
+    Three.style.marginRight = 2 + "vw";
+
+
+    const Four  = document.getElementById('root').children[3];
+    console.log(Section);
+
+    Four.style.width = 50 + px;
+    Four.style.height = 700 + px;
+    Four.style.backgroundColor = "#c4c4c4";
+    Four.style.marginRight = 2 + "vw";
+
+
+    const Five  = document.getElementById('root').children[4];
+    console.log(Section);
+
+    Five.style.width = 50 + px;
+    Five.style.height = 700 + px;
+    Five.style.backgroundColor = "#c4c4c4";
+    Five.style.marginRight = 2 + "vw";
+
+    
+    const Six  = document.getElementById('root').children[5];
+    console.log(Section);
+
+    Six.style.width = 50 + px;
+    Six.style.height = 700 + px;
+    Six.style.backgroundColor = "#c4c4c4";
+    Six.style.marginRight = 2 + "vw";
+  
+    
+    const Seven  = document.getElementById('root').children[6];
+    console.log(Section);
+
+    Seven.style.width = 50 + px;
+    Seven.style.height = 700 + px;
+    Seven.style.backgroundColor = "#c4c4c4";
+    Seven.style.marginRight = 2 + "vw";
+
+    
+    const Eigh  = document.getElementById('root').children[7];
+    console.log(Section);
+
+    Eigh.style.width = 50 + px;
+    Eigh.style.height = 700 + px;
+    Eigh.style.backgroundColor = "#c4c4c4";
+    Eigh.style.marginRight = 2 + "vw";
+
+    
+    const Ni  = document.getElementById('root').children[8];
+    console.log(Section);
+
+    Ni.style.width = 50 + px;
+    Ni.style.height = 700 + px;
+    Ni.style.backgroundColor = "#c4c4c4";
+    Ni.style.marginRight = 2 + "vw";
+
+    
+    const Ten  = document.getElementById('root').children[9];
+    console.log(Section);
+
+    Ten.style.width = 50 + px;
+    Ten.style.height = 700 + px;
+    Ten.style.backgroundColor = "#c4c4c4";
+    Ten.style.marginRight = 2 + "vw";
+
+    const Cir = document.getElementById('root').children[10];
+    Cir.style.width = 300 + 'px';
+    Cir.style.height = 300 + "px";
+    Cir.style.backgroundColor= "#ff6666"; 
+    Cir.style.borderRadius = 300 + "px";
+    Cir.style.opacity = 0.5;
+    Cir.style.zIndex = 2;
+    //Cir.style.backdrop-filter = blur (30 + "px");
+    //backdrop-filter가 안먹히는 이유,,
+    
+    
+    
+
+    Cir.style.position = "absolute";
+    Cir.style.top = 40 + "vh"
+
+    
+
+   </script>
+
+</body>
+</html>

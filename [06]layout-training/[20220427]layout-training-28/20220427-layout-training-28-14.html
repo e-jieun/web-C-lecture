@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>28</title>
+  <style>
+    * {margin: 0; padding: 0;}
+  </style>
+</head>
+<body>
+  
+  <div id="base">
+    <div class="root1">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div class="root2">
+      <div class="circle"></div>
+    </div>
+  </div>
+
+
+<script>
+  
+  const base = document.getElementById('base');
+  console.dir(base);
+
+  base.style.width = '100vw';
+  base.style.height = '100vh';
+  base.style.display = 'flex';
+  base.style.justifyContent = 'center';
+  base.style.alignItems = 'center';
+
+  //
+  let elementWidth = '50';
+  let elementWidthMult = `${elementWidth*14}`
+  //
+  const rootOne = document.getElementsByClassName('root1');
+  console.dir(rootOne);
+
+  rootOne[0].style.width = `${elementWidthMult}px`;
+  rootOne[0].style.height = '700px';
+  // rootOne[0].style.border ='1px solid red';
+  rootOne[0].style.display = 'flex';
+  rootOne[0].style.justifyContent = 'space-between';
+  rootOne[0].style.position = 'absolute';
+  rootOne[0].style.zIndex = '1';
+
+  //
+
+  for(let element = 0; element < rootOne[0].children.length; element++) {
+    rootOne[0].children[element].style.width = `${elementWidth}px`
+    rootOne[0].children[element].style.height = '700px';
+    rootOne[0].children[element].style.backgroundColor = '#c5c5c5';
+
+    if(element > 5) {
+      rootOne[0].children[element].style.backgroundColor = "#848484";
+    }
+  }
+
+  //
+  const rootTwo = document.getElementsByClassName('root2');
+  console.dir(rootTwo);
+
+  rootTwo[0].style.width = `${elementWidthMult}px`;
+  rootTwo[0].style.height = '700px';
+  // rootTwo[0].style.border ='1px solid blue';
+  rootTwo[0].style.display = 'flex';
+  rootTwo[0].style.position = 'relative';
+  rootTwo[0].style.zIndex = '2';
+  
+  //
+  let circleWidth = '460';
+  //
+
+  const circle = document.getElementsByClassName('circle');
+  console.dir(circle);
+
+  circle[0].style.width = `${circleWidth}px`;
+  circle[0].style.height = `${circleWidth}px`;
+  circle[0].style.backgroundColor = 'rgba(255, 102, 102, 0.5)';
+  circle[0].style.backdropFilter = 'blur(10px)';
+  circle[0].style.borderRadius = '300px';
+  circle[0].style.position = 'absolute';
+  circle[0].style.bottom = '-100px';
+  circle[0].style.right = '0px';
+
+</script>
+
+</body>
+</html>
