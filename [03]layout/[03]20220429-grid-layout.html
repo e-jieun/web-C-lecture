@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+
+    *{margin:0;padding:0; box-sizing: border-box;}
+
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #f2f2f2;
+    }
+
+    #root>div { 
+      width:100vw;
+      height:80vh;
+      border: 1px solid #333;
+
+      display:grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      /* 
+      fr 단위는 frame(틀)의 약자로 3개를 연달아 사용한 것은 3개의 프레임으로 나누겠다는 속성이며 
+      
+      정해진 틀이 필요한 경우에는 flex 디스플레이 속성보다 압도적으로 편리하다.
+      flex와 동일하게 container, item 요소에 각각 사용하는 속성이 나누어져 있으므로
+      속성명을 활용하는 것을 권장
+      
+      */
+
+
+    }
+
+    #root>div>div { 
+      border: 1px solid red;
+      
+      display:flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    
+    /* media */
+    /* 
+    
+    3개의 열로 셋팅하는 것을 타블렛, 스마트폰 등등 각각의 뷰포트 접근에서
+    두개, 한개 의 열로 줄이겠다는 마크업을 진행한 것 참조
+    
+    
+    
+    */
+
+
+    @media screen and (max-width:800px) {
+      #root>div {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media screen and (max-width:500px) {
+      #root>div {
+        grid-template-columns: 1fr;
+      }
+
+
+    }
+
+
+  </style>
+
+</head>
+<body>
+  <div id="root">
+    <div id="container">
+      <div class="items">1</div>
+      <div class="items">2</div>
+      <div class="items">3</div>
+      <div class="items">4</div>
+      <div class="items">5</div>
+      <div class="items">6</div>
+    </div>
+  </div>
+
+</body>
+</html>
