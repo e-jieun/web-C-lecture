@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="wrapper">
+      <div id="element"></div>
+      <div id="element"></div>
+      <div id="element"></div>
+      <div id="element"></div>
+      <div id="element"></div>
+      <div id="element"></div>
+      <div id="element"></div>
+      <div id="element"></div>
+      <div id="element"></div>
+      <div id="element"></div>
+    </div>
+    <div id="circle"></div>
+  </div>
+
+  <script>
+    const root = document.getElementById ("root");
+    root.style.width = "100vw";
+    root.style.height ="100vh";
+    root.style.display="flex";
+    root.style.justifyContent="center";
+    root.style.alignItems="center";
+    console.dir(root);
+
+    const wrapper = document.getElementById("wrapper");
+    wrapper.style.width="40vw";
+    wrapper.style.height="70vh";
+    wrapper.style.justifyContent="space-around";
+    wrapper.style.display="flex";
+    wrapper.style.flexDirection="row";
+    console.dir(wrapper);
+
+    const element = document.getElementById("element");
+    element.style.width = "50px";
+    element.style.height = "700px";
+    element.style.backgroundColor ="#c4c4c4";
+    console.dir(element);
+
+    // for(var i=0; i<10; i++){
+    // }
+
+    for(let element=0; element<10; element++){
+    console.log(element); 
+    element.style.width = "50px";
+    element.style.height = "700px";
+    element.style.backgroundColor="rgb(196, 196, 196)";
+    }
+     
+    
+
+
+
+
+  </script>
+  
+</body>
+</html>

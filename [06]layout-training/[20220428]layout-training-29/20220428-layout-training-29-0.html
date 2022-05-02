@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <!-- body의 메인 요소가 될 <div> 태그 정적생성 -->
+  <div id="root"></div>
+
+  <script>
+
+    // id를 통한 문서의 요소 식별 -> 상수 대입
+    const root = document.getElementById("root");
+  
+    // body reset
+    document.body.style.padding = "0";
+    document.body.style.margin = "0";
+    document.body.style.boxSizing = "border-box";
+
+    // <div #root> styling
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.backgroundColor = "#333";
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+
+    // <div #root> 자식 div 동적 생성
+    const containerElem = document.createElement("div");
+    // 자식 div id attribute 동적 생성
+    containerElem.setAttribute('id', "container");
+    // setAttribute() DOM API method를 사용하고자 한다면 공식문서를 확인하여
+    // 인자(매개변수, parameter)의 구성과 인수(argument) 타입 규칙, 반환값(return)이 무엇인지 파악할 것
+
+    containerElem.style.width = "50vw";
+    containerElem.style.height = "50vh";
+    containerElem.style.border = "1px solid #fff";
+    containerElem.style.position = "relative";
+    containerElem.style.display = "flex";
+    containerElem.style.justifyContent = "center";
+    containerElem.style.alignItems = "center";
+
+
+    root.appendChild(containerElem);
+    // 식별한 root이라는 요소에 자식으로 containerElem 요소 동적 추가
+
+    const elemA = document.createElement("div");
+    elemA.setAttribute("id", "elem-A");
+    elemA.style.backgroundColor = "salmon";
+    
+    const elemB = document.createElement("div");
+    elemB.setAttribute("id", "elem-B");
+    elemB.style.backgroundColor = "darkcyan";
+    
+    containerElem.appendChild(elemA);
+    containerElem.appendChild(elemB);
+
+      // ElemA , ElemB 일괄 사이즈 스타일링
+
+    for(let i = 0; i < containerElem.children.length; i++) {
+      containerElem.children[i].style.width = "20vw";
+      containerElem.children[i].style.height = "20vw";
+      containerElem.children[i].style.position = "relative";
+    }
+
+    elemA.style.left = "20px"; 
+    elemA.style.top = "-20px"; 
+    elemA.style.zIndex = 0;
+
+
+    elemB.style.left = "-20px"; 
+    elemB.style.top = "20px"; 
+    elemB.style.zIndex = 1;
+
+  
+    // 이벤트 설치 ***********************************************************************************
+
+    // elemA 부분 이벤트
+    elemA.addEventListener("click", function() {
+      elemA.style.zIndex = 1;
+      elemB.style.zIndex = 0;
+    });
+
+    // elemB 부분 이벤트
+    elemB.addEventListener("click", function() {
+      elemB.style.zIndex = 1;
+      elemA.style.zIndex = 0;
+    });
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

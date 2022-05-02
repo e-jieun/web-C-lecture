@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="root">
+		<div class="con">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<div class="circle"></div>
+	</div>
+
+	<script>
+		document.body.style.margin=`0`;
+		document.body.style.padding=`0`;
+		const root =document.getElementById("root");
+		console.log(root);
+		console.dir(root);
+
+		root.style.width=`100vw`;
+		root.style.height=`100vh`;
+		root.style.maxWidth=`100%`;
+		root.style.display=`flex`;
+		root.style.justifyContent=`center`;
+		root.style.alignItems=`center`;
+
+		const con = document.getElementsByClassName("con");
+		con[0].style.width=`50vw`;
+		con[0].style.height=`50vh`;
+		con[0].style.display=`flex`;
+		con[0].style.justifyContent=`space-between`;
+		con[0].style.alignItems=`center`;
+		console.dir(con[0]);
+
+
+
+
+		const cir =document.getElementsByClassName("circle");
+		console.log(cir[0]);
+		console.dir(cir[0]);
+		cir[0].style.width=`20vw`;
+		cir[0].style.height=`20vw`;
+		cir[0].style.borderRadius=`50%`;
+		cir[0].style.backgroundColor=`rgba(255, 17, 0, 0.2)`;
+		cir[0].style.backdropFilter=`blur(10px)`;
+		cir[0].style.position=`absolute`;
+		cir[0].style.top=`50vh`;
+		cir[0].style.right='25vw';
+		
+
+		const target = document.getElementsByClassName('con')[0].children;
+		console.log(target);
+		console.dir(target);
+
+		//class con의 모든 자식을 제어하기 위해 자식모두를 하나의 상수로 선언해버린다.
+
+		//for문을 돌릴껀데 i는 0이야.
+		// target의 길이(항목의 개수)가 1보다 크면 i를 증가시켜줘
+		// i가 length보다 커지는 순간 i가 증가하는 함수는 작동되지 않겠지.
+		// 그러면 다음과 같은 값을 지정시켜줘!
+
+		for(let i =0; 1<target.length; i++){
+			target[i].style.width=`50px`;
+			target[i].style.height=`700px`;
+			target[i].style.backgroundColor=`lightgray`;
+			// 아닐리가 없지 else는 안 쓴 다
+		}
+
+
+
+	</script>
+</body>
+</html>

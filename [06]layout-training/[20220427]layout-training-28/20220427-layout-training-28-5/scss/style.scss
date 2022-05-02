@@ -1,0 +1,44 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+#container{
+  width:100vw;
+  height:100vh;
+  background-color: bisque;
+  // position의 기준을 relative나 absolute가 아닌 형제로 둘수도 있을까?
+  & > div:nth-child(2){
+    width:400px;
+    height:400px;
+    background-color: rbga(255,102,102,0.5);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    // opacity: 0.5;
+// backdrop-filter 가 opacity로 투명도를 적용했을때는 안되는데 마우스로 투명도를 조절하면 됨 왤까
+// 일단 해결하기 위해서 #ff6666의 rgb값을 구하기로함
+    position: relative;
+    left:50%;
+    top:-20%;
+  
+  }
+}
+
+#root {
+  position: relative;
+  left:25%;
+  top:10%;
+
+  // border: 1px solid black;
+  width: fit-content;
+  height: 700px;
+  display: flex;
+
+  & > div{
+    width:50px;
+    height:700px;
+    background-color: #ccc;
+    margin:20px;
+  }
+}

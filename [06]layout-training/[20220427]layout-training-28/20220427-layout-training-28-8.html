@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <div id="circle"></div>
+</body>
+<script>
+  const root = document.getElementById('root');
+  const container = root.children[0];
+  const stick = container.children;
+  const circle = document.getElementById('circle');
+  
+  const hundred = 100;
+
+  console.log(stick);
+
+
+  document.body.style.margin = "0";
+  document.body.style.padding = "0";
+
+
+  root.style.width = `${hundred}vw`;
+  root.style.height = `${hundred}vh`;
+  root.style.display = "flex";
+  root.style.justifyContent = "center";
+  root.style.alignItems = "center";
+
+  container.style.width = `${8*hundred}px`;
+  container.style.height = `${7*hundred}px`;
+  container.style.display = "flex";
+  container.style.justifyContent = "space-evenly";
+  container.style.alignItems = "center";
+
+
+  for(let index = 0; index < stick.length; index++) {
+    stick[index].style.width = `${hundred/2}px`;
+    stick[index].style.height = `${7*hundred}px`;
+    stick[index].style.backgroundColor = "#c4c4c4";
+  } 
+
+  circle.style.width = `${4.8*hundred}px`;
+  circle.style.height = `${4.8*hundred}px`;
+  circle.style.borderRadius = `${hundred/2}%`;
+  circle.style.backgroundColor = "rgba(255, 102, 102, 0.5)";
+  circle.style.backdropFilter = "blur(10px)";
+
+  circle.style.position = "absolute";
+  circle.style.top = "28vw";
+  circle.style.left = "44vw";
+  
+
+  console.dir(circle);
+
+</script>
+</html>

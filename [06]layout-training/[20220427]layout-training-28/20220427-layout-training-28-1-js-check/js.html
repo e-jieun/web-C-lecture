@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root">
+    <main>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </main>
+    <section></section>
+  </div>
+
+  <script>
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+    document.body.style.boxSizing = "border-box";
+
+    const root = document.getElementById("root");
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+
+    const main = document.querySelector("main");
+    console.log(main);
+    console.dir(main);
+    main.style.width = "700px";
+    main.style.height = "700px"
+    main.style.display = "flex";
+    main.style.justifyContent = "space-between";
+
+    let number = 0;
+
+
+    // check point 1
+
+    // 들여쓰기를 꼼꼼히 체크해서 진행하는 버릇을 들일것 -> 고장은 안나지만 유지보수 문제가 심각해짐
+  
+
+    for (let number = 0; number < 10; number++) {
+      //우선 넘버를 0으로 지정, 넘버가 10보다 작다면, 넘버값을 하나씩 늘린다. 반복..
+      let rectangle = main.children[number];
+      //그렇게 늘어나고 있는 넘버를 자식 순서값에 지정
+      //0 1 2 3 4 5 6 7 8 9 까지 드간다
+      rectangle.style.width = "50px";
+      rectangle.style.height = "700px"
+      rectangle.style.backgroundColor = "#ccc";
+      console.log(rectangle);
+    }
+    //for문을 통해서 자식전부 불러올 수 있다
+    //다른 방법이 있을수도있다
+
+    const circle = document.querySelector("section");
+    circle.style.width = "500px";
+    circle.style.height = "500px";
+    circle.style.backgroundColor = "rgba(255, 102, 102, 0.5)";
+    circle.style.position = "absolute";
+    circle.style.borderRadius = "50%";
+    circle.style.left = "810px";
+    circle.style.top = "400px";
+    circle.style.backdropFilter = "blur(2px)"
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    document.body.style.padding = 0;
+    document.body.style.margin = 0;
+    const root = document.getElementById("root");
+    let sectionArr = ["피카츄", "라이츄", "파이리", "꼬부기"];
+    let sectionColor = ["salmon", "darkgray", "darkblue", "darkcyan"];
+    console.dir(window);
+    const viewWidth = window.innerWidth;
+    const viewHeight = window.innerHeight;
+    console.log(viewWidth);
+    console.log(viewHeight);
+    root.style.width = viewWidth + "px";
+    root.style.height = viewHeight + "px";
+    root.style.backgroundColor = "#c4c4c4";
+    root.addEventListener("click", function () {
+      for (let i = 0; i < sectionArr.length; i++) {
+        let sectionElement = document.createElement("section");
+        sectionElement.textContent = sectionArr[i];
+        sectionElement.style.width = viewWidth + "px";
+        sectionElement.style.height = (viewHeight / sectionArr.length) + "px";
+        sectionElement.style.backgroundColor = sectionColor[i];
+        root.appendChild(sectionElement);
+      }
+    });
+  </script>
+
+</body>
+
+</html>

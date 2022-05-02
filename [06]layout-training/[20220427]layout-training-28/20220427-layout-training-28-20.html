@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mark-28</title>
+    <style>
+ 
+      #circle {
+        right:40px;
+        bottom:100px;
+        backdrop-filter:blur(20px);
+        background-color: #ff66666b;
+      }
+    </style>
+</head>
+<body>
+  <div id="container">
+    <div id="box1"></div>
+    <div id="box2"></div>
+    <div id="box3"></div>
+    <div id="box4"></div>
+    <div id="box5"></div>
+    <div id="box6"></div>
+    <div id="box7"></div>
+    <div id="box8"></div>
+    <div id="box9"></div>
+    <div id="box10"></div>
+    <div id="circle"></div>
+  </div>
+
+  <script>
+    document.body.style.margin = "0";
+    document.body.style.padding = "0";
+
+    const container = document.getElementById ("container");
+    const box1 = document.getElementById ("box1")
+    const box2 = document.getElementById ("box2")
+    const box3 = document.getElementById ("box3")
+    const box4 = document.getElementById ("box4")
+    const box5 = document.getElementById ("box5")
+    const box6 = document.getElementById ("box6")
+    const box7 = document.getElementById ("box7")
+    const box8 = document.getElementById ("box8")
+    const box9 = document.getElementById ("box9")
+    const box10 = document.getElementById ("box10")
+    const circle = document.getElementById ("circle");
+
+    let sizeList = [50, 700] ;
+    let colorList = ["ff6666"];
+
+    container.style.width = "100vw";
+    container.style.height = "100vh";
+    // container.style.backgroundColor = "gray";
+    container.style.display = "flex";
+    container.style.alignItems = "center";
+    container.style.justifyContent = "space-evenly";
+
+    box1.style.width = `${sizeList[0]}px`;
+    box1.style.height = `${sizeList[1]}px`;
+    box1.style.backgroundColor = "red";
+
+    box2.style.width = `${sizeList[0]}px`;
+    box2.style.height = `${sizeList[1]}px`;
+    box2.style.backgroundColor = "orange";
+
+    box3.style.width = `${sizeList[0]}px`;
+    box3.style.height = `${sizeList[1]}px`;
+    box3.style.backgroundColor = "yellow";
+
+    box4.style.width = `${sizeList[0]}px`;
+    box4.style.height = `${sizeList[1]}px`;
+    box4.style.backgroundColor = "green";
+
+    box5.style.width = `${sizeList[0]}px`;
+    box5.style.height = `${sizeList[1]}px`;
+    box5.style.backgroundColor = "blue";
+
+    box6.style.width = `${sizeList[0]}px`;
+    box6.style.height = `${sizeList[1]}px`;
+    box6.style.backgroundColor = "navy";
+
+    box7.style.width = `${sizeList[0]}px`;
+    box7.style.height = `${sizeList[1]}px`;
+    box7.style.backgroundColor = "purple";
+
+    box8.style.width = `${sizeList[0]}px`;
+    box8.style.height = `${sizeList[1]}px`;
+    box8.style.backgroundColor = "pink";
+
+    box9.style.width = `${sizeList[0]}px`;
+    box9.style.height = `${sizeList[1]}px`;
+    box9.style.backgroundColor = "crimson";
+
+    box10.style.width = `${sizeList[0]}px`;
+    box10.style.height = `${sizeList[1]}px`;
+    box10.style.backgroundColor = "deeppink";
+
+    circle.style.width = "400px";
+    circle.style.height = "400px";
+    // circle.style.backgroundColor = "#ff6666";
+    circle.style.borderRadius = "50%";
+    circle.style.position = "absolute"; 
+    circle.style.opacity = "0.8"; 
+
+    
+  </script>
+  
+  
+  
+  
+  
+</body>
+</html>

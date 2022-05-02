@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* #root{
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #container{
+      width: 600px;
+      height: 700px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+    }
+
+    #container>div{
+      width: 50px;
+      height: 700px;
+      background-color: rgb(196, 196, 196);
+    }
+
+    #circle{
+      width: 350px;
+      height: 350px;
+      background-color: rgba(255, 102, 102, 0.5);
+      border-radius: 50%;
+      backdrop-filter: blur(10px);
+      position: relative;
+      bottom: 200px;
+      left: 250px;
+    } */
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="container">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <div id="circle"></div>
+  </div>
+
+  <script>
+    const root = document.getElementById('root');
+    console.log(root);
+    console.dir(root);
+
+    let rootSize = 100;
+    root.style.width = `${rootSize}vw`;
+    root.style.height = `${rootSize}vw`;
+
+    const container = root.children[0];
+    const circle = root.children[1];
+    
+    let containerSize = 600;
+    container.style.width = `${containerSize}px`;
+    container.style.height = `${containerSize+100}px`;
+    console.log(container);
+    console.dir(container);
+    
+    container.style.display = `flex`;
+    container.style.justifyContent = `space-between`;
+
+
+    // const stick = document.querySelector('#container>div');
+    // // 자식을 한번에 스타일링 할 수 있을까 싶어 querySelector로 container자식 전체를 가져와봄 -> 안됨
+    
+    // console.log(stick);
+    
+    console.log(container.children);
+
+    for(let i = 0; i < container.children.length; i++) {
+      console.log(container.children[i])
+      container.children[i].style.width = "50px";
+      container.children[i].style.height = "700px";
+      container.children[i].style.backgroundColor = "rgb(196, 196, 196)";
+    }
+
+    
+    let circleSize = 350;
+    circle.style.width = `${circleSize}px`;
+    circle.style.height = `${circleSize}px`;
+    console.log(circle);
+    console.dir(circle);
+
+    circle.style.backgroundColor = `rgba(255, 102, 102, 0.5)`;
+    circle.style.borderRadius = `50%`;
+    circle.style.position = `relative`;
+    circle.style.bottom = `${rootSize*2}px`;
+    circle.style.left = `250px`;
+    circle.style.backdropFilter = ` blur(10px)`;
+
+  </script>
+</body>
+</html>

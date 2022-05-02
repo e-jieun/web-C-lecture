@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    const root = document.getElementById("root");
+    // 
+    root.style.fontSize = "5rem";
+    // 
+    let isStatus = true;
+    // 
+    let current = 0;
+    // 
+    root.textContent = current;
+    // 
+    root.addEventListener('click', function () {
+      // 
+      if (isStatus === true) {
+        // 
+        current++;
+        // 
+        if (current >= 10) {
+          // 
+          isStatus = false;
+          // 
+        }
+        // 
+        root.textContent = current;
+        // 
+      } else {
+        // 
+        current--;
+        // 
+        if (current <= 0) {
+          // 
+          isStatus = true;
+          // 
+        }
+        // 
+        root.textContent = current;
+        // 
+      }
+    })
+  </script>
+
+</body>
+
+</html>

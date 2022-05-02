@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root">
+    <div id="box">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+  <script>
+
+    const root = document.getElementById('root');
+    const box = document.getElementById('box');
+    // const squere = box.children;
+    // console.dir(squere);
+    // ==> box.children을 모두 불러와 set해주려고 했는데, for문을 사용하는 것이 더 편할 것 같아서 주석처리
+
+    document.body.setAttribute('style', 'margin:0; padding:0');
+    // 문서 여백 없애기
+    root.setAttribute('style', 'display:flex; justify-content:center; align-items:center; width:100vw; height:100vh;');
+    // 문서 전체 크기 지정해주기
+
+    box.setAttribute('style', 'width:700px; height:700px; display:flex; justify-content:space-between; position:relative;');
+    // 직사각형들을 정렬하기 위한 가상의 박스. 전체 크기와 display만 지정해줬다.
+    
+
+    // 아래는 반복되는 작업(10개의 똑같은 상자 만들기)를 위한 for
+    for(boxI = 0; boxI < box.children.length; boxI++){
+    // boxI라는 변수를 지정해서 0을 대입한다. boxI가 box.children의 length보다 작을때까지 아래의 작업을 반복한다.
+
+      box.children[boxI].setAttribute('style', 'width:50px; height:700px; background-color:#c4c4c4;');
+      // box.children[boxI]에 attribute를 set한다.
+      // console.log([boxI]+'스타일링 완료');
+
+      if(boxI === 0){
+      // 만약 boxI가 0이라면 (===box의 첫번째 자식이라면) 아래의 작업을 해준다.
+        box.children[boxI].style.cssText = 
+        "width: 400px; height: 400px; border-radius: 250px; background-color: rgba(255, 102, 102, 0.5); backdrop-filter: blur(5px); position: absolute; top: 400px; right: 0;";
+        // setAttribute와 사용법이 비슷해보이는 style.cssText가 있어서 이 방법으로도 사용해봤다. setAttribute와 마찬가지로 변수로 선언해둔 것들은 사용할 수 없다.
+  
+        // console.log([boxI]+'이것만 동그라미로');
+      }
+
+    };
+
+  </script>
+
+
+</body>
+</html>

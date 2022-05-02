@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="./scss/style.css"> -->
+</head>
+<body>
+  <div id="container">
+
+    <div id="root">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div></div>
+    
+  </div>
+  <script>
+    const circle = document.querySelector("#container > div:nth-child(2)");
+    // #container>div:nth-child(2)를 어떻게 불러와야 할까?
+    // string으로 주면 됨
+    const container = document.getElementById("container");
+    console.log(container);
+    const root = document.getElementById("root")
+    console.dir(root);
+    // const div = document.querySelector(" #root > div " )
+    // 한번에 많은 div을 하나의 변수롤 지정하는 방법은 없나?
+    // 혹은 배열 전체를 선택하는 방법
+    // for 문을 활용해 보기로함
+    container.style.width = "100vw";
+    container.style.height = "100vh";
+
+    root.style.width = "fitContent";
+    root.style.height = "700px";
+    root.style.display = "flex";
+    root.style.position = "absolute";
+    root.style.left = "25%";
+    root.style.top = "10%"
+
+
+
+    // root.style.display = "flex";
+    // 설계 
+    // 1. for 문으로 배열값을 반복해서 출력
+    // 2. 한번만 반복하게 지정
+    // 3. 출력되는 결과를 변수 지정 
+    // 4. 지정한 변수에 효과 넣기
+    for (let index=0; index<10; index++){
+
+    
+      // console.log(index);
+      // const result = index;
+      console.log(root.children[index]); // 정의 되지 않았다고 뜸 -> 이방법이 아닌가보다
+      // 배열[] 안에 변수를 넣을 수 있지 않나?
+      // root []가 아니라 root.children[] 이였음
+      let div = root.children[index];
+      div.style.width = 50 + "px";
+      div.style.height = 700 + "px";
+      div.style.margin = 20 + "px";
+      div.style.backgroundColor = "rgb(205,205,205)";
+      // console.dir(container.children[0])
+    }
+
+    
+        console.log(circle);
+        console.dir(circle);
+        circle.style.width = "400px";
+        circle.style.height = "400px";
+        circle.style.borderRadius = "50%";
+        circle.style.backgroundColor = "rgba(255,102,102,0.5)";
+        circle.style.position = "absolute";
+        circle.style.zIndex = 2;
+        circle.style.backdropFilter = "blur(5px)";
+        circle.style.left = "50%";
+        circle.style.top = "40%";
+
+
+        // position 값이 너무 지저분한데 좀더 나은 방법이 없을까요?
+
+    
+
+    // css에는 안되는데 js로 하니까 적용됨 -> 왤까?
+    // 콘솔에 backgroundColor를 찍어서 rgba값을 찾음
+
+
+
+
+
+    //  강사님이 소개한 방식과 내 방식의 차이
+    // 내 방식은 html에서 div을 가져오는 거고 강사님이 소개한 방식은 요소를 js로 직접 만든것
+    
+  </script>
+</body>
+</html>
