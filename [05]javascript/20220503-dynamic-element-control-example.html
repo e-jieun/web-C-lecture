@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <!-- * 연습용 root element를 마크업했다. -->
+
+
+  <button>click</button>
+  <!-- * 트리거용 버튼을 마크업했다. -->
+
+
+
+  <script>
+    const root = document.getElementById("root");
+    // * root은 id로 접근하여 식별했다.
+    const btn = document.querySelector("button");
+    // * btn은 selector방식으로 접근하여 식별 했다.
+
+    
+    root.style.width = "100px";
+    root.style.height = "100px";
+    root.style.backgroundColor = "#000";
+    // 간단한 root 스타일링
+
+
+
+    root.addEventListener("click", function () {
+      // root을 클릭했을때의 이벤트를 아래의 실행 영역에 작성했다.
+      const div = document.createElement("div");
+      // 윗 행의 div 태그는 이벤트가 일어났을때의 그 순간에만 '즉석으로' 요소가 만들어진다.
+      root.appendChild(div);
+      // root의 자식요소로 즉석으로 만들어진 div 요소가 덧붙여진다(append)
+    });
+    // 이벤트가 끝났으므로 덧붙여진 상태로 addEventListener() 함수가 종료되었다.
+    // 다시말해 const div = document.createElement("div");가 생성되는 시점은
+    /*
+    * 이벤트가 발생하는 그 순간에 생기는 방식이다.
+    * 위와 같이 실행 구문안에서만 발생하도록 작성하면 이벤트가 종료되는 시점에는 사라진다.
+    * 실행영역(scope)의 개념과 전역, 지역 에 대한 이해가 필요하다. 
+    */
+
+
+
+    btn.addEventListener("click", function () {
+      const section = document.createElement("section");
+      root.insertBefore(section, root.firstChild);
+      // 위의 appendChild() 함수는 규칙상 마지막 자식으로 덧붙이는 방식을 취하고 있고
+      // 바로위의 insertBefor()는 '지정한 위치'에 끼워넣는 방식의 메서드 이다.
+      // 자식이 아니어도 사용할 수 있으며, 규칙은 위와 같다.
+      // * 정확한 인수(argument)작성 방식은 공식문서에서 정리할 것
+      
+      
+    });
+  </script>
+
+</body>
+
+</html>
