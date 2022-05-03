@@ -42,7 +42,7 @@
 
   <div id="root">
     <div>pokemon</div>
-    <button>click</button>
+    <button id="click-btn">click</button>
   </div>
 
 
@@ -70,29 +70,45 @@
 
     let current = 0;
     let isEnd = false;
+    let isStatus = true;
     button.addEventListener('click', function() {
       
-      if(current < practics.length) {
-        const makeDiv = document.createElement("div");
-        makeDiv.textContent = practics[current];
-        div.appendChild(makeDiv);
-        console.log(practics[current]);
-        current++;
-      } 
+      if(isStatus === true) {
+        if(current < practics.length) {
+          const makeDiv = document.createElement("div");
+          makeDiv.textContent = practics[current];
+          div.appendChild(makeDiv);
+          console.log(practics[current]);
+          current++;
+        } 
+  
+        if(current >= practics.length) {
+          console.log('hello');
+          div.textContent = completeText;
+          isEnd = true;
+          console.log(isEnd + "트루로 바뀌었습니다.")
+        }
+        
+        if(isEnd === true) {
+          current = 0;
+          console.log(current + " : current 값이 0으로 바뀌었습니다.");
+          isEnd = false;
+          isStatus = false;
+        }
+      } else { // else : isStatus 가 false 
+        alert("모든 포켓몬스터를 다 조회하셧습니다.");
+        const makeBtn = document.createElement('button');
+        makeBtn.textContent = "다시 포켓몬을 모으시겠습니까?";
+        root.appendChild(makeBtn);
 
-      if(current >= practics.length) {
-        console.log('hello');
-        div.textContent = completeText;
-        isEnd = true;
-        console.log(isEnd + "트루로 바뀌었습니다.")
+        const reWorkBtn = root.children[2];
+        reWorkBtn.addEventListener('click', function() {
+          isStatus = true;
+          div.textContent = '다시 시작!';
+          let getElement = root.children[2];
+          root.removeChild(getElement);
+        });
       }
-      
-      if(isEnd === true) {
-        current = 0;
-        console.log(current + " : current 값이 0으로 바뀌었습니다.");
-        isEnd = false;
-      }
-
     });
 
 
