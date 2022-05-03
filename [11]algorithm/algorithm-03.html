@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #root>div {
+      margin: 2vw;
+      font-size: 2rem;
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <!-- 
+  const practics = ["피카츄", "라이츄", "파이리", "꼬부기", "버터풀", "야도란", "피죤투", "또가스"];
+
+
+  1. A버튼을 클릭할때마다 <div> 태그에 배열의 포켓몬스터들이 하나씩 나타나게 만드세요.
+  2. 마지막 포켓몬스터가 나온다음은 "포켓몬스터를 다모았다" 라는 텍스트를 나타나게 만드세요. -->
+
+  <div id="root">
+    <div>pokemon</div>
+    <button>click</button>
+  </div>
+
+
+
+  <script>
+    
+    /*
+    
+    1. 식별할 녀석들을 작성해준다.
+    2. 이벤트가 일어날때 배열에 있는 값이 나타난다. --> 숫자를 써먹어야겠다.
+    3. 이벤트가 일어날때 배열에 있는 원소들이 순차적으로 나타난다.
+    4. 마지막 원소가 나타난 뒤에는 새로운 텍스트 "포켓몬을 다모았다"를 보여준다.
+    
+    */
+   
+   const practics = ["피카츄", "라이츄", "파이리", "꼬부기", "버터풀", "야도란", "피죤투", "또가스"];
+   const completeText = "포켓몬을 다모았다.";
+
+    const root = document.getElementById("root");
+    const div = root.children[0];
+    const button = root.children[1];
+    console.log(root);
+    console.log(div);
+    console.log(button);
+
+    let current = 0;
+    let isEnd = false;
+    button.addEventListener('click', function() {
+      
+      if(current < practics.length) {
+        const makeDiv = document.createElement("div");
+        makeDiv.textContent = practics[current];
+        div.appendChild(makeDiv);
+        console.log(practics[current]);
+        current++;
+      } 
+
+      if(current >= practics.length) {
+        console.log('hello');
+        div.textContent = completeText;
+        isEnd = true;
+        console.log(isEnd + "트루로 바뀌었습니다.")
+      }
+      
+      if(isEnd === true) {
+        current = 0;
+        console.log(current + " : current 값이 0으로 바뀌었습니다.");
+        isEnd = false;
+      }
+
+    });
+
+
+
+
+  </script>
+</body>
+
+</html>
