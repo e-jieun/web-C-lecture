@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+
+    #root>div {
+      min-width: 300px;
+      min-height: 300px;
+      /* border: 1px solid blue; */
+      position: relative;
+    }
+
+
+
+    #root>div>section {
+      width: 100px;
+      height: 100px;
+      /* border: 1px solid red; */
+      position: absolute;
+
+    }
+
+    #root>div>section:nth-child(1) {
+      top: 0px;
+      left: 0px;
+      z-index: 3;
+      background-color: rgba(207, 207, 207, 0.5);
+      width: 20vw;
+      height: 40vh;
+      border-radius: 2vw;
+      padding: 2vw;
+      color: #555;
+
+
+      border: 1px solid rgba(207, 207, 207, 1);
+      /* flex */
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+      backdrop-filter: blur(5px);
+      /* mix-blend-mode: hard-light; */
+
+    }
+
+    #root>div>section:nth-child(1)>h1 {
+      width: 100%;
+      font-size: 3rem;
+      line-height: 2.5rem;
+      margin-bottom: 3rem;
+      color: rgba(60, 60, 60, 1);
+    }
+
+    #root>div>section:nth-child(1)>p {
+      color: rgba(60, 60, 60, 1);
+      font-size: 0.8rem;
+
+    }
+
+    #root>div>section:nth-child(1)>button {
+      appearance: none;
+      border: 0;
+      background-color: transparent;
+      color: rgb(77, 77, 77);
+      font-size: 1.2rem;
+      margin-top: 1rem;
+      transition: 1s;
+    }
+
+    #root>div>section:nth-child(1)>button:hover {
+      background-color: #ccc;
+      padding: 1vw;
+      border-radius: 1vw;
+      color: rgb(42, 42, 42);
+
+    }
+
+
+    #root>div>section:nth-child(2) {
+      top: 30px;
+      left: 30px;
+      width: 20vw;
+      height: 40vh;
+      border-radius: 2vw;
+      background-color: rgb(178, 178, 178);
+      z-index: 2;
+      filter: blur(20px);
+      mix-blend-mode: multiply;
+
+    }
+
+    #root>div>section:nth-child(3) {
+      top: 50px;
+      left: 50px;
+      /* background-color: #eee; */
+      z-index: 1;
+
+
+      width: 30vw;
+      height: 60vh;
+      /* transform: translate(-20%, -20%); */
+
+    }
+
+    #root>div>section:nth-child(3)>p {
+      text-align: justify;
+      color: rgb(110, 110, 110);
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div>
+      <section>
+        <h1>MODAL<br>pop-up</h1>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Praesentium, fugit. Dicta excepturi, illo neque
+          suscipit libero ex asperiores fuga earum! Aperiam nostrum qui magni deserunt blanditiis soluta nihil minus
+          earum.</p>
+        <button id="close-button">close</button>
+      </section>
+      <section>2</section>
+      <section>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde eos, fuga suscipit animi praesentium voluptas
+          ducimus officiis assumenda consequatur tenetur itaque quis consectetur reiciendis quod minus molestiae iusto
+          voluptate soluta!
+          Architecto placeat exercitationem facere sit nihil consequuntur odit unde adipisci nobis minus labore atque ea
+          ab autem beatae nesciunt modi, libero fugit tempora. Placeat assumenda tempore maxime sint, recusandae
+          eveniet!
+          Hic ipsa earum, eveniet praesentium laborum ducimus ea aperiam nobis, rerum natus minima expedita inventore
+          odio explicabo iste deserunt totam animi at? Illo possimus ratione, enim harum necessitatibus a ad?
+          Possimus consequatur quis nemo totam amet qui reiciendis blanditiis ex inventore autem nesciunt cum ab sit,
+          corrupti deserunt similique nam deleniti odit quod. Deserunt numquam laudantium facere corporis autem!
+          Exercitationem?
+          Inventore praesentium magni, commodi quia adipisci quis quae. Alias architecto, laborum ad at mollitia quae
+          quis culpa consequuntur blanditiis perferendis adipisci reiciendis quidem quos magni nesciunt quaerat
+          repudiandae omnis deleniti!</p>
+      </section>
+    </div>
+
+  </div>
+
+
+  <script>
+    const root = document.getElementById('root');
+    console.log(root);
+    console.dir(root);
+
+    const sections = root.children[0].children;
+    console.log(sections);
+    const clickBtn = document.getElementById('close-button');
+    console.log(clickBtn);
+
+    clickBtn.addEventListener('click', function () {
+      let opacityValue = 1;
+
+      let topValue = 50;
+ 
+
+      sections[0].style.opacity = 1;
+      sections[1].style.opacity = 1;
+      sections[2].style.top = topValue + "px";
+
+
+      let fadeOut = setInterval(function () {
+        if (opacityValue > 0) {
+          opacityValue = opacityValue - 0.1;
+          topValue = topValue - 2;
+          sections[0].style.opacity = opacityValue;
+          sections[1].style.opacity = opacityValue;
+          sections[2].style.top = topValue + "px";
+
+        } else {
+          sections[0].style.display = "none";
+          sections[1].style.display = "none";
+          clearInterval(fadeOut);
+        }
+      }, 30);
+
+
+
+
+    });
+  </script>
+
+</body>
+
+</html>
