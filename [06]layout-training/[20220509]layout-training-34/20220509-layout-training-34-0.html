@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>div {
+      width: 300px;
+      height: 300px;
+      border: 1px solid red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #root>div>section {
+      min-width: 200px;
+      height: 200px;
+      background-color: #aaa;
+      position: absolute;
+    }
+
+    #root>div>section:nth-child(1) {
+      z-index: 3;
+    }
+
+    #root>div>section:nth-child(2) {
+      z-index: 2;
+    }
+
+    #root>div>section:nth-child(3) {
+      z-index: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="slide-wrap">
+      <section>첫번째 아이템</section>
+      <section>두번째 아이템</section>
+      <section>세번째 아이템</section>
+    </div>
+  </div>
+  <script>
+    const sectionItems = document.querySelectorAll('#slide-wrap > section');
+    console.log(sectionItems);
+
+    let opacityValue = 100;
+    for (let i = 0; i < sectionItems.length; i++) {
+      sectionItems[i].style.opacity = opacityValue / 100;
+    }
+
+
+  </script>
+</body>
+
+</html>
