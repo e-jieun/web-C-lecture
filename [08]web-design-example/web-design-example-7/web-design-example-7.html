@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>draggble element</title>
+  <style>
+    body {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+    }
+    #drag-element {
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      background-color: #ccc;
+      cursor: move;
+    }
+  </style>
+</head>
+<body>
+  
+  <div id="drag-element"></div>
+
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      function dragElement(element) {
+        // init
+        // 여러개의 변수를 동시에 선언하고 싶을때 배열형으로 하는 최신버전의 선언디자인 패턴
+        let [positionOne, positionTwo, positionThree, positionFour] = [0, 0, 0, 0];
+        // mousedown : 마우스를 누를 때 이벤트 발생
+        // 1번 이벤트 : 마우스를 눌렀을때 
+        element.addEventListener('mousedown', dragMouseDown);
+        // dragMouseDown function statement
+        // 1번 이벤트 마우스 눌럿을때 동작하는 콜백함수. 매개변수 event 는 이벤트 객체
+        function dragMouseDown(event) {
+          event = event || window.event;
+          // preventDefault를 통해 이벤트가 발생한 대상의 기본동작을 해제시킴
+          event.preventDefault();
+          // event.clientX : 여기서 event는 클릭이벤트를 발생시킨 이벤트 객체이며, 위에 마크업 해놓은 div가 타겟이 될 예정
+          // 해설 : event.clientX div 요소의 화면상의 x(가로 위치)값 , 마우스이벤트 -> positionThree 라는 변수에 대입
+          // 해설 : div 태그 좌표 값(숫자) 를 positionthree 에 넣어줌
+          positionThree = event.clientX;
+          positionFour = event.clientY;
+          // mouseup : 마우스를 떼었을때 이벤트 발생
+          document.addEventListener('mouseup', closeDragElement);
+          // mousemove : 마우스를 이동했을때 이벤트 발생
+          document.addEventListener('mousemove', elementDrag);
+        }
+        // elementDrag function statement
+        function elementDrag(event) {
+          // 아래에 매개변수 event 가 없으면 or 연산자 window의 event 이벤트 객체를 적용
+          event = event || window.event;
+          event.preventDefault();
+          // 마우스가 이동했을때의 이벤트
+          //  마우스를 클릭했을때 좌표값(positionThree) 와 새로운 event.clientX( 이동해서 생긴 새로운 값) 을 빼기 
+          //  연산한 값을 positionOne 에 대입
+          positionOne = positionThree - event.clientX;
+          positionTwo = positionFour - event.clientY;
+          // 원래 저장했었던 positionThree 값을 다시 새로운 좌표값으로 대입시켜버림
+          positionThree = event.clientX;
+          positionFour = event.clientY;
+          //  element.offsetTop - positionTwo <-- 해설
+          // 요소의 원래 top 높이값 - 변경된 좌표값을 뺀 값을 element의 top 속성 값으로 대입 
+          element.style.top = (element.offsetTop - positionTwo) + "px";
+          element.style.left = (element.offsetLeft - positionOne) + "px";
+        }
+        // closeDragElement function statement
+        function closeDragElement() {
+          // 마우스를 떼면 콜백함수 이벤트를 지워버림
+          document.removeEventListener('mouseup', closeDragElement);
+          document.removeEventListener('mousemove', elementDrag);
+          // 결과적으로는 div 태그의 top, left 값을 마크업으로 값을 넣는 것이 아닌 -> 마우스의 좌표를 활용한 방식
+        }
+        // 마우스의 좌표 이동값을 활용해 새롭게 정의하는 과정을 함수로 설계한 알고리즘
+        // UX 측면에서는 사용자에게 '조작'성을 부여할 수 있게 되고, 퍼즐이나 기타 게임과 같은 '사용자의 조작' 이 필요한 컨텐츠에서 사용하고 있는 마우스제어의 대표적인 방식
+      }
+      
+      
+      const elementTag = document.querySelector('#drag-element');
+      dragElement(elementTag);
+      // window scope
+    });
+  </script>
+</body>
+</html>
