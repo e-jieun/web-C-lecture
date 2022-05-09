@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+
+    #root {
+      width:100vw;
+      height: 100vh;
+      background-color: salmon;
+    }
+
+    #pop {
+      width: 50vw;
+      height: 50vh;
+      background-color: #fff;
+      position: fixed;
+      top: 50px;
+      left: 50px;
+      box-shadow: 2px 2px 2px rgba(100,100,100, 0.2);
+
+    }
+
+    .on {
+      display: none;
+    }
+
+
+
+  </style>
+  
+</head>
+<body>
+  <div id="root">
+    <div id="pop">
+      <h1>this is popup</h1>
+      <button id="click-button">close!</button>
+
+    </div>
+  </div>
+
+  <script>
+
+    const pop = document.getElementById('pop');
+    const clickBtn = document.getElementById('click-button');
+
+    clickBtn.addEventListener('click', function() {
+      if(pop.classList.contains('on')){
+        
+      } else {
+       pop.classList.add('on'); 
+      }
+    });
+
+
+
+
+  </script>
+
+</body>
+</html>
