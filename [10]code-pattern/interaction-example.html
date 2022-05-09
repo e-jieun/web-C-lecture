@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    // * body styling
+    document.body.style.padding = 0;
+    document.body.style.margin = 0;
+    document.body.style.overflow = "hidden";
+
+    const root = document.getElementById('root');
+    // console.log(root);
+    // root styling
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.backgroundColor = "#333";
+    root.style.display = "flex";
+    root.style.justifyContent = "center";
+    root.style.alignItems = "center";
+
+    const buttonElem = document.createElement('button');
+    buttonElem.setAttribute('id', 'intro-button');
+    buttonElem.textContent = "click";
+    buttonElem.style.width = "10vw";
+    buttonElem.style.height = "10vw";
+    buttonElem.style.border = 0;
+    buttonElem.style.backgroundColor = "transparent";
+    buttonElem.style.color = "#ccc";
+    buttonElem.style.position = "absolute";
+
+    root.appendChild(buttonElem);
+
+    const introBtn = root.children[0];
+    console.log(introBtn);
+
+    let widthValue = 0;
+    let makeStatus = true;
+    introBtn.addEventListener('click', function () {
+
+      const interactionDivElem = document.createElement('div');
+      interactionDivElem.style.width = widthValue + 'vw';
+      interactionDivElem.style.height = widthValue + 'vw';
+      interactionDivElem.style.borderRadius = widthValue + "%";
+      interactionDivElem.style.backgroundColor = "#ccc";
+      interactionDivElem.style.position = "absolute";
+
+      root.appendChild(interactionDivElem);
+
+      let timer = setInterval(function () {
+        if(makeStatus === true) {
+          if(widthValue < 200) {
+            widthValue++;
+            interactionDivElem.style.width = widthValue + 'vw';
+            interactionDivElem.style.height = widthValue + 'vw';
+            interactionDivElem.style.borderRadius = widthValue + "%";
+            buttonElem.style.color = "#333";
+            buttonElem.style.zIndex = 2;
+          }
+        } else {
+          makeStatus = false;
+        }
+      }, 8)
+    });
+  </script>
+</body>
+
+</html>
