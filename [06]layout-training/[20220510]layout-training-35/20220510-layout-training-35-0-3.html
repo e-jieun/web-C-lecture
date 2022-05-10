@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: black;
+    }
+
+    #root>div:nth-child(1) {background-color: #333;}
+    #root>div:nth-child(2) {background-color: #ddd;}
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+
+    <ul id="menu">
+      menu-title
+      <li class="items">items-1</li>
+      <li class="items">items-2</li>
+      <li class="items">items-3</li>
+      <li class="items">items-4</li>
+      <li class="items">items-5</li>
+      <li class="items">items-6</li>
+      <li class="items">items-7</li>
+      <li class="items">items-8</li>
+      <li class="items">items-9</li>
+      <li class="items">items-10</li>
+    </ul>
+
+    
+  </div>
+
+  <script>
+
+    const menu = document.getElementById('menu');
+    const items = document.getElementsByClassName('items');
+    console.log(items);
+    console.log(menu);
+
+
+
+    // * menu를 클릭하면 자식들 모두 발간색 글씨로 바꿔줘
+
+    let booleanType = true;
+    menu.addEventListener('click', function() {
+      if(booleanType === true) {
+        console.log("hello");
+        booleanType = false;
+        for(let index = 0; index < items.length; index++) {
+          items[index].style.color = "red";
+        }
+      } else {
+        console.log('bye');
+        booleanType = true;  
+        for(let index = 0; index < items.length; index++) {
+          items[index].style.color = "blue";
+        }
+      }
+      
+      
+      
+      
+      
+      
+    });
+
+
+
+
+ 
+
+
+
+
+  </script>
+</body>
+</html>
