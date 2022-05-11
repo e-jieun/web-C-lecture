@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #root {
+      width: 100vw;
+    }
+
+    #root>section {
+      width: inherit;
+      /* 100vw */
+      height: 100vh;
+      border: 1px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <section>1</section>
+    <section>2</section>
+    <section>3</section>
+    <section>4</section>
+    <section>5</section>
+  </div>
+
+  <script>
+    const root = document.querySelector('#root');
+    console.log(root);
+    const sections = document.querySelectorAll('#root > section');
+    console.log(sections);
+
+    console.dir(root);
+    console.log("현재 이 문서의 전체 높이값은" + root.offsetHeight);
+    console.dir(sections[0]);
+    console.log("section 태그 하나의 높이값은" + sections[0].offsetHeight);
+
+    console.log(window.scrollY);
+
+    let heightValue = 0;
+    let switchValue = true;
+    window.addEventListener('click', function () {
+
+
+      if (switchValue === true) {
+        heightValue = heightValue + sections[0].offsetHeight;
+        console.log("변수 핸들러 heightValue의 현재값 입니다 :" + heightValue);
+
+        window.scrollTo({
+          top: heightValue,
+          behavior: "smooth"
+        });
+
+        if (heightValue >= root.offsetHeight) {
+          switchValue = false;
+        }
+
+      } else {
+        heightValue = 0;
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+        switchValue = true;
+      }
+
+    });
+  </script>
+</body>
+
+</html>
