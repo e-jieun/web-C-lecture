@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: salmon;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <button id="click-button">click</button>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    const clickButton = document.getElementById('click-button');
+
+
+    
+    clickButton.addEventListener('click', () => {
+      let timeout = setTimeout(function() {
+        let h1 = document.createElement('h1');
+        h1.style.fontSize = "3rem";
+        h1.style.transition = "1s";  
+        h1.textContent = "나는 파이리다! 꼬리에서 불난다!!";
+        root.appendChild(h1);
+      }, 3000);
+
+    });
+    
+
+    
+    
+  </script>
+</body>
+</html>
