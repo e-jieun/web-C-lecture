@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <ul id="menu">
+    <li class="items" data-targeting="1">menu-1</li>
+    <li class="items" data-targeting="2">menu-2</li>
+    <li class="items" data-targeting="3">menu-3</li>
+    <li class="items" data-targeting="4">menu-4</li>
+  </ul>
+
+  <div data-targeting="4"></div>
+  <script>
+    const menu = document.getElementById('menu');
+    const items = document.getElementsByClassName('items');
+    console.log(menu);
+    console.log(items);
+    // * 잘 식별했는지를 확인했다.
+    // * 메서드마다 리턴 "데이터타입" 
+    // * 안심 ~ 
+
+    // for(let i = 0; i < items.length; i++) {
+    //   items[i].style.color = 'red';
+    // }
+    // * 검증확인 을 끝낸다.
+
+    menu.addEventListener('click', (event) => {
+      
+      // let getDataset = event.target.dataset.targeting;
+      console.log(getDataset);
+
+      for(let i = 0; i < items.length; i++) {
+        if(items[i].dataset.targeting === event.target.dataset.targeting) {
+          items[i].style.color = "blue";
+        }else {
+          items[i].style.color = "red";
+        }
+      }
+
+
+    })
+  </script>
+</body>
+
+</html>
