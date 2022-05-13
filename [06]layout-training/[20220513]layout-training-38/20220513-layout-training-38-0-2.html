@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+<body>
+  <div id="root">
+    <nav id="menu">
+      <div id="button-container">
+        <button id="trigger"  class="position-relative "></button>
+        <div id="x-sign"  class="position-relative  none">
+          <div class="position-relative"></div>
+          <div class="position-relative"></div>
+        </div>      
+      </div>
+      <ul id="menu-container">
+        <li class="menu-items">menu-1</li>
+        <li class="menu-items">menu-2</li>
+        <li class="menu-items">menu-3</li>
+        <li class="menu-items">menu-4</li>
+        <li class="menu-items">menu-5</li>
+      </ul>
+    </nav>
+  </div>
+
+  <script>
+    const root = document.getElementById('root');
+    const menu = document.getElementById('menu');
+    const trigger = document.querySelector('#trigger');
+    const xSign = document.querySelector('#x-sign');
+    const xSignChildren = document.querySelector('#x-sign').children;
+    // check point 1
+    /* 
+    Q. 위의 xSignChildren 이라는 상수는 부모인 id #x-sign 이라는 요소의 자식으로 접근했다. 다른 방식으로도 접근 할 수 있을까?
+
+    */
+    
+    console.log(trigger); // element
+    console.log(xSign); // element
+    console.log(xSignChildren); // HTMLCollection
+
+    // styling
+
+    document.body.style.padding = 0;
+    document.body.style.margin = 0;
+    document.body.style.boxSizing = "border-box"; 
+
+    root.style.width = "100vw";
+    root.style.height = "100vh";
+    root.style.backgroundColor = "#ccc";
+    
+    root.style.display = "flex";
+    root.style.justifyContent = "flex-start";
+    root.style.alignItems = "center"
+
+    menu.style.width = "10vw";
+
+    // check point 2
+    /*
+      <nav id="menu"> 부분을 스타일링 하고 보니, width 값이 root의 width 값에 10%에 해당한다. 이것을 root의 width값 기준으로도 값을 대입시킬 수 있을까?    
+    
+    */
+    menu.style.height = "inherit";
+    menu.style.backgroundColor = "#233";
+
+    menu.style.display = "flex";
+    menu.style.justifyContent = "center";
+    menu.style.alignItems = "center"
+
+    menu.children[0].style.width = "fit-content";
+    menu.children[0].style.height = "fit-content";
+    menu.children[0].style.border = "1px solid red";
+
+    console.dir(menu.children[0].children[0]);
+
+    // #trigger styling
+    menu.children[0].children[0].style.width = "5vw";
+    menu.children[0].children[0].style.height = "5vw";
+    menu.children[0].children[0].style.borderRadius = "100%";
+
+    // check point 3
+
+    /*
+    
+    Q. #trigger styling 제어 부분에서 borderRadius 값이 100%이다. width 값을 기준으로 값을 100%로 만들 수 있을까? 
+
+    
+    
+    */
+
+
+    menu.children[1].style.listStyleType = 'none';
+    menu.children[1].style.color = '#ccc';
+
+    // check point 4
+    
+    
+    /*
+
+    Q. 제작자가 스타일링할때 hex 방식 #RRGGBB, 혹은 string 방식을 곧잘 편의상 사용하곤 있지만 사실 최종 렌더링 단계에서는 rgb(red, green, blue) 단위로 바뀌어진다. rgb() 값은 최소0 ~ 최대255 스펙트럼으로 구성되어 있고,
+    Q. 값이 많을수록 혹은 값이 높을수록, 빛의혼합(가산혼합)의 성질로 밝아진다.
+    Q. 회색을 구현 하는 방법도 있지 않을까?
+    
+
+    */
+
+
+    // check point 5
+
+    /*
+    
+      난이도 상 : 0 ~ 255 값을 백분율로 바꿀 수 있다면 0~100으로 조절할 수 있으니 제작자가 핸들링하지 편하지 않을까?
+      
+    
+    */
+
+
+  </script>
+
+
+  
+
+
+</body>
+</html>

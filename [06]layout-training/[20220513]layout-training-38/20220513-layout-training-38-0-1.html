@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #ccc;
+
+      display:flex;
+      justify-content: flex-start;
+      align-items: center;
+      
+    }
+
+    #root>nav {
+      width: 30vw;
+      height:inherit;
+      background-color: #233;
+      color:#ccc;
+
+      display:flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    /* #menu */
+    #root>nav>div {
+      width:fit-content;
+      height:fit-content;
+      border:1px solid red;
+      /* transform: translate(-50%, -50%); */
+    }
+
+
+    /* #trigger */
+    #root>nav>div>button {
+      width:5vw;
+      height:5vw;
+      border-radius: 100%;
+      background-color: #fff;
+      border:0;
+      transition:1s;
+    }
+
+    /* #x-sign childrens */
+    #root>nav>div>div>div {
+      width:50px;
+      height:0.5vw;
+      background-color: #fff;
+      transition:1s;
+
+      /* border: 1px solid blue; */
+      
+    }
+
+
+
+
+    #root>nav>div>div>div:nth-child(1) {
+      margin-bottom: 1vw;
+      transform: translateY(8px) rotate(-45deg);
+    }
+
+    #root>nav>div>div>div:nth-child(2) {
+      transform: translateY(-8px) rotate(45deg);
+    }
+
+
+    #root>nav>ul {
+      list-style-type: none;
+    }
+
+    .none {
+      display: none;
+    }
+
+    .position-relative {position:relative;}
+   .position-absolute {position:absolute;}
+
+
+    .z-index-0 {z-index: 0;}
+    .z-index-1 {z-index: 1;}
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <nav id="menu">
+      <div id="button-container">
+        <button id="trigger"  class="position-relative "></button>
+        <div id="x-sign"  class="position-relative  none">
+          <div class="position-relative"></div>
+          <div class="position-relative"></div>
+        </div>      
+      </div>
+      <ul id="menu-container">
+        <li class="menu-items">menu-1</li>
+        <li class="menu-items">menu-2</li>
+        <li class="menu-items">menu-3</li>
+        <li class="menu-items">menu-4</li>
+        <li class="menu-items">menu-5</li>
+      </ul>
+    </nav>
+  </div>
+
+  <script>
+    const trigger = document.querySelector('#trigger');
+    const xSign = document.querySelector('#x-sign');
+    const xSignChildren = document.querySelector('#x-sign').children;
+    console.log(trigger); // element
+    console.log(xSign); // element
+    console.log(xSignChildren); // HTMLCollection
+
+    trigger.addEventListener('click', ()=>{
+      if(trigger.classList.contains('none')) {
+        trigger.classList.remove('none');
+        xSign.classList.add('none');
+      } else {
+        trigger.classList.add('none');
+        xSign.classList.remove('none');
+      }
+    });
+
+    xSign.addEventListener('click', ()=>{
+      if(xSign.classList.contains('none')) {
+        xSign.classList.remove('none');
+        trigger.classList.add('none');
+      } else {
+        xSign.classList.add('none');
+        trigger.classList.remove('none');
+      }
+    });
+
+    /* 
+    * check point : 1
+
+    Q. trigger 와 xSign에 설치한 이벤트를 둘러보니 많은 것이 겹친다. 이것을 줄일 수 있는 방법이 있을까?
+
+
+    
+    
+    */
+
+
+
+  </script>
+
+
+  
+
+
+</body>
+</html>
