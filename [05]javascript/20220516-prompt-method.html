@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.querySelector('#root');
+    const getPromptData = window.prompt('데이터를 입력하세요.');
+    function typeChecker(getData) {
+      if(typeof getData === "string") {
+        console.log(`입력하신 ${getData} 값은 자료형이 string, 문자열입니다.`);
+        root.textContent = getData + " : 이 값은 문자열입니다.";
+        
+      } else if(typeof getData === "number") {
+        console.log(`입력하신 ${getData} 값은 자료형이 number, 숫자입니다.`);
+        root.textContent = getData + " : 이 값은 숫자입니다.";
+      } else {
+        console.log(`입력하신 ${getData} 값은 string, number 둘다 아닙니다.`)
+        root.textContent = getData + " : 이 값은 문자열과 숫자 둘다 아닙니다.";
+      }
+    }
+    typeChecker(getPromptData);
+  </script>
+</body>
+</html>
