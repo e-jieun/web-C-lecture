@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="one"></div>
+  <div id="two">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+
+  <script>
+    const one = document.querySelector("#one");
+    const twos = document.getElementById("two").children;
+    const three = document.querySelectorAll('#two > section');
+
+    console.log(one);
+    console.log(twos);
+    console.log(three);
+
+    const four = Array.from(three);
+    // 배열처럼 보이는 데이터를 -> 배열처럼 쓰겟다. (취급)
+    // .slice.call() -> "값들의 모음을 다 짤라 -> 다시 배열자리에 넣어" 
+
+    console.log(Array.isArray(four));
+
+
+
+
+  </script>
+</body>
+</html>
