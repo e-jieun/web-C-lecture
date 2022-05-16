@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./20220513.css">
+  <title>layout-training</title>
+</head>
+<body>
+  <div id="menu-box">
+    <div id="btn">
+      <div id="cir"></div>
+      <div id="x">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <ul>
+      <li>menu-1</li>
+      <li>menu-2</li>
+      <li>menu-3</li>
+      <li>menu-4</li>
+      <li>menu-5</li>
+      <li>menu-6</li>
+    </ul>
+  </div>
+  
+  <script>
+    const btn = document.getElementById('btn');
+    const cirBtn = document.getElementById('cir');
+    const xBtn = document.getElementById('x');
+    const ul = document.querySelector('ul');
+    let xBtnDisplayValue = window.getComputedStyle(xBtn).display;
+
+    btn.addEventListener('click', () =>{
+      if(cirBtn.style.display !== xBtnDisplayValue){
+        cirBtn.style.display = 'none';
+        xBtn.style.display = 'block';
+        ul.style.display = 'block';
+      }
+      else{
+        cirBtn.style.display = 'block';
+        xBtn.style.display = 'none';
+        ul.style.display = 'none';
+      }
+    })
+  </script>
+</body>
+</html>

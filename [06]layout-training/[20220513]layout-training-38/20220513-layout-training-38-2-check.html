@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0;padding:0;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #menu{
+      width: 100px;
+      height: 600px;
+      background-color: black;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #btn{
+      width: 50px;
+      height: 50px;
+      margin-left: 20px;
+      border-radius: 50%;
+      background-color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border:1px solid black;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    #btn:hover{
+      background-color: rgb(241, 64, 64);
+    }
+   
+  </style>
+</head>
+<body>
+  <div id="root">
+    <nav id="menu">
+      <div id="btn">꾸욱</div>
+      <div id="lists">
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+        <div class="items"></div>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const btn = document.getElementById('btn')
+    const lists = document.getElementById('lists')
+    const items = document.getElementsByClassName('items')
+    //console.log(menu);
+    //console.log(btn);
+    //console.log(lists);
+    console.dir(items)
+    
+    let real = true
+
+    btn.addEventListener('click',function(){
+     // console.log('hello')
+      if(real === true){
+        for(let i = 1; i < items.length; i++){
+          items[i].style.width = '300px';
+          items[i].style.height = '50px';
+          items[i].style.backgroundColor = 'red';
+          items[i].textContent = 'MENU' + [i]
+          items[i].style.fontWeight = 'bold'
+          items[i].style.margin = '50px'
+          items[i].style.display = 'flex'
+          items[i].style.justifyContent = 'center'
+          items[i].style.alignItems = 'center'
+        
+        }
+        btn.style.display = 'flex'
+        btn.style.justifyContent = 'center'
+        btn.style.alignItems = 'center'
+        btn.textContent = 'X'
+        btn.style.fontSize = '50px'
+        btn.style.fontWeight = 'bold'
+        btn.style.backgroundColor = 'black'
+        btn.style.color = 'red'
+        menu.style.width = '500px'
+        menu.style.height = '600px'
+        menu.style.transition = '1s'
+        real = false 
+        
+        
+      
+        }else{
+          menu.style.width = '100px'
+          menu.style.height = '600px'
+          btn.style.backgroundColor = 'red'
+          btn.style.width = '50px'
+          btn.style.height = '50px'
+          btn.style.borderRadius = '50%'
+          btn.textContent = '꾸욱'
+          btn.style.fontSize = '20px'
+          btn.style.color = 'black'
+          
+
+          for(let i = 0; i < items.length; i++){
+          items[i].style.display = 'none';
+        }
+          real = true
+        }
+    });
+    /*
+    check point : 1
+
+    1. 세미콜론은 "명령이 끝났다" 라는 표시이므로 꼼꼼하게 사용해버릇 할 것
+    2. 자바스크립트 코딩컨벤션(코드작성스타일) 흐름에서 세미콜론을 아예 사용하지 않는 방향으로 변화하고 있으므로, 최종적으로 세미콜론을 쓴다면 완전하게 모두 사용할 것, 세미콜론을 사용하지 않는다면 모두 사용하지 않을것 -> 협업간 큰 트러블이 발생할 수 있음
+    3. 스타일링 관련한 중복되는 코드들을 줄일 방법을 고안해볼것
+    
+    
+    
+    */
+
+
+
+  
+  </script>
+</body>
+</html>

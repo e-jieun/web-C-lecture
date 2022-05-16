@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+      display: flex;
+      align-items: center;
+    }
+
+    #menu {
+      width: fit-content;
+      height: 30em;
+      border: 1px solid darkblue;
+      display: flex;
+    }
+
+    #menu>div:nth-child(1) {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid darkblue;
+
+    }
+
+    #menu>div:nth-child(1)>div {
+      margin: 5em;
+      width: 50px;
+      height: 50px;
+      border-radius: 25px;
+      background-color: black;
+    }
+
+    .items {
+      width: 200px;
+      height: 15%;
+      background-color: blueviolet;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div id="root">
+    <nav id="menu">
+      <div>
+        <div></div>
+      </div>
+      <div></div>
+    </nav>
+  </div>
+  <script>
+    const menu = document.getElementById("menu");
+    const container = menu.querySelector("div:nth-child(2)")
+    console.dir(menu);
+    console.dir(container);
+
+    // 전역변수임
+
+
+
+    let thok = true;
+    menu.addEventListener("click", function () {
+      // console.log("꿈이 아파 잠들지 못하는 밤");
+      // 이벤트 실행 확인 완료
+      // 자! 이제 똑딱이를 만들어 보겠습니다
+
+
+
+      // console.log("광염소나타");
+      //<!-- ? 이걸 반복하게 해야함 -> 어떻게?
+// check point 1
+/*
+
+반복 = for() 활용 이라는 공식이 성립되며,
+for()문 안에서 if()문이 실행되는 것
+if()문 안에서 for()문이 실행되는 것
+이 두가지를 연구하면 해결 할 수 있음
+
+*/
+
+      if (thok === true) {
+
+        thok = false;
+
+        for (let i = 0; i < 6; i++) {
+          // let changeValue = make[i];
+          //  이렇게 배열을 넣을 려고 했는데 안됨
+          // let changeValue  = change[i];
+          // 이렇게 쓰면 undefined나옴
+
+          let make = document.createElement("div");
+          // 생성도 i번 하게 for문 안으로 가져와봄
+          // <!--memo 생성 자체를 반복해줘야하는 것이였음  
+
+          let change = container.appendChild(make);
+          // change 라는 변수는 container에 make라는 놈을 자식으로 두게 하는 거야
+          // 그러면 change를 i번 반복하면 되겠구나 
+          // 이걸 for 문 안에 쓰면 이 일을 i번 반복해야하는 거 아님? 왜 안될까?
+
+
+          console.log(i);
+          // console.log(changeValue);
+          // 일단 반복문은 작동됨 console.log()로 확인
+          // <!-- todo 그러면 div을 i 개 만들어야함
+          // <!-- ? 이걸 코드로 표현하면 어떻게 쓸 수 있을 까?
+
+          change.classList = "items"
+          // classList로 items라는 class를 넣는것도 성공
+          change.textContent = "작은 숨소리 마저 아려와"
+          // 이건 내가 좋아하는 뮤지컬 넘버의 가사~ 확인용
+
+
+
+          // console.dir(change);
+          // change, 즉 만들어진 div에서 힌트를 얻을 수 있을까 해서 dir찍어봄
+          // dir 찍어서 속성들 쫙 봤는데 모르겠음 -> 검색 go
+          // 여기까지 하고 commit 하기
+
+          // change값을 함수 밖에서도 쓰고 싶음
+          // <!-- ? 어떻게 해야할까?
+          // return change; 인가? 
+        };
+
+
+        console.log(thok);
+      } else if (thok === false) {
+        console.log("어둠속으로 숨고만 싶은 밤")
+        let make = document.createElement("div");
+        let change = container.appendChild(make);
+        container.remove(make);
+        // let zero = 
+        // container.children.splice(0,5) ;
+        console.dir(container);
+        // console.log(container.children);
+        // console.log(container.children[3]);
+        stop = false;
+
+        thok = true;
+        console.log(thok);
+      }
+
+
+    });
+  </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{margin:0; padding:0;}
+    #root {
+      width: 100vw; height: 100vh;
+      /* background-color: #ccc; */
+      display: flex;
+      align-items: center;
+    }
+    
+    #menu {
+      width: 5vh; height: 94vh;
+      padding: 3vh;
+      background-color: rgb(228, 228, 228);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    #menu-button{
+      width: 50px; height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: fixed;
+      left: 20px;
+      top: 47%;
+    }
+
+    #menu-button > div:first-child{
+      width: 50px; height: 50px; 
+      border-radius: 25px;
+      background-color: rgb(21, 16, 90);
+    }
+
+    #menu-button > div:nth-child(2) {
+      width: 50px; height: 5px;
+      border-radius: 3px;
+      background-color: rgb(224, 222, 255);
+      transform-origin: 45% 50%;
+      transform: rotate(45deg);
+    }
+    #menu-button > div:last-child {
+      width: 50px; height: 5px;
+      border-radius: 3px;
+      background-color: rgb(224, 222, 255);
+      transform-origin: 50% 20%;
+      transform: rotate(135deg);
+    }
+
+    .off {
+      display: none;
+    }
+    .sub-menu {
+      width: 150px; height: 50px;
+      border-radius: 20px;
+      background-color: rgba(224, 222, 255, 0.733);
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <nav id="menu">
+      <div id="menu-button">
+        <div></div>
+        <div class="off"></div>
+        <div class="off"></div>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const menuBtn = document.getElementById('menu-button');
+    const menuIcon = menuBtn.children;
+    // console.log(menuIcon); // ==> [ 배열 ]
+    let submenuNumber = 7;
+    let widthValue = 50;
+
+
+    // 버튼을 클릭할때마다 width값이 늘어나고 200px이상이면 submenu가 생성되는 이벤트
+
+    menuBtn.addEventListener('click', ()=>{
+      if(menuIcon[0].classList.contains('off') === false){
+      // menuIcon[0]은 off클래스를 포함하고있지 않다.
+      // ==> '포함하고있지 않다면' 실행해줄 것
+        menuIcon[0].classList.add('off');
+        menuIcon[1].classList.remove('off');
+        menuIcon[2].classList.remove('off');
+
+        menu.style.backgroundColor = 'rgb(21, 16, 90)';
+
+        if(widthValue > 300){
+          widthValue = 50;
+          menu.style.width = widthValue+'px';
+          alert('300px이 넘었습니다. 원래 크기로 돌아갑니다.');
+        }else{
+          widthValue = widthValue+50;
+          menu.style.width = widthValue+'px';
+        }
+
+        // 200px 이상부터는 submenu들을 만들어라
+        if(widthValue > 200){
+          for(let menuI = 0; menuI < submenuNumber; menuI++){
+            let subMenu = document.createElement('div');
+            menu.appendChild(subMenu);
+            menu.children[menuI+1].classList.add('sub-menu');
+            menu.children[menuI+1].textContent = 'menu-'+(menuI+1);
+          }
+        }
+      
+      
+      }else{
+        menuIcon[0].classList.remove('off');
+        menuIcon[1].classList.add('off');
+        menuIcon[2].classList.add('off');
+
+        menu.style.width = '50px';
+        menu.style.backgroundColor = 'rgb(228, 228, 228)';
+
+        // 200px 이상부터는 submenu가 생성되니 창을 줄일 때 submenu들을 삭제해야된다.
+        if(widthValue > 200){
+          for(let subI = 0; subI < submenuNumber; subI++){
+          let subMenu = menu.children[1];
+          subMenu.parentNode.removeChild(subMenu);
+          }
+        }
+
+      }
+
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{margin:0; padding:0;}
+    #root {
+      width: 100vw; height: 100vh;
+      /* background-color: #ccc; */
+      display: flex;
+      align-items: center;
+    }
+    
+    #menu {
+      width: 5vh; height: 94vh;
+      padding: 3vh;
+      background-color: rgb(228, 228, 228);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    #menu-button{
+      width: 50px; height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: fixed;
+      left: 20px;
+      top: 47%;
+    }
+
+    #menu-button > div:first-child{
+      width: 50px; height: 50px; 
+      border-radius: 25px;
+      background-color: rgb(21, 16, 90);
+    }
+
+    #menu-button > div:nth-child(2) {
+      width: 50px; height: 5px;
+      border-radius: 3px;
+      background-color: rgb(224, 222, 255);
+      transform-origin: 45% 50%;
+      transform: rotate(45deg);
+    }
+    #menu-button > div:last-child {
+      width: 50px; height: 5px;
+      border-radius: 3px;
+      background-color: rgb(224, 222, 255);
+      transform-origin: 50% 20%;
+      transform: rotate(135deg);
+    }
+
+    .off {
+      display: none;
+    }
+    .sub-menu {
+      width: 150px; height: 50px;
+      border-radius: 20px;
+      background-color: #888;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <nav id="menu">
+      <div id="menu-button">
+        <div></div>
+        <div class="off"></div>
+        <div class="off"></div>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const menuBtn = document.getElementById('menu-button');
+    const menuIcon = menuBtn.children;
+    // console.log(menuIcon); // ==> [ 배열 ]
+    let submenuNumber = 7;
+
+    menuBtn.addEventListener('click', ()=>{
+      // console.log('hello')
+      // console.log(menuIcon[0].classList.contains('off'));
+      
+      if(menuIcon[0].classList.contains('off') === false){
+      // menuIcon[0]은 off클래스를 포함하고있지 않다.
+      // ==> '포함하고있지 않다면' 실행해줄 것
+        menuIcon[0].classList.add('off');
+        menuIcon[1].classList.remove('off');
+        menuIcon[2].classList.remove('off');
+
+        menu.style.width = '350px';
+        menu.style.backgroundColor = 'rgb(21, 16, 90)';
+
+        for(let menuI = 0; menuI < submenuNumber; menuI++){
+          let subMenu = document.createElement('div');
+          menu.appendChild(subMenu);
+          menu.children[menuI+1].classList.add('sub-menu');
+          menu.children[menuI+1].textContent = 'menu-'+(menuI+1);
+        }
+
+      }else{
+        menuIcon[0].classList.remove('off');
+        menuIcon[1].classList.add('off');
+        menuIcon[2].classList.add('off');
+
+        menu.style.width = '60px';
+        menu.style.backgroundColor = 'rgb(228, 228, 228)';
+
+        // 자식태그를 삭제
+        // ==> 하고싶은데 menu의 자식에는 submenu말고도 menuIcon이 있다.
+        // ==> menuIcon을 제외하고 submenu만 삭제하려면?
+        // ==> parentNode(부모)에 접근해서 삭제
+        // let subMenu = menu.children[1];
+        // console.log(subMenu); ==> submenu의 0번이 맞는지 확인 완료
+        // subMenu.parentNode.removeChild(subMenu);
+        // ==> 잘 삭제된다. 이제 for로 묶어서 전부 삭제해보자
+        for(let subI = 0; subI < submenuNumber; subI++){
+          let subMenu = menu.children[1];
+          subMenu.parentNode.removeChild(subMenu);
+          // ==> 3개는 지워지고 3개는 계속 살아있는 상황 발생
+          // console.log(menu.children);
+          // ==> 원인 : subI는 증가하는데 menu.children은 줄어든다(삭제되니까)
+          // ==> 해결 : menu.children.length대신 6을 넣어봄
+          // *** 6개 말고 3개로 줄이고싶어질 수도 있지 않나?
+          // ==> submenuNumber라는 변수를 만들어서 submenu의 개수를 바꿀 수 있도록 함
+          
+        }
+      }
+
+    });
+
+  </script>
+</body>
+</html>

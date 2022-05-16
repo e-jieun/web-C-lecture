@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    li {
+      list-style: none;
+    }
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+    #menu {
+      width: 6vw;
+      height: 100vh;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .left {
+      width: 6vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .left>div:nth-child(1) {
+      width: 3vw;
+      height: 3vw;
+      background-color: #333;
+      border-radius: 50%;
+    }
+    .left>div:nth-child(2) {
+      width: 4vw;
+      height: 0.8vh;
+      border-radius: 1vw;
+      background-color: #333;
+      transform: rotate(45deg);
+      position: relative;
+      left: 2vw;
+    }
+    .left>div:nth-child(3) {
+      width: 4vw;
+      height: 0.8vh;
+      border-radius: 1vw;
+      background-color: #333;
+      transform: rotate(-45deg);
+      position: relative;
+      right: 2vw;
+    }
+    .right {
+      height: 60vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+    .right>li {
+      width: 15vw;
+      height: 8vh;
+      background-color: #eee;
+      border-radius: 1vw;
+    }
+    .right>li>div {
+      height: inherit;
+      font-size: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+
+    .on {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <nav id="menu">
+      <div class="left">
+        <div class="button">
+        </div>
+        <div class="x on"></div>
+        <div class="x on"></div>
+      </div>
+      <div class="right on">
+        <li class="box on">
+          <div>menu-1</div>
+        </li>
+        <li class="box on">
+          <div>menu-2</div>
+        </li>
+        <li class="box on">
+          <div>menu-3</div>
+        </li>
+        <li class="box on">
+          <div>menu-4</div>
+        </li>
+        <li class="box on">
+          <div>menu-5</div>
+        </li>
+        <li class="box on">
+          <div>menu-6</div>
+        </li>
+      </div>
+    </nav>
+  </div>
+</body>
+<script>
+  const menu = document.getElementById('menu');
+  const btn = document.querySelector('.button');
+  const left = document.querySelector('.left');
+  const right = document.querySelector('.right');
+  const x = document.querySelectorAll('.x');
+  const li = document.getElementsByClassName('box');
+  console.log(li);
+  console.log(x);
+  let data = true;
+  btn.addEventListener('click', function () {
+    if (data === true) {
+      // styling
+      menu.style.width = "30vw";
+      left.style.width = "12vw";
+      right.style.width = "18vw";
+      // li for loop
+      for (let i = 0; i < li.length; i++) {
+        li[i].classList.remove('on');
+        right.classList.remove('on');
+      } // for(let i=0; i<li.length; i++)
+
+      // x for loop
+      for (let j = 0; j < x.length; j++) {
+        x[j].classList.remove('on');
+        btn.classList.add('on');
+        x[j].addEventListener('click', function () {
+          for (let i = 0; i < li.length; i++) {
+            li[i].classList.add('on');
+            right.classList.add('on');
+          }
+          for (let j = 0; j < x.length; j++) {
+            x[j].classList.add('on');
+            btn.classList.remove('on');
+          }
+          menu.style.width = "6vw";
+          data = true;
+        });
+      } // for(let j=0; j<x.length; j++)
+      data = false;
+    } // data === true scope
+  });
+/*
+
+check point 1
+
+1. for()문 과 classList 객체의 값을 훌륭히 활용한 사례
+2. 반복되는 코드를 줄일 방법을 고안한다면 -> 더 좋은 코드로 완성시킬 수 있을 것
+
+
+
+*/
+
+
+
+</script>
+
+</html>

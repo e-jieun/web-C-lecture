@@ -1,0 +1,59 @@
+:root {
+  --icon-color: #000;
+}
+
+.btnO {
+  width: 80%;
+  height: 80%;
+  background-color: var(--icon-color);
+  border-radius: 100%;
+}
+
+.btnX {
+  width: 80px;
+  height: 80px;
+}
+
+.btnX:before, .btnX:after {
+  position: absolute;
+  left: 24px;
+  content: " ";
+  height: 50px;
+  width: 4px;
+  border-radius: 10px;
+  background-color: var(--icon-color);
+}
+
+.btnX:before {
+  transform: rotate(45deg);
+}
+
+.btnX:after {
+  transform: rotate(-45deg);
+}
+
+#base {
+  width: 100vw;
+  height: 100vh;
+}
+#base > .root {
+  background-color: #c5c5c5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#base > .root > div:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#base > .root > .wrap {
+  width: 80%;
+  height: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}/*# sourceMappingURL=20220513_layout-training-38.css.map */

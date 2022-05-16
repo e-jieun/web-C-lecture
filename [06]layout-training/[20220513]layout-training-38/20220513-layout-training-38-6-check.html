@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/c0547f77dd.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; transition: 1s;}
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #fff;
+      display: flex;
+    }
+
+    .menu {
+      width: 5%;
+      height: 100%;
+      background-color: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .menu-box {
+      width: 20%;
+      height: 100%;
+      background-color: #ccc;
+      display: none;
+      align-items: center;
+      justify-content: space-around;
+      flex-direction: column;
+    }
+
+    section {
+      width: 80%;
+      height: 12%;
+      background-color: rgb(221, 221, 221);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #000;
+    }
+
+    .on {
+      display: flex;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <nav class="menu">
+        <h1><i class="fa-solid fa-circle"></i></h1>
+        <!-- i혼자만은 children으로 인식하지 않는가봐.. -->
+    </nav>
+
+    <div class="menu-box">
+      <section>menu</section>
+      <section>menu</section>
+      <section>menu</section>
+      <section>menu</section>
+      <section>menu</section>
+      <section>menu</section>
+    </div>
+  </div>
+
+  <script>
+    const root = document.querySelector("#root");
+    const nav = document.querySelector(".menu");
+    const dot = nav.children;
+    const menuBox = document.querySelector(".menu-box");
+    console.dir(nav);
+    console.dir(dot[0]);
+    //h1
+    console.log(typeof dot[0].childNodes[0]);
+    console.dir(dot[0].children[0]);
+    
+    dot[0].addEventListener("click", ()=> {
+      if(menuBox.classList.contains("on")) {
+        menuBox.classList.remove("on");
+
+      } else {
+        menuBox.classList.add("on");
+      }
+    });
+    
+    //Q.fontawesome 사용할 때 아이콘이 변하게 어떻게 해야할지 모르겠어요......................................
+
+
+    // check point 1
+    // A. font awesome은 단순한 CSS class 형 프레임워크(framework)이기때문에 프로그래밍 작업과 무관
+    // A. 아이콘이 변한다. -> 1번 아이콘이 2번 아이콘으로 대체된다 라는 접근으로 시도해볼 것
+    
+    // let workPlease = true;
+    dot[0].addEventListener("click", ()=> {
+      if(menuBox.classList.contains("on")) {
+        dot[0].children[0].setAttribute('class','svg');
+        dot[0].children[0].classList.add('fa-solid fa-x');
+        console.dir(dot[0].children[0]);
+        // workPlease = false;
+        
+      } else {
+        dot[0].children[0].setAttribute('class','svg');
+        dot[0].children[0].classList.add('fa-solid fa-circle');
+        console.dir(dot[0].children[0]);
+        // workPlease === true;
+      }
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #menu {
+      width: 20vw;
+      height: 100vh;
+      background-color: #c4c4c4;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #menu>div:nth-child(1) {
+      width: 5vw;
+      height: 5vw;
+      border-radius: 50%;
+      background-color: #333;
+
+      position: absolute;
+      left: 7vw;
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="menu">
+    <div>
+      <div id="line1"></div>
+      <div id="line2"></div>
+    </div>
+    <ul id=list>
+      <li id="item">item-1</li>
+      <li id="item">item-2</li>
+      <li id="item">item-3</li>
+      <li id="item">item-4</li>
+      <li id="item">item-5</li>
+      <li id="item">item-6</li>
+    </ul>
+  </nav>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const btn = document.querySelector('div');
+    const list = document.getElementById('list');
+    const items = document.querySelectorAll('#item');
+    const line1 = document.getElementById('line1');
+    const line2 = document.getElementById('line2');
+    // console.log(btn);
+    // console.log(items);
+
+
+    list.style.display = "none";
+    list.style.listStyleType = "none";
+
+
+    for (index = 0; index < items.length; index++) {
+      items[index].style.width = "15vw"
+      items[index].style.height = "10vh"
+      items[index].style.backgroundColor = "#fff"
+      items[index].style.marginTop = "5vh"
+      items[index].style.display = "flex";
+      items[index].style.justifyContent = "center";
+      items[index].style.alignItems = "center";
+    }
+
+    let isStatus = true;
+    let i = 20;
+
+
+
+
+    console.log(menu);
+    btn.addEventListener('click', () => {
+      let menuWidht = setInterval(function () {
+
+        if (isStatus === true) {
+          i++;
+          menu.style.width = i + "vw";
+
+          btn.style.backgroundColor = "#c4c4c4";
+          btn.style.display = "flex";
+          btn.style.flexDirection = "column";
+          btn.style.justifyContent = "center";
+          btn.style.alignItems = "center";
+
+          line1.style.display = "block";
+          line1.style.backgroundColor = "#222";
+          line1.style.transform = "rotate(45deg)";
+          line1.style.width = "5vw";
+          line1.style.height = "0.2vh";
+
+          line2.style.display = "block";
+          line2.style.backgroundColor = "#222";
+          line2.style.transform = "rotate(-45deg)";
+          line2.style.width = "5vw";
+          line2.style.height = "0.2vh";
+
+          if (i >= 70) {
+            isStatus = false;
+            list.style.display = "block";
+
+
+            clearInterval(menuWidht);
+
+          }
+        }
+
+        if (isStatus === false) {
+          i--;
+          menu.style.width = i + "vw";
+          // list.style.display = "block";
+
+          if (i <= 68) {
+            list.style.display = "none";
+          }
+
+        }
+        if (i <= 20) {
+          isStatus = true;
+          list.style.display = "none";
+
+          btn.style.backgroundColor = "#333";
+          line1.style.display = "none";
+          line2.style.display = "none";
+
+          clearInterval(menuWidht);
+        }
+      }, 8);
+    });
+
+    /*
+
+    check point 1
+    
+      1. 비동기 함수인 setInterval()을 활용한 애니메이팅 구현 훌륭한 사례
+      2. 시작 판별과 종료시점에 대해 다양한 연구를 진행한다면, 더욱 유연한 애니메이션 구현이 가능해 질 것
+      if(i <= 68)
+      if(i <= 20)
+      3. 68, 20 과 같이 '값을 직접 작성하는 것'을 리터럴(literal) 이라고 부르며, 현재의 작업에서는 훌륭히 작동하나, 조정이 발생하는 경우 코드를 '다시작성(값을 조금 수정할 뿐이지만)' 해야 하는 큰 문제가 발생함
+      4. 더욱 좋은 if()문 제어를 위해서 
+        4-1. 값을 변수에 담아 놓고 변수를 따로 관리하는 방식
+        4-2. 권장방식 : 특정 기준점이 되는 값을 가져오는(get) 방식을 권장함
+
+        4-3 68 이라는 리터럴값을 가져온 값으로 바꾸어서 작업해볼 것
+    
+
+
+
+
+
+    */
+  </script>
+</body>
+
+</html>

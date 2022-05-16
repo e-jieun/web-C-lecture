@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/12e1deed84.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  * {margin: 0; padding: 0; box-sizing: border-box;}
+
+  #root {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #root>div{
+    width: 10vw;
+    height: 50vh;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #root>div>i{
+    font-size: 2rem;
+  }
+
+
+</style>
+<body>
+  <div id="root">
+    <div>
+      <i class="fa-solid fa-circle"></i>
+    </div>
+  </div>
+
+  <script>
+
+    function flexStyle(target, jus, ali){
+      target.style.display = 'flex';
+      target.style.justifyContent = jus;
+      target.style.alignItems = ali;
+    }
+
+    function sizeStyle(target, w, h){
+      target.style.width = w;
+      target.style.height = h;
+    }
+
+    function menuStyle(target){
+      sizeStyle(target, '25vw', '100%');
+      flexStyle(target, 'space-around' ,'center');
+      target.style.flexDirection = 'column';
+      target.style.listStyleType = 'none';
+    }
+
+    function listStyle(target){
+      sizeStyle(target, '250px', '50px');
+      flexStyle(target, 'center' ,'center');
+      target.style.backgroundColor = '#f7f7f7';
+      target.style.borderRadius = '10px';
+    }
+
+    const root = document.getElementById('root');
+    console.dir(root);
+    const divBox = root.children[0];
+    console.dir(divBox);
+    const btn = divBox.children[0];
+    console.log(btn);
+
+    let bolean = true;
+    btn.addEventListener('click', () => {
+      // console.log('크게만들기');
+      if(bolean === true){
+        divBox.style.width = '30vw';
+        flexStyle(divBox, 'flex-start', 'center');
+        btn.style.margin = '2vw';
+
+        let ul = document.createElement('ul');
+        divBox.appendChild(ul);
+        // console.dir(ul);
+        
+        const menu = divBox.children[1];
+        // console.dir(menu);
+        
+        for(let i=0 ; i<5; i++){
+          let li = document.createElement('li');
+          menu.appendChild(li);
+          listStyle(li);
+          // console.dir(li);
+          li.textContent = 'menu';
+        }        
+        // ul-styling
+        menuStyle(menu);
+        bolean = false;
+        
+      } else {
+        divBox.style.width = '10vw';
+        bolean = true;
+        divBox.children[1].remove();
+      }
+    });
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{margin:0; padding:0;}
+    #root {
+      width: 100vw; height: 100vh;
+      /* background-color: #ccc; */
+      display: flex;
+      align-items: center;
+    }
+    
+    #menu {
+      width: 5vh; height: 94vh;
+      padding: 3vh;
+      background-color: rgb(228, 228, 228);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    #menu-button{
+      width: 50px; height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      position: fixed;
+      left: 20px;
+      top: 47%;
+    }
+
+    #menu-button > div:first-child{
+      width: 50px; height: 50px; 
+      border-radius: 25px;
+      background-color: rgb(21, 16, 90);
+    }
+
+    #menu-button > div:nth-child(2) {
+      width: 50px; height: 5px;
+      border-radius: 3px;
+      background-color: rgb(21, 16, 90);
+      transform-origin: 45% 50%;
+      transform: rotate(45deg);
+    }
+    #menu-button > div:last-child {
+      width: 50px; height: 5px;
+      border-radius: 3px;
+      background-color: rgb(21, 16, 90);
+      transform-origin: 50% 20%;
+      transform: rotate(135deg);
+    }
+
+    .off {
+      display: none;
+    }
+    .sub-menu {
+      width: 150px; height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: navy;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <nav id="menu">
+      <div id="menu-button">
+        <div></div>
+        <div class="off"></div>
+        <div class="off"></div>
+      </div>
+    </nav>
+  </div>
+
+  <script>
+    const menu = document.getElementById('menu');
+    const menuBtn = document.getElementById('menu-button');
+    const menuIcon = menuBtn.children;
+    // console.log(menuIcon); // ==> [ 배열 ]
+    let submenuNumber = 7;
+    let widthValue = 50;
+    
+    let value = true;
+
+    // 버튼을 클릭하면 width가 늘어나게
+    menuBtn.addEventListener('click', ()=>{
+
+      if(value === true){
+        menuIcon[0].classList.add('off');
+        menuIcon[1].classList.remove('off');
+        menuIcon[2].classList.remove('off');
+        
+        const wSize = setInterval(function(){
+          widthValue = widthValue+10;
+          menu.style.width = widthValue+'px';
+          
+          if(widthValue > 250){
+            clearInterval(wSize);
+          };
+  
+        }, 10);
+  
+        for(let menuI = 0; menuI < submenuNumber; menuI++){
+          let subMenu = document.createElement('div');
+          menu.appendChild(subMenu);
+          menu.children[menuI+1].classList.add('sub-menu');
+          menu.children[menuI+1].textContent = 'menu-'+(menuI+1);
+        }
+
+        value = false;
+      }else{
+        menuIcon[0].classList.remove('off');
+        menuIcon[1].classList.add('off');
+        menuIcon[2].classList.add('off');
+
+        const wSize = setInterval(function(){
+          widthValue = widthValue-10;
+          menu.style.width = widthValue+'px';
+          
+          if(widthValue <= 50){
+            clearInterval(wSize);
+          };
+  
+        }, 3);
+        
+        for(let subI = 0; subI < submenuNumber; subI++){
+          let subMenu = menu.children[1];
+          subMenu.parentNode.removeChild(subMenu);
+        }
+
+        value = true;
+      }
+      
+
+    });
+
+  </script>
+</body>
+</html>

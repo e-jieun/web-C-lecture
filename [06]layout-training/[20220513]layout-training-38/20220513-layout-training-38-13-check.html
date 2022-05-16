@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+#menu{
+  width: 3vw;
+  height: 3vw;
+  border-radius: 50%;
+  background-color: plum;
+  position: absolute;
+  top:30%;
+  left: 38%;
+}
+ul{
+  position: absolute;
+  top:14%;
+  left: 45%;
+
+}
+
+li{
+  width: 10vw;
+  height: 5vh;
+  border-radius: 10px;
+  background-color: #ccc;
+  margin: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* display: none; */
+  
+}
+
+
+  </style>
+</head>
+<body>
+  <nav id="menu"></nav>
+  <ul>
+    <li>menu-1</li>
+    <li>menu-2</li>
+    <li>menu-3</li>
+    <li>menu-4</li>
+    <li>menu-5</li>
+    <li>menu-6</li>
+
+  </ul>
+
+
+
+  <script>
+
+    const button = document.getElementById('menu');
+    const menu = document.getElementsByTagName ('li')
+
+    console.log(menu);
+
+    // let booleanValue = true;
+    // if(booleanValue === true){
+      //   menu.style.display ="none"; 
+      // }
+      // Q. 불리언 타입으로 실행시키려했는데 안됨
+
+// check point 1
+
+/*
+
+Q. 불리언 타입으로 실행시키려했는데 안됨
+
+A. 위의 60행에서 콘솔을 확인했을때 나오는 결과값이 무엇인지 확인할 것
+A. 안되는 이유는 '사람이 컴퓨터가 이해하는 작성법으로' 작성하지 않았기 때문이므로 console을 확인하는 것을 작성으로만 끝내지 않고, 값이 무엇인지 판별하는 과정을 거치지 않는다면 메서드를 사용할 수 없음 
+A. 작성법과 콘솔을 찍어 디버깅하는 이유를 정리하고 숙지할 것
+
+
+
+
+
+*/
+
+
+
+
+    // button을 눌러서 li를 display 'none'을 하려고했는데 button이 사라짐
+    // button.addEventListener('click',function(){
+    //     let a = document.getElementById('menu');
+    //     if(a.style.display ==='none'){
+    //       a.style.display='block';
+    //     }else{
+    //       a.style.display ='none';
+    //     }
+    // });
+
+    // button.addEventListener('click',function(){
+    //   let a = document.getElementsByTagName('ul');
+    //   if(a.style.visibility === hidden){
+    //     a.style.display = 'block';
+    //   }
+
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

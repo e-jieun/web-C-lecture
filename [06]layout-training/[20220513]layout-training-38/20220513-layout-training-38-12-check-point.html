@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <nav id="menu">
+    <button></button>
+    <div></div>
+  </nav>
+  <script>
+    // 1. 우선 접혀진 메뉴를 만든다
+    // *
+    document.body.setAttribute('style',`margin: 0; padding: 0;`);
+    
+    // select root
+    const root = document.querySelector('#root');
+    // console.log(root);
+    // style root
+    root.setAttribute('style',`width: 100vw; height: 100vh; background: #c4c4c4;`)
+
+    // select menu
+    const menuCon = document.getElementById('menu');
+    // console.log(menuCon);
+    // menu style
+    menuCon.setAttribute('style',`width: 100px; height: 100vh; background: #fff; position: absolute; top: 0; left: 0; display: flex; align-items: center; justify-content: space-around;`);
+    // console.log(menuCon.children);
+
+    // menuCon.children
+    const menuChild = menuCon.children[0];
+    const menuAppearCon = menuCon.children[1];
+    // console.log(menuChild);
+    // console.log(menuAppearCon);
+    // menuChild style
+    menuChild.setAttribute('style',`width: 50px; height: 50px; border-radius: 50px;`);
+    // menuAppearCon style
+    menuAppearCon.setAttribute('style',`width: 50vw; height: 50vh; background: #fff; display: flex; flex-direction: column; overflow: hidden; display: none;`);
+
+    // check point 1
+    /*
+
+    1. setAttribut() 메서드의 용도
+    -> 매우 훌륭히 스타일링 하였으나, 메서드의 용도상 "속성을 만들어주는용" 이기때문에 가독성과 활용성(인터렉션 등) 문제때문에 setAttribute() 방식으로 스타일링 하는 것은 안티패턴에 속함 -> 사용자정의 함수(직접만드는함수)를 통해서 스타일링을 진행하는 것을 연습해볼 것 
+
+
+    */
+
+
+
+    
+    /* 2. 버튼을 클릭하면 메뉴가 펼쳐진다(펼쳐진다, !그런데 이동하는 식으로 펼쳐지면 버튼의 위치가 똑같은 곳에서 변경되기가 어렵다, 크기를 변경해주고 자식요소를 나타나게 해주는 방식으로 설계해보자)
+    버튼 아이콘이 사라지고 X자 모양이 생겨나도록 해준다 */
+    
+    // !true를 바깥으로 빼줘야 true, false가 나오겠지
+    // 메뉴를 펼치는 부분은 했다
+    // 2. 접히고 펴지는 크기조절을 만들어 준다 
+    let clickValue = true;
+    menuChild.addEventListener('click', ()=>{
+      // clickValue === true  //펼쳐진 메뉴 상태
+      if(clickValue === true){
+        // console.log(clickValue);
+        menuCon.style.background = '#414141';
+        menuCon.style.width = '500px';
+        menuAppearCon.style.display = 'block';
+
+        // 메뉴로 자식요소를 나타나게 해줘야 한다
+        if(clickValue === true){
+          // console.log('menuAppear');
+          // 3. 그리고 메뉴도 만들어준다
+          for(let i = 0; i < 5; i++){
+            let menuAppear = document.createElement('div');
+            menuAppear.textContent = 'menu';
+            menuAppear.setAttribute('style',`width: 100%; height: 10vh; border: 1px solid black; text-align: center;`);
+            menuAppearCon.append(menuAppear);
+            // ?문제는 이렇게 메뉴를 덧붙여주면 클릭할 때마다 계속 생긴다, 멈춰줘야 한다
+            // ?overflow: hidden;으로 임시방편은 줬는데 어떻게 없애주지?
+            // Q1. 아래의 조건식을 사용해서 appendChild()된 menuAppearCon.children의 길이가 5이상이면 appendChild()를 멈추게 하는 방법이 있을까요?
+
+            // check point 2
+            // A. menuAppearCon.children이 5이상 일때, 혹은 아닐때 -> if() 제어
+
+
+
+
+            // if(menuAppearCon.children.length > 5){
+            //   menuAppearCon.remove(menuAppear);
+            // }
+          }
+        }
+        clickValue = false;
+        // clickValue !== true === clickValue === false //접혀진 메뉴 상태
+      } else{
+        // console.log(clickValue);
+          menuCon.style.background = '#e3e3e3';
+          menuCon.style.width = '100px';
+          menuAppearCon.style.display = 'none';
+          clickValue = true;
+        }
+        // ---------------------------------------------------------------------------------
+        // 4.X자로 바뀌는 아이콘은 어떻게 만들까, 원래의 요소를 지우고, 새로 두 요소를 넣어서 X자로 만들어준다
+        // 펼쳐진 상태 == true
+      if(clickValue === false){
+        console.log('메뉴 사라졌드아');
+        console.log(clickValue);
+        menuCon.removeChild(menuChild);
+        // 이렇게 하면 없어지긴 한다 
+        for(let i = 0; i < 2; i++){
+          let xBtn = document.createElement('button');
+          xBtn.setAttribute('style',`width: 50px; height: 2px; position: absolute; left: 10px;`);  
+          // menuConAppear보다 앞에 넣어줘야 하는데
+          // menuCon.append(xBtn);
+          menuAppearCon.style.flexDirection = 'column';
+          // !앞에 넣을 수 있다
+          menuAppearCon.before(xBtn);
+          // 일자 두개의 메뉴 버튼을 만들었다, 어떻게 만들지?
+          // X를 만들어야 하는데
+          // x를 여기서 만들고
+        }
+        // !이곳에서 X로 변형을 만들어줘야 한다 => 왜냐면 위에서 자식으로 추가되는 반복문을 빠져나오고 나서야 children이 [button, button, div]으로 생겨난다
+        console.log(menuCon.children);
+        let xBtnItem = menuCon.children;
+        xBtnItem[0].style.transform = 'rotate(45deg)';
+        xBtnItem[1].style.transform = 'rotate(-45deg)';
+        // ?문제가 하나 있다 어떻게 다시 x에 적용을 하지?
+        // !클릭이벤트를 달아주면 될 것
+        // 그런데 xBtnItem이 배열이니까 for loop를 돌려서
+        // 반복해서 X버튼을 없애주고, 다시 O버튼을 나타내고 할 부분들
+        menuCon.addEventListener('click',event => {
+          console.log(event.target);
+          // Q2. 버튼을 반복해서 X => O로 클릭할 때마다 제거하고 덧붙이고 하는 부분을 만들려고 하는데 button이 두 개라서 반복문을 사용해보기도 하고
+          for(let i = 0; i < xBtnItem.length-1; i++){
+            menuCon.removeChild(event.target);
+
+
+            // error sign
+            // 20220513-layout-training-38-12-check-point.html:118 Uncaught DOMException: Failed to execute 'removeChild' on 'Node': The node to be removed is not a child of this node.
+
+
+
+          // => X를 지우기 위해선 event.target을 제거하면 되지만 클릭할 때마다 제거가 된다
+          // => 그냥 자식요소 중 버튼을 지워달라고 했을 때는 !아래의 originBtn을 제거해주고 있었다
+          }
+          // Q2. 이런 식으로 새로운 메서드를 사용해서 제거하려고도 해봤는데 잘 작동하지 않아요
+          // xBtnItem.splice(0, 1);
+          //다만 X를 만들어주고 다시 생겨날 부분이 있어야 한다
+          let originBtn = document.createElement('button');
+          originBtn.setAttribute('style',`width: 50px; height: 50px; border-radius: 50px;`);  
+          menuAppearCon.before(originBtn);
+          // => 앞에 생기도록 해결했지만, 두 번 클릭해서 사라져야 해서 두 개나 생겨버리는 것
+        });
+        clickValue = true;
+      } else{
+        // 이 부분은 else가 아니라 생겨난 것에 대해 클릭 이벤트를 달면 클릭 실행하면 원래의 버튼이 다시 생기도록 해서 만들어줘야하는데
+        console.log('메뉴 다시 나타나야 한다');
+        console.log(menuCon.children);
+        menuCon.removeChild('button');  
+        //다만 X를 만들어주고 다시 생겨날 부분이 있어야 한다
+        let originBtn = document.createElement('button');
+        originBtn.setAttribute('style',`width: 50px; height: 50px; border-radius: 50px;`);  
+        menuCon.appendChild(originBtn);
+        clickValue = false;
+      }
+    });
+
+    // check point 3
+
+
+    /* 
+
+    1. .append(), .appendChild(), before(), removeChild(), setAttribute()등 메서드를 적극사용하는 활용이 매우 훌륭하나, 같은 용도처럼 보여도 구분지어 사용하는 이유가 있으므로 정확한 용도에 맞게 메서드를 활용하는 것이 중요함
+    
+    2. 추가되었다가 사라지는 기본 인터렉션을 간단한 테스트 코드로 진행한 뒤 해당 작업의 스타일링을 진행했다면 메서드 사용수준을 미루어보았을때 간단히 해결할 수 있을 것으로 예상
+    2-1. 작업을 스타일링 -> 제어 로 하는 버릇 때문에 코드의 동작을 찾을 수 없는 현상이므로 습관을 바꾸어 기본기능을 테스트 한 후 잘 동작하는지 검증을 끝낸뒤 스타일링 할것 (매우 중요 ★★★★★★★★★★★★★★★)
+    
+
+
+
+
+
+    */
+
+
+
+  </script>
+</body>
+</html>

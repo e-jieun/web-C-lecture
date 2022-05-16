@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>mark-38</title>
+    <style>
+      #root {
+        width:100vw;
+        height:100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      #menu {
+        width:100px;
+        height:700px;
+        background-color: gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* flex-direction: column; */
+      }
+
+      #menu2 {
+        width:100px;
+        height:700px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      
+      #circle {
+        width:50px;
+        height:50px;
+        border-radius: 50%;
+        background-color: black;
+      }
+       
+     /* ***************************************************************************************************** */
+      /* ***************************************************************************************************** */
+      /* *************버튼(circle)을 계속 활성화(?) 시켜서 클릭할때 계속 이벤트가 구동되게 하고싶은데 */
+                    /* 응용력의 한계 + 기본기의 부재 + 노력의 부재 + 빡대가리로 인해 생각대로 잘 안됩니다 */
+                    /* 문법부터 이해하려고 노력하는데 뒤돌아서면 거짓말처럼 다 사라집니다 ^^;;;;;; */
+                    /* 요소생성으로 한놈만 만들고 그 한놈을 반복문으로 만들어보려 했는데 */
+                    /* 역시 위와 같은 이유로 생각처럼 안되는군요...!! */
+                    /* 오늘 하루종일 이것만 붙잡고 있었다는 현실에 화가 치밉니다 */
+                    /* 열심히 하겠습니다 ~_~ */
+      
+                    /* check point 1 */
+                    /* 원래 그런 것이니 자책하지 말것 -> 일 오래 못함 */
+      
+      
+      
+      
+      
+    </style>
+</head>
+<body>
+  <div id="root">
+    <div id="menu">
+      <div id="circle"></div>
+      
+    </div>
+    <div id="menu2"></div>
+</div>
+
+<script>
+  const menu = document.getElementById("menu")
+  const menu2 = document.getElementById("menu2")
+
+  const circle = document.getElementById("circle")
+  
+  const list = document.createElement("div");
+  const list2 = document.createElement("div");
+  const list3 = document.createElement("div");
+  const list4 = document.createElement("div");
+  
+  
+
+
+  state = false;
+
+  circle.addEventListener("click",function (){
+    menu2.style.width = "300px";
+    menu2.appendChild(list);
+    menu2.appendChild(list2);
+    menu2.appendChild(list3);
+    menu2.appendChild(list4);
+    console.log("클릭");
+    menu2.style.backgroundColor = "lightgray";
+    
+    list.textContent = "menu1";
+    list2.textContent = "menu2";
+    list3.textContent = "menu3";
+    list4.textContent = "menu4";
+    
+    if (state === true) {
+      menu2.style.display = "none";
+    } else {
+      state=true;
+      menu2.style.diplay ="column";
+    }
+    
+  })
+  
+
+
+
+  list.style.width = "200px";
+  list.style.height = "100px";
+  list.style.backgroundColor = "white";
+  list.style.textAlign = "center";
+
+  list2.style.width = "200px";
+  list2.style.height = "100px";
+  list2.style.backgroundColor = "white";
+  list2.style.textAlign = "center";
+  
+
+  list3.style.width = "200px";
+  list3.style.height = "100px";
+  list3.style.backgroundColor = "white";
+  list3.style.textAlign = "center";
+  
+  list4.style.width = "200px";
+  list4.style.height = "100px";
+  list4.style.backgroundColor = "white";
+  list4.style.textAlign = "center";
+  
+ 
+  
+  
+</script>
+
+
+
+</body>
+</html>
+

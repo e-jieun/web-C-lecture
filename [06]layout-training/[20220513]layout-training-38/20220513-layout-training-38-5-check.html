@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding: 0;box-sizing: border-box;}
+    #root{
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    #menu{
+      display: flex;
+      /* border: 1px solid red; */
+    }
+    #menu > section:nth-child(1) {
+      width: 5vw;
+      height: 50vh;
+      background-color: #ccc;
+      /* border: 1px solid blue; */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .open{
+      width: 3vw;
+      height: 3vw;
+      position: relative;
+      z-index: 2;
+      background-color: gray;
+      border-radius: 50%;
+      transition: 1s;
+
+    }
+    .close{
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: rotate(45deg);
+      transition: 1s;
+    }
+    .close:before, .close:after {
+      position: absolute;
+      content:' ';
+      height: 40px;
+      width: 4px;
+      border-radius: 5px;
+      background-color: rgb(53, 53, 53);
+      z-index: 1;
+    }
+    .close:before {
+      transform: rotate(45deg);
+    }  
+    .close:after {
+      transform: rotate(-45deg);
+    } 
+    .rotate {
+      transform: rotate(180deg);
+      transition: 1s;
+      opacity: 1;
+    }
+
+    #menu > section:nth-child(2) {
+      width: 20vw;
+      height: 50vh;
+      background-color: #ccc;
+      padding: 3vw;
+
+    }
+    .menu-item{
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    #items{
+      width: inherit;
+      height: 5vh;
+      border-radius: 5px;
+      background-color: rgb(224, 224, 224);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: rgb(53, 53, 53);
+      
+    }
+    .opacity0{
+      opacity: 0;
+      transition: 0.5s;
+    }
+    .opacity1{
+      opacity: 1;
+      transition: 1s;
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <nav id="menu">
+      <section>
+        <div class="open"></div>
+        <div class="close"></div>
+      </section>
+      <section>
+        <div class="menu-item">
+          <div id="items">menu-1</div>
+          <div id="items">menu-2</div>
+          <div id="items">menu-3</div>
+          <div id="items">menu-4</div>
+          <div id="items">menu-5</div>
+          <div id="items">menu-6</div>
+        </div>
+      </section>
+    </nav>
+  </div>
+
+  <script>
+    let openBtn = document.getElementsByClassName('open')[0];
+    let closeBtn = document.getElementsByClassName('close')[0];
+    console.log(closeBtn);
+    
+
+    let menu = document.getElementById('menu');
+    let menu1 = menu.children[0];
+    console.log(menu1);
+    let menu2 = menu.children[1];
+    console.log(menu2);
+
+    menu2.style.display = "none";
+    menuValue = true;
+    console.log(openBtn);
+    openBtn.addEventListener('click',function(){
+
+
+      openBtn.classList.toggle('opacity0');
+      closeBtn.classList.toggle('rotate');
+      //setInterval로 하면 제대로 작동하지 않아 토글로 변경.
+      //setInterval도 뭔가 조건식을 잘 만들면 갠찬을거같은데 나는 방법을 찾지 못했다
+      
+      // check point 1
+
+      /*
+
+      setInterval()을 활용하고자 하는 접근 -> 매우 훌륭한 시도 이며, setInterva()을 활용하여 동작을 제어한다면, '프로그래밍'의 동작방식과 더불어 javascript의 '비동기' 방식을 이해하게 되므로 매우 중요한 훈련이자, 필요한 이해
+
+      1. 대부분의 웹퍼블리셔들은 setInterval()을 제어하지 못하기 때문에 추상화정도가 높은 toggle 매서드를 매우 애용하는 편이나, 한계는 명확함 
+
+
+
+      */
+
+
+
+      if(menuValue===true){
+        menu2.style.display = "block";
+        
+
+        menuValue = false;
+
+
+        
+      } else {
+        menu2.style.display = "none";
+        menuValue = true;
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<div id="root">
+	<nav id="menu">
+		<div>
+			<div></div>
+		</div>
+		<div>
+			<div></div>
+			<div></div>
+		</div>
+	</nav>
+	<nav id="menu2">
+		<ul>
+			<li>menu-1</li>
+			<li>menu-2</li>
+			<li>menu-3</li>
+			<li>menu-4</li>
+			<li>menu-5</li>
+			<li>menu-6</li>
+		</ul>
+	</nav>
+</div>
+
+
+<script>
+	const root =document.getElementById("root");
+	console.log(root);
+	const O = document.querySelector("#root>#menu>div:nth-child(1)");
+	const X = document.querySelector("#root>#menu>div:nth-child(2)");
+	const menu2=document.getElementById('menu2');
+	console.log(O);
+	console.log(X);
+	console.log(menu2);
+	O.style.zIndex=3;
+	X.style.zIndex=2;
+
+
+	// 그냥 메뉴를 absolute로 이동시키고
+	// 클릭 시 z-index 값만 바꾸게 해서
+	// 함수 없이도 구현할 수 있다.
+	//
+
+	O.addEventListener("click",function(){
+		menu2.style.position='absolute';
+		menu2.style.left='10vw';
+		menu2.style.transition='1s';
+		O.style.zIndex=5;
+		X.style.zIndex=6;
+		})
+	X.addEventListener("click",function(){
+		menu2.style.position='absolute';
+		menu2.style.left='-20vw';
+		menu2.style.transition='1s';
+		X.style.zIndex=5;
+		O.style.zIndex=6;
+	})
+</script>
+</body>
+</html>

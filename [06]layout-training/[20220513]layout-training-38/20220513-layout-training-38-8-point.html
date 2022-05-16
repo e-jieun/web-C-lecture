@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://kit.fontawesome.com/12e1deed84.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  * {margin: 0; padding: 0; box-sizing: border-box;}
+
+#root {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#container{
+  width: 8vw;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ccc;
+  margin-left: 5vw;
+}
+
+#btn{
+  width: 25px;
+  height: 25px;
+  background-color: #333;
+  border-radius: 50%;
+}
+
+#container>i{
+  font-size: 2rem;
+  color: #333;
+  display: none;
+}
+
+#menu{
+  width: 20vw;
+  height: 50vh;
+  background-color: #ccc;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  flex-direction: column;
+  list-style-type: none;
+  display: none;
+}
+
+
+</style>
+<body>
+  <div id="root">
+    <div id="container">
+      <div id="btn"></div>
+      <i class="fa-solid fa-circle-xmark"></i>
+    </div>
+    <ul id="menu">
+      <li class="menu-list">menu-1</li>
+      <li class="menu-list">menu-2</li>
+      <li class="menu-list">menu-3</li>
+      <li class="menu-list">menu-4</li>
+      <li class="menu-list">menu-5</li>
+      <li class="menu-list">menu-6</li>
+    </ul>
+  </div>
+  <script>
+      function liStyle(target){
+      target.style.width = '250px';
+      target.style.height = '50px';
+      target.style.backgroundColor = '#f7f7f7';
+      target.style.display = 'flex';
+      target.style.justifyContent = 'center';
+      target.style.alignItems = 'center';
+      target.style.borderRadius = '10px';
+      target.style.marginRight = '10px';
+    }
+
+    const containerBox = document.getElementById('container');
+    console.dir(containerBox);
+    const btn = containerBox.children[0];
+    console.dir(btn);
+    const xBtn = containerBox.children[1];
+    console.log(xBtn)
+    const menu = document.getElementById('menu');
+    console.dir(menu);
+    const li = document.getElementsByClassName('menu-list');
+    console.log(li);
+
+    btn.addEventListener('click', function() {
+      // console.log('make a menue please');
+
+      menu.style.display = 'flex';
+
+      for(let i = 0; i<li.length; i++){
+        liStyle(li[i]);
+      }
+
+      if(menu.style.display === 'flex'){
+        // console.log('make a xbtn');
+        btn.style.display = 'none';
+        xBtn.style.display = 'block';
+
+        xBtn.addEventListener('click' ,function() {
+          menu.style.display = 'none';
+
+          if(menu.style.display === 'none'){
+            btn.style.display = 'block';
+            xBtn.style.display = 'none';
+          }
+        });
+      } 
+    });
+    
+    /*
+    1 동그라미 버튼 누르면 메뉴 display 생기게 하기
+    2 메뉴가 생기면 동그라미 버튼이 엑스버튼으로 바뀌게 하기 
+    3 엑스버튼 누르면 메뉴 display 안보이게
+    4 메뉴가 안보이면 엑스버튼이 동그라미 버튼으로 바뀌게 하기
+    5 <i class="fa-solid fa-xmark-large"></i> x버튼 모양
+    6 스타일링하기
+   */
+
+  //  icon동적 추가 방법?
+
+  // check point 1
+
+  // 1. 1번 아이콘이 사라진다.(삭제)
+  // 2. 2번 아이콘이 등장한다.(추가)
+  </script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+*{margin: 0; padding: 0;}
+#container{
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root{
+  width: 20vw;
+  height: 40vh;
+  background-color: #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+#root>div{
+  width: 3vw;
+  height: 3vh;
+  border-radius: 60px;
+  background-color: black;
+}
+
+#root1{
+  width: 20vw;
+  height: 40vh;
+  background-color: #ccc;
+
+  margin-left: 4vw;
+  visibility: hidden;
+
+  display: flex;
+}
+
+.x{
+  width: 30%;
+  height: 100%;
+  border: 1px solid black;
+  text-align: center;
+
+  line-height: 5;
+  font-size: 4rem;
+}
+
+.menubar{
+  width: 70%;
+  height: 100%;
+  border: 1px solid black;
+
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  list-style: none;
+}
+
+.menubar>li{
+  width: 8vw;
+  height: 3vh;
+  background-color: #fff;
+}
+
+
+
+  </style>
+</head>
+<body>
+<div id="container">
+  <nav id="root">
+    <div></div>
+  </nav>
+  <nav id="root1">
+    <p class="x">X</p>
+    <ul class="menubar">
+      
+      <li>menu-1</li>
+      <li>menu-2</li>
+      <li>menu-3</li>
+      <li>menu-4</li>
+      <li>menu-5</li>
+      <li>menu-6</li>
+      
+    </ul>
+  </nav>
+</div>
+
+<script>
+const root = document.getElementById('root');
+console.log(root)
+
+const root1 = document.getElementById('root1');
+console.log(root1)
+
+
+root.addEventListener('click' ,() =>{
+  root1.style.visibility =" visible";
+  root.style.visibility ="hidden";
+
+})
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

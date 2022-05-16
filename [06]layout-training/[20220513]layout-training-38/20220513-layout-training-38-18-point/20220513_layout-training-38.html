@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./20220513_layout-training-38.css">
+  <title>38</title>
+</head>
+<body>
+  
+
+<div id="base">
+  <div class="root">
+    
+    <div>
+      <div class="button"></div>
+    </div>
+      
+    <div class="wrap">
+      <ul class="menu">
+        <li data-items="1">menu-1</li>
+        <li data-items="1">menu-2</li>
+        <li data-items="1">menu-3</li>
+        <li data-items="1">menu-4</li>
+        <li data-items="1">menu-5</li>
+        <li data-items="1">menu-6</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+
+  <script>
+
+document.body.style.margin = '0';
+document.body.style.padding = '0';
+//
+const root = document.querySelector('.root');
+console.dir(root);
+let rootMinWidht = '100px';
+let rootMaxWidht = '500px';
+root.style.width = rootMinWidht;
+root.style.height = '700px';
+root.style.transition = '0.5s';
+//
+const btnWrap = root.children[0];
+console.log(btnWrap);
+//
+const btn = document.querySelector('.button');
+console.dir(btn);
+btn.style.width = '50px';
+btn.style.height = '50px';
+btn.style.position = 'relative';
+btn.classList.add('btnO');
+//
+const wrap = document.querySelector('.wrap');
+console.dir(wrap);
+wrap.style.display = 'none';
+//
+const menu = document.querySelector('.menu');
+console.dir(menu);
+menu.style.width = "60%";
+menu.style.height = "90%";
+menu.style.display = 'flex';
+menu.style.justifyContent = 'space-between';
+menu.style.alignItems = 'center';
+menu.style. flexDirection = 'column';
+//
+for(let i = 0; i < menu.children.length; i++) {
+  menu.children[i].style.listStyle = 'none';
+  menu.children[i].style.width = '100%';
+  menu.children[i].style.height = '15%';
+  menu.children[i].style.backgroundColor = '#fff';
+  menu.children[i].style.borderRadius = '10px';
+  menu.children[i].style.display = 'flex';
+  menu.children[i].style.justifyContent = 'center';
+  menu.children[i].style.alignItems = 'center';
+}
+//
+
+let switchOne = true;
+
+btn.addEventListener('click', () => {
+
+  if(switchOne === true) {
+    root.style.width = rootMaxWidht;
+    wrap.style.display = 'flex';
+    btnWrap.style.justifyContent = 'flex-end';
+    btn.classList.remove('btnO');
+    btn.classList.add('btnX');
+
+    switchOne = false;
+  } else {
+    root.style.width = rootMinWidht;
+    wrap.style.display = 'none';
+    btnWrap.style.justifyContent = 'center';
+    btn.classList.add('btnO');
+    btn.classList.remove('btnX');
+
+    switchOne = true;
+  }
+
+  
+});
+
+  </script>
+  
+</body>
+</html>
