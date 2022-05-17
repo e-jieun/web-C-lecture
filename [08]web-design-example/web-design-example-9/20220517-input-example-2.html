@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 id="output"></h1>
+  <input type="text" name="test" id="input-test">
+  <script>
+    const inputTest = document.querySelector('#input-test');
+    const outputTest = document.querySelector('#output');
+    inputTest.addEventListener('keyup', (event) => {
+      const getInputData = inputTest.value;
+      if(event.keyCode === 13) {
+        outputTest.textContent = getInputData;
+      }
+    });
+  </script>
+</body>
+</html>

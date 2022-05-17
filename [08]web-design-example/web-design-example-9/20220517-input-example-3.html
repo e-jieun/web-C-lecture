@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box-container"></div>
+  <input type="text" name="test" id="input-test">
+  <script>
+    // body styling
+    document.body.style.padding = "0";
+    document.body.style.margin = "0";
+    document.body.style.backgroundColor = "#333";
+    document.body.style.width = "100vw";
+    document.body.style.height = "100vh";
+    document.body.style.display = "flex";
+    document.body.style.justifyContent = "center";
+    document.body.style.alignItems = "center";
+    document.body.style.flexDirection = "column";
+
+    const input = document.querySelector('#input-test');
+    // input styling
+    input.style.width = "300px";
+    input.style.height = "50px";
+    input.style.borderRadius = "5px";
+    input.style.border = "1px solid #ccc";
+    input.style.padding = "16px";
+    input.style.fontSize = "2rem";
+
+    const output = document.querySelector('#output');
+    const boxContainer = document.querySelector('#box-container');
+    input.addEventListener('keyup', (event) => {
+      const getInputData = input.value;
+      // getInputData : 이벤트가 일어나는 ★★"순간!!"★★ input에 작성된 데이터를 변수에 대입
+      const setElement = document.createElement('div');
+      // 이벤트가 일어나는 ★★"순간!!"★★ 즉석에서 element 생성
+      setElement.classList.add('input-data');
+      // setElemnt에 class 붙여주기
+      setElement.textContent = getInputData;
+      // input 태그에 입력한 값을 div태그의 text node로 활용하기 
+
+      // setElement styling
+      setElement.style.width = "50vw";
+      setElement.style.border = "1px solid #ccc";
+      setElement.style.backgroundColor ="#fff";
+      setElement.style.padding = "1vw";
+      setElement.style.borderRadius = "2vw";
+      setElement.style.textAlign = "center";
+      setElement.style.margin = "1vw";
+      setElement.style.fontSize = "1.5rem";
+      setElement.style.color = "rgba(251,112,10,1)"
+
+
+
+
+      // 즉석(동적)으로 만들어진 Element의 태그에 class를 붙여주기
+      // ※ setAttribute()를 사용해도 되나, 직관성을 위해 class는 classList 객체를 사용하는 것이 좋다. 
+      if(event.keyCode === 13) {
+        // event ojbect(이벤트객체)에서 keyCode값을 식별했을때 "엔터에 반응하게 만들고 싶기 때문"
+        boxContainer.appendChild(setElement);
+      }
+    });
+
+    const inputData = document.getElementsByClassName('input-data');
+    // inputData : 위의 input 이벤트에 의해서 '동적으로' 만들어진 element들을 클래스로 식별
+
+    boxContainer.addEventListener('click', () => {
+      // box-container를 클릭하면 .input-data 라는 클래스가 있는 모든 element에 스타일링
+          for(let i = 0; i < inputData.length; i++) {
+            inputData[i].style.transition = "1s";
+            inputData[i].style.margin = "4vw";
+          }
+    })
+
+
+  </script>
+</body>
+</html>
