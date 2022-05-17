@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="box-container"></div>
+  <input type="text" name="test" id="input-test">
+  <script>
+
+    function flexStyling(targetElement, justifyContent, alignItems, flexDirection="row") {
+      // 네번째, index 3번째 파라미터(인자) 값 : flexDirection 에 붙는 = "값" 의 뜻
+      // parameter(인자)를 만들어두었지만, 굳이 인수(argument)를 작성하지 않아도 되거나, 하지 말아야 할 때가 발생한다.
+      // css 객체의 값중 flex-direction이 대표적인 예다. 작성하지 않아도 기본값(defalut)으로 문자열"row"가 할당되기 때문에
+      // row값이 필요한 경우 네번째매개변수(flexDirection)을 사용하지 않으면 "row"라는 값을 쓰겠다는 뜻이다.
+      // column을 써야 할때는 네번째매개변수(flexDirection)자리에 원하는 값을 인수로 할당해주면 된다.
+      // "값이 있으면 넣은값을 쓰고 값이 없으면 지정된 기본값을 사용하겠다" 라는 유연성이 생기며 이러한 것을
+      // defalut parameter : 기본값 매개변수라고 한다.
+      // 인자를 만들때 디폴트 파라미터를 쓰지 않고, 인수를 쓰지않으면 에러를 발생시킨다.
+      if(typeof(targetElement) === "object") {
+        targetElement.style.display = "flex";
+        targetElement.style.justifyContent = justifyContent;
+        targetElement.style.alignItems = alignItems;
+        targetElement.style.flexDirection = flexDirection;
+      } else {
+        // * if() else 제어문을 통해 targetElement라는 첫번째 인자(parameter)가 객체(object)가 아니면 실해하지 못하게 판단을 시켰다.
+        console.log(`호출하신 함수 첫번째 argument 값: ${targetElement}는 객체가 아니므로, 다른 인수를 작성해주시기 바랍니다.`);
+      }
+    }
+    
+    // body styling
+    document.body.style.width = "100vw";
+    document.body.style.height = "100vh";
+    document.body.style.padding = "0";
+    document.body.style.margin = "0";
+    document.body.style.backgroundColor = "#333";
+
+
+
+    // document.body.style.display = "flex";
+    // document.body.style.justifyContent = "center";
+    // document.body.style.alignItems = "center";
+    // document.body.style.flexDirection = "column";
+    flexStyling(document.body, "center", "center", "column");
+    // check point 1
+
+    // * 예제 상으로는 flex 스타일링을 한번만 쓰기때문에 굳이 함수로 처리하지 않아도 작업하는데 피로감이 없지만
+    // * flex 스타일링을 수백번 작업해야 한다고 가정했을때 한개의 함수를 활용하는 것이 코드량을 얼마나 줄일 수 있는지 예감할 수 있다.
+    // * 본 함수를 만든 제작자는 본인이 만든 함수이기때문에 언제든 꺼내다 사용하면 되고
+    // * 함수를 파악해야하는 팀원이나 동료는 해당 함수가 어떤 기능을 하고 있는지 '코드 하나만' 보고 파악할 수 있기 때문에
+    // * 작업측면에서나 유지보수 측면에서 매우 큰 효율을 만들 수 있다.
+    // * 성능면에서도 자주 사용할 수록 압도적인 퍼포먼스를 낸다.
+    // * 이러한 작업을 ★★캡슐화★★ 작업이라고 하며, '반복적인 코드'는 한번에 처리할 수 있도록 작업하는 것이 개발작업의 주 업무이다.
+    // * 코드를 개선하여 깔끔하게 정리하는 작업을 리팩토링(refactoring)이라고 부른다.
+
+    // * 최종적으로는 인수(argument)의 타입은 데이터타입 종류외의 다른 것이 들어올 수 없기 때문에 
+    // * 함수를 가지고 '알고리즘'을 짠 후 용도에 맞게 붙여쓰는 방식으로 작업을 한다.
+
+
+    const input = document.querySelector('#input-test');
+    // input styling
+    input.style.width = "300px";
+    input.style.height = "50px";
+    input.style.borderRadius = "5px";
+    input.style.border = "1px solid #ccc";
+    input.style.padding = "16px";
+    input.style.fontSize = "2rem";
+
+    const output = document.querySelector('#output');
+    const boxContainer = document.querySelector('#box-container');
+    input.addEventListener('keyup', (event) => {
+      const getInputData = input.value;
+      // getInputData : 이벤트가 일어나는 ★★"순간!!"★★ input에 작성된 데이터를 변수에 대입
+      const setElement = document.createElement('div');
+      // 이벤트가 일어나는 ★★"순간!!"★★ 즉석에서 element 생성
+      setElement.classList.add('input-data');
+      // setElemnt에 class 붙여주기
+      setElement.textContent = getInputData;
+      // input 태그에 입력한 값을 div태그의 text node로 활용하기 
+
+      // setElement styling
+      setElement.style.width = "50vw";
+      setElement.style.border = "1px solid #ccc";
+      setElement.style.backgroundColor ="#fff";
+      setElement.style.padding = "1vw";
+      setElement.style.borderRadius = "2vw";
+      setElement.style.textAlign = "center";
+      setElement.style.margin = "1vw";
+      setElement.style.fontSize = "1.5rem";
+      setElement.style.color = "rgba(251,112,10,1)"
+
+
+      // 즉석(동적)으로 만들어진 Element의 태그에 class를 붙여주기
+      // ※ setAttribute()를 사용해도 되나, 직관성을 위해 class는 classList 객체를 사용하는 것이 좋다. 
+      if(event.keyCode === 13) {
+        // event ojbect(이벤트객체)에서 keyCode값을 식별했을때 "엔터에 반응하게 만들고 싶기 때문"
+        boxContainer.appendChild(setElement);
+      }
+    });
+
+    const inputData = document.getElementsByClassName('input-data');
+    // inputData : 위의 input 이벤트에 의해서 '동적으로' 만들어진 element들을 클래스로 식별
+
+    boxContainer.addEventListener('click', () => {
+      // box-container를 클릭하면 .input-data 라는 클래스가 있는 모든 element에 스타일링
+          for(let i = 0; i < inputData.length; i++) {
+            inputData[i].style.transition = "1s";
+            inputData[i].style.margin = "4vw";
+          }
+    })
+
+
+  </script>
+</body>
+</html>
