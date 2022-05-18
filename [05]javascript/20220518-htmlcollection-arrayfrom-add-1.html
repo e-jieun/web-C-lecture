@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+      /* flex styling */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #root>div:nth-child(1) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="menu-list">
+      <section class="menu-items" data-index="0">1</section>
+      <section class="menu-items" data-index="1">2</section>
+      <section class="menu-items" data-index="2">3</section>
+      <section class="menu-items" data-index="3">4</section>
+      <section class="menu-items" data-index="4">5</section>
+      <section class="menu-items" data-index="5">6</section>
+      <section class="menu-items" data-index="6">7</section>
+      <section class="menu-items" data-index="7">8</section>
+      <section class="menu-items" data-index="8">9</section>
+    </div>
+    <div id="button-list">
+      <button class="button-items" data-index="0">1</button>
+      <button class="button-items" data-index="1">2</button>
+      <button class="button-items" data-index="2">3</button>
+      <button class="button-items" data-index="3">4</button>
+      <button class="button-items" data-index="4">5</button>
+      <button class="button-items" data-index="5">6</button>
+      <button class="button-items" data-index="6">7</button>
+      <button class="button-items" data-index="7">8</button>
+      <button class="button-items" data-index="8">9</button>
+    </div>
+  </div> <!-- root scope -->
+  <script>
+    const root = document.getElementById('root');
+    const menuList = root.children[0];
+    const buttonList = root.children[1];
+    const buttonItems = Array.from(buttonList.children);
+    const menuItems = Array.from(menuList.children);
+
+    buttonItems.forEach((value) => {
+      value.style.transition = "1s";
+      value.style.color = "salmon";
+      value.style.width = "20px";
+      value.style.position = "relative";
+      value.style.top = "0";
+    })
+
+    buttonList.addEventListener('click', (event) => {
+      for (let i = 0; i < buttonItems.length; i++) {
+        let arrIndex = buttonItems[i].dataset.index;
+        let eventIndex = event.target.dataset.index;  
+        if(arrIndex === eventIndex) {
+          event.target.style.color = "blue";
+          event.target.style.width = "300px";
+          event.target.style.top = "200px";
+          menuItems[i].style.backgroundColor = "#333";
+        } else {
+          buttonItems[i].style.color = "salmon";
+          buttonItems[i].style.width = "20px";
+          buttonItems[i].style.top = "0px";
+          menuItems[i].style.backgroundColor = "";
+        }
+      }
+
+    });
+  </script>
+</body>
+
+</html>
