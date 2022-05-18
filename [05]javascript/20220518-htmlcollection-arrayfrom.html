@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+  
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #ccc;
+      /* flex styling */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #root>div:nth-child(1) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+ 
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="menu-list">
+      <section class="menu-items" data-index="0">1</section>
+      <section class="menu-items" data-index="1">2</section>
+      <section class="menu-items" data-index="2">3</section>
+      <section class="menu-items" data-index="3">4</section>
+      <section class="menu-items" data-index="4">5</section>
+      <section class="menu-items" data-index="5">6</section>
+      <section class="menu-items" data-index="6">7</section>
+      <section class="menu-items" data-index="7">8</section>
+      <section class="menu-items" data-index="8">9</section>
+    </div>
+    <div id="button-list">
+      <button class="button-items" data-index="0">1</button>
+      <button class="button-items" data-index="1">2</button>
+      <button class="button-items" data-index="2">3</button>
+      <button class="button-items" data-index="3">4</button>
+      <button class="button-items" data-index="4">5</button>
+      <button class="button-items" data-index="5">6</button>
+      <button class="button-items" data-index="6">7</button>
+      <button class="button-items" data-index="7">8</button>
+      <button class="button-items" data-index="8">9</button>
+    </div>
+  </div> <!-- root scope -->
+  <script>
+    const root = document.getElementById('root');
+    const menuList = root.children[0];
+    const buttonList = root.children[1]; 
+    // const buttonItems = buttonList.children; 
+    // buttonIitems -> HTMLCollection : 유사 배열들, 인덱스와 랭스는 존재하지만 배열메서드는 사용하지 못한다.
+    const buttonItems = Array.from(buttonList.children); 
+    // 배열로 사용하기 위해 HTMLCollection을 -> 강제로 배열로 만든다. 
+    console.log(Array.isArray(buttonItems)); // true;
+    // styling을 for()문이 아닌 forEach()문으로 진행 해본다.
+    buttonItems.forEach((value) => {
+      value.style.transition = "1s";
+      value.style.color = "salmon";
+      value.style.width = "20px";
+    })    
+    // check point 1
+    /*
+    todo : 유사배열인 경우 자바스크립트의 '배열 전용 반복문'인 forEach()를 사용하지 못한다.
+    todo : 유사배열 자체를 그대로 반복문을 사용해야 할 경우 -> 명령방식(절차방식)으로 코드를 작성해야한다.
+    for(let i=0; i < arr.length; i++){
+      arr[i].style.styling = "style value"
+    }
+    ? 명령방식의 초점은 '반복문'을 쓰겠다 라는 것이고 반복횟수에 대한것을 '배열의 길이값만큼' 으로 사용하는 것이기때문에 '반복'시킨다에 초점을 두고 있다.
+    ? 제작자 측면에서는 for()문을 발견했을때 '조건'이 무엇인지 반드시 확인해야한다.
+    ? 이것이 너무나 당연하고 응당해야될 방식이긴하지만, 코드가 매우 길어졌을때는 불편하고, 예기치 못한 문제를 야기할 수 있다.
+
+    ? 반면에 forEach()와 같은 선언형 배열메서드를 사용했을땐, forEach()는 배열에만 쓸수 있다는 전제가 깔려있기 때문에, 타겟은 무조건 배열이라는 결론을 바로 낼 수 있다.
+    
+    forEach()만 확인하더라도 타겟이 배열이라는 확정과 '배열을 반복해서 무엇을 할 것이라는 예상' 이 가능하기때문에 명령문의 for()문과 똑같은 역할을 하지만 초점이 다른점을 꼽을 수 있다.
+
+    이러한 직관성이 코드가 쌓였을때 매우 큰힘을 발휘하며
+    ? 사실살 배열메서드의 거의 대부분 내부알고리즘에는 반복제어문인 for()문들이 들어있고, 조건만 다르게 미리 만들어놓은 자바스크립트의 편의성 함수다.
+
+    ? 전제조건이 익숙해지면 편해지는 제작자의 특성이 있다.
+    ? 전제조건
+    ? 1. 유사배열과 배열의 차이점을 알고있다.
+    ? 2. 유사배열을 배열로 데이터타입 변환(가공)할 수 있다.
+    ? 3. 용도에 맞는 필요한 메서드들을 알고있다.
+
+
+    */
+    console.log(buttonItems);
+    console.log(buttonList);
+
+
+
+    buttonList.addEventListener('click', (event)=> {
+      let getDatasetIndex = Number(event.target.dataset.index);
+      // 클릭한 요소의 dataset.index 값 getting
+      console.log(typeof getDatasetIndex);
+      // 사칙연산을 하기 위해 가져온 dataset.index 값 타입체크
+      // 가져온 데이터는 숫자로된 '문자열(string)'이므로, Number() 함수를 통해 강제 데이터타입 변환
+      event.target.style.color = "red";
+      event.target.style.width = "300px";
+    });
+
+
+
+
+
+  
+  </script>
+</body>
+</html>
