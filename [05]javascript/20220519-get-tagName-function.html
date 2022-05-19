@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <span id="test">this is 스판</span>
+
+  <script>
+    const test = document.getElementById('test');
+
+    console.dir(test);
+
+
+    function tagNameMaker(elem) {
+      if(elem.tageName !== "") {
+        console.log("이 키값은 빈칸입니다.");
+      } else {
+        if(elem.tageName === null) {
+          console.log("이 키값은 빈칸은 아니지만 null입니다.");
+        } else {
+          console.log("이 키값은 빈칸도 아니고 null 아닙니다.");
+          console.log(elem.tagName.toLowerCase())
+        }
+      }
+
+      console.log(elem.tagName);
+      console.log(elem.tagName !== "");
+
+      if(elem.tagName !== "" && elem.tagName !== null) {
+        return elem.tagName.toLowerCase();
+      } 
+    };
+    console.log(tagNameMaker(test));
+    const makeSpan = document.createElement(tagNameMaker(test));
+
+
+  </script>
+</body>
+</html>
