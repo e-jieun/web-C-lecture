@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- pseudo code build -->
+  <!-- 
+    pseudo code (의사코드) : 사람이 한번에 알고리즘을 구축하기 어렵기 때문에(전체적인 흐름을 보기위해) 코드 작성하기전 간단한 방법으로 코드의 논리(logic)를 따져보는 준비작업 or 사전작업 -> 점검작업
+  -->
+  <!-- 
+    pseudo 1. 배열(array)이 존재한다.
+    pseudo 2. 버튼을 누르면 배열의 원소가 바뀐다.
+    ? 배열의 맨 앞의 원소가 맨 마지막 원소로 배치된다.
+    ? 배열의 맨 마지막 원소가 맨 첫번째 원소로 배치된다.
+    pseudo 3. DOM API(문서)상에서 보여야 한다.
+    pseudo 4. click event에 대응되어야 한다.
+   -->
+
+  <!-- * DOM API markup -->
+  <div id="root">
+    <button id="left">left</button>
+    <button id="right">right</button>
+  </div>
+
+
+  <script>
+    // array literal
+    const arr = [1, 2, 3, 4, 5];
+    // identifier initialize
+    const root = document.getElementById('root');
+    const leftButton = document.getElementById('left');
+    const rightButton = document.getElementById('right');
+
+    // root.addEventListener('click', function(event) {
+    //   let evenTargetIdValue = event.target.id;
+    //   /*
+    //   button 두개의 element를 root의 자식으로 구조를 변경 한 후,
+    //   button 을 클릭했을때의 id값을 가져오는 것으로 논리를 설정했다.
+    
+
+
+    //   */
+      
+    //   console.log(evenTargetIdValue);
+    // });
+
+
+
+
+    function arrHandler(leftButton, rightButton, array, parentNode, eventType) {
+      parentNode.addEventListener(eventType, function(event) {
+        /*
+        event.target을 사용하여 유연한 버튼 이벤트를 만들기 위해 분기(판단) 시켜주는 이벤트를 설치했다.
+        떠오른 만큼의 판단하는 과정이 있었고, 이벤트 발생 주체인 root도 이벤트가 발생하는 것을 발견하여
+        세번째 if문으로 이를 처리했다.
+        
+        */
+        let eventTargetIdValue = event.target.id;
+        console.log(eventTargetIdValue);
+        if(eventTargetIdValue === leftButton) {
+          console.log(`당신은 지금 ${leftButton} 라는 id값을 가지고 있는 요소를 선택했습니다.`);
+        }
+        if(eventTargetIdValue === rightButton) {
+          console.log(`당신은 지금 ${rightButton} 라는 id값을 가지고 있는 요소를 선택했습니다.`);
+        }
+        if(eventTargetIdValue === parentNode.id) {
+          console.log(`지금 선택한 것 은 컨테이너 ${parentNode.id}의 id 값입니다.`);
+        }
+      });
+      
+
+    }
+    arrHandler("left", "right", arr, root, "click");
+
+
+
+
+
+  </script>
+</body>
+</html>

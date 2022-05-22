@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="root">
+    <!-- * 문서에 새길 div 추가 -->
+    <div id="inject-value"></div>
+    <button id="left">left</button>
+    <button id="right">right</button>
+  </div>
+
+
+  <script>
+    // array literal
+    const arr = [1, 2, 3, 4, 5];
+    // identifier initialize
+    const root = document.getElementById('root');
+    const injectValue = document.getElementById('inject-value');
+    const leftButton = document.getElementById('left');
+    const rightButton = document.getElementById('right');
+
+
+    function arrHandler(leftButton, rightButton, array, parentNode, appendNode, eventType) {
+      parentNode.addEventListener(eventType, function (event) {
+        let eventTargetIdValue = event.target.id;
+        let temp;
+
+        const changeArrayIndex = (eventTarget) => {
+          if (eventTarget === leftButton) {
+            temp = array[0];
+            array.shift();
+            array.push(temp);
+            console.log(array);
+            elementRemover();
+            elementAppender();
+            elementStyler();
+          }
+          if (eventTarget === rightButton) {
+            temp = array[array.length - 1];
+            array.pop();
+            array.unshift(temp);
+            console.log(array);
+            elementRemover();
+            elementAppender();
+            elementStyler();
+          }
+        }
+
+        const elementRemover = () => {
+          while(injectValue.firstChild) {
+
+            injectValue.removeChild(injectValue.firstChild);
+          }
+        }
+        const elementAppender = () => {
+          array.forEach(element => {
+            const span = document.createElement('span');
+            span.textContent = element;
+            appendNode.appendChild(span);
+          });
+        }
+        const elementStyler = () => {
+          injectValue.firstChild.style.fontSize = "2rem";
+        }
+        
+        
+        changeArrayIndex(eventTargetIdValue);
+
+
+
+        if (eventTargetIdValue === parentNode.id) {
+          console.log(`지금 선택한 것 은 컨테이너 ${parentNode.id}의 id 값입니다.`);
+        }
+      });
+
+    }
+    arrHandler("left", "right", arr, root, injectValue, "click");
+
+    /*
+
+    함수의 구조 설명
+
+    1. arrHandler() 라는 함수를 '선언' 하여 인터렉션에 필요한 요소들을 매개변수로 처리할 준비를 했다.
+    2. 주요 처리 목표인 '배열'을 핸들링하기 위해 changeArrayIndex()라는 함수를 '내부함수' 용으로 만들었다.
+    3. 메인함수인 arrHandler()의 매개변수를 활용, if()문으로 경우의 수를 분기(분별하여 작동하도록)했다.
+    4. 3종의 세부 '동작용' 작은 함수들을 판단하는 '내부함수' changeArrayIndex() 함수에 순차적으로 실행시키도록 조정했다.
+
+    ※ 고차함수(higher order function)를 구축하는 방식을 설명하기 위해 불필요한 함수 남용과 유연한판단을 하지 않는 패턴이기때문에 위의 예제는 '좋은코드' 라고 보기는 어렵고, '읽히게'하기 위한 용도라고 볼 수 있으며,
+    여러가지 접근방식으로 코드양을 줄이거나, 혹은 유연한 방식으로 개조할 수 있다.
+
+    ※ 유연함을 만들고자 한다면,
+    1. 타입체크 기능을 넣어 함수가 오작동하지 않도록 해야한다.
+    2. 배열을 리터럴로 작성했기 때문에 -> 문서의 유사배열(HTMLCollection, NodeList등)을 배열로 가공하는 기능을 넣어야 한다.
+    3. 매개변수가 여섯개나 되기때문에 작성용으로 불편하다. -> 매개변수 타입을 객체나 기타 등등으로 가공한다면 훨씬더 편리하게 함수를 호출 할 수 있다.
+
+    ※ 코드양을 줄일 것이라면(혹은 직관적으로 만들 것이라면),
+    1. 판단기준 다르게 할 수도 있을 것 -> 연구의 영역
+    2. 예외처리(Exception handle) 과 같은 방식을 차용하면 훨씬 더 직관적으로 코드를 작성 할 수 있다.
+    3. 위의 작업은 동기(synchronous)처리 방식이므로 다방면의 연구로 '복잡도'를 낮출 수 있다.
+
+    */
+
+
+
+
+  </script>
+</body>
+
+</html>

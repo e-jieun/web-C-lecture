@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <div id="root">
+    <!-- * 문서에 새길 div 추가 -->
+    <div id="inject-value"></div>
+    <button id="left">left</button>
+    <button id="right">right</button>
+  </div>
+
+
+  <script>
+    // array literal
+    const arr = [1, 2, 3, 4, 5];
+    // identifier initialize
+    const root = document.getElementById('root');
+    const injectValue = document.getElementById('inject-value');
+    const leftButton = document.getElementById('left');
+    const rightButton = document.getElementById('right');
+
+
+    function arrHandler(leftButton, rightButton, array, parentNode, appendNode, eventType) {
+      parentNode.addEventListener(eventType, function (event) {
+        let eventTargetIdValue = event.target.id;
+        let temp;
+
+        const changeArrayIndex = (eventTarget) => {
+          if (eventTarget === leftButton) {
+            temp = array[0];
+            array.shift();
+            array.push(temp);
+            console.log(array);
+            // 세부 함수들 모음
+            elementRemover();
+            elementAppender();
+            elementStyler();
+          }
+          if (eventTarget === rightButton) {
+            temp = array[array.length - 1];
+            array.pop();
+            array.unshift(temp);
+            console.log(array);
+            // 세부 함수들 모음
+            elementRemover();
+            elementAppender();
+            elementStyler();
+          }
+        }
+
+        // 기존의 요소들을 모두 삭제시키는 함수
+        const elementRemover = () => {
+          while(injectValue.firstChild) {
+            // * while loop 설명
+            // * injectValue라는 요소의 firstChild 즉 첫번째 자식이 true라면 혹은 존재한다면 반복문을 실행하라는 조건식
+            // 존재하지 않는 다면 while 반복문은 종료된다.
+            // 횟수를 기준으로 반복하는 for() 문과 달리
+            // 조건에 부합한다면 무한정 반복하는 특징이 있다.
+            injectValue.removeChild(injectValue.firstChild);
+          }
+        }
+        // 배열의 요소를 문서에 덧붙이기 위한 함수
+        const elementAppender = () => {
+          array.forEach(element => {
+            const span = document.createElement('span');
+            span.textContent = element;
+            appendNode.appendChild(span);
+          });
+        }
+        // 문서에 보여줄 배열의 첫번째 요소 스타일링 하는 함수 
+        const elementStyler = () => {
+          injectValue.firstChild.style.fontSize = "2rem";
+        }
+        
+        
+        changeArrayIndex(eventTargetIdValue);
+
+
+
+        if (eventTargetIdValue === parentNode.id) {
+          console.log(`지금 선택한 것 은 컨테이너 ${parentNode.id}의 id 값입니다.`);
+        }
+      });
+
+    }
+    arrHandler("left", "right", arr, root, injectValue, "click");
+  </script>
+</body>
+
+</html>

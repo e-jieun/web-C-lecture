@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- pseudo code build -->
+  <!-- 
+    pseudo code (의사코드) : 사람이 한번에 알고리즘을 구축하기 어렵기 때문에(전체적인 흐름을 보기위해) 코드 작성하기전 간단한 방법으로 코드의 논리(logic)를 따져보는 준비작업 or 사전작업 -> 점검작업
+  -->
+  <!-- 
+    pseudo 1. 배열(array)이 존재한다.
+    pseudo 2. 버튼을 누르면 배열의 원소가 바뀐다.
+    ? 배열의 맨 앞의 원소가 맨 마지막 원소로 배치된다.
+    ? 배열의 맨 마지막 원소가 맨 첫번째 원소로 배치된다.
+    pseudo 3. DOM API(문서)상에서 보여야 한다.
+    pseudo 4. click event에 대응되어야 한다.
+   -->
+
+  <!-- * DOM API markup -->
+  <div id="root"></div>
+
+   <button id="left">left</button>
+   <button id="right">right</button>
+
+  <script>
+    // array literal
+    const arr = [1, 2, 3, 4, 5];
+    // identifier initialize
+    const root = document.getElementById('root');
+    const leftButton = document.getElementById('left');
+    const rightButton = document.getElementById('right');
+
+    function arrHandler(leftButton, rightButton, array, prarentNode, eventType) {
+      
+
+    }
+    arrHandler(leftButton, rightButton, arr, root, "click");
+    /* 
+
+    ? 함수화를 시켰을때 다룰 부분에서 작성이 어려운 이유는 "이것이 무엇인지 모르기때문"이다.
+    ? 하지만 "확정된 부분이 있다면" 논리적인 고려사항이 매우 간단해진다.
+    ? 예를 들면 아래와 같이 사고 할 수 있다.
+    ? "어짜피 DOM 에서 가져올 트리거겟지"
+    ? "문서에서 가져오든 javascript에서 리터럴로 만든 배열이든 어짜피 배열이겟지"
+    ? "붙일 자리는 어짜피 정해져있어"
+    ? 등과 같은 생각방식이고 매우 낯설은 방식이다.
+    ? 수많은 연습과 노력이 필요하다.
+
+
+
+    */
+
+
+
+  </script>
+</body>
+</html>
