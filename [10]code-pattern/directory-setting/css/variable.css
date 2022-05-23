@@ -1,0 +1,71 @@
+:root {
+
+
+  /* gray scale */
+  --col-000: #000;
+  --col-111: #111;
+  --col-222: #222;
+  --col-333: #333;
+  --col-444: #444;
+  --col-555: #555;
+  --col-666: #666;
+  --col-777: #777;
+  --col-888: #888;
+  --col-999: #999;
+  --col-aaa: #aaa;
+  --col-bbb: #bbb;
+  --col-ccc: #ccc;
+  --col-ddd: #ddd;
+  --col-eee: #eee;
+  --col-fff: #fff;
+
+  --bg-col-000: #000;
+  --bg-col-111: #111;
+  --bg-col-222: #222;
+  --bg-col-333: #333;
+  --bg-col-444: #444;
+  --bg-col-555: #555;
+  --bg-col-666: #666;
+  --bg-col-777: #777;
+  --bg-col-888: #888;
+  --bg-col-999: #999;
+  --bg-col-aaa: #aaa;
+  --bg-col-bbb: #bbb;
+  --bg-col-ccc: #ccc;
+  --bg-col-ddd: #ddd;
+  --bg-col-eee: #eee;
+  --bg-col-fff: #fff;
+
+  /* flex value set */
+  --flex-center: center;
+  --flex-start: flex-start;
+  --flex-end: flex-end;
+
+  /* vw set */
+  --vw-1: 1vw;
+  --vw-2: 2vw;
+  --vw-3: 3vw;
+  --vw-4: 4vw;
+  --vw-5: 5vw;
+  --vw-10: 10vw;
+  --vw-50: 50vw;
+  --vw-80: 80vw;
+  --vw-100: 100vw;
+
+  /* vh set */
+  --vh-1: 1vh;
+  --vh-2: 2vh;
+  --vh-3: 3vh;
+  --vh-4: 4vh;
+  --vh-5: 5vh;
+  --vh-10: 10vh;
+  --vh-50: 50vh;
+  --vh-80: 80vh;
+  --vh-100: 100vh;
+
+
+
+
+
+
+}
