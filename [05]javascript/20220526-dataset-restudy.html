@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root" data-index="1">
+    <section class="test"></section>
+    <section class="test"></section>
+    <section class="test"></section>
+    <section class="test" data-index="1"></section>
+    <section class="test"></section>
+
+    <article class="test"></article>
+    <article class="test"></article>
+    <article class="test"></article>
+    <article class="test" data-index="1"></article>
+    <article class="test"></article>
+
+    <nav class="test"></nav>
+    <nav class="test"></nav>
+    <nav class="test"></nav>
+    <nav class="test"></nav>
+    <nav class="test"></nav>
+    <nav class="test"></nav>
+    <nav class="test" data-index="1"></nav>
+    <nav class="test"></nav>
+    <nav class="test"></nav>
+    <nav class="test"></nav>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    const testOne = document.querySelectorAll('.test');
+
+    console.log(testOne);
+
+    for(let i = 0; i<testOne.length; i++) {
+      if(testOne[i].dataset.index === "1") {
+        console.log(i);
+        if(testOne[i].classList.contains('test')) {
+          testOne[i].style.backgroundColor ="blue";
+          testOne[i].style.width = "100px";
+          testOne[i].style.height = "100px";
+        }
+      }
+      /*
+      * 두번의 if()문을 주의해서 볼 것
+
+      * for()로 인해 얼마의 횟수만큼 반복을 실행한다.
+      * 반복 실행 했을때 if()문이 실행되는 것이 골자이다.
+      * 첫번째 if()문의 조건은 다음과 같다.
+      * ★ 식별된 배열의 dataset 키 값중에 'index' 라는 값이 "1" 이라는 값과 '일치'하면 true ★
+      * 위의 조건식을 통해 값이 true인 배열원소가 있을 것이고, 그것이 어디에 있는지 console.log(i)를 통해 확인했다. 
+      * true 실행문 안에 중첩된 두번째 if문의 조건은 다음과 같다.
+      * ★ 식별된 배열의 classList 키 값중에 'test' 라는 문자열이 '포함되는것'이 있다면 true ★
+      * 하위 true 인 요소들(위 예제에서는 모두 test 라는 class가 존재하기 때문에 특별한 의미는 없는 조건문이다)
+      
+
+
+      */
+    }
+
+
+
+    // console.dir(root);
+    // console.log(root.dataset);
+    // console.log(typeof root.dataset.index);
+
+  </script>
+</body>
+</html>
