@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+      color:#ccc;
+    }
+
+    #root >h1 {
+      width:200px;
+      height:200px;
+      background-color: #fff;
+      transition:1s;
+      border-radius: 20px;
+    }
+
+    #root>h1:nth-child(1):hover {
+      transform: perspective(100px) rotateX(10deg) rotateY(-10deg);
+      /* 
+        * perspective : 원근 표현 attribute
+        * 보는 사물은 멀리서 볼수록 작아지는것 과 더불어 이상한 형태로 기울어지는 특징이 있는데
+        * 이러한 '법칙'을 투시도법, 원근법 이라고 부른다.
+        * 형태가 왜곡되는 현상이라고 판단해도 좋다.
+
+        * 간단하게 마우스 오버를 하면 형태가 변하게 만든 css 용 데모이다.
+        * 눈여겨 볼점은 모두 일련의 숫자값으로 새겨져 있다는 것이다.
+
+        * 숫자이기때문에 원하는 만큼 변경시킬 수 있다. = 제어할 수 있다.
+      */
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <h1></h1>
+    <h1></h1>
+  </div>
+  <script>
+
+    const root = document.getElementById('root');
+    // #root은 전체화면창 크기를 하고 있다.
+
+
+    root.addEventListener('mousemove', (event) => {
+      console.log(`event X: ${event.offsetX}`);
+      console.log(`event Y: ${event.offsetY}`);
+
+      /* ? mousemove type
+      
+      * 마우스무브 이벤트의 특징은 마우스가 브라우저위에서 조작(움직일때)할때 매 순간 발생한다.
+      * 다시말해서 이벤트가 발생하는 횟수가 마우스를 움직이는 픽셀수 만큼 발생한다.
+      *
+      * 
+      * 마우스무브(mousemove)의 이벤트 객체(event)는 '마우스 포인터 좌표' 를 키로 가지고 있다.
+      * 기준점으로부터의 가로 위치 : offsetX
+      * 기준점으로부터의 세로 위치 : offsetY
+
+      * 생각해볼 관점
+      1. 마우스 조작 조차도 사용자와의 상호작용(interaction)에 속한다.
+      2. 일반 사용자는 클릭이나 휠 키보드들만 '입력'이라고 생각 하는 경향이 있지만, 제작자 측면에서는 '브라우저를 연상태'부터 상호작용의 시작점이라고 봐도 좋다.
+
+  
+      * 마우스 좌표를 얻을 수 있을 때 의 장점
+      1. 사용자는 본인이 인지하지 못할때 어떠한 반응에 의해 상호작용이 일어난다.
+        ex> 클릭하면 어떤 알람이 뜬다 = 이미 예상하고 있다.
+        ex> 마우스를 어느 위치에 가져다 대면 무엇이 뜬다 = 이미 예상하고 있다.
+        ex> 마우스를 어디 대략쯤에 놓았을 뿐인데 상호작용이 일어난다 = 신기하다 혹은 새롭다.
+
+      2. 유려하게 사용했을때 사용자는 일반적으로 마우스의 숙련도가 매우 높기때문에 매우 긴밀한 호흡 혹은 상호작용 하는 전반의 친밀감을 주기에 좋다.
+
+      * 마우스 좌표를 남발했을 때 단점
+      1. 사용자가 추적당하는 기분이 들 수 있다.
+      2. 필요하지 않는 상호작용이 과도하게 일어날 수 있다.
+      */
+
+
+      // children은 첫번째, 두번째 h1 태그이다.
+      root.children[0].textContent = event.offsetX;
+      root.children[1].textContent = event.offsetY;
+
+    });
+
+    
+
+  </script>
+</body>
+</html>
