@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root');
+    let bgColorValue = 0;
+    root.style.backgroundColor = `rgb(${bgColorValue}, ${bgColorValue}, ${bgColorValue})`;
+    function rgbGeneratorReturnNumber(elementHeightNumber, elementOffsetHeightNumber) {
+      let getpercentageValue = Math.round((elementHeightNumber / elementOffsetHeightNumber) * 100);
+      let getRgbColorValue = Math.round((255 * getpercentageValue) / 100);
+      return getRgbColorValue;
+    }
+    root.addEventListener('mousemove', (event) => {
+      let setValue = rgbGeneratorReturnNumber(event.offsetY, root.offsetHeight);
+      let result = `rgb(${setValue},${setValue},${setValue})`;
+      root.style.backgroundColor = result;
+    });
+
+
+
+
+
+
+
+    
+  </script>
+</body>
+
+</html>
