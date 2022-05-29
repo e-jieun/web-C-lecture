@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- 
+1. menu의 자식을 변수로 지정한다. (menus)
+2. imageBox = {basic:[], eyes :[], 등등} 을 만든다.
+3. imageBox의 객체를 배열로 나열한다. values(); (imageBoxArr)
+4. menus와 imageBoxArr => 이걸 어떻게 해야하지 하고 이 두개를 매칭을 해야겠다는 생각이 드는데 ... 머리가 탁 막혔습니다. 제가 뭔가를 잘못생각하고 있는건가 생각이 들기도 합니다.
+5. menu.click 이벤트를 할때 menus[1]번째를 누르면 imageBoxArr[1].length값만큼 newclickbox를 생성한다.
+    -->
+
+<div id="root">
+<!-- * offset Parent node 생성 -->
+</div>
+<script>
+  const root = document.getElementById('root');
+
+  // 1. menu의 자식을 변수로 지정한다. (menus)
+  // solution : 자식 요소로 사용할 데이터를 정한 후 자바스크립트에서 리터럴로 마련한다.
+  const menusArrData = ["피카츄", "라이츄", "파이리", "꼬부기", "버터풀", "야도란"];
+  const ul = document.createElement('ul');
+  // element 생성 및 appending
+  ul.setAttribute('id', 'menu');
+  // 생성할 요소에 id attribute set
+  root.appendChild(ul);
+  menusArrData.forEach((value, index) => {
+    const li = document.createElement('li');
+    li.classList.add(`menus-${index}`);
+    li.textContent = value;
+    ul.appendChild(li);
+  });
+
+
+
+</script>
+</body>
+</html>
