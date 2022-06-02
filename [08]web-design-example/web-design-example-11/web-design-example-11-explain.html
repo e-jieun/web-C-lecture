@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    /* browser style reset */
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #000;
+    }
+
+    /* font CDN */
+    @import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+
+    #root {
+      width: 100%;
+      /* width -> body 가로폭의 100% */
+      height: 100vh;
+      background-color: #333;
+      overflow: hidden;
+      position: relative;
+
+      opacity: 0;
+      /* 처음에는 보이지 않게 하기 위해 opacity 값 0으로 저장 -> 아래 클래스로 핸들링 */
+      transition: 3s;
+      /* fade 기능을 만들기 위해 css 속성 부여 */
+    }
+
+    article {
+      width: 100%;
+      height: 100vh;
+
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      /* 
+      position :absolute 설명
+      포지션을 동적으로 제어하기 위해 absolute 속성 사용
+      1. 크기는 뷰의 크기와 동일하게 설정(root과 같은사이즈) 
+      2. 부모인 #root에 relative 속성 부여 (absolute를 편하게 사용하기 위해)
+      3. top, left -> 위치를 별도로 제어하지는 않을 예정이기 때문에 0, 0 기본값 부여
+      */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ccc;
+    }
+
+    article>h1 {
+      position: absolute;
+      /* 포지션 속성만 부여 : javascript로 transform제어하기 위해서 */
+
+      color: #ccc;
+      mix-blend-mode: difference;
+      font-family: 'Raleway';
+      font-weight: 100;
+      font-size: 2rem;
+    }
+
+    #root.on {
+      opacity: 1;
+    }
+    /* 자바스크립트로 핸들링 할 .on 이라는 클래스 미리 생성 */
+
+    #root>img {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* object-fit : 가로폭 과 이미지를 고정비율로 구형되게끔 진행 */
+    }
+    /* 
+
+    check point 1
+    해당 페이지의 이미지는 수백장이 넘어가는 매우 무거운 이미지 인터렉션이 구상되었다.
+    1. 약 900장의 이미지를 연사(영상처럼 보이는 잔상 착시)를 활용
+    2. 모든 이미지를 position : absolute를 통해 z축으로 겹쳐놓게 하였다. 
+    3. 결과적으로는 이미지 갯수만큼의 겹이 존재한다.
+    
+    */
+
+    aside {
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: #ccc;
+      background-color: #333;
+      font-family: 'Raleway';
+      letter-spacing: 3px;
+      transition: 2.5s;
+    }
+
+    aside.off {
+      opacity: 0;
+    }
+    /* fade out 인터렉션을 위해 클래스 생성 */
+
+
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <article>
+    <h1>for improvement</h1>
+  </article>
+  <aside>0 / 100</aside>
+
+  <script>
+    const root = document.getElementById('root');
+    const loading = document.querySelector('aside');
+    const log = document.querySelector('article h1');
+    let imageCount =100;
+    // ★ 주의 : 컴퓨터 사양이 좋지 않으면 이미지 갯수(imageCount)를 50~ 100으로 놓고 확인할 것
+
+    /* ---------------------------------------------------------------------------------------------------- */
+    for (let i = 0; i < imageCount; i++) {
+      const imgElement = document.createElement('img');
+      imgElement.setAttribute('src', `./sequence-image/sequence-${i}.jpg`);
+      root.appendChild(imgElement);
+    }
+    
+    /*
+    
+    예제에서는 이미지를 100개만 쓰는 것으로 137번 행에 설정 (너무 느려짐)
+    <img> 태그를 동적으로 생성하여 root 태그의 자식으로 덧붙이는 작업을 진행함
+    1. 덧붙이면서 setAttribute를 통해 src 이미지 속성노드를 셋팅하고 sequence-${i} : 반복의 i 변수를 활용 디렉토리에있는 파일 넘버링을 붙임
+    ※ 이러한 패턴은 파일이 여러개 있고 순차적으로 로딩해야 될때 매우 자주 활용되는 코드 패턴이므로 숙지 필요
+
+    */
+    /* ---------------------------------------------------------------------------------------------------- */
+
+    
+    imageLoaded();
+    // 코드가 길어 아래 함수선언을 통해 끌어올려 호출(호이스팅)
+
+
+
+
+
+    window.addEventListener('mousemove', (event) => {
+      let mouseX = event.pageX;
+      let mouseY = event.pageY;
+      let calcX = -(mouseX / 20);
+      let calcY = -(mouseY / 20);
+
+      log.style.transform = `translate(${calcX}px, ${calcY}px)`;
+
+      console.log(mouseX);
+      let windowPosition = window.innerWidth;
+      let percent = parseInt((mouseX / windowPosition) * imageCount);
+      // 800 분율 : 마우스 위치값 나누기 윈도우 전체폭 곱하기 800분율
+      const imgs = document.querySelectorAll('#root img');
+      for (let img of imgs) {
+        img.style.display = 'none';
+        imgs[percent].style.display = 'block';
+      }
+    });
+
+    function imageLoaded() {
+      const images = document.querySelectorAll('img');
+      /*
+        1. 위 for()반복문을 통해 '동적'으로 만들어진 <img> 태그를 모두 식별
+        ※ 위 반복문으로 문서가 만들어지지 않았다면 images는 에러를 발생시킴
+      */
+      const imagesLength = images.length;
+      let total = 0;
+      let percent = 0;
+      /* 백분율 공식 일부값 / 전체값 *100*/
+
+      /*
+        기본 명령형 방식
+        for(let i = 0; i < images.length; i++) {
+          images[i].addEventListener('load', callback)
+        }      
+        아래의 방식은 선언 방식(   .forEach()   )으로 반복문 작성
+        ※ Array.from(), slice.call() 과 같은 유사배열객체를 -> 배열로 데이터타입 가공을 하지 않은 이유는
+        ※ <img> 태그를 이미 자바스크립트의 배열 방식으로 동적으로 만들었기 때문에 별도의 가공이 필요하지 않다 
+
+      */
+      images.forEach((img) => {
+        img.addEventListener('load', () => {
+          /*
+            1. forEach() 콜백함수 첫번째 인자는 <img> 태그를 뜻하며 편의상 img 라는 이름으로 매개변수 이름 작명
+            2. addEventListener('load')의 목적 : 이미지 파일은 데이터가 매우 크기때문에 로딩(적재)하는데 시간이 상당히 소요함
+            3. 모든 이미지가 로딩 되지 않았을때는 보이지 않게끔 css 에서 opacity : 0; 으로 처리하고 
+            4. 모든 이미지가 로딩 되었을때 아래의 if()문을 통해 css 제어로 이미지가 보여지게끔 UX관점 처리
+          */
+          total++;
+          // 이미지가 한개씩 로드 될때마다 total 이라는 변수의 숫자값 증가
+          percent = parseInt((total / imagesLength) * 100);
+          // 로딩 화면중 퍼센트 값을 보여주기 위해 공식 작성
+          loading.innerText = `${total} / ${imagesLength} (${percent}%)`;
+          // loading 이라는 요소에 해당 퍼센테이지 값이 나타나도록 연출
+          if (total === imagesLength) {
+            /*
+            조건식 설명 :
+            total 값이 images의 길이값과 같아졌을때 즉, 모든 이미지가 로딩 되었을 때를 뜻함
+
+            */
+            root.classList.add('on');
+            loading.classList.add('off');
+            /*
+              css class on, off는 간단한 opacity 값을 이야기함
+              css 선택자에서
+              #root.on  {opacity :1} 과 같이 타겟과클래스를 이어서 선택하여
+              결과적으로 #root 이외에는 .on 클래스가 작동하지 않게 됨              
+            */
+            setTimeout(() => {
+              loading.remove();
+            }, convertSpeed(loading));
+            /*
+              setTimeout("loading 태그를 문서에서 동적으로 지워줘", "모든 로딩태그의 transition 동작이 끝났을 시점에")          
+
+            */
+          }
+        });
+      });
+    }
+
+    function convertSpeed(element) {
+      let speedValue = getComputedStyle(element).transitionDuration;
+      /* 
+        window.getComputedStyle(); 설명
+        자바스크립트로 직접적인 스타일링을 제어하는 방식은 CSS 스타일 시트보다 먼저 처리완료 되기때문에
+        css의 스타일링(여기서는 transition 속도와 같은) 처리가 '완료되었을 시점'을 제어하기 위한 메서드
+        직역하면 : 화면에 모두 연산이 끝난 스타일 값을 의미
+      */
+      speedValue = parseFloat(speedValue) * 1000;
+      // 값을 밀리세컨드로 처리하기 위해 변경 -> 덮어쓰기
+      // 실제값은 2.5 초 곱하기 1000 이 된다.
+      return speedValue; // 숫자값 리턴
+    }
+  </script>
+</body>
+
+</html>
