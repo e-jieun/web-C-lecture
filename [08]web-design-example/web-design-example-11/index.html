@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="./main-style.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    img {
+      margin: 0;
+      padding: 0;
+    }
+
+    @import url(https://fonts.googleapis.com/css?family=Raleway:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+    body {
+      background-color: #000;
+    }
+
+    #root {
+      width: 100%;
+      height: 100vh;
+      background-color: 333px;
+      overflow: hidden;
+      position: relative;
+      /* top:20vh; */
+      opacity: 0;
+      transform: 3s;
+    }
+
+    article {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      /* z-index: 2; */
+      top: 0px;
+      left: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #ccc;
+    }
+
+    article>h1 {
+      /* z-index: 2; */
+      position: absolute;
+      color: #ccc;
+      mix-blend-mode: difference;
+      font-family: 'Raleway';
+      font-weight: 100;
+      font-size: 2rem;
+    }
+
+    #root.on {
+      opacity: 1;
+    }
+
+    #root>img {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    aside {
+      width: 100%;
+      height: 100vh;
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 3rem;
+      color: #ccc;
+      background-color: #333;
+      font-family: 'Raleway';
+      letter-spacing: 3px;
+      transition: 2.5s;
+    }
+
+    aside.off {
+      opacity: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <article>
+    <h1>for improvement</h1>
+  </article>
+  <aside>0 / 100</aside>
+
+  <script>
+    const root = document.getElementById('root');
+    const loading = document.querySelector('aside');
+    const log = document.querySelector('article h1');
+    let imageCount = 100;
+
+    for (let i = 0; i < imageCount; i++) {
+      const imgElement = document.createElement('img');
+      imgElement.setAttribute('src', `./sequence-image/sequence-${i}.jpg`);
+      root.append(imgElement);
+    }
+
+    imageLoaded();
+
+    window.addEventListener('mousemove', (event) => {
+      let mouseX = event.pageX;
+      let mouseY = event.pageY;
+      let calcX = -(mouseX / 20);
+      let calcY = -(mouseY / 20);
+
+      log.style.transform = `translate(${calcX}px, ${calcY}px)`;
+
+      console.log(mouseX);
+      let windowPosition = window.innerWidth;
+      let percent = parseInt((mouseX / windowPosition) * imageCount);
+      // 800 분율 : 마우스 위치값 나누기 윈도우 전체폭 곱하기 800분율
+      const imgs = document.querySelectorAll('#root img');
+      for (let img of imgs) {
+        img.style.display = 'none';
+        imgs[percent].style.display = 'block';
+      }
+    });
+
+    function imageLoaded() {
+      const images = document.querySelectorAll('img');
+      const imagesLength = images.length;
+      let total = 0;
+      let percent = 0;
+      /*
+  백분율 공식 일부값 / 전체값 *100
+  */
+
+      images.forEach((img) => {
+        img.addEventListener('load', () => {
+          total++;
+          percent = parseInt((total / imagesLength) * 100);
+          loading.innerText = `${total} / ${imagesLength} (${percent}%)`;
+          // console.log(total);
+          if (total === imagesLength) {
+            root.classList.add('on');
+            loading.classList.add('off');
+
+            setTimeout(() => {
+              loading.remove();
+            }, convertSpeed(loading));
+          }
+        });
+      });
+    }
+
+    function convertSpeed(element) {
+      let speedValue = getComputedStyle(element).transitionDuration;
+      speedValue = parseFloat(speedValue) * 1000;
+      return speedValue;
+    }
+  </script>
+</body>
+
+</html>
