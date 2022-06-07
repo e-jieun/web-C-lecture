@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  <!-- * CDN : content Delivery network -->
+  <!-- * 코드를 복잡하게 설치할 것 없이 인터넷연결이 된 환경이라면 간단하게 사용하는 방식을 일컫는다. -->
+  <!-- * 반드시 맨 먼저 실행되어야 하기 때문에 보통 head 부분에 설치하며 '먼저읽어들여' 라는 최신 명령(async)도 존재한다. -->
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #el-1 {
+      width: 100px;
+      height: 100px;
+      background-color: salmon;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="el-1"></div>
+
+  </div>
+  <script>
+    window.addEventListener('load', function () {
+      // 모든 이미지가 loading(적재)되었을때 이벤트가 발생하도록 작성했다.
+      setTimeout(() => {
+        // * setTimeout: 지정된 시간만큼 '기다렸다가' 1회 실행된다.
+        anime({
+          targets: '#el-1', // 이름은 강사 마음대로 지은것뿐 '셀렉터' 방식을 지원한다.
+          translateX: 250,
+          translateY: 250
+        });
+        // * 위의 anime() 함수는 해당 라이브러리가 제공하는 함수이다.
+        // https://animejs.com/documentation/#cssSelector
+
+      }, 1000)
+      // 1000millisecond = 1s : 결과적으로 해당 코드는 1초 기다렸다가 1번 실행되는 코드이다.
+    });
+  </script>
+
+
+</body>
+
+</html>
