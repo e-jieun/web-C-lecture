@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    section {
+      width:100vw;
+      height:100vh;
+      border: 1px solid red;
+    }
+    #menu {
+      position: fixed;
+      top:0;
+      right:0;
+    }
+  </style>
+</head>
+<body>
+  <ul id="menu">
+    <li><a href="#num-1">num-1</a></li>
+    <li><a href="#num-2">num-2</a></li>
+    <li><a href="#num-3">num-3</a></li>
+    <li><a href="#num-4">num-4</a></li>
+    <li><a href="#num-5">num-5</a></li>
+    <li><a href="#num-6">num-6</a></li>
+    <li><a href="#num-7">num-7</a></li>
+    <li><a href="#num-8">num-8</a></li>
+    <li><a href="#num-9">num-9</a></li>
+    <li><a href="#num-10">num-10</a></li>
+  </ul>
+
+
+
+  <section id="num-1"></section>
+  <section id="num-2"></section>
+  <section id="num-3"></section>
+  <section id="num-4"></section>
+  <section id="num-5"></section>
+  <section id="num-6"></section>
+  <section id="num-7"></section>
+  <section id="num-8"></section>
+  <section id="num-9"></section>
+  <section id="num-10"></section>
+
+  <script>
+
+    
+    window.addEventListener('hashchange', function() {
+      
+      const urlTest = location.href;
+        
+      console.log("href :" + urlTest);
+      console.log("hash :" + hashTest);
+      console.log("hash :" + hashTest.substring(1));
+    })
+
+
+
+
+  </script>
+
+
+</body>
+</html>
