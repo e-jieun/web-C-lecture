@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module">
+    document.documentElement.style.scrollBehavior = "smooth";
+    // * <html> 태그에 접근하고 싶을때 document.documentElement 객체 조회
+    const root = document.getElementById('root');
+
+    function elementMaker(id, count, tag) {
+      // ★★★★★★★ 매개변수 타입체킹
+      id = typeof id === "string" ?  id : console.error(`${id} : parameter is need string.`);
+      /*
+        삼항연산자 -> 일반 조건 연산자 예시
+
+        if(tpyeof id === "string") {
+          id = id;
+        } else {
+          console.error(`${id} : parameter is need string.`);
+        }
+        ★ 해당 부분이 특이한데 매개변수 id를 다시 id로 대입하겠다. 라는 뜻이다.
+        ★ 조건식에서의 연산이 끝나면(false)가 아니면 다시그대로 사용하겠다는 뜻으로 타입을 필터링할 때 자주사용하는 패턴이다.
+        ★ 워낙에 많이 사용하는 패턴 혹은 간단한 조건식이 필요한 경우가 잦기에 삼항연산자라는 것이 도입되었다.
+      */
+      // * id로 만들 매개변수 id가 문자열인지 확인
+      count = typeof count === "number" && Number.isNaN(count) !== true && Number.isInteger(count) ? count : console.error(`${count} : parameter id need number & integer`);
+      // * count 반복문을 사용할 매개변수가 숫자인지 확인
+      count = count >= 0 ? count : console.error(`${count} : parameter is no minus`);
+      // * count 매개변수가 양수 인지 확인
+      // * count 가 0 이면 반복문 실행 하지 않음
+      // * count 가 음수이면 에러메세지 리턴
+      /*
+         * 타입체크가 분명한 타입스크립트에서는 위와같은 패턴을 사용할 일은 많이 없지만, '조건식이 너무 길어져서' 두번 필터링 한 안티패턴이다.
+      */
+      tag = typeof tag === "string" ? tag : console.error(`${tag} : parameter is need string.`);
+      // * tag 이름으로 작성할 매개변수가 문자열인지 확인
+      let elem = [];
+      // 배열 elem은 배열메서드를 활용해 innerHTML의 문자열로 활용할 예정이다.
+      let elementWork = `<${tag}>${id}-${count}</${tag}>`;
+      /*
+        매개변수 3개 tag, id, count 를 통해 아예 태그자체를 문자열로 만든 사례다.
+      */
+      for(let i = 0; i< count; i++) {
+      // 필요한 갯수만큼 만들고자 for() 반복문을 사용했다. 
+        if(tag === "li") {
+        // <li> 태그인경우 <a> 태그를 자식으로 두게끔 하고자 if()문을 설치했다.
+          let aTag = `<a href="#${id}-${i}">${id}-${i}</a>`;
+          // aTag 변수에 <a></a>태그 문자열 생성
+          let openTag = elementWork.slice(elementWork[0], elementWork.indexOf('>')+1);
+          // openTag는 위의 elementWork 문자열에서 첫번째부터 ">"부분까지를 자른 상태로
+          // let openTag = <li>; <-- 이것과 같다.
+          let closeTag = elementWork.substring(elementWork.length ,elementWork.lastIndexOf("<"));
+          // closeTag는 substring()을 통해 잘랐다. slice와 특성이 약간 다르므로 차이점을 찾아볼것
+          // .lastIndexOf(); <-- 마지막 문자열에서부터 조회하는 특성이 있다.
+          // closeTag는 결과적으로
+          // let closeTag = </li>; 와 같다
+          elem.push( openTag + aTag + closeTag);
+          // push 를 통해 배열에 원소로 "<li> <a></a> </li>" 라는 문자열을 넣은 것과 같다
+        } else {
+          // else 구문
+          /* 참 조건식 tag 매개변수가 li 가 아니라면 실행하는 부분*/
+          elementWork = `<${tag} id="${id}-${i}">${id}-${i}</${tag}>`;
+          // * 각종 매개변수로 문자열을 조립했다.
+          elem.push(elementWork);
+        }
+      }
+      console.log(count);
+      return elem.join('');
+      // 반복문과 push로 인해 여러개의 콤마(배열 원소 구분)가 존재하므로 join 인덱스의 인수를 "" 문자열 빈칸으로 넣어
+      // 다닥다닥 붙어 매우 긴 형태로 된 1개의 문자열로 만들어지게끔 가공했다.
+    }
+
+    root.innerHTML = `
+      <ul>
+        ${elementMaker('test', 10, "li")}
+      </ul>
+      <div>
+        ${elementMaker('test', 10, "section")}
+      </div>
+    `;
+    /*
+      * 복잡하게 함수로 제작하여 위의 root.innerHTML의 문자열로 넣은 이유
+      1. 현재의 예제는 규모가 작아 함수 코드가 리터럴'직접 작성한' 것보다 코드가 훨씬 많은 형국이지만, 코드 규모가 커질 수록 코드의 압축력이 매우 높아진다.
+      2. 함수를 활용하여 -> 코드 재활용이 가능하기때문에 결과적으로 코드가 폭발적으로 짧아지는 효과를 기대할 수 있다. 
+
+
+
+
+
+    */
+    
+    
+    
+  </script>
+
+
+</body>
+
+</html>
