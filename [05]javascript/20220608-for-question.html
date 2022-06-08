@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root"></div>
+
+
+
+  <script>
+    const title = ["A", "B", "C", "D"];
+    const boxList = ["a", "b", "c", "d"];
+    const thumList = {
+      a: [1, 2, 3, 4],
+      b: [2, 3, 4, 5, 6],
+      c: [2233, 22],
+      d: [1, 23, 3, 4, 5]
+    }
+    const root = document.getElementById('root');
+
+    let appendItem = [];
+    title.forEach((value, index) => {
+      appendItem.push(`<li data-menus="${index}">${value}</li>`);
+    });
+
+    root.innerHTML = `
+      <ul>
+      ${appendItem.join('')}
+      </ul>
+    `;
+
+
+    const ul = document.querySelector('ul');
+    console.log(ul);
+    ul.addEventListener('click', function(event) {
+      console.dir(event.target);
+      let getItems = event.target.dataset.menus; 
+      console.log(getItems)
+      console.log(boxList[Number(getItems)]);
+    })
+    
+
+
+  </script>
+</body>
+
+</html>
