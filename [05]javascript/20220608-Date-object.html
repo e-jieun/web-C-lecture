@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root');
+
+    const date = new Date();
+    console.log(date);
+
+    const dateObj = {
+      year : date.getFullYear(),
+      month : date.getMonth() + 1,
+      date : date.getDate(),
+      day : date.getDay(),
+      dateKoreaName: ["일요일", "월요일", "화요일", "수요일", "목요일", "금요일", "토요일"],
+      dayKoreaString : function(value) {
+        let result = this.dateKoreaName[value]; 
+        return result;
+      }
+    }
+
+    // console.log(dateObj.year); // 년
+    // console.log(dateObj.month); // 월
+    // console.log(dateObj.date); // 일
+    // console.log(dateObj.day); // 요일
+    // console.log(dateObj.dateKoreaName);
+
+    console.log(dateObj.dayKoreaString(dateObj.day));
+
+
+
+
+
+  </script>
+</body>
+</html>
