@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="root">
+    <button id="left">left</button>
+    <button id="right">right</button>
+    <ul id="slide">
+      <li data-slide-item="0">0</li>
+      <li data-slide-item="1">1</li>
+      <li data-slide-item="2">2</li>
+      <li data-slide-item="3">3</li>
+      <li data-slide-item="4">4</li>
+
+    </ul>
+  </div>
+  <script>
+    const slideContainer = document.getElementById('slide');
+    const slideItems = Array.from(document.querySelectorAll("#slide li"));
+    const left = document.getElementById('left');
+    const right = document.getElementById('right');
+    let current = 0;
+    function displayControl(arr) {
+      arr.forEach((value) => {
+        let getDatasetValue = Number(value.dataset.slideItem);
+        if (getDatasetValue === current) {
+        value.style.display = "block";
+        } else {
+        value.style.display = "none";
+        }
+      });
+    }
+    displayControl(slideItems);
+    function buttonEvent(eventTrigger, targetElement) {
+      eventTrigger.addEventListener('click', function () {
+        if (eventTrigger === left) {
+          current--;
+          if (current < 0) {
+            current = targetElement.length - 1;
+          }
+          displayControl(targetElement);
+        }
+        if (eventTrigger === right) {
+          current++;
+          if (current >= targetElement.length) {
+            current = 0;
+          }
+          displayControl(targetElement);
+        }
+      });
+    };
+
+    buttonEvent(left, slideItems);
+    buttonEvent(right, slideItems);
+
+
+
+  </script>
+</body>
+
+</html>
