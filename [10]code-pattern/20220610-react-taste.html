@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+
+  
+  <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <!-- ? react의 중심이 되는 소스 -->
+  <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <!-- ? JSX (react만의 독특한 마크업 방식 javascript XML 줄임말) DOM API 처리 소스 -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <!-- ? 트랜스컴파일링 바벨 _ JSX등 여러가지를 -> 웹브라우저 랜더링(출력)에 맞게 소스를 변환한다. -->
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel" data-type="module">
+    // * babel을 사용할때는 꼭 script 태그에 type을 지정해주어야 한다.
+    const root = document.getElementById('root');
+
+    const coffee = "americano";
+    
+    function Section() {
+      // * 리액트의 사용자 정의 함수 ( || html 만드는 것)은 첫글자가 대문자로 시작하는 '파스칼'방식을 채택하고 있다. 
+      return (
+        <ul>
+          <li>{coffee}</li>
+        </ul>
+      );
+        /* 특이하게 리턴값에 연산 우선 순위가 가장높은 소괄호를 붙여놓았다. */
+        // {coffee} <-- 이와같이 마치 탬플릿 문자열처럼 보이기도 하며, 매우 직관적으로 사용할 수 있다.
+        // 리액트의 코드 패러다임인 '동적' 페이지 제어에 큰 중추 개념이된다.
+    }
+    
+    
+    const test = 
+      <section>
+        <Section/>
+      </section>;
+
+      // <Section> 위에서 선언한 함수를 JSX에서는 마치 마크업 처럼 보이게 하려는 의도가 있는지,
+      // 호출방식이 특이하다. 특히 대문자 설정을 확인할 것
+
+    ReactDOM.render(test, root);
+        // 리액트가 지원 하는 전용 메서드이다.
+
+
+
+  </script>
+</body>
+
+</html>
