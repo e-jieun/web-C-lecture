@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById('root');
+    
+    
+    function a() {
+      return 'div';
+    }
+    
+    const div = document.createElement(a());
+    // * createElement() 매개변수 자리에 a() 함수가 호출 된것을 주목 할 것
+    // * 짐짓 함수는 복잡한 논리의 '제어'용도로 쓰기 좋은 매우 훌륭한 도구이지만
+    // * 위와 같은 경우 그저 "div"와 전혀 다를것이 없다.
+
+    console.log(a() === "div"); // true
+    // * 겉 모양새는 엄청나게 복잡한 함수와 vs 단순한 문자열 일뿐이지만
+    // * 비교연산자를 통해 확인했을 때 true가 리턴된다. 즉, 같다는 판정이 된다.
+
+    // * 코드를 분리하는 과정은 함수를 통해 '입력이 무엇인지', '출력이 무엇이 될지' 와 같은 매우 작은 부분을 짚어보는것에서 큰 힌트를 얻을 수 있다.
+    
+
+
+
+
+
+
+
+    root.appendChild(div);
+
+
+  </script>
+</body>
+</html>
