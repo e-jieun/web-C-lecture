@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+
+    body {
+      background-color: #333;
+    }
+
+    #root {
+      width:100vw;
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+    }
+    #root h1 {
+      margin: 2vw;
+      color: #ccc;
+      font-weight: thin;
+    }
+
+    
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <h1 id="title"></h1>
+    <input type="range" id="slide-range" min="0" max="100" name="slide-range">
+    <!-- ? input 태그에는 매우 다양한 타입이 존재한다. -->
+  </div>  
+  <script>
+    const root = document.getElementById('root');
+    const title = document.getElementById('title');
+    const slideRange = document.getElementById('slide-range');
+    let value = slideRange.value;
+    title.textContent = value;
+
+    slideRange.addEventListener('input', () => {
+      // ? 이벤트가 input 자체로도 있는 것을 확인할 것
+      let changeValue = slideRange.value;
+      title.textContent = changeValue;
+      console.log(changeValue);
+      if(Number(changeValue) === 100) {
+        root.style.backgroundColor = "#000";
+      } else {
+        root.style.backgroundColor = "#333";
+      }
+    })
+
+
+
+  </script>
+</body>
+</html>
