@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById("root");
+
+
+    class _POKEMONLIST {
+      constructor(id, name, type = [], description = "lorem ipsum dolor sit amet, consectetur") {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+      }
+    }
+    // const demoPokemon = new _POKEMONLIST(1, "피카츄", ["전기","귀여움"], "전기가 찌릿찌릿");
+    // console.log(demoPokemon);
+
+    let pokemonArr = [];
+    //? 객체를 즉석에서 만들어(객체 인스턴스) 일련의 배열(순서를활용)로 핸들링하기 위해 데이터타입이 배열인 변수를 생성했다. 
+
+    function pokemonArrSet(...args) {
+      args.forEach((value, index) => {
+        let tempObject = new _POKEMONLIST(index + 1, value);
+        pokemonArr.push(tempObject);
+      });
+      console.log('array setting complate');
+    }
+    /*
+    <!-- ? pokemonArrSet(...args);
+      * 특이한 매개변수 ...args (점세개+임의의 매개변수이름) : 스프레드 연산자(spread operator)  
+      * 매개변수의 갯수를 특정하기 어려울때 간단하게 '매개변수로 값을 넣는 만큼 사용하겠다' 라는 용도로 표준이 된 매우 유용한 방식이다.
+      * 매개변수는 구조가 사실 '배열' 형태를 띄고 있기 때문에 첫번째 매개변수 = 인덱스 0번, 두번째 매개변수 = 인덱스 1번 식으로 지정된다.(iterator)
+      * 호출을 여러번하는 수고를 덜기위해 스프레드 연산자를 적용했다.
+      * args = arguments의 준말이다 (properties를 props로 줄여부르는 것과 같은 이치)
+      * 매개변수는 배열이기때문에 별다른 가공없이도 바로 배열 메서드를 사용할 수 있는 장점이 있다.
+      * 더불어 배열메서드 자체가 "배열의 길이만큼" 무얼 하겠다는 약속이 미리되어있기때문에, 일일히 반복명령절차를 하지 않아도 필요한 만큼 제어를 가능하게끔 해준다.
+      * 기본명령방식으로 풀어설명하면, 
+      * 배열-> 반복문 -> 적용 -> 다른 배열의 원소로 추가하는 '가공'을 뜻한다. 
+      * "배열의 갯수만큼 객체를 생성하고자" 배열반복문 forEach활용, new 연산자를 활용한 인스턴스 생성 -> 어떤 배열의 '원소'로 객체를 추가
+      * 하는 과정을 함수내에서 진행한다.
+      -->    
+    */
+    pokemonArrSet("피카츄", "라이츄", "파이리", "꼬부기", "버터풀", "야도란", "피죤투", "또가스");
+    console.log(pokemonArr);
+    /* <!-- ? console 확인 결과
+    * [] 배열 형태
+    * 0: _POKEMONLIST {id: 1, name: '피카츄', type: Array(0), description: 'lorem ipsum dolor sit amet, consectetur'}
+    * 1: _POKEMONLIST {id: 2, name: '라이츄', type: Array(0), description: 'lorem ipsum dolor sit amet, consectetur'}
+    * 2: _POKEMONLIST {id: 3, name: '파이리', type: Array(0), description: 'lorem ipsum dolor sit amet, consectetur'}
+    * 3: _POKEMONLIST {id: 4, name: '꼬부기', type: Array(0), description: 'lorem ipsum dolor sit amet, consectetur'}
+    * 4: _POKEMONLIST {id: 5, name: '버터풀', type: Array(0), description: 'lorem ipsum dolor sit amet, consectetur'}
+    * 5: _POKEMONLIST {id: 6, name: '야도란', type: Array(0), description: 'lorem ipsum dolor sit amet, consectetur'}
+    * 6: _POKEMONLIST {id: 7, name: '피죤투', type: Array(0), description: 'lorem ipsum dolor sit amet, consectetur'}
+    * 7: _POKEMONLIST {id: 8, name: '또가스', type: Array(0), description: 'lorem ipsum dolor sit amet, consectetur'}
+    * length: 8
+    -->
+    <!--
+      ? 저장용 배열 pokemonArr에 담긴 원소들은 원소하나하나가 '객체 타입' 인 것을 확인한다.
+      * querySelectorAll('section'); 과 같이 DOM API에서도 이러한 형태의 자료구조를 확인한바 있다.
+      * ex> section[i].style.display = "none" 
+      * 식별한데이터가 배열이고, 그 배열 원소 중 객체에 접근할때 반복문을 매우 빈번히 활용했었다.
+      * <section>과 같은 태그들도 본래의 출처는 '인스턴스'임을 상기할 필요가 있다.
+      * 따라서 반복문과 객체 접근을 동시에 진행하면 원하는 데이터를 편하게 가공, 처리 할 수 있다.
+    -->
+    */
+
+
+
+
+    const render = `
+    
+    
+    
+    `;
+    root.innerHTML = render;
+  </script>
+</body>
+
+</html>

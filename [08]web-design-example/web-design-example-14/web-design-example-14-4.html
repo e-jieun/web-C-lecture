@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    li {
+      color: #ccc;
+      cursor: pointer;
+      transition: 1s;
+      height:3vh;
+    }
+
+    li:hover {
+      color: #fff;
+      height: 5vh;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById("root");
+
+
+    class _POKEMONLIST {
+      constructor(id, name, type = [], description = "lorem ipsum dolor sit amet, consectetur") {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+      }
+    }
+    let pokemonArr = [];
+
+    function pokemonArrSet(array, ...args) {
+      args.forEach((value, index) => {
+        let tempObject = new _POKEMONLIST(index + 1, value);
+        array.push(tempObject);
+      });
+      console.log('array setting complate');
+    }
+    pokemonArrSet(pokemonArr, "피카츄", "라이츄", "파이리", "꼬부기", "버터풀", "야도란", "피죤투", "또가스");
+
+    function elemMaker(array, tagName) {
+      let returnArr = [];
+      const enclose = (tagName, content) => {
+        return `<${tagName}>${content}</$${tagName}>`
+      };
+      array.forEach((value, index) => {
+        let temp = enclose(tagName, `${value.name}-${value.id}`);
+        returnArr.push(temp);
+      });
+      console.log(returnArr);
+      return returnArr.join('');
+    }
+
+
+    window.addEventListener("load", function () {
+      const renderHTML = `
+        <ul>
+        ${elemMaker(pokemonArr, "li")}
+        </ul>
+      `;
+      root.innerHTML = renderHTML;
+
+    })
+  </script>
+</body>
+
+</html>

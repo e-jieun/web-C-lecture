@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById("root");
+    
+
+    class _POKEMONLIST {
+      constructor(id, name, type=[], description="lorem ipsum dolor sit amet, consectetur") {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+      }
+    }
+    /*
+    <!-- ? class 문법
+    * 자바스크립트 문법에서의 class 와 CSS 에서의 class는 같은 단어지만 다른 의미로 사용한다.
+    * 자바스크립트에서의 class 는 객체를 만드는 거푸집에 해당한다. 
+    * 거푸집이기 때문에 최초에 '설계' 할 때 필요한 항목이나, 설정 등을 까다롭게 설정해야한다.
+    * 아래의 demoPokemon 이라는 변수는 거푸집에서 찍어낸 객체이다. 
+    * 이러한 자바스크립트 class나 객체'자체'를 만드는 함수를 '생성자 함수(constructor function)' 이라고 부른다.
+    * 작은 처리인 경우 일일히 작성할 일은 굳이 없지만,
+    * 외부 라이브러리, API들을 사용할때 대부분 이러한 생성자 함수로부터 만들어낸 객체를 가지고 활용하는 것이 대다수이다.
+    * 그냥 만든 객체는 직접 만들었기 때문에 '객체 리터럴' 이라고 부르지만, 
+    * '생성자함수' 로부터 찍어내어 만들어진 객체는 '객체 인스턴스(instance)'라고 부른다.
+    * 제품 공장(생성자함수)과 제품공장으로 부터 나온 제품 결과물(인스턴스) 로 이해하는 것으로 비유 할 수 있다.
+
+    <!-- ? javascript class?
+    * 이러한 class 개념은 객체지향프로그래밍 언어(객체위주로 프로그래밍 하는 언어)에서 매우 널리 사용하는 개념이지만,
+    * 특히 자바스크립트에서는 그 의미나 활용도가 떨어진 경향이 있다.
+    * 자바스크립트가 인정받는 언어가 되기 전에는 class라는 문법 자체가 없었기 때문 -> 대체제로 진행 했었음
+    
+    ? function _POKEMONLIST_FUNCTION(id, name){
+      this.id = id;
+      this.name = name;
+    }
+    <!-- ? 위와 같은 방식으로 생성자 함수를 구현했기때문에 class 문법을 짧은 코드에서는 자주만나기 어렵다.
+      * 하지만 볼륨이 큰 코드나, 각종데이터를 정리하는 등 데이터 '처리' 관련한 사항에서는 매우 유용하게 사용되고,
+      * 흔히 발견할 수 있는 개념중에 하나이다.
+      * 
+      ? 특이한 이름 _POKEMONLIST <-- 언더바도 사용하고 모든 글자가 대문자이다.
+      ? PokemonList || $PokemonList || _pokemon_list
+      ? 작명(네임스페이스)에 첫글자를 특수기호로 하거나, 첫알파벳을 대문자(파스칼케이스)로 작업하는등 특이한 작명 구조를 가지고 있는데,
+      * 이는 암묵적으로 '절대로 건들이면 안되는 중요한 데이터, 혹은 코드' 라는 뜻을 내포하고 있다.
+      * 외부 API에서도 매우 자주나타나는 코딩 스타일이므로 익혀두는 것이 좋다.
+      *
+      ? 생성자 함수를 일반함수로 구성하여 만들어왔다가 자바스크립트로 프로그래밍을 진행하는 트랜드에 맞추어 class 기법을 도입했다.
+      ? 따라서 시기상으로, 제작자의 특성, 기타등등으로 '생성자 함수' 표기가 다른 언어에 비해 매우 스타일이 상이하다.
+
+      * 객체의 목적 : 서로 같은 공통 분모의 여러가지 값을 한데 묶어주는(wrapping) 역할을 하기 때문에
+      * 상당히 많은 프로그래밍 분야에서 활용된다.
+      * JSON : 데이터 통신 확장자 방식
+      * Library : 각종 편의, 특수 기능 코드 묶음
+      * DB : 데이터베이스 관리
+      * 
+
+    -->*/
+    const demoPokemon = new _POKEMONLIST(1, "피카츄", ["전기","귀여움"], "전기가 찌릿찌릿");
+    /*
+    <!-- ? demoPokemon 값 
+      * 일반적인 상수처럼 보이지만 안에 담긴 값은 '객체' 이므로 보이는 것보다 훨씬 더 많은 데이터를 가지고 있을 수 있다. 
+      * 위와 같이 생성자 함수로 무언가 인스턴스가 생성되었을때 ( 객체가 어떤 틀에 의해 만들어졌을때)
+      * 어떤 값이 있는지 조회해보아야 한다. (DOM API를 다룰때 style 객체가 어디있는 지 찾는것처럼)
+    -->
+    */
+    console.log(demoPokemon);
+
+    
+
+
+    const render = `
+    `;
+    root.innerHTML = render;
+
+
+  </script>
+</body>
+</html>

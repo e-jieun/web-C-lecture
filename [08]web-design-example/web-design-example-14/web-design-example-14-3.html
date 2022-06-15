@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script>
+    const root = document.getElementById("root");
+
+
+    class _POKEMONLIST {
+      constructor(id, name, type = [], description = "lorem ipsum dolor sit amet, consectetur") {
+        this.id = id;
+        this.name = name;
+        this.type = type;
+        this.description = description;
+      }
+    }
+    let pokemonArr = [];
+    function pokemonArrSet(array, ...args) {
+      args.forEach((value, index) => {
+        let tempObject = new _POKEMONLIST(index + 1, value);
+        array.push(tempObject);
+      });
+      console.log('array setting complate');
+    }
+    pokemonArrSet(pokemonArr, "피카츄", "라이츄", "파이리", "꼬부기", "버터풀", "야도란", "피죤투", "또가스");
+    /* 
+      <!--
+        ? 동적으로 객체가 원소값이 되는 배열 구조화(pokemonArr);
+        * <li> 태그값이 더 필요하다면 간단하게 함수의 매개변수로 데이터를 첨삭할 수 있다.  
+        * 다른 배열에 다른 객체가 필요한것도 함수로 구현했기때문에 얼마든지 생성할 수 있는 확장성이 있으며
+        * 작은규모에서보다 중규모 혹은 '서비스' 관점에서는 위와 같은 방식의 캡슐화작업을 메인 작업으로 하고 있다.
+      -->
+    */
+    function elemMaker(array, tagName) {
+      let returnArr = [];
+      const enclose = (tagName, content) => { return `<${tagName}>${content}</$${tagName}>` };
+      array.forEach((value, index) => {
+        let temp = enclose(tagName, `${value.name}-${value.id}`);
+        returnArr.push(temp);
+      }); 
+      console.log(returnArr);
+      return returnArr.join('');
+    }
+    /*
+      <!--
+        ? elemMaker(); : 배열로 구성된 데이터를 태그로 마크업하고싶을때 꺼내쓰기 위해 제작한 삼수
+        * 문자열을 생성하는 enclose()라는 함수가 함수표현식(function expression) 방식으로 짧게 표현된 것을 확인할 것
+        * 매개변수 array의 기본 정보를 통해 loop로 임시 배열에 일련의 마크업용 문자열을 추가하는 방식으로 구성
+        * return 타입은 길게 반복문으로 작성된 "태그처럼 보이는 문자열"  
+        
+      -->
+    */
+      console.log(elemMaker(pokemonArr, "li"));
+      // <li>피카츄-1</$li><li>라이츄-2</$li><li>파이리-3</$li><li>꼬부기-4</$li><li>버터풀-5</$li><li>야도란-6</$li><li>피죤투-7</$li><li>또가스-8</$li>
+
+    const renderHTML = `
+      <ul>
+      ${elemMaker(pokemonArr, "li")}
+      </ul>
+    `;
+    root.innerHTML = renderHTML;
+  </script>
+</body>
+
+</html>
