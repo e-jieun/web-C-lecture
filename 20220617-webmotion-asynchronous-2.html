@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding: 0;box-sizing: border-box;} 
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #root > div {
+      border: 1px solid red;
+      width: 50vw;
+      height: 50vh;
+      position:relative;
+    }
+
+
+    #ball  {
+      width:100px;
+      height: 100px;
+      background-color: #ccc;
+      border-radius: 100%;
+
+
+    }
+
+    #trigger {
+      width:100px;
+      height:20px;
+      margin-top: 5vh;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="wrapper">
+      <div id="ball"></div>
+    </div>
+    <button id="trigger"> start! </button>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    const ball = document.getElementById('ball');
+    /*
+      * css style -> javscript style
+      position: absolute;
+      top:0;
+      left:0;
+    */
+    ball.style.position = 'absolute';
+
+    let yPosition = 0;
+    let xPosition = 0;
+
+    ball.style.top = yPosition;
+    ball.style.left = xPosition;
+    /* 
+    <!--
+      ? #ball 의 스타일 속성중 top, 값과 left 값을 핸들링 하기 위해 변수를 마련했다.
+      -->
+    */
+    const trigger = document.getElementById('trigger');
+    
+    let isStatus = true;
+    trigger.addEventListener('click', function() {
+      console.log('첫번째 이벤트');
+      /* 
+        <!--
+          ? setInterval() 동작 조건은 위에 설치해둔 isStatus 라는 booleanType 핸들러 변수이다.
+          ? 16 밀리세컨트 (초당 60회)의 주기로 동작한다.
+          * 동작 알고리즘은 위에서 마련해둔 변수가 증가하는 것이다.
+          * 값이 증가한 것을 #ball 의 top, left 값으로 다시금 할당(assignment) 했다.
+          * 따라서 view(뷰)로는 마치 움직이는 듯한 연출을 하게 된다.
+          * 
+          * 적당한 선에서 setInterval을 종료시키는 조건을 달아두었다.(yPosition 값이 200 이되거나 혹은 그보다 커지거나 하는 조건이 성립되면 clearInterval(); 을 통해 종료);
+        -->
+      */
+      let startTimer = setInterval(function() {
+        if(isStatus) {
+          yPosition++;
+          xPosition++;
+          ball.style.top = yPosition +"px";
+          ball.style.left = xPosition + "px";
+          console.log('첫번째이벤트의 setInterval 동작중');
+        }
+        if(yPosition >= 200) {
+          isStatus = false;
+          clearInterval(startTimer);
+        }
+      }, 16);
+    });
+
+    /* 
+    <!--
+        ? 아래는 똑같은 이벤트타겟인 #trigger에 동일한 이벤트 발생 'click'을 설치했다.
+        ? 동작방식은 위와 반대이다.
+
+        * 결과적으로 #trigger라는 요소를 클릭하면 두개의 이벤트가 실행된다.
+        * 이벤트가 실행될 때 순서를 확인하기 위해 console.log(첫번째, 두번째 이벤트)라는 문구를 넣었다.
+        * 어떻게 동작하는지 연구해볼 것 (매우 특이하게 동작한다);
+        * 
+        * 다음설명에서 간략한 코드로 다시설명
+      -->
+    */
+
+  trigger.addEventListener('click', function() {
+    console.log("두번째 이벤트");
+    let endTimer = setInterval(function() {
+        if(isStatus === false) {
+          yPosition--;
+          xPosition--;
+          ball.style.top = yPosition +"px";
+          ball.style.left = xPosition + "px";
+          console.log('두번째이벤트의 setInterval 동작중');
+        }
+        if(yPosition <= 0) {
+          isStatus = true;
+          yPosition = 0;
+          clearInterval(endTimer);
+        }
+      },16);
+  });
+
+
+  </script>
+</body>
+</html>

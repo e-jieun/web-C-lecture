@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding: 0;box-sizing: border-box;} 
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #root > div {
+      border: 1px solid red;
+      width: 50vw;
+      height: 50vh;
+      position:relative;
+    }
+
+
+    #ball  {
+      width:100px;
+      height: 100px;
+      background-color: #ccc;
+      border-radius: 100%;
+
+
+    }
+
+    #trigger {
+      width:100px;
+      height:20px;
+      margin-top: 5vh;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="wrapper">
+      <div id="ball"></div>
+    </div>
+    <button id="trigger"> start! </button>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    const ball = document.getElementById('ball');
+    /*
+      * css style -> javscript style
+      position: absolute;
+      top:0;
+      left:0;
+    */
+    ball.style.position = 'absolute';
+    ball.style.top = '0';
+    ball.style.left = '0';
+
+    const trigger = document.getElementById('trigger');
+    /*
+      <!-- 
+        ? 간단하게 css 스타일링과 javascript 식별과정을 마친 상태이다.
+        ? 특이한 점은 #ball 요소를 자바스크립트로 제어하고자 하기 때문에 포지션 부분만 따로 자바스크립트에서 진행했다.
+        ? 이유 : 스타일링으로 포지션값을 지정하면 자바스크립트 제어보다 실행 순서 순위가 한참 밀리기 때문에 제어 용이성을 생각한 것
+      -->
+
+
+    
+    */
+  </script>
+</body>
+</html>
