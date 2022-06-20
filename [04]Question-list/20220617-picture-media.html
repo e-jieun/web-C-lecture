@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding:0; box-sizing: border-box;}
+    
+    
+    /* common styling */
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #ccc;
+    }
+
+    /* 공통 picture 태그 스타일링 */
+    #root picture {
+      width:100vw;
+      object-fit: cover;
+    }
+
+    /* mobile style */
+    @media (min-width: 250px) { /* 가로폭 250px 보다 넓을 경우의 스타일링*/
+      #root {
+        background-color: salmon;
+      }
+    }
+    /* table style */
+    @media (min-width: 768px) { /* 최소폭 768px 보다 넓을 경우의 스타일링*/
+      #root {
+        background-color: darkcyan;
+      }
+    }
+    /* pc style*/
+    @media (min-width: 1025px) { /* 최소폭 1025px 보다 넓을 경우의 스타일링*/
+      #root {
+        background-color: wheat;
+      }
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <picture>
+      <!-- 사이즈가 큰순으로 source 태그를 활용하면 가로폭마다 다른 이미지(최적화된)를 보여줄 수 있다.  -->
+      <!-- 이미지에 대한 세부적인 사이즈 변경은 css의 속성으로 활용할 수 있다. -->
+      <source media="(min-width: 1025px)" srcset="http://picsum.photos/1920/">
+      <source media="(min-width: 768px)" srcset="http://picsum.photos/800/">
+      <source media="(min-width: 250px)" srcset="http://picsum.photos/300/">
+      <img src="http://picsum.photos/1920/" alt="main-image">
+    </picture>
+  </div>
+</body>
+</html>
