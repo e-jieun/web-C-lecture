@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #dice {
+      width: 200px;
+      height: 200px;
+      border-radius: 30px;
+      background-color: #ccc;
+      padding: 10px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      /* flex-direction: column; */
+      flex-wrap: wrap;
+    }
+
+    #dice>section {
+      margin: 10px;
+      width: calc(100px/3);
+      height: calc(100px/3);
+      border-radius: 100%;
+      background-color: salmon;
+    }
+
+    #root>div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+
+    #trigger {
+      margin: 2vw;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div>
+      <div id="dice">
+      </div>
+      <button id="trigger">Click!</button>
+    </div>
+  </div>
+</body>
+
+<script src="./dom-script.js" type="module"></script>
+
+
+</html>
