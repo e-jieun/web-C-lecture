@@ -1,0 +1,37 @@
+@import url(./reset.css);
+
+#root {
+  box-sizing: border-box;
+  width:100vw;
+  height:100vh;
+  border: 1px solid #ccc;
+}
+
+#root header {
+  width: inherit;
+  height: 5vh;
+  background-color: #aaa;
+}
+
+#root header ul {
+  list-style-type: none;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root main {
+  width: inherit;
+  height: 90vh;
+  background-color: #eee;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root footer {
+  width: inherit;
+  height: 5vh;
+  background-color: #aaa;
+}

@@ -1,0 +1,57 @@
+@import url(./reset.css);
+
+/* 
+
+* @import 를 통해 브라우저 기본값을 초기화 시킨 스타일링을 붙여왔다.
+
+*/
+
+#root {
+  box-sizing: border-box;
+  width:100vw;
+  height:100vh;
+  border: 1px solid #ccc;
+}
+
+/* 
+
+  work .5 확인해볼 관점
+  ? html파일에는 사실상 #root 외에는 존재하지 않는다.
+  * 따라서 아래의 있는 스타일링 작업들은 존재하지 않는 요소를 스타일링한 셈이 된다.
+  * 하지만 모든 HTML element 제어를 javascript 에서 진행 한 '뒤'에 편하게 스타일링 하기 위한 조치로, 인터렉션(상호작용)을 부여하지 않는 것이라면 아래와 같이 간편하게 스타일링 하는 것이 일반 적이다.
+  * 따라서 제어를 해야할 부분은 -> 자바스크립트에서 직접 스타일링
+  * 별도의 제어 없이 간단히 스타일링 -> css에서 간접스타일링
+  * 기획을 통해 '작업량'을 줄여낼 수 있다. 
+
+  
+*/
+
+
+#root header {
+  width: inherit;
+  height: 5vh;
+  background-color: #aaa;
+}
+
+#root header ul {
+  list-style-type: none;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root main {
+  width: inherit;
+  height: 90vh;
+  background-color: #eee;
+
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root footer {
+  width: inherit;
+  height: 5vh;
+  background-color: #aaa;
+}
