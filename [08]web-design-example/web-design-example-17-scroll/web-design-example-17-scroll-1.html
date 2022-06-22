@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    #root {
+      width: 100vw;
+    }
+
+    #root>section {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+      border: 1px solid #000;
+    }
+
+    #status-data {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      min-width: 300px;
+      min-height: 300px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+    work .1 긴 스크롤을 구현하기 위해 section 하나당 풀페이지 크기로 설정했다.
+    work .2 #total-height라는 h1태그를 position 값 fixed를 하여 스크롤에 영향없이 확인 할 수 있도록 하였다.
+   -->
+  <div id="root">
+    <div id="status-data"> <!-- ? 화면에 표시하는 용도로 만든 요소들 -->
+      <h3 id="total-height"></h3>
+      <h3 id="current-height"></h3>
+      <h3 id="section-last-height"></h3>
+    </div>
+    <section>section-1</section>
+    <section>section-2</section>
+    <section>section-3</section>
+    <section>section-4</section>
+    <section>section-5</section>
+    <section>section-6</section>
+    <section>section-7</section>
+    <section>section-8</section>
+    <section>section-9</section>
+    <section>section-10</section>
+  </div>
+
+  <script>
+    // DOM API elemnet getting
+    const root = document.getElementById('root');
+    const totalHeight = document.getElementById('total-height');
+    const currentHeight = document.getElementById('current-height');
+    const sectionLastHeight = document.getElementById('section-last-height');
+    const sectionAll = document.querySelectorAll(`#root >section`);
+    /*<!-- ? sectionAll : #root 자식중 <section> 태그는 모두 선택 결과적으로 nodeList 라는 유사배열이 리턴된 변수이다. --> */
+
+      // scroll event test 
+      window.addEventListener('scroll', function () {
+      // DOM API data getting
+      let getTotalHeight = document.body.clientHeight;
+      let getCurrentHeight = window.pageYOffset;
+      let getLastSectionOffsetTop = sectionAll[sectionAll.length - 1].offsetTop;
+      /*
+        <!--
+          ? getTotalHeigth 변수 : body 태그의 전체 높이값을 가져왔다.
+          ? getCurrentHeight 변수 : BOM API에서 현재 스크롤 높이값을 가져왔다. : 정확히는 스크롤바(회색)의 맨 윗부분의 위치이다.
+          ? getLastSectionOffsetTop : 마지막 <section> 태그의 기준점 높이값을 가져왔다.         
+          
+          -->
+      */
+      // 편하게 보기위해 화면에 표시
+      totalHeight.textContent = "페이지의 총 높이값은 : " + getTotalHeight + "px 입니다.";
+      currentHeight.textContent = "페이지의 현재 높이값은 : " + getCurrentHeight + "px 입니다.";
+      sectionLastHeight.textContent = "마지막 섹션의 offsetTop(기준점) 높이값은 : " + getLastSectionOffsetTop + "px 입니다.";
+      // if문 설명
+      if(getCurrentHeight === getLastSectionOffsetTop) {
+        // 스크롤바 윗부분 위치값이 섹션태그의 윗부분 높이값과 일치했을 경우 = 결과적으로 "마지막까지 스크롤링"이 된상태이기때문에
+        // '마지막' 까지 도달했다는 점을 잡아낼 수 있다.
+        alert('당신은 방금 마지막 페이지의 위치까지 스크롤링하였습니다.');
+      }
+    });
+
+  </script>
+</body>
+
+</html>

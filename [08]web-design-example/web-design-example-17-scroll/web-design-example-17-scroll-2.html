@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    #root {
+      width: 100vw;
+    }
+
+    #root>section {
+      width: 100vw;
+      height: 100vh;
+      background-color: #ccc;
+      border: 1px solid #000;
+    }
+
+    #status-data {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      min-width: 300px;
+      min-height: 300px;
+      border: 1px solid #000;
+    }
+
+    #wheel-event-value {
+      color : salmon;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="root">
+    <div id="status-data">
+      <h3 id="total-height"></h3>
+      <h3 id="current-height"></h3>
+      <h3 id="section-last-height"></h3>
+      <h3 id="wheel-event-value"></h3>
+    </div>
+    <section>section-1</section>
+    <section>section-2</section>
+    <section>section-3</section>
+    <section>section-4</section>
+    <section>section-5</section>
+    <section>section-6</section>
+    <section>section-7</section>
+    <section>section-8</section>
+    <section>section-9</section>
+    <section>section-10</section>
+  </div>
+
+  <script>
+    // DOM API elemnet getting
+    const root = document.getElementById('root');
+    const totalHeight = document.getElementById('total-height');
+    const currentHeight = document.getElementById('current-height');
+    const sectionLastHeight = document.getElementById('section-last-height');
+    const wheelEventValue = document.getElementById('wheel-event-value');
+    const sectionAll = document.querySelectorAll(`#root >section`);
+    
+
+    // scroll event test 
+    window.addEventListener('scroll', function () {
+      // DOM API data getting
+      let getTotalHeight = document.body.clientHeight;
+      let getCurrentHeight = window.pageYOffset;
+      let getLastSectionOffsetTop = sectionAll[sectionAll.length - 1].offsetTop;
+      totalHeight.textContent = "페이지의 총 높이값은 : " + getTotalHeight + "px 입니다.";
+      currentHeight.textContent = "페이지의 현재 높이값은 : " + getCurrentHeight + "px 입니다.";
+      sectionLastHeight.textContent = "마지막 섹션의 offsetTop(기준점) 높이값은 : " + getLastSectionOffsetTop + "px 입니다.";
+      if(getCurrentHeight === getLastSectionOffsetTop) {
+        alert('당신은 방금 마지막 페이지의 위치까지 스크롤링하였습니다.');
+      }
+    });
+    /* 
+    <!--
+      ? scroll 이벤트 vs wheel 이벤트 차이
+
+      * 스크롤이벤트는 발생 주체가 "브라우저의 스크롤이 변화했을때" 이다. : 브라우저 소프트웨어
+      ? 브라우저가 스크롤 값이 없다면 이벤트는 일어나지 않는다 : 브라우저 크기보다 문서의 크기가 작을 경우
+      * 휠이벤트는 발생 주체가 "마우스의 휠 기능이 '동작' 했을때" 이다. : 마우스 하드웨어
+      ? 브라우저의 스크롤 존재 여부와 상관없이 '휠'이 동작하면 이벤트가 발생한다.
+      
+      todo : 사용자는 스크롤 하는 행위를 일반적으로 휠로 하기 때문에 '동일한 이벤트'로 생각하기 쉽지만, 키보드 나 pageUp, pageDown도 scroll 이벤트에 발생주체가 된다.
+      ? 휠이벤트는 '휠' 자체 만을 판단하지만,
+      ? 스크롤이벤트는 알고리즘 기저에 여러가지 조작(키보드, 휠, 기타등등)이 가진 동작의 결과물인점을 이해해야한다.
+
+      * 휠이벤트로 스크롤을 '이동'시키는 원리를 파악하는 것이 역으로 스크롤링을 활용한 인터렉션에서 매우 중요하게 작용한다.
+      * 아무런 커스텀 제어가 있지 않다면 브라우저 기본값으로 '휠을 아래로 조작할때 스크롤을 100px씩 내리게끔' 이벤트 기본값이 적용되어있다.
+
+      * 따라서 스크롤은 위로이동, 아래로이동 개념을 '이전값 vs 현재값'의 차이로 구분해야하지만 (다양한 입력루트가 존재하기 때문에)
+      * 휠은 그자체만으로 이벤트 객체에 위아래를 구분할 수 있는 키값(deltaY)이 존재한다.
+
+      -->
+    */
+    // ---------------------------------
+    let setHeightValue = 0;
+    //----------------------------------
+    
+    
+
+    root.addEventListener('wheel', function(event) {
+      // 휠 이벤트 발생 주체가 root 인것을 확인 할것
+      console.dir(event);
+      // <!-- ? event 객체의 키를 조회하면 deltaY 값을 발견할 수 있다. 위아래 동작을 100 , -100 으로 판단하는 것을 확인할 것 -->
+      if(event.deltaY > 0) {
+        wheelEventValue.textContent = '당신은 방금 휠을 내리는 동작을 하였습니다.';
+        setHeightValue++;
+        console.log(setHeightValue + " : 만든 숫자변수의 현재 값입니다.");
+      } else {
+        wheelEventValue.textContent = '당신은 방금 휠을 올리는 동작을 하였습니다.';
+        setHeightValue--;
+        if(setHeightValue <= 0) {
+          setHeightValue = 0;
+          console.log('만든변수가 0이하로 내려가지 않게 조치하였습니다.')
+        }
+        console.log(setHeightValue + " : 만든 숫자변수의 현재 값입니다.");
+      }
+    })
+
+    
+
+  </script>
+</body>
+
+</html>
