@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drag-and-drop</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #pick-item {
+      width: 100px;
+      height: 100px;
+      background-color: salmon;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="pick-item" draggable="true"></div>
+  </div>
+
+  <!-- ? markup : 전체화면 형태인 #root과 100px 정사각형의 <div> 태그를 자식으로 구성하였다. -->
+  <!-- ? point : 자식인 #pick-item의 속성노드(attribute node) 에 '드래그 가능여부'를 제어하는 속성을 추가하여 true 즉 가능한 상태로 만들었다. (기본 상태는 불가능(false) 이다.) -->
+
+
+  <script>
+
+    const root = document.getElementById("root");
+    const pickItem = document.getElementById("pick-item");
+    // 두개의 요소 식별
+
+    pickItem.style.position = "absolute";
+    let topValue = 0;
+    let leftValue = 0;
+    pickItem.style.top = topValue + "px";
+    pickItem.style.left = leftValue + "px";
+    // 자식 포지셔닝 script 에서 진행
+
+    console.dir(pickItem.style);
+
+
+    pickItem.addEventListener("dragstart", (event) => {
+      root.style.backgroundColor = "#111";
+      console.log("드래그기능 시작");
+      // 드래그가 시작하는 이벤트로, 이벤트가 시작되면 root의 배경색이 간단히 바뀌도록 인터렉션을 부여하였다.
+    });
+
+    pickItem.addEventListener("drag", (event) => {
+      // 드래그 기능 중인 이벤트로 "클릭으로 요소를 잡고 있을때" 계속해서 이벤트가 발생한다.
+      console.log("드래그기능 중");
+    });
+
+    pickItem.addEventListener("dragend", (event) => {
+      console.log(event);
+      /*
+        <!--
+            ? 이벤트 중 '드래그가 종료되었을때'를 뜻한다. 
+            ? UX로는 잡고있던 마우스를 놓아버렸을 때가 여기에 해당한다.
+            
+            ? event객체에 위치값이 될 여러 가지 값중 마우스 이벤트와 비슷한 clientY, clientX 값을 찾아 변수에 담았다.
+            * 드래그를 놓았을때 의 위치가 곧 요소의 위치값이 되도록 재할당 하는 구조를 가지고 있다.
+          -->
+      */
+      root.style.backgroundColor = "#333";      
+      let top = event.clientY;
+      let left = event.clientX;
+      pickItem.style.top = top + "px";
+      pickItem.style.left = left + "px";
+      console.log("드래그기능 끝!");
+    });
+  </script>
+
+</body>
+
+</html>
