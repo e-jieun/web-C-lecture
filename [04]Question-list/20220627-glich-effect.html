@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #222;
+      /* color:#ccc; */
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+    }
+
+    #root h1 {
+      font-size: 7rem;
+      position: absolute;
+      mix-blend-mode: color-dodge;
+      top: 50%;
+      left: 50%;
+    }
+
+    #root h1:nth-child(1) {
+      
+      color: salmon;
+    }
+
+    #root h1:nth-child(2) {
+      
+      color: darkcyan;
+    }
+
+    #root h1:nth-child(3) {
+      color: rgb(109, 109, 228);
+    }
+    #root h1:nth-child(4) {color: rgb(109, 109, 228);}
+    #root h1:nth-child(5) {color: rgb(109, 109, 228);}
+    #root h1:nth-child(6) {color: rgb(109, 109, 228);}
+    #root h1:nth-child(7) {color: rgb(109, 109, 228);}
+    #root h1:nth-child(8) {color: rgb(109, 109, 228);}
+    #root h1:nth-child(9) {color: rgb(109, 109, 228);}
+    #root h1:nth-child(10) {color: rgb(109, 109, 228);}
+    #root h1:nth-child(11) {color: rgb(109, 109, 228);}
+    #root h1:nth-child(12) {color: rgb(109, 109, 228);}
+    #root h1:nth-child(13) {color: rgb(109, 109, 228);}
+
+  </style>
+</head>
+
+<body>
+  <div id="root">
+
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    const mainString = "THIS IS GLICH";
+
+    function glichEffect(parent, string, min, max) {
+      let xPos = 50;
+      let yPos = 50;
+      const getRandomInt = Math.floor(Math.random() * (max - min) + min);
+      const getCopyElement = Math.floor(getRandomInt / 10);
+      xPos = getRandomInt;
+      yPos = getRandomInt;
+
+      let textNodeArray = [];
+      for (let i = 0; i < getCopyElement; i++) {
+        let shapeNode =`<h1 style='transform: translate(-${xPos}%, -${yPos}%)'>${string}</h1>`;
+        xPos = xPos + 1;
+        yPos = yPos + 1;
+        textNodeArray.push(shapeNode);
+      }
+      
+      parent.innerHTML = textNodeArray.join('');
+      
+      console.log("test", yPos, xPos);
+      let timer = setInterval(()=> {
+        if(xPos < 50) {
+          xPos++;
+          yPos++;
+          for(let i = 0; i < root.children.length; i++) {
+            root.children[i].style.transform = `translate(-${xPos}%, -${yPos}%)`;
+          }
+        } else if ( xPos === 50 ) {
+          clearInterval(timer);
+        } else {
+          xPos--;
+          yPos--;
+          for(let i = 0; i < root.children.length; i++) {
+            root.children[i].style.transform = `translate(-${xPos}%, -${yPos}%)`;
+          }
+        }
+      }, 16);
+
+
+      console.log(getCopyElement);
+      console.log(getRandomInt);
+    }
+
+    glichEffect(root, mainString, 40, 80);
+
+
+
+
+    // root.innerHTML = `
+    //   <h1>${mainString}</h1>
+    //   <h1>${mainString}</h1>
+    //   <h1>${mainString}</h1>
+    // `;
+  </script>
+</body>
+
+</html>
