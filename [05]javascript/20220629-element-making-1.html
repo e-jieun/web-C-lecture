@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+
+  <script>
+    const root = document.createElement('div');
+    // ? <div> 태그를 만들었다.
+    document.body.appendChild(root);
+    // ? <body> 태그에 자식으로 붙였다.
+    const ul = document.createElement('ul');
+    // ? <ul> 태그를 만들었다.
+    root.appendChild(ul);
+    // ? root 이라는 이름의 요소에 자식으로 붙였다.
+
+    // HTML과 다르게 구조상 자식으로 덧붙이지 않으면, 보이지 않는다.
+    for (let i = 0; i < 1000; i++) {
+      // 반복해서 여러개를 만들고자 for()문을 설치했다.
+
+
+      const li = document.createElement('li');
+      // <li> 태그를 만들었다.
+      const img = document.createElement('img');
+      // <img> 태그를 만들었다.
+      li.appendChild(img);
+      // <li> 
+      ul.appendChild(li);
+    }
+  </script>
+
+</body>
+
+</html>

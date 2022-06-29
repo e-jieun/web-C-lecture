@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  
+  <script>
+    const root = document.getElementById("root");
+    
+    let liElement = ``;
+    // 차곡차곡 이어붙일 문자열 변수를 '초기화' 한다. 
+    for(let i = 0; i < 100; i++) {
+      liElement = liElement + `<li></li>`;
+      // liElement += `<li></li>`;
+      // 주석처리 된 코드와 위의 코드는 동일하다
+      // 복합대입연산자 라고 부른다.
+      // 결과적으로 for() 반복문의 실행횟수만큼 문자열이 계속 이어붙어 추가된다.
+    }
+    console.log(liElement);
+    let box = `
+      <ul>
+        ${liElement}
+      </ul>
+    `;
+      // 길게 이어붙인(반복문을 통해)문자열을 box 라는 문자열 중간에 넣었다.
+      /*
+        ? 데이터타입은 문자열 일뿐이지만, 아래와 같은 구조를 띈다.
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        * 해당 '문자열'은 HTML 처럼 보이는 문자열이지만, 해석(parse)하는 과정만 거친다면
+        * 문자열 -> 마크업으로 변환된다.
+        * 이 변환에 핵심은 innerHTML 이라는 속성 값이다.
+      */
+    console.log(box);
+
+    root.innerHTML = box;
+  </script>
+
+</body>
+</html>
