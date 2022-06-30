@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0; padding:0; box-sizing: border-box;}
+
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+      color:#ccc;
+    }
+
+    #root >h1 {
+      width:200px;
+      height:200px;
+      background-color: #fff;
+      transition:1s;
+      border-radius: 20px;
+    }
+
+    #root>h1:nth-child(1):hover {
+      transform: perspective(100px) rotateX(10deg) rotateY(-10deg);
+
+    }
+  </style>
+</head>
+<body>
+  <div id="root">
+    <h1></h1>
+    <h1></h1>
+  </div>
+  <script>
+
+    const root = document.getElementById('root');
+    // #root은 전체화면창 크기를 하고 있다.
+
+
+    root.addEventListener('mousemove', (event) => {
+      console.log(`event X: ${event.offsetX}`);
+      console.log(`event Y: ${event.offsetY}`);
+
+      root.children[0].textContent = event.offsetX;
+      root.children[1].textContent = event.offsetY;
+
+
+
+      
+      
+      
+      
+      
+    });
+ 
+
+  </script>
+</body>
+</html>

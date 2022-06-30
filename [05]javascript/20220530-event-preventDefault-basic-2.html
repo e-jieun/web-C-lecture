@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>event.preventDefault</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    div {
+      width:100vw;
+      height:100vh;
+      background-color: #ccc;
+      border: 1px solid red;
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <div id="wrap">
+    <div></div>
+    <div id="root"></div>
+    <div></div>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+
+    root.style.width = "300vw";
+    root.style.height = "100vh";
+    root.style.backgroundColor = "salmon";
+
+
+    console.dir(root);
+
+    root.addEventListener('wheel', (event) => {
+      event.preventDefault();
+      const getY = event.deltaY;
+      console.log(window.pageXOffset);
+      let beforeValue = window.pageXOffset;
+      window.scrollBy(getY,0);
+      let nextValue = window.pageXOffset;
+      if( nextValue > beforeValue) {
+        console.log("이전보다 가로스크롤 값이 커지고 있다.");
+      } else {
+        console.log("이전보다 가로스크롤 값이 작아지고 있다.");
+      }
+      if(nextValue === beforeValue) {
+      }
+    })
+  </script>
+</body>
+
+</html>

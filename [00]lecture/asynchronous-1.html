@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin: 0; padding:0; box-sizing: border-box;}
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script>
+    const root = document.getElementById('root');
+
+    // * setTimeout(function() {}, delay) method 설명
+    // * setInterval() method는 '일정한 주기'에 반복적으로 실행시키는 용도의 함수라고 한다면
+    // * setTimeout()은 일정시간이 지난 후에 '한번' 실행시키는 용도의 함수이다. : 알람시계를 비유할 수 있겠다.
+
+    // * 아래의 코드는 총 세개의 setTimeout() 함수를 작성한 모습이며,
+    // * 맨처음 작성한 코드는 3초뒤에 실행하도록 조정
+    // * 두번째는 2초뒤에
+    // * 세번째(마지막)은 1초뒤에 실행하도록 조정하였다.
+
+    /*
+
+    ? 일반적인 코드 해석 방식이라면 첫번째가 먼저 작성되었으니, 첫번째가 모두 실행된 다음 두번째가 실행되는 것이 사람이 이해하기 쉬운 방식이지만,
+    ? 해당 예제를 실행시켜보면 정반대의 결과가 나온다.
+
+    ? 이부분이 자바스크립트 엔진이 가진 독특한 특성인 '비동기' 처리의 사례이다.
+    */
+
+
+
+    let timerOne = setTimeout(function() {
+      console.log('1111 : 첫번째 작성된 동작이 종료되었습니다.');
+    }, 3000);
+    let timerTwo = setTimeout(function() {
+      console.log('2222 : 두번째 작성된 동작이 종료되었습니다.');
+    }, 2000);
+    let timerThree = setTimeout(function() {
+      console.log('3333 : 세번째 작성된 동작이 종료되었습니다.');
+    }, 1000);
+
+
+
+  </script>
+</body>
+</html>
