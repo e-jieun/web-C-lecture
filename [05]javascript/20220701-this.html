@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <button id="trigger">click</button>
+  <script>
+    const trigger = document.querySelector("#trigger");
+    console.log(trigger);
+
+    // 1번 코드
+    trigger.addEventListener("click", function () {
+      this.remove(trigger);
+    });
+    /*
+    <!--
+      ? 1번 코드
+      * 일반적인 방식의 DOM API 메서드를 활용한 문서 제어 이다.
+      * addEventListener()는 DOM API가 지원하는 주요 메서드 중에 하나이다.
+      * 자바스크립트의 내장 API 이긴 하지만, '문서(html)' 전용 임을 상기할 것
+      * addEventListener() 메서드는 문서 전용 이기때문에 node.js(브라우저 밖의 환경에서는 작동하지 않는다)
+      
+      * 반대로 브라우저에서는 동작하기때문에 기능적으로는 전혀 문제가 되지 않는 코드이다.
+      * 하지만 이벤트 발생 주체가 trigger 즉, '특정' 요소로 한정되어있기 때문에
+      * 두루 두루 필요한 곳에 사용하려면 다시 작성해주어야 하는 문제가 생긴다.
+      * 이러한 부분이 '리터럴'을 -> '캡슐화' 하는 과정으로 해결된다.
+      -->
+    */
+    //  2번 코드
+    function removerElement(element) {
+      element.addEventListener('click', function () {
+        this.remove(this);
+      });
+    }
+    /*
+      <!--
+        ? 2번 함수
+        * 위의 1번 코드와 완전히 동일하지만, 결정적으로 한가지가 다르다.
+        * 이벤트 발생주체를 특정하지 않았다는 것이 큰 차이점이다.
+        * 특정하지 않았음에도, 함수를 호출하는 과정에서 'element' 라는 이름의 매개변수를 활용하기만 한다면
+        * 어떤 요소이던 작동하는 재사용성(reuseability)을 확보하게 되었다.
+        * 발생주체가 매개변수임을 꼼꼼히 확인할 것
+        * this 키워드가 가리키는 방향은 '발생주체'임을 확인할 것
+      -->
+    */
+    // 3번 객체 
+    const handler = {
+      removerElement(element) {
+        element.addEventListener('click', function () {
+          this.remove(this);
+        });
+      }
+    }
+    /* 
+    <!--
+        ? 3번 객체
+        * 위의 2번 함수에서 종료해도 훌륭한 작업이라고 할 수 있으나, '완벽한' 작업이라고는 하기 어렵다.
+        * 재사용성은 확보했지만, '접근성'은 떨어지기 때문이다.
+        * 해당 예제는 코드가 짧아 바로 찾아 사용하는데 문제가 없지만,
+        * 코드가 많아지고, 함수량이 늘고, 혹은 데이터가 방대해진다면 사람인 제작자로서는 난감해지는 상황에 직면한다.
+        * 코드가 많아질수록 "피로도는 유지되고, 성능은 높아져야" 하는 코딩의 특성상
+        * 코드를 모두 확인하고 확인할 때마다, 피곤해지는 경향이 발생한다면, 충분히 정리 및 구조 설계로 해결 해낼 수 있다.
+        
+        * 바로 사용할 함수를 '객체에 담아 분류' 하는 일이다.
+        * 기능별, 특정 컨텐츠 별, 등등 갖가지 방식(작업 설계에 따라)을 분류 해놓으면, 매우 편하게 제작한 함수, 데이터 들을
+        * 에디터의 도움 및 제어의 도움으로 바로 가져올 수 있게 된다.
+        * 자바스크립트에서 이름이 객체라고 명명하지만,
+        * 파이썬에서는 '딕셔너리(사전)' 이라고 부르는 이유가 여기에 있다.
+
+    -->
+    */
+
+
+    handler.removerElement(trigger);
+
+    /*
+      <!--
+        ? handler.removerElement(trigger);
+        * console.log()를 매일 같이 사용하는 것처럼
+        * handler라는 객체에서 '특정함수'를 편리하게 호출 했다는 것을 확인 할 것
+      -->
+    */
+
+
+
+    // ------------------------------------------------------
+
+    function ESPlus(element) {
+      let getValue = element.map(element => element);
+      /*
+        <!--
+          ? 코딩 스타일에따라 엄청나게 축약하여 코드를 작성할 수 있으므로,
+          * 익숙해질때까지는 위의 스타일을 지양하고, 하나하나 볼 수 있는 방식으로 코드를 작성할 것
+        -->
+      */
+    }
+  </script>
+</body>
+
+</html>
