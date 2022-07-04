@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    #root {
+      width: 100vw;
+      background-color: #333;
+    }
+    
+    #root>section {
+      width:100vw;
+      height:100vh;
+      border: 1px solid #000;
+    }
+
+    #appear-item{
+      width: 200px;
+      height: 200px;
+      background-color: salmon;
+      opacity: 1;
+      transition: 1s;      
+    }
+    
+    /* .on {
+      opacity:1;
+    } */
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section>
+      <div id="appear-item"></div>
+    </section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+  </div>
+  
+  <script>
+    const root = document.getElementById("root");
+    const appearItem = document.getElementById("appear-item");
+    appearItem.style.opacity = 0;
+    root.addEventListener("wheel", (event) => {
+      console.log(event);
+      // ? 이벤트 객체에 뭐가 있는지 찾아볼까?
+      console.log(event.view);
+      // ? 어라 이거 뭐지? view 라는 값이 있네?
+      console.log(event.view.pageYOffset);
+      // ? 얼래? 이거 보니까 window 잖아?
+      if(window.pageYOffset + 800 > root.children[4].offsetTop) {
+        appearItem.style.opacity = 1;
+      }
+    });
+    console.log( root.children[4].children[0]);
+    // ? 여기에 인터렉션을 넣을거야.
+    console.dir(root.children[4].offsetTop);
+    // ? 여기 페이지 위치값이 어디지?
+
+  </script>
+
+
+</body>
+</html>
