@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root>ul {
+      list-style-type: none;
+      width: 500px;
+      height: 700px;
+      background-color: salmon;
+    }
+
+    #root>ul>li {
+      width: 200px;
+      height: 50px;
+      background-color: #fff;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <ul id="menu"> 이곳은 ul 영역입니다.
+      <li class="items">menu-1</li>
+      <li class="items">menu-2</li>
+      <li class="items">menu-3</li>
+      <li class="items">menu-4</li>
+      <li class="items">menu-5</li>
+      <li class="items">menu-6</li>
+      <li class="items">menu-7</li>
+      <li class="items">menu-8</li>
+      <li class="items">menu-9</li>
+      <li class="items">menu-10</li>
+    </ul>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    const menu = document.getElementById('menu');
+    
+    menu.addEventListener('click', function(event) {
+      if(event.target.id === "menu") {
+        console.log('hello');
+        event.preventDefault();
+      } else {
+        event.target.style.backgroundColor = 'darkblue';
+        console.log(event.target);
+        console.dir(event.target);
+      }
+    });
+ /*
+    <!--
+      ? if(event.target.id === "menu") 조건식 확인
+      * addEventListener() 메서드의 옵션 매개변수에서 이러한 것들을 해결할 수 있기는 하지만, 그것조차 전파될 우려가 있기 때문에,
+      * 위와같이 간단한 if()문으로 안전하게 해결 할 수 있다.
+      * 조건식을 풀어서 해석하면 다음과 같다.
+      * "만약 이벤트가 일어난 요소의 id 값이 문자열 'menu'이면 참(true)" 이 된다.
+      * 이벤트 발생 주체인 <ul>태그의 id 값이 문자열 "menu" 이기 때문에
+      * 의역하면
+      * 이벤트 발생했을때 "그것이 이벤트 주체라면"으로 바꿀수 있다.
+      * 즉 이벤트가 <ul> 태그로부터 일어난 것이라면 이벤트를 실행시키지 않겠다. 라는 것을 true 실행 부에 넣어주었다.
+      * event.preventDefault() <-- 라는 메서드가 바로 그것이다.
+      * if() 조건문을 통해 결과적으로 <ul> 태그이면 해당 이벤트는 일어나지 않고, 자식인 <li> 태그일때 '만' 이벤트가 일어나는 결과를 만들었다.
+      * 
+      * 버블링을 제어하는 예이며, event객체를 사용할때는 한번씩 확인하는 것이 디자인 작업에서의 예기치 못한 버그를 예방 할 수 있다.
+    -->
+    */
+
+
+
+  </script>
+</body>
+
+</html>

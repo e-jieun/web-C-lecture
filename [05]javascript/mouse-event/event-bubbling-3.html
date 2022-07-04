@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root>ul {
+      list-style-type: none;
+      width: 500px;
+      height: 700px;
+      background-color: salmon;
+    }
+
+    #root>ul>li {
+      width: 200px;
+      height: 50px;
+      background-color: #fff;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <ul id="menu"> 이곳은 ul 영역입니다.
+      <li class="items">menu-1</li>
+      <li class="items">menu-2</li>
+      <li class="items">menu-3</li>
+      <li class="items">menu-4</li>
+      <li class="items">menu-5</li>
+      <li class="items">menu-6</li>
+      <li class="items">menu-7</li>
+      <li class="items">menu-8</li>
+      <li class="items">menu-9</li>
+      <li class="items">menu-10</li>
+    </ul>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    const menu = document.getElementById('menu');
+    
+    // 자식까지 모두 해당된다.
+    menu.addEventListener('mouseover', function(event) {
+      event.target.style.backgroundColor = 'darkblue';
+    });
+    menu.addEventListener('mouseout', function(event) {
+      event.target.style.backgroundColor = '';
+    });
+
+    /*
+    <!--
+      ? 이러한 이벤트 전파가 자주 일어나고 또 눈에 자주 발견되는 것이 
+      ? 바로 마우스 이벤트 이다.
+      ? mousemove는 '이벤트 가 동작하는 상태 일때' 만 실행되기 때문에 크게 문제될일은 없지만,
+      ? 위와 같은 마우스 오버인 경우 이야기가 달라진다.
+
+      * 이러한 현상을 제어하기 위해서 자바스크립트 DOM API는 CSS 에서의 :hover 와 같은 성격의 이벤트를 나누어 두쌍으로 구성되어있다.
+      * 하나는 위에서 확인 할 수 있는 mouseover/mouseout 한쌍이다.(over/out 한 묶음으로 기억하는 것을 권장한다)
+      * 같은 마우스 오버이지만, '이벤트가 발생하는 주체를 포함해서 자식 까지 모두 이벤트를 전파'한다.
+      * 
+      * 위의 예제를 확인하면 <ul> 태그는 물론 <li> 태그까지 모두 이벤트가 발생되는 것을 확인 할 수 있다.
+      * 문제는 mouseout 이벤트 타입의 특성때문에 자식인 <li> 태그에 마우스오버 이벤트를 실행시키면
+      * <ul> 영역 밖(자식임에도 불구하고) 이기때문에 이벤트가 풀리고 <li>가 작동된다.
+      * 
+      * 편리하긴 하지만 드랍다운메뉴처럼 <ul> 이벤트가 유지되어야 하는 경우가 있으므로, 예상치 못하게 이벤트가 의도대로 제어가 되지 않는 상황을 자주 만날 수 있다.
+
+    
+    -->
+    */
+
+
+  </script>
+</body>
+
+</html>

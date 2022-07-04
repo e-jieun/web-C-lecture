@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root>ul {
+      list-style-type: none;
+      width: 500px;
+      height: 700px;
+      background-color: salmon;
+    }
+
+    #root>ul>li {
+      width: 200px;
+      height: 50px;
+      background-color: #fff;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <ul id="menu"> 이곳은 ul 영역입니다.
+      <li class="items">menu-1</li>
+      <li class="items">menu-2</li>
+      <li class="items">menu-3</li>
+      <li class="items">menu-4</li>
+      <li class="items">menu-5</li>
+      <li class="items">menu-6</li>
+      <li class="items">menu-7</li>
+      <li class="items">menu-8</li>
+      <li class="items">menu-9</li>
+      <li class="items">menu-10</li>
+    </ul>
+  </div>
+  <script>
+    const root = document.getElementById('root');
+    const menu = document.getElementById('menu');
+    
+    // 이벤트 주체 자기 자신만 해당된다.
+    menu.addEventListener('mouseenter', function(event) {
+      event.target.style.backgroundColor = 'darkblue';
+    });
+    menu.addEventListener('mouseleave', function(event) {
+      event.target.style.backgroundColor = '';
+    });
+
+        /*
+    <!--
+      ? mouseenter/mouseleave
+      * mouseover/mouseout과 다르게 enter/leave 이벤트는 자식으로 전파되지 않는다.
+      * 자식으로 전파되지 않는 특성 때문에 '명시적으로' 원하는 요소에 이벤트'만' 실행시킬 수 있는 장점이 있으나,
+      * event.target 사용이 무색하게
+      * 위의 코드 예제의 목적인 <li> 태그의 이벤트 발생을 할 수 없기 때문에 문제가 생긴다.
+      * 
+      * 자식으로 전파되는 것(over/out)과 전파되지 않는 것(enter/leave) 두가지를 쌍으로 보고 필요한 부분에 적재 적소에 따로 떼어 사용한다면 이벤트 전파를 막으면서도, 필요한 만큼의 event객체 편의성을 챙길 수 있게 된다.
+    
+    -->
+    */
+
+
+  </script>
+</body>
+
+</html>
