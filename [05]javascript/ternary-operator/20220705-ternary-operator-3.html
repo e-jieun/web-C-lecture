@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0;padding:0; box-sizing: border-box;}
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+    }
+    
+    #root > div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="click-box"></div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    const clickBox = document.getElementById("click-box");
+    clickBox.style.backgroundColor = "salmon";
+
+
+    function isColorChecker(element, checkColorValue) {
+      if(element.style.backgroundColor === checkColorValue) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+
+
+    clickBox.addEventListener("click", function() {
+      clickBox.style.backgroundColor = isColorChecker(this, "salmon") ? "darkblue" : "salmon";
+    });
+
+    /*
+    <!-- 
+      ? isFunction() 
+      * 관습적으로 is라는 이름이 접두사로 붙는 함수는 리턴 데이터타입이 불리언이다.
+      * 간단하지만, 범용적으로 '색깔을 확인 할 수 있는' 함수를 만들었고, 리턴은 같으면  true 아니면 false 를 반환하게 조직하였다.
+      * 삼항연산자와 리턴이 불리언 타입인 함수와 매우 궁합이 잘 맞는다.(간단하기 때문)
+      * 복잡한 판단은 함수에 맏기고,
+      * 적용은 DOM 제어부분에서 진행할 수 있기 때문이다.
+      * this 키워드 사용에도 눈여겨 볼것
+    -->
+    */
+
+    
+
+
+
+    
+  </script>
+</body>
+</html>

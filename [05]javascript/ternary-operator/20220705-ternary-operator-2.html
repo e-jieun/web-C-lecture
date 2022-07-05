@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0;padding:0; box-sizing: border-box;}
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+    }
+    
+    #root > div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="click-box"></div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    const clickBox = document.getElementById("click-box");
+    clickBox.style.backgroundColor = "salmon";
+
+    clickBox.addEventListener("click", function() {
+      clickBox.style.backgroundColor = clickBox.style.backgroundColor === "salmon" ? "darkblue" : "salmon";
+    });
+
+    /*
+    <!-- 
+      ? if(true) {
+        * 참조건 실행문
+        } else {
+        * 거짓조건 실행문
+        }
+      * 일반적일 방식의 조건식을 아래와 같이 줄일 수 있다.
+      ? true ? 참조건실행문 : 거짓조건 실행문
+      
+      * 일반적으로 한줄로 쓰는 경우가 많으며, 물음표(조건식을 구분짓는) :콜론(참, 거짓실행문을 구분짓는) 부분이 한눈에 보이게끔 하는 경우가 많다.
+    -->
+    */
+
+
+
+
+    
+  </script>
+</body>
+</html>

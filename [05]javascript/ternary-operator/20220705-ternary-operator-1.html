@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {margin:0;padding:0; box-sizing: border-box;}
+    #root {
+      width:100vw;
+      height:100vh;
+      background-color: #333;
+    }
+    #root > div {
+      width: 200px;
+      height: 200px;
+      border: 1px solid red;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    <div id="click-box"></div>
+  </div>
+
+  <script>
+    const root = document.getElementById("root");
+    const clickBox = document.getElementById("click-box");
+    clickBox.style.backgroundColor = "salmon";
+
+    /* 
+      <!--
+        ? 일반적인 방식으로 클릭하면 색깔을 토글방식으로 바뀌게끔 작성한 페이지 이다.
+        * 접근하는 객체에 따라 다르지만, 
+        * "값이 무엇인지 판별"
+        * 맞다면 무엇, 아니라면 무엇
+        * 간단한 제어를 진행한 것을 확인 할 수 있다.
+        * 
+        * 이와 같이 주요한 로직은 아니지만, 간단하게 if() 문으로 제어해야 하는 경우에, if()와 else() 때문에 과하게 코드가 늘어나는 경향이 있다.
+        * 보통 이런 경우에(간단한 판단정도만 할때) 삼항연산자를 사용하는 경우 매우 효과적으로 코드를 줄이면서, '영역(scope)' 이 헷갈리지 않도록 정돈할 수 있다.
+        * 삼항연산자는 다른 언어에서도 상당히 많이 사용하는 문법이다.
+        * 
+        * if() 제어가 낯설을 경우 if()문이 숙지되어야 한다.
+      -->
+    */
+
+    clickBox.addEventListener("click", function() {
+      if(clickBox.style.backgroundColor === "salmon") {
+        clickBox.style.backgroundColor = "darkblue";
+      } else {
+        clickBox.style.backgroundColor = "salmon";
+      }
+    });
+
+
+
+
+    
+  </script>
+</body>
+</html>
