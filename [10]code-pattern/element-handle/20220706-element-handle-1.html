@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    #root {
+      width : 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root > div {
+      color:#ccc;
+
+      width: inherit;
+      height:inherit;
+      
+      display:flex;
+      justify-content: center;
+      align-items: center;
+
+    } /* #slide-container*/
+
+    /* slide structuring */
+    #slide-container > div:nth-child(1) {width:100px; height:300px; background-color: #666;}
+    #slide-container > div:nth-child(2) {width:300px; height:300px; background-color: #666;}
+    #slide-container > div:nth-child(3) {width:100px; height:300px; background-color: #666;}
+
+    #slide-img-wrapper {
+      position:relative;
+    }
+
+    #slide-img-wrapper div {
+      position:absolute;
+      width:inherit;
+      height:inherit;
+      color:gray;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+    
+    <div id="slide-container">
+      <div id="slide-button-left">left</div>
+      <div id="slide-img-wrapper">
+        <div style="background-color: antiquewhite;">slide-img-1</div>
+        <div style="background-color:cadetblue;">slide-img-2</div>
+        <div style="background-color: coral;">slide-img-3</div>
+        <div style="background-color:gray">slide-img-4</div>
+        <div style="background-color: crimson;">slide-img-5</div>
+
+      </div>
+      <div id="slide-button-right">right</div>
+    </div>
+  </div>
+  <script>
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root>div {
+      color: #ccc;
+
+      width: inherit;
+      height: inherit;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    /* #slide-container*/
+
+    /* slide structuring */
+    #slide-container>div:nth-child(1) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(3) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-img-wrapper {
+      position: relative;
+    }
+
+    #slide-img-wrapper div {
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="slide-container">
+      <div id="slide-button-left">left</div>
+      <div id="slide-img-wrapper">
+        <div style="background-color: antiquewhite;">slide-img-1</div>
+        <div style="background-color:cadetblue;">slide-img-2</div>
+        <div style="background-color: coral;">slide-img-3</div>
+        <div style="background-color:gray">slide-img-4</div>
+        <div style="background-color: crimson;">slide-img-5</div>
+      </div>
+      <div id="slide-button-right">right</div>
+    </div>
+  </div>
+  <script>
+    const init = {
+      root: document.getElementById("root"),
+      slide: {
+        leftButton: document.getElementById("slide-button-left"),
+        imgWrapper: document.getElementById("slide-img-wrapper"),
+        imgItems: Array.from(document.querySelectorAll("#slide-img-wrapper > div")).reverse(),
+        /*
+        <!--
+          ? 객체 키 imgItems 식별 뒤에 붙은 reverse() 함수 확인
+        -->
+        */
+        rightButton: document.getElementById("slide-button-left"),
+      }
+    }
+ 
+    const { slide: { imgItems } } = init;
+    for (let i = 0; i < imgItems.length; i++) {
+      console.log(init.slide.imgItems[i].textContent);
+    }
+    console.log(imgItems);
+    /*
+    <!--
+      ? for()문 실행으로 확인 할 수 있는 console 의 기록을 확인
+      * 객체를 구조화하고 해당 키(데이터)를 초기화할 때 '역순'으로 쉽게 만들어주는 .revers() 함수를 붙여준것만으로도
+      * 순서가 완전히 뒤바뀐 것을 로그를 통해 확인 할 수 있다.
+      * 
+      * 명령방식 vs 선언방식
+      * 이 두가지의 특징을 확인했을때 
+      pseudo 명령방식
+      * 일일히 모두 지정하여 수동으로 제어해야하기 때문에 코드량이 상당히 길어진다.
+      * 수동으로 제어 하기 때문에 역설적으로 "무엇을", "어떻게" 제어했는지를 낱낱히 해독해낼 수 있는 장점도 같이 가지고 있다.
+      * 자바스크립트 언어는 '선언방식'을 추구하기 때문에 이러한 방식을 지양(피하는)하는 경향이 있지만, 훈련을 위해서는 명령(절차)를 수동으로 다루는 연습이 필요하다.
+      pseudo 선언방식
+      * 위 .reverse() 함수로 알 수 있듯, 선언 방식은 코드의 양을 압도적으로 줄일 수 있게 해준다.
+      * 코드의 양이 줄었다는 이야기는 '생산성' 효율이 높아졌다는 큰 장점을 지니고 있다. 또한 제작자가 해당 규칙을 이해하고 있을때 그 시너지가 발휘된다.
+      * 단점은 모두 함축 하고 있기 때문에, 데이터타입의 조건과 리턴과 같은 전반의 조건들을 숙지해야 할 필요가 있다.
+      * 코드의 양이 줄수록(추상화 될 수록) 해당 코드의 생산성은 급격히 높아지지만, 해독을 하는 과정은 번거로운 과정을 겪는다.
+
+      pseudo 해결방안
+      * 주요한(혹은 동료에게 인지시켜야 할 코드) 등등 동작원리를 긴밀히 확인해야 할때, 다소 불편하지만 명령방식으로 만들어 주어 무엇이 어떻게 어떤방식으로 동작했는지를 해독할 수 있게끔 마련하는 것도 코딩하는 노하우가 될 수 있다.
+      
+      * 선언방식으로도 정보가 담긴 주석이나, 문서화를 통해 설명을 자세하게 달아놓는다면 단점을 보완할 수 있다.
+      
+    -->*/
+    
+
+
+  </script>
+</body>
+
+</html>

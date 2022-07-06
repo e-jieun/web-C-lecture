@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root>div {
+      color: #ccc;
+
+      width: inherit;
+      height: inherit;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    /* #slide-container*/
+
+    /* slide structuring */
+    #slide-container>div:nth-child(1) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(3) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-img-wrapper {
+      position: relative;
+    }
+
+    #slide-img-wrapper div {
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="slide-container">
+      <div id="slide-button-left">left</div>
+      <div id="slide-img-wrapper">
+        <div style="background-color: antiquewhite;">slide-img-1</div>
+        <div style="background-color:cadetblue;">slide-img-2</div>
+        <div style="background-color: coral;">slide-img-3</div>
+        <div style="background-color:gray">slide-img-4</div>
+        <div style="background-color: crimson;">slide-img-5</div>
+      </div>
+      <div id="slide-button-right">right</div>
+    </div>
+  </div>
+  <script>
+    const init = {
+      root: document.getElementById("root"),
+      slide: {
+        leftButton: document.getElementById("slide-button-left"),
+        imgWrapper: document.getElementById("slide-img-wrapper"),
+        imgItems: Array.from(document.querySelectorAll("#slide-img-wrapper > div")),
+        rightButton: document.getElementById("slide-button-left"),
+      }
+    }
+    /*
+    <!--
+      work.1 #slide-img-wrapper div 자식들의 겹친순서를 역순으로 바꾸기 위한 작업
+      -->
+    */
+    for (let i = 0; i < init.slide.imgItems.length; i++) {
+      console.log(init.slide.imgItems[i].textContent);
+    }
+    /*
+      <!--
+        work.2 위의 반복문으로 배열의(<img> 태그가 들어갈 <div> 자식들) 순서가 순차적으로 작성되었다는 것을 확인할 수 있다.
+
+        work.3 정적으로 새겨져있는 배열들을 -> 다른 배열에 다시 옮겨담는다. -> 마크업으로 새겨져있는 <div>들을 모두 지운다. -> 역순으로 다시 새긴다.
+        pseudo z-index 값을 매겨 작업하는 것이 간단하지만, 배열데이터 연습을 위한 모색이므로 구조를 '재조립'하는 방식을 초점으로 둘것
+      -->
+    */
+    const { slide: { imgItems } } = init;
+    /*
+    <!--
+      ? const { slide:{imgItems} } = init; : 객체의 키값으로 식별해 놓은 DOM 요소 식별 데이터를 간단하게 사용하기 위해 임시로 변수 선언을 통해 재할당 했다. 
+      ? 특이한 구조를 가지고 있는데 '구조 분해 할당(destructuring assignment)' 이라는 ES6에서 지원하는 편의성 재할당 방식이다.
+      ? 기존 방식은 다음과 같다.
+      todo: const imgItems = init.slide.imgItems;
+      * 워낙에 윗행과 같은 패턴을 자주 사용하다보니, 코드의 양을 줄이기 위해 고안되었다.
+
+      * 객체는 참조타입이기 때문에 수동으로 복사하지 않으면 어떤 변수여도 '같은'데이터를 가리키게 된다.
+      * 원시타입인 데이터들은 위와 같은 방식을 사용할 수 없다.
+      * 참조타입 vs 원시타입 구분은 얕은복사(shallow copy), 깊은 복사(deep copy)
+      * 
+      -->
+      */
+    let reSortElement = [];
+    /*
+      <!--
+        ? reSortElement 배열 선언
+        * 이미 정적으로(문서에 새겨져있는 imgItems 요소들)을 reSortElement 라는 배열에 '옮겨담을 의도'로 만들어주었다.(초기화 하였다)
+        * 해당 배열은 쓰임새가 완료되면 폐기되게끔 작성할 예정
+      -->
+    */
+    for (let i = imgItems.length - 1; i >= 0; i--) {
+      reSortElement.push(imgItems[i]);
+    }
+    /*
+    <!--
+      ? for() 특이한 조건식
+      * 그동안 많이 사용해왔던 for()문의 조건식은 최솟값에서부터 지정해놓은 최댓값까지 '증가(increase)' 하는 방식으로 제어해왔다면, 위의 조건식은 감소(decrease) 방식으로 제어 하는 방식이다.
+      pseudo : for(let i = 0; i < count; i++) 
+      * 익숙한 윗행의 조건식도 엄연히 "변수선언", "비교조건", "증감연산" 세 부분이 함축되어있는 점을 상기할 필요가 있다.
+      * 따라서 for()문이 요구하는 세가지 요구사항만 충족한다면 어떤방식으로든 충실하게 반복 실행을 수행한다.
+
+      work.4 감소방식으로 반복문을 실행 시킨 이유
+      * imgItems 마지막 원소가 -> reSortElement 배열의 첫번째로 자리 잡게 하기 위함이다.
+
+    -->
+    */
+
+    console.log('배열 재조립 ------------------------------------------------');
+    for (let i = 0; i < reSortElement.length; i++) {
+      console.log(reSortElement[i].textContent);
+    }
+
+    /*
+    <!--
+      work.5 위의 반복문을 통해 재 조립 되었는지 확인했다.
+
+      todo: 값을 감소하는 방식으로 for() 실행, 제대로 배열이 재조립되었는지 확인하는 for()실행 모두 '명령형 프로그래밍'
+      * 모두 배열의 특성을 가진 전용 반복문이 있음에도, 구조를 낱낱히 보기 위해 '명령(절차형)' 방식으로 프로그래밍되었다.
+      * 자바스크립트의 장점을 끌어 올리려면 위의 방식을 자바스크립트가 지원하는 각종 메서드를 통해 '선언형'으로 바꾸는 연습이 필요하다.
+
+
+    -->
+    */
+
+  </script>
+</body>
+
+</html>

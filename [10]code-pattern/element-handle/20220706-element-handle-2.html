@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{margin:0; padding:0; box-sizing: border-box;}
+    #root {
+      width : 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root > div {
+      color:#ccc;
+
+      width: inherit;
+      height:inherit;
+      
+      display:flex;
+      justify-content: center;
+      align-items: center;
+
+    } /* #slide-container*/
+
+    /* slide structuring */
+    #slide-container > div:nth-child(1) {width:100px; height:300px; background-color: #666;}
+    #slide-container > div:nth-child(2) {width:300px; height:300px; background-color: #666;}
+    #slide-container > div:nth-child(3) {width:100px; height:300px; background-color: #666;}
+
+    #slide-img-wrapper {
+      position:relative;
+    }
+
+    #slide-img-wrapper div {
+      position:absolute;
+      width:inherit;
+      height:inherit;
+      color:gray;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="root">
+      <!-- 
+        ? #slide-container > div 자식은 총 3개로 구성되어있고,
+        ? 그중 두번째 자식이 img 태그를 담을 여럭개의 div를 품고 있는 것을 확인할 것
+       -->
+
+
+    <div id="slide-container">
+      <div id="slide-button-left">left</div>
+      <div id="slide-img-wrapper">
+        <div style="background-color: antiquewhite;">slide-img-1</div>
+        <div style="background-color:cadetblue;">slide-img-2</div>
+        <div style="background-color: coral;">slide-img-3</div>
+        <div style="background-color:gray">slide-img-4</div>
+        <div style="background-color: crimson;">slide-img-5</div>
+      </div>
+      <div id="slide-button-right">right</div>
+    </div>
+  </div>
+  <script>
+    /*
+    <!-- 
+      work.1 #slide-img-wrapper의 자식들이 position:absolute; 로 인해 겹쳐져 있는 것을 확인
+      work.2 #slide-img-wrapper의 마지막 작성된 자식이 맨 위로 올라와 있는 것 확인(slide-image-5)
+      pseudo css 마크업 구조를 보기 편하게 하기 위해 강의 편의상 인라인 방식으로 background-color:요소 사용함(일반적으로 인라인 방식으로 마크업하지 않음)
+      work.3 #slide-img-wrapper div의 자식들이 마크업 순서대로 겹쳐질 수 있도록 조정(첫번째 자식이 맨위) 
+    -->*/
+
+    const init = {
+      root : document.getElementById("root"),
+      slide : {
+        leftButton: document.getElementById("slide-button-left"),
+        imgWrapper : document.getElementById("slide-img-wrapper"),
+        imgItems : Array.from(document.querySelectorAll("#slide-img-wrapper > div")),
+        rightButton : document.getElementById("slide-button-left"),
+      }
+    }
+    /*
+      <!--
+        work.4 DOM API element 마크업 한 요소들 식별작업을 init 이라는 객체에 담아 편히 구분할 수 있도록 자료를 구조화시킨 것 확인
+        pseudo 구조화를 통해 객체 접근 방식으로 편하게 데이터를 다룰수 있게 된다.
+        pseudo 당장의 코드는 약간 길어지는 경향이 생기지만, 장기적으로(코드볼륨이 커지는 것) 보았을때 훨씬 편리하기 때문에 습관 들이는 것이 좋다.
+        pseudo 객체의 접근이 너무 길어져서 가독성이 떨어진다면 다시 변수로 할당하는 것도 대안이 된다.
+        ex> const leftBtn = init.slide.leftButton;
+        console.log(leftBtn);
+      -->
+    */
+    console.log(init.slide.leftButton);
+    console.log(isNaN(init.slide.imgItems.length) ? "길이값이 없습니다." : `총 length 값은 :${init.slide.imgItems.length} 입니다.`);
+    console.log(Array.isArray(init.slide.imgItems) ? "배열이 맞습니다" : "배열이 아닙니다");
+    /*
+    <!--
+      work.5 콘솔로 디버깅 하면서 제대로 구조화 되었는지 확인한다.
+      work.6 isNaN() 넘버가 아닌지 확인하는 함수, Array.isArray() 배열형태의 객체인지 확인하는 함수를 사용하는 것에서 '삼항연산자로' 간단하게 체크한 것을 확인 한다.
+      pseudo 코드 상으로는 의미가 없는 예시이지만, 작업상에서는 간단하게 판단하는 경우가 매우 잦기 때문에 습관들이는 것이 좋다.
+    -->
+    */
+
+
+
+
+
+  </script>
+</body>
+</html>
