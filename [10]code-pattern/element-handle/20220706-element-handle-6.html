@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root>div {
+      color: #ccc;
+
+      width: inherit;
+      height: inherit;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    /* #slide-container*/
+
+    /* slide structuring */
+    #slide-container>div:nth-child(1) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(3) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-img-wrapper {
+      position: relative;
+    }
+
+    #slide-img-wrapper div {
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="slide-container">
+      <div id="slide-button-left">left</div>
+      <div id="slide-img-wrapper">
+        <div style="background-color: antiquewhite;">slide-img-1</div>
+        <div style="background-color:cadetblue;">slide-img-2</div>
+        <div style="background-color: coral;">slide-img-3</div>
+        <div style="background-color:gray">slide-img-4</div>
+        <div style="background-color: crimson;">slide-img-5</div>
+      </div>
+      <div id="slide-button-right">right</div>
+    </div>
+  </div>
+  <script>
+
+    const init = {
+      root: document.getElementById("root"),
+      slide: {
+        leftButton: document.getElementById("slide-button-left"),
+        imgWrapper: document.getElementById("slide-img-wrapper"),
+        imgItems: Array.from(document.querySelectorAll("#slide-img-wrapper > div")),
+        /* 설명을 위해 작성했던 .reverse() 함수를 지웠다. 아래 참조 */
+        rightButton: document.getElementById("slide-button-left"),
+      }
+    }
+ 
+    const { slide: { imgWrapper, imgItems } } = init;
+    
+
+    /*
+    <!-- 
+      work .1 아래의 함수를 호출 하지 않은 상태로 확인 후 다시 호출하여 상태를 비교 할 것  
+      work .2 이전 단계(-5.html)의 코드는 아직 정돈이 안된 상태의 코드이므로, 함수화(캡슐화)를 진행하였다.
+    -->*/
+    function reverseSortElement(parentElement, childElementArray) {
+      parentElement.innerHTML = "";
+      /*
+      <!--
+        ? 함수 안에서 부모 요소가 변화되는 로직이 들어있기 때문에 '함수가 실행되지 않으면'
+        ? 현재 예제의 목적인 '역순정렬'이 실행되지 않고, 마크업 상태 그대로 랜더링(출력) 된다.
+        * 하지만 함수가 호출되어 실행하면 innerHTML에 의해 ""; 공백문자열이 대입되고 결과적으로 parentElement는 공백상태가 된다.
+        -->*/
+      childElementArray = childElementArray.length !== undefined ? childElementArray : console.log("need array, or array like object");        
+      childElementArray = Array.isArray(childElementArray) ? childElementArray : Array.from(childElementArray);
+      /*
+      <!-- 
+        ? 매개변수 childElementArray 에 붙은 삼항연산자
+        todo : 첫번째 조건식 : childElementArray.length !== undefined
+        * "만약 childElementArray.length 값이 undefined 가 '아니면', 참" 이라는 조건식 이다.
+        * 유사배열객체(array like object)인 NodeList와 HTMLCollection의 특징인 '배열은 아니지만 length값 은 가지고 있다' 이기때문에 만약에 생길 타입에러 버그를 예방할 수 있다. length가 없으면 배열, 유사배열도 아니라는 결론에서 조건식이 성립된다. 
+        todo : Array.isArray(childElementArray)
+        * 조건식 : Array.isArray() 검사 메서드를 통해 true 이면 그대로 사용하고, true가 아닌 false 이면 배열로 바꾸겠다는 뜻이다.
+        * Array.isArray(childElementArray) === true 라고 명시한 것을 isArray() 메서드 자체가 리턴이 불리언 타입이기때문에 단축하여 활용 한 것이다. 
+        * 위와 같이 삼항연산자를 통해서 간단하게 판별과 처리를 한번에 하는 경우가 매우 잦다.
+        pseudo 위 처럼 두번 삼항연산자를 사용한 것은 설명을 위한 것이므로, 다음 파일에서 코딩패턴을 다시 확인할 것
+        -->*/
+      const reverseArray = childElementArray.reverse();
+      /*
+      <!--
+        ? childElementArray.reverse();
+        * 앞선 스텝에서 init 객체에 직접 .reverse() 메서드를 붙인 사례를 예로 들었으나, 코딩에서의 정황상(많은 코드들이 존재할때)
+        * 데이터를 가공하는 .reverse() 와 같은 메서드들은 선택적으로 사용하는 경우가 많기 때문에 초기화 할때 매번 사용하지 않는 점을 고려해야한다.
+        * 따라서 함수로 데이터 가공을 처리하고 init 객체는 단순 식별 -> 정리 하는 '원형'의 단계를 유지하는 것이 선택적으로 편리하게 처리하는 방법 일 수 있다.
+        * '특정한 가공'을 해야한다면 따로 처리하는 것이 재활용성을 위해 좋은 방식
+        * 반면에 Array.from() 과 같이 HTMLCollection, NodeList 같은 유사배열은 '가공하기에' 그다지 적합하지 않을 때가 훨씬 많기 때문에, 초기화시점에서 가공하는 경우라고 할 수 있다.
+        * 함수 조건식에는 '혹시 모를 미처리 유사배열' 체크 하는 조건과 가공을 작성해두었다.
+        * '혹시 모른다' 라는 점은 코드의 양이 상당히 많아졌을때 예기치 못한 에러를 미연에 예방하기 때문에 가져야할 좋은 습관중 하나이다.
+        -->
+      */
+
+
+        reverseArray.forEach((value) => parentElement.appendChild(value));
+        /*
+          <!--
+            ? forEach 콜백으로 자식 요소 배치 처리 parentElement.appendChild(value)
+            * 태그를 문자열로 처리 하는 방법도 존재하지만, (.push(), .join() 등 활용)
+            * 이번 함수는 '단순' 1차 처리가 목적이기 때문에 DOM API 메서드를 활용해서
+            * "이곳에 자식으로 덧붙였다." 라는 점을 명시했다. 
+            * 다른 기능을 추가해야 한다면 해당 함수에서보다 '다른 기능의 함수로' 분할하여 작업하는 것이 유지보수 관점에서 좋은 판단이 된다.
+            * 함수의 기능은 한번에 한개가 적당하다.
+            * 여러개의 기능을 처리해야한다면 객체화시켜 메서드로 접근시키는 것이 '객체 지향 프로그래밍'의 관점이 된다.
+          -->
+        */
+    }
+    reverseSortElement(imgWrapper, imgItems);
+    /*
+    <!--
+      ? 함수호출
+      * 해당 함수를 한번만 사용(호출) 했지만,
+      * 언제든지 자식이 있는 DOM container 성격의 요소라면 역순으로 바꾸어버리는 기능을 '캡슐화'를 통해 갖추게 되었다.
+      * 부모 요소와 자식요소의 '존재유무'를 판단하는 것이라면 다른 함수로 만들어 '고차함수'화 시키는 것이 좋은 방식이다.
+    -->  
+      */
+
+  </script>
+</body>
+
+</html>
