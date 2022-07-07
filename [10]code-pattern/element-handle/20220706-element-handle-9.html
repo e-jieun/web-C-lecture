@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root>div {
+      color: #ccc;
+
+      width: inherit;
+      height: inherit;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    /* #slide-container*/
+
+    /* slide structuring */
+    #slide-container>div:nth-child(1) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(3) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-img-wrapper {
+      position: relative;
+    }
+
+    #slide-img-wrapper div {
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="slide-container">
+      <div id="slide-button-left">left</div>
+      <div id="slide-img-wrapper">
+        <div style="background-color: antiquewhite;">slide-img-1</div>
+        <div style="background-color:cadetblue;">slide-img-2</div>
+        <div style="background-color: coral;">slide-img-3</div>
+        <div style="background-color:gray">slide-img-4</div>
+        <div style="background-color: crimson;">slide-img-5</div>
+      </div>
+      <div id="slide-button-right">right</div>
+    </div>
+  </div>
+  <script>
+    const init = {
+      root: document.getElementById("root"),
+      slide: {
+        leftButton: document.getElementById("slide-button-left"),
+        imgWrapper: document.getElementById("slide-img-wrapper"),
+        imgItems: Array.from(document.querySelectorAll("#slide-img-wrapper > div")),
+        rightButton: document.getElementById("slide-button-left"),
+      }
+    }
+
+    const {
+      slide: {
+        imgWrapper,
+        imgItems
+      }
+    } = init;
+
+    (function reverseSortElement(parentElement, childElementArray) {
+      parentElement.innerHTML = "";
+      childElementArray = childElementArray.length !== undefined ?
+        Array.isArray(childElementArray) ?
+        childElementArray : Array.from(childElementArray) : console.log("need array, or array like object");
+
+      const reverseArray = childElementArray.reverse();
+      reverseArray.forEach((value) => parentElement.appendChild(value));
+    })(imgWrapper, imgItems);
+
+
+    const {
+      slide: {
+        leftButton,
+        rightButton
+      }
+    } = init;
+
+    leftButton.addEventListener('click',  function() {
+      console.log(imgWrapper.lastChild);
+      let temp = imgWrapper.lastChild;
+      imgWrapper.removeChild(imgWrapper.lastChild);
+      imgWrapper.insertBefore(temp, imgWrapper.firstChild);
+    });
+
+    /*
+      <!-- 
+        ? leftButton event
+        * imgWrapper 컨테이너의 첫번째 자식, 마지막자식을 가져오는(get하는) 방식으로
+        * 자식들의 순서를 바꾸는 인터렉션을 작업했다.
+        work .1 이와 같은 방식은 문서를 직접적으로 제어 하는 방식이기때문에 배열 메서드를 사용하기 어렵다. 따라서 다양한 기능을 제공하는 배열로 제어하는 것이 더욱 효과적이다.
+        * DOM API 메서드 만으로 작업이 원활하지 않기 때문에 다음 스텝에서 배열로 내용을 바꿀 예정  
+        -->
+    */
+  </script>
+</body>
+
+</html>

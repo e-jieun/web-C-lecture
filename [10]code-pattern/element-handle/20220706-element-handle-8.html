@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root>div {
+      color: #ccc;
+
+      width: inherit;
+      height: inherit;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    /* #slide-container*/
+
+    /* slide structuring */
+    #slide-container>div:nth-child(1) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(3) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-img-wrapper {
+      position: relative;
+    }
+
+    #slide-img-wrapper div {
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="slide-container">
+      <div id="slide-button-left">left</div>
+      <div id="slide-img-wrapper">
+        <div style="background-color: antiquewhite;">slide-img-1</div>
+        <div style="background-color:cadetblue;">slide-img-2</div>
+        <div style="background-color: coral;">slide-img-3</div>
+        <div style="background-color:gray">slide-img-4</div>
+        <div style="background-color: crimson;">slide-img-5</div>
+      </div>
+      <div id="slide-button-right">right</div>
+    </div>
+  </div>
+  <script>
+    const init = {
+      root: document.getElementById("root"),
+      slide: {
+        leftButton: document.getElementById("slide-button-left"),
+        imgWrapper: document.getElementById("slide-img-wrapper"),
+        imgItems: Array.from(document.querySelectorAll("#slide-img-wrapper > div")),
+        rightButton: document.getElementById("slide-button-left"),
+      }
+    }
+
+    const {
+      slide: {
+        imgWrapper,
+        imgItems
+      }
+    } = init;
+
+    (function reverseSortElement(parentElement, childElementArray) {
+      parentElement.innerHTML = "";
+      childElementArray = childElementArray.length !== undefined ?
+        Array.isArray(childElementArray) ?
+        childElementArray : Array.from(childElementArray) : console.log("need array, or array like object");
+
+      const reverseArray = childElementArray.reverse();
+      reverseArray.forEach((value) => parentElement.appendChild(value));
+    })(imgWrapper, imgItems);
+
+    /* ------------------------------------------------------------------ */
+    /*
+      <!--
+        ? 구분선을 그은 이유
+        * 위의 함수는 오직 하나의 기능만 담당하게 하여 복잡도를 낮추는 방식으로 구분한다.
+        * 하나의 함수가 목적외에 다른 함수까지 연결되었을 때 에러조치가 어려운 부분이 발생하고, 원인을 찾기 어려워진다.
+        work .1 아래의 코드는 left, right 버튼을 활용해 인터렉션을 부여한다.
+      -->
+    */
+    const {
+      slide: {
+        leftButton,
+        rightButton
+      }
+    } = init;
+
+    /*
+      <!--
+        ? leftButton, rightButton 초기화
+        * 객체를 그대로 root 까지 접근할 경우 매우 길어지기 때문에 간단하게 얕은 복사를 이용했다.
+        * 위와 같은 초기화 방법을 '구조 분해 할당', 혹은 '비구조화 할당' 이라는 방법이다 (ES6 부터 지원한다)
+
+      -->
+    */
+    leftButton.addEventListener('click',  function() {
+      console.log(imgItems);
+      console.log(leftButton);
+    });
+
+    /*
+      <!--
+        ? 버튼 이벤트 위처럼 "매우 기본형"으로 기반이 어떻게 되는지 확인 하는 버릇
+        * 두개의 버튼과 조작될 요소를 모두 생각하면 복잡한 아이디어가 뒤엉키기 때문에
+        * 위처럼 "최종 코드는 아니지만", 간단히 스케치 하듯 기본동작을 점쳐 보는 과정으로
+        * 해당 단계의 다음단계를 직접 눈으로 확인하며 작업하는 것을 권장한다.
+
+
+      -->
+    */
+    
+    
+  </script>
+</body>
+
+</html>

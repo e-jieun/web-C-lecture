@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+
+    #root>div {
+      color: #ccc;
+
+      width: inherit;
+      height: inherit;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    /* #slide-container*/
+
+    /* slide structuring */
+    #slide-container>div:nth-child(1) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(2) {
+      width: 300px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-container>div:nth-child(3) {
+      width: 100px;
+      height: 300px;
+      background-color: #666;
+    }
+
+    #slide-img-wrapper {
+      position: relative;
+    }
+
+    #slide-img-wrapper div {
+      position: absolute;
+      width: inherit;
+      height: inherit;
+      color: gray;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <div id="slide-container">
+      <div id="slide-button-left">left</div>
+      <div id="slide-img-wrapper">
+        <div style="color: #fff; background-color: antiquewhite;">slide-img-1</div>
+        <div style="color: #fff; background-color:cadetblue;">slide-img-2</div>
+        <div style="color: #fff; background-color: coral;">slide-img-3</div>
+        <div style="color: #fff; background-color:gray">slide-img-4</div>
+        <div style="color: #fff; background-color: crimson;">slide-img-5</div>
+      </div>
+      <div id="slide-button-right">right</div>
+    </div>
+  </div>
+  <script>
+    const init = {
+      root: document.getElementById("root"),
+      slide: {
+        leftButton: document.getElementById("slide-button-left"),
+        imgWrapper: document.getElementById("slide-img-wrapper"),
+        imgItems: Array.from(document.querySelectorAll("#slide-img-wrapper > div")),
+        rightButton: document.getElementById("slide-button-left"),
+      }
+    }
+
+    const {
+      slide: {
+        imgWrapper,
+        imgItems
+      }
+    } = init;
+
+    (function reverseSortElement(parentElement, childElementArray) {
+      parentElement.innerHTML = "";
+      childElementArray = childElementArray.length !== undefined ?
+        Array.isArray(childElementArray) ?
+        childElementArray : Array.from(childElementArray) : console.log("need array, or array like object");
+
+      const reverseArray = childElementArray.reverse();
+      reverseArray.forEach((value) => parentElement.appendChild(value));
+    })(imgWrapper, imgItems);
+
+
+    const {
+      slide: {
+        leftButton,
+        rightButton
+      }
+    } = init;
+
+    leftButton.addEventListener('click', function () {
+      imgItems.forEach((imgItem, index) => {
+        console.log(imgItem, index);
+      });
+      console.log("---------------------------")
+      // 한쪽 방향 순회
+      let tempOne = imgItems[0];
+      imgItems.shift();
+      imgItems.push(tempOne);
+      // 반대 방향 순회
+      let tempTwo = imgItems[imgItems.length - 1];
+      imgItems.unshift(tempTwo);
+      imgItems.pop();
+      imgItems.forEach((imgItem, index) => {
+        console.log(imgItem, index);
+      });
+      let tempString = '';
+      imgWrapper.innerHTML = "";
+      imgWrapper.appendChild(imgItems[0]);
+    });
+    /*
+    <!--
+      ? 하나의 버튼으로 '다양한 실험'을 하고 있는 과정이다.
+      * 요소를 배열로 가공하고, 다양한 배열의 메서드를 활용해보면서
+      * 동작이 제대로 일어나는지, 빈틈은 없는지 확인하는 과정을 충분히 해야한다.
+      * 
+      * 그러한 점에서 위의 코드는
+      * tempOne, tempTwo 라는 변수로 '단위 테스트'를 진행하고 있다.
+      * 버그가 존재하므로 옳은 코드가 아님을 주의
+      * 
+      * 중간 테스트 지점에서 에러를 발견했기 때문에 -> 오히려 역으로 구조에 대한 문제점을 발견할 수 있게 된다.
+
+
+
+
+      -->
+    */
+
+
+
+  </script>
+</body>
+
+</html>
