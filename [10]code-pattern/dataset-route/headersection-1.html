@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #root {
+      width: 100vw;
+      height: 100vh;
+      background-color: #333;
+    }
+    #root>header {
+      width: 100vw;
+      height: 10vh;
+      background-color: coral;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #root>header>ul {
+      list-style-type: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: row;
+    }
+
+    #root>header>ul>li {
+      width: 100px;
+      height: 30px;
+      cursor: pointer;
+    }
+    #root>header>ul>li:hover {
+      background-color: #ccc;
+    }
+    #root>main {
+      width: 100vw;
+      height: 90vh;
+      background-color: rosybrown;
+    }
+    #root>main>section {
+      position:absolute;
+      width: inherit;
+      height: inherit;
+      visibility: hidden;
+    }
+    #root>main>section:nth-child(1){background-color: aquamarine;}
+    #root>main>section:nth-child(2){background-color: darkgray;}
+    #root>main>section:nth-child(3){background-color: cornflowerblue;}
+    #root>main>section:nth-child(4){background-color: darkslategray;}
+    #root>main>section:nth-child(5){background-color: darkkhaki;}
+  </style>
+</head>
+
+<body>
+  <div id="root">
+    <header>
+      <ul>
+        <li data-hash="page-1">menu-1</li>
+        <li data-hash="page-2">menu-2</li>
+        <li data-hash="page-3">menu-3</li>
+        <li data-hash="page-4">menu-4</li>
+        <li data-hash="page-5">menu-5</li>
+      </ul>
+    </header>
+    <main id="main">
+      <section data-hash="page-1">section-1</section>
+      <section data-hash="page-2">section-2</section>
+      <section data-hash="page-3">section-3</section>
+      <section data-hash="page-4">section-4</section>
+      <section data-hash="page-5">section-5</section>
+    </main>
+  </div>
+  <script>
+    const root = document.getElementById("root");
+    const main = document.getElementById("main");
+    const menuContainer = document.querySelector('#root > header > ul'); // <ul>
+
+
+    for(let i = 0; i < main.children.length; i++) {
+      main.children[i].style.visibility = "hidden";
+    }
+
+
+    menuContainer.addEventListener('click', function (event) {
+      let getHashValue = event.target.dataset.hash;
+      
+      console.log(getHashValue);
+      for(let i = 0; i < main.children.length; i++) {
+        if(getHashValue === main.children[i].dataset.hash) {
+          main.children[i].style.visibility = "visible";
+        } else {
+          main.children[i].style.visibility = "hidden";
+        }
+      }
+    });
+
+
+  </script>
+</body>
+
+</html>
